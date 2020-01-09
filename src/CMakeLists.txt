@@ -71,7 +71,6 @@ option(CONFIG_XRANDR "Define to enable XRANDR extension" on)
 option(CONFIG_SESSION "Define to enable X session management" on)
 option(CONFIG_EXTERNAL_TRAY "Define for external systray (deprecated)" off)
 option(ENABLE_NLS "Enable Native Language Support" on)
-option(ENABLE_LTO "Enable Link Time Optimization" off)
 
 SET(CONFIG_DEFAULT_THEME "default/default.theme" CACHE STRING "Name of default theme")
 SET(CONFIG_UNICODE_SET "" CACHE STRING "Your iconv unicode set in machine endian encoding (e.g. WCHAR_T, UCS-4-INTERNAL, UCS-4LE, UCS-4BE)")
@@ -94,11 +93,9 @@ if(ENABLE_NLS OR CONFIG_I18N)
         LIST(APPEND nls_LIBS intl)
     endif()
 endif()
-
-if(ENABLE_LTO)
-    list(APPEND CXXFLAGS_COMMON -flto)
-    list(APPEND EXTRA_LIBS -flto)
-endif()
+# Always need LTO or causes link issues with ytimer.
+list(APPEND CXXFLAGS_COMMON -flto)
+list(APPEND EXTRA_LIBS -flto)
 
 # the only used ones...
 # for x in `cat funclist` ; do grep $x src/* lib/* && echo $x >> exlist ; done
