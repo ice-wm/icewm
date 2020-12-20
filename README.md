@@ -3,6 +3,9 @@
 Ice Window Manager (IceWM)
 ==========================
 
+IceVM is a window manager for the X Window System. The features of IceVM are
+speed, simplicity, and not getting in the user's way.
+
 This is a fork of the IceWM CVS on [sourceforge][12].  It includes all changes
 from the `icewm-1-3-BRANCH` branch, greatly enhanced EWMH/ICCCM compliance, as
 well as patches collected from Arch Linux, Debian, pld-linux, the IceWM bug
