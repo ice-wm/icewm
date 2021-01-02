@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2020-12-14 02:14+0100\n"
+"POT-Creation-Date: 2021-01-02 23:41+0100\n"
 "PO-Revision-Date: 2016-06-06 12:13+0000\n"
 "Last-Translator: Stanislav Brabec <sbrabec@suse.com>\n"
 "Language-Team: Hebrew <https://l10n.opensuse.org/projects/icewm/icewm-1-3-"
@@ -1346,13 +1346,13 @@ msgstr "פעולה לא מוכרת: `%s'"
 msgid "Unable to create directory %s"
 msgstr ""
 
-#: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:701 src/wmprog.cc:705
+#: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:703 src/wmprog.cc:707
 #, c-format
 msgid "Unable to write to %s"
 msgstr ""
 
 # מקש
-#: src/wmconfig.cc:182 src/wmprog.cc:709
+#: src/wmconfig.cc:182 src/wmprog.cc:711
 #, fuzzy, c-format
 msgid "Unable to rename %s to %s"
 msgstr "שם מקש לא מוכר %s בתוך %s"
@@ -1366,7 +1366,7 @@ msgid "_Cancel"
 msgstr "_ביטול"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:859 src/wmprog.cc:861 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:861 src/wmprog.cc:863 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_התנתק..."
@@ -1376,7 +1376,7 @@ msgid "_Restart icewm"
 msgstr "_אתחל את icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:820 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:76 src/wmprog.cc:822 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_אודות"
 
@@ -1447,52 +1447,52 @@ msgstr "_מותאם"
 msgid "Save Modifications"
 msgstr "יישומים מועדפים"
 
-#: src/wmprog.cc:732
+#: src/wmprog.cc:734
 msgid "_Manual"
 msgstr ""
 
-#: src/wmprog.cc:733
+#: src/wmprog.cc:735
 msgid "_Icewm(1)"
 msgstr ""
 
-#: src/wmprog.cc:734
+#: src/wmprog.cc:736
 msgid "Icewm_Bg(1)"
 msgstr ""
 
-#: src/wmprog.cc:735
+#: src/wmprog.cc:737
 msgid "Ice_Sound(1)"
 msgstr ""
 
-#: src/wmprog.cc:797
+#: src/wmprog.cc:799
 msgid "Programs"
 msgstr "תוכניות"
 
-#: src/wmprog.cc:802
+#: src/wmprog.cc:804
 msgid "_Run..."
 msgstr "_הרץ..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:807 src/wmtaskbar.cc:233
+#: src/wmprog.cc:809 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_חלונות"
 
-#: src/wmprog.cc:826
+#: src/wmprog.cc:828
 msgid "_Help"
 msgstr "_עזרה"
 
-#: src/wmprog.cc:837
+#: src/wmprog.cc:839
 msgid "_Focus"
 msgstr "_מיקוד"
 
-#: src/wmprog.cc:842
+#: src/wmprog.cc:844
 msgid "_Preferences"
 msgstr ""
 
-#: src/wmprog.cc:848
+#: src/wmprog.cc:850
 msgid "_Themes"
 msgstr "_ערכות נושא"
 
-#: src/wmprog.cc:853
+#: src/wmprog.cc:855
 msgid "Se_ttings"
 msgstr "_הגדרות"
 

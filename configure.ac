@@ -2,10 +2,10 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([icewm],[2.0.0],
+AC_INIT([icewm],[2.0.1],
         [https://github.com/bbidulock/icewm/issues],
         [icewm],[https://ice-wm.org])
-AC_REVISION([2.0.0])
+AC_REVISION([2.0.1])
 
 # set better defaults
 AC_PREFIX_DEFAULT([/usr])
@@ -22,13 +22,13 @@ AC_CONFIG_AUX_DIR([scripts])
 AC_USE_SYSTEM_EXTENSIONS
 AC_CANONICAL_TARGET
 
-DATE='2020-12-14'
+DATE='2021-01-02'
 AC_SUBST([DATE])
 
-MDOCDATE='December 14, 2020'
+MDOCDATE='January 2, 2021'
 AC_SUBST([MDOCDATE])
 
-BRANCH='2.0.0'
+BRANCH='2.0.1'
 AC_SUBST([BRANCH])
 
 APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icehelp'
@@ -250,7 +250,7 @@ fi
 AC_ARG_ENABLE([xfreetype],
     AS_HELP_STRING([--disable-xfreetype],[Disable use of XFT for text rendering.]))
 if test x$enable_xfreetype != xno; then
-    PKG_CHECK_MODULES([XFT2],[xft >= 2.0.0],[
+    PKG_CHECK_MODULES([XFT2],[xft >= 2.0.1],[
 	CORE_CFLAGS="$XFT2_CFLAGS $CORE_CFLAGS"
 	CORE_LIBS="$XFT2_LIBS $CORE_LIBS"
 	AC_DEFINE([CONFIG_XFREETYPE],[2],[Define to enable XFT support.])

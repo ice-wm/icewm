@@ -1,5 +1,287 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit a43eef27fbbd0502a700d189a90dc34e70286f5d
+Merge: 3b95d791 eee57659
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jan 2 23:38:25 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit eee57659fd43a1643228fb61daae999397797ee7
+Merge: 5069b5f7 85977c3c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jan 2 23:31:53 2021 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 85977c3c36776a48fbf39e664885d7d415e0cbc0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jan 2 19:12:52 2021 +0100
+
+    Fix spelling of Gerenciador for pt_BR.
+
+ lib/icewm.desktop | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b123f43e6d7d7d33a81cab310a736e39e21db1c7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jan 2 14:29:51 2021 +0100
+
+    Improve getting icon window for WM_STATE.
+
+ src/wmclient.cc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 064b979ae93bcf0fc804710e4564c53df27c6b08
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Jan 1 12:10:58 2021 +0100
+
+    Note that support was added for icon_pixmap and icon_window fields of
+    WM_HINTS property in 2.0.0.
+
+ TODO | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 6d3ec2529857191a8a6a10c8ae64990d38e262d8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Jan 1 12:10:12 2021 +0100
+
+    Update to 2.0.0.
+
+ RELEASE.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 57732612f28b5ea8230de64b21db51e3a2a8beac
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Jan 1 12:09:38 2021 +0100
+
+    Add IceVM explanation to README for ice-wm/icewm#35
+
+ README.md    | 15 +++++++++------
+ README.md.in | 11 +++++++----
+ 2 files changed, 16 insertions(+), 10 deletions(-)
+
+commit e1e58d86f2014f50b6893478b019a478a2f27ab7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 31 22:44:14 2020 +0100
+
+    Reset horizontal scrolling when using the Home and End keys for the
+    window list.
+
+ src/ylistbox.cc | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 51f375fc796203dabcdcf770c6e66d9c95119b50
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 31 22:43:25 2020 +0100
+
+    Make isUrgent a member of ClientData.
+
+ src/wmclient.h | 2 +-
+ src/wmframe.h  | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit b2e70ee499c8d3a0c3049be0cdf4347af54abf50
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 31 22:42:07 2020 +0100
+
+    Communicate the window ID of the icon window in WM_STATE when iconifying
+    to desktop.
+
+ src/wmclient.cc   | 5 ++++-
+ src/wmminiicon.cc | 4 ++++
+ src/wmminiicon.h  | 1 +
+ 3 files changed, 9 insertions(+), 1 deletion(-)
+
+commit 76a67485fe5d6a7f44bc82f05d891a112d682273
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 31 22:39:31 2020 +0100
+
+    Clarify startMoveSize.
+
+ src/movesize.cc | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+commit 2572bd7be90901756fb1f592e300d9ac58830874
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 31 22:37:27 2020 +0100
+
+    Allow to set background opacity for QuickSwitch background for #534.
+
+ src/wmswitch.cc | 8 --------
+ src/wmswitch.h  | 2 --
+ 2 files changed, 10 deletions(-)
+
+commit 2be556424a8985278a363a009fea1ea4a985a463
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 31 22:37:27 2020 +0100
+
+    Fix setting option values for #535.
+
+ src/wmprog.cc | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit ff6660817193de6420453def06373b5c3c15a11c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 31 22:37:27 2020 +0100
+
+    Search for icewm icon for internal windows.
+
+ src/wmframe.cc | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 3a97a1f1d0decc8b677fa16996183a7535573c29
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Dec 21 18:11:27 2020 +0100
+
+    Handle horizontal scroll keys in window list window.
+
+ src/ylistbox.cc | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit b4e720be08bf8ec2a8273bcc7b16eda0863202ea
+Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
+Date:   Mon Dec 21 11:33:10 2020 +0000
+
+    Translated using Weblate (Indonesian)
+
+    Currently translated at 100.0% (468 of 468 strings)
+
+ po/id.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 4db3ccbe22a99c74f94ba6c33fa471c1935d33d0
+Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
+Date:   Fri Dec 18 19:14:36 2020 +0000
+
+    Translated using Weblate (Portuguese (Brazil))
+
+    Currently translated at 100.0% (468 of 468 strings)
+
+ po/pt_BR.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 18ae6ec9b572dcf44cc3a98335c9690deb8010a2
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Date:   Tue Dec 15 14:28:03 2020 +0000
+
+    Translated using Weblate (Slovak)
+
+    Currently translated at 100.0% (468 of 468 strings)
+
+ po/sk.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 674fe385b4cfe25267ff00391076dedbd06b59d6
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Mon Dec 14 20:20:45 2020 +0000
+
+    Translated using Weblate (Portuguese)
+
+    Currently translated at 100.0% (468 of 468 strings)
+
+ po/pt.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit f744887712f17800e9dea44c059712bdfd91921f
+Author: David Medina <medipas@gmail.com>
+Date:   Mon Dec 14 18:01:27 2020 +0000
+
+    Translated using Weblate (Catalan)
+
+    Currently translated at 100.0% (468 of 468 strings)
+
+ po/ca.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 8001aa7f33bd1098f48d60145d45ca9d73a8f8c9
+Author: Freek de Kruijf <freek@opensuse.org>
+Date:   Mon Dec 14 14:34:03 2020 +0000
+
+    Translated using Weblate (Dutch)
+
+    Currently translated at 100.0% (468 of 468 strings)
+
+ po/nl.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 6d984320dd67a8da467593987e581e7877974f3d
+Author: Aleš Kastner <alkas@volny.cz>
+Date:   Mon Dec 14 14:27:51 2020 +0000
+
+    Translated using Weblate (Czech)
+
+    Currently translated at 100.0% (468 of 468 strings)
+
+ po/cs.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 063df95364e113b7b4f0fa4efc3842cfd45adb88
+Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
+Date:   Mon Dec 14 01:31:39 2020 +0000
+
+    Translated using Weblate (Japanese)
+
+    Currently translated at 100.0% (468 of 468 strings)
+
+ po/ja.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 3b95d79143fdb8336a2519c7119fad02b3484836
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Dec 14 02:18:46 2020 +0100
+
+    Prepare 2.0.0 release
+
+ AUTHORS      |    3 +-
+ ChangeLog    | 9159 +++++++++++++++++++++++++++---------------------------
+ NEWS         |  330 +-
+ README.md    |   36 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |    2 +-
+ po/be.po     |    2 +-
+ po/bg.po     |    2 +-
+ po/ca.po     |    2 +-
+ po/cs.po     |    2 +-
+ po/da.po     |    2 +-
+ po/de.po     |    2 +-
+ po/el.po     |    2 +-
+ po/en.po     |    2 +-
+ po/es.po     |    2 +-
+ po/fi.po     |    2 +-
+ po/fr.po     |    2 +-
+ po/he.po     |    2 +-
+ po/hr.po     |    2 +-
+ po/hu.po     |    2 +-
+ po/icewm.pot |    4 +-
+ po/id.po     |    2 +-
+ po/it.po     |    2 +-
+ po/ja.po     |    2 +-
+ po/ko.po     |    2 +-
+ po/lt.po     |    2 +-
+ po/lv.po     |    2 +-
+ po/mk.po     |    2 +-
+ po/nb.po     |    2 +-
+ po/nl.po     |    2 +-
+ po/no.po     |    2 +-
+ po/pl.po     |    2 +-
+ po/pt.po     |    2 +-
+ po/pt_BR.po  |    2 +-
+ po/ro.po     |    2 +-
+ po/ru.po     |    2 +-
+ po/sk.po     |    2 +-
+ po/sl.po     |    2 +-
+ po/sv.po     |    2 +-
+ po/tr.po     |    2 +-
+ po/uk.po     |    2 +-
+ po/vi.po     |    2 +-
+ po/zh_CN.po  |    2 +-
+ po/zh_TW.po  |    2 +-
+ 46 files changed, 4732 insertions(+), 4890 deletions(-)
+
 commit 4e55c22062b37f1a6071a91a0f4b9247d08e5093
 Merge: 84abbd6a 5069b5f7
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6078,284 +6360,3 @@ Date:   Mon Jul 6 01:44:22 2020 +0200
 
  src/yicon.cc | 6 ------
  1 file changed, 6 deletions(-)
-
-commit 4386670bbc2cc2c13e7c627bce945e8397531012
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:44:06 2020 +0200
-
-    Use wordexp to avoid a /bin/sh.
-
- src/yapp.cc | 18 ++++++++++++++----
- 1 file changed, 14 insertions(+), 4 deletions(-)
-
-commit 744d5e8ee2ecbf42e8a61212373ad56dbf60ea29
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:42:52 2020 +0200
-
-    Use wordexp to avoid a /bin/sh.
-
- src/wmapp.cc | 32 ++++++++++++++++++++++++++------
- 1 file changed, 26 insertions(+), 6 deletions(-)
-
-commit a996fa5c7c519bd8ff71fe03302d02bada7c553a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:42:00 2020 +0200
-
-    Permit an optional equal sign for short option arguments.
-
- src/misc.cc | 50 +++++++++++++++++++++++++-------------------------
- 1 file changed, 25 insertions(+), 25 deletions(-)
-
-commit a4b5afda289e4ce8f5ba10754d30d4239eb411af
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:40:41 2020 +0200
-
-    Catch X errors. Handle _NET_WM_USER_TIME.
-
- src/icesh.cc | 101 ++++++++++++++++++++++++++++++++++++++++++-------------
- 1 file changed, 78 insertions(+), 23 deletions(-)
-
-commit bcbca5201a4307ee727011bf05f11697015ade44
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:40:09 2020 +0200
-
-    Add fsleep.
-
- src/ytime.cc | 12 ++++++++++++
- src/ytime.h  |  1 +
- 2 files changed, 13 insertions(+)
-
-commit 965b130355550dde7e9b11d9b9b126f2d2be2cfd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:38:31 2020 +0200
-
-    Use wordexp to split a terminalCommand or addressBarCommand.
-
- src/aaddressbar.cc | 36 ++++++++----------------------------
- 1 file changed, 8 insertions(+), 28 deletions(-)
-
-commit 09735136b25b3fcc5ed07fd68b0a612d8e3a3dcf
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:37:04 2020 +0200
-
-    Fix ice-wm/icewm#21 "Problem with dosbox and re-maximize the screen"
-
- src/wmmgr.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 2b5aeefb3df7678f443980d5b950838e777d22c6
-Author: Jens <jens@karatek.net>
-Date:   Sat Jul 4 10:37:53 2020 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 99.8% (473 of 474 strings)
-
- po/de.po | 21 ++++++++++-----------
- 1 file changed, 10 insertions(+), 11 deletions(-)
-
-commit 9b8991b9232bef3508eb5bb915656a94e428b957
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 2 12:37:28 2020 +0200
-
-    Add Maximize Horizontal to window list window.
-
- src/wmwinlist.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit 46bd224a39bd768b9e156c51d138c161553e18a2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 2 12:37:04 2020 +0200
-
-    Undo b8881bab079c6b085032b84c0153398390d3a5aa.
-
- src/acpustatus.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 997177aa79fa5b80a3fdc3e1d3e48be74946b058
-Author: Adolfo Jayme Barrientos <fitoschido@gmail.com>
-Date:   Wed Jul 1 17:07:58 2020 +0000
-
-    Translated using Weblate (Spanish)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/es.po | 38 ++++++++++++--------------------------
- 1 file changed, 12 insertions(+), 26 deletions(-)
-
-commit 546bac39a1c197aaa77039144b0e648f7bf813a6
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Tue Jun 30 17:12:36 2020 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/sk.po | 29 ++++++++---------------------
- 1 file changed, 8 insertions(+), 21 deletions(-)
-
-commit 2ea8ad4bad9721cc23db130d0d9b6b71e6413c1d
-Author: Jens Maucher <jens.maucher@gmx.de>
-Date:   Wed Jul 1 17:35:03 2020 +0000
-
-    Translated using Weblate (English)
-
-    Currently translated at 4.9% (23 of 474 strings)
-
- po/en.po | 32 ++++++++++++++++++++------------
- 1 file changed, 20 insertions(+), 12 deletions(-)
-
-commit 255536263d615d48ed7b802f005f2ed1de4992a0
-Author: David Medina <medipas@gmail.com>
-Date:   Tue Jun 30 09:21:12 2020 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/ca.po | 28 +++++++---------------------
- 1 file changed, 7 insertions(+), 21 deletions(-)
-
-commit e22a7ea8250b33f31d21a1cda368da999e14b3c8
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Date:   Tue Jun 30 06:32:46 2020 +0000
-
-    Translated using Weblate (Japanese)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/ja.po | 35 ++++++++++-------------------------
- 1 file changed, 10 insertions(+), 25 deletions(-)
-
-commit c9506394ccf4f657ffeb1d0a44eaa0e29c30b390
-Author: Aleš Kastner <alkas@volny.cz>
-Date:   Tue Jun 30 07:21:39 2020 +0000
-
-    Translated using Weblate (Czech)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/cs.po | 31 +++++++++----------------------
- 1 file changed, 9 insertions(+), 22 deletions(-)
-
-commit cd314e207a0d8e333cc1f76cb0624d1bd3024d29
-Merge: 0006b1e0 2144600e
-Author: Stanislav Brabec <sbrabec@suse.cz>
-Date:   Tue Jun 30 03:32:23 2020 +0200
-
-    Merge remote-tracking branch 'weblate/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 2144600ea1bcd697ee8d9c1b58e30ea69679f34e
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Sat Jun 20 18:07:38 2020 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (471 of 471 strings)
-
- po/sk.po | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 7d4ae6f3e692b8eb7a18e1c086ef7e66860e6e7b
-Author: Kimmo Kujansuu <mrkujansuu@gmail.com>
-Date:   Wed Jun 24 19:54:38 2020 +0000
-
-    Translated using Weblate (Finnish)
-
-    Currently translated at 59.0% (278 of 471 strings)
-
- po/fi.po | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
-
-commit 63a1adb745507fc921422f20d62699699f308489
-Author: Jens Maucher <jens.maucher@gmx.de>
-Date:   Sun Jun 7 11:03:55 2020 +0000
-
-    Translated using Weblate (English)
-
-    Currently translated at 2.1% (10 of 471 strings)
-
- po/en.po | 27 +++++++++++++++------------
- 1 file changed, 15 insertions(+), 12 deletions(-)
-
-commit 0006b1e09f87e96024a1e4cdcfb47231f6e9682d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jun 28 21:17:52 2020 +0200
-
-    Refresh frames and buttons after screen resize to prevent artefacts.
-
- src/objbar.cc    |  8 ++++++++
- src/objbar.h     |  1 +
- src/wmframe.cc   |  7 +++++++
- src/wmframe.h    |  1 +
- src/wmmgr.cc     | 13 +++++++++++++
- src/wmmgr.h      |  1 +
- src/wmtaskbar.cc | 24 ++++++++++++++++--------
- src/wmtaskbar.h  |  1 +
- src/wmtitle.cc   | 18 ++++++++++++++++++
- src/wmtitle.h    |  1 +
- 10 files changed, 67 insertions(+), 8 deletions(-)
-
-commit 5c380edab214a47b1e85a16dd93a4786f922e19f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jun 28 15:41:53 2020 +0200
-
-    Check for empty keyboard definition.
-
- src/wmconfig.cc | 4 +++-
- src/wmmgr.cc    | 6 ++++--
- 2 files changed, 7 insertions(+), 3 deletions(-)
-
-commit e8e28f6779ac81322a86d5edbee12ba17da020cd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jun 28 13:34:27 2020 +0200
-
-    make update-po
-
- po/ar.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/be.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/bg.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/ca.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/cs.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/da.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/de.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/el.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/en.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/es.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/fi.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/fr.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/he.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/hr.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/hu.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/icewm.pot | 270 ++++++++++++++++++++++++++++---------------------------
- po/id.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/it.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/ja.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/ko.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/lt.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/lv.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/mk.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/nb.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/nl.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/no.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/pl.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/pt_BR.po  | 268 +++++++++++++++++++++++++++---------------------------
- po/ro.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/ru.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/sk.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/sl.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/sv.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/tr.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/uk.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/vi.po     | 268 +++++++++++++++++++++++++++---------------------------
- po/zh_CN.po  | 268 +++++++++++++++++++++++++++---------------------------
- po/zh_TW.po  | 268 +++++++++++++++++++++++++++---------------------------
- 38 files changed, 5245 insertions(+), 4941 deletions(-)
-
-commit 36a9be8a15d1b8cc989199532f4c18fbf875935e
-Merge: 468f75e5 7155b491
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jun 28 13:26:52 2020 +0200
-
-    merge
