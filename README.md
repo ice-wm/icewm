@@ -1,16 +1,19 @@
-[icewm -- read me first file.  2020-11-05]: #
+[icewm -- read me first file.  2020-12-14]: #
 
 Ice Window Manager (IceWM)
 ==========================
+
+IceWM is a window manager for the X Window System. The features of IceWM are
+speed, simplicity, and not getting in the user's way.
+
+> The name was decided on a very hot day... (and Marko started writing it in
+> winter ;-)  The aim of IceWM is to have good 'Feel' and decent 'Look'. 'Feel'
+> is much more important than 'Look' ...
 
 This is a fork of the IceWM CVS on [sourceforge][12].  It includes all changes
 from the `icewm-1-3-BRANCH` branch, greatly enhanced EWMH/ICCCM compliance, as
 well as patches collected from Arch Linux, Debian, pld-linux, the IceWM bug
 list, and various other GitHub forks.
-
-> The name was decided on a very hot day... (and Marko started writing it in
-> winter ;-)  The aim of IceWM is to have good 'Feel' and decent 'Look'. 'Feel'
-> is much more important than 'Look' ...
 
 
 Release

@@ -1,4 +1,4 @@
-[icewm -- release notes.  2020-01-07]: #
+[icewm -- release notes.  2020-12-14]: #
 
 Release 2.0.0
 =============
