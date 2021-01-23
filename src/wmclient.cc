@@ -58,8 +58,7 @@ YFrameClient::YFrameClient(YWindow *parent, YFrameWindow *frame, Window win,
     fHints = nullptr;
     fWinHints = 0;
     fSavedFrameState = InvalidFrameState;
-    fSavedWinState[0] = None;
-    fSavedWinState[1] = None;
+    fWinStateHint = InvalidFrameState;
     fSizeHints = XAllocSizeHints();
     fTransientFor = None;
     fClientLeader = None;
@@ -469,7 +468,7 @@ void YFrameClient::setFrameState(FrameState state) {
             for (Atom atom : atoms)
                 deleteProperty(atom);
             fSavedFrameState = InvalidFrameState;
-            fSavedWinState[0] = fSavedWinState[1] = 0;
+            fWinStateHint = InvalidFrameState;
         }
     }
     else if (state != fSavedFrameState) {
@@ -647,6 +646,8 @@ void YFrameClient::handleProperty(const XPropertyEvent &property) {
             if (getFrame())
                 getFrame()->updateIcon();
             prop.net_wm_icon = new_prop;
+        } else if (property.atom == _XA_WIN_TRAY) {
+            prop.win_tray = new_prop;
         } else if (property.atom == _XA_WIN_LAYER) {
             prop.win_layer = new_prop;
         } else if (property.atom == _XATOM_MWM_HINTS) {
@@ -798,14 +799,13 @@ static long getMask(Atom a) {
 }
 
 void YFrameClient::setNetWMFullscreenMonitors(int top, int bottom, int left, int right) {
-    long data[4] = { top, bottom, left, right };
-    setProperty(_XA_NET_WM_FULLSCREEN_MONITORS, XA_CARDINAL,
-                (const Atom *) data, 4);
+    Atom data[4] = { Atom(top), Atom(bottom), Atom(left), Atom(right) };
+    setProperty(_XA_NET_WM_FULLSCREEN_MONITORS, XA_CARDINAL, data, 4);
 }
 
 void YFrameClient::setNetFrameExtents(int left, int right, int top, int bottom) {
-    long data[4] = { left, right, top, bottom };
-    setProperty(_XA_NET_FRAME_EXTENTS, XA_CARDINAL, (const Atom *) data, 4);
+    Atom data[4] = { Atom(left), Atom(right), Atom(top), Atom(bottom) };
+    setProperty(_XA_NET_FRAME_EXTENTS, XA_CARDINAL, data, 4);
 }
 
 void YFrameClient::setNetWMAllowedActions(Atom *actions, int count) {
@@ -902,6 +902,11 @@ void YFrameClient::handleClientMessage(const XClientMessageEvent &message) {
             else
                 setLayerHint(layer);
         }
+    } else if (message.message_type == _XA_WIN_TRAY) {
+        if (getFrame())
+            getFrame()->setTrayOption(message.data.l[0]);
+        else
+            setWinTrayHint(message.data.l[0]);
     } else
         super::handleClientMessage(message);
 }
@@ -1272,6 +1277,9 @@ void YFrameClient::setLayerHint(long layer) {
 }
 
 bool YFrameClient::getLayerHint(long *layer) {
+    if (!prop.win_layer)
+        return false;
+
     YProperty prop(this, _XA_WIN_LAYER, F32, 1, XA_CARDINAL);
     if (prop && inrange(*prop, 0L, WinLayerCount - 1L)) {
         *layer = *prop;
@@ -1280,15 +1288,31 @@ bool YFrameClient::getLayerHint(long *layer) {
     return false;
 }
 
-void YFrameClient::setStateHint(long mask, long state) {
-    MSG(("set state=%8lX mask=%3lX, saved %8lX, %3lX, %p",
-          state, mask, fSavedWinState[0], fSavedWinState[1], this));
+void YFrameClient::setWinTrayHint(long tray_opt) {
+    setProperty(_XA_WIN_TRAY, XA_CARDINAL, tray_opt);
+}
 
-    if (destroyed())
-        return;
+bool YFrameClient::getWinTrayHint(long* tray_opt) {
+    if (!prop.win_tray)
+        return false;
 
-    if (state == fSavedWinState[0] && mask == fSavedWinState[1]) {
+    YProperty prop(this, _XA_WIN_TRAY, F32, 1, XA_CARDINAL);
+    if (prop && *prop < WinTrayOptionCount) {
+        *tray_opt = *prop;
+        return true;
+    }
+    return false;
+}
+
+void YFrameClient::setStateHint() {
+    long state = getFrame()->getState();
+    MSG(("set state 0x%8lX, saved 0x%8lX, win 0x%lx",
+          state, fWinStateHint, handle()));
+
+    if (fWinStateHint == state || destroyed()) {
         return;
+    } else {
+        fWinStateHint = state;
     }
 
     Atom a[15];
@@ -1324,9 +1348,6 @@ void YFrameClient::setStateHint(long mask, long state) {
         a[i++] = _XA_NET_WM_STATE_DEMANDS_ATTENTION;
 
     setProperty(_XA_NET_WM_STATE, XA_ATOM, a, i);
-
-    fSavedWinState[0] = state;
-    fSavedWinState[1] = mask;
 }
 
 bool YFrameClient::getNetWMStateHint(long *mask, long *state) {
@@ -1334,9 +1355,6 @@ bool YFrameClient::getNetWMStateHint(long *mask, long *state) {
     YProperty prop(this, _XA_NET_WM_STATE, F32, 32, XA_ATOM);
     for (Atom atom : prop) {
         flags |= getMask(atom);
-    }
-    if (hasbit(flags, WinStateFullscreen)) {
-        flags &= ~WinStateMaximizedBoth;
     }
     if (hasbit(flags, WinStateMinimized)) {
         flags &= ~WinStateRollup;
@@ -1576,6 +1594,7 @@ void YFrameClient::getPropertiesList() {
             else if (a == _XA_NET_WM_USER_TIME) HAS(prop.net_wm_user_time);
             else if (a == _XA_NET_WM_USER_TIME_WINDOW) HAS(prop.net_wm_user_time_window);
             else if (a == _XA_NET_WM_WINDOW_OPACITY) HAS(prop.net_wm_window_opacity);
+            else if (a == _XA_WIN_TRAY) HAS(prop.win_tray);
             else if (a == _XA_WIN_LAYER) HAS(prop.win_layer);
             else if (a == _XA_WIN_ICONS) HAS(prop.win_icons);
             else if (a == _XA_XEMBED_INFO) HAS(prop.xembed_info);
