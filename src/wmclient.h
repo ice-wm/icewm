@@ -253,9 +253,7 @@ public:
     void setWinTrayHint(long tray_opt);
     bool getWinTrayHint(long *tray_opt);
 
-    void setStateHint(long mask, long state);
-    bool getStateHint(long *mask, long *state);
-
+    void setStateHint();
     void setWinHintsHint(long hints);
     long winHints() const { return fWinHints; }
 
@@ -314,7 +312,7 @@ private:
     int haveButtonGrab;
     unsigned int fBorder;
     FrameState fSavedFrameState;
-    long fSavedWinState[2];
+    long fWinStateHint;
     XSizeHints *fSizeHints;
     ClassHint fClassHint;
     XWMHints *fHints;
@@ -367,6 +365,7 @@ private:
         bool net_wm_window_opacity : 1;
         bool net_wm_pid : 1;
         bool mwm_hints : 1;
+        bool win_tray : 1; // no property notify
         bool win_layer : 1; // no property notify
         bool win_icons : 1;
         bool xembed_info : 1;

@@ -325,6 +325,9 @@ void YFrameWindow::doManage(YFrameClient *clientw, bool &doActivate, bool &reque
     if (client()->getNetWMDesktopHint(&workspace))
         setWorkspace(workspace);
 
+    long tray;
+    if (client()->getWinTrayHint(&tray))
+        setTrayOption(tray);
     addAsTransient();
     if (owner())
         setWorkspace(mainOwner()->getWorkspace());
@@ -1146,7 +1149,7 @@ void YFrameWindow::wmSetLayer(long layer) {
     long previous = fWinState;
     setRequestedLayer(layer);
     if (hasbit(previous ^ fWinState, WinStateAbove | WinStateBelow)) {
-        client()->setStateHint(WIN_STATE_ALL, fWinState);
+        client()->setStateHint();
     }
 }
 
@@ -1162,14 +1165,14 @@ void YFrameWindow::wmToggleDoNotCover() {
 
 void YFrameWindow::wmToggleFullscreen() {
     if (isFullscreen()) {
-        setState(WinStateFullscreen | WinStateMaximizedBoth, 0);
+        setState(WinStateFullscreen, None);
     }
     else if (canFullscreen()) {
         if (isUnmapped()) {
             makeMapped();
             xapp->sync();
         }
-        setState(WinStateFullscreen | WinStateMaximizedBoth, WinStateFullscreen);
+        setState(WinStateFullscreen, WinStateFullscreen);
     }
 }
 
@@ -1274,9 +1277,6 @@ void YFrameWindow::restoreHiddenTransients() {
 }
 
 void YFrameWindow::doMaximize(long flags) {
-    if (isFullscreen()) {
-        setState(WinStateFullscreen, None);
-    }
     if (isUnmapped()) {
         makeMapped();
         xapp->sync();
@@ -2718,7 +2718,7 @@ void YFrameWindow::updateState() {
     if (!isManaged() || client()->destroyed())
         return ;
 
-    client()->setStateHint(WIN_STATE_ALL, fWinState);
+    client()->setStateHint();
 
     // some code is probably against the ICCCM.
     // some applications misbehave either way.
@@ -2761,8 +2761,10 @@ bool YFrameWindow::inWorkArea() const {
         return false;
     if (isFullscreen())
         return false;
-    if (getActiveLayer() >= WinLayerDock)
-        return false;
+    if (getActiveLayer() >= WinLayerDock) {
+        if (getActiveLayer() != WinLayerFullscreen)
+            return false;
+    }
     return !fHaveStruts;
 }
 
@@ -2861,7 +2863,7 @@ void YFrameWindow::updateDerivedSize(long flagmask) {
     nw += 2 * borderXN();
     nh += 2 * borderYN();
 
-    if (isFullscreen() || (flagmask & (WinStateFullscreen | WinStateMinimized)))
+    if (isFullscreen() || (flagmask & WinStateMinimized))
         horiz = vert = false;
 
     if (horiz) {
@@ -2871,7 +2873,7 @@ void YFrameWindow::updateDerivedSize(long flagmask) {
             cx = mx + (Mw - nw) / 2;
         else if (!considerHorizBorder)
             cx -= borderXN();
-        if (flagmask & WinStateMaximizedHoriz)
+        if (flagmask & WinStateMaximizedHoriz || isMaximizedHoriz())
             nx = cx;
         else
             nx = x();
@@ -2886,7 +2888,7 @@ void YFrameWindow::updateDerivedSize(long flagmask) {
         else if (!considerVertBorder)
             cy -= borderYN();
 
-        if (flagmask & WinStateMaximizedVert)
+        if (flagmask & WinStateMaximizedVert || isMaximizedVert())
             ny = cy;
         else
             ny = y();
@@ -3013,31 +3015,31 @@ void YFrameWindow::updateLayout() {
     }
     else if (isFullscreen()) {
         // for _NET_WM_FULLSCREEN_MONITORS
-        if (fFullscreenMonitorsTop >= 0 && fFullscreenMonitorsBottom >= 0 &&
-            fFullscreenMonitorsLeft >= 0 && fFullscreenMonitorsRight >= 0) {
-            int x, y;
-            unsigned w, h;
-            int monitor[4] = {
-                fFullscreenMonitorsTop, fFullscreenMonitorsBottom,
-                fFullscreenMonitorsLeft, fFullscreenMonitorsRight
-            };
-            desktop->getScreenGeometry(&x, &y, &w, &h, monitor[0]);
-            YRect r(x, y, w, h);
-            for (int i = 1; i < 4; i++) {
-                desktop->getScreenGeometry(&x, &y, &w, &h, monitor[i]);
-                r.unionRect(x, y, w, h);
-            }
-            setWindowGeometry(r);
+        const int limit = desktop->getScreenCount() - 1;
+        if (inrange(fFullscreenMonitorsTop,    0, limit) &&
+            inrange(fFullscreenMonitorsBottom, 0, limit) &&
+            inrange(fFullscreenMonitorsLeft,   0, limit) &&
+            inrange(fFullscreenMonitorsRight,  0, limit))
+        {
+            YRect t(desktop->getScreenGeometry(fFullscreenMonitorsTop));
+            YRect b(desktop->getScreenGeometry(fFullscreenMonitorsBottom));
+            YRect l(desktop->getScreenGeometry(fFullscreenMonitorsLeft));
+            YRect r(desktop->getScreenGeometry(fFullscreenMonitorsRight));
+            int x = l.xx;
+            int y = t.yy;
+            int w = r.xx + int(r.ww) > x ? r.xx + int(r.ww) - x : int(l.ww);
+            int h = b.yy + int(b.hh) > y ? b.yy + int(b.hh) - y : int(t.hh);
+            setWindowGeometry(YRect(x, y, w, h));
         }
         else if (fullscreenUseAllMonitors) {
-            setWindowGeometry(YRect(0, 0, desktop->width(), desktop->height()));
+            YRect geo(desktop->getScreenGeometry(0));
+            for (int screen = 1; screen <= limit; ++screen) {
+                geo += desktop->getScreenGeometry(screen);
+            }
+            setWindowGeometry(geo);
         }
         else {
-            int xiscreen = desktop->getScreenForRect(posX, posY, posW, posH);
-            int dx, dy;
-            unsigned dw, dh;
-            desktop->getScreenGeometry(&dx, &dy, &dw, &dh, xiscreen);
-            setWindowGeometry(YRect(dx, dy, dw, dh));
+            setWindowGeometry(desktop->getScreenGeometry(getScreen()));
         }
     }
     else {
@@ -3202,7 +3204,7 @@ ref<YIcon> YFrameWindow::clientIcon() const {
 void YFrameWindow::updateProperties() {
     client()->setWorkspaceHint(fWinWorkspace);
     client()->setLayerHint(fWinActiveLayer);
-    client()->setStateHint(WIN_STATE_ALL, fWinState);
+    client()->setStateHint();
 }
 
 void YFrameWindow::updateTaskBar() {
@@ -3373,13 +3375,13 @@ void YFrameWindow::updateNetWMFullscreenMonitors(int t, int b, int l, int r) {
         l != fFullscreenMonitorsLeft ||
         r != fFullscreenMonitorsRight)
     {
+        MSG(("fullscreen monitors: %d %d %d %d", t, b, l, r));
         fFullscreenMonitorsTop = t;
         fFullscreenMonitorsBottom = b;
         fFullscreenMonitorsLeft = l;
         fFullscreenMonitorsRight = r;
-        MSG(("fullscreen monitors: %d %d %d %d", t, b, l, r));
-        client()->setNetWMFullscreenMonitors(t, b, l, r);
-        updateLayout();
+        if (isFullscreen())
+            updateLayout();
     }
 }
 
