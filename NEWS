@@ -1,11 +1,37 @@
-icewm -- history of user-visible changes.  2021-01-02
+icewm -- history of user-visible changes.  2021-01-23
+
+Release icewm-2.1.0 released 2021-01-23
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.0.1...2.1.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (8):
+      Revert "Clarify startMoveSize." to fix issue #540.
+      Split the TaskBarApp class in a button class and an app class for issue
+        #198.
+      Restore icesh setTrayOption and getTrayOption for issue #537. Make support
+        for "_NET_WM_FULLSCREEN_MONITORS" better conformant to EWMH spec. Add
+        "monitors", "frame", "properties" commands to icesh. Make preference
+        FullscreenUseAllMonitors use just all the monitors.
+      Fix dragging task buttons.
+      Disarm button on release of mouse for issue #527.
+      Remember maximized when fullscreen for issues #538 and #533.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Eduard Bloch <blade@debian.org> (3):
+      Option for Alt-F4ing windows in quick-switch
+      Restore the old position in quickswitch on window destruction
+      Option to move the ShowDesktop button to the right side
+
 
 Release icewm-2.0.1 released 2021-01-02
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.0.0...2.0.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (15):
+Bert Gijsbers <gijsbers@science.uva.nl> (16):
       Handle horizontal scroll keys in window list window.
       Search for icewm icon for internal windows.
       Fix setting option values for #535.
@@ -25,6 +51,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (15):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.0.1 release
 
 Aleš Kastner <alkas@volny.cz> (1):
       Translated using Weblate (Czech)
@@ -395,69 +422,4 @@ Sarah Kriesch <ada.lovelace@gmx.de> (1):
 Stanislav Brabec <sbrabec@suse.cz> (1):
       Merge remote-tracking branch 'weblate/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
-
-
-Release icewm-1.8.2 released 2020-09-08
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.8.1...1.8.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (32):
-      Update Marko's copy dates for #285.
-      CMake support for LOGEVENTS.
-      Add find for YRefArray.
-      Fix the inappropriate use of globals in the context of a dynamically
-        loaded configuration for #483.
-      Add fsmart resize.
-      Add -C option for copyright.
-      Add -C option for copyright.
-      Add -C option for copyright.
-      More comparison operators.
-      Several fixes for reading from pipes with timeouts for issue #487.
-      Remove unused set_nb.
-      Reduce LOC in read_pipe.
-      Keep value of fTransientFor for later.
-      Add userhome, dollar_expansion and tilde_expansion functions. Let
-        path_lookup also perform dollar_expansion and tilde_expansion. In
-        menuprog and menuprogreload do dollar_expansion and tilde_expansion.
-        Move event logging from misc.cc to its own file logevent.cc.
-      Solaris needs memset from string.h for FD_SET.
-      Improve use of userhome in tilde_expansion.
-      Revert "Extra control flow checking", because the strict exit code
-        checking makes it too brittle. The CI build now also fails.
-      Benefit from userhome when locating home directory.
-      Improve VERSION_RAW.
-      Permit non-gnu date.
-      Update version to 1.8.1.
-      Reduce AC_CHECK_FUNCS and AC_CHECK_HEADERS to essentials.
-      Reduce CHECK_FUNCTION and CHECK_INCLUDE to essentials.
-      Ignore a zero file size for /proc filesystem for issue #488.
-      Enable inclusion of sys/sysctl.h for sysctlbyname for FreeBSD.
-      Add x11_ldflags to cmake genpref build.
-      Make cmake work for BSD+Solaris.
-      Also for strtest.
-      Emulate gmake for Arch.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.2 release
-
-Eduard Bloch <blade@debian.org> (10):
-      Install dev packages on Ubuntu
-      Cope with shallow clones
-      Basic autoconf CI setup
-      More CI build configs with more and less features
-      Added strtest exection in ctest
-      Rename LOGEVENTS option to follow existing pattern
-      Update apt index before installing dependencies
-      ~ expansion is modified by fakeroot, don't consider it
-      Extra control flow checking
-      Fixed and extended fakeroot detection and exceptions
-
-Code7R <Code7R@users.noreply.github.com> (2):
-      Create cmake.yml
-      Merge pull request #485 from bbidulock/icewm-1-4-BRANCH_CI
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Update Portuguese (pt) translations (#486)
 
