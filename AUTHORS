@@ -1,16 +1,17 @@
-icewm -- authors file.  2020-10-29
+icewm -- authors file.  2021-01-24
 
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
 Author: Eduard Bloch <blade@debian.org>
-Author: Panwar <caspian7pena@gmail.com>
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
 Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
+Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Author: David Medina <medipas@gmail.com>
 Author: Freek de Kruijf <freek@opensuse.org>
 Author: Aleš Kastner <alkas@volny.cz>
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
 Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Author: David Medina <medipas@gmail.com>
+Author: Claudio Cesar de Sá <ccs1664@gmail.com>
+Author: Panwar <caspian7pena@gmail.com>
 Author: Stanislav Brabec <sbrabec@suse.cz>
 Author: Paolo Za <zapaolo@email.it>
 Author: Code7R <Code7R@users.noreply.github.com>
@@ -39,8 +40,6 @@ Author: mohammad alhargan <malham1@gmail.com>
 Author: Kukuh Syafaat <kukuh@syafaat.id>
 Author: scootergrisen <scootergrisen@gmail.com>
 Author: Brian Bidulock <bidulock@openss7.org>
-Author: gijsbers <gijsbers@users.noreply.github.com>
-Author: Nathan <ndowens04@gmail.com>
 Author: Kevin Suo <suokunlong@126.com>
 Author: Artem Polishchuk <tim77@users.noreply.github.com>
 Author: Alessio Adamo <alessio.adamo@gmail.com>
@@ -90,6 +89,7 @@ Author: Jeff Woods <klaatu@fnordco.com>
 Author: Wnereiz Z <wnereiz@eienteiland.org>
 Author: Nathan Follens <nthn@unseen.is>
 Author: Batuhan Osman Taşkaya <batuhanosmantaskaya@gmail.com>
+Author: gijsbers <gijsbers@users.noreply.github.com>
 Author: Krandelbord <Krandelbord@github.com>
 Author: Pro-pra <pro2_2000@mail.ru>
 Author: Michal Suchanek <msuchanek@suse.com>

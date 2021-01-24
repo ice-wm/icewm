@@ -28,7 +28,7 @@ AC_SUBST([DATE])
 MDOCDATE='January 24, 2021'
 AC_SUBST([MDOCDATE])
 
-BRANCH='icewm-1-4-BRANCH'
+BRANCH='2.1.1'
 AC_SUBST([BRANCH])
 
 APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icehelp'
@@ -98,7 +98,7 @@ LT_INIT([dlopen])
 LT_LANG([C++])
 AC_SUBST([LIBTOOL_DEPS])
 
-AM_GNU_GETTEXT_VERSION([0.19.2])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
 
 AC_ARG_ENABLE([i18n],
