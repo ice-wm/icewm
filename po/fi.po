@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.14\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2020-06-29 19:44+0000\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1591,7 +1591,7 @@ msgstr "Järjestä _kuvakkeet"
 msgid "_Refresh"
 msgstr "_Päivitä"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 msgid "Hide Taskbar"
 msgstr "Piilota tehtäväpalkki"
 
@@ -1607,7 +1607,7 @@ msgstr "Ikkunaluettelon valikko"
 msgid "Show Desktop"
 msgstr "Näytä työpöytä"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 msgid "Show Taskbar"
 msgstr "Näytä tehtäväpalkki"
 
@@ -1659,35 +1659,35 @@ msgstr "Tuntematon avainnimi %s %s:ssa"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Virheellinen argumentti: %s kohteelle %s [%d,%d]"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Bittikartan \"%s\" lataaminen epäonnistui: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Bittikartan \"%s\" lataaminen epäonnistui"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "BUGI? Imlib onnistui lukemaan \"%s\""
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr ""
 "BUGI? Virheellinen XPM-otsikko mutta Imlib onnistui tulkitsemaan \"%s\""
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 "BUGI? Odottamaton XPM-tiedoston loppu mutta Imlib onnistui tulkitsemaan \"%s"
 "\""
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "BUGI? Odottamaton merkki mutta Imlib onnistui tulkitsemaan \"%s\""

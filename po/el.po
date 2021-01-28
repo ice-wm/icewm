@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2020-05-26 14:39+0000\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1795,7 +1795,7 @@ msgstr "Παράθεση _εικονιδίων"
 msgid "_Refresh"
 msgstr "_Ανανέωση"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 msgid "Hide Taskbar"
 msgstr "Απόκρυψη της γραμμής εργασιών"
 
@@ -1811,7 +1811,7 @@ msgstr "Μενού λίστας παράθυρων"
 msgid "Show Desktop"
 msgstr "Εμφάνιση της επιφάνεια εργασίας"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 msgid "Show Taskbar"
 msgstr "Προβολή της γραμμής εργασιών"
 
@@ -1863,36 +1863,36 @@ msgstr "Άγνωστο όνομα κλειδιού %s στο %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Λάθος όρισμα: %s για %s [%d,%d]"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Η φόρτωση του pixmap \"%s\" απέτυχε: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Η φόρτωση του pixmap \"%s\" απέτυχε"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "ΣΦΑΛΜΑ; Το Imlib ήταν σε θέση να διαβάσει από \"%s\""
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr ""
 "ΣΦΑΛΜΑ; Παραμορφωμένη κεφαλίδα XPM, αλλά το Imlib ήταν σε θέση να αναλύσει "
 "το \"%s\""
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 "ΣΦΑΛΜΑ; Αναπάντεχο τέλος του αρχείου XPM, αλλά το Imlib ήταν σε θέση να "
 "αναλύσει το \"%s\""
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr ""

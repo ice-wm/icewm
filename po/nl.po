@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.23\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2020-12-14 17:26+0000\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
 "Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1729,7 +1729,7 @@ msgstr "_Pictogrammen opruimen"
 msgid "_Refresh"
 msgstr "_Verversen"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 msgid "Hide Taskbar"
 msgstr "Taakbalk verbergen"
 
@@ -1745,7 +1745,7 @@ msgstr "Llijstmenu van venster"
 msgid "Show Desktop"
 msgstr "Bureaublad tonen"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 msgid "Show Taskbar"
 msgstr "Taakbalk tonen"
 
@@ -1797,34 +1797,34 @@ msgstr "Onbekende toets %s in %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Ongeldig argument: %s voor %s [%d,%d]"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Fout bij het laden van plaatje »%s«: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Laden van afbeelding »%s« mislukt"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "FOUT? Imlib was in staat »%s« te lezen"
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr "BUG? Ongeldige XPM-Header (Imlib heeft het bestand »%s« toch gelezen)"
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 "BUG? Onverwacht einde van het XPM-bestand (Imlib heeft het bestand »%s« toch "
 "gelezen)"
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "BUG? Onverwacht teken maar Imlib heeft \"%s\" toch kunnen ontleden"

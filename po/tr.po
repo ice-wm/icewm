@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.12\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2018-08-03 22:07+0000\n"
 "Last-Translator: Ad Soyad <kalemlik100@yandex.com>\n"
 "Language-Team: Turkish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1586,7 +1586,7 @@ msgstr "_Simgeleri Düzenle"
 msgid "_Refresh"
 msgstr "Ye_nile"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -1609,7 +1609,7 @@ msgstr "Pencere listesi menüsü"
 msgid "Show Desktop"
 msgstr "Ma_saüstü"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -1666,32 +1666,32 @@ msgstr "%s'te bilimeyen anahtar adı %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Kötü Argüman: %s için %s"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "«%s» pixmap'i yüklenirken hata oluştu: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "«%s» pixmap'i yüklenemedi"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "BUG? Imlib okuyamıyor «%s»"
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr "BUG? Hatalı XPM başlığı ancak Imlib parse edemedi «%s»"
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr "BUG? Beklenmeyen XPM dosyası sonu ancak Imlib parse edemedi «%s»"
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, fuzzy, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "BUG? Beklenmeyen karakter ancak Imlib parse edemedi «%s»"

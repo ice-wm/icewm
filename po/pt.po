@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.6.6.83\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2020-12-14 22:26+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.opensuse.org/projects/icewm/"
@@ -1720,7 +1720,7 @@ msgstr "Organizar íco_nes"
 msgid "_Refresh"
 msgstr "_Atualizar"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 msgid "Hide Taskbar"
 msgstr "Ocultar barra de tarefas"
 
@@ -1736,7 +1736,7 @@ msgstr "Menu de lista de janelas"
 msgid "Show Desktop"
 msgstr "Mostrar ambiente de trabalho"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 msgid "Show Taskbar"
 msgstr "Mostrar barra de tarefas"
 
@@ -1788,32 +1788,32 @@ msgstr "Nome de chave %s desconhecido em %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Argumento inválido: %s para %s [%d,%d]"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Carregamento do pixmap \"%s\" falhou: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Carregamento do pixmap \"%s\" falhou"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "ERRO? lmlib pôde ler \"%s\""
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr "ERRO? Cabeçalho XPM mal formado mas lmlib pôde analisar \"%s\""
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr "ERRO? Final do ficheiro XPM imprevisto mas lmlib pôde analisar \"%s\""
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "ERRO? Caractere imprevisto mas lmlib pôde analisar \"%s\""

@@ -1,11 +1,78 @@
-icewm -- history of user-visible changes.  2021-01-23
+icewm -- history of user-visible changes.  2021-01-24
+
+Release icewm-2.1.1 released 2021-01-24
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.1.0...2.1.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (51):
+      Prepare 1.5.3 release
+      1.5.3
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.5.4 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.5.5 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.6.0 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.6.1 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.6.2 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.6.3 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.6.4 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.6.5 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.6.6 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.7.0 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.8.0 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.8.1 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.8.2 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.8.3 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.8.3 release bis
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.9.0 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.9.1 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 1.9.2 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.0.0 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.0.1 release
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.1.0 release
+      Provide drawable context when creating pixmap cursors with Imlib2 for
+        issue #541.
+      Don't unarm menu popup buttons for issue #527.
+      Fix issue #542 for texturing background of task pane.
+      Improve the isValid test for Imlib2 custom cursors.
+      Detail.
+      Moving towards 2.1.1.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+
+Nathan <ndowens04@gmail.com> (1):
+      Missing ytimer link
+
+gijsbers <gijsbers@users.noreply.github.com> (1):
+      Merge pull request #7 from ndowens/patch-1
+
 
 Release icewm-2.1.0 released 2021-01-23
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.0.1...2.1.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (8):
+Bert Gijsbers <gijsbers@science.uva.nl> (9):
       Revert "Clarify startMoveSize." to fix issue #540.
       Split the TaskBarApp class in a button class and an app class for issue
         #198.
@@ -19,6 +86,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (8):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.1.0 release
 
 Eduard Bloch <blade@debian.org> (3):
       Option for Alt-F4ing windows in quick-switch
@@ -336,90 +404,4 @@ Panwar <caspian7pena@gmail.com> (1):
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
-
-
-Release icewm-1.8.3 released 2020-09-17
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.8.2...1.8.3
-
-Bert Gijsbers <gijsbers@science.uva.nl> (32):
-      TaskBar cannot fullscreen.
-      Use wmHide or wmShow to hide or show the taskbar for #489.
-      Restore the translation which was overwritten by Weblate.
-      Support "toggleState Fullscreen". Show state detail for spy ClientMessage.
-         Support "iconic" and "normal" commands for WM_CHANGE_STATE.
-      Show more detail in logConfigureRequest and logClientMessage.
-      More succinct _NET_WM_STATE implementation.
-      Send just one ConfigureNotify message per resize. In setState first
-        compute size and relayout before updating _NET_WM_STATE and _WIN_LAYER
-        for issue #491 and postpone low-priority updates for different timing
-        for GTK-menubar terminals.
-      Only load icon if needed.
-      Fix -list. Add +T. Print CARDINALs as unsigned. Show Above window handle
-        for ConfigureNotify.
-      Merge WM_WINDOW_ROLE and WINDOW_ROLE.
-      Postpone taskbar app status updates until idle.
-      Make switch icons opaque for 32-bit visuals.
-      Check if icon is null.
-      Simplify setState with deltaState.
-      Add WinStateFullscreen to the visible _WIN_STATE bits.
-      make update-po
-      Simplify removing a frame app from the taskbar.
-      Check if a map request is for a mapped window.
-      Send synthetic ConfigureNotify events for resizing only when required by
-        the ICCCM specification. Send synthetic ConfigureNotify events for
-        positioning whenever this is required by the ICCCM specification. Fix
-        for EWMH restack raise requests. Reflect layer changes in the ABOVE and
-        BELOW flags in the EWMH _NET_WM_STATE property. Only update the frame
-        position when it really has changed.
-      Prefer tlog over printf when logging.
-      Fix tooltip positioning.
-      Reduce number of workarea updates for taskbar. Only let taskbar have
-        struts if at top or bottom of screen. Keep global positioning of
-        internal clients local to clients. Fix for autohide taskbar not wanting
-        to hide. Support TaskBarAutoHide for TaskBarKeepBelow.
-      Make it compile on G++ 7.5.0.
-      Use pragmas to prevent compiler complaints if LOGEVENTS.
-      Prevent compiler warning on chdir.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.3 release
-      Check if filedescriptor is valid and fix off-by-one allocation error.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.3 release bis
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (4):
-      Added translation using Weblate (Portuguese)
-      Translated using Weblate (Portuguese)
-      Translated using Weblate (Portuguese)
-      Translated using Weblate (Portuguese)
-
-Arif Budiman <arifpedia@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Paolo Za <zapaolo@email.it> (1):
-      Translated using Weblate (Italian)
-
-Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Sarah Kriesch <ada.lovelace@gmx.de> (1):
-      Translated using Weblate (German)
-
-Stanislav Brabec <sbrabec@suse.cz> (1):
-      Merge remote-tracking branch 'weblate/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
 

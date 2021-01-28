@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2018-04-14 08:08+0000\n"
 "Last-Translator: Andriy Bandura <andriykopanytsia@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1840,7 +1840,7 @@ msgstr "Впорядкувати _іконки"
 msgid "_Refresh"
 msgstr "_Оновити"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -1862,7 +1862,7 @@ msgstr "Меню списоку вікон"
 msgid "Show Desktop"
 msgstr "Показати стільницю"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -1919,32 +1919,32 @@ msgstr "Невідомий символ %s у %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Невірний argument: %s для %s"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Помилка завантаження мапи пікселів \"%s\": %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Помилка завантаження мапи пікселів \"%s\""
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "ХИБА? Imlib прочитав \"%s\""
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr "ХИБА? Поганий заголовок XPM, але Imlib проаналізував \"%s\""
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr "ХИБА? Неочікуваний кінець файла XPM, але Imlib проаналізував \"%s\""
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "ХИБА? Неочікуваний символ, але Imlib проаналізував \"%s\""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2020-12-14 04:26+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1733,7 +1733,7 @@ msgstr "アイコン整列 (_I)"
 msgid "_Refresh"
 msgstr "再描画 (_R)"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 msgid "Hide Taskbar"
 msgstr "タスクバーを隠す"
 
@@ -1749,7 +1749,7 @@ msgstr "ウインドウ一覧メニュー"
 msgid "Show Desktop"
 msgstr "デスクトップの表示"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 msgid "Show Taskbar"
 msgstr "タスクバーを表示"
 
@@ -1801,36 +1801,36 @@ msgstr "%2$s 内に未知のキー名 %1$s があります"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "無効な引数: %2$s に対して %1$s [%3$d,%4$d]"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "ピクセルマップ \"%s\" の読み込みに失敗しました: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "ピクセルマップ \"%s\" の読み込みに失敗しました"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "バグ？ imlib が \"%s\" を読み込めませんでした"
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr ""
 "バグ？ \"%s\" の XPM ヘッダが正しくありませんが、 imlib 側で読み込めてしまい"
 "ました"
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 "バグ？ \"%s\" の XPM ファイルの終了部が正しくありませんが、 imlib 側で読み込"
 "めてしまいました"
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr ""

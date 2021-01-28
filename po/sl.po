@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sl\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2004-10-03 21:56+0200\n"
 "Last-Translator: Jernej Kovacic <jkovacic AT email DOT si>\n"
 "Language-Team: Slovenian <translator-team-sl@lists.sourceforge.net>\n"
@@ -1608,7 +1608,7 @@ msgstr "Razporedi _ikone"
 msgid "_Refresh"
 msgstr "Os_veži"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -1630,7 +1630,7 @@ msgstr "Menu s seznamom oken"
 msgid "Show Desktop"
 msgstr "Prikaži namizje"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -1687,34 +1687,34 @@ msgstr "Nezano ključno ime %s v %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Slab argument: %s za %s"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Nalaganje bitne slike \"%s\" ni uspelo: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Nalaganje slike \"%s\" ni uspelo"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "Hrošč? Imlib je lahko prebral \"%s\""
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr "Hrošč? Popačeno zaglavje XPM, vendar je Imlib lahko razčlenil \"%s\""
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 "Hrošč? Nepričakovan konec datoteke XPM, vendar je Imlib lahko razčlenil \"%s"
 "\""
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, fuzzy, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "Hrošč? Nepričakovan znak, vendar je Imlib lahko razčlenil \"%s\""

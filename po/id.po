@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2020-12-21 14:26+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/icewm/"
@@ -1718,7 +1718,7 @@ msgstr "Atur _Ikon"
 msgid "_Refresh"
 msgstr "Sega_rkan"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 msgid "Hide Taskbar"
 msgstr "Sembunyikan bilah tugas"
 
@@ -1734,7 +1734,7 @@ msgstr "Menu Daftar Jendela"
 msgid "Show Desktop"
 msgstr "Tampilkan Destop"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 msgid "Show Taskbar"
 msgstr "Tampilkan bilah tugas"
 
@@ -1786,34 +1786,34 @@ msgstr "Nama kunci %s tidak dikenal dalam %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Argumen buruk: %s untuk %s [%d,%d]"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Gagal memuat pixmap \"%s\" : %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Gagal memuat pixmap \"%s\""
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "KUTU? Imlib dapat membaca \"%s\""
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr "Kutu? Tajuk XPM salah format tetapi Imlib dapat menguraikan \"%s\""
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 "KUTU? Akhir berkas XPM yang tidak terduga tetapi Imlib dapat menguraikan \"%s"
 "\""
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "KUTU? Karakter tidak terduga tetapi Imlib dapat menguraikan \"%s\""

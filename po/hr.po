@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2001-03-25 17:00+GMT1\n"
 "Last-Translator: Vlatko Kosturjak <kost@iname.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
@@ -1490,7 +1490,7 @@ msgstr "Posloži _Ikone"
 msgid "_Refresh"
 msgstr "_Osvježi"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -1510,7 +1510,7 @@ msgstr "Popis prozora"
 msgid "Show Desktop"
 msgstr "_Radno Okružje"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -1569,33 +1569,33 @@ msgstr "Nepoznato ime ključa %s u %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Loš argument: %s za %s"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, fuzzy, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Učitavanje pixmap-e %s neuspjelo"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, fuzzy, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Učitavanje pixmap-e %s neuspjelo"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, fuzzy, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "GREŠKA? Imlib je uspio pročitati %s"
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, fuzzy, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr "GREŠKA? nepravilno XPM zaglavlje ali Imlib je uspio obraditi %s"
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, fuzzy, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 "GREŠKA? nepredviđeni kraj XPM datoteke ali Imlib ju je uspio obraditi %s"
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, fuzzy, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "GREŠKA? Neočekivani karakter ali Imlib je uspio obraditi %s"

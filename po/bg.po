@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.10\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2017-02-26 21:51+0000\n"
 "Last-Translator: Shyukri Shyukriev <shshyukriev@suse.com>\n"
 "Language-Team: Bulgarian <https://l10n.opensuse.org/projects/icewm/icewm-1-3-"
@@ -1603,7 +1603,7 @@ msgstr "Подрежда _Икони"
 msgid "_Refresh"
 msgstr "_Опресняване"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -1625,7 +1625,7 @@ msgstr "Меню Списък на прозорци"
 msgid "Show Desktop"
 msgstr "Покажи Десктоп"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -1682,32 +1682,32 @@ msgstr "Непознато име на ключ %s в %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Неправилен аргумент: %s за %s"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Зареждане на изображение \"%s\" пропадна: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Зареждане на pixmap \"%s\" се провали"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "ГРЕШКА? Imlib прочете \"%s\""
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr "ГРЕШКА? Malformed XPM header but Imlib was able to parse \"%s\""
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr "ГРЕШКА? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, fuzzy, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "ГРЕШКА? Unexpected characted but Imlib was able to parse \"%s\""

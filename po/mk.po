@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-01-23 01:12+0100\n"
+"POT-Creation-Date: 2021-01-24 14:10+0100\n"
 "PO-Revision-Date: 2006-01-26 23:29+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team:  <mk@li.org>\n"
@@ -1601,7 +1601,7 @@ msgstr "Распореди _икони"
 msgid "_Refresh"
 msgstr "_Освежи"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -1623,7 +1623,7 @@ msgstr "Мени со листа на прозорци"
 msgid "Show Desktop"
 msgstr "Прикажи раб. површина"
 
-#: src/wmtaskbar.cc:962
+#: src/wmtaskbar.cc:963
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -1680,35 +1680,35 @@ msgstr "Непознато име на тастер %s во %s"
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Лош аргумент: %s за %s"
 
-#: src/ycursor.cc:111
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Вчитувањето на мапата пиксели „%s“ не успеа: %s"
 
-#: src/ycursor.cc:137
+#: src/ycursor.cc:138
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Вчитувањето на пиксел-мапата „%s“ не успеа"
 
-#: src/ycursor.cc:181
+#: src/ycursor.cc:182
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr "БУБАЧКА? Imlib успеа да го прочита „%s“"
 
-#: src/ycursor.cc:206
+#: src/ycursor.cc:207
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr ""
 "БУБАЧКА? Лошо формирано заглавие на XPM, но Imlib успеа да го анализира „%s“"
 
-#: src/ycursor.cc:214
+#: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 "БУБАЧКА? Неочекуван крај на XPM-датотеката, но Imlib успеа да го анализира "
 "„%s“"
 
-#: src/ycursor.cc:217
+#: src/ycursor.cc:218
 #, fuzzy, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "БУБАЧКА? Неочекуван знак, но Imlib успеа да го анализира „%s“"
