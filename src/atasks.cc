@@ -71,16 +71,16 @@ void TaskBarApp::repaint() {
 }
 
 TaskButton::TaskButton(TaskPane* taskPane):
-    YWindow(taskPane)
+    YWindow(taskPane),
+    fTaskPane(taskPane),
+    fActive(nullptr),
+    fRepainted(false),
+    fShown(true),
+    fFlashing(false),
+    fFlashOn(false),
+    fFlashStart(zerotime()),
+    selected(0)
 {
-    fTaskPane = taskPane;
-    fActive = nullptr;
-    fRepainted = false;
-    selected = 0;
-    fShown = true;
-    fFlashing = false;
-    fFlashOn = false;
-    fFlashStart = zerotime();
     setParentRelative();
 }
 
@@ -634,6 +634,7 @@ void TaskPane::insert(TaskButton* task) {
 void TaskPane::remove(TaskButton* button) {
     if (button) {
         findRemove(fTasks, button);
+        relayout();
     }
 }
 
