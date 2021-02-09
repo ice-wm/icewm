@@ -1,55 +1,11 @@
-icewm -- history of user-visible changes.  2021-01-24
+icewm -- history of user-visible changes.  2021-02-09
 
-Release icewm-2.1.1 released 2021-01-24
+Release icewm-2.1.2 released 2021-02-09
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 2.1.0...2.1.1
+git shortlog -e -n -w80,6,8 2.1.1...2.1.2
 
-Bert Gijsbers <gijsbers@science.uva.nl> (51):
-      Prepare 1.5.3 release
-      1.5.3
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.5.4 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.5.5 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.1 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.2 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.3 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.4 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.5 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.6 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.7.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.1 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.2 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.3 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.3 release bis
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.1 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.2 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.0.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.0.1 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.1.0 release
+Bert Gijsbers <gijsbers@science.uva.nl> (19):
       Provide drawable context when creating pixmap cursors with Imlib2 for
         issue #541.
       Don't unarm menu popup buttons for issue #527.
@@ -59,12 +15,33 @@ Bert Gijsbers <gijsbers@science.uva.nl> (51):
       Moving towards 2.1.1.
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
+      Prepare 2.1.1 release
+      Only add a separator if previous item is not.
+      Create a Settings submenu to reduce Start menu items for issue #543.
+      Add 'urgent' action to icesh.
+      Initialize TaskButton object.
+      Remove updateUrgency, fWmUrgency, fClientUrgency, fOldState, fOldLayer
+        from frames. Remove the urgent state flag from frame when gaining or
+        losing focus.
+      Free empty settings menu.
+      Add test for XShm extension+pixmaps.
+      Relayout task buttons whenever a task button is removed for issue #548.
+      Preparing 2.1.2.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
 
-Nathan <ndowens04@gmail.com> (1):
-      Missing ytimer link
+Eduard Bloch <blade@debian.org> (1):
+      Don't abort directory scanning on bad menu items
 
-gijsbers <gijsbers@users.noreply.github.com> (1):
-      Merge pull request #7 from ndowens/patch-1
+
+Release icewm-2.1.1 released 2021-01-28
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.1.0...2.1.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (1):
+      Commit release 2.1.1.
 
 
 Release icewm-2.1.0 released 2021-01-23
@@ -278,130 +255,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (19):
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
       Prepare 1.9.1 release
-
-
-Release icewm-1.9.0 released 2020-10-29
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.8.3...1.9.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (52):
-      Update to 1.8.3
-      Properly handle name lookup failure for mailboxes for issue #493.
-      Don't reconfigure the taskbar if unnecessary.
-      Allow 'Above' as a synonym for 'OnTop'.
-      Add --valgrind and --catchsegv options to icewm-session for debugging.
-      Add setType and getType to icesh for _NET_WM_WINDOW_TYPE.
-      Only test subwindow if indicators are created.
-      Always send one synthetic ConfigureNotify on initial window map for issue
-        #492. Remove resize indicators when unneeded. Reduce redraws in title
-        bar. Support incomplete _MOTIF_WM_HINTS property for mlterm.
-      Add missing getProtocols to message dialog to fix issue #494.
-      Help on debugging options.
-      Restore Motif hints functionality.
-      Workaround for the MWM ALL hack.
-      Print property details for WM_STATE and _WIN_STATE.  Show Fullscreen in
-        symbols.
-      Avoid compiler warning for chdir.
-      Make YProperty iterable.
-      Simplify and reduce LOC. Optimize frame doManage to eliminate a call to
-        updateMwmHints. In updateMwmHints try without configureClient. Add
-        FULLSCREEN to _NET_WM_ACTIONs. Benefit from iterable YProperty.
-      make update-po
-      Benefit from iterable YProperty.
-      Improved response to changes in Motif hint property which avoids resizing
-        client when border toggles.
-      Add pseudo state WinStateUnmapped
-      Check only one menu entry for fullscreen or maximized. Fix minimize check.
-      Several fixes for correct PagerShowPreview updates for #496. Fix desktop
-        mini icon for fullscreen windows. Allow at most one of fullscreen or
-        maximized. Allow at most one of rollup, minimized, hidden. Don't
-        activate fullscreen window on startup when it is unmapped. Handle
-        _NET_WM_STATE change requests via the frame wm functions.
-      Add sticky, unsticky, borderless, bordered.
-      More succinct.
-      Typo
-      Prefer to handle client message requests via actionPerformed for
-        consistency. Make AllWorkspaces consistent with Sticky.
-      Use isAllWorkspaces instead of isSticky, because the latter was unused by
-        icewm.
-      Set check flag for AllWorkspaces.
-      Add missing spaces.
-      Assume the _NET_RESTACK_WINDOW support from 1.8.3.
-      Fix requests switching between different maximizations. Move
-        _NET_RESTACK_WINDOW request to its dedicated function.
-      Eliminate some preprocessor checks.
-      Fixes for TaskBarAutoHide for #499. Don't hide when taskbar is collapsed.
-      Handle requests for layer changes via actionPerformed to improve
-        consistency.
-      Optimize loading of configuration.
-      Simplify introductions.
-      Fix compilation warnings. Fix iteration errors.
-      Update logevents.
-      In progpath insist on a regular file.
-      Prefer actionPerformed on window key bindings.
-      Workaround for non-standard behavior of xnec2c in issue #503. Simplify
-        mapClient.
-      Prefer actionPerformed on window key bindings.
-      Record and size resizes when fullscreen to saved size hints. Permit size
-        hints width_inc and height_inc to be zero to disable maximization.
-      Revert "Stop overpainting clock every second when not needed" Because it
-        causes valgrind errors like: "Conditional jump or move depends on
-        uninitialised value(s)". It also changes lines for which there is no
-        justification to change them. This reverts commit
-        54f8e02959e73f5a7fce7ab6a84a45943bd46a90.
-      Use accessors. Fix for Xmgrace in #506. Simplify manageClient.
-      Improve meaning of taskbar edge trigger timer.
-      Prevent a frame without a client.
-      Use default parameter of unmanage.
-      make update-po
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.0 release
-
-Eduard Bloch <blade@debian.org> (15):
-      Add recent icons to AM
-      Fix invalid application type
-      Also drop the menu category from session description
-      Inline an external data fetching function
-      Drop extra functionality for ISDN status display
-      Compacting the network colleting classes even further
-      Work around compiler warnings on PowerPC
-      Improve Graphics::drawStringEllipsis
-      Revival of Unicode Ellipsis integration
-      Stop overpainting clock every second when not needed
-      Set override flags consistently in YXftFont
-      Merge remote-tracking branch 'bbidulock/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      More use of unicode ellipsis
-      Apply icon theme blacklisting also to private dirs
-      Simplify basename extraction
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Panwar <caspian7pena@gmail.com> (1):
-      Translated using Weblate (Hindi)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 

@@ -1,5 +1,235 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 9a26c48c2a3eec09d22d8aa3b0c8ba88cb4c74e3
+Merge: 84bcd921 74069656
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 9 18:54:47 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 74069656ed21b9f07e0ff8adfe2a5461072ab522
+Merge: 6c645294 23db4bc2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 9 18:52:15 2021 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 23db4bc248cc2b23b4c909f0b537f87aded7d995
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 9 18:50:31 2021 +0100
+
+    Preparing 2.1.2.
+
+ VERSION      | 2 +-
+ configure.ac | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 93f4b37aacb40f21d58cf4560757b5b8572eb3fe
+Author: Eduard Bloch <blade@debian.org>
+Date:   Sat Feb 6 11:17:01 2021 +0100
+
+    Don't abort directory scanning on bad menu items
+
+    Fix from issue #546 .
+
+ src/fdomenu.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit e76644944b994ba47bbac649f1c3c0598b6964dd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Feb 4 11:22:03 2021 +0100
+
+    Relayout task buttons whenever a task button is removed for issue #548.
+
+ src/atasks.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 73535fc3f17a04e73bfaf7a9554819058b2d8bcd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 2 20:19:24 2021 +0100
+
+    Add test for XShm extension+pixmaps.
+
+ src/wmapp.cc  | 12 +++++++++---
+ src/ywindow.h |  7 +++++++
+ src/yxapp.cc  | 11 +++++++++++
+ 3 files changed, 27 insertions(+), 3 deletions(-)
+
+commit e860a7d81ee12064ca0a10f7a7a47bb5c490e2c9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 2 20:17:38 2021 +0100
+
+    Free empty settings menu.
+
+ src/wmprog.cc | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit e03c768f19afec9af6000452ea5b5143e8454fa5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 2 20:14:24 2021 +0100
+
+    Remove updateUrgency, fWmUrgency, fClientUrgency, fOldState, fOldLayer
+    from frames. Remove the urgent state flag from frame when gaining or
+    losing focus.
+
+ src/wmclient.cc   | 40 ++++++++++++++++------------------------
+ src/wmclient.h    | 11 ++++++-----
+ src/wmframe.cc    | 51 +++++++++++++++++----------------------------------
+ src/wmframe.h     |  8 +-------
+ src/wmminiicon.cc |  2 +-
+ 5 files changed, 41 insertions(+), 71 deletions(-)
+
+commit e7a87348879b9cef5db06431a789a1c5c3633798
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 2 20:13:28 2021 +0100
+
+    Initialize TaskButton object.
+
+ src/atasks.cc | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit c01456ba31c790c13834d031fa344a7ccc8ff45a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 2 20:13:01 2021 +0100
+
+    Add 'urgent' action to icesh.
+
+ man/icesh.pod | 4 ++++
+ src/icesh.cc  | 6 +++++-
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+commit 84bcd921a0306323d5fa662ba34cd06989455635
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 28 21:05:52 2021 +0100
+
+    Commit release 2.1.1.
+
+ AUTHORS          |   5 +-
+ ChangeLog        | 929 +++++++++++++++++----------------------------------
+ NEWS             | 158 ++++-----
+ README.md        |  38 +--
+ RELEASE.md       |   2 +-
+ VERSION          |   2 +-
+ configure.ac     |  12 +-
+ man/icewm.pod    |   4 +
+ po/ar.po         |  18 +-
+ po/be.po         |  18 +-
+ po/bg.po         |  18 +-
+ po/ca.po         |  18 +-
+ po/cs.po         |  18 +-
+ po/da.po         |  18 +-
+ po/de.po         |  18 +-
+ po/el.po         |  18 +-
+ po/en.po         |  18 +-
+ po/es.po         |  18 +-
+ po/fi.po         |  18 +-
+ po/fr.po         |  18 +-
+ po/he.po         |  18 +-
+ po/hr.po         |  18 +-
+ po/hu.po         |  18 +-
+ po/icewm.pot     |  20 +-
+ po/id.po         |  18 +-
+ po/it.po         |  18 +-
+ po/ja.po         |  18 +-
+ po/ko.po         |  18 +-
+ po/lt.po         |  18 +-
+ po/lv.po         |  18 +-
+ po/mk.po         |  18 +-
+ po/nb.po         |  18 +-
+ po/nl.po         |  18 +-
+ po/no.po         |  18 +-
+ po/pl.po         |  18 +-
+ po/pt.po         |  18 +-
+ po/pt_BR.po      |  18 +-
+ po/ro.po         |  18 +-
+ po/ru.po         |  18 +-
+ po/sk.po         |  18 +-
+ po/sl.po         |  18 +-
+ po/sv.po         |  18 +-
+ po/tr.po         |  18 +-
+ po/uk.po         |  18 +-
+ po/vi.po         |  18 +-
+ po/zh_CN.po      |  18 +-
+ po/zh_TW.po      |  18 +-
+ src/wmtaskbar.cc |   1 +
+ src/ybutton.cc   |   9 +-
+ src/ycursor.cc   |   5 +-
+ 50 files changed, 764 insertions(+), 1105 deletions(-)
+
+commit bc0ddd726342a9068edfa7c1405936c6c6014831
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jan 25 13:36:32 2021 +0100
+
+    Create a Settings submenu to reduce Start menu items for issue #543.
+
+ src/wmprog.cc | 76 ++++++++++++++++++++-----------------------------------
+ 1 file changed, 28 insertions(+), 48 deletions(-)
+
+commit 69b863383b78ee5bd6ac50b490c8dbfb07e36930
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jan 25 13:34:17 2021 +0100
+
+    Only add a separator if previous item is not.
+
+ src/ymenu.cc    | 17 +++++++++++++++--
+ src/ymenu.h     |  8 +++++---
+ src/ymenuitem.h |  5 ++---
+ 3 files changed, 22 insertions(+), 8 deletions(-)
+
+commit 6c645294d3b8c417b8ffb5773657d981686072df
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jan 24 14:16:35 2021 +0100
+
+    Prepare 2.1.1 release
+
+ AUTHORS      |   16 +-
+ ChangeLog    | 8807 ++++++++++++++++++++++++++----------------------------
+ INSTALL      |  322 +-
+ NEWS         |  963 ++----
+ README.md    |    4 +-
+ configure.ac |    4 +-
+ po/ar.po     |  213 +-
+ po/be.po     |  215 +-
+ po/bg.po     |  215 +-
+ po/ca.po     |  217 +-
+ po/cs.po     |  217 +-
+ po/da.po     |  213 +-
+ po/de.po     |  213 +-
+ po/el.po     |  213 +-
+ po/en.po     |  210 +-
+ po/es.po     |  213 +-
+ po/fi.po     |  213 +-
+ po/fr.po     |  213 +-
+ po/he.po     |  215 +-
+ po/hr.po     |  210 +-
+ po/hu.po     |  217 +-
+ po/icewm.pot |  212 +-
+ po/id.po     |  213 +-
+ po/it.po     |  213 +-
+ po/ja.po     |  217 +-
+ po/ko.po     |  215 +-
+ po/lt.po     |  215 +-
+ po/lv.po     |  215 +-
+ po/mk.po     |  215 +-
+ po/nb.po     |  215 +-
+ po/nl.po     |  217 +-
+ po/no.po     |  215 +-
+ po/pl.po     |  215 +-
+ po/pt.po     |  213 +-
+ po/pt_BR.po  |  213 +-
+ po/ro.po     |  215 +-
+ po/ru.po     |  213 +-
+ po/sk.po     |  217 +-
+ po/sl.po     |  215 +-
+ po/sv.po     |  213 +-
+ po/tr.po     |  215 +-
+ po/uk.po     |  215 +-
+ po/vi.po     |  215 +-
+ po/zh_CN.po  |  213 +-
+ po/zh_TW.po  |  213 +-
+ 45 files changed, 8954 insertions(+), 9516 deletions(-)
+
 commit c639b5a8c2ae47c85a0c3f5d983fea1e40e3ab53
 Merge: c8942a54 ae2d1703
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -63,6 +293,67 @@ Date:   Sat Jan 23 15:54:50 2021 +0100
 
  src/ycursor.cc | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 61462c64a533a99774d1fe82aa5f39d2b5a65840
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jan 23 01:18:14 2021 +0100
+
+    Prepare 2.1.0 release
+
+ AUTHORS      |   4 +-
+ ChangeLog    | 380 ++++++++++++++++++++++++++-----------------------------
+ NEWS         |  96 +++++---------
+ README.md    |  36 +++---
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  12 +-
+ po/ar.po     | 169 +++++++++++++------------
+ po/be.po     | 171 ++++++++++++-------------
+ po/bg.po     | 171 ++++++++++++-------------
+ po/ca.po     | 169 +++++++++++++------------
+ po/cs.po     | 169 +++++++++++++------------
+ po/da.po     | 169 +++++++++++++------------
+ po/de.po     | 169 +++++++++++++------------
+ po/el.po     | 169 +++++++++++++------------
+ po/en.po     | 166 ++++++++++++------------
+ po/es.po     | 169 +++++++++++++------------
+ po/fi.po     | 169 +++++++++++++------------
+ po/fr.po     | 169 +++++++++++++------------
+ po/he.po     | 171 ++++++++++++-------------
+ po/hr.po     | 166 ++++++++++++------------
+ po/hu.po     | 173 ++++++++++++-------------
+ po/icewm.pot | 168 ++++++++++++------------
+ po/id.po     | 169 +++++++++++++------------
+ po/it.po     | 169 +++++++++++++------------
+ po/ja.po     | 169 +++++++++++++------------
+ po/ko.po     | 171 ++++++++++++-------------
+ po/lt.po     | 171 ++++++++++++-------------
+ po/lv.po     | 171 ++++++++++++-------------
+ po/mk.po     | 171 ++++++++++++-------------
+ po/nb.po     | 171 ++++++++++++-------------
+ po/nl.po     | 169 +++++++++++++------------
+ po/no.po     | 171 ++++++++++++-------------
+ po/pl.po     | 171 ++++++++++++-------------
+ po/pt.po     | 169 +++++++++++++------------
+ po/pt_BR.po  | 169 +++++++++++++------------
+ po/ro.po     | 171 ++++++++++++-------------
+ po/ru.po     | 169 +++++++++++++------------
+ po/sk.po     | 169 +++++++++++++------------
+ po/sl.po     | 171 ++++++++++++-------------
+ po/sv.po     | 169 +++++++++++++------------
+ po/tr.po     | 171 ++++++++++++-------------
+ po/uk.po     | 171 ++++++++++++-------------
+ po/vi.po     | 171 ++++++++++++-------------
+ po/zh_CN.po  | 169 +++++++++++++------------
+ po/zh_TW.po  | 169 +++++++++++++------------
+ 46 files changed, 3569 insertions(+), 3581 deletions(-)
+
+commit bb98979dcf5de13d065c0e1d8b1d03d82b6c5244
+Merge: 7078f1a4 c8942a54
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jan 23 01:09:31 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
 
 commit c8942a542106429adb5012aeacdef1521fcd3d13
 Merge: eee57659 fe2600cd
@@ -181,6 +472,67 @@ Date:   Wed Jan 6 11:20:38 2021 +0100
  src/wmswitch.cc | 34 +++++++++++++++++++++++++++++-----
  src/wmswitch.h  |  2 ++
  2 files changed, 31 insertions(+), 5 deletions(-)
+
+commit 7078f1a4fd047234792a2a1fbdd45a22aa57a242
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jan 2 23:44:07 2021 +0100
+
+    Prepare 2.0.1 release
+
+ AUTHORS      |  16 +-
+ ChangeLog    | 563 ++++++++++++++++++++++++++++---------------------------
+ NEWS         | 103 +++++-----
+ README.md    |  36 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  12 +-
+ po/ar.po     |  34 ++--
+ po/be.po     |  34 ++--
+ po/bg.po     |  34 ++--
+ po/ca.po     |  38 ++--
+ po/cs.po     |  38 ++--
+ po/da.po     |  34 ++--
+ po/de.po     |  34 ++--
+ po/el.po     |  34 ++--
+ po/en.po     |  34 ++--
+ po/es.po     |  34 ++--
+ po/fi.po     |  34 ++--
+ po/fr.po     |  34 ++--
+ po/he.po     |  34 ++--
+ po/hr.po     |  34 ++--
+ po/hu.po     |  34 ++--
+ po/icewm.pot |  36 ++--
+ po/id.po     |  34 ++--
+ po/it.po     |  34 ++--
+ po/ja.po     |  38 ++--
+ po/ko.po     |  34 ++--
+ po/lt.po     |  34 ++--
+ po/lv.po     |  34 ++--
+ po/mk.po     |  34 ++--
+ po/nb.po     |  34 ++--
+ po/nl.po     |  38 ++--
+ po/no.po     |  34 ++--
+ po/pl.po     |  34 ++--
+ po/pt.po     |  34 ++--
+ po/pt_BR.po  |  34 ++--
+ po/ro.po     |  34 ++--
+ po/ru.po     |  34 ++--
+ po/sk.po     |  38 ++--
+ po/sl.po     |  34 ++--
+ po/sv.po     |  34 ++--
+ po/tr.po     |  34 ++--
+ po/uk.po     |  34 ++--
+ po/vi.po     |  34 ++--
+ po/zh_CN.po  |  34 ++--
+ po/zh_TW.po  |  34 ++--
+ 46 files changed, 1044 insertions(+), 1038 deletions(-)
+
+commit a43eef27fbbd0502a700d189a90dc34e70286f5d
+Merge: 3b95d791 eee57659
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jan 2 23:38:25 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
 
 commit eee57659fd43a1643228fb61daae999397797ee7
 Merge: 5069b5f7 85977c3c
@@ -402,6 +754,67 @@ Date:   Mon Dec 14 01:31:39 2020 +0000
 
  po/ja.po | 12 ++++++------
  1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 3b95d79143fdb8336a2519c7119fad02b3484836
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Dec 14 02:18:46 2020 +0100
+
+    Prepare 2.0.0 release
+
+ AUTHORS      |    3 +-
+ ChangeLog    | 9159 +++++++++++++++++++++++++++---------------------------
+ NEWS         |  330 +-
+ README.md    |   36 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |    2 +-
+ po/be.po     |    2 +-
+ po/bg.po     |    2 +-
+ po/ca.po     |    2 +-
+ po/cs.po     |    2 +-
+ po/da.po     |    2 +-
+ po/de.po     |    2 +-
+ po/el.po     |    2 +-
+ po/en.po     |    2 +-
+ po/es.po     |    2 +-
+ po/fi.po     |    2 +-
+ po/fr.po     |    2 +-
+ po/he.po     |    2 +-
+ po/hr.po     |    2 +-
+ po/hu.po     |    2 +-
+ po/icewm.pot |    4 +-
+ po/id.po     |    2 +-
+ po/it.po     |    2 +-
+ po/ja.po     |    2 +-
+ po/ko.po     |    2 +-
+ po/lt.po     |    2 +-
+ po/lv.po     |    2 +-
+ po/mk.po     |    2 +-
+ po/nb.po     |    2 +-
+ po/nl.po     |    2 +-
+ po/no.po     |    2 +-
+ po/pl.po     |    2 +-
+ po/pt.po     |    2 +-
+ po/pt_BR.po  |    2 +-
+ po/ro.po     |    2 +-
+ po/ru.po     |    2 +-
+ po/sk.po     |    2 +-
+ po/sl.po     |    2 +-
+ po/sv.po     |    2 +-
+ po/tr.po     |    2 +-
+ po/uk.po     |    2 +-
+ po/vi.po     |    2 +-
+ po/zh_CN.po  |    2 +-
+ po/zh_TW.po  |    2 +-
+ 46 files changed, 4732 insertions(+), 4890 deletions(-)
+
+commit 4e55c22062b37f1a6071a91a0f4b9247d08e5093
+Merge: 84abbd6a 5069b5f7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Dec 14 02:11:22 2020 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
 
 commit 5069b5f71dc607789be16966017c6738a8e2495e
 Merge: 8c6ed08b 869a96fa
@@ -1085,6 +1498,67 @@ Date:   Thu Nov 12 19:09:27 2020 +0100
  src/ylistbox.cc | 14 ++++++--------
  1 file changed, 6 insertions(+), 8 deletions(-)
 
+commit 84abbd6ae374008e1b16fc62011874b136bad268
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 10 00:54:09 2020 +0100
+
+    Prepare 1.9.2 release
+
+ AUTHORS      |   2 +-
+ ChangeLog    | 320 +++++++++++++++++++++++++++++++++++--------------------
+ NEWS         | 148 ++++---------------------
+ README.md    |  36 +++----
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |   2 +-
+ po/be.po     |   2 +-
+ po/bg.po     |   2 +-
+ po/ca.po     |   2 +-
+ po/cs.po     |   2 +-
+ po/da.po     |   2 +-
+ po/de.po     |   2 +-
+ po/el.po     |   2 +-
+ po/en.po     |   2 +-
+ po/es.po     |   2 +-
+ po/fi.po     |   2 +-
+ po/fr.po     |   2 +-
+ po/he.po     |   2 +-
+ po/hr.po     |   2 +-
+ po/hu.po     |   2 +-
+ po/icewm.pot |   4 +-
+ po/id.po     |   2 +-
+ po/it.po     |   2 +-
+ po/ja.po     |   2 +-
+ po/ko.po     |   2 +-
+ po/lt.po     |   2 +-
+ po/lv.po     |   2 +-
+ po/mk.po     |   2 +-
+ po/nb.po     |   2 +-
+ po/nl.po     |   2 +-
+ po/no.po     |   2 +-
+ po/pl.po     |   2 +-
+ po/pt.po     |   2 +-
+ po/pt_BR.po  |   2 +-
+ po/ro.po     |   2 +-
+ po/ru.po     |   2 +-
+ po/sk.po     |   2 +-
+ po/sl.po     |   2 +-
+ po/sv.po     |   2 +-
+ po/tr.po     |   2 +-
+ po/uk.po     |   2 +-
+ po/vi.po     |   2 +-
+ po/zh_CN.po  |   2 +-
+ po/zh_TW.po  |   2 +-
+ 46 files changed, 293 insertions(+), 307 deletions(-)
+
+commit 8af9740bffca94ffa08ff57c1b1f2677243f2c22
+Merge: a7e868d6 8c6ed08b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 10 00:46:54 2020 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
 commit 8c6ed08b2fdf9a68bc8b5d6ae7b51a18a2a3b906
 Merge: 61b47eb7 15f49b18
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -1227,6 +1701,67 @@ Date:   Sun Nov 8 16:51:26 2020 +0100
 
  src/aclock.cc | 1 -
  1 file changed, 1 deletion(-)
+
+commit a7e868d646639aaaf4bd57a56de2fc2fd364b2bb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Nov 5 00:51:27 2020 +0100
+
+    Prepare 1.9.1 release
+
+ AUTHORS      |   2 +-
+ ChangeLog    | 470 +++++++++++++++++++++++++++++++------------------------
+ NEWS         | 148 ++++--------------
+ README.md    |  38 ++---
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |   2 +-
+ po/be.po     |   2 +-
+ po/bg.po     |   2 +-
+ po/ca.po     |   2 +-
+ po/cs.po     |   2 +-
+ po/da.po     |   2 +-
+ po/de.po     |   2 +-
+ po/el.po     |   2 +-
+ po/en.po     |   2 +-
+ po/es.po     |   2 +-
+ po/fi.po     |   2 +-
+ po/fr.po     |   2 +-
+ po/he.po     |   2 +-
+ po/hr.po     |   2 +-
+ po/hu.po     |   2 +-
+ po/icewm.pot |   4 +-
+ po/id.po     |   2 +-
+ po/it.po     |   2 +-
+ po/ja.po     |   2 +-
+ po/ko.po     |   2 +-
+ po/lt.po     |   2 +-
+ po/lv.po     |   2 +-
+ po/mk.po     |   2 +-
+ po/nb.po     |   2 +-
+ po/nl.po     |   2 +-
+ po/no.po     |   2 +-
+ po/pl.po     |   2 +-
+ po/pt.po     |   2 +-
+ po/pt_BR.po  |   2 +-
+ po/ro.po     |   2 +-
+ po/ru.po     |   2 +-
+ po/sk.po     |   2 +-
+ po/sl.po     |   2 +-
+ po/sv.po     |   2 +-
+ po/tr.po     |   2 +-
+ po/uk.po     |   2 +-
+ po/vi.po     |   2 +-
+ po/zh_CN.po  |   2 +-
+ po/zh_TW.po  |   2 +-
+ 46 files changed, 361 insertions(+), 391 deletions(-)
+
+commit 5bf1b4817586bce00f696f21e711e6132ae9f9a9
+Merge: 29abd06a 61b47eb7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Nov 5 00:42:08 2020 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
 
 commit 61b47eb7e9545859f743431db85e940fd0f02386
 Merge: 813dd473 d48c1b46
@@ -1430,6 +1965,67 @@ Date:   Fri Oct 30 19:22:32 2020 +0100
  VERSION      |    2 +-
  configure.ac |   10 +-
  5 files changed, 4597 insertions(+), 4328 deletions(-)
+
+commit 29abd06add8b047c20176d44de6ba3bd84161f78
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Oct 29 20:28:57 2020 +0100
+
+    Prepare 1.9.0 release
+
+ AUTHORS      |   22 +-
+ ChangeLog    | 8529 ++++++++++++++++++++++++++++--------------------------
+ NEWS         |  362 ++-
+ README.md    |    2 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |    2 +-
+ po/be.po     |    2 +-
+ po/bg.po     |    2 +-
+ po/ca.po     |    2 +-
+ po/cs.po     |    2 +-
+ po/da.po     |    2 +-
+ po/de.po     |    2 +-
+ po/el.po     |    2 +-
+ po/en.po     |    2 +-
+ po/es.po     |    2 +-
+ po/fi.po     |    2 +-
+ po/fr.po     |    2 +-
+ po/he.po     |    2 +-
+ po/hr.po     |    2 +-
+ po/hu.po     |    2 +-
+ po/icewm.pot |    4 +-
+ po/id.po     |    2 +-
+ po/it.po     |    2 +-
+ po/ja.po     |    2 +-
+ po/ko.po     |    2 +-
+ po/lt.po     |    2 +-
+ po/lv.po     |    2 +-
+ po/mk.po     |    2 +-
+ po/nb.po     |    2 +-
+ po/nl.po     |    2 +-
+ po/no.po     |    2 +-
+ po/pl.po     |    2 +-
+ po/pt.po     |    2 +-
+ po/pt_BR.po  |    2 +-
+ po/ro.po     |    2 +-
+ po/ru.po     |    2 +-
+ po/sk.po     |    2 +-
+ po/sl.po     |    2 +-
+ po/sv.po     |    2 +-
+ po/tr.po     |    2 +-
+ po/uk.po     |    2 +-
+ po/vi.po     |    2 +-
+ po/zh_CN.po  |    2 +-
+ po/zh_TW.po  |    2 +-
+ 46 files changed, 4639 insertions(+), 4370 deletions(-)
+
+commit 4ea1941841189fc119e6640f50516c8267c0c895
+Merge: 6554e52f 813dd473
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Oct 29 20:21:16 2020 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
 
 commit 813dd4736a185b740a0e0db134ead9fada9c0412
 Merge: 31304553 d1e7a8f8
@@ -2342,6 +2938,26 @@ Date:   Thu Sep 17 21:30:28 2020 +0200
  configure.ac |   10 +-
  7 files changed, 4262 insertions(+), 4335 deletions(-)
 
+commit 6554e52fb991ffa5a4f9bcc0d3a1bd219b310e63
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Sep 17 02:08:26 2020 +0200
+
+    Prepare 1.8.3 release bis
+
+ AUTHORS      |   2 +-
+ ChangeLog    | 122 +++++++++++++++++++++++++++++++++++--------------------
+ NEWS         |  11 +++--
+ README.md    |   2 +-
+ configure.ac |   4 +-
+ 5 files changed, 90 insertions(+), 51 deletions(-)
+
+commit 6bc8d04acb290f764994ad56709aa59becccc7b9
+Merge: 57a0569a 31304553
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Sep 17 02:03:11 2020 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
 commit 31304553f5870c6d50b6941347efc23acb1876e1
 Merge: 0bb305af 5cceaaaa
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -2358,6 +2974,67 @@ Date:   Thu Sep 17 01:40:49 2020 +0200
 
  src/yfileio.cc | 18 ++++++++++--------
  1 file changed, 10 insertions(+), 8 deletions(-)
+
+commit 57a0569ae62df90f6ff2569c735f54a6601966a2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Sep 16 23:36:14 2020 +0200
+
+    Prepare 1.8.3 release
+
+ AUTHORS      |  19 +-
+ ChangeLog    | 919 +++++++++++++++++++++++++++++--------------------------
+ NEWS         | 201 +++++-------
+ README.md    |  36 +--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  14 +-
+ po/be.po     |  14 +-
+ po/bg.po     |  14 +-
+ po/ca.po     |  14 +-
+ po/cs.po     |  14 +-
+ po/da.po     |  14 +-
+ po/de.po     |  14 +-
+ po/el.po     |  14 +-
+ po/en.po     |  14 +-
+ po/es.po     |  14 +-
+ po/fi.po     |  14 +-
+ po/fr.po     |  14 +-
+ po/he.po     |  14 +-
+ po/hr.po     |  14 +-
+ po/hu.po     |  14 +-
+ po/icewm.pot |  16 +-
+ po/id.po     |  14 +-
+ po/it.po     |  14 +-
+ po/ja.po     |  14 +-
+ po/ko.po     |  14 +-
+ po/lt.po     |  14 +-
+ po/lv.po     |  14 +-
+ po/mk.po     |  14 +-
+ po/nb.po     |  14 +-
+ po/nl.po     |  14 +-
+ po/no.po     |  14 +-
+ po/pl.po     |  14 +-
+ po/pt.po     |  14 +-
+ po/pt_BR.po  |  14 +-
+ po/ro.po     |  14 +-
+ po/ru.po     |  14 +-
+ po/sk.po     |  14 +-
+ po/sl.po     |  14 +-
+ po/sv.po     |  14 +-
+ po/tr.po     |  14 +-
+ po/uk.po     |  14 +-
+ po/vi.po     |  14 +-
+ po/zh_CN.po  |  14 +-
+ po/zh_TW.po  |  14 +-
+ 46 files changed, 884 insertions(+), 853 deletions(-)
+
+commit 1d8e030b12a35676308e1e57e2ae1acf3dd41231
+Merge: 4f3c2fc9 0bb305af
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Sep 16 23:25:20 2020 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
 
 commit 0bb305afe4be0506fdc2c725abf8f0ef0c6c1c48
 Merge: d8b6c997 8cdd5da5
@@ -2714,6 +3391,67 @@ Date:   Tue Sep 8 21:44:21 2020 +0200
  src/movesize.cc | 4 ++++
  src/wmframe.h   | 2 +-
  2 files changed, 5 insertions(+), 1 deletion(-)
+
+commit 4f3c2fc9b5df9aa2b9e5c9726a0a7e9a15bfe317
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Sep 8 00:55:57 2020 +0200
+
+    Prepare 1.8.2 release
+
+ AUTHORS      |    3 +-
+ ChangeLog    | 1017 ++++++++++++++++++++++++++----------------------------
+ NEWS         |  128 +++----
+ README.md    |   38 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |  118 +++----
+ po/be.po     |  118 +++----
+ po/bg.po     |  118 +++----
+ po/ca.po     |  118 +++----
+ po/cs.po     |  118 +++----
+ po/da.po     |  118 +++----
+ po/de.po     |  118 +++----
+ po/el.po     |  118 +++----
+ po/en.po     |  118 +++----
+ po/es.po     |  118 +++----
+ po/fi.po     |  118 +++----
+ po/fr.po     |  118 +++----
+ po/he.po     |  118 +++----
+ po/hr.po     |  118 +++----
+ po/hu.po     |  118 +++----
+ po/icewm.pot |  120 +++----
+ po/id.po     |  118 +++----
+ po/it.po     |  118 +++----
+ po/ja.po     |  118 +++----
+ po/ko.po     |  118 +++----
+ po/lt.po     |  118 +++----
+ po/lv.po     |  118 +++----
+ po/mk.po     |  118 +++----
+ po/nb.po     |  118 +++----
+ po/nl.po     |  118 +++----
+ po/no.po     |  118 +++----
+ po/pl.po     |  118 +++----
+ po/pt.po     |  432 +++++++++++------------
+ po/pt_BR.po  |  118 +++----
+ po/ro.po     |  118 +++----
+ po/ru.po     |  118 +++----
+ po/sk.po     |  118 +++----
+ po/sl.po     |  118 +++----
+ po/sv.po     |  118 +++----
+ po/tr.po     |  118 +++----
+ po/uk.po     |  118 +++----
+ po/vi.po     |  118 +++----
+ po/zh_CN.po  |  118 +++----
+ po/zh_TW.po  |  118 +++----
+ 46 files changed, 3048 insertions(+), 3070 deletions(-)
+
+commit e277ad96bcdf70b8473e9daee1e337876660bc71
+Merge: cd96c1d5 d8b6c997
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Sep 8 00:22:21 2020 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
 
 commit d8b6c99794a78d3c26466fbdf5ae76dd9a9bdabb
 Merge: b0bf123a 3749a355
@@ -3160,6 +3898,66 @@ Date:   Mon Aug 31 18:59:15 2020 +0200
  src/wmabout.cc | 2 +-
  2 files changed, 2 insertions(+), 2 deletions(-)
 
+commit cd96c1d58f1ce67b11279126f639fbe93da5268b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Aug 31 00:17:56 2020 +0200
+
+    Prepare 1.8.1 release
+
+ AUTHORS      |   6 +-
+ ChangeLog    | 798 ++++++++++++++++++++++++++++++-------------------------
+ NEWS         | 122 ++++-----
+ README.md    |  36 +--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  28 +-
+ po/be.po     |  28 +-
+ po/bg.po     |  28 +-
+ po/ca.po     |  28 +-
+ po/cs.po     |  28 +-
+ po/da.po     |  28 +-
+ po/de.po     |  28 +-
+ po/el.po     |  28 +-
+ po/en.po     |  28 +-
+ po/es.po     |  28 +-
+ po/fi.po     |  28 +-
+ po/fr.po     |  28 +-
+ po/he.po     |  28 +-
+ po/hr.po     |  28 +-
+ po/hu.po     |  28 +-
+ po/icewm.pot |  30 +--
+ po/id.po     |  28 +-
+ po/it.po     |  28 +-
+ po/ja.po     |  28 +-
+ po/ko.po     |  28 +-
+ po/lt.po     |  28 +-
+ po/lv.po     |  28 +-
+ po/mk.po     |  28 +-
+ po/nb.po     |  28 +-
+ po/nl.po     |  28 +-
+ po/no.po     |  28 +-
+ po/pl.po     |  28 +-
+ po/pt_BR.po  |  28 +-
+ po/ro.po     |  28 +-
+ po/ru.po     |  28 +-
+ po/sk.po     |  28 +-
+ po/sl.po     |  28 +-
+ po/sv.po     |  28 +-
+ po/tr.po     |  28 +-
+ po/uk.po     |  28 +-
+ po/vi.po     |  28 +-
+ po/zh_CN.po  |  28 +-
+ po/zh_TW.po  |  28 +-
+ 45 files changed, 1041 insertions(+), 1001 deletions(-)
+
+commit d647b3e3977506d9488a7cce22567939df396aa4
+Merge: b8790433 b0bf123a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Aug 31 00:06:13 2020 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
 commit b0bf123a680cca69aa3827f6bfb77f9ee7ff1dbb
 Merge: 75fc965b 7e8c5927
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -3539,6 +4337,66 @@ Date:   Tue Aug 25 11:02:29 2020 +0000
 
  po/pt.po | 2377 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 2377 insertions(+)
+
+commit b87904338757f3c46e5b88552291cf2bd353f38d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Aug 25 02:18:03 2020 +0200
+
+    Prepare 1.8.0 release
+
+ AUTHORS      |   26 +-
+ ChangeLog    | 8531 +++++++++++++++++++++++++++---------------------------
+ NEWS         |  Bin 26387 -> 37084 bytes
+ README.md    |   36 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |    2 +-
+ po/be.po     |    2 +-
+ po/bg.po     |    2 +-
+ po/ca.po     |    2 +-
+ po/cs.po     |    2 +-
+ po/da.po     |    2 +-
+ po/de.po     |    2 +-
+ po/el.po     |    2 +-
+ po/en.po     |    2 +-
+ po/es.po     |    2 +-
+ po/fi.po     |    2 +-
+ po/fr.po     |    2 +-
+ po/he.po     |    2 +-
+ po/hr.po     |    2 +-
+ po/hu.po     |    2 +-
+ po/icewm.pot |    4 +-
+ po/id.po     |    2 +-
+ po/it.po     |    2 +-
+ po/ja.po     |    2 +-
+ po/ko.po     |    2 +-
+ po/lt.po     |    2 +-
+ po/lv.po     |    2 +-
+ po/mk.po     |    2 +-
+ po/nb.po     |    2 +-
+ po/nl.po     |    2 +-
+ po/no.po     |    2 +-
+ po/pl.po     |    2 +-
+ po/pt_BR.po  |    2 +-
+ po/ro.po     |    2 +-
+ po/ru.po     |    2 +-
+ po/sk.po     |    2 +-
+ po/sl.po     |    2 +-
+ po/sv.po     |    2 +-
+ po/tr.po     |    2 +-
+ po/uk.po     |    2 +-
+ po/vi.po     |    2 +-
+ po/zh_CN.po  |    2 +-
+ po/zh_TW.po  |    2 +-
+ 45 files changed, 4348 insertions(+), 4337 deletions(-)
+
+commit 22988880bcb0ca363a84a5decacac93602242d75
+Merge: 75ba6095 75fc965b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Aug 25 02:09:18 2020 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
 
 commit 75fc965b05864d70ccd8469ba03ef5f57ab8ad93
 Merge: 1a8f4336 0ecbfa3c
@@ -5331,677 +6189,3 @@ Date:   Wed Jul 15 19:21:34 2020 +0200
  VERSION      |    2 +-
  configure.ac |   10 +-
  6 files changed, 4271 insertions(+), 3930 deletions(-)
-
-commit c60c3f235f79bf8c24f8f175c692185bc4a6d4d7
-Author: Sarah Kriesch <ada.lovelace@gmx.de>
-Date:   Sat Jul 4 18:46:25 2020 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/de.po | 22 +++++-----------------
- 1 file changed, 5 insertions(+), 17 deletions(-)
-
-commit 1a8f433642b62f0c27a52f3e9c1e13a933d4a4a9
-Merge: 6c103076 f5aa6146
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 12 19:56:36 2020 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit f5aa6146a5c3a0a26fe037f0a408407fed65e0fa
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 12 19:52:00 2020 +0200
-
-    make update-po
-
- po/ar.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/be.po     | 241 +++++++++++++++++++++++--------------------------
- po/bg.po     | 241 +++++++++++++++++++++++--------------------------
- po/ca.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/cs.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/da.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/de.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/el.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/en.po     | 235 ++++++++++++++++++++++--------------------------
- po/es.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/fi.po     | 241 +++++++++++++++++++++++--------------------------
- po/fr.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/he.po     | 238 ++++++++++++++++++++++---------------------------
- po/hr.po     | 241 +++++++++++++++++++++++--------------------------
- po/hu.po     | 266 +++++++++++++++++++++++++++----------------------------
- po/icewm.pot | 237 ++++++++++++++++++++++---------------------------
- po/id.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/it.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/ja.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/ko.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/lt.po     | 247 ++++++++++++++++++++++++---------------------------
- po/lv.po     | 241 +++++++++++++++++++++++--------------------------
- po/mk.po     | 241 +++++++++++++++++++++++--------------------------
- po/nb.po     | 241 +++++++++++++++++++++++--------------------------
- po/nl.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/no.po     | 241 +++++++++++++++++++++++--------------------------
- po/pl.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/pt_BR.po  | 264 ++++++++++++++++++++++++++----------------------------
- po/ro.po     | 241 +++++++++++++++++++++++--------------------------
- po/ru.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/sk.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/sl.po     | 241 +++++++++++++++++++++++--------------------------
- po/sv.po     | 262 ++++++++++++++++++++++++++----------------------------
- po/tr.po     | 241 +++++++++++++++++++++++--------------------------
- po/uk.po     | 265 +++++++++++++++++++++++++++---------------------------
- po/vi.po     | 241 +++++++++++++++++++++++--------------------------
- po/zh_CN.po  | 262 ++++++++++++++++++++++++++----------------------------
- po/zh_TW.po  | 262 ++++++++++++++++++++++++++----------------------------
- 38 files changed, 4550 insertions(+), 5072 deletions(-)
-
-commit 606fdaa38e4a64d90b157f547b479ec3de7a804e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 12 19:28:24 2020 +0200
-
-    Add --help usage.
-
- rebuild.sh | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
-
-commit 6798e9e1b260962298c5bd87b414fdf24928d209
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 12 18:39:49 2020 +0200
-
-    Fix explanation.
-
- man/icewm.pod | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
-commit 51551a5966ec48f9ac866b9872c55a48d59dcf9d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 12 18:39:01 2020 +0200
-
-    Fix move menu and layer menu for selections in window list window.
-
- src/wmwinlist.cc | 4 ++++
- 1 file changed, 4 insertions(+)
-
-commit f746312d077cb8bfb168a5c1eb6cac6b7c22ae83
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 11 12:33:58 2020 +0200
-
-    Different option formatting.
-
- man/icewm.pod | 340 +++++++++++++++++++++++++++---------------------------
- 1 file changed, 170 insertions(+), 170 deletions(-)
-
-commit 247a75059f1e001525eaf9e78539ca439f818117
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 11 12:01:45 2020 +0200
-
-    Desktop mouse wheel focus.
-
- man/icewm.pod | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
-
-commit 796ab3c831df0eb05d85ae02730828a2ffd03327
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 11 11:35:59 2020 +0200
-
-    Don't take away focus from an application when icewm exits.  On startup
-    check _NET_ACTIVE_WINDOW and use it to preserve focus over restarts.
-
- src/wmmgr.cc | 97 ++++++++++++++++++++++++++------------------------------
- src/wmmgr.h  |  5 +--
- 2 files changed, 48 insertions(+), 54 deletions(-)
-
-commit 30d9c65509c71239833054171fa5da08a0ca5b0c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 11 11:35:35 2020 +0200
-
-    Simplify menu creation.
-
- src/wmapp.cc | 42 +++++++++++++++++++++---------------------
- 1 file changed, 21 insertions(+), 21 deletions(-)
-
-commit 1f5972ec8adaa04f8341d88ac1e7200c9aa032ff
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 10 17:53:14 2020 +0200
-
-    Add missing acquire in c_str.
-
- src/mstring.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit 92ca7ed4dd1f8ceb30818e5c4e774ab8c5d41e31
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 9 21:34:36 2020 +0200
-
-    Support ICCCM WM_CHANGE_STATE messages. Simplify UnmapNotify message
-    handling.
-
- src/wmmgr.cc | 19 ++++++++++++-------
- 1 file changed, 12 insertions(+), 7 deletions(-)
-
-commit 5113341279036086d423f7ba7b0658ed692da18c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 9 12:43:36 2020 +0200
-
-    Modernize use of nullptr.
-
- src/aaddressbar.cc |   4 +-
- src/aaddressbar.h  |   2 +-
- src/aapm.cc        |  62 ++++++++++++++--------------
- src/aapm.h         |   2 +-
- src/aclock.cc      |  12 +++---
- src/acpustatus.cc  |  10 ++---
- src/akeyboard.cc   |   2 +-
- src/amailbox.cc    |  24 +++++------
- src/amemstatus.cc  |   8 ++--
- src/apppstatus.cc  |  24 +++++------
- src/apppstatus.h   |   2 +-
- src/argument.h     |   6 +--
- src/atasks.cc      |  20 ++++-----
- src/atray.cc       |   6 +--
- src/aworkspaces.cc |  10 ++---
- src/base.h         |   2 +-
- src/browse.cc      |   2 +-
- src/browse.h       |   2 +-
- src/decorate.cc    |   4 +-
- src/fdomenu.cc     |  54 ++++++++++++------------
- src/fdospecgen.h   | 108 ++++++++++++++++++++++++------------------------
- src/genpref.cc     |   6 +--
- src/globit.c       |  14 +++----
- src/icehelp.cc     |  70 +++++++++++++++----------------
- src/icesh.cc       |   4 +-
- src/icesm.cc       |  22 +++++-----
- src/icesound.cc    |  72 ++++++++++++++++----------------
- src/icewmbg.cc     |  44 ++++++++++----------
- src/icewmhint.cc   |   4 +-
- src/misc.cc        |  46 ++++++++++-----------
- src/objmenu.h      |   2 +-
- src/ref.cc         |   2 +-
- src/ref.h          |  20 ++++-----
- src/strtest.cc     |  10 ++---
- src/themes.cc      |  12 +++---
- src/themes.h       |   2 +-
- src/udir.cc        |  20 ++++-----
- src/udir.h         |   4 +-
- src/upath.cc       |   4 +-
- src/upath.h        |   6 +--
- src/wmabout.cc     |   4 +-
- src/wmapp.cc       |  84 ++++++++++++++++++-------------------
- src/wmapp.h        |   4 +-
- src/wmclient.cc    |  44 ++++++++++----------
- src/wmclient.h     |   4 +-
- src/wmcontainer.cc |   2 +-
- src/wmdialog.cc    |  18 ++++----
- src/wmframe.cc     | 110 ++++++++++++++++++++++++-------------------------
- src/wmframe.h      |   2 +-
- src/wmmenu.cc      |  64 ++++++++++++++--------------
- src/wmmgr.cc       |  84 ++++++++++++++++++-------------------
- src/wmmgr.h        |   2 +-
- src/wmoption.cc    |   4 +-
- src/wmprog.cc      |  28 ++++++-------
- src/wmprog.h       |   6 +--
- src/wmsession.cc   |  14 +++----
- src/wmstatus.cc    |   2 +-
- src/wmswitch.cc    |  28 ++++++-------
- src/wmswitch.h     |   6 +--
- src/wmtaskbar.cc   |  18 ++++----
- src/wmtitle.cc     |  60 +++++++++++++--------------
- src/wmwinlist.cc   |  12 +++---
- src/wmwinmenu.cc   |   8 ++--
- src/wmwinmenu.h    |   2 +-
- src/wpixres.cc     |  18 ++++----
- src/yapp.cc        |  22 +++++-----
- src/yarray.cc      |   4 +-
- src/yarray.h       |  10 ++---
- src/ybutton.cc     |   6 +--
- src/ybutton.h      |   2 +-
- src/ycollections.h |   4 +-
- src/ycolor.cc      |   2 +-
- src/ycolor.h       |  12 +++---
- src/yconfig.cc     |  12 +++---
- src/yconfig.h      |   2 +-
- src/ydialog.cc     |   2 +-
- src/ydialog.h      |   2 +-
- src/yfontxft.cc    |  22 +++++-----
- src/yicon.cc       |   8 ++--
- src/yimage_gdk.cc  |  20 ++++-----
- src/yinput.cc      |   8 ++--
- src/yinputline.h   |   2 +-
- src/ylabel.h       |   2 +-
- src/ylist.h        |   4 +-
- src/ylistbox.cc    |   4 +-
- src/ymenu.cc       |  50 +++++++++++-----------
- src/ymenu.h        |   2 +-
- src/ymenuitem.cc   |   6 +--
- src/ymenuitem.h    |   2 +-
- src/ymsgbox.cc     |  12 +++---
- src/ymsgbox.h      |   2 +-
- src/ypaint.cc      |  18 ++++----
- src/ypipereader.cc |   2 +-
- src/ypixmap.cc     |   4 +-
- src/ypopup.cc      |  20 ++++-----
- src/yscrollbar.cc  |   6 +--
- src/yscrollview.cc |   6 +--
- src/ysmapp.cc      |  54 ++++++++++++------------
- src/ysmapp.h       |   2 +-
- src/ysocket.cc     |   4 +-
- src/ytime.cc       |   2 +-
- src/ytimer.cc      |   4 +-
- src/yurl.cc        |   2 +-
- src/ywindow.cc     |  60 +++++++++++++--------------
- src/ywindow.h      |   2 +-
- src/yxapp.cc       |  42 +++++++++----------
- src/yxapp.h        |   4 +-
- src/yxcontext.h    |  10 ++---
- src/yxtray.cc      |   6 +--
- src/yxtray.h       |   2 +-
- 110 files changed, 916 insertions(+), 916 deletions(-)
-
-commit a6f88293b8f9fe94c292413f902062fe7d60619f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 9 12:43:01 2020 +0200
-
-    Fix clang warnings.
-
- src/wmmgr.cc | 4 +++-
- src/ypaint.h | 2 +-
- 2 files changed, 4 insertions(+), 2 deletions(-)
-
-commit d6d6954af453f64c661747d1909a58b8b2c1753d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 8 21:07:17 2020 +0200
-
-    Remove findPath.
-
- src/upath.h     |  2 --
- src/wmdialog.cc |  5 +++--
- src/wmmenu.cc   | 41 ++++++++++++++++++-----------------------
- src/wmprog.cc   | 21 ++++++++++-----------
- src/yconfig.cc  | 21 ---------------------
- 5 files changed, 31 insertions(+), 59 deletions(-)
-
-commit 86cb16875a728d79c1d4f40813d1464ad10a9173
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 8 01:28:10 2020 +0200
-
-    Remove initFontPath. Make defaultAppIcon local.
-
- src/wmapp.cc   | 111 +----------------------------------------------------
- src/wmapp.h    |  11 +++---
- src/wmframe.cc |   2 +-
- 3 files changed, 8 insertions(+), 116 deletions(-)
-
-commit 6b65b9b46fca05775a0ed93c7015105cabe17985
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 7 23:53:18 2020 +0200
-
-    Fix for --enable-debug.
-
- src/acpustatus.cc | 8 ++++----
- src/wmclient.cc   | 9 +++++++--
- src/wmmgr.cc      | 6 +++---
- src/yarray.cc     | 2 --
- src/ypaths.cc     | 2 +-
- src/ypaths.h      | 2 +-
- 6 files changed, 16 insertions(+), 13 deletions(-)
-
-commit cc25ca1e3c36ed3aca792372cb8f95d0c4affc8e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 7 23:25:52 2020 +0200
-
-    Make cstring obsolete and remove it.
-
- src/aaddressbar.cc |  5 ++---
- src/aapm.h         |  2 +-
- src/akeyboard.cc   |  4 ++--
- src/amailbox.cc    | 26 +++++++++++-----------
- src/amailbox.h     |  4 ++--
- src/apppstatus.cc  | 16 +++++++-------
- src/apppstatus.h   | 28 ++++++++++++------------
- src/atray.cc       |  2 +-
- src/aworkspaces.cc |  6 +++---
- src/icehelp.cc     | 58 +++++++++++++++++++++++++-------------------------
- src/icerun.cc      |  4 ++--
- src/icesm.cc       |  2 +-
- src/icesound.cc    |  2 +-
- src/icewmbg.cc     |  6 +++---
- src/mstring.cc     | 21 ++++++++++++------
- src/mstring.h      | 39 ++++-----------------------------
- src/strtest.cc     | 18 ++++++++--------
- src/themes.cc      |  6 +++---
- src/udir.cc        |  2 +-
- src/upath.cc       | 47 ++++++++++++++++++++--------------------
- src/upath.h        | 51 ++++++++++++++++++++++----------------------
- src/wmapp.cc       | 37 ++++++++++++++++----------------
- src/wmclient.cc    |  6 +++---
- src/wmconfig.cc    | 10 ++++-----
- src/wmconfig.h     |  2 +-
- src/wmframe.cc     |  2 +-
- src/wmmenu.cc      |  6 +++---
- src/wmmgr.cc       | 12 +++++------
- src/wmoption.cc    |  2 --
- src/wmprog.cc      | 16 +++++++-------
- src/wmsession.cc   | 12 +++++------
- src/wmswitch.cc    |  2 +-
- src/yapp.cc        |  2 +-
- src/yarray.cc      |  6 +++---
- src/ycolor.cc      |  8 +++----
- src/ycursor.cc     |  6 +++---
- src/yfont.cc       |  9 ++------
- src/yfontcore.cc   | 14 ++++++------
- src/yfontxft.cc    | 20 ++++++++---------
- src/yicon.cc       | 15 ++++++-------
- src/yimage_gdk.cc  |  2 +-
- src/yinput.cc      |  2 +-
- src/ylistbox.cc    |  2 +-
- src/ymsgbox.cc     |  7 +++---
- src/ymsgbox.h      |  4 ++--
- src/ypaint.cc      | 20 ++---------------
- src/ypaint.h       | 11 +++-------
- src/ypaths.cc      | 15 ++++++-------
- src/ypaths.h       |  4 ++--
- src/ysmapp.cc      |  2 +-
- src/ysocket.cc     |  4 ----
- src/ysocket.h      |  4 ----
- src/yurl.cc        |  2 +-
- src/yurl.h         | 12 +++++------
- src/yxapp.cc       |  6 +++---
- src/yxapp.h        |  2 +-
- src/yximage.cc     | 20 ++++++++---------
- src/yxtray.cc      | 12 +++++------
- src/yxtray.h       |  8 +++----
- 59 files changed, 303 insertions(+), 372 deletions(-)
-
-commit 5b47c2f0cfd67753d31a91ba6987ba623e407336
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 7 23:15:18 2020 +0200
-
-    Revert commit 63a1adb745507fc921422f20d62699699f308489 for #442.
-
- po/en.po | 29 +++++++++++++----------------
- 1 file changed, 13 insertions(+), 16 deletions(-)
-
-commit a18b7c9bd32b7a7f9c5c0697750cad2516866a91
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 7 18:27:44 2020 +0200
-
-    make update-po
-
- po/ar.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/be.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/bg.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/ca.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/cs.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/da.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/de.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/el.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/en.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/es.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/fi.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/fr.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/he.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/hr.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/hu.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/icewm.pot | 237 ++++++++++++++++++++++++++---------------------------
- po/id.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/it.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/ja.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/ko.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/lt.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/lv.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/mk.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/nb.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/nl.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/no.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/pl.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/pt_BR.po  | 242 ++++++++++++++++++++++++++++---------------------------
- po/ro.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/ru.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/sk.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/sl.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/sv.po     | 242 ++++++++++++++++++++++++++++---------------------------
- po/tr.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/uk.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/vi.po     | 235 ++++++++++++++++++++++++++---------------------------
- po/zh_CN.po  | 242 ++++++++++++++++++++++++++++---------------------------
- po/zh_TW.po  | 242 ++++++++++++++++++++++++++++---------------------------
- 38 files changed, 4632 insertions(+), 4447 deletions(-)
-
-commit 85cbd1645c86f93e5c83d72575216d616fddbc12
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 7 18:27:00 2020 +0200
-
-    Replace pstring and ustring by mstring. Remove pstring and ustring.
-
- src/acpustatus.cc |  2 +-
- src/atasks.cc     |  2 +-
- src/browse.cc     |  2 +-
- src/iceicon.cc    |  2 +-
- src/icelist.cc    |  6 +++---
- src/iceview.cc    |  2 +-
- src/mstring.h     |  2 --
- src/obj.h         |  8 ++++----
- src/objbar.cc     |  4 ++--
- src/objbar.h      |  4 ++--
- src/objmenu.h     |  2 +-
- src/themes.cc     | 24 ++++++++++++------------
- src/themes.h      | 10 +++++-----
- src/udir.cc       |  6 +++---
- src/udir.h        | 14 +++++++-------
- src/upath.cc      |  8 ++++----
- src/upath.h       | 21 ++++++++++-----------
- src/wmabout.cc    |  4 ++--
- src/wmclient.cc   |  2 +-
- src/wmclient.h    | 20 ++++++++++----------
- src/wmconfig.cc   |  2 +-
- src/wmdialog.cc   |  2 +-
- src/wmdialog.h    |  2 +-
- src/wmframe.cc    | 14 +++++++-------
- src/wmframe.h     |  6 +++---
- src/wmmenu.cc     |  6 +++---
- src/wmminiicon.cc |  2 +-
- src/wmoption.cc   | 10 +++++-----
- src/wmoption.h    | 16 ++++++++--------
- src/wmprog.cc     | 16 ++++++++--------
- src/wmprog.h      | 10 +++++-----
- src/wmsession.cc  | 18 +++++++++---------
- src/wmsession.h   | 16 ++++++++--------
- src/wmstatus.cc   | 14 +++++++-------
- src/wmstatus.h    | 16 ++++++++--------
- src/wmswitch.cc   | 10 +++++-----
- src/wmswitch.h    |  2 +-
- src/wmtitle.cc    |  6 +++---
- src/wmwinlist.cc  |  2 +-
- src/wmwinlist.h   |  2 +-
- src/ybutton.cc    |  2 +-
- src/ybutton.h     |  6 +++---
- src/yconfig.cc    |  4 ++--
- src/yfont.cc      |  8 ++++----
- src/yfontcore.cc  |  8 ++++----
- src/yfontxft.cc   | 16 ++++++++--------
- src/yinput.cc     |  8 ++++----
- src/yinputline.h  |  8 ++++----
- src/ylabel.cc     |  8 ++++----
- src/ylabel.h      |  8 ++++----
- src/ylistbox.cc   |  4 ++--
- src/ylistbox.h    |  2 +-
- src/ymenu.cc      | 24 ++++++++++++------------
- src/ymenu.h       | 16 ++++++++--------
- src/ymenuitem.cc  |  8 ++++----
- src/ymenuitem.h   | 12 ++++++------
- src/ymsgbox.cc    |  4 ++--
- src/ymsgbox.h     |  4 ++--
- src/ypaint.cc     |  8 ++++----
- src/ypaint.h      | 14 +++++++-------
- src/ypaths.cc     |  2 +-
- src/ytooltip.cc   |  4 ++--
- src/ytooltip.h    |  8 ++++----
- src/yurl.cc       | 16 ++++++++--------
- src/yurl.h        |  6 +++---
- src/ywindow.cc    |  2 +-
- src/ywindow.h     |  2 +-
- src/yximage.cc    |  6 +++---
- 68 files changed, 266 insertions(+), 269 deletions(-)
-
-commit 7cfa58e03306fd019ad1af62b54c3ad74068d200
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 7 18:22:40 2020 +0200
-
-    Simplify cstring.
-
- src/aaddressbar.cc |  2 +-
- src/amailbox.cc    |  2 +-
- src/amailbox.h     |  2 +-
- src/apppstatus.h   |  4 ++--
- src/icehelp.cc     |  8 ++++----
- src/mstring.h      | 56 ++++++++++++++++++++++++--------------------------
- src/upath.h        |  2 +-
- src/wmclient.cc    |  4 ++--
- src/yfontcore.cc   |  4 ++--
- src/yfontxft.cc    |  2 +-
- src/yicon.cc       |  4 ++--
- src/ypaint.cc      |  2 +-
- src/ysocket.cc     |  2 +-
- src/ysocket.h      |  2 +-
- src/yxtray.h       |  2 +-
- 15 files changed, 48 insertions(+), 50 deletions(-)
-
-commit 587c32a8b61e471e63fed966c1a33ce157bda0a8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:57:36 2020 +0200
-
-    Add check for dependencies.
-
- rebuild.sh | 21 +++++++++++++++++++--
- 1 file changed, 19 insertions(+), 2 deletions(-)
-
-commit 0baf9e3fb56e01d185c3c48cfaf80c0ca1aa3c7e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:56:47 2020 +0200
-
-    Document mailbox monitoring.
-
- man/icewm.pod | 91 +++++++++++++++++++++++++++++++++++++++++++++++--------
- 1 file changed, 78 insertions(+), 13 deletions(-)
-
-commit 9e1def49ce0ad8e4ad42e7884781f6906da7c878
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:56:25 2020 +0200
-
-    Document "ignoreActivationMessages".
-
- man/icewm-winoptions.pod | 1 +
- 1 file changed, 1 insertion(+)
-
-commit d93f7f37e78ad74256038a4578b0578699acd81e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:55:38 2020 +0200
-
-    Fix for taskBarWidthPercentage in case screen is not at (0, 0).
-
- src/wmtaskbar.cc | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
-
-commit 80bf1e4d68fe2ae9af4f14b17675596d74b4cc5c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:55:16 2020 +0200
-
-    Assume wordexp.
-
- src/config.cmake.h.in | 1 -
- src/wmapp.cc          | 3 ---
- 2 files changed, 4 deletions(-)
-
-commit 3c77c45e0bcea57f0373dd1433716335a5b7533d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:53:47 2020 +0200
-
-    Add winoption "ignoreActivationMessages".
-
- src/wmclient.cc  |  7 ++++---
- src/wmframe.cc   | 34 +++++++++++++++++-----------------
- src/wmframe.h    | 49 ++++++++++++++++++++++++-------------------------
- src/wmmgr.cc     | 34 +++++++++++++++++-----------------
- src/wmoption.cc  | 23 +++++++----------------
- src/wmoption.h   |  4 ++--
- src/wmswitch.cc  |  2 +-
- src/wmwinlist.cc |  2 +-
- src/wmwinmenu.cc |  2 +-
- 9 files changed, 74 insertions(+), 83 deletions(-)
-
-commit 6831f6c363f80b6843b51f1ec1ace764b4922459
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:46:49 2020 +0200
-
-    Prefer yad over zenity. Facilitate focus if icewm crashed. Support
-    terminal.
-
- src/CMakeLists.txt |   3 +-
- src/Makefile.am    |   2 +-
- src/icesm.cc       | 240 ++++++++++++++++++++++++++++++++++++++++++-------
- 3 files changed, 209 insertions(+), 36 deletions(-)
-
-commit 853d66f70c2a046df9700ecd27c0b4519ee65b66
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:44:56 2020 +0200
-
-    Fix merging of hints for systray.
-
- src/yxtray.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit bdef893b9314aa74f93d1b41e2f1c22a6372be6e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:44:42 2020 +0200
-
-    Simplify casts.
-
- src/ywindow.cc | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
-
-commit 773e92d2aa15240e5b3defd9c988c4b186bb4bdb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:44:22 2020 +0200
-
-    Assume wordexp.
-
- src/yicon.cc | 6 ------
- 1 file changed, 6 deletions(-)
-
-commit 4386670bbc2cc2c13e7c627bce945e8397531012
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:44:06 2020 +0200
-
-    Use wordexp to avoid a /bin/sh.
-
- src/yapp.cc | 18 ++++++++++++++----
- 1 file changed, 14 insertions(+), 4 deletions(-)
-
-commit 744d5e8ee2ecbf42e8a61212373ad56dbf60ea29
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:42:52 2020 +0200
-
-    Use wordexp to avoid a /bin/sh.
-
- src/wmapp.cc | 32 ++++++++++++++++++++++++++------
- 1 file changed, 26 insertions(+), 6 deletions(-)
-
-commit a996fa5c7c519bd8ff71fe03302d02bada7c553a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:42:00 2020 +0200
-
-    Permit an optional equal sign for short option arguments.
-
- src/misc.cc | 50 +++++++++++++++++++++++++-------------------------
- 1 file changed, 25 insertions(+), 25 deletions(-)
-
-commit a4b5afda289e4ce8f5ba10754d30d4239eb411af
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 6 01:40:41 2020 +0200
-
-    Catch X errors. Handle _NET_WM_USER_TIME.
-
- src/icesh.cc | 101 ++++++++++++++++++++++++++++++++++++++++++-------------
- 1 file changed, 78 insertions(+), 23 deletions(-)
