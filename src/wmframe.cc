@@ -118,7 +118,7 @@ YFrameWindow::YFrameWindow(
 YFrameWindow::~YFrameWindow() {
     fManaged = false;
     if (fKillMsgBox) {
-        manager->unmanageClient(fKillMsgBox);
+        fKillMsgBox->unmanage();
         fKillMsgBox = nullptr;
     }
     if (fWindowType == wtDialog)
@@ -232,10 +232,7 @@ void YFrameWindow::doManage(YFrameClient *clientw, bool &doActivate, bool &reque
         normalW = sh ? (w - sh->base_width) / max(1, sh->width_inc) : w;
         normalH = sh ? (h - sh->base_height) / max(1, sh->height_inc) : h;
 
-
-        if (sh && (sh->flags & PWinGravity) &&
-            sh->win_gravity == StaticGravity)
-        {
+        if (client()->winGravity() == StaticGravity) {
             normalX += borderXN();
             normalY += borderYN() + titleYN();
         } else {
@@ -473,10 +470,7 @@ void YFrameWindow::unmanage(bool reparent) {
             posY += borderYN() + titleYN() - 2 * client()->getBorder();
 
         if (gx == 0 && gy == 0) {
-            const XSizeHints* sh = client()->sizeHints();
-            if (sh && (sh->flags & PWinGravity) &&
-                sh->win_gravity == StaticGravity)
-            {
+            if (client()->winGravity() == StaticGravity) {
                 posY += titleYN();
             }
         }
@@ -502,32 +496,24 @@ void YFrameWindow::unmanage(bool reparent) {
     hide();
 }
 
-void YFrameWindow::getNewPos(const XConfigureRequestEvent &cr,
-                             int &cx, int &cy, int &cw, int &ch)
+void YFrameWindow::getNewPos(const XConfigureRequestEvent& cr,
+                             int& cx, int& cy, int& cw, int& ch)
 {
-    cw = (cr.value_mask & CWWidth) ? cr.width : client()->width();
-    ch = (cr.value_mask & CWHeight) ? cr.height : client()->height();
+    const int mask = int(cr.value_mask);
+    cw = (mask & CWWidth) ? cr.width : client()->width();
+    ch = (mask & CWHeight) ? cr.height : client()->height();
 
-    int grav = NorthWestGravity;
-
-    XSizeHints *sh = client()->sizeHints();
-    if (sh && sh->flags & PWinGravity)
-        grav = sh->win_gravity;
-
+    int grav = client()->winGravity();
     int cur_x = x() + container()->x();
     int cur_y = y() + container()->y();
 
     //msg("%d %d %d %d", cr.x, cr.y, cr.width, cr.height);
 
-    if (cr.value_mask & CWX) {
+    if (mask & CWX) {
         if (grav == StaticGravity)
             cx = cr.x;
         else {
             cx = cr.x + container()->x();
-            if (frameOption(foNonICCCMConfigureRequest)) {
-                warn("nonICCCMpositioning: adjusting x %d by %d", cx, -container()->x());
-                cx -= container()->x();
-            }
         }
     } else {
         if (grav == NorthGravity ||
@@ -545,15 +531,11 @@ void YFrameWindow::getNewPos(const XConfigureRequestEvent &cr,
         }
     }
 
-    if (cr.value_mask & CWY) {
+    if (mask & CWY) {
         if (grav == StaticGravity)
             cy = cr.y;
         else {
             cy = cr.y + container()->y();
-            if (frameOption(foNonICCCMConfigureRequest)) {
-                warn("nonICCCMpositioning: adjusting y %d by %d", cy, -container()->y());
-                cy -= container()->y();
-            }
         }
     } else {
         if (grav == WestGravity ||
@@ -568,6 +550,23 @@ void YFrameWindow::getNewPos(const XConfigureRequestEvent &cr,
             cy = cur_y + (client()->height() - ch);
         } else {
             cy = cur_y;
+        }
+    }
+
+    if (affectsWorkArea() == false) {
+        int left, top, right, bottom;
+        manager->getWorkArea(this, &left, &top, &right, &bottom);
+        if (cx + cw > right && cx > left && (mask & CWWidth)) {
+            cx -= min(cx + cw - right, cx - left);
+        }
+        if (cy + ch > bottom && cy > top && (mask & CWHeight)) {
+            cy -= min(cy + ch - bottom, cy - top);
+        }
+        if (limitPosition && (mask & CWX) && notbit(mask, CWWidth)) {
+            cx = clamp(cx, left, right - cw);
+        }
+        if (limitPosition && (mask & CWY) && notbit(mask, CWHeight)) {
+            cy = clamp(cy, top, bottom - ch);
         }
     }
 
@@ -962,10 +961,6 @@ YFrameWindow *YFrameWindow::findWindow(int flags) {
             goto next;
         if ((flags & fwfWorkspace) && !p->visibleNow())
             goto next;
-#if 0
-        if ((flags & fwfSwitchable) && p->frameOption(foIgnoreQSwitch))
-            goto next;
-#endif
         if (!p->client()->adopted() || p->client()->destroyed())
             goto next;
 
@@ -1391,20 +1386,14 @@ void YFrameWindow::wmClose() {
 }
 
 void YFrameWindow::wmConfirmKill() {
-    if (fKillMsgBox == nullptr)
-        fKillMsgBox = wmConfirmKill(_("Kill Client: ") + getTitle(), this);
-}
-
-YMsgBox* YFrameWindow::wmConfirmKill(const char* title,
-        YMsgBoxListener *recvr) {
-    YMsgBox *msgbox = new YMsgBox(YMsgBox::mbOK | YMsgBox::mbCancel);
-    msgbox->setTitle(title);
-    msgbox->setText(_("WARNING! All unsaved changes will be lost when\n"
-            "this client is killed. Do you wish to proceed?"));
-    msgbox->autoSize();
-    msgbox->setMsgBoxListener(recvr);
-    msgbox->showFocused();
-    return msgbox;
+    if (fKillMsgBox) {
+        fKillMsgBox->unmanage();
+    }
+    fKillMsgBox = new YMsgBox(YMsgBox::mbBoth,
+                      _("Kill Client: ") + getTitle(),
+                      _("WARNING! All unsaved changes will be lost when\n"
+                        "this client is killed. Do you wish to proceed?"),
+                      this);
 }
 
 void YFrameWindow::wmKill() {
@@ -3265,12 +3254,9 @@ void YFrameWindow::updateAppStatus() {
 
 void YFrameWindow::handleMsgBox(YMsgBox *msgbox, int operation) {
     //msg("msgbox operation %d", operation);
-    if (msgbox == fKillMsgBox && fKillMsgBox) {
-        if (fKillMsgBox) {
-            manager->unmanageClient(fKillMsgBox);
-            fKillMsgBox = nullptr;
-            manager->focusTopWindow();
-        }
+    if (msgbox == fKillMsgBox) {
+        msgbox->unmanage();
+        fKillMsgBox = nullptr;
         if (operation == YMsgBox::mbOK)
             wmKill();
     }

@@ -8,7 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm-1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-02-09 19:00+0100\n"
+"POT-Creation-Date: 2021-02-27 18:40+0100\n"
+>>>>>>> origin/icewm-1-4-BRANCH
 "PO-Revision-Date: 2020-12-14 17:26+0000\n"
 "Last-Translator: Aleš Kastner <alkas@volny.cz>\n"
 "Language-Team: Czech <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -45,24 +46,24 @@ msgstr " - Plný"
 msgid "power:\t%s"
 msgstr "nabití:\t%s"
 
-#: src/aclock.cc:173
+#: src/aclock.cc:180
 msgid "CLOCK"
 msgstr "HODINY"
 
-#: src/aclock.cc:178
+#: src/aclock.cc:186
 msgid "Date"
 msgstr "Datum"
 
-#: src/aclock.cc:179 src/themes.cc:81
+#: src/aclock.cc:187 src/themes.cc:81
 msgid "Default"
 msgstr "Standardní"
 
-#: src/aclock.cc:180 src/acpustatus.cc:661 src/amailbox.cc:979
+#: src/aclock.cc:188 src/acpustatus.cc:661 src/amailbox.cc:979
 #: src/amemstatus.cc:265
 msgid "_Disable"
 msgstr "_Zakázat"
 
-#: src/aclock.cc:181
+#: src/aclock.cc:189
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -609,6 +610,10 @@ msgid "Invalid expression: `%s'"
 msgstr "Neplatný výraz: `%s'"
 
 #: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1076
+#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1070
+#: src/yxapp.cc:1028
+#: src/icesh.cc:3217 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+>>>>>>> origin/icewm-1-4-BRANCH
 #: src/yxapp.cc:1030
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -639,6 +644,8 @@ msgstr "Neplatný PID: `%s'"
 msgid "Invalid layer: `%s'."
 msgstr "Neplatná vrstva: `%s'."
 
+#: src/icesh.cc:4237
+>>>>>>> origin/icewm-1-4-BRANCH
 #: src/icesh.cc:4241
 #, c-format
 msgid "Unknown action: `%s'"
@@ -736,74 +743,74 @@ msgstr ""
 msgid "IceWM crash response"
 msgstr "Havarijní odpověď IceWM"
 
-#: src/icesound.cc:210 src/icesound.cc:318 src/icesound.cc:478
+#: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
 #, c-format
 msgid "Playing sample #%d (%s)"
 msgstr "Přehrávání vzorku #%d (%s)"
 
-#: src/icesound.cc:328
+#: src/icesound.cc:329
 #, c-format
 msgid "%s: Invalid number of channels"
 msgstr "%s: neplatný počet kanálů"
 
-#: src/icesound.cc:334 src/icesound.cc:339
+#: src/icesound.cc:335 src/icesound.cc:340
 msgid "Could not set OSS channels"
 msgstr "Nepodařilo se nastavit OSS kanál"
 
-#: src/icesound.cc:344 src/icesound.cc:372
+#: src/icesound.cc:345 src/icesound.cc:373
 msgid "Could not sync OSS"
 msgstr "Nepodařilo se synchronizovat OSS"
 
-#: src/icesound.cc:356
+#: src/icesound.cc:357
 msgid "OSS write failed"
 msgstr "Zápis OSS selhal"
 
-#: src/icesound.cc:360
+#: src/icesound.cc:361
 #, c-format
 msgid "OSS incomplete write (%d/%d)"
 msgstr "Zápis OSS byl neúplný (%d/%d)"
 
-#: src/icesound.cc:367
+#: src/icesound.cc:368
 msgid "Could not post OSS"
 msgstr "Nepodařilo se odeslat OSS"
 
-#: src/icesound.cc:396
+#: src/icesound.cc:397
 #, c-format
 msgid "Could not open OSS device %s"
 msgstr "Nemohu otevřít OSS zařízení %s"
 
-#: src/icesound.cc:401
+#: src/icesound.cc:402
 msgid "Could not set OSS stereo"
 msgstr "Nepodařilo se nastavit OSS stereo"
 
-#: src/icesound.cc:406
+#: src/icesound.cc:407
 msgid "Could not reset OSS DSP"
 msgstr "Nepodařilo se resetovat OSS DSP"
 
-#: src/icesound.cc:411
+#: src/icesound.cc:412
 msgid "Could not set OSS format"
 msgstr "Nepodařilo se nastavit formát OSS"
 
-#: src/icesound.cc:498
+#: src/icesound.cc:499
 #, c-format
 msgid "ao_open_live failed with %d"
 msgstr "ao_open_live selhal s %d"
 
-#: src/icesound.cc:509
+#: src/icesound.cc:510
 msgid "ao_play failed"
 msgstr "ao_play selhal"
 
-#: src/icesound.cc:675
+#: src/icesound.cc:676
 #, c-format
 msgid "Unrecognized option: %s\n"
 msgstr "Nerozpoznaný přepínač: %s\n"
 
-#: src/icesound.cc:678 src/icesound.cc:971
+#: src/icesound.cc:679 src/icesound.cc:972
 #, c-format
 msgid "Unrecognized argument: %s\n"
 msgstr "Nerozpoznaný argument: %s\n"
 
-#: src/icesound.cc:687
+#: src/icesound.cc:688
 #, c-format
 msgid ""
 "Usage: %s [OPTION]...\n"
@@ -909,51 +916,51 @@ msgstr ""
 "3     Chyba podsystému (tj. nelze se spojit se serverem).\n"
 "\n"
 
-#: src/icesound.cc:778
+#: src/icesound.cc:779
 #, c-format
 msgid "No audio for %s"
 msgstr "Žádné audio pro %s"
 
-#: src/icesound.cc:855
+#: src/icesound.cc:856
 msgid "Could not get GUI event property"
 msgstr "Nepodařilo se správně obdržet událost GUI"
 
-#: src/icesound.cc:859
+#: src/icesound.cc:860
 #, c-format
 msgid "Received invalid GUI event %d"
 msgstr "Obdržena neplatná GUI událost %d"
 
-#: src/icesound.cc:863
+#: src/icesound.cc:864
 #, c-format
 msgid "Received GUI event %s"
 msgstr "Obdržena GUI událost %s"
 
-#: src/icesound.cc:877
+#: src/icesound.cc:878
 #, c-format
 msgid "Too quick; ignoring %s."
 msgstr "Příliš rychle, ignoruje se %s."
 
-#: src/icesound.cc:881
+#: src/icesound.cc:882
 #, c-format
 msgid "Support for the %s interface not compiled."
 msgstr "Podpora zařízení %s nebyla zkompilována."
 
-#: src/icesound.cc:914
+#: src/icesound.cc:915
 #, c-format
 msgid "Unsupported interface: %s."
 msgstr "Nepodporované zařízení: %s."
 
-#: src/icesound.cc:923
+#: src/icesound.cc:924
 #, c-format
 msgid "Using %s audio."
 msgstr "Používá se %s audio."
 
-#: src/icesound.cc:927
+#: src/icesound.cc:928
 #, c-format
 msgid "Failed to connect to audio interfaces %s."
 msgstr "Selhalo připojení ke zvukovému zařízení %s."
 
-#: src/icesound.cc:939
+#: src/icesound.cc:940
 #, c-format
 msgid "Received signal %s: Terminating..."
 msgstr "Přijat signál %s: Končím…"
@@ -1106,11 +1113,11 @@ msgstr ""
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Spuštění selhalo, protože jiný icewmbg ještě běží."
 
-#: src/icewmhint.cc:19
+#: src/icewmhint.cc:20
 msgid "Usage: icewmhint class.instance option arg\n"
 msgstr "Použití: icewmhint třída.instance přepínač argument\n"
 
-#: src/icewmhint.cc:56
+#: src/icewmhint.cc:57
 #, c-format
 msgid "Out of memory (len=%d)."
 msgstr "Nedostatek paměti (velikost=%d)."
@@ -1363,6 +1370,23 @@ msgid "<none>"
 msgstr "<nic>"
 
 #: src/wmapp.cc:1402
+#: src/wmapp.cc:1396
+#: src/wmapp.cc:768
+msgid "Confirm Restart as Terminal"
+msgstr ""
+
+#: src/wmapp.cc:769
+msgid ""
+"Unmanage all applications and restart\n"
+"as a terminal. Proceed?"
+msgstr ""
+
+#: src/wmapp.cc:1073 src/yxapp.cc:1031
+msgid "<none>"
+msgstr "<nic>"
+
+#: src/wmapp.cc:1403
+>>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
@@ -1370,6 +1394,9 @@ msgstr ""
 "sezení.\n"
 
 #: src/wmapp.cc:1408
+#: src/wmapp.cc:1402
+#: src/wmapp.cc:1409
+>>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1380,6 +1407,9 @@ msgstr ""
 "  --debug-z          Vypíše ladicí zprávy ohledně seskládání oken.\n"
 
 #: src/wmapp.cc:1416
+#: src/wmapp.cc:1410
+#: src/wmapp.cc:1417
+>>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1398,6 +1428,9 @@ msgstr ""
 "  --trace=conf,icon   K zavedení konfigurace použity cesty pro sledování.\n"
 
 #: src/wmapp.cc:1425
+#: src/wmapp.cc:1419
+#: src/wmapp.cc:1426
+>>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1457,16 +1490,25 @@ msgstr ""
 "\n"
 
 #: src/wmapp.cc:1487
+#: src/wmapp.cc:1481
+#: src/wmapp.cc:1488
+>>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s konfigurační adresáře:\n"
 
 #: src/wmapp.cc:1569
+#: src/wmapp.cc:1563
+#: src/wmapp.cc:1570
+>>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s zkonfigurované voľby: %s\n"
 
 #: src/wmapp.cc:1647
+#: src/wmapp.cc:1641
+#: src/wmapp.cc:1648
+>>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nerozpoznaná volba '%s'."
@@ -1476,6 +1518,13 @@ msgid "Confirm Logout"
 msgstr "Potvrdit odhlášení"
 
 #: src/wmapp.cc:1699
+#: src/wmapp.cc:1693
+#: src/wmapp.cc:1700
+msgid "Confirm Logout"
+msgstr "Potvrdit odhlášení"
+
+#: src/wmapp.cc:1701
+>>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1527,11 +1576,13 @@ msgid "Unable to create directory %s"
 msgstr "Selhalo vytvoření adresáře %s"
 
 #: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:703 src/wmprog.cc:707
+#: src/wmconfig.cc:146
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Nelze zapisovat do %s"
 
 #: src/wmconfig.cc:182 src/wmprog.cc:711
+#: src/wmconfig.cc:182
 #, c-format
 msgid "Unable to rename %s to %s"
 msgstr "Nezdařilo se přejmenování %s na %s"
@@ -1540,12 +1591,15 @@ msgstr "Nezdařilo se přejmenování %s na %s"
 msgid "Loc_k Workstation"
 msgstr "Zamknout pracovní _stanici"
 
-#: src/wmdialog.cc:70 src/ymsgbox.cc:37
+#: src/wmdialog.cc:70 src/ymsgbox.cc:47
 msgid "_Cancel"
 msgstr "_Zrušit"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmdialog.cc:71 src/wmprog.cc:843 src/wmprog.cc:845 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:861 src/wmprog.cc:863 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:528 src/wmprog.cc:530 src/wmtaskbar.cc:243
+>>>>>>> origin/icewm-1-4-BRANCH
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Odhlášení…"
@@ -1564,6 +1618,17 @@ msgid "Kill Client: "
 msgstr "Zabít Klienta: "
 
 #: src/wmframe.cc:1402
+#: src/wmdialog.cc:76 src/wmprog.cc:822 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:76 src/wmprog.cc:496 src/wmtaskbar.cc:238
+msgid "_About"
+msgstr "O _Aplikaci"
+
+#: src/wmframe.cc:1393
+msgid "Kill Client: "
+msgstr "Zabít Klienta: "
+
+#: src/wmframe.cc:1394
+>>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1576,40 +1641,45 @@ msgid "Missing program setxkbmap"
 msgstr "Chybí program setxkbmap"
 
 #: src/wmmgr.cc:3169
+#: src/wmmgr.cc:3162
+msgid "Missing program setxkbmap"
+msgstr "Chybí program setxkbmap"
+
+#: src/wmmgr.cc:3163
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Instalujte setxkbmap pro přepínání klávesnic."
 
-#: src/wmoption.cc:260
+#: src/wmoption.cc:259
 #, c-format
 msgid "Unknown window option: %s"
 msgstr "Neznámý přepínač okna: %s"
 
-#: src/wmoption.cc:331
+#: src/wmoption.cc:330
 #, c-format
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Syntaktická chyba ve volbách okna, řádek %d z %s"
 
-#: src/wmprog.cc:399
+#: src/wmprog.cc:392
 msgid "_Click to focus"
 msgstr "Vybrat _kliknutím"
 
-#: src/wmprog.cc:400
+#: src/wmprog.cc:393
 msgid "_Explicit focus"
 msgstr "_Explicitní ohnisko (výběr klikem)"
 
-#: src/wmprog.cc:401
+#: src/wmprog.cc:394
 msgid "_Sloppy mouse focus"
 msgstr "_Nepřesné zaměření myši"
 
-#: src/wmprog.cc:402
+#: src/wmprog.cc:395
 msgid "S_trict mouse focus"
 msgstr "P_řesný výběr myší"
 
-#: src/wmprog.cc:403
+#: src/wmprog.cc:396
 msgid "_Quiet sloppy focus"
 msgstr "_Klidný nepřesný výběr"
 
-#: src/wmprog.cc:404
+#: src/wmprog.cc:397
 msgid "Custo_m"
 msgstr "_Uživatelské"
 
@@ -1638,6 +1708,29 @@ msgid "Programs"
 msgstr "Programy"
 
 #: src/wmprog.cc:801
+#: src/wmprog.cc:804
+#: src/wmprog.cc:419
+msgid "_Manual"
+msgstr "_Ručně"
+
+#: src/wmprog.cc:420
+msgid "_Icewm(1)"
+msgstr "_Icewm(1)"
+
+#: src/wmprog.cc:421
+msgid "Icewm_Bg(1)"
+msgstr "Icewm_Bg(1)"
+
+#: src/wmprog.cc:422
+msgid "Ice_Sound(1)"
+msgstr "Ice_Sound(1)"
+
+#: src/wmprog.cc:482
+msgid "Programs"
+msgstr "Programy"
+
+#: src/wmprog.cc:486
+>>>>>>> origin/icewm-1-4-BRANCH
 msgid "_Run..."
 msgstr "_Spustit…"
 
@@ -1663,6 +1756,29 @@ msgid "_Themes"
 msgstr "_Témata"
 
 #: src/wmprog.cc:835
+#: src/wmprog.cc:855
+#: src/wmprog.cc:490 src/wmtaskbar.cc:233
+msgid "_Windows"
+msgstr "_Okna"
+
+#: src/wmprog.cc:501
+msgid "_Help"
+msgstr "_Nápověda"
+
+#: src/wmprog.cc:506
+msgid "_Focus"
+msgstr "_Výběr aktivního okna"
+
+#: src/wmprog.cc:511
+msgid "_Preferences"
+msgstr "_Preference"
+
+#: src/wmprog.cc:516
+msgid "_Themes"
+msgstr "_Témata"
+
+#: src/wmprog.cc:520
+>>>>>>> origin/icewm-1-4-BRANCH
 msgid "Se_ttings"
 msgstr "Nas_tavení"
 
@@ -1882,24 +1998,24 @@ msgstr ""
 "Nastavení jazyka (locale) není knihovnou C nebo Xlib podporováno. Vracím "
 "nastavení jazyka (locale) na „C“."
 
-#: src/ylocale.cc:94
+#: src/ylocale.cc:90
 msgid ""
 "Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
 msgstr ""
 "Nepodařilo se zjistit znakovou sadu stávajícího jazykového nastavení. "
 "Předpokládám ISO-8859-1.\n"
 
-#: src/ylocale.cc:127 src/ylocale.cc:135
+#: src/ylocale.cc:123 src/ylocale.cc:131
 #, c-format
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv (dostatečně) nepodporuje konverzi z %s do %s."
 
-#: src/ylocale.cc:235
+#: src/ylocale.cc:231
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Neplatný vícebajtový řetězec „%s“: %s"
 
-#: src/ymsgbox.cc:34
+#: src/ymsgbox.cc:44
 msgid "_OK"
 msgstr "_Potvrdit"
 
@@ -1932,6 +2048,8 @@ msgstr "Neukončená hexadecimální část URL na pozici %d."
 msgid "Invalid hex escape in URL at position %d."
 msgstr "Nesprávná hexadecimální část URL na pozici %d."
 
+#: src/yxapp.cc:989
+>>>>>>> origin/icewm-1-4-BRANCH
 #: src/yxapp.cc:991
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"
@@ -2629,6 +2747,12 @@ msgstr "Vývoj webu"
 #: src/fdospecgen.h:319
 msgid "WordProcessor"
 msgstr "Textový procesor"
+
+#~ msgid "Kill IceWM, replace with Xterm"
+#~ msgstr "Zabít IceWM, nahradit Xtermem"
+
+#~ msgid "Save Modifications"
+#~ msgstr "Uložit změny"
 
 #~ msgid "GNOME window state"
 #~ msgstr "GNOME stav okna"
