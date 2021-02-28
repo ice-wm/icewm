@@ -9,7 +9,6 @@ msgstr ""
 "Project-Id-Version: icewm-1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2021-02-27 18:40+0100\n"
->>>>>>> origin/icewm-1-4-BRANCH
 "PO-Revision-Date: 2020-12-14 17:26+0000\n"
 "Last-Translator: Aleš Kastner <alkas@volny.cz>\n"
 "Language-Team: Czech <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -609,11 +608,7 @@ msgstr "Akce „%s“ vyžaduje nejméně %d argumentů."
 msgid "Invalid expression: `%s'"
 msgstr "Neplatný výraz: `%s'"
 
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1076
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1070
-#: src/yxapp.cc:1028
 #: src/icesh.cc:3217 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/yxapp.cc:1030
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -644,8 +639,6 @@ msgstr "Neplatný PID: `%s'"
 msgid "Invalid layer: `%s'."
 msgstr "Neplatná vrstva: `%s'."
 
-#: src/icesh.cc:4237
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/icesh.cc:4241
 #, c-format
 msgid "Unknown action: `%s'"
@@ -1361,16 +1354,6 @@ msgstr ""
 "Nemohu restartovat: %s\n"
 "Vede $PATH také k %s?"
 
-#: src/wmapp.cc:775
-msgid "Kill IceWM, replace with Xterm"
-msgstr "Zabít IceWM, nahradit Xtermem"
-
-#: src/wmapp.cc:1077 src/yxapp.cc:1031
-msgid "<none>"
-msgstr "<nic>"
-
-#: src/wmapp.cc:1402
-#: src/wmapp.cc:1396
 #: src/wmapp.cc:768
 msgid "Confirm Restart as Terminal"
 msgstr ""
@@ -1386,17 +1369,13 @@ msgid "<none>"
 msgstr "<nic>"
 
 #: src/wmapp.cc:1403
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      ID klienta, který bude použit při kontaktování správce "
 "sezení.\n"
 
-#: src/wmapp.cc:1408
-#: src/wmapp.cc:1402
 #: src/wmapp.cc:1409
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1406,10 +1385,7 @@ msgstr ""
 "  --debug             Vypíše všeobecné ladicí zprávy.\n"
 "  --debug-z          Vypíše ladicí zprávy ohledně seskládání oken.\n"
 
-#: src/wmapp.cc:1416
-#: src/wmapp.cc:1410
 #: src/wmapp.cc:1417
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1427,10 +1403,7 @@ msgstr ""
 "  -p, --postpreferences   Po zpracování vypsat nastavení.\n"
 "  --trace=conf,icon   K zavedení konfigurace použity cesty pro sledování.\n"
 
-#: src/wmapp.cc:1425
-#: src/wmapp.cc:1419
 #: src/wmapp.cc:1426
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1489,42 +1462,26 @@ msgstr ""
 "%s.\n"
 "\n"
 
-#: src/wmapp.cc:1487
-#: src/wmapp.cc:1481
 #: src/wmapp.cc:1488
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s konfigurační adresáře:\n"
 
-#: src/wmapp.cc:1569
-#: src/wmapp.cc:1563
 #: src/wmapp.cc:1570
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s zkonfigurované voľby: %s\n"
 
-#: src/wmapp.cc:1647
-#: src/wmapp.cc:1641
 #: src/wmapp.cc:1648
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nerozpoznaná volba '%s'."
 
-#: src/wmapp.cc:1698
-msgid "Confirm Logout"
-msgstr "Potvrdit odhlášení"
-
-#: src/wmapp.cc:1699
-#: src/wmapp.cc:1693
 #: src/wmapp.cc:1700
 msgid "Confirm Logout"
 msgstr "Potvrdit odhlášení"
 
 #: src/wmapp.cc:1701
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1575,13 +1532,11 @@ msgstr "Neznámá hodnota '%s' pro volbu '%s'."
 msgid "Unable to create directory %s"
 msgstr "Selhalo vytvoření adresáře %s"
 
-#: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:703 src/wmprog.cc:707
 #: src/wmconfig.cc:146
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Nelze zapisovat do %s"
 
-#: src/wmconfig.cc:182 src/wmprog.cc:711
 #: src/wmconfig.cc:182
 #, c-format
 msgid "Unable to rename %s to %s"
@@ -1596,10 +1551,7 @@ msgid "_Cancel"
 msgstr "_Zrušit"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:843 src/wmprog.cc:845 src/wmtaskbar.cc:243
-#: src/wmdialog.cc:71 src/wmprog.cc:861 src/wmprog.cc:863 src/wmtaskbar.cc:243
 #: src/wmdialog.cc:71 src/wmprog.cc:528 src/wmprog.cc:530 src/wmtaskbar.cc:243
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Odhlášení…"
@@ -1609,16 +1561,6 @@ msgid "_Restart icewm"
 msgstr "Restartovat _icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:811 src/wmtaskbar.cc:238
-msgid "_About"
-msgstr "O _Aplikaci"
-
-#: src/wmframe.cc:1395
-msgid "Kill Client: "
-msgstr "Zabít Klienta: "
-
-#: src/wmframe.cc:1402
-#: src/wmdialog.cc:76 src/wmprog.cc:822 src/wmtaskbar.cc:238
 #: src/wmdialog.cc:76 src/wmprog.cc:496 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "O _Aplikaci"
@@ -1628,7 +1570,6 @@ msgid "Kill Client: "
 msgstr "Zabít Klienta: "
 
 #: src/wmframe.cc:1394
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1636,11 +1577,6 @@ msgstr ""
 "VAROVÁNÍ! Pokud bude tento klient zabit, budou\n"
 "veškerá neuložená data ztracena. Chcete provézt?"
 
-#: src/wmmgr.cc:3168
-msgid "Missing program setxkbmap"
-msgstr "Chybí program setxkbmap"
-
-#: src/wmmgr.cc:3169
 #: src/wmmgr.cc:3162
 msgid "Missing program setxkbmap"
 msgstr "Chybí program setxkbmap"
@@ -1683,32 +1619,6 @@ msgstr "_Klidný nepřesný výběr"
 msgid "Custo_m"
 msgstr "_Uživatelské"
 
-#: src/wmprog.cc:499
-msgid "Save Modifications"
-msgstr "Uložit změny"
-
-#: src/wmprog.cc:734
-msgid "_Manual"
-msgstr "_Ručně"
-
-#: src/wmprog.cc:735
-msgid "_Icewm(1)"
-msgstr "_Icewm(1)"
-
-#: src/wmprog.cc:736
-msgid "Icewm_Bg(1)"
-msgstr "Icewm_Bg(1)"
-
-#: src/wmprog.cc:737
-msgid "Ice_Sound(1)"
-msgstr "Ice_Sound(1)"
-
-#: src/wmprog.cc:797
-msgid "Programs"
-msgstr "Programy"
-
-#: src/wmprog.cc:801
-#: src/wmprog.cc:804
 #: src/wmprog.cc:419
 msgid "_Manual"
 msgstr "_Ručně"
@@ -1730,33 +1640,10 @@ msgid "Programs"
 msgstr "Programy"
 
 #: src/wmprog.cc:486
->>>>>>> origin/icewm-1-4-BRANCH
 msgid "_Run..."
 msgstr "_Spustit…"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:805 src/wmtaskbar.cc:233
-msgid "_Windows"
-msgstr "_Okna"
-
-#: src/wmprog.cc:816
-msgid "_Help"
-msgstr "_Nápověda"
-
-#: src/wmprog.cc:821
-msgid "_Focus"
-msgstr "_Výběr aktivního okna"
-
-#: src/wmprog.cc:826
-msgid "_Preferences"
-msgstr "_Preference"
-
-#: src/wmprog.cc:831
-msgid "_Themes"
-msgstr "_Témata"
-
-#: src/wmprog.cc:835
-#: src/wmprog.cc:855
 #: src/wmprog.cc:490 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Okna"
@@ -1778,7 +1665,6 @@ msgid "_Themes"
 msgstr "_Témata"
 
 #: src/wmprog.cc:520
->>>>>>> origin/icewm-1-4-BRANCH
 msgid "Se_ttings"
 msgstr "Nas_tavení"
 
@@ -2048,8 +1934,6 @@ msgstr "Neukončená hexadecimální část URL na pozici %d."
 msgid "Invalid hex escape in URL at position %d."
 msgstr "Nesprávná hexadecimální část URL na pozici %d."
 
-#: src/yxapp.cc:989
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/yxapp.cc:991
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"

@@ -7,7 +7,6 @@ msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2021-02-27 18:40+0100\n"
->>>>>>> origin/icewm-1-4-BRANCH
 "PO-Revision-Date: 2020-12-14 22:26+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -610,11 +609,7 @@ msgstr "L'acció \"%s\" necessita com a mínim %d arguments."
 msgid "Invalid expression: `%s'"
 msgstr "Expressió no vàlida: %s"
 
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1076
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1070
-#: src/yxapp.cc:1028
 #: src/icesh.cc:3217 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/yxapp.cc:1030
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -645,8 +640,6 @@ msgstr "PID no vàlid: %s"
 msgid "Invalid layer: `%s'."
 msgstr "Capa no vàlida: %s."
 
-#: src/icesh.cc:4237
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/icesh.cc:4241
 #, c-format
 msgid "Unknown action: `%s'"
@@ -1364,16 +1357,6 @@ msgstr ""
 "No s'a pogut reiniciar: %s\n"
 "Apunta $PATH a %s?"
 
-#: src/wmapp.cc:775
-msgid "Kill IceWM, replace with Xterm"
-msgstr "Mata l'IceWM, reemplaça'l per l'Xterm"
-
-#: src/wmapp.cc:1077 src/yxapp.cc:1031
-msgid "<none>"
-msgstr "<cap>"
-
-#: src/wmapp.cc:1402
-#: src/wmapp.cc:1396
 #: src/wmapp.cc:768
 msgid "Confirm Restart as Terminal"
 msgstr ""
@@ -1389,17 +1372,13 @@ msgid "<none>"
 msgstr "<cap>"
 
 #: src/wmapp.cc:1403
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Id de client per usar quan es contacti amb el gestor "
 "de sessions.\n"
 
-#: src/wmapp.cc:1408
-#: src/wmapp.cc:1402
 #: src/wmapp.cc:1409
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1410,10 +1389,7 @@ msgstr ""
 "  --debug-z           Imprimeix els missatges de depuració sobre l'apilament "
 "de finestres.\n"
 
-#: src/wmapp.cc:1416
-#: src/wmapp.cc:1410
 #: src/wmapp.cc:1417
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1432,10 +1408,7 @@ msgstr ""
 "processament.\n"
 "  --trace=conf,icon   Traça els camins usats per carregar la configuració.\n"
 
-#: src/wmapp.cc:1425
-#: src/wmapp.cc:1419
 #: src/wmapp.cc:1426
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1495,42 +1468,26 @@ msgstr ""
 "%s.\n"
 "\n"
 
-#: src/wmapp.cc:1487
-#: src/wmapp.cc:1481
 #: src/wmapp.cc:1488
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s directoris de configuració:\n"
 
-#: src/wmapp.cc:1569
-#: src/wmapp.cc:1563
 #: src/wmapp.cc:1570
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s opcions configurades:%s\n"
 
-#: src/wmapp.cc:1647
-#: src/wmapp.cc:1641
 #: src/wmapp.cc:1648
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opció no reconeguda: \"%s\"."
 
-#: src/wmapp.cc:1698
-msgid "Confirm Logout"
-msgstr "Confirmació de la sortida"
-
-#: src/wmapp.cc:1699
-#: src/wmapp.cc:1693
 #: src/wmapp.cc:1700
 msgid "Confirm Logout"
 msgstr "Confirmació de la sortida"
 
 #: src/wmapp.cc:1701
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1581,13 +1538,11 @@ msgstr "Valor desconegut, \"%s\", per a l'opció \"%s\"."
 msgid "Unable to create directory %s"
 msgstr "No es pot crear el directori %s"
 
-#: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:703 src/wmprog.cc:707
 #: src/wmconfig.cc:146
 #, c-format
 msgid "Unable to write to %s"
 msgstr "No es pot escriure a %s"
 
-#: src/wmconfig.cc:182 src/wmprog.cc:711
 #: src/wmconfig.cc:182
 #, c-format
 msgid "Unable to rename %s to %s"
@@ -1602,10 +1557,7 @@ msgid "_Cancel"
 msgstr "_Cancel·la"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:843 src/wmprog.cc:845 src/wmtaskbar.cc:243
-#: src/wmdialog.cc:71 src/wmprog.cc:861 src/wmprog.cc:863 src/wmtaskbar.cc:243
 #: src/wmdialog.cc:71 src/wmprog.cc:528 src/wmprog.cc:530 src/wmtaskbar.cc:243
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Surt..."
@@ -1615,16 +1567,6 @@ msgid "_Restart icewm"
 msgstr "_Reinicia l'icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:811 src/wmtaskbar.cc:238
-msgid "_About"
-msgstr "_Quant a"
-
-#: src/wmframe.cc:1395
-msgid "Kill Client: "
-msgstr "Mata el client: "
-
-#: src/wmframe.cc:1402
-#: src/wmdialog.cc:76 src/wmprog.cc:822 src/wmtaskbar.cc:238
 #: src/wmdialog.cc:76 src/wmprog.cc:496 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Quant a"
@@ -1634,7 +1576,6 @@ msgid "Kill Client: "
 msgstr "Mata el client: "
 
 #: src/wmframe.cc:1394
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1642,11 +1583,6 @@ msgstr ""
 "ATENCIÓ! Tots els canvis no desats es perdran en\n"
 "matar el client. Encara voleu continuar?"
 
-#: src/wmmgr.cc:3168
-msgid "Missing program setxkbmap"
-msgstr "Manca el programa setxkbmap."
-
-#: src/wmmgr.cc:3169
 #: src/wmmgr.cc:3162
 msgid "Missing program setxkbmap"
 msgstr "Manca el programa setxkbmap."
@@ -1689,32 +1625,6 @@ msgstr "Focus _tènue silenciós"
 msgid "Custo_m"
 msgstr "_Personalitzat"
 
-#: src/wmprog.cc:499
-msgid "Save Modifications"
-msgstr "Desa les modificacions"
-
-#: src/wmprog.cc:734
-msgid "_Manual"
-msgstr "_Manual"
-
-#: src/wmprog.cc:735
-msgid "_Icewm(1)"
-msgstr "_Icewm(1)"
-
-#: src/wmprog.cc:736
-msgid "Icewm_Bg(1)"
-msgstr "Icewm_Bg(1)"
-
-#: src/wmprog.cc:737
-msgid "Ice_Sound(1)"
-msgstr "Ice_Sound(1)"
-
-#: src/wmprog.cc:797
-msgid "Programs"
-msgstr "Programes"
-
-#: src/wmprog.cc:801
-#: src/wmprog.cc:804
 #: src/wmprog.cc:419
 msgid "_Manual"
 msgstr "_Manual"
@@ -1736,33 +1646,10 @@ msgid "Programs"
 msgstr "Programes"
 
 #: src/wmprog.cc:486
->>>>>>> origin/icewm-1-4-BRANCH
 msgid "_Run..."
 msgstr "_Executa..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:805 src/wmtaskbar.cc:233
-msgid "_Windows"
-msgstr "_Finestres"
-
-#: src/wmprog.cc:816
-msgid "_Help"
-msgstr "_Ajuda"
-
-#: src/wmprog.cc:821
-msgid "_Focus"
-msgstr "_Focus"
-
-#: src/wmprog.cc:826
-msgid "_Preferences"
-msgstr "_Preferències"
-
-#: src/wmprog.cc:831
-msgid "_Themes"
-msgstr "_Temes"
-
-#: src/wmprog.cc:835
-#: src/wmprog.cc:855
 #: src/wmprog.cc:490 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Finestres"
@@ -1784,7 +1671,6 @@ msgid "_Themes"
 msgstr "_Temes"
 
 #: src/wmprog.cc:520
->>>>>>> origin/icewm-1-4-BRANCH
 msgid "Se_ttings"
 msgstr "Paràme_tres"
 
@@ -2052,8 +1938,6 @@ msgstr "Escapament hex incomplet dins l'URL a la posició %d."
 msgid "Invalid hex escape in URL at position %d."
 msgstr "Escapament hex no vàlid dins l'URL a la posició %d."
 
-#: src/yxapp.cc:989
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/yxapp.cc:991
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"

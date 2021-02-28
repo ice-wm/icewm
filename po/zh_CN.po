@@ -3,7 +3,6 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (icewm)\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2021-02-27 18:40+0100\n"
->>>>>>> origin/icewm-1-4-BRANCH
 "PO-Revision-Date: 2020-08-04 14:12+0800\n"
 "Last-Translator: WhiredPlanck <fungdaat31@outlook.com>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/icewm/"
@@ -602,11 +601,7 @@ msgstr "命令 `%s' 需要至少 %d 个参数。"
 msgid "Invalid expression: `%s'"
 msgstr "无效表达式: `%s'"
 
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1076
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1070
-#: src/yxapp.cc:1028
 #: src/icesh.cc:3217 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/yxapp.cc:1030
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -635,8 +630,6 @@ msgstr "无效 PID：`%s'"
 msgid "Invalid layer: `%s'."
 msgstr "无效层：`%s'。"
 
-#: src/icesh.cc:4237
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/icesh.cc:4241
 #, c-format
 msgid "Unknown action: `%s'"
@@ -1340,16 +1333,6 @@ msgstr ""
 "无法重新启动：%s\n"
 "%s 在路径 $PATH 中吗？"
 
-#: src/wmapp.cc:775
-msgid "Kill IceWM, replace with Xterm"
-msgstr "杀掉 IceWM，替换为 Xterm"
-
-#: src/wmapp.cc:1077 src/yxapp.cc:1031
-msgid "<none>"
-msgstr "<无>"
-
-#: src/wmapp.cc:1402
-#: src/wmapp.cc:1396
 #: src/wmapp.cc:768
 msgid "Confirm Restart as Terminal"
 msgstr ""
@@ -1365,15 +1348,11 @@ msgid "<none>"
 msgstr "<无>"
 
 #: src/wmapp.cc:1403
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr "  --client-id=ID      与会话管理器通信时使用客户端 ID\n"
 
-#: src/wmapp.cc:1408
-#: src/wmapp.cc:1402
 #: src/wmapp.cc:1409
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1383,10 +1362,7 @@ msgstr ""
 "  --debug             打印通用调试信息。\n"
 "  --debug-z           窗口层叠时打印调试信息。\n"
 
-#: src/wmapp.cc:1416
-#: src/wmapp.cc:1410
 #: src/wmapp.cc:1417
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1404,10 +1380,7 @@ msgstr ""
 "  -p, --postpreferences  处理完成后显示配置选项。\n"
 "  --trace=conf,icon   追踪用于加载配置文件的路径。\n"
 
-#: src/wmapp.cc:1425
-#: src/wmapp.cc:1419
 #: src/wmapp.cc:1426
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1466,42 +1439,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1487
-#: src/wmapp.cc:1481
 #: src/wmapp.cc:1488
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s 配置选项目录：\n"
 
-#: src/wmapp.cc:1569
-#: src/wmapp.cc:1563
 #: src/wmapp.cc:1570
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s 配置选项：%s\n"
 
-#: src/wmapp.cc:1647
-#: src/wmapp.cc:1641
 #: src/wmapp.cc:1648
->>>>>>> origin/icewm-1-4-BRANCH
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "无法识别的选项：'%s'。"
 
-#: src/wmapp.cc:1698
-msgid "Confirm Logout"
-msgstr "确认退出"
-
-#: src/wmapp.cc:1699
-#: src/wmapp.cc:1693
 #: src/wmapp.cc:1700
 msgid "Confirm Logout"
 msgstr "确认退出"
 
 #: src/wmapp.cc:1701
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1552,13 +1509,11 @@ msgstr "存在未知的值“%s”（选项“%s”）。"
 msgid "Unable to create directory %s"
 msgstr "无法创建目录 %s"
 
-#: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:703 src/wmprog.cc:707
 #: src/wmconfig.cc:146
 #, c-format
 msgid "Unable to write to %s"
 msgstr "无法写入 %s"
 
-#: src/wmconfig.cc:182 src/wmprog.cc:711
 #: src/wmconfig.cc:182
 #, c-format
 msgid "Unable to rename %s to %s"
@@ -1573,10 +1528,7 @@ msgid "_Cancel"
 msgstr "取消(_C)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:843 src/wmprog.cc:845 src/wmtaskbar.cc:243
-#: src/wmdialog.cc:71 src/wmprog.cc:861 src/wmprog.cc:863 src/wmtaskbar.cc:243
 #: src/wmdialog.cc:71 src/wmprog.cc:528 src/wmprog.cc:530 src/wmtaskbar.cc:243
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "退出(_L)..."
@@ -1586,16 +1538,6 @@ msgid "_Restart icewm"
 msgstr "重启 icewm(_R)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:811 src/wmtaskbar.cc:238
-msgid "_About"
-msgstr "关于(_A)"
-
-#: src/wmframe.cc:1395
-msgid "Kill Client: "
-msgstr "杀死客户端： "
-
-#: src/wmframe.cc:1402
-#: src/wmdialog.cc:76 src/wmprog.cc:822 src/wmtaskbar.cc:238
 #: src/wmdialog.cc:76 src/wmprog.cc:496 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "关于(_A)"
@@ -1605,7 +1547,6 @@ msgid "Kill Client: "
 msgstr "杀死客户端： "
 
 #: src/wmframe.cc:1394
->>>>>>> origin/icewm-1-4-BRANCH
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1613,11 +1554,6 @@ msgstr ""
 "警告！当这个客户程序被杀死时，所有\n"
 "没有保存的修改将丢失。你想继续吗？"
 
-#: src/wmmgr.cc:3168
-msgid "Missing program setxkbmap"
-msgstr "程序 setxkbmap 缺失"
-
-#: src/wmmgr.cc:3169
 #: src/wmmgr.cc:3162
 msgid "Missing program setxkbmap"
 msgstr "程序 setxkbmap 缺失"
@@ -1660,32 +1596,6 @@ msgstr "安静粗略聚焦(_Q)"
 msgid "Custo_m"
 msgstr "自定义(_M)"
 
-#: src/wmprog.cc:499
-msgid "Save Modifications"
-msgstr "保存修改"
-
-#: src/wmprog.cc:734
-msgid "_Manual"
-msgstr "手册(_M)"
-
-#: src/wmprog.cc:735
-msgid "_Icewm(1)"
-msgstr "_Icewm(1)"
-
-#: src/wmprog.cc:736
-msgid "Icewm_Bg(1)"
-msgstr "Icewm_Bg(1)"
-
-#: src/wmprog.cc:737
-msgid "Ice_Sound(1)"
-msgstr "Ice_Sound(1)"
-
-#: src/wmprog.cc:797
-msgid "Programs"
-msgstr "程序"
-
-#: src/wmprog.cc:801
-#: src/wmprog.cc:804
 #: src/wmprog.cc:419
 msgid "_Manual"
 msgstr "手册(_M)"
@@ -1707,33 +1617,10 @@ msgid "Programs"
 msgstr "程序"
 
 #: src/wmprog.cc:486
->>>>>>> origin/icewm-1-4-BRANCH
 msgid "_Run..."
 msgstr "运行(_R)..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:805 src/wmtaskbar.cc:233
-msgid "_Windows"
-msgstr "窗口(_W)"
-
-#: src/wmprog.cc:816
-msgid "_Help"
-msgstr "帮助(_H)"
-
-#: src/wmprog.cc:821
-msgid "_Focus"
-msgstr "聚焦(_F)"
-
-#: src/wmprog.cc:826
-msgid "_Preferences"
-msgstr "配置选项(_P)"
-
-#: src/wmprog.cc:831
-msgid "_Themes"
-msgstr "主题(_T)"
-
-#: src/wmprog.cc:835
-#: src/wmprog.cc:855
 #: src/wmprog.cc:490 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "窗口(_W)"
@@ -1755,7 +1642,6 @@ msgid "_Themes"
 msgstr "主题(_T)"
 
 #: src/wmprog.cc:520
->>>>>>> origin/icewm-1-4-BRANCH
 msgid "Se_ttings"
 msgstr "设置(_T)"
 
@@ -2019,8 +1905,6 @@ msgstr "位于 %d 处的 URL 中存在不完整的十六进制转义符。"
 msgid "Invalid hex escape in URL at position %d."
 msgstr "位于 %d 处的 URL 中存在无效的十六进制转义符。"
 
-#: src/yxapp.cc:989
->>>>>>> origin/icewm-1-4-BRANCH
 #: src/yxapp.cc:991
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"
