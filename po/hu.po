@@ -672,8 +672,6 @@ msgstr "Érvénytelen kifejezés: \"%s\""
 
 # ../src/icetail.cc:124 ../src/icewmbg.cc:199 ../src/icewmhint.cc:74
 # ../src/yapp.cc:582
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1070
-#: src/yxapp.cc:1028
 #: src/icesh.cc:3217 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
 #: src/yxapp.cc:1030
 #, c-format
@@ -710,7 +708,6 @@ msgid "Invalid layer: `%s'."
 msgstr "Érvénytelen argumentum: \"%s\"."
 
 # ../src/wmoption.cc:209
-#: src/icesh.cc:4237
 #: src/icesh.cc:4241
 #, c-format
 msgid "Unknown action: `%s'"
@@ -1559,17 +1556,6 @@ msgstr ""
 "Esetleg nincsen a $PATH-ban (elérési\n"
 "útvonalban) és ezért nem elérhető %s?"
 
-#: src/wmapp.cc:775
-msgid "Kill IceWM, replace with Xterm"
-msgstr "IceWM leállítása, lecserélés az Xtermre"
-
-# ../src/icetail.cc:126 ../src/icewmbg.cc:201 ../src/icewmhint.cc:76
-# ../src/yapp.cc:584
-#: src/wmapp.cc:1071 src/yxapp.cc:1029
-msgid "<none>"
-msgstr "<nincs>"
-
-#: src/wmapp.cc:1396
 #: src/wmapp.cc:768
 msgid "Confirm Restart as Terminal"
 msgstr ""
@@ -1593,7 +1579,6 @@ msgstr ""
 "  --client-id=ID      A munkamenet-kezelőhöz való csatlakozáskor használandó "
 "ügyfélazonosító.\n"
 
-#: src/wmapp.cc:1402
 #: src/wmapp.cc:1409
 msgid ""
 "\n"
@@ -1605,7 +1590,6 @@ msgstr ""
 "  --debug-z           Ablaksorrenddel kapcsolatos hibakeresési üzenetek "
 "nyomtatása.\n"
 
-#: src/wmapp.cc:1410
 #: src/wmapp.cc:1417
 #, fuzzy
 #| msgid ""
@@ -1627,7 +1611,6 @@ msgstr ""
 "  -t, --theme=FÁJL    Téma betöltése a FÁJL-ból.\n"
 "  --postpreferences   Beállítások nyomtatása a feldolgozás után.\n"
 
-#: src/wmapp.cc:1419
 #: src/wmapp.cc:1426
 #, c-format
 msgid ""
@@ -1689,34 +1672,29 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1481
 #: src/wmapp.cc:1488
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s konfigurációs könyvtárai:\n"
 
 # ../src/wmoption.cc:209
-#: src/wmapp.cc:1563
 #: src/wmapp.cc:1570
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s konfigurált beállítás: %s\n"
 
 # ../src/wmoption.cc:209
-#: src/wmapp.cc:1641
 #: src/wmapp.cc:1648
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nem azonosítható beállítás: '%s'."
 
 # ../src/wmapp.cc:676
-#: src/wmapp.cc:1692
 #: src/wmapp.cc:1700
 msgid "Confirm Logout"
 msgstr "Kilépés megerősítése"
 
 # ../src/wmapp.cc:677
-#: src/wmapp.cc:1693
 #: src/wmapp.cc:1701
 msgid ""
 "Logout will close all active applications.\n"
@@ -1777,13 +1755,11 @@ msgstr "Ismeretlen '%s' érték a következő beállításnál: '%s'."
 msgid "Unable to create directory %s"
 msgstr "Nem sikerült a könyvtár létrehozása: %s"
 
-#: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:703 src/wmprog.cc:707
 #: src/wmconfig.cc:146
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Nem lehet írni a következőre: %s"
 
-#: src/wmconfig.cc:182 src/wmprog.cc:711
 #: src/wmconfig.cc:182
 #, c-format
 msgid "Unable to rename %s to %s"
@@ -1801,7 +1777,6 @@ msgstr "_Mégsem"
 
 # ../src/wmdialog.cc:66 ../src/wmprog.cc:629 ../src/wmtaskbar.cc:236
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:861 src/wmprog.cc:863 src/wmtaskbar.cc:243
 #: src/wmdialog.cc:71 src/wmprog.cc:528 src/wmprog.cc:530 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
@@ -1814,7 +1789,6 @@ msgstr "Az _IceWM újraindítása"
 
 # ../src/wmprog.cc:633 ../src/wmtaskbar.cc:230 ../src/wmtaskbar.cc:233
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:822 src/wmtaskbar.cc:238
 #: src/wmdialog.cc:76 src/wmprog.cc:496 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "N_évjegy"
@@ -1834,11 +1808,6 @@ msgstr ""
 "változtatás elveszik, ha ez a kliens ki lesz lőve!\n"
 "Biztosan ezt akarod?"
 
-#: src/wmmgr.cc:3168
-msgid "Missing program setxkbmap"
-msgstr ""
-
-#: src/wmmgr.cc:3169
 #: src/wmmgr.cc:3162
 msgid "Missing program setxkbmap"
 msgstr ""
@@ -1883,23 +1852,6 @@ msgstr "_Egyszerű pontatlan fókusz"
 msgid "Custo_m"
 msgstr "Egyé_ni"
 
-#: src/wmprog.cc:499
-msgid "Save Modifications"
-msgstr "Módosítások mentése"
-
-#: src/wmprog.cc:734
-msgid "_Manual"
-msgstr "_Kézi"
-
-#: src/wmprog.cc:735
-msgid "_Icewm(1)"
-msgstr "_Icewm(1)"
-
-#: src/wmprog.cc:736
-msgid "Icewm_Bg(1)"
-msgstr "Icewm_Bg(1)"
-
-#: src/wmprog.cc:737
 #: src/wmprog.cc:419
 msgid "_Manual"
 msgstr "_Kézi"
@@ -1917,34 +1869,22 @@ msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
 # ../src/wmprog.cc:587
-#: src/wmprog.cc:799
 #: src/wmprog.cc:482
 msgid "Programs"
 msgstr "Programok"
 
 # ../src/wmprog.cc:621
-#: src/wmprog.cc:804
 #: src/wmprog.cc:486
 msgid "_Run..."
 msgstr "_Futtatás..."
 
 # ../src/wmprog.cc:617 ../src/wmtaskbar.cc:218
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:809 src/wmtaskbar.cc:233
 #: src/wmprog.cc:490 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Ablakok"
 
 # ../src/wmprog.cc:642
-#: src/wmprog.cc:828
-msgid "_Help"
-msgstr "_Súgó"
-
-#: src/wmprog.cc:839
-msgid "_Focus"
-msgstr "_Fókusz"
-
-#: src/wmprog.cc:844
 #: src/wmprog.cc:501
 msgid "_Help"
 msgstr "_Súgó"
@@ -1958,11 +1898,6 @@ msgid "_Preferences"
 msgstr "_Beállítások"
 
 # ../src/wmprog.cc:627
-#: src/wmprog.cc:850
-msgid "_Themes"
-msgstr "_Témák"
-
-#: src/wmprog.cc:855
 #: src/wmprog.cc:516
 msgid "_Themes"
 msgstr "_Témák"
@@ -2289,7 +2224,6 @@ msgid "Invalid hex escape in URL at position %d."
 msgstr ""
 "Érvénytelen hexadecimális szám az escape után az URL-címben, pozíció: %d."
 
-#: src/yxapp.cc:989
 #: src/yxapp.cc:991
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"

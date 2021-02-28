@@ -609,8 +609,6 @@ msgstr "La acción «%s» requiere al menos %d argumentos."
 msgid "Invalid expression: `%s'"
 msgstr "Expresión no válida: «%s»"
 
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1070
-#: src/yxapp.cc:1028
 #: src/icesh.cc:3217 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
 #: src/yxapp.cc:1030
 #, c-format
@@ -642,7 +640,6 @@ msgstr "PID no válido: «%s»"
 msgid "Invalid layer: `%s'."
 msgstr "Capa no válida: «%s»."
 
-#: src/icesh.cc:4237
 #: src/icesh.cc:4241
 #, c-format
 msgid "Unknown action: `%s'"
@@ -1369,15 +1366,6 @@ msgstr ""
 "No se ha podido reiniciar: %s\n"
 "¿Conduce $PATH a %s?"
 
-#: src/wmapp.cc:775
-msgid "Kill IceWM, replace with Xterm"
-msgstr "Matar IceWM, reemplazarlo con Xterm"
-
-#: src/wmapp.cc:1071 src/yxapp.cc:1029
-msgid "<none>"
-msgstr "<ninguno>"
-
-#: src/wmapp.cc:1396
 #: src/wmapp.cc:768
 msgid "Confirm Restart as Terminal"
 msgstr ""
@@ -1399,7 +1387,6 @@ msgstr ""
 "  --client-id=ID      Identificador de cliente a usar al contactar con el "
 "administrador de sesiones.\n"
 
-#: src/wmapp.cc:1402
 #: src/wmapp.cc:1409
 msgid ""
 "\n"
@@ -1411,7 +1398,6 @@ msgstr ""
 "  --debug-z           Muestra mensajes de depuración relacionados con la "
 "pila de ventanas.\n"
 
-#: src/wmapp.cc:1410
 #: src/wmapp.cc:1417
 msgid ""
 "\n"
@@ -1432,7 +1418,6 @@ msgstr ""
 "  --trace=conf,icon   Rastrea las rutas usadas para cargar la "
 "configuración.\n"
 
-#: src/wmapp.cc:1419
 #: src/wmapp.cc:1426
 #, c-format
 msgid ""
@@ -1494,29 +1479,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1481
 #: src/wmapp.cc:1488
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s directorios de configuración:\n"
 
-#: src/wmapp.cc:1563
 #: src/wmapp.cc:1570
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s opciones configuradas:%s\n"
 
-#: src/wmapp.cc:1641
 #: src/wmapp.cc:1648
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opción no reconocida «%s»."
 
-#: src/wmapp.cc:1692
-msgid "Confirm Logout"
-msgstr "Confirmar el cierre de sesión"
-
-#: src/wmapp.cc:1693
 #: src/wmapp.cc:1700
 msgid "Confirm Logout"
 msgstr "Confirmar el cierre de sesión"
@@ -1572,13 +1549,11 @@ msgstr "Valor desconocido «%s» para la opción «%s»."
 msgid "Unable to create directory %s"
 msgstr "No se puede crear el directorio %s"
 
-#: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:703 src/wmprog.cc:707
 #: src/wmconfig.cc:146
 #, c-format
 msgid "Unable to write to %s"
 msgstr "No se puede escribir en %s"
 
-#: src/wmconfig.cc:182 src/wmprog.cc:711
 #: src/wmconfig.cc:182
 #, c-format
 msgid "Unable to rename %s to %s"
@@ -1593,7 +1568,6 @@ msgid "_Cancel"
 msgstr "_Cancelar"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:861 src/wmprog.cc:863 src/wmtaskbar.cc:243
 #: src/wmdialog.cc:71 src/wmprog.cc:528 src/wmprog.cc:530 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
@@ -1604,7 +1578,6 @@ msgid "_Restart icewm"
 msgstr "Reiniciar _icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:822 src/wmtaskbar.cc:238
 #: src/wmdialog.cc:76 src/wmprog.cc:496 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Acerca de"
@@ -1621,11 +1594,6 @@ msgstr ""
 "¡AVISO! Todos los cambios sin guardar se perderán\n"
 "cuando este cliente sea terminado. ¿Desea continuar?"
 
-#: src/wmmgr.cc:3168
-msgid "Missing program setxkbmap"
-msgstr "Falta el programa setxkbmap"
-
-#: src/wmmgr.cc:3169
 #: src/wmmgr.cc:3162
 msgid "Missing program setxkbmap"
 msgstr "Falta el programa setxkbmap"
@@ -1668,31 +1636,6 @@ msgstr "De_slizar el ratón para ganar foco"
 msgid "Custo_m"
 msgstr "Perzonali_zar"
 
-#: src/wmprog.cc:499
-msgid "Save Modifications"
-msgstr "Guardar las modificaciones"
-
-#: src/wmprog.cc:734
-msgid "_Manual"
-msgstr "_Manual"
-
-#: src/wmprog.cc:735
-msgid "_Icewm(1)"
-msgstr "_Icewm(1)"
-
-#: src/wmprog.cc:736
-msgid "Icewm_Bg(1)"
-msgstr "Icewm_Bg(1)"
-
-#: src/wmprog.cc:737
-msgid "Ice_Sound(1)"
-msgstr "Ice_Sound(1)"
-
-#: src/wmprog.cc:799
-msgid "Programs"
-msgstr "Programas"
-
-#: src/wmprog.cc:804
 #: src/wmprog.cc:419
 msgid "_Manual"
 msgstr "_Manual"
@@ -1718,27 +1661,6 @@ msgid "_Run..."
 msgstr "_Ejecutar..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:809 src/wmtaskbar.cc:233
-msgid "_Windows"
-msgstr "_Ventanas"
-
-#: src/wmprog.cc:828
-msgid "_Help"
-msgstr "A_yuda"
-
-#: src/wmprog.cc:839
-msgid "_Focus"
-msgstr "_Foco"
-
-#: src/wmprog.cc:844
-msgid "_Preferences"
-msgstr "_Preferencias"
-
-#: src/wmprog.cc:850
-msgid "_Themes"
-msgstr "_Temas"
-
-#: src/wmprog.cc:855
 #: src/wmprog.cc:490 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Ventanas"
@@ -2032,7 +1954,6 @@ msgstr "Carácter de escape hexadecimal incompleto en la posición %d del URL."
 msgid "Invalid hex escape in URL at position %d."
 msgstr "Carácter de escape hexadecimal inválido en la posición %d del URL."
 
-#: src/yxapp.cc:989
 #: src/yxapp.cc:991
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"

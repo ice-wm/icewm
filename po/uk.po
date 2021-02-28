@@ -624,8 +624,6 @@ msgstr "Дія \"%s\" вимагає як мінімум %d аргументу(�
 msgid "Invalid expression: `%s'"
 msgstr "Неправильний вираз: \"%s\""
 
-#: src/icesh.cc:3217 src/icesound.cc:793 src/icewmhint.cc:36 src/wmapp.cc:1070
-#: src/yxapp.cc:1028
 #: src/icesh.cc:3217 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
 #: src/yxapp.cc:1030
 #, c-format
@@ -659,7 +657,6 @@ msgstr "Невірний аргумент: \"%s\"."
 msgid "Invalid layer: `%s'."
 msgstr "Невірний аргумент: \"%s\"."
 
-#: src/icesh.cc:4237
 #: src/icesh.cc:4241
 #, c-format
 msgid "Unknown action: `%s'"
@@ -1472,15 +1469,6 @@ msgstr ""
 "Не можу перезапустити: %s\n"
 "Перевірте, чи $PATH веде до %s?"
 
-#: src/wmapp.cc:775
-msgid "Kill IceWM, replace with Xterm"
-msgstr "Зупинити IceWM, замінити на Xterm"
-
-#: src/wmapp.cc:1071 src/yxapp.cc:1029
-msgid "<none>"
-msgstr "<немає>"
-
-#: src/wmapp.cc:1396
 #: src/wmapp.cc:768
 msgid "Confirm Restart as Terminal"
 msgstr ""
@@ -1502,7 +1490,6 @@ msgstr ""
 "  --client-id=ID      Ідентифікатор клієнта для зв'язку із менеджером "
 "сеансів.\n"
 
-#: src/wmapp.cc:1402
 #: src/wmapp.cc:1409
 msgid ""
 "\n"
@@ -1514,7 +1501,6 @@ msgstr ""
 "  --debug-z           Друкує зневаджувальні повідомлення, які стосуються "
 "стеку вікон.\n"
 
-#: src/wmapp.cc:1410
 #: src/wmapp.cc:1417
 #, fuzzy
 #| msgid ""
@@ -1536,7 +1522,6 @@ msgstr ""
 "  -t, --theme=FILE    Завантаження теми із файлу FILE.\n"
 "  --postpreferences   Друк налаштувань після завершення обробки.\n"
 
-#: src/wmapp.cc:1419
 #: src/wmapp.cc:1426
 #, c-format
 msgid ""
@@ -1599,29 +1584,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1481
 #: src/wmapp.cc:1488
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s каталоги конфігурації:\n"
 
-#: src/wmapp.cc:1563
 #: src/wmapp.cc:1570
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s налаштовані параметри:%s\n"
 
-#: src/wmapp.cc:1641
 #: src/wmapp.cc:1648
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Нерозпізнаний параметр: %s."
 
-#: src/wmapp.cc:1692
-msgid "Confirm Logout"
-msgstr "Підтвердження виходу"
-
-#: src/wmapp.cc:1693
 #: src/wmapp.cc:1700
 msgid "Confirm Logout"
 msgstr "Підтвердження виходу"
@@ -1677,13 +1654,11 @@ msgstr "Невідоме значення '%s' для параметра '%s'."
 msgid "Unable to create directory %s"
 msgstr "Не вдалося створити теку %s"
 
-#: src/wmconfig.cc:146 src/wmprog.cc:579 src/wmprog.cc:703 src/wmprog.cc:707
 #: src/wmconfig.cc:146
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Неможливо записати до %s"
 
-#: src/wmconfig.cc:182 src/wmprog.cc:711
 #: src/wmconfig.cc:182
 #, c-format
 msgid "Unable to rename %s to %s"
@@ -1698,7 +1673,6 @@ msgid "_Cancel"
 msgstr "_Скасувати"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:861 src/wmprog.cc:863 src/wmtaskbar.cc:243
 #: src/wmdialog.cc:71 src/wmprog.cc:528 src/wmprog.cc:530 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
@@ -1709,7 +1683,6 @@ msgid "_Restart icewm"
 msgstr "_Перезапустити IceWM"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:822 src/wmtaskbar.cc:238
 #: src/wmdialog.cc:76 src/wmprog.cc:496 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Про"
@@ -1726,11 +1699,6 @@ msgstr ""
 "УВАГА! Всі незбережені дані будуть втрачені\n"
 "при закритті цього вікна. Ви бажаєте закрити його?"
 
-#: src/wmmgr.cc:3168
-msgid "Missing program setxkbmap"
-msgstr ""
-
-#: src/wmmgr.cc:3169
 #: src/wmmgr.cc:3162
 msgid "Missing program setxkbmap"
 msgstr ""
@@ -1773,33 +1741,6 @@ msgstr "_Тихий незграбний фокус"
 msgid "Custo_m"
 msgstr "_Особливе"
 
-#: src/wmprog.cc:499
-#, fuzzy
-#| msgid "Favorite applications"
-msgid "Save Modifications"
-msgstr "Улюблені аплікації"
-
-#: src/wmprog.cc:734
-msgid "_Manual"
-msgstr "_Посібник"
-
-#: src/wmprog.cc:735
-msgid "_Icewm(1)"
-msgstr "_Icewm(1)"
-
-#: src/wmprog.cc:736
-msgid "Icewm_Bg(1)"
-msgstr "Icewm_Bg(1)"
-
-#: src/wmprog.cc:737
-msgid "Ice_Sound(1)"
-msgstr "Ice_Sound(1)"
-
-#: src/wmprog.cc:799
-msgid "Programs"
-msgstr "Програми"
-
-#: src/wmprog.cc:804
 #: src/wmprog.cc:419
 msgid "_Manual"
 msgstr "_Посібник"
@@ -1825,27 +1766,6 @@ msgid "_Run..."
 msgstr "_Запустити..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:809 src/wmtaskbar.cc:233
-msgid "_Windows"
-msgstr "_Вікна"
-
-#: src/wmprog.cc:828
-msgid "_Help"
-msgstr "_Довідка"
-
-#: src/wmprog.cc:839
-msgid "_Focus"
-msgstr "_Фокус"
-
-#: src/wmprog.cc:844
-msgid "_Preferences"
-msgstr ""
-
-#: src/wmprog.cc:850
-msgid "_Themes"
-msgstr "_Теми"
-
-#: src/wmprog.cc:855
 #: src/wmprog.cc:490 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Вікна"
@@ -2144,7 +2064,6 @@ msgstr ""
 msgid "Invalid hex escape in URL at position %d."
 msgstr ""
 
-#: src/yxapp.cc:989
 #: src/yxapp.cc:991
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"
