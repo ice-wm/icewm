@@ -47,7 +47,7 @@ YClock::YClock(YSMListener *smActionListener, IAppletContainer* iapp, YWindow *a
 {
     memset(positions, 0, sizeof positions);
     memset(previous, 0, sizeof previous);
-    memset(lastDrawnTime, 0, sizeof lastDrawnTime);
+    memset(lastTime, 0, sizeof lastTime);
 
     if (prettyClock && ledPixSpace != null && ledPixSpace->width() == 1)
         ledPixSpace = ledPixSpace->scale(5, ledPixSpace->height());
@@ -156,6 +156,13 @@ static int countEvents = 0;
 extern int xeventcount;
 #endif
 
+const YAction actionClockHM;
+const YAction actionClockHMS;
+const YAction actionClockDHM;
+const YAction actionClockDate;
+const YAction actionClockDefault;
+const YAction actionClockUTC;
+
 void YClock::handleClick(const XButtonEvent &up, int count) {
     if (up.button == 1) {
         if (clockCommand && clockCommand[0] &&
@@ -172,13 +179,14 @@ void YClock::handleClick(const XButtonEvent &up, int count) {
         fMenu->setActionListener(this);
         fMenu->addItem(_("CLOCK"), -2, null, actionNull)->setEnabled(false);
         fMenu->addSeparator();
-        fMenu->addItem("%H:%M:%S", -2, null, actionHide);
-        fMenu->addItem("%d %H:%M", -2, null, actionShow);
+        fMenu->addItem("%H:%M", -2, null, actionClockHM);
+        fMenu->addItem("%H:%M:%S", -2, null, actionClockHMS);
+        fMenu->addItem("%d %H:%M", -2, null, actionClockDHM);
         if (!prettyClock)
-            fMenu->addItem(_("Date"), -2, null, actionRaise);
-        fMenu->addItem(_("Default"), -2, null, actionLower);
+            fMenu->addItem(_("Date"), -2, null, actionClockDate);
+        fMenu->addItem(_("Default"), -2, null, actionClockDefault);
         fMenu->addItem(_("_Disable"), -2, null, actionClose);
-        fMenu->addItem(_("_UTC"), -2, null, actionDepth)->setChecked(clockUTC);
+        fMenu->addItem(_("_UTC"), -2, null, actionClockUTC)->setChecked(clockUTC);
         fMenu->popup(nullptr, nullptr, nullptr, up.x_root, up.y_root,
                      YPopupWindow::pfCanFlipVertical |
                      YPopupWindow::pfCanFlipHorizontal |
@@ -192,6 +200,7 @@ void YClock::changeTimeFormat(const char* format) {
     freePixmap();
     memset(positions, 0, sizeof positions);
     memset(previous, 0, sizeof previous);
+    memset(lastTime, 0, sizeof lastTime);
     negativePosition = INT_MAX;
     clockTicked = true;
     repaint();
@@ -203,21 +212,24 @@ void YClock::actionPerformed(YAction action, unsigned int modifiers) {
         hide();
         iapp->relayout();
     }
-    else if (action == actionDepth) {
+    else if (action == actionClockUTC) {
         clockUTC ^= true;
         clockTicked = true;
         repaint();
     }
-    else if (action == actionHide) {
+    else if (action == actionClockHM) {
+        changeTimeFormat(" %H:%M ");
+    }
+    else if (action == actionClockHMS) {
         changeTimeFormat(" %H:%M:%S ");
     }
-    else if (action == actionShow) {
+    else if (action == actionClockDHM) {
         changeTimeFormat(" %d %H:%M ");
     }
-    else if (action == actionRaise) {
+    else if (action == actionClockDate) {
         changeTimeFormat(" %c ");
     }
-    else if (action == actionLower) {
+    else if (action == actionClockDefault) {
         changeTimeFormat(nullptr);
     }
 }
@@ -239,24 +251,22 @@ bool YClock::draw(Graphics& g) {
     timeval walltm = walltime();
     long nextChime = 1000L - walltm.tv_usec / 1000L;
     time_t newTime = walltm.tv_sec;
-    int len = 0;
+    int len;
     char s[TimeSize];
 
     clockTimer->setTimer(nextChime, this, true);
 
     auto t = clockUTC ? gmtime(&newTime) : localtime(&newTime);
-    bool force = false;
 
 #ifdef DEBUG
     if (countEvents)
-        force = true, len = sprintf(s, "%d", xeventcount);
+        len = snprintf(s, sizeof(s), "%d", xeventcount);
     else
 #endif
         len = strftime(s, sizeof(s), strTimeFmt(*t), t);
 
-    if (force || toolTipVisible() || 0 != strcmp(s, lastDrawnTime)) {
-        if (!force)
-            memcpy(lastDrawnTime, s, TimeSize);
+    if (toolTipVisible() || strcmp(s, lastTime)) {
+        memcpy(lastTime, s, TimeSize);
         return prettyClock
              ? paintPretty(g, s, len)
              : paintPlain(g, s, len);

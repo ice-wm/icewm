@@ -122,11 +122,6 @@ CHECK_INCLUDE_FILE_CXX(sys/sched.h HAVE_SYS_SCHED_H "-include /usr/include/sched
 CHECK_INCLUDE_FILE_CXX(sys/sysctl.h HAVE_SYS_SYSCTL_H "-include /usr/include/sys/types.h")
 CHECK_INCLUDE_FILE_CXX(uvm/uvm_param.h HAVE_UVM_UVM_PARAM_H)
 
-CHECK_TYPE_SIZE(char SIZEOF_CHAR)
-CHECK_TYPE_SIZE(long SIZEOF_LONG)
-CHECK_TYPE_SIZE(int SIZEOF_INT)
-CHECK_TYPE_SIZE(short SIZEOF_SHORT)
-
 #########################################################
 # fiting flags to options and available system features #
 #########################################################
@@ -371,6 +366,7 @@ if(CONFIG_FDO_MENUS)
 endif()
 
 option(DEBUG "Define if you want to debug IceWM" off)
+option(PRECON "Define to enable assertions in IceWM" off)
 
 #######################################
 # some extra sugar where available    #
@@ -398,12 +394,18 @@ CONFIGURE_FILE("${CMAKE_SOURCE_DIR}/src/config.cmake.h.in" "${CMAKE_BINARY_DIR}/
 # declaring targets and build flags   #
 #######################################
 
-SET(MISC_SRCS logevent.cc misc.cc yfileio.cc ytime.cc yarray.cc mstring.cc ref.cc)
+set(icewm_pc_flags ${CXXFLAGS_COMMON} ${fontconfig_CFLAGS} ${xft_CFLAGS}
+                   ${librsvg_CFLAGS} ${pixbuf_CFLAGS} ${libimlib2_CFLAGS}
+                   ${libpng_CFLAGS} ${libxpm_CFLAGS} ${xrender_CFLAGS}
+                   ${xrandr_CFLAGS} ${xinerama_CFLAGS} ${xext_CFLAGS}
+                   ${x11_CFLAGS} ${fribidi_CFLAGS} ${nls_CFLAGS})
 
 SET(ICE_COMMON_SRCS udir.cc upath.cc yapp.cc yxapp.cc ytimer.cc yprefs.cc
-    ywindow.cc ypaint.cc ypopup.cc ycursor.cc ysocket.cc ypaths.cc
-    ylocale.cc ypipereader.cc yxembed.cc yconfig.cc yfont.cc ypixmap.cc
-    yimage2.cc yimage_gdk.cc yximage.cc ycolor.cc ytooltip.cc ${MISC_SRCS})
+                    ywindow.cc ypaint.cc ypopup.cc ycursor.cc ysocket.cc
+                    ypaths.cc ypipereader.cc yxembed.cc yconfig.cc yfont.cc
+                    ypixmap.cc yimage2.cc yimage_gdk.cc yximage.cc ycolor.cc
+                    ytooltip.cc ylocale.cc yarray.cc yfileio.cc ytime.cc
+                    mstring.cc ref.cc logevent.cc misc.cc)
 
 if(CONFIG_XFREETYPE)
     list(APPEND ICE_COMMON_SRCS yfontxft.cc)
@@ -412,85 +414,97 @@ if(CONFIG_COREFONTS)
     list(APPEND ICE_COMMON_SRCS yfontcore.cc)
 endif()
 
-SET(ITK_SRCS
-    ymenu.cc ylabel.cc yscrollview.cc ymenuitem.cc
-    yscrollbar.cc ybutton.cc ylistbox.cc yinput.cc
-    globit.cc yicon.cc wmconfig.cc wpixres.cc ref.cc
-    )
+add_library(ice STATIC ${ICE_COMMON_SRCS})
+target_compile_options(ice PUBLIC ${icewm_pc_flags})
 
-SET(ICEWM_SRCS ${ICE_COMMON_SRCS} ${ITK_SRCS}
+SET(ITK_SRCS ymenu.cc ylabel.cc yscrollview.cc ymenuitem.cc
+             yscrollbar.cc ybutton.cc ylistbox.cc yinput.cc
+             globit.cc yicon.cc wmconfig.cc wpixres.cc)
+
+add_library(itk STATIC ${ITK_SRCS})
+target_compile_options(itk PUBLIC ${icewm_pc_flags})
+
+SET(ICEWM_SRCS
     ymsgbox.cc ydialog.cc yurl.cc wmsession.cc
     wmwinlist.cc wmtaskbar.cc wmwinmenu.cc wmdialog.cc
     wmabout.cc wmswitch.cc wmstatus.cc wmoption.cc
     wmcontainer.cc wmclient.cc wmmgr.cc wmapp.cc
     wmframe.cc wmbutton.cc wmminiicon.cc wmtitle.cc
     movesize.cc themes.cc decorate.cc browse.cc
-    wmmenu.cc wmprog.cc atasks.cc aworkspaces.cc
+    wmmenu.cc wmprog.cc wmpref.cc atasks.cc aworkspaces.cc
     amailbox.cc aclock.cc acpustatus.cc amemstatus.cc
     applet.cc apppstatus.cc aaddressbar.cc objbar.cc
     akeyboard.cc aapm.cc atray.cc ysmapp.cc yxtray.cc
     )
 
 ADD_EXECUTABLE(icewm${EXEEXT} ${ICEWM_SRCS})
-set(icewm_pc_flags ${fontconfig_CFLAGS} ${x11_CFLAGS} ${xext_CFLAGS} ${libpng_CFLAGS} ${libxpm_CFLAGS} ${libimlib2_CFLAGS} ${librsvg_CFLAGS} ${pixbuf_CFLAGS} ${xft_CFLAGS} ${xrandr_CFLAGS} ${xrender_CFLAGS} ${xinerama_CFLAGS} ${fribidi_CFLAGS} ${nls_CFLAGS})
-target_compile_options(icewm${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
-set(icewm_libs ${sm_LIBS} ${nls_LIBS} ${fontconfig_LDFLAGS} ${fribidi_LDFLAGS} ${xext_LDFLAGS} ${x11_LDFLAGS} ${xft_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS})
+set(icewm_libs itk ice ${sm_LIBS} ${fontconfig_LDFLAGS} ${fribidi_LDFLAGS}
+                       ${xft_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
+                       ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS})
 TARGET_LINK_LIBRARIES(icewm${EXEEXT} ${icewm_libs} ${icewm_img_libs} ${EXTRA_LIBS})
 
-ADD_EXECUTABLE(genpref${EXEEXT} genpref.cc ${MISC_SRCS})
-set(genpref_pc_flags ${x11_CFLAGS}  ${nls_CFLAGS})
-target_compile_options(genpref${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${genpref_pc_flags})
-TARGET_LINK_LIBRARIES(genpref${EXEEXT} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
+ADD_EXECUTABLE(genpref${EXEEXT} genpref.cc)
+TARGET_LINK_LIBRARIES(genpref${EXEEXT} ice ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
 
-ADD_EXECUTABLE(strtest EXCLUDE_FROM_ALL strtest.cc upath.cc udir.cc ${MISC_SRCS})
-target_compile_options(strtest PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
-TARGET_LINK_LIBRARIES(strtest ${nls_LIBS})
+if(BUILD_TESTING)
+    ADD_EXECUTABLE(strtest strtest.cc)
+    TARGET_LINK_LIBRARIES(strtest ice ${nls_LIBS})
+    add_test(strtest ${CMAKE_BINARY_DIR}/strtest)
 
-add_test(strtest ${CMAKE_BINARY_DIR}/strtest)
+    ADD_EXECUTABLE(testpointer testpointer.cc)
+    target_compile_options(testpointer PUBLIC ${CXXFLAGS_COMMON})
+    TARGET_LINK_LIBRARIES(testpointer)
+    add_test(testpointer ${CMAKE_BINARY_DIR}/testpointer)
+endif()
 
 IF(CONFIG_FDO_MENUS)
-    ADD_EXECUTABLE(icewm-menu-fdo${EXEEXT} ycollections.cc fdomenu.cc ${MISC_SRCS})
-    target_compile_options(icewm-menu-fdo${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${x11_CFLAGS} ${gio_CFLAGS}  ${nls_CFLAGS})
-    TARGET_LINK_LIBRARIES(icewm-menu-fdo${EXEEXT} ${x11_LDFLAGS} ${gio_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
+    ADD_EXECUTABLE(icewm-menu-fdo${EXEEXT} fdomenu.cc ycollections.cc)
+    target_compile_options(icewm-menu-fdo${EXEEXT} PUBLIC ${gio_CFLAGS})
+    TARGET_LINK_LIBRARIES(icewm-menu-fdo${EXEEXT} ice ${x11_LDFLAGS}
+                          ${gio_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
     INSTALL(TARGETS icewm-menu-fdo${EXEEXT} DESTINATION ${BINDIR})
 ENDIF()
 
-ADD_EXECUTABLE(icewm-session${EXEEXT} icesm.cc yapp.cc upath.cc ytimer.cc yprefs.cc ${MISC_SRCS})
-set(icewm_session_pc_flags ${x11_CFLAGS}  ${nls_CFLAGS})
-target_compile_options(icewm-session${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_session_pc_flags})
-TARGET_LINK_LIBRARIES(icewm-session${EXEEXT} ${nls_LIBS} ${x11_LDFLAGS} ${EXTRA_LIBS})
+ADD_EXECUTABLE(icewm-session${EXEEXT} icesm.cc)
+TARGET_LINK_LIBRARIES(icewm-session${EXEEXT} ice ${nls_LIBS} ${x11_LDFLAGS}
+                      ${EXTRA_LIBS})
 
-ADD_EXECUTABLE(icewmhint${EXEEXT} icewmhint.cc ${MISC_SRCS})
-target_compile_options(icewmhint${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
-TARGET_LINK_LIBRARIES(icewmhint${EXEEXT} ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
+ADD_EXECUTABLE(icewmhint${EXEEXT} icewmhint.cc)
+TARGET_LINK_LIBRARIES(icewmhint${EXEEXT} ice ${xext_LDFLAGS} ${x11_LDFLAGS}
+                      ${nls_LIBS} ${EXTRA_LIBS})
 
-ADD_EXECUTABLE(icesh${EXEEXT} icesh.cc ${MISC_SRCS})
-target_compile_options(icesh${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
-TARGET_LINK_LIBRARIES(icesh${EXEEXT} ${xext_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
+ADD_EXECUTABLE(icesh${EXEEXT} icesh.cc)
+TARGET_LINK_LIBRARIES(icesh${EXEEXT} ice ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
+                      ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
 
-ADD_EXECUTABLE(icewmbg${EXEEXT} icewmbg.cc ref.cc ${ICE_COMMON_SRCS})
-target_compile_options(icewmbg${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
-TARGET_LINK_LIBRARIES(icewmbg${EXEEXT} ${xext_LDFLAGS} ${x11_LDFLAGS} ${xft_LDFLAGS} ${fribidi_LDFLAGS} ${xrandr_LDFLAGS}  ${icewm_img_libs} ${xinerama_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
+ADD_EXECUTABLE(icewmbg${EXEEXT} icewmbg.cc)
+TARGET_LINK_LIBRARIES(icewmbg${EXEEXT} ice ${icewm_img_libs} ${xft_LDFLAGS}
+                      ${fribidi_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
+                      ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
 
 IF(ENABLE_ALSA OR ENABLE_AO OR ENABLE_OSS)
-    ADD_EXECUTABLE(icesound${EXEEXT} icesound.cc upath.cc ytimer.cc yapp.cc yprefs.cc ${MISC_SRCS})
-    target_compile_options(icesound${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags} ${audio_flags})
-    TARGET_LINK_LIBRARIES(icesound${EXEEXT} ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${audio_libs} ${EXTRA_LIBS})
+    ADD_EXECUTABLE(icesound${EXEEXT} icesound.cc)
+    target_compile_options(icesound${EXEEXT} PUBLIC ${audio_flags})
+    TARGET_LINK_LIBRARIES(icesound${EXEEXT} ice ${xext_LDFLAGS} ${x11_LDFLAGS}
+                          ${nls_LIBS} ${audio_libs} ${EXTRA_LIBS})
     INSTALL(TARGETS icesound${EXEEXT} DESTINATION ${BINDIR})
 ENDIF()
 
-ADD_EXECUTABLE(icehelp${EXEEXT} icehelp.cc ${ICE_COMMON_SRCS} yscrollbar.cc ref.cc yicon.cc wmconfig.cc ymenu.cc ymenuitem.cc yprefs.cc yscrollview.cc)
-target_compile_options(icehelp${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
-TARGET_LINK_LIBRARIES(icehelp${EXEEXT} ${xext_LDFLAGS} ${x11_LDFLAGS} ${xft_LDFLAGS} ${fribidi_LDFLAGS} ${xrandr_LDFLAGS} ${icewm_img_libs} ${xinerama_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
+ADD_EXECUTABLE(icehelp${EXEEXT} icehelp.cc)
+TARGET_LINK_LIBRARIES(icehelp${EXEEXT} itk ice ${icewm_img_libs} ${xft_LDFLAGS}
+                      ${fribidi_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
+                      ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
 INSTALL(TARGETS icehelp${EXEEXT} DESTINATION ${BINDIR})
 
 IF(CONFIG_EXTERNAL_TRAY)
-ADD_EXECUTABLE(icewmtray${EXEEXT} icetray.cc ref.cc wmconfig.cc yxtray.cc wmoption.cc ${ICE_COMMON_SRCS})
-target_compile_options(icewmtray${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
-TARGET_LINK_LIBRARIES(icewmtray${EXEEXT} ${xext_LDFLAGS} ${x11_LDFLAGS} ${xft_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS} ${nls_LIBS} ${icewm_img_libs} ${EXTRA_LIBS})
+    ADD_EXECUTABLE(icewmtray${EXEEXT} icetray.cc)
+    TARGET_LINK_LIBRARIES(icewmtray${EXEEXT} itk ice ${icewm_img_libs}
+                          ${xft_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
+                          ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
 ENDIF()
 
-INSTALL(TARGETS icewm${EXEEXT} icesh${EXEEXT} icewm-session${EXEEXT} icewmhint${EXEEXT} icewmbg${EXEEXT} DESTINATION ${BINDIR})
+INSTALL(TARGETS icewm${EXEEXT} icesh${EXEEXT} icewm-session${EXEEXT}
+                icewmhint${EXEEXT} icewmbg${EXEEXT} DESTINATION ${BINDIR})
 
 if(NOT CMAKE_CROSSCOMPILING)
     ADD_CUSTOM_COMMAND(TARGET genpref${EXEEXT}
