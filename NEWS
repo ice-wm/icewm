@@ -1,11 +1,54 @@
-icewm -- history of user-visible changes.  2021-02-09
+icewm -- history of user-visible changes.  2021-02-28
+
+Release icewm-2.2.0 released 2021-02-28
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.1.2...2.2.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (29):
+      If an application resizes itself partially outside the work area, then
+        move it back inside the work area, if possible, for issue #550.
+      Fix ignoreQuickSwitch winoption for focused windows for issue #552.
+      Call setlocale via YLocale for issue #553.
+      Fix CMake build for ylocale.cc.
+      Better fix for CMake build.
+      Add testpointer test to CMake.
+      Add testpointer.
+      Only reposition when resizing outside of bottom right corner to permit
+        negative positions in issue #550.
+      Define ice and itk libraries to reduce cmake build by a third.
+      Fix cmake test target and closes ice-wm/icewm#41.
+      Add clock format %H:%M and closes #554.
+      Drop support for nonICCCMconfigureRequest.
+      Fix for immediately redrawing after setting default clock format.
+      Simplify file read.
+      Fix test logoutMenu.
+      Add intmax and intmin to cfoption.
+      Improve YInputLine in YMsgBox and simplify creating a YMsgBox.
+      Remove bogus comment.
+      Fix modifying and saving of all preferences by menu in icewm.
+      Show the preferences comment line in the message box when modifying
+        preference. Allow to reset a key or string option in the preferences
+        menu. Check if message box operation equals OK. Remove a failed
+        preference modification from the modification save set.
+      Add compositor and replace read by executed.
+      Give each preference option a meaningful description.
+      make update-po
+      Permit undefinition of keys.
+      Show the bounds of integer options in the message box.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+      Improve merge of 'upstream/icewm-1-4-BRANCH'.
+      Merge branch 'icewm-1-4-BRANCH'
+
 
 Release icewm-2.1.2 released 2021-02-09
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.1.1...2.1.2
 
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
       Provide drawable context when creating pixmap cursors with Imlib2 for
         issue #541.
       Don't unarm menu popup buttons for issue #527.
@@ -30,6 +73,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (19):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.1.2 release
 
 Eduard Bloch <blade@debian.org> (1):
       Don't abort directory scanning on bad menu items
@@ -227,32 +271,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (12):
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
       Prepare 1.9.2 release
-
-
-Release icewm-1.9.1 released 2020-11-05
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.9.0...1.9.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
-      Update to 1.9.0.
-      Define colors at top and lighten up the grey a bit.
-      Catch changes in width_inc and height_inc for #510.
-      Only direct focus if frame is mapped.
-      Handle _WIN_LAYER messages via actionPerformed.
-      Fix for changing layers when ABOVE or BELOW bit is set.
-      Use a minimum delay of 10 ms for taskbar delays to avoid #508.
-      Explain where delays are in milliseconds.
-      Apply SKIP_PAGER for PagerShowPreview.
-      Remove unused frame members.
-      Add actionLayers. Switch on action in actionPerformed.
-      Remove unused.
-      Update XDND version from 3 to 5.
-      make update-po
-      Update XDND protocol implementation.
-      Fix compilation on OpenBSD.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.1 release
 

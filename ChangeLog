@@ -1,5 +1,427 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 15bb43ee6e170ea468dec357bee5c996edebd5dd
+Merge: 17357031 03ecd3c8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 28 13:48:54 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 03ecd3c8674c4fcb167b996dcbe69269601a5a75
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 28 13:46:27 2021 +0100
+
+    Improve merge of 'upstream/icewm-1-4-BRANCH'.
+
+ po/ar.po    | 79 -------------------------------------------------------
+ po/be.po    | 81 ---------------------------------------------------------
+ po/bg.po    | 81 ---------------------------------------------------------
+ po/ca.po    | 79 -------------------------------------------------------
+ po/cs.po    | 79 -------------------------------------------------------
+ po/da.po    | 79 -------------------------------------------------------
+ po/de.po    | 79 -------------------------------------------------------
+ po/el.po    | 79 -------------------------------------------------------
+ po/en.po    | 79 -------------------------------------------------------
+ po/es.po    | 79 -------------------------------------------------------
+ po/fi.po    | 79 -------------------------------------------------------
+ po/fr.po    | 79 -------------------------------------------------------
+ po/he.po    | 81 ---------------------------------------------------------
+ po/hr.po    | 79 -------------------------------------------------------
+ po/hu.po    | 66 ----------------------------------------------
+ po/id.po    | 79 -------------------------------------------------------
+ po/it.po    | 79 -------------------------------------------------------
+ po/ja.po    | 79 -------------------------------------------------------
+ po/ko.po    | 79 -------------------------------------------------------
+ po/lt.po    | 81 ---------------------------------------------------------
+ po/lv.po    | 81 ---------------------------------------------------------
+ po/mk.po    | 81 ---------------------------------------------------------
+ po/nb.po    | 81 ---------------------------------------------------------
+ po/nl.po    | 79 -------------------------------------------------------
+ po/no.po    | 81 ---------------------------------------------------------
+ po/pl.po    | 79 -------------------------------------------------------
+ po/pt.po    | 79 -------------------------------------------------------
+ po/pt_BR.po | 79 -------------------------------------------------------
+ po/ro.po    | 81 ---------------------------------------------------------
+ po/ru.po    | 79 -------------------------------------------------------
+ po/sk.po    | 79 -------------------------------------------------------
+ po/sl.po    | 81 ---------------------------------------------------------
+ po/sv.po    | 79 -------------------------------------------------------
+ po/tr.po    | 81 ---------------------------------------------------------
+ po/uk.po    | 81 ---------------------------------------------------------
+ po/vi.po    | 81 ---------------------------------------------------------
+ po/zh_CN.po | 79 -------------------------------------------------------
+ po/zh_TW.po | 79 -------------------------------------------------------
+ 38 files changed, 3015 deletions(-)
+
+commit 1735703152631bb687f9b9a5f399078523c2f3d2
+Merge: 095cda2a 1c0cbb9d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 28 13:39:00 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 1c0cbb9df14215c78e4fc2a75774d93217d33c64
+Merge: 74069656 82a3ba85
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 28 13:35:50 2021 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 82a3ba85b643425cf9341c5dd516b28f086db927
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 28 11:34:10 2021 +0100
+
+    Show the bounds of integer options in the message box.
+
+ src/wmpref.cc | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit a5a85f07eb603c5e83dc5ae80836cea3273d4692
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 28 01:10:45 2021 +0100
+
+    Permit undefinition of keys.
+
+ src/wmpref.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f66b06effd242d03cbe90031a1f49eaeff3c87db
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Feb 27 18:40:56 2021 +0100
+
+    make update-po
+
+ po/ar.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/be.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/bg.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/ca.po     | 333 +++++++++++++++++++++++++++---------------------------
+ po/cs.po     | 333 +++++++++++++++++++++++++++---------------------------
+ po/da.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/de.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/el.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/en.po     | 318 ++++++++++++++++++++++++++--------------------------
+ po/es.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/fi.po     | 324 +++++++++++++++++++++++++++--------------------------
+ po/fr.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/he.po     | 328 +++++++++++++++++++++++++++--------------------------
+ po/hr.po     | 318 ++++++++++++++++++++++++++--------------------------
+ po/hu.po     | 333 +++++++++++++++++++++++++++---------------------------
+ po/icewm.pot | 320 ++++++++++++++++++++++++++--------------------------
+ po/id.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/it.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/ja.po     | 333 +++++++++++++++++++++++++++---------------------------
+ po/ko.po     | 331 ++++++++++++++++++++++++++++--------------------------
+ po/lt.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/lv.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/mk.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/nb.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/nl.po     | 333 +++++++++++++++++++++++++++---------------------------
+ po/no.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/pl.po     | 331 ++++++++++++++++++++++++++++--------------------------
+ po/pt.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/pt_BR.po  | 329 ++++++++++++++++++++++++++++--------------------------
+ po/ro.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/ru.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/sk.po     | 333 +++++++++++++++++++++++++++---------------------------
+ po/sl.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/sv.po     | 329 ++++++++++++++++++++++++++++--------------------------
+ po/tr.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/uk.po     | 335 ++++++++++++++++++++++++++++---------------------------
+ po/vi.po     | 330 +++++++++++++++++++++++++++---------------------------
+ po/zh_CN.po  | 329 ++++++++++++++++++++++++++++--------------------------
+ po/zh_TW.po  | 329 ++++++++++++++++++++++++++++--------------------------
+ 39 files changed, 6571 insertions(+), 6268 deletions(-)
+
+commit c021938ce48a40f37b514622a2fe21e4edc6299c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Feb 27 18:26:10 2021 +0100
+
+    Give each preference option a meaningful description.
+
+ src/default.h  | 164 ++++++++++++++++++++++++++---------------------------
+ src/genpref.cc |  13 ++++-
+ src/themable.h |   2 +-
+ 3 files changed, 94 insertions(+), 85 deletions(-)
+
+commit adfea64698ce9216761ec1decd6e006c8d9042aa
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Feb 27 18:25:25 2021 +0100
+
+    Add compositor and replace read by executed.
+
+ man/icewm-startup.pod | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit f6f320ec6d65d8328626c44b81b939808b4769dc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Feb 27 16:43:09 2021 +0100
+
+    Show the preferences comment line in the message box when modifying
+    preference.
+    Allow to reset a key or string option in the preferences menu.
+    Check if message box operation equals OK.
+    Remove a failed preference modification from the modification save set.
+
+ src/wmpref.cc | 90 +++++++++++++++++++++++++++++++++++++++++--------------
+ src/wmpref.h  |  4 ++-
+ 2 files changed, 71 insertions(+), 23 deletions(-)
+
+commit 0154625966ca0bccf1690fe8e7ea9a475c423c88
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 26 20:33:01 2021 +0100
+
+    Fix modifying and saving of all preferences by menu in icewm.
+
+ src/CMakeLists.txt |   2 +-
+ src/Makefile.am    |   2 +
+ src/wmpref.cc      | 459 +++++++++++++++++++++++++++++++++++++++++++++++++
+ src/wmpref.h       |  55 ++++++
+ src/wmprog.cc      | 321 +---------------------------------
+ 5 files changed, 520 insertions(+), 319 deletions(-)
+
+commit d727188e5c2a0377cdbc3624db829c8520c96688
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 26 20:33:01 2021 +0100
+
+    Remove bogus comment.
+
+ src/ypointer.h | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit bda5c7db11d5355854846886bfb320bf66c9344f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 26 20:33:01 2021 +0100
+
+    Improve YInputLine in YMsgBox and simplify creating a YMsgBox.
+
+ src/wmapp.cc   | 57 +++++++++++++++++++++++++------------------------
+ src/wmapp.h    |  1 +
+ src/wmframe.cc | 33 +++++++++++------------------
+ src/wmframe.h  |  1 -
+ src/wmmgr.cc   | 12 +++++------
+ src/ymsgbox.cc | 62 +++++++++++++++++++++++++++++++++++++++++++-----------
+ src/ymsgbox.h  | 23 ++++++++++++++++----
+ 7 files changed, 117 insertions(+), 72 deletions(-)
+
+commit fee59c61ea835eb6aa8ac03b5491bb2c8294b09f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 26 20:33:01 2021 +0100
+
+    Add intmax and intmin to cfoption.
+
+ src/yconfig.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 75a957a9925335b5ffcbd5cb3cd9901c6c8c07f8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 26 20:33:00 2021 +0100
+
+    Fix test logoutMenu.
+
+ src/testmenus.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit bf89fa8d27d4262b9e730586541d16847e49d739
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 26 20:33:00 2021 +0100
+
+    Simplify file read.
+
+ src/apppstatus.cc | 2 +-
+ src/yimage2.cc    | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 2b4e0a1c8a82b1ba6ce5b7667fe68433272cea45
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 19 20:41:30 2021 +0100
+
+    Fix for immediately redrawing after setting default clock format.
+
+ src/aclock.cc | 13 ++++++-------
+ src/aclock.h  |  3 ++-
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 88996a19cf52f7bec9d36ca9ce34b69844882a6b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Feb 15 23:05:41 2021 +0100
+
+    Drop support for nonICCCMconfigureRequest.
+
+ doc/icewm.adoc           | 5 -----
+ lib/winoptions.in        | 2 --
+ man/icewm-winoptions.pod | 3 ---
+ man/icewmhint.pod        | 1 -
+ src/wmframe.cc           | 8 --------
+ src/wmframe.h            | 1 -
+ src/wmoption.cc          | 3 +--
+ 7 files changed, 1 insertion(+), 22 deletions(-)
+
+commit 91d0911df2ac603885e87f9a9a7012d7e68fa302
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 14 12:47:09 2021 +0100
+
+    Add clock format %H:%M and closes #554.
+
+ src/aclock.cc | 31 +++++++++++++++++++++----------
+ 1 file changed, 21 insertions(+), 10 deletions(-)
+
+commit 5ad7a6046bdb0382e4f3f2713d74372c60c2aac1
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 14 12:16:28 2021 +0100
+
+    Fix cmake test target and closes ice-wm/icewm#41.
+
+ CMakeLists.txt     |  2 +-
+ src/CMakeLists.txt | 67 +++++++++++++++++++++++++++++---------------------
+ 2 files changed, 40 insertions(+), 29 deletions(-)
+
+commit 6ebc4556b53ddf1c8acaea9af98e78e8a0c004b6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Feb 13 19:28:19 2021 +0100
+
+    Define ice and itk libraries to reduce cmake build by a third.
+
+ src/CMakeLists.txt    | 96 +++++++++++++++++++++++------------------------
+ src/config.cmake.h.in |  5 ---
+ 2 files changed, 46 insertions(+), 55 deletions(-)
+
+commit dca09724335db075cdc599868c0c5f768a9b1218
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 12 17:10:39 2021 +0100
+
+    Only reposition when resizing outside of bottom right corner to permit
+    negative positions in issue #550.
+
+ src/wmframe.cc | 6 ------
+ 1 file changed, 6 deletions(-)
+
+commit 7c3df1d494067bd8da8da2c1488f620b5a1a1a89
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 12 15:36:03 2021 +0100
+
+    Add testpointer.
+
+ .github/workflows/cmake.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 51d98138fe247895e6fd4c73d64053a3de92e78e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 12 15:22:57 2021 +0100
+
+    Add testpointer test to CMake.
+
+ src/CMakeLists.txt | 8 +++++++-
+ src/testpointer.cc | 2 +-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+commit 9c0b837fa639ebf45ab9b837eaad8c8988469dcc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 12 14:37:07 2021 +0100
+
+    Better fix for CMake build.
+
+ src/icesound.cc  | 1 -
+ src/icewmhint.cc | 1 -
+ src/ylocale.cc   | 8 ++------
+ 3 files changed, 2 insertions(+), 8 deletions(-)
+
+commit e18ce57884dbe23e8703ec558894394b2e7f7b18
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 12 14:26:21 2021 +0100
+
+    Fix CMake build for ylocale.cc.
+
+ src/CMakeLists.txt | 5 +++--
+ src/icesound.cc    | 1 +
+ src/icewmhint.cc   | 1 +
+ 3 files changed, 5 insertions(+), 2 deletions(-)
+
+commit e6511c8b8316d0e9e080cd253b26e4addada2b00
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Feb 11 22:46:35 2021 +0100
+
+    Call setlocale via YLocale for issue #553.
+
+ src/icesound.cc  | 6 ++----
+ src/icewmhint.cc | 5 ++---
+ 2 files changed, 4 insertions(+), 7 deletions(-)
+
+commit f3cce5f6cc5c286e0567b3c6a844d6a8eedfd52e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Feb 10 15:53:57 2021 +0100
+
+    Fix ignoreQuickSwitch winoption for focused windows for issue #552.
+
+ src/wmframe.cc  | 4 ----
+ src/wmframe.h   | 1 -
+ src/wmswitch.cc | 5 +++--
+ 3 files changed, 3 insertions(+), 7 deletions(-)
+
+commit 8b624a0d7fce4017956529b92f560d233000a9a7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 9 21:13:48 2021 +0100
+
+    If an application resizes itself partially outside the work area, then
+    move it back inside the work area, if possible, for issue #550.
+
+ src/wmclient.cc | 27 ++++++++++-----------------
+ src/wmclient.h  |  5 ++++-
+ src/wmframe.cc  | 53 +++++++++++++++++++++++++++++++++--------------------
+ src/wmmgr.cc    | 20 +++++++-------------
+ 4 files changed, 54 insertions(+), 51 deletions(-)
+
+commit 095cda2ab13947e1c4860d2c4a5580f033f75256
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 9 19:07:26 2021 +0100
+
+    Prepare 2.1.2 release
+
+ AUTHORS      |    5 +-
+ ChangeLog    | 1532 ++++++++++++++++++++++++++++++------------------------
+ NEWS         |  207 ++------
+ README.md    |   38 +-
+ po/ar.po     |   54 +-
+ po/be.po     |   54 +-
+ po/bg.po     |   54 +-
+ po/ca.po     |   54 +-
+ po/cs.po     |   54 +-
+ po/da.po     |   54 +-
+ po/de.po     |   54 +-
+ po/el.po     |   54 +-
+ po/en.po     |   54 +-
+ po/es.po     |   54 +-
+ po/fi.po     |   54 +-
+ po/fr.po     |   54 +-
+ po/he.po     |   54 +-
+ po/hr.po     |   54 +-
+ po/hu.po     |   54 +-
+ po/icewm.pot |   56 +-
+ po/id.po     |   54 +-
+ po/it.po     |   54 +-
+ po/ja.po     |   54 +-
+ po/ko.po     |   54 +-
+ po/lt.po     |   54 +-
+ po/lv.po     |   54 +-
+ po/mk.po     |   54 +-
+ po/nb.po     |   54 +-
+ po/nl.po     |   54 +-
+ po/no.po     |   54 +-
+ po/pl.po     |   54 +-
+ po/pt.po     |   54 +-
+ po/pt_BR.po  |   54 +-
+ po/ro.po     |   54 +-
+ po/ru.po     |   54 +-
+ po/sk.po     |   54 +-
+ po/sl.po     |   54 +-
+ po/sv.po     |   54 +-
+ po/tr.po     |   54 +-
+ po/uk.po     |   54 +-
+ po/vi.po     |   54 +-
+ po/zh_CN.po  |   54 +-
+ po/zh_TW.po  |   54 +-
+ 43 files changed, 1963 insertions(+), 1927 deletions(-)
+
 commit 9a26c48c2a3eec09d22d8aa3b0c8ba88cb4c74e3
 Merge: 84bcd921 74069656
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5827,365 +6249,3 @@ Date:   Sun Jul 19 11:48:56 2020 +0200
  src/yicon.cc | 79 +++++++++++++++++++++++++++++++++++++++-----------------
  src/yicon.h  | 16 ++++++++++++
  2 files changed, 72 insertions(+), 23 deletions(-)
-
-commit 941793ff0647a5e8b709558033a84cb62fa79f0d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 22:48:49 2020 +0200
-
-    Manage title bar local to iconify.
-
- src/wmframe.cc | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
-
-commit 4ad32f3848039db2918f3d3ca37009e3e74fc512
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 22:47:45 2020 +0200
-
-    Assume window under mouse is in normal state.
-
- src/wmmgr.cc | 1 -
- 1 file changed, 1 deletion(-)
-
-commit f63b4039fa78174b93b5f69bb7330a05c99d834d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 22:47:02 2020 +0200
-
-    When iconic restore by toggling minimized.
-
- src/movesize.cc | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-commit 771a1dd934196f3eca569ee3ec20c9e22f582d2c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 22:46:04 2020 +0200
-
-    Don't layout titlebar when minimized to desktop.
-
- src/decorate.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 581413330da4aaac348ab52f8dc0051c8c184b07
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 22:44:38 2020 +0200
-
-    Don't activate frame when button press on rollup button for issue #446.
-
- src/wmbutton.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit bce1293c03cc237ee6edf30b07deae13f249ecf4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:58:55 2020 +0200
-
-    Enable Arrange Icons in taskbar menu to rearrange all desktop miniicons.
-
- src/wmapp.cc     | 2 ++
- src/wmtaskbar.cc | 2 +-
- 2 files changed, 3 insertions(+), 1 deletion(-)
-
-commit 10d40411c0ec6bd59d62bd0c194ef8803860eba1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:53:50 2020 +0200
-
-    Add arrangeIcons to rearrange miniicons. Update icon positions when
-    workarea changes. Don't allow focus timer or autoraise timer to
-    interfere when a frame is minimized, iconified or rolledup.
-
- src/wmframe.cc | 84 ++++++++++++++++++++++++++++++++++--------------------
- src/wmframe.h  | 10 +++----
- src/wmmgr.cc   | 19 +++++++++---
- src/wmmgr.h    |  2 ++
- 4 files changed, 75 insertions(+), 40 deletions(-)
-
-commit af79ca03cdac6d06b0b88aa4a576a92f8a4dd2be
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:51:52 2020 +0200
-
-    Handle WM_CHANGE_STATE messages via actionPerformed.
-    Don't set _NET_WM_STATE_FOCUSED when mimimized, hidden or rolledup.
-
- src/wmclient.cc | 35 ++++++++++++++++++++---------------
- 1 file changed, 20 insertions(+), 15 deletions(-)
-
-commit b3616aa3d27e25d3b5ba9cd99b861a3d92408c9a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:45:23 2020 +0200
-
-    Turn clipping for workspace buttons.
-
- src/aworkspaces.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit ba80c033b45ae76c69d6bd8ec70b57849ef2e7b4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:45:02 2020 +0200
-
-    Support clipping in GraphicsBuffer.
-
- src/ypaint.cc | 18 +++++++++++-------
- src/ypaint.h  |  4 +++-
- 2 files changed, 14 insertions(+), 8 deletions(-)
-
-commit 7472dc7f2c7619decc51b690fb396b30b309649f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:44:01 2020 +0200
-
-    When restoring from Iconic state then also raise.
-
- src/movesize.cc | 2 ++
- 1 file changed, 2 insertions(+)
-
-commit 1425ddc3e4a17111583ea285fcba7e156493bed8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:43:32 2020 +0200
-
-    Add changeState. Replace yarray with vector.
-
- src/icesh.cc | 123 +++++++++++++++++++++++++++++++++++++++++--------------
- 1 file changed, 92 insertions(+), 31 deletions(-)
-
-commit 30f9c76fd186dee1cd13044f47d0d80af36bac7a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:43:11 2020 +0200
-
-    Remove handleCreateWindow.
-
- src/ywindow.cc | 4 ----
- src/ywindow.h  | 3 ---
- 2 files changed, 7 deletions(-)
-
-commit 58501ac6b9ab8dbb30893f473e758ba81f2081da
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 06:42:47 2020 +0200
-
-    Simplify using visibleNow.
-
- src/atray.cc     | 3 +--
- src/decorate.cc  | 2 +-
- src/wmwinmenu.cc | 3 +--
- 3 files changed, 3 insertions(+), 5 deletions(-)
-
-commit fcd5bbefca3ed581d81b08b3fde750756fb95c31
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 18 05:57:32 2020 +0200
-
-    Only hide title when minimizeToDesktop for issue #446.
-
- src/wmframe.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 909ecdb3cddcac1772e53d31e5cd4027d9927bb9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 17 01:01:08 2020 +0200
-
-    Update theme NanoBlue from Nano.Blue-1.4.zip.
-
- lib/themes/NanoBlue/dframeAB.xpm                 |  18 +-
- lib/themes/NanoBlue/dframeABL.xpm                |   2 +-
- lib/themes/NanoBlue/dframeABR.xpm                |   2 +-
- lib/themes/NanoBlue/dframeAL.xpm                 |   2 +-
- lib/themes/NanoBlue/dframeAR.xpm                 |   2 +-
- lib/themes/NanoBlue/dframeAT.xpm                 |  20 +-
- lib/themes/NanoBlue/dframeATL.xpm                | 180 +++++++++---------
- lib/themes/NanoBlue/dframeATR.xpm                | 182 +++++++++----------
- lib/themes/NanoBlue/dframeIB.xpm                 |  18 +-
- lib/themes/NanoBlue/dframeIBL.xpm                |   2 +-
- lib/themes/NanoBlue/dframeIBR.xpm                |   2 +-
- lib/themes/NanoBlue/dframeIL.xpm                 |   2 +-
- lib/themes/NanoBlue/dframeIR.xpm                 |   2 +-
- lib/themes/NanoBlue/dframeIT.xpm                 |  20 +-
- lib/themes/NanoBlue/dframeITL.xpm                | 180 +++++++++---------
- lib/themes/NanoBlue/dframeITR.xpm                | 182 +++++++++----------
- lib/themes/NanoBlue/expandI.xpm                  |   2 +-
- lib/themes/NanoBlue/frameAB.xpm                  |  18 +-
- lib/themes/NanoBlue/frameAT.xpm                  |  20 +-
- lib/themes/NanoBlue/frameATL.xpm                 | 180 +++++++++---------
- lib/themes/NanoBlue/frameATR.xpm                 | 182 +++++++++----------
- lib/themes/NanoBlue/frameIB.xpm                  |  18 +-
- lib/themes/NanoBlue/frameIBL.xpm                 |   2 +-
- lib/themes/NanoBlue/frameIBR.xpm                 |   2 +-
- lib/themes/NanoBlue/frameIL.xpm                  |   2 +-
- lib/themes/NanoBlue/frameIR.xpm                  |   2 +-
- lib/themes/NanoBlue/frameIT.xpm                  |  20 +-
- lib/themes/NanoBlue/frameITL.xpm                 | 180 +++++++++---------
- lib/themes/NanoBlue/frameITR.xpm                 | 182 +++++++++----------
- lib/themes/NanoBlue/ledclock/space.xpm           |   2 +-
- lib/themes/NanoBlue/maximizeI.xpm                |   2 +-
- lib/themes/NanoBlue/menuButtonA.xpm              |   2 +-
- lib/themes/NanoBlue/menuButtonI.xpm              |   2 +-
- lib/themes/NanoBlue/menuButtonO.xpm              |   2 +-
- lib/themes/NanoBlue/minimizeI.xpm                |   2 +-
- lib/themes/NanoBlue/restoreI.xpm                 |   2 +-
- lib/themes/NanoBlue/taskbar/taskbuttonbg.xpm     | 111 +++++------
- .../NanoBlue/taskbar/taskbuttonminimized.xpm     | 113 ++++++------
- lib/themes/NanoBlue/taskbar/toolbuttonbg.xpm     | 113 ++++++------
- lib/themes/NanoBlue/titleAB.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleAL.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleAM.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleAP.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleAR.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleAS.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleAT.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleIB.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleIL.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleIM.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleIP.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleIR.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleIS.xpm                  |  98 +++++-----
- lib/themes/NanoBlue/titleIT.xpm                  |  98 +++++-----
- 53 files changed, 1676 insertions(+), 1673 deletions(-)
-
-commit a9472d4f0a7c4fcd542344aac19338e2f76825e8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 16 22:50:29 2020 +0200
-
-    Remove 2 obsolete files in theme NanoBlue.
-
- lib/Makefile.am                  |  2 -
- lib/themes/NanoBlue/drameAB.xpm  |  9 ----
- lib/themes/NanoBlue/drameATR.xpm | 91 ------------------------------------
- 3 files changed, 102 deletions(-)
-
-commit db3cd63ec374bb942ee16efa2719a039707800b8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 16 22:37:13 2020 +0200
-
-    Remove unused variables.
-
- src/wmmgr.cc | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
-
-commit b87e4b7ec8249a7163884dcca4c23dea0878a094
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 16 22:36:09 2020 +0200
-
-    fix space alignment
-
- src/default.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 485123cfc5bb8167db2913262944667a9bb4a5eb
-Author: Code7R <Code7R@users.noreply.github.com>
-Date:   Thu Jul 16 22:25:13 2020 +0200
-
-    [WIP] Discover and remember existing icon paths (#444)
-
-    Discover and remember existing icon paths.
-    This avoids blind attempts to access icons in unknown folders.
-    This also implements a selection option (or excluding option) for
-    specific (maybe pattern matched) XDG icon themes.
-    Also reorder icon members to save memory (due to type alignment).
-    Dropping hardcoded theme subfolders.
-    Also unifying Linux and BSD variants
-    Also reordered the building of suffix candidates to check better icon
-    types first, assuming that foo.png would be better than foo_32x32.xpm .
-    Document IconThemes and changed IconPaths settings.
-
- doc/icewm.adoc            |   9 +-
- man/icewm-preferences.pod |  14 +-
- src/config.cmake.h.in     |   1 +
- src/default.h             |   1 +
- src/ycollections.h        |  12 ++
- src/yicon.cc              | 341 ++++++++++++++++++++++++------------------
- src/yicon.h               |   5 +-
- src/yprefs.h              |  18 +--
- 8 files changed, 228 insertions(+), 173 deletions(-)
-
-commit 9c4b5a3046525d5c447ff3875922f76f355a38ef
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 16 21:59:24 2020 +0200
-
-    Place icons considering the workarea.
-
- src/wmmgr.cc | 44 +++++++++++++++++++++++++++++++-------------
- src/wmmgr.h  |  3 +++
- 2 files changed, 34 insertions(+), 13 deletions(-)
-
-commit 1fc69bec52b7fb46c37d5ccfeb0b2299a08f2e54
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 16 21:57:56 2020 +0200
-
-    Also drag miniicons with left mouse button. Make drawing miniicons
-    more efficient.
-
- src/wmminiicon.cc | 88 ++++++++++++++++++++++++++++++++-------------------
- src/wmminiicon.h  |  5 +++
- 2 files changed, 60 insertions(+), 33 deletions(-)
-
-commit ddc5448ce20160aca301645497648ec317db9df1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 16 20:39:16 2020 +0200
-
-    handleIdle is virtual
-
- src/yxapp.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit a359a204ab90e78b594224f72d7aa229a0ea6bf4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 16 20:38:23 2020 +0200
-
-    Hide titlebar if isIconic and MinimizeToDesktop.
-
- src/wmframe.cc | 13 ++++++++-----
- 1 file changed, 8 insertions(+), 5 deletions(-)
-
-commit 182de7e2a3fe7bc4ade99ec7e6d73ef36defc2e5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 16 20:37:11 2020 +0200
-
-    Set WM_ICON_SIZE according to theme icon sizes.
-
- src/wmapp.cc | 26 ++++++++++++++++++++------
- 1 file changed, 20 insertions(+), 6 deletions(-)
-
-commit 1cfbe059afa740346d7083ad1e1b537d08e65ca0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 15 19:48:32 2020 +0200
-
-    Check window may have _NET_WM_NAME. Print more of WM_HINTS property.
-
- src/icesh.cc | 27 +++++++++++++--------------
- 1 file changed, 13 insertions(+), 14 deletions(-)
-
-commit deed70008b4e2d28322c1ad4d8e1d8d142457023
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 15 19:44:42 2020 +0200
-
-    Add begin() + end() to YArrays for C++11 for loops.
-
- src/yarray.cc |  4 ++--
- src/yarray.h  | 21 +++++++++++++++++----
- 2 files changed, 19 insertions(+), 6 deletions(-)
-
-commit f60340768c55fc209148d23571cb5a12f32bc3a4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 15 19:26:41 2020 +0200
-
-    Add sys/resource.h for FreeBSD for issue #445.
-
- src/acpustatus.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 32c295c85d22eb958d16d17ec5c2b70a601bdb13
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 15 19:24:06 2020 +0200
-
-    Add definition of ACPIDEV for FreeBSD.
-
- src/aapm.h | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit 1a0bd2dc184601c33079341f94ea4375d8c7c269
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 15 19:21:34 2020 +0200
-
-    update to 1.7.0
-
- AUTHORS      |   12 +-
- ChangeLog    | 8171 ++++++++++++++++++++++++++++--------------------------
- README.md    |    4 +-
- RELEASE.md   |    2 +-
- VERSION      |    2 +-
- configure.ac |   10 +-
- 6 files changed, 4271 insertions(+), 3930 deletions(-)
