@@ -15,16 +15,20 @@
 #include "prefs.h"
 #include "intl.h"
 
+const unsigned margin = 18;
+
 YMsgBox::YMsgBox(int buttons,
                  const char* title,
                  const char* text,
-                 YMsgBoxListener* listener):
+                 YMsgBoxListener* listener,
+                 const char* iconName):
     YDialog(),
     fLabel(nullptr),
     fInput(nullptr),
     fButtonOK(nullptr),
     fButtonCancel(nullptr),
-    fListener(listener)
+    fListener(listener),
+    fPixmap(null)
 {
     setToplevel(true);
     if (title) {
@@ -45,6 +49,16 @@ YMsgBox::YMsgBox(int buttons,
     }
     if (buttons & mbCancel) {
         fButtonCancel = new YActionButton(this, _("_Cancel"), -2, this);
+    }
+    if (nonempty(iconName)) {
+        ref<YIcon> icon(YIcon::getIcon(iconName));
+        if (icon != null) {
+            if (text && !strchr(text, '\n') && icon->small() != null) {
+                fPixmap = icon->small()->renderToPixmap(xapp->depth());
+            } else {
+                fPixmap = icon->large()->renderToPixmap(xapp->depth());
+            }
+        }
     }
     autoSize();
     setLayerHint(WinLayerAboveDock);
@@ -70,18 +84,20 @@ YMsgBox::~YMsgBox() {
 }
 
 void YMsgBox::autoSize() {
+    unsigned pw = (fPixmap != null) ? fPixmap->width() + margin : 0;
+    unsigned ph = (fPixmap != null) ? fPixmap->height() : 0;
     unsigned lw = fLabel ? fLabel->width() : 0;
-    unsigned w = clamp(lw + 24, 240U, desktop->width());
-    unsigned h = 12;
+    unsigned lh = fLabel ? fLabel->height() : 0;
+    unsigned w = clamp(lw + pw + 2*margin, 240U, desktop->width());
+    unsigned h = margin;
 
     if (fLabel) {
-        fLabel->setPosition((w - lw) / 2, h);
-        h += fLabel->height();
+        fLabel->setPosition(pw + (w - pw - lw) / 2, h);
     }
-    h += 18;
+    h += 18 + max(lh, ph);
 
     if (fInput) {
-        fInput->setSize(w - 24, fInput->height());
+        fInput->setSize(w - 2*margin, fInput->height());
         fInput->setPosition((w - fInput->width()) / 2, h);
         h += 18 + fInput->height();
     }
@@ -100,9 +116,9 @@ void YMsgBox::autoSize() {
         fButtonCancel->setPosition((w + hh)/2, h);
     }
 
-    h += fButtonOK ? fButtonOK->height() :
-        fButtonCancel ? fButtonCancel->height() : 0;
-    h += 12;
+    h += max(fButtonOK ? fButtonOK->height() : 0,
+             fButtonCancel ? fButtonCancel->height() : 0);
+    h += margin;
 
     setSize(w, h);
 }
@@ -126,7 +142,11 @@ void YMsgBox::setText(const char* text) {
     }
 }
 
-void YMsgBox::setPixmap(ref<YPixmap>/*pixmap*/) {
+void YMsgBox::setPixmap(ref<YPixmap> pixmap) {
+    if (fPixmap != pixmap) {
+        fPixmap = pixmap;
+        autoSize();
+    }
 }
 
 void YMsgBox::actionPerformed(YAction action, unsigned int /*modifiers*/) {
@@ -198,6 +218,17 @@ void YMsgBox::inputEscape(YInputLine* input) {
 }
 
 void YMsgBox::inputLostFocus(YInputLine* input) {
+}
+
+void YMsgBox::paint(Graphics &g, const YRect& r) {
+    YDialog::paint(g, r);
+    if (fPixmap != null) {
+        int dy = 0;
+        if (fLabel && fLabel->height() > fPixmap->height()) {
+            dy = (fLabel->height() - fPixmap->height()) / 2;
+        }
+        g.drawPixmap(fPixmap, margin, margin + dy);
+    }
 }
 
 // vim: set sw=4 ts=4 et:
