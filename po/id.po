@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-02-28 13:50+0100\n"
+"POT-Creation-Date: 2021-03-02 15:45+0100\n"
 "PO-Revision-Date: 2020-12-21 14:26+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/icewm/"
@@ -296,7 +296,7 @@ msgstr ""
 msgid "NET"
 msgstr "NET"
 
-#: src/aworkspaces.cc:593 src/wmstatus.cc:204
+#: src/aworkspaces.cc:593 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Ruang kerja: "
 
@@ -1548,7 +1548,7 @@ msgstr "Tidak dapat mengganti nama %s menjadi %s"
 msgid "Loc_k Workstation"
 msgstr "_Kunci Workstation"
 
-#: src/wmdialog.cc:70 src/ymsgbox.cc:47
+#: src/wmdialog.cc:70 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr "_Batal"
 
@@ -1567,11 +1567,11 @@ msgstr "Mu_lai ulang icewm"
 msgid "_About"
 msgstr "Tent_ang"
 
-#: src/wmframe.cc:1393
+#: src/wmframe.cc:1402
 msgid "Kill Client: "
 msgstr "Bunuh Klien: "
 
-#: src/wmframe.cc:1394
+#: src/wmframe.cc:1403
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1900,7 +1900,7 @@ msgstr "iconv tidak menyediakan (cukup) %s ke %s konverter."
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "String multibyte \"%s\": %s tidak valid"
 
-#: src/ymsgbox.cc:44
+#: src/ymsgbox.cc:48
 msgid "_OK"
 msgstr "_OK"
 

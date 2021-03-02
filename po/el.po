@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-02-28 13:50+0100\n"
+"POT-Creation-Date: 2021-03-02 15:45+0100\n"
 "PO-Revision-Date: 2020-05-26 14:39+0000\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -295,7 +295,7 @@ msgstr ""
 msgid "NET"
 msgstr "ΔΙΚΤ."
 
-#: src/aworkspaces.cc:593 src/wmstatus.cc:204
+#: src/aworkspaces.cc:593 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Επιφάνεια εργασίας: "
 
@@ -1623,7 +1623,7 @@ msgstr "Αδυναμία μετονομασίας του %s σε %s"
 msgid "Loc_k Workstation"
 msgstr "Κλείδωμα του _Σταθμού Εργασίας"
 
-#: src/wmdialog.cc:70 src/ymsgbox.cc:47
+#: src/wmdialog.cc:70 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr "_Ακύρωση"
 
@@ -1642,11 +1642,11 @@ msgstr "_Επανεκκίνηση του icewm"
 msgid "_About"
 msgstr "_Περί"
 
-#: src/wmframe.cc:1393
+#: src/wmframe.cc:1402
 msgid "Kill Client: "
 msgstr "Σκότωμα του Πελάτη: "
 
-#: src/wmframe.cc:1394
+#: src/wmframe.cc:1403
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1984,7 +1984,7 @@ msgstr "το iconv δεν παρέχει (επαρκείς) μετατροπεί
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Μη έγκυρος στίχος πολλαπλών μπάιτιων \"%s\": %s"
 
-#: src/ymsgbox.cc:44
+#: src/ymsgbox.cc:48
 msgid "_OK"
 msgstr "_Εντάξει"
 

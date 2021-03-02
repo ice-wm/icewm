@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-02-28 13:50+0100\n"
+"POT-Creation-Date: 2021-03-02 15:45+0100\n"
 "PO-Revision-Date: 2018-05-09 06:03+0000\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.opensuse.org/projects/icewm/"
@@ -305,7 +305,7 @@ msgstr ""
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:593 src/wmstatus.cc:204
+#: src/aworkspaces.cc:593 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Darbalaukis: "
 
@@ -1403,7 +1403,7 @@ msgstr "Nepavyko įrašyti istorijos bylos %s: %s"
 msgid "Loc_k Workstation"
 msgstr "Už_rakinti darbalaukį"
 
-#: src/wmdialog.cc:70 src/ymsgbox.cc:47
+#: src/wmdialog.cc:70 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr "A_tsisakyti"
 
@@ -1422,11 +1422,11 @@ msgstr "_Iš naujo paleisti IceWM"
 msgid "_About"
 msgstr "Api_e"
 
-#: src/wmframe.cc:1393
+#: src/wmframe.cc:1402
 msgid "Kill Client: "
 msgstr "Nužudyti klientą: "
 
-#: src/wmframe.cc:1394
+#: src/wmframe.cc:1403
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1770,7 +1770,7 @@ msgstr "iconv nepalaiko (pakankamai) %s į %s pavertėjų."
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Neteisinga daugiabaitinė eilutė \"%s\": %s"
 
-#: src/ymsgbox.cc:44
+#: src/ymsgbox.cc:48
 msgid "_OK"
 msgstr "_Gerai"
 

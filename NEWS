@@ -1,11 +1,35 @@
-icewm -- history of user-visible changes.  2021-02-28
+icewm -- history of user-visible changes.  2021-03-02
+
+Release icewm-2.2.1 released 2021-03-02
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.2.0...2.2.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (12):
+      Position the move/size-status on the screen of the window.
+      Taskbar may have a non-zero screen due to XineramaPrimaryScreen in
+        getNewPos.  Only consider workarea when using same screen as taskbar,
+        otherwise allow entire desktop for issue #557.
+      Simplify icewm manpage.
+      When modifying preferences, only trim input for scalar options.
+      Make input field focus traversable when editing preferences.
+      Draw an icon in the preference edit popup.
+      Set margin of message box to 18.
+      Draw an icon in each message box popup.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Add testpointer to Makefile.am.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
 
 Release icewm-2.2.0 released 2021-02-28
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.1.2...2.2.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (29):
+Bert Gijsbers <gijsbers@science.uva.nl> (30):
       If an application resizes itself partially outside the work area, then
         move it back inside the work area, if possible, for issue #550.
       Fix ignoreQuickSwitch winoption for focused windows for issue #552.
@@ -41,6 +65,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (29):
       Merge branch 'icewm-1-4-BRANCH'
       Improve merge of 'upstream/icewm-1-4-BRANCH'.
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.2.0 release
 
 
 Release icewm-2.1.2 released 2021-02-09
@@ -250,25 +275,4 @@ Eduard Bloch <blade@debian.org> (5):
 
 Claudio Cesar de Sá <ccs1664@gmail.com> (1):
       support BR_Portuguese language in 2 files /lib (#522)
-
-
-Release icewm-1.9.2 released 2020-11-10
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.9.1...1.9.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (12):
-      Remove setDND.
-      Move DND to subclass YDndWindow.
-      Show toolbar button titles.
-      Simplify use of XClassHint.
-      Do XAllowEvents first.
-      Prevent inadvertent growing of windows in issue #512.
-      Improve logConfigureNotify details.
-      Use just one set of XSizeHints for issue ice-wm/icewm#28.
-      make update-po
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.2 release
 

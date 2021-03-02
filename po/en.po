@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-02-28 13:50+0100\n"
+"POT-Creation-Date: 2021-03-02 15:45+0100\n"
 "PO-Revision-Date: 2000-10-21 12:13+2000\n"
 "Last-Translator: Mathias Hasselmann <mathias.hasselmann@gmx.de>\n"
 "Language-Team: English\n"
@@ -273,7 +273,7 @@ msgstr ""
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:593 src/wmstatus.cc:204
+#: src/aworkspaces.cc:593 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr ""
 
@@ -1305,7 +1305,7 @@ msgstr ""
 msgid "Loc_k Workstation"
 msgstr ""
 
-#: src/wmdialog.cc:70 src/ymsgbox.cc:47
+#: src/wmdialog.cc:70 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr ""
 
@@ -1324,11 +1324,11 @@ msgstr ""
 msgid "_About"
 msgstr ""
 
-#: src/wmframe.cc:1393
+#: src/wmframe.cc:1402
 msgid "Kill Client: "
 msgstr ""
 
-#: src/wmframe.cc:1394
+#: src/wmframe.cc:1403
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1652,7 +1652,7 @@ msgstr ""
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr ""
 
-#: src/ymsgbox.cc:44
+#: src/ymsgbox.cc:48
 msgid "_OK"
 msgstr ""
 

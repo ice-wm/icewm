@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.23\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-02-28 13:50+0100\n"
+"POT-Creation-Date: 2021-03-02 15:45+0100\n"
 "PO-Revision-Date: 2020-12-14 17:26+0000\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
 "Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -293,7 +293,7 @@ msgstr ""
 msgid "NET"
 msgstr "NET"
 
-#: src/aworkspaces.cc:593 src/wmstatus.cc:204
+#: src/aworkspaces.cc:593 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Werkruimte: "
 
@@ -1557,7 +1557,7 @@ msgstr "Hernoemen van %s naar %s lukt niet"
 msgid "Loc_k Workstation"
 msgstr "Werkstation blo_kkeren"
 
-#: src/wmdialog.cc:70 src/ymsgbox.cc:47
+#: src/wmdialog.cc:70 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr "Af_breken"
 
@@ -1577,11 +1577,11 @@ msgid "_About"
 msgstr "_Over"
 
 #
-#: src/wmframe.cc:1393
+#: src/wmframe.cc:1402
 msgid "Kill Client: "
 msgstr "Stoppen van: "
 
-#: src/wmframe.cc:1394
+#: src/wmframe.cc:1403
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1912,7 +1912,7 @@ msgstr "iconv heeft (onvoldoende) %s naar %s-vertalers."
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Ongeldige Multibyte-string »%s«: %s"
 
-#: src/ymsgbox.cc:44
+#: src/ymsgbox.cc:48
 msgid "_OK"
 msgstr "_OK"
 
