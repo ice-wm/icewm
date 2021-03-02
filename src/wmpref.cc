@@ -175,7 +175,8 @@ void PrefsMenu::query(cfoption* opt, const char* old) {
         }
     }
 
-    message = new YMsgBox(YMsgBox::mbAll, opt->name, heading, this);
+    const char* iconName = !strncmp(opt->name, "Key", 3) ? "key" : "pref";
+    message = new YMsgBox(YMsgBox::mbAll, opt->name, heading, this, iconName);
     if (nonempty(old) && message && message->input()) {
         message->input()->setText(mstring(old), false);
     }
@@ -201,7 +202,7 @@ void PrefsMenu::handleMsgBox(YMsgBox* msgbox, int operation) {
     if (message == msgbox) {
         mstring input;
         if (operation == YMsgBox::mbOK && msgbox->input()) {
-            input = msgbox->input()->getText().trim();
+            input = msgbox->input()->getText();
         }
         message->unmanage();
         message = nullptr;
@@ -223,6 +224,7 @@ void PrefsMenu::handleMsgBox(YMsgBox* msgbox, int operation) {
             }
             else if (modify->type == cfoption::CF_INT && input.nonempty()) {
                 int value = 0, len = 0;
+                input = input.trim();
                 if (sscanf(input, "%d%n", &value, &len) == 1 &&
                     size_t(len) == input.length() &&
                     inrange(value, modify->intmin(), modify->intmax()))
