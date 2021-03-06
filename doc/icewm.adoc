@@ -1037,6 +1037,10 @@ List of battery names ignore.
 +
 Show CPU frequency in CPU status tool tip.
 
+* `NetStatusShowOnlyRunning = 0`
++
+Show network status for running devices only.
+
 * `TaskBarShowMEMStatus = 1`
 +
 Show memory usage status on task bar (Linux only).
