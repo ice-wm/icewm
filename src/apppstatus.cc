@@ -35,14 +35,14 @@ extern ref<YPixmap> taskbackPixmap;
 
 class NetDevice : public INetDevice {
 public:
-    NetDevice(mstring netdev) : fDevName(netdev) {
-        should_display_flag = netstatusShowOnlyRunning ? IFF_RUNNING : IFF_UP;
-    }
+    NetDevice(mstring netdev) : fDevName(netdev) {}
     const char* getPhoneNumber() override { return ""; }
     mstring name() const { return fDevName; }
 protected:
     mstring fDevName;
-    int should_display_flag;
+    int shouldDisplayFlag() const {
+        return netstatusShowOnlyRunning ? IFF_RUNNING : IFF_UP;
+    }
 };
 
 class NetLinuxDevice : public NetDevice {
@@ -387,7 +387,7 @@ bool NetOpenDevice::isUp() {
         struct ifreq ifr;
         strlcpy(ifr.ifr_name, fDevName, IFNAMSIZ);
         if (ioctl(s, SIOCGIFFLAGS, (caddr_t)&ifr) != -1) {
-            up = (ifr.ifr_flags & should_display_flag);
+            up = (ifr.ifr_flags & shouldDisplayFlag());
         }
         close(s);
     }
@@ -420,7 +420,7 @@ bool NetFreeDevice::isUp() {
                 continue;
             }
             if (fDevName == ifmd.ifmd_name) {
-                return (ifmd.ifmd_flags & should_display_flag);
+                return (ifmd.ifmd_flags & shouldDisplayFlag());
             }
         }
     }
@@ -436,7 +436,7 @@ bool NetLinuxDevice::isUp() {
 
     struct ifreq ifr;
     strlcpy(ifr.ifr_name, fDevName, IFNAMSIZ);
-    bool up = (ioctl(s, SIOCGIFFLAGS, &ifr) >= 0 && (ifr.ifr_flags & should_display_flag));
+    bool up = (ioctl(s, SIOCGIFFLAGS, &ifr) >= 0 && (ifr.ifr_flags & shouldDisplayFlag()));
     close(s);
     return up;
 }
