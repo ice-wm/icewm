@@ -1039,7 +1039,9 @@ Show CPU frequency in CPU status tool tip.
 
 * `NetStatusShowOnlyRunning = 0`
 +
-Show network status for running devices only.
+Show network status only for connected devices, such as an active ethernet link
+or associated wireless interface. If false, any network interface that has been
+brought up will be displayed.
 
 * `TaskBarShowMEMStatus = 1`
 +
