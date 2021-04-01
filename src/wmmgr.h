@@ -5,6 +5,7 @@
 #include "ylist.h"
 #include "yaction.h"
 #include "ymsgbox.h"
+#include "ypopup.h"
 #include "workspaces.h"
 
 extern YAction layerActionSet[WinLayerCount];
@@ -14,6 +15,7 @@ class YWindowManager;
 class YFrameClient;
 class YFrameWindow;
 class YSMListener;
+class SwitchWindow;
 class IApp;
 
 class EdgeSwitch: public YWindow, public YTimerListener {
@@ -41,7 +43,13 @@ public:
     virtual void handleButton(const XButtonEvent &button);
 };
 
-class YWindowManager: private YDesktop, private YMsgBoxListener {
+class YWindowManager:
+    private YDesktop,
+    private YMsgBoxListener,
+    private YActionListener,
+    private YTimerListener,
+    public YPopDownListener
+{
 public:
     YWindowManager(
         IApp *app,
@@ -70,6 +78,9 @@ public:
     virtual void handleRRNotify(const XRRNotifyEvent &notify);
 #endif
     virtual void handleMsgBox(YMsgBox *msgbox, int operation);
+    virtual void handlePopDown(YPopupWindow* popup);
+    virtual bool handleTimer(YTimer* timer);
+    virtual void actionPerformed(YAction action, unsigned modifiers);
 
     void manageClients();
     void unmanageClients();
@@ -87,7 +98,7 @@ public:
     void destroyedClient(Window win);
     void mapClient(Window win);
 
-    void setFocus(YFrameWindow *f, bool canWarp = false);
+    void setFocus(YFrameWindow *f, bool canWarp = false, bool reorder = true);
     YFrameWindow *getFocus() { return fFocusWin; }
 
     void installColormap(Colormap cmap);
@@ -258,6 +269,10 @@ public:
     };
 
     const DesktopLayout& layout() const { return fLayout; }
+    bool handleSwitchWorkspaceKey(const XKeyEvent& key, KeySym k, unsigned vm);
+
+    bool switchWindowVisible() const;
+    SwitchWindow* getSwitchWindow();
 
 private:
     struct WindowPosState {
@@ -267,7 +282,7 @@ private:
     };
 
     void updateArea(long workspace, int screen_number, int l, int t, int r, int b);
-    bool handleWMKey(const XKeyEvent &key, KeySym k, unsigned int m, unsigned int vm);
+    bool handleWMKey(const XKeyEvent &key, KeySym k, unsigned vm);
     void setWmState(WMState newWmState);
     void refresh();
 
@@ -332,6 +347,8 @@ private:
     DesktopLayout fLayout;
     mstring fCurrentKeyboard;
     int fDefaultKeyboard;
+    SwitchWindow* fSwitchWindow;
+    lazy<YTimer> fSwitchDownTimer;
 };
 
 extern YWindowManager *manager;

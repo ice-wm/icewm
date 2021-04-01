@@ -247,6 +247,10 @@ Treat Super/Win modifier as Ctrl+Alt.
 Support mouse wheel. When pressing Ctrl+Alt rotating the mouse wheel
 on the root window will cycle the focus over the windows.
 
+=item B<TaskBarTaskGrouping>=0
+
+Group applications with the same class name under a single task button.
+
 =item B<ShowPopupsAbovePointer>=0
 
 Show popup menus above mouse pointer.
@@ -295,21 +299,21 @@ multi-monitor without STRUT).
 
 =back
 
-=head3 Quick Switch List
+=head2 QUICK SWITCH
 
 =over
 
 =item B<QuickSwitch>=1
 
-Alt+Tab window switching.
+Enable Alt+Tab window switching.
 
 =item B<QuickSwitchToMinimized>=1
 
-Alt+Tab to minimized windows.
+Enable Alt+Tab to minimized windows.
 
 =item B<QuickSwitchToHidden>=1
 
-Alt+Tab to hidden windows.
+Enable Alt+Tab to hidden windows.
 
 =item B<QuickSwitchToUrgent>=1
 
@@ -317,11 +321,15 @@ Prioritize Alt+Tab to urgent windows.
 
 =item B<QuickSwitchToAllWorkspaces>=0
 
-Alt+Tab to windows on other workspaces.
+Include windows from all workspaces in Alt+Tab.
 
 =item B<QuickSwitchGroupWorkspaces>=1
 
-Alt+Tab: group windows on current workspace.
+Group windows by workspace together in Alt+Tab.
+
+=item B<QuickSwitchRaiseCandidate>=0
+
+Raise a selected window while Alt+Tabbing in the QuickSwitch.
 
 =item B<QuickSwitchAllIcons>=1
 
@@ -333,11 +341,11 @@ Show the window title above (all reachable) icons.
 
 =item B<QuickSwitchSmallWindow>=0
 
-Attempt to create a small QuickSwitch window (1/3 instead of 3/5 of
+Create a smaller QuickSwitch window of 1/3 screen width.
 
 =item B<QuickSwitchMaxWidth>=0
 
-Go through all window titles and choose width of the longest one.
+Go trough all window titles and choose width of the longest one.
 
 =item B<QuickSwitchVertical>=1
 
@@ -353,7 +361,7 @@ Fill the rectangle highlighting the current icon.
 
 =back
 
-=head3 Edge Workspace Switching
+=head2 EDGE SWITCHING
 
 =over
 
@@ -509,6 +517,12 @@ Show ACPI temperature in CPU status bar.
 =item B<CPUStatusShowCpuFreq>=1
 
 Show CPU frequency in CPU status tool tip.
+
+=item B<NetStatusShowOnlyRunning>=0
+
+Show network status only for connected devices, such as an active ethernet link
+or associated wireless interface. If false, any network interface that has been
+brought up will be displayed.
 
 =item B<TaskBarShowMEMStatus>=1
 
@@ -1066,13 +1080,13 @@ Show application icon over menu button
 
 =head2 THEME SETTINGS
 
-This section shows settings that can be set in theme files.  They can
-also be set in the F<preferences> file, but themes will override the
-values set there.  To override the theme values, the settings should be
-set in F<prefoverrides> file: see L<icewm-prefoverrides(5)>.  Default
+The following sections show settings that can be set in theme files.
+They can also be set in the F<preferences> file, but themes will override
+the values set there.  To override the theme values, the settings should
+be set in F<prefoverrides> file: see L<icewm-prefoverrides(5)>.  Default
 values are shown following the equal sign.
 
-=head3 Description
+=head3 THEME DESCRIPTION
 
 =over
 
@@ -1096,7 +1110,7 @@ List of gradient pixmaps in the current theme.
 
 =back
 
-=head3 Borders, Icons, Margins and Buttons
+=head3 THEME BORDERS, ICONS, MARGINS AND BUTTONS
 
 =over
 
@@ -1214,7 +1228,7 @@ Join title*T and title*B.
 
 =back
 
-=head3 Fonts
+=head3 THEME FONTS
 
 =over
 
@@ -1334,7 +1348,7 @@ Name of the label font.
 
 =back
 
-=head3 Colors
+=head3 THEME COLORS
 
 =over
 
@@ -1693,7 +1707,7 @@ Color(s) to announce for semitransparent windows.
 
 =back
 
-=head3 Desktop Background
+=head3 DESKTOP BACKGROUND
 
 The following preferences are read by L<icewmbg(1)>:
 

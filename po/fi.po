@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.14\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-02-27 18:40+0100\n"
-"PO-Revision-Date: 2020-06-29 19:44+0000\n"
-"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
+"POT-Creation-Date: 2021-03-28 23:26+0200\n"
+"PO-Revision-Date: 2021-03-15 14:36+0000\n"
+"Last-Translator: Tommi Nieminen <software@legisign.org>\n"
 "Language-Team: Finnish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
 "branch/fi/>\n"
 "Language: fi\n"
@@ -40,38 +40,38 @@ msgstr "C"
 msgid " - Full"
 msgstr " - Täysi"
 
-#: src/aapm.cc:991
+#: src/aapm.cc:990
 #, c-format
 msgid "power:\t%s"
 msgstr "virta:\t%s"
 
-#: src/aclock.cc:180
+#: src/aclock.cc:179
 msgid "CLOCK"
 msgstr "KELLO"
 
-#: src/aclock.cc:186
+#: src/aclock.cc:185
 msgid "Date"
 msgstr "Päivämäärä"
 
-#: src/aclock.cc:187 src/themes.cc:81
+#: src/aclock.cc:186 src/themes.cc:80
 msgid "Default"
 msgstr "Oletus"
 
-#: src/aclock.cc:188 src/acpustatus.cc:661 src/amailbox.cc:979
-#: src/amemstatus.cc:265
+#: src/aclock.cc:187 src/acpustatus.cc:660 src/amailbox.cc:953
+#: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Pois"
 
-#: src/aclock.cc:189
+#: src/aclock.cc:188
 msgid "_UTC"
-msgstr ""
+msgstr "UT_C"
 
-#: src/acpustatus.cc:296
+#: src/acpustatus.cc:295
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "CPU %s Kuorma: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:302
+#: src/acpustatus.cc:301
 #, c-format
 msgid ""
 "\n"
@@ -80,7 +80,7 @@ msgstr ""
 "\n"
 "Muisti (vapaa): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:307
+#: src/acpustatus.cc:306
 #, c-format
 msgid ""
 "\n"
@@ -89,7 +89,7 @@ msgstr ""
 "\n"
 "Swap (vapaa): %.3f (%.3f) G"
 
-#: src/acpustatus.cc:313
+#: src/acpustatus.cc:312
 #, c-format
 msgid ""
 "\n"
@@ -98,7 +98,7 @@ msgstr ""
 "\n"
 "ACPI Lämpö: "
 
-#: src/acpustatus.cc:332 src/acpustatus.cc:372
+#: src/acpustatus.cc:331 src/acpustatus.cc:371
 #, c-format
 msgid ""
 "\n"
@@ -107,15 +107,15 @@ msgstr ""
 "\n"
 "CPU Taajuus: %.3fGHz"
 
-#: src/acpustatus.cc:349 src/acpustatus.cc:656
+#: src/acpustatus.cc:348 src/acpustatus.cc:655
 msgid "CPU"
-msgstr ""
+msgstr "Suoritin"
 
-#: src/acpustatus.cc:349
+#: src/acpustatus.cc:348
 msgid "Load: "
 msgstr "Kuorma: "
 
-#: src/acpustatus.cc:364
+#: src/acpustatus.cc:363
 #, c-format
 msgid ""
 "\n"
@@ -126,20 +126,20 @@ msgstr ""
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:430
+#: src/acpustatus.cc:429
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
-#: src/acpustatus.cc:657
+#: src/acpustatus.cc:656
 #, c-format
 msgid "CPU%d"
-msgstr ""
+msgstr "CPU%d"
 
-#: src/acpustatus.cc:663
+#: src/acpustatus.cc:662
 msgid "_Combine"
 msgstr "_Yhdistetty"
 
-#: src/acpustatus.cc:665
+#: src/acpustatus.cc:664
 msgid "_Separate"
 msgstr "_Erikseen"
 
@@ -188,87 +188,87 @@ msgstr "Kirjoitus kantaan epäonnistui: %s"
 msgid "Using MailBox \"%s\"\n"
 msgstr "Käytetään postilaatikkoa \"%s\"\n"
 
-#: src/amailbox.cc:816
+#: src/amailbox.cc:790
 msgid "Suspended"
 msgstr "Keskeytetty"
 
-#: src/amailbox.cc:820
+#: src/amailbox.cc:794
 msgid "Error checking mailbox."
 msgstr "Virhe postilaatikon tarkistuksessa."
 
-#: src/amailbox.cc:827
+#: src/amailbox.cc:801
 #, c-format
 msgid "%ld mail message, %ld unread."
 msgstr "%ld sähköpostiviesti, %ld lukematon."
 
-#: src/amailbox.cc:828
+#: src/amailbox.cc:802
 #, c-format
 msgid "%ld mail messages, %ld unread."
 msgstr "%ld sähköpostiviestit, %ld lukematon."
 
-#: src/amailbox.cc:834
+#: src/amailbox.cc:808
 #, c-format
 msgid "%ld mail message."
 msgstr "%ld viesti."
 
-#: src/amailbox.cc:835
+#: src/amailbox.cc:809
 #, c-format
 msgid "%ld mail messages."
 msgstr "%ld viestiä."
 
-#: src/amailbox.cc:976
+#: src/amailbox.cc:950
 msgid "MAIL"
 msgstr "POSTI"
 
-#: src/amailbox.cc:978
+#: src/amailbox.cc:952
 msgid "_Check"
 msgstr "_Tarkista"
 
-#: src/amailbox.cc:980
+#: src/amailbox.cc:954
 msgid "_Suspend"
 msgstr "_Keskeytä"
 
-#: src/amemstatus.cc:145
+#: src/amemstatus.cc:144
 msgid "GB"
 msgstr "Gt"
 
-#: src/amemstatus.cc:149
+#: src/amemstatus.cc:148
 msgid "MB"
 msgstr "Mt"
 
-#: src/amemstatus.cc:153
+#: src/amemstatus.cc:152
 msgid "kB"
-msgstr ""
+msgstr "kt"
 
-#: src/amemstatus.cc:157
+#: src/amemstatus.cc:156
 msgid "bytes"
 msgstr "tavua"
 
-#: src/amemstatus.cc:177
+#: src/amemstatus.cc:176
 msgid "Memory Total: "
 msgstr "Muisti yhteensä: "
 
-#: src/amemstatus.cc:178
+#: src/amemstatus.cc:177
 msgid "Free: "
 msgstr "Vapaa: "
 
-#: src/amemstatus.cc:179
+#: src/amemstatus.cc:178
 msgid "Cached: "
 msgstr "Välimuistissa: "
 
-#: src/amemstatus.cc:180
+#: src/amemstatus.cc:179
 msgid "Buffers: "
 msgstr "Puskurissa: "
 
-#: src/amemstatus.cc:181
+#: src/amemstatus.cc:180
 msgid "User: "
 msgstr "Käyttäjä: "
 
-#: src/amemstatus.cc:263
+#: src/amemstatus.cc:262
 msgid "MEM"
 msgstr "MUISTI"
 
-#: src/apppstatus.cc:231
+#: src/apppstatus.cc:268
 #, c-format
 msgid ""
 "Interface %s:\n"
@@ -283,138 +283,150 @@ msgstr ""
 "  Siirretty datamäärä (sisään/ulos):\t%lli %s/%lli %s\n"
 "  Yhteysaika:\t%ld:%02ld:%02ld%s%s"
 
-#: src/apppstatus.cc:243
-msgid ""
-"\n"
-"  Caller id:\t"
-msgstr ""
-"\n"
-"  Soittajan ID:\t"
+#: src/apppstatus.cc:284
+msgid "disconnected"
+msgstr "ei yhteyttä"
 
-#: src/apppstatus.cc:679
+#: src/apppstatus.cc:284
+#, fuzzy
+#| msgid "Rolldown"
+msgid "down"
+msgstr "Rullaa alas"
+
+#: src/apppstatus.cc:705
 msgid "NET"
 msgstr "NETTI"
 
-#: src/aworkspaces.cc:593 src/wmstatus.cc:204
+#: src/aworkspaces.cc:595 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Työpöytä: "
 
-#: src/icehelp.cc:1221
+#: src/icehelp.cc:1226
 msgid "Back"
 msgstr "Takaisin"
 
-#: src/icehelp.cc:1221
+#: src/icehelp.cc:1226
 msgid "Alt+Left"
 msgstr "Alt+Vasen"
 
-#: src/icehelp.cc:1223
+#: src/icehelp.cc:1228
 msgid "Forward"
 msgstr "Eteenpäin"
 
-#: src/icehelp.cc:1223
+#: src/icehelp.cc:1228
 msgid "Alt+Right"
 msgstr "Alt+Oikea"
 
-#: src/icehelp.cc:1226
+#: src/icehelp.cc:1231
 msgid "Previous"
 msgstr "Edellinen"
 
-#: src/icehelp.cc:1227
+#: src/icehelp.cc:1232
 msgid "Next"
 msgstr "Seuraava"
 
-#: src/icehelp.cc:1229
+#: src/icehelp.cc:1234
 msgid "Contents"
 msgstr "Sisältö"
 
-#: src/icehelp.cc:1230
+#: src/icehelp.cc:1235
 msgid "Index"
 msgstr "Hakemisto"
 
-#: src/icehelp.cc:1233 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
+#: src/icehelp.cc:1238
+msgid "Open in Browser"
+msgstr ""
+
+#: src/icehelp.cc:1238
+#, fuzzy
+#| msgid "Ctrl+Q"
+msgid "Ctrl+B"
+msgstr "Ctrl+Q"
+
+#: src/icehelp.cc:1240 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
 msgid "Close"
 msgstr "Sulje"
 
-#: src/icehelp.cc:1233 src/icesame.cc:62 src/iceview.cc:59
+#: src/icehelp.cc:1240 src/icesame.cc:62 src/iceview.cc:59
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: src/icehelp.cc:1238
+#: src/icehelp.cc:1245
 msgid "Icewm(1)"
-msgstr ""
+msgstr "IceWM(1)"
 
-#: src/icehelp.cc:1240
+#: src/icehelp.cc:1247
 msgid "Icewmbg(1)"
 msgstr ""
 
-#: src/icehelp.cc:1242
+#: src/icehelp.cc:1249
 msgid "Icesound(1)"
 msgstr ""
 
-#: src/icehelp.cc:1244
+#: src/icehelp.cc:1251
 msgid "FAQ"
 msgstr "OHJE"
 
-#: src/icehelp.cc:1246
+#: src/icehelp.cc:1253
 msgid "Manual"
 msgstr "Manuaali"
 
-#: src/icehelp.cc:1248
+#: src/icehelp.cc:1255
 msgid "Support"
 msgstr "Tuki"
 
-#: src/icehelp.cc:1250
+#: src/icehelp.cc:1257
 msgid "Theme Howto"
 msgstr "Teeman tekijä"
 
-#: src/icehelp.cc:1252
+#: src/icehelp.cc:1259
 msgid "Website"
 msgstr "Verkkosivusto"
 
-#: src/icehelp.cc:1254
+#: src/icehelp.cc:1261
 msgid "Github"
-msgstr ""
+msgstr "Github"
 
-#: src/icehelp.cc:1957
+#: src/icehelp.cc:1971
 msgid "Unsupported protocol."
 msgstr "Protokollaa ei tueta."
 
-#: src/icehelp.cc:1982
+#: src/icehelp.cc:2050
 #, c-format
 msgid "Invalid path: %s\n"
 msgstr "Virheellinen polku: %s\n"
 
-#: src/icehelp.cc:2005
+#: src/icehelp.cc:2073
 msgid "Path does not refer to a file."
 msgstr "Polku ei viittaa tiedostoon."
 
-#: src/icehelp.cc:2010
+#: src/icehelp.cc:2078
 msgid "Failed to open file for reading."
 msgstr "Tiedostoa ei voitu avata."
 
-#: src/icehelp.cc:2039
+#: src/icehelp.cc:2107
 msgid "Failed to create a temporary file"
 msgstr "Väliaikaisen tiedoston luominen epäonnistui"
 
-#: src/icehelp.cc:2132
+#: src/icehelp.cc:2200
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr "Järjestelmän suorittaminen epäonnistui(%s) (%d)"
 
-#: src/icehelp.cc:2155
+#: src/icehelp.cc:2223
 #, c-format
 msgid "Failed to decompress %s"
 msgstr "Purkaminen epäonnistui %s"
 
-#: src/icehelp.cc:2163
+#: src/icehelp.cc:2231
 msgid "Could not locate curl or wget in PATH"
 msgstr "Curl-tai wget-polkua ei löydy"
 
-#: src/icehelp.cc:2167
+#: src/icehelp.cc:2235
 msgid "Unsafe characters in URL"
 msgstr "Kelvottomat merkit URL-osoitteessa"
 
-#: src/icehelp.cc:2204
+#: src/icehelp.cc:2272
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -451,8 +463,41 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
+"Käyttö: %s [VALITSIMET] [ TIEDOSTO | VERKKO-OSOITE ]\n"
+"\n"
+"IceHelp on yksinkertainen HTML-selain IceWM-ikkunaohjelmalle.\n"
+"Se voi näyttää HTML-tiedoston tai selata verkkosivustoa.\n"
+"Se muistaa vierailtujen sivujen historian, jossa voi liikkua\n"
+"näppäimistöllä ja kontekstivalikosta (hiiren oikea painike).\n"
+"Se ei tue kuvien esittämistä eikä JavaScriptiä. Ellei\n"
+"tiedostonimeä tai verkko-osoitetta anneta, esitetään\n"
+"IceWM:n käsikirja osoitteesta %s.\n"
+"\n"
+"Valitsimet:\n"
+"  -d, --display=NIMI  Käytettävän X-palvelimen nimi.\n"
+"  --sync              Tahdista X11-komennot.\n"
+"\n"
+"  -B                  Näytä IceWM:n icewmbg-man-sivu.\n"
+"  -b, --bugs          Näytä IceWM:n vikailmoitukset (alkeellisesti).\n"
+"  -f, --faq           Näytä IceWM:n UKK ja Howto.\n"
+"  -g                  Näytä IceWM:n Github-sivu.\n"
+"  -i, --icewm         Näytä IceWM:n icewm-man-sivu.\n"
+"  -m, --manual        Näytä IceWM:n käsikirja (oletus).\n"
+"  -s                  Näytä IceWM:n icesound-man-sivu.\n"
+"  -t, --theme         Näytä IceWM:n teemojen Howto.\n"
+"  -w, --website       Näytä IceWM:n verkkosivusto.\n"
+"\n"
+"  -V, --version       Tulosta versiotiedot ja lopeta.\n"
+"  -h, --help          Tulosta tämä ohje ja lopeta.\n"
+"\n"
+"Ympäristömuuttujat:\n"
+"  DISPLAY=NIMI        Käytettävän X-palvelimen nimi.\n"
+"\n"
+"Vikailmoitukset, tukipyynnöt ja kommentit voi jättää sivulle:\n"
+"%s\n"
+"\n"
 
-#: src/icehelp.cc:2283
+#: src/icehelp.cc:2351
 #, c-format
 msgid "Ignoring option '%s'"
 msgstr "Tuntematon toiminto '%s'"
@@ -537,47 +582,45 @@ msgid "Motif decorations"
 msgstr "Motif kehykset"
 
 #: src/icesh.cc:1870
-#, fuzzy
-#| msgid "GNOME window state"
 msgid "EWMH window state"
-msgstr "GNOME ikkunan tila"
+msgstr "EWMH:n ikkunan tila"
 
 #: src/icesh.cc:1952 src/icesh.cc:2025
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "Työpöytä #%d: `%s'\n"
 
-#: src/icesh.cc:2260 src/icesh.cc:3468 src/icesh.cc:3939
+#: src/icesh.cc:2260 src/icesh.cc:3470 src/icesh.cc:3941
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Virheellinen tila: `%s'."
 
-#: src/icesh.cc:3110
+#: src/icesh.cc:3112
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Ikkunan muotoa ei saada 0x%lx"
 
-#: src/icesh.cc:3135
+#: src/icesh.cc:3137
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Virheellinen Xinerama: `%s'."
 
-#: src/icesh.cc:3184 src/icesh.cc:3230
+#: src/icesh.cc:3186 src/icesh.cc:3232
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Virheellinen argumentti: `%s'"
 
-#: src/icesh.cc:3196
+#: src/icesh.cc:3198
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Toiminto `%s' vaatii ainakin %d argumenttia."
 
-#: src/icesh.cc:3206
+#: src/icesh.cc:3208
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Virheellinen lauseke: `%s'"
 
-#: src/icesh.cc:3217 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1066
 #: src/yxapp.cc:1030
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -585,30 +628,30 @@ msgstr ""
 "Ei voida avata näyttöä: %s. X-palvelimen pitää olla käynnissä ja $DISPLAY:n "
 "asetettu."
 
-#: src/icesh.cc:3265
+#: src/icesh.cc:3267
 msgid "No windows found."
 msgstr "Ikkunoita ei löytynyt."
 
-#: src/icesh.cc:3280
+#: src/icesh.cc:3282
 msgid "No actions specified."
 msgstr "Toimenpiteitä ei ole määritetty."
 
-#: src/icesh.cc:3385
+#: src/icesh.cc:3387
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Virheellinen ikkunatunniste: `%s'"
 
-#: src/icesh.cc:3402
+#: src/icesh.cc:3404
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Virheellinen PID: `%s'"
 
-#: src/icesh.cc:3438
+#: src/icesh.cc:3440
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Virheellinen kerros: `%s'."
 
-#: src/icesh.cc:4241
+#: src/icesh.cc:4247
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Tuntematon toiminto: `%s'"
@@ -1070,169 +1113,169 @@ msgstr ""
 msgid "icewm - About"
 msgstr "IceWM - Tietoja"
 
-#: src/wmapp.cc:79
+#: src/wmapp.cc:80
 msgid "A window manager is already running, use --replace to replace it"
 msgstr "Ikkunanhallinta on jo käynnissä, käytä --replace sen korvaamiseksi"
 
-#: src/wmapp.cc:97
+#: src/wmapp.cc:98
 #, c-format
 msgid "Failed to become the owner of the %s selection"
 msgstr ""
 
-#: src/wmapp.cc:101
+#: src/wmapp.cc:102
 msgid "Waiting to replace the old window manager"
 msgstr ""
 
-#: src/wmapp.cc:106
+#: src/wmapp.cc:107
 msgid "done."
 msgstr ""
 
-#: src/wmapp.cc:377
+#: src/wmapp.cc:371
 msgid "_Logout"
 msgstr "_Kirjaudu ulos"
 
-#: src/wmapp.cc:378
+#: src/wmapp.cc:372
 msgid "_Cancel logout"
 msgstr "_Peruuta uloskirjautuminen"
 
-#: src/wmapp.cc:383
+#: src/wmapp.cc:377
 msgid "Lock _Workstation"
 msgstr "_Lukitse työasema"
 
-#: src/wmapp.cc:385 src/wmdialog.cc:72
+#: src/wmapp.cc:379 src/wmdialog.cc:72
 msgid "Re_boot"
 msgstr "_Uudelleenkäynnistä"
 
-#: src/wmapp.cc:387 src/wmdialog.cc:73
+#: src/wmapp.cc:381 src/wmdialog.cc:73
 msgid "Shut_down"
 msgstr "_Sammuta"
 
 #. TRANSLATORS: This means "energy saving mode" or "suspended system". Not "interrupt". Not "hibernate".
-#: src/wmapp.cc:389 src/wmdialog.cc:69
+#: src/wmapp.cc:383 src/wmdialog.cc:69
 msgid "_Sleep mode"
 msgstr ""
 
-#: src/wmapp.cc:394
+#: src/wmapp.cc:388
 msgid "Restart _Icewm"
 msgstr "Uudelleenkäynnistä _IceWM"
 
-#: src/wmapp.cc:396
+#: src/wmapp.cc:390
 msgid "Restart _Xterm"
 msgstr "Uudelleenkäynnistä _Xterm"
 
-#: src/wmapp.cc:406
+#: src/wmapp.cc:400
 msgid "_Menu"
 msgstr "_Valikko"
 
-#: src/wmapp.cc:407
+#: src/wmapp.cc:401
 msgid "_Above Dock"
 msgstr "Telakan _yläpuolella"
 
-#: src/wmapp.cc:408
+#: src/wmapp.cc:402
 msgid "_Dock"
 msgstr "T_elakka"
 
-#: src/wmapp.cc:409
+#: src/wmapp.cc:403
 msgid "_OnTop"
 msgstr "P_äällä"
 
-#: src/wmapp.cc:410
+#: src/wmapp.cc:404
 msgid "_Normal"
 msgstr "_Tavallinen"
 
-#: src/wmapp.cc:411
+#: src/wmapp.cc:405
 msgid "_Below"
 msgstr "A_lla"
 
-#: src/wmapp.cc:412
+#: src/wmapp.cc:406
 msgid "D_esktop"
 msgstr "Työ_pöytä"
 
-#: src/wmapp.cc:447 src/wmwinlist.cc:362
+#: src/wmapp.cc:441 src/wmwinlist.cc:362
 msgid "_Restore"
 msgstr "Pala_uta"
 
-#: src/wmapp.cc:449
+#: src/wmapp.cc:443
 msgid "_Move"
 msgstr "_Siirrä"
 
-#: src/wmapp.cc:451
+#: src/wmapp.cc:445
 msgid "_Size"
 msgstr "_Muuta kokoa"
 
-#: src/wmapp.cc:453 src/wmwinlist.cc:363
+#: src/wmapp.cc:447 src/wmwinlist.cc:363
 msgid "Mi_nimize"
 msgstr "_Pienennä"
 
-#: src/wmapp.cc:455 src/wmwinlist.cc:364
+#: src/wmapp.cc:449 src/wmwinlist.cc:364
 msgid "Ma_ximize"
 msgstr "Suu_renna"
 
-#: src/wmapp.cc:456 src/wmwinlist.cc:365
+#: src/wmapp.cc:450 src/wmwinlist.cc:365
 msgid "Maximize_Vert"
 msgstr "Suurenna_Pysty"
 
-#: src/wmapp.cc:457 src/wmwinlist.cc:366
+#: src/wmapp.cc:451 src/wmwinlist.cc:366
 msgid "MaximizeHori_z"
 msgstr "SuurennaVaaka_z"
 
-#: src/wmapp.cc:460 src/wmwinlist.cc:367
+#: src/wmapp.cc:454 src/wmwinlist.cc:367
 msgid "_Fullscreen"
 msgstr "Koko _näyttö"
 
-#: src/wmapp.cc:463 src/wmwinlist.cc:369
+#: src/wmapp.cc:457 src/wmwinlist.cc:369
 msgid "_Hide"
 msgstr "Pii_lota"
 
-#: src/wmapp.cc:465 src/wmwinlist.cc:370
+#: src/wmapp.cc:459 src/wmwinlist.cc:370
 msgid "Roll_up"
 msgstr "Rullaa _ylös"
 
-#: src/wmapp.cc:472
+#: src/wmapp.cc:466
 msgid "R_aise"
 msgstr "Nos_ta"
 
-#: src/wmapp.cc:474 src/wmwinlist.cc:372
+#: src/wmapp.cc:468 src/wmwinlist.cc:372
 msgid "_Lower"
 msgstr "Las_ke"
 
-#: src/wmapp.cc:476 src/wmwinlist.cc:373
+#: src/wmapp.cc:470 src/wmwinlist.cc:373
 msgid "La_yer"
 msgstr "Tas_o"
 
-#: src/wmapp.cc:480 src/wmwinlist.cc:375
+#: src/wmapp.cc:474 src/wmwinlist.cc:375
 msgid "Move _To"
 msgstr "Siirrä _työpöydälle"
 
-#: src/wmapp.cc:481 src/wmwinlist.cc:376
+#: src/wmapp.cc:475 src/wmwinlist.cc:376
 msgid "Occupy _All"
 msgstr "Näytä k_aikilla työpöydillä"
 
-#: src/wmapp.cc:487
+#: src/wmapp.cc:481
 msgid "Limit _Workarea"
 msgstr "_Rajoita työtilaa"
 
-#: src/wmapp.cc:491 src/wmwinlist.cc:377
+#: src/wmapp.cc:485 src/wmwinlist.cc:377
 msgid "Tray _icon"
 msgstr "Tarjotinkuvak_e"
 
-#: src/wmapp.cc:496 src/wmwinlist.cc:392 src/wmwinlist.cc:400
+#: src/wmapp.cc:490 src/wmwinlist.cc:392 src/wmwinlist.cc:400
 msgid "_Close"
 msgstr "_Sulje"
 
-#: src/wmapp.cc:498 src/wmwinlist.cc:394
+#: src/wmapp.cc:492 src/wmwinlist.cc:394
 msgid "_Kill Client"
 msgstr "_Tapa asiakasohjelma"
 
-#: src/wmapp.cc:501 src/wmdialog.cc:74 src/wmwinmenu.cc:130
+#: src/wmapp.cc:495 src/wmdialog.cc:74 src/wmwinmenu.cc:130
 msgid "_Window list"
 msgstr "_Ikkunaluettelo"
 
-#: src/wmapp.cc:534
+#: src/wmapp.cc:528
 msgid "Another window manager already running, exiting..."
 msgstr "Toinen ikkunamangeri on jo käynnissä, poistutaan..."
 
-#: src/wmapp.cc:606
+#: src/wmapp.cc:600
 #, c-format
 msgid ""
 "Could not restart: %s\n"
@@ -1241,33 +1284,33 @@ msgstr ""
 "Ei voitu uudelleenkäynnistää: %s\n"
 "Johtaako $PATH-määritys kohteeseen %s?"
 
-#: src/wmapp.cc:768
+#: src/wmapp.cc:762
 msgid "Confirm Restart as Terminal"
 msgstr ""
 
-#: src/wmapp.cc:769
+#: src/wmapp.cc:763
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1073 src/yxapp.cc:1031
+#: src/wmapp.cc:1067 src/yxapp.cc:1031
 msgid "<none>"
 msgstr "<tyhjä>"
 
-#: src/wmapp.cc:1403
+#: src/wmapp.cc:1369
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1409
+#: src/wmapp.cc:1375
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1417
+#: src/wmapp.cc:1383
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1278,7 +1321,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1426
+#: src/wmapp.cc:1392
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1337,26 +1380,26 @@ msgstr ""
 "Käy osoitteessa https://ice-wm.org/ kun haluat ilmoittaa virheestä, kaipaat\n"
 "apua tai jos haluat vain antaa kommenttisi.\n"
 
-#: src/wmapp.cc:1488
+#: src/wmapp.cc:1454
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1570
+#: src/wmapp.cc:1536
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s määritetyt asetukset:%s\n"
 
-#: src/wmapp.cc:1648
+#: src/wmapp.cc:1614
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Tuntematon optio '%s'."
 
-#: src/wmapp.cc:1700
+#: src/wmapp.cc:1666
 msgid "Confirm Logout"
 msgstr "Varmista uloskirjautuminen"
 
-#: src/wmapp.cc:1701
+#: src/wmapp.cc:1667
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1421,12 +1464,12 @@ msgstr "Ei voida nimetä %s / %s"
 msgid "Loc_k Workstation"
 msgstr "Lu_kitse työasema"
 
-#: src/wmdialog.cc:70 src/ymsgbox.cc:47
+#: src/wmdialog.cc:70 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr "_Peruuta"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:528 src/wmprog.cc:530 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:458 src/wmprog.cc:460 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Kirjaudu ulos..."
@@ -1436,7 +1479,7 @@ msgid "_Restart icewm"
 msgstr "Uudelleenkäynnistä _IceWM"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:496 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:76 src/wmprog.cc:426 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Tietoja"
 
@@ -1452,11 +1495,11 @@ msgstr ""
 "VAROITUS! Kaikki tallentamattomat muutokset tässä\n"
 "asiakkaassa menetetään kun se tapetaan. Haluatko jatkaa?"
 
-#: src/wmmgr.cc:3162
+#: src/wmmgr.cc:3232
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3163
+#: src/wmmgr.cc:3233
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -1470,76 +1513,76 @@ msgstr "Tuntematon ikkunatoiminto: %s"
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Kielioppivirhe ikkunaoptioissa rivillä %d / %s"
 
-#: src/wmprog.cc:392
+#: src/wmprog.cc:333
 msgid "_Click to focus"
 msgstr ""
 
-#: src/wmprog.cc:393
+#: src/wmprog.cc:334
 msgid "_Explicit focus"
 msgstr ""
 
-#: src/wmprog.cc:394
+#: src/wmprog.cc:335
 msgid "_Sloppy mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:395
+#: src/wmprog.cc:336
 msgid "S_trict mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:396
+#: src/wmprog.cc:337
 msgid "_Quiet sloppy focus"
 msgstr ""
 
-#: src/wmprog.cc:397
+#: src/wmprog.cc:338
 msgid "Custo_m"
 msgstr ""
 
-#: src/wmprog.cc:419
+#: src/wmprog.cc:360
 msgid "_Manual"
 msgstr ""
 
-#: src/wmprog.cc:420
+#: src/wmprog.cc:361
 msgid "_Icewm(1)"
 msgstr ""
 
-#: src/wmprog.cc:421
+#: src/wmprog.cc:362
 msgid "Icewm_Bg(1)"
 msgstr ""
 
-#: src/wmprog.cc:422
+#: src/wmprog.cc:363
 msgid "Ice_Sound(1)"
 msgstr ""
 
-#: src/wmprog.cc:482
+#: src/wmprog.cc:412
 msgid "Programs"
 msgstr "Ohjelmat"
 
-#: src/wmprog.cc:486
+#: src/wmprog.cc:416
 msgid "_Run..."
 msgstr "_Suorita..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:490 src/wmtaskbar.cc:233
+#: src/wmprog.cc:420 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Ikkunat"
 
-#: src/wmprog.cc:501
+#: src/wmprog.cc:431
 msgid "_Help"
 msgstr "O_hje"
 
-#: src/wmprog.cc:506
+#: src/wmprog.cc:436
 msgid "_Focus"
 msgstr ""
 
-#: src/wmprog.cc:511
+#: src/wmprog.cc:441
 msgid "_Preferences"
 msgstr ""
 
-#: src/wmprog.cc:516
+#: src/wmprog.cc:446
 msgid "_Themes"
 msgstr "_Teemat"
 
-#: src/wmprog.cc:520
+#: src/wmprog.cc:450
 msgid "Se_ttings"
 msgstr ""
 
@@ -1593,7 +1636,7 @@ msgstr "Järjestä _kuvakkeet"
 msgid "_Refresh"
 msgstr "_Päivitä"
 
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:963
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:967
 msgid "Hide Taskbar"
 msgstr "Piilota tehtäväpalkki"
 
@@ -1609,7 +1652,7 @@ msgstr "Ikkunaluettelon valikko"
 msgid "Show Desktop"
 msgstr "Näytä työpöytä"
 
-#: src/wmtaskbar.cc:963
+#: src/wmtaskbar.cc:967
 msgid "Show Taskbar"
 msgstr "Näytä tehtäväpalkki"
 
@@ -1651,12 +1694,12 @@ msgstr "%lu. Työpöytä %-.32s"
 msgid "%s: select failed"
 msgstr ""
 
-#: src/yconfig.cc:107
+#: src/yconfig.cc:114
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "Tuntematon avainnimi %s %s:ssa"
 
-#: src/yconfig.cc:122 src/yconfig.cc:133 src/yconfig.cc:145
+#: src/yconfig.cc:129 src/yconfig.cc:140 src/yconfig.cc:152
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Virheellinen argumentti: %s kohteelle %s [%d,%d]"
@@ -1714,43 +1757,43 @@ msgstr "Kirjasinsarjan \"%s\" lataaminen epäonnistui."
 msgid "Missing codesets for fontset \"%s\":"
 msgstr "Puuttuva koodisarja kirjasinsarjasta \"%s\":"
 
-#: src/yinput.cc:18
+#: src/yinputline.cc:18
 msgid "_Copy"
 msgstr "_Kopioi"
 
-#: src/yinput.cc:18
+#: src/yinputline.cc:18
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: src/yinput.cc:19
+#: src/yinputline.cc:19
 msgid "Cu_t"
 msgstr "Lei_kkaa"
 
-#: src/yinput.cc:19
+#: src/yinputline.cc:19
 msgid "Ctrl+X"
 msgstr "Ctrl+X"
 
-#: src/yinput.cc:20
+#: src/yinputline.cc:20
 msgid "_Paste"
 msgstr "_Liitä"
 
-#: src/yinput.cc:20
+#: src/yinputline.cc:20
 msgid "Ctrl+V"
 msgstr "Ctrl+V"
 
-#: src/yinput.cc:21
+#: src/yinputline.cc:21
 msgid "Paste _Selection"
 msgstr "Liitä _valinta"
 
-#: src/yinput.cc:21
+#: src/yinputline.cc:21
 msgid "Ctrl+P"
 msgstr "Ctrl+P"
 
-#: src/yinput.cc:23
+#: src/yinputline.cc:23
 msgid "Select _All"
 msgstr "Valitse k_aikki"
 
-#: src/yinput.cc:23
+#: src/yinputline.cc:23
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
@@ -1776,7 +1819,7 @@ msgstr "iconv ei tarjoa (riittävää) muunnosta %s:sta %s:iin."
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Virheellinen monitavuinen merkkijono \"%s\": %s"
 
-#: src/ymsgbox.cc:44
+#: src/ymsgbox.cc:48
 msgid "_OK"
 msgstr "_OK"
 
@@ -2505,6 +2548,13 @@ msgstr ""
 msgid "WordProcessor"
 msgstr ""
 
+#~ msgid ""
+#~ "\n"
+#~ "  Caller id:\t"
+#~ msgstr ""
+#~ "\n"
+#~ "  Soittajan ID:\t"
+
 #~ msgid "Save Modifications"
 #~ msgstr "Tallenna muutokset"
 
@@ -2952,9 +3002,6 @@ msgstr ""
 
 #~ msgid "program label expected"
 #~ msgstr "Odotettiin ohjelman nimeä"
-
-#~ msgid "icon name expected"
-#~ msgstr "Odotettiin kuvakkeen nimeä"
 
 #~ msgid "window management class expected"
 #~ msgstr "odotettiin ikkunanhallinnan luokkaa"

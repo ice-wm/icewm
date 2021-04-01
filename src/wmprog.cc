@@ -18,26 +18,9 @@
 #include <sys/stat.h>
 #include <time.h>
 
-DObjectMenuItem::DObjectMenuItem(DObject *object):
-    YMenuItem(object->getName(), -3, null, YAction(), nullptr)
+DFile::DFile(IApp *app, const mstring &name, ref<YIcon> icon, upath path):
+    DObject(app, name, icon), fPath(path)
 {
-    fObject = object;
-    if (object->getIcon() != null)
-        setIcon(object->getIcon());
-}
-
-DObjectMenuItem::~DObjectMenuItem() {
-    delete fObject;
-}
-
-void DObjectMenuItem::actionPerformed(YActionListener * /*listener*/, YAction /*action*/, unsigned int /*modifiers*/) {
-    wmapp->signalGuiEvent(geLaunchApp);
-    fObject->open();
-}
-
-DFile::DFile(IApp *app, const mstring &name, ref<YIcon> icon, upath path): DObject(app, name, icon) {
-    this->app = app;
-    fPath = path;
 }
 
 DFile::~DFile() {
@@ -45,48 +28,7 @@ DFile::~DFile() {
 
 void DFile::open() {
     const char *args[] = { openCommand, fPath.string(), nullptr };
-    app->runProgram(openCommand, args);
-}
-
-ObjectMenu::ObjectMenu(YActionListener *actionListener, YWindow *parent):
-        YMenu(parent),
-        wmActionListener(nullptr) {
-    setActionListener(actionListener);
-}
-
-void ObjectMenu::addObject(DObject *fObject) {
-    add(new DObjectMenuItem(fObject));
-}
-
-void ObjectMenu::addObject(DObject *fObject, const char *icons) {
-    add(new DObjectMenuItem(fObject), icons);
-}
-
-void ObjectMenu::addSeparator() {
-    YMenu::addSeparator();
-}
-
-void ObjectMenu::addContainer(mstring name, ref<YIcon> icon, ObjectMenu *container) {
-    if (container) {
-        YMenuItem *item =
-            addSubmenu(name, -3, container);
-
-        if (item && icon != null)
-            item->setIcon(icon);
-    }
-}
-
-DObject::DObject(IApp *app, const mstring &name, ref<YIcon> icon):
-    fName(name), fIcon(icon)
-{
-    this->app = app;
-}
-
-DObject::~DObject() {
-    fIcon = null;
-}
-
-void DObject::open() {
+    app()->runProgram(openCommand, args);
 }
 
 DProgram::DProgram(
@@ -103,10 +45,9 @@ DProgram::DProgram(
     fRes(newstr(wmclass)),
     fPid(0),
     fCmd(exe),
-    fArgs(args)
+    fArgs(args),
+    smActionListener(smActionListener)
 {
-    this->app = app;
-    this->smActionListener = smActionListener;
     if (fArgs.isEmpty() || fArgs.getString(fArgs.getCount() - 1))
         fArgs.append(nullptr);
 }
@@ -121,7 +62,7 @@ void DProgram::open() {
     else if (fRes)
         smActionListener->runOnce(fRes, &fPid, fCmd.string(), fArgs.getCArray());
     else
-        app->runProgram(fCmd.string(), fArgs.getCArray());
+        app()->runProgram(fCmd.string(), fArgs.getCArray());
 }
 
 DProgram *DProgram::newProgram(
@@ -178,15 +119,15 @@ public:
     virtual int getCount() override {
         return menu->itemCount();
     }
-    virtual bool isKey(KeySym k, unsigned int mod) override {
-        return k == this->key && mod == this->mod;
-    }
     virtual void setWMClass(char* wmclass) override {
         if (wmclass) free(wmclass); // unimplemented
     }
+    virtual char* getWMClass() override {
+        return nullptr;
+    }
 
     // move the focused target up or down and return the new focused element
-    virtual int moveTarget(bool zdown) override {
+    virtual void moveTarget(bool zdown) override {
         int count = menu->itemCount();
         zTarget += zdown ? 1 : -1;
         if (zTarget >= count)
@@ -194,52 +135,40 @@ public:
         if (zTarget < 0)
             zTarget = max(0, count - 1);
         // no further gimmicks
-        return zTarget;
     }
     // move the focused target up or down and return the new focused element
-        virtual int setTarget(int where) override {
-            int count = menu->itemCount();
-            return zTarget = inrange(where, 0, count) ? zTarget : 0;
-        }
+    virtual void setTarget(int where) override {
+        int count = menu->itemCount();
+        zTarget = inrange(where, 0, count - 1) ? zTarget : 0;
+    }
 
-    /// Show changed focus preview to user
-    virtual void displayFocusChange(int idxFocused) override {}
     // set target cursor and implementation specific stuff in the beginning
     virtual void begin(bool zdown) override {
         updateList();
+        zTarget = 0;
         moveTarget(zdown);
     }
-    virtual void reset() override {
-        zTarget = 0;
-    }
+
     virtual void cancel() override {
     }
-    virtual void accept(IClosablePopup *parent) override {
+    virtual void accept() override {
         YMenuItem* item = menu->getItem(zTarget);
-        if (!item) return;
-        // even through all the obscure "abstraction" it should just run DObjectMenuItem::actionPerformed
-        item->actionPerformed(nullptr, actionRun, 0);
-        parent->close();
+        if (item) {
+            menu->actionPerformed(item->getAction(), 0);
+        }
     }
 
     virtual int getActiveItem() override {
         return zTarget;
     }
     virtual mstring getTitle(int idx) override {
-        if (idx<0 || idx>=this->getCount())
-            return null;
-        return menu->getItem(idx)->getName();
+        return inrange(idx, 0, getCount() - 1) ?
+            menu->getItem(idx)->getName() : null;
     }
     virtual ref<YIcon> getIcon(int idx) override {
-        if (idx<0 || idx>=this->getCount())
-            return null;
-        return menu->getItem(idx)->getIcon();
+        return inrange(idx, 0, getCount() - 1) ?
+            menu->getItem(idx)->getIcon() : null;
     }
-
-    // Manager notification about windows disappearing under the fingers
-    virtual void destroyedItem(void* framePtr) override {
-    }
-
 };
 
 void KProgram::open(unsigned mods) {
@@ -247,7 +176,8 @@ void KProgram::open(unsigned mods) {
 
     if (bIsDynSwitchMenu) {
         if (!pSwitchWindow) {
-            pSwitchWindow = new SwitchWindow(desktop, new MenuProgSwitchItems(fProg, fKey, fMod), quickSwitchVertical);
+            ISwitchItems* items = new MenuProgSwitchItems(fProg, fKey, fMod);
+            pSwitchWindow = new SwitchWindow(desktop, items, quickSwitchVertical);
         }
         pSwitchWindow->begin(true, mods);
     }
@@ -455,22 +385,11 @@ void StartMenu::refresh() {
 /// TODO #warning "make this into a menuprog (ala gnome.cc), and use mime"
     if (nonempty(openCommand)) {
         upath path[] = { upath::root(), YApplication::getHomeDir() };
-        YMenu *sub;
-        ref<YIcon> folder = YIcon::getIcon("folder");
-        for (unsigned int i = 0; i < ACOUNT(path); i++) {
-            upath& p = path[i];
-
+        ObjectMenu* sub;
+        for (const upath& p : path) {
             sub = new BrowseMenu(app, smActionListener, wmActionListener, p);
             DFile *file = new DFile(app, p, null, p);
-            YMenuItem *item = add(new DObjectMenuItem(file));
-            if (item && sub) {
-                item->setSubmenu(sub);
-                if (folder != null)
-                    item->setIcon(folder);
-            }
-            else {
-                delete sub;
-            }
+            addObject(file, "folder", sub, false);
         }
         addSeparator();
     }

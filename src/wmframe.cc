@@ -15,7 +15,6 @@
 #include "wmtitle.h"
 #include "wmbutton.h"
 #include "wmminiicon.h"
-#include "wmswitch.h"
 #include "wmtaskbar.h"
 #include "wmwinlist.h"
 #include "wmapp.h"
@@ -133,11 +132,7 @@ YFrameWindow::~YFrameWindow() {
         endMoveSize();
     if (fPopupActive)
         fPopupActive->cancelPopup();
-    if (taskBar) {
-        taskBar->delistFrame(this, fTaskBarApp, fTrayApp);
-        fTaskBarApp = nullptr;
-        fTrayApp = nullptr;
-    }
+    removeAppStatus();
     removeFromWindowList();
     if (fMiniIcon) {
         delete fMiniIcon;
@@ -156,8 +151,6 @@ YFrameWindow::~YFrameWindow() {
     manager->removeCreatedFrame(this);
     removeFrame();
     manager->removeClientFrame(this);
-    if (wmapp->hasSwitchWindow())
-        wmapp->getSwitchWindow()->destroyedFrame(this);
     if (client()) {
         if (!client()->destroyed() && client()->adopted())
             XRemoveFromSaveSet(xapp->display(), client()->handle());
@@ -865,10 +858,8 @@ void YFrameWindow::handleCrossing(const XCrossingEvent &crossing) {
 }
 
 void YFrameWindow::handleFocus(const XFocusChangeEvent &focus) {
-    if (wmapp->hasSwitchWindow()) {
-        if (wmapp->getSwitchWindow()->visible()) {
-            return ;
-        }
+    if (manager->switchWindowVisible()) {
+        return ;
     }
 #if 1
     if (focus.type == FocusIn &&
@@ -1344,8 +1335,10 @@ void YFrameWindow::doLower() {
 }
 
 void YFrameWindow::wmRaise() {
-    doRaise();
-    manager->restackWindows();
+    if (canRaise()) {
+        doRaise();
+        manager->restackWindows();
+    }
 }
 
 void YFrameWindow::doRaise() {
@@ -1613,8 +1606,14 @@ void YFrameWindow::activate(bool canWarp, bool curWork) {
     if ( ! visibleNow()) {
         if (focusCurrentWorkspace && curWork)
             setWorkspace(manager->activeWorkspace());
-        else
+        else {
+            workspaces[getWorkspace()].focused = this;
             manager->activateWorkspace(getWorkspace());
+            xapp->sync();
+            XEvent ignored;
+            while (XCheckWindowEvent(xapp->display(), xapp->root(),
+                                     FocusChangeMask, &ignored)) { }
+        }
     }
     if (isUnmapped()) {
         makeMapped();
@@ -1826,22 +1825,19 @@ void YFrameWindow::updateTitle() {
     layoutShape();
     if (fTitleBar)
         fTitleBar->repaint();
-    updateIconTitle();
     if (fWinListItem && windowList)
         windowList->repaintItem(fWinListItem);
-    if (fTaskBarApp)
+    if (fTaskBarApp) {
         fTaskBarApp->setToolTip(getTitle());
+        fTaskBarApp->repaint();
+    }
     if (fTrayApp)
         fTrayApp->setToolTip(getTitle());
 }
 
 void YFrameWindow::updateIconTitle() {
-    if (fTaskBarApp) {
+    if (fTaskBarApp)
         fTaskBarApp->repaint();
-        fTaskBarApp->setToolTip(getTitle());
-    }
-    if (fTrayApp)
-        fTrayApp->setToolTip(getTitle());
     if (isIconic())
         fMiniIcon->repaint();
 }
@@ -1864,13 +1860,8 @@ void YFrameWindow::wmOccupyWorkspace(int workspace) {
     mainOwner()->setWorkspace(workspace);
 }
 
-void YFrameWindow::wmOccupyOnlyWorkspace(int workspace) {
-    PRECONDITION(workspace < workspaceCount);
-    mainOwner()->setWorkspace(workspace);
-}
-
 void YFrameWindow::wmMoveToWorkspace(int workspace) {
-    wmOccupyOnlyWorkspace(workspace);
+    wmOccupyWorkspace(workspace);
 }
 
 void YFrameWindow::updateAllowed() {
@@ -2678,7 +2669,8 @@ void YFrameWindow::updateLayer(bool restack) {
     if (newLayer != fWinActiveLayer) {
         removeFrame();
         fWinActiveLayer = newLayer;
-        insertFrame(true);
+        insertFrame(oldLayer != WinLayerFullscreen
+                || !manager->switchWindowVisible());
 
         if (client() && !client()->destroyed())
             client()->setLayerHint(fWinActiveLayer);
@@ -3227,6 +3219,7 @@ void YFrameWindow::updateAppStatus() {
         taskBar->relayoutTray();
 
         bool needTaskBarApp = true;
+        bool grouping = false;
 
         if (isSkipTaskBar())
             needTaskBarApp = false;
@@ -3238,8 +3231,10 @@ void YFrameWindow::updateAppStatus() {
             needTaskBarApp = false;
         if (owner() != nullptr && !taskBarShowTransientWindows)
             needTaskBarApp = false;
-        if (!visibleNow() && !taskBarShowAllWindows)
+        if (!visibleNow() && !taskBarShowAllWindows) {
+            grouping = taskBarTaskGrouping;
             needTaskBarApp = false;
+        }
         if (isUrgent())
             needTaskBarApp = true;
 
@@ -3248,7 +3243,7 @@ void YFrameWindow::updateAppStatus() {
         if (frameOption(foNoIgnoreTaskBar))
             needTaskBarApp = true;
 
-        if (needTaskBarApp && fTaskBarApp == nullptr)
+        if ((needTaskBarApp || grouping) && fTaskBarApp == nullptr)
             fTaskBarApp = taskBar->addTasksApp(this);
 
         if (fTaskBarApp) {
@@ -3258,6 +3253,14 @@ void YFrameWindow::updateAppStatus() {
                 fTaskBarApp->repaint();
         }
         taskBar->relayoutTasks();
+    }
+}
+
+void YFrameWindow::removeAppStatus() {
+    if (taskBar) {
+        taskBar->delistFrame(this, fTaskBarApp, fTrayApp);
+        fTaskBarApp = nullptr;
+        fTrayApp = nullptr;
     }
 }
 
