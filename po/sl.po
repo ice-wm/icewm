@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sl\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-03-28 23:26+0200\n"
+"POT-Creation-Date: 2021-04-01 14:52+0200\n"
 "PO-Revision-Date: 2004-10-03 21:56+0200\n"
 "Last-Translator: Jernej Kovacic <jkovacic AT email DOT si>\n"
 "Language-Team: Slovenian <translator-team-sl@lists.sourceforge.net>\n"
@@ -1455,7 +1455,7 @@ msgid "_Cancel"
 msgstr "_Prekliči"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:458 src/wmprog.cc:460 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:447 src/wmprog.cc:449 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Odjava..."
@@ -1465,15 +1465,15 @@ msgid "_Restart icewm"
 msgstr "Po_noven zagon IceWM"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:426 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:76 src/wmprog.cc:415 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "O pro_gramu"
 
-#: src/wmframe.cc:1393
+#: src/wmframe.cc:1395
 msgid "Kill Client: "
 msgstr "Prekini odjemalca: "
 
-#: src/wmframe.cc:1394
+#: src/wmframe.cc:1396
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1481,11 +1481,11 @@ msgstr ""
 "OPOZORILO! Vse neshranjene spremebe se bodo ob prekinitvi\n"
 "tega odjemalca izgubile. Ali želite nadaljevati?"
 
-#: src/wmmgr.cc:3232
+#: src/wmmgr.cc:3230
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3233
+#: src/wmmgr.cc:3231
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -1499,76 +1499,76 @@ msgstr "Neznana okenska izbira: %s"
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Skladenjska napaka v okenskih izbirah"
 
-#: src/wmprog.cc:333
+#: src/wmprog.cc:322
 msgid "_Click to focus"
 msgstr ""
 
-#: src/wmprog.cc:334
+#: src/wmprog.cc:323
 msgid "_Explicit focus"
 msgstr ""
 
-#: src/wmprog.cc:335
+#: src/wmprog.cc:324
 msgid "_Sloppy mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:336
+#: src/wmprog.cc:325
 msgid "S_trict mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:337
+#: src/wmprog.cc:326
 msgid "_Quiet sloppy focus"
 msgstr ""
 
-#: src/wmprog.cc:338
+#: src/wmprog.cc:327
 msgid "Custo_m"
 msgstr ""
 
-#: src/wmprog.cc:360
+#: src/wmprog.cc:349
 msgid "_Manual"
 msgstr ""
 
-#: src/wmprog.cc:361
+#: src/wmprog.cc:350
 msgid "_Icewm(1)"
 msgstr ""
 
-#: src/wmprog.cc:362
+#: src/wmprog.cc:351
 msgid "Icewm_Bg(1)"
 msgstr ""
 
-#: src/wmprog.cc:363
+#: src/wmprog.cc:352
 msgid "Ice_Sound(1)"
 msgstr ""
 
-#: src/wmprog.cc:412
+#: src/wmprog.cc:401
 msgid "Programs"
 msgstr "Programi"
 
-#: src/wmprog.cc:416
+#: src/wmprog.cc:405
 msgid "_Run..."
 msgstr "P_oženi..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:420 src/wmtaskbar.cc:233
+#: src/wmprog.cc:409 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Okna"
 
-#: src/wmprog.cc:431
+#: src/wmprog.cc:420
 msgid "_Help"
 msgstr "Po_moč"
 
-#: src/wmprog.cc:436
+#: src/wmprog.cc:425
 msgid "_Focus"
 msgstr ""
 
-#: src/wmprog.cc:441
+#: src/wmprog.cc:430
 msgid "_Preferences"
 msgstr ""
 
-#: src/wmprog.cc:446
+#: src/wmprog.cc:435
 msgid "_Themes"
 msgstr "_Teme"
 
-#: src/wmprog.cc:450
+#: src/wmprog.cc:439
 msgid "Se_ttings"
 msgstr ""
 

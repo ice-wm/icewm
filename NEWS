@@ -1,11 +1,184 @@
-icewm -- history of user-visible changes.  2021-03-02
+icewm -- history of user-visible changes.  2021-04-01
+
+Release icewm-2.3.0 released 2021-04-01
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.2.1...2.3.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (65):
+      Add option to only show running net interfaces in status bar by alspitz
+        and closes ice-wm/icewm#44.
+      Improve formatting.
+      Only update tooltips when a tooltip window is visible. Remove obsolete
+        phonenumber from network status monitor.
+      Fixes for tooltips.
+      Postpone creating tooltips.
+      Cleanup empty handleCrossing.
+      Smaller timers.
+      Reduce systemcalls as much as possible when updating network status.
+      Enforce updateLocation when without system tray for issue #559.
+      Update translations.
+      Redraw task button when name changes.
+      Print detail for all in icesh motif.
+      When client loses its X shape then update frame functions. This fixes
+        toggling "Use system title bar and borders" in Chrome.
+      Simplify filereader to reduce number of read system calls.
+      Add new option TaskBarTaskGrouping to group similar applications under one
+        task button for issue #198.
+      Remove superfluous field wmActionListener from ObjectMenu.
+      Remove unneeded includes.
+      Move ObjectButton to its own source file. Rename yinput.cc to
+        yinputline.cc.
+      Move signalGuiEvent into its own class GuiSignaler.
+      Iterate backwards over fUpdates.
+      Consider grouping in updateAppStatus.
+      Add menu option to icehelp to open current document in a browser.
+      Improve update tracking to grouped task buttons.
+      Remove the actionPerformed callback from menu items.
+      Fix use of nullptr.
+      Renamed yinput.cc as yinputline.cc.
+      Make group menu popup via a click and restore dragging.
+      Support switching workspaces via window menu list.
+      Update documentation.
+      make update-po
+      Fix pointer type.
+      Set icon on task app.
+      When WM_CLASS and grouping is on then reinsert task app status.
+      When WM_CLASS changes and task grouping is on, then reinsert task app
+        status.
+      Merge
+      Add command "denormal" to icesh for issue #561.
+      Restore dynamic menus like Start, for issue #562.
+      Allow to switch workspaces when in Alt+Tab mode for issue #563.
+      Allow to switch workspaces when the Alt+Tab QuickSwitch window is active
+        for #563.
+      Add missing modifiers declaration to fix compilation and closes #567
+      Support buttons up to button number 9 for issue #333.
+      Restart the QuickSwitch when changing workspace by key for issue #563.
+        Improve handling of modifier keys in QuickSwitch.
+      Enable immediate toggling ofTaskBarTaskGrouping without a restart.
+      Add contains.
+      Add setPopDownListener.
+      Add support for operation by arrow keys and Home and End. Support Delete
+        key to close a window. Move SwitchWindow away from wmapp and frames and
+        into manager. Support highlighting the active quickswitch frame by
+        reordering the X stacking order. Use the more lightweight setFocus to
+        give input focus. Fix for quickswitch on fullscreen for issue #558. Fix
+        for quickswitch raise for issue #564.
+      make update-po
+      Reorder popup and displayFocus in QuickSwitch for immediate focus+raise
+        effect.
+      Improve tracking of popup deactivation for SwitchWindow. Avoid closing
+        down SwitchWindow when a button release occurs outside of the
+        SwitchWindow. Support keys '1' to '9' to index the SwitchWindow.
+      Add optional reorder flag to setFocus and dont reorder for QuickSwitch for
+        issue #564.
+      Don't reorder focus when switching workspaces for issue #564. Cancel
+        QuickSwitch when clicking outside the window. Improve calculating hinted
+        item. Support rotating mouse wheel buttons when scrolling over windows.
+      Replace inefficient GetZList with efficient updateList in QuickSwitch.
+      When QuickSwitch is up and a new window is created, then add the new
+        window to the existing QuickSwitch, if the conditions are met.
+      Support colorful colors when using libXpm for issue ice-wm/icewm#45.
+      Add preference QuickSwitchRaiseCandidate to raise a selected QuickSwitch
+        window for issue #558 and #564.
+      Let canRaise also consider the future workspace.
+      When activating a frame on another workspace, ignore any focus events on
+        the root window, for more reliable quick switching.
+      Improve changing workspace when quick switching for issue #564. Allow to
+        accept the current quick switch selection by hitting the Return key.
+        Restore reordering of quick switch items when not raising candidates for
+        issue #558. Get rid of IClosablePopup.
+      Complete QuickSwitch documentation.
+      Update QuickSwitch preferences.
+      Use wmOccupyWorkspace instead of identical wmOccupyOnlyWorkspace.
+      Ensure that descriptions are terminated with a dot.
+      Also terminate with a dot when outputting in perl pod format.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge remote-tracking branch 'origin/icewm-1-4-BRANCH'
+
+Grace Yu <grace.yu@excel-gits.com> (6):
+      Translated using Weblate (Chinese (China))
+      Translated using Weblate (Chinese (Taiwan))
+      Translated using Weblate (Chinese (China))
+      Translated using Weblate (Chinese (China))
+      Translated using Weblate (Chinese (Taiwan))
+      Translated using Weblate (Chinese (China))
+
+Aleš Kastner <alkas@volny.cz> (3):
+      Translated using Weblate (Czech)
+      Translated using Weblate (Czech)
+      Translated using Weblate (Czech)
+
+Antonio Simón <antonio@trans-mission.com> (3):
+      Translated using Weblate (Spanish)
+      Translated using Weblate (Spanish)
+      Translated using Weblate (Spanish)
+
+David Medina <medipas@gmail.com> (3):
+      Translated using Weblate (Catalan)
+      Translated using Weblate (Catalan)
+      Translated using Weblate (Catalan)
+
+Davide Aiello <davide.aiello@novilingulists.com> (3):
+      Translated using Weblate (Italian)
+      Translated using Weblate (Italian)
+      Translated using Weblate (Italian)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (3):
+      Translated using Weblate (Slovak)
+      Translated using Weblate (Slovak)
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (3):
+      Translated using Weblate (Dutch)
+      Translated using Weblate (Dutch)
+      Translated using Weblate (Dutch)
+
+Gemineo <vistatec@gemineo.de> (3):
+      Translated using Weblate (German)
+      Translated using Weblate (German)
+      Translated using Weblate (German)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (3):
+      Translated using Weblate (Japanese)
+      Translated using Weblate (Japanese)
+      Translated using Weblate (Japanese)
+
+Sophie Leroy <sophie@stoquart.com> (2):
+      Translated using Weblate (French)
+      Translated using Weblate (French)
+
+Hela Basa <R45XvezA@pm.me> (1):
+      Added translation using Weblate (Sinhala)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Jorge Gallegos Carrasco <jcarrascochih@gmail.com> (1):
+      Translated using Weblate (Spanish)
+
+Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
+      Translated using Weblate (Indonesian)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Stanislav Brabec <sbrabec@suse.cz> (1):
+      Merge remote-tracking branch 'weblate/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+
+Tommi Nieminen <software@legisign.org> (1):
+      Translated using Weblate (Finnish)
+
 
 Release icewm-2.2.1 released 2021-03-02
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.2.0...2.2.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (12):
+Bert Gijsbers <gijsbers@science.uva.nl> (13):
       Position the move/size-status on the screen of the window.
       Taskbar may have a non-zero screen due to XineramaPrimaryScreen in
         getNewPos.  Only consider workarea when using same screen as taskbar,
@@ -22,6 +195,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (12):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.2.1 release
 
 
 Release icewm-2.2.0 released 2021-02-28
@@ -190,89 +364,4 @@ Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
-
-
-Release icewm-2.0.0 released 2020-12-14
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.9.2...2.0.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (58):
-      Fix positioning of window list title for non-standard SmallIconSize
-        settings for issue #514.
-      Remove wmmgr.h from wmframe.h. Add classHint() to ClientData.
-      Remove loseFocus().
-      Prefer actionPerformed().
-      Set task title.
-      Add support for Imlib2 as a possible replacement for gdk-pixbuf for issue
-        #513.
-      Improve alpha blending for Imlib2 support for issue #513.
-      Convert last IMLIB to IMLIB2.
-      Prevent unsigned overflow.
-      Add imlib2 to dependencies.
-      Improve rendering quality for MiniIcons for issue #513.
-      Free fAutoScroll when its YWindow is destroyed.
-      Improve alpha thresholding for Imlib2 support for issue #513.
-      Instead of render.h include Xrender.h for dependency checking for issue
-        #516.
-      Report errors if enabled packages are missing for issue #516.
-      Only change a schema key if it exists for issue ice-wm/man#1.
-      Don't resize when trying to move when dragging at y=0 for issue #520.
-      Add errno_string.
-      YLabel and YMsgBox use cstrings.
-      Add layouts for dialogs.
-      Add ylayout.h
-      Better MiniIcons for Imlib2. Support SVG in Imlib2.  Add renderName.
-      Show render engine in About. Use layout classes.
-      Support SVG in Imlib2. Make Imlib2 the default render engine.
-      Add libimlib2-dev dependency.
-      If Imlib2 then disable GdkPixbuf.
-      Fix for showing the icon_pixmap from WM_HINTS, which fixes the icon for
-        NEdit and xmgrace.
-      XGetGeometry returns True.
-      Center MiniIcon.
-      Remove superfluous.
-      Fixes for showing the icon_pixmap from WM_HINTS for timidity and
-        fontforge.
-      Check for destroyed when reparenting.
-      Add more WM_HINTS accessor functions. Check if WM_HINTS update actually
-        changes anything.
-      In unmanage first delete MiniIcon.
-      Add support for WM_HINTS icon_window in MiniIcons.
-      Prevent deprecated warnings for librsvg.
-      Simplify call to nl_langinfo and improve readability.
-      Remove unwanted space and separator in taskbar if toolbar is empty for
-        issue #524.
-      Fix typo for yorigin in composite.
-      Drop const from parameters.
-      Fix for drawing TitleAB and TitleIB pixmaps when they are gradients for
-        issue #523.
-      Don't blend MiniIcon when not in 32-bit mode.
-      Don't unroll on button press for issue #525.
-      Remove support for _WIN_PROTOCOL properties.
-      Update man.
-      Subtract border from icon_window position in MiniIcon.
-      Update 4.1.9 Icons for icon_pixmap and icon_window.
-      Tests for ypointer.h.
-      Use _NET_WM_STATE_HIDDEN instead of IconicState for minimize.
-      Ignore graphics exposures when in scrollWindow.
-      Optimize scrollbars.
-      Fix horizontal scrolling in icehelp.
-      Optimize scrolling images in iceview.
-      Reposition window list if it got offscreen.
-      make update-po
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.0.0 release
-
-Eduard Bloch <blade@debian.org> (5):
-      Revert "Revert "Stop overpainting clock every second when not needed""
-      [cmake] Print CONFIG_IMLIB2 variable status
-      No attempt to draw Unicode in non-UTF-8 environment
-      Check CONFIG_I18N prior to calling nl_langinfo
-      If-case formating fix
-
-Claudio Cesar de Sá <ccs1664@gmail.com> (1):
-      support BR_Portuguese language in 2 files /lib (#522)
 
