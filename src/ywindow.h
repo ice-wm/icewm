@@ -133,7 +133,7 @@ public:
     void grabKeyM(int key, unsigned modifiers);
     void grabKey(int key, unsigned modifiers);
     void grabVKey(int key, unsigned vmodifiers);
-    unsigned VMod(int modifiers);
+    unsigned VMod(unsigned modifiers);
     void grabButtonM(int button, unsigned modifiers);
     void grabButton(int button, unsigned modifiers);
     void grabVButton(int button, unsigned vmodifiers);
@@ -181,6 +181,7 @@ public:
         wsDesktopAware     = 1 << 6,
         wsToolTip          = 1 << 7,
         wsBackingMapped    = 1 << 8,
+        wsToolTipping      = 1 << 9,
     };
 
     virtual bool isFocusTraversable();
@@ -202,6 +203,7 @@ public:
     void installAccelerator(unsigned key, unsigned mod, YWindow *win);
     void removeAccelerator(unsigned key, unsigned mod, YWindow *win);
 
+    mstring getToolTip();
     void setToolTip(const mstring &tip);
 
     void mapToGlobal(int &x, int &y);
@@ -242,7 +244,7 @@ public:
 
     bool hasPopup();
 
-    KeySym keyCodeToKeySym(unsigned int keycode, int index = 0);
+    KeySym keyCodeToKeySym(unsigned keycode, unsigned index = 0);
     static unsigned long getLastEnterNotifySerial();
 
     void unmanageWindow() { removeWindow(); }

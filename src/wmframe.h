@@ -86,7 +86,6 @@ public:
     void wmOccupyAll();
     void wmOccupyAllOrCurrent();
     void wmOccupyWorkspace(int workspace);
-    void wmOccupyOnlyWorkspace(int workspace);
     void wmMoveToWorkspace(int workspace);
     void wmSetLayer(long layer);
     void wmSetTrayOption(long option);
@@ -332,6 +331,7 @@ public:
     void updateProperties();
     void updateTaskBar();
     void updateAppStatus();
+    void removeAppStatus();
 
     void setWindowType(WindowType winType) { fWindowType = winType; }
     bool isTypeDock() { return (fWindowType == wtDock); }

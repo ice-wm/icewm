@@ -93,6 +93,7 @@ YWindowManager::YWindowManager(
     fCreatedUpdated = true;
     fLayeredUpdated = true;
     fDefaultKeyboard = 0;
+    fSwitchWindow = nullptr;
 
     manager = this;
     desktop = this;
@@ -135,6 +136,7 @@ YWindowManager::~YWindowManager() {
     }
     delete fTopWin;
     delete rootProxy;
+    delete fSwitchWindow;
 }
 
 void YWindowManager::setWmState(WMState newWmState) {
@@ -279,7 +281,114 @@ void YWindowManager::setupRootProxy() {
     }
 }
 
-bool YWindowManager::handleWMKey(const XKeyEvent &key, KeySym k, unsigned int /*m*/, unsigned int vm) {
+bool YWindowManager::handleTimer(YTimer* timer) {
+    if (timer == fSwitchDownTimer && switchWindowVisible() == false) {
+        delete fSwitchWindow;
+        fSwitchWindow = nullptr;
+        fSwitchDownTimer = null;
+    }
+    return false;
+}
+
+void YWindowManager::handlePopDown(YPopupWindow* popup) {
+    if (popup == fSwitchWindow) {
+        fSwitchDownTimer->setTimer(3000, this, true);
+    }
+}
+
+SwitchWindow* YWindowManager::getSwitchWindow() {
+    if (fSwitchWindow == nullptr && quickSwitch) {
+        fSwitchWindow = new SwitchWindow(desktop, nullptr, quickSwitchVertical);
+    }
+    return fSwitchWindow;
+}
+
+bool YWindowManager::switchWindowVisible() const {
+    return fSwitchWindow && fSwitchWindow->visible();
+}
+
+bool YWindowManager::handleSwitchWorkspaceKey(const XKeyEvent& key,
+        KeySym k, unsigned vm)
+{
+    if (IS_WMKEY(k, vm, gKeySysWorkspacePrev)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToPrevWorkspace(false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspaceNext)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToNextWorkspace(false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspaceLast)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToLastWorkspace(false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace1)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(0, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace2)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(1, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace3)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(2, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace4)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(3, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace5)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(4, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace6)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(5, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace7)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(6, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace8)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(7, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace9)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(8, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace10)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(9, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace11)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(10, false);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspace12)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        switchToWorkspace(11, false);
+        return true;
+    }
+    return false;
+}
+
+bool YWindowManager::handleWMKey(const XKeyEvent &key, KeySym k, unsigned vm) {
     YFrameWindow *frame = getFocus();
 
     KProgramIterType p = keyProgs.iterator();
@@ -291,24 +400,28 @@ bool YWindowManager::handleWMKey(const XKeyEvent &key, KeySym k, unsigned int /*
         return true;
     }
 
-    if (wmapp->getSwitchWindow() != nullptr) {
-        if (IS_WMKEY(k, vm, gKeySysSwitchNext)) {
-            XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-            wmapp->getSwitchWindow()->begin(true, key.state);
-            return true;
-        } else if (IS_WMKEY(k, vm, gKeySysSwitchLast)) {
-            XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-            wmapp->getSwitchWindow()->begin(false, key.state);
-            return true;
-        } else if (gKeySysSwitchClass.eq(k, vm)) {
-            XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+    if (IS_WMKEY(k, vm, gKeySysSwitchNext)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        if (getSwitchWindow())
+            getSwitchWindow()->begin(true, key.state);
+        return true;
+    }
+    else if (IS_WMKEY(k, vm, gKeySysSwitchLast)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        if (getSwitchWindow())
+            getSwitchWindow()->begin(false, key.state);
+        return true;
+    }
+    else if (gKeySysSwitchClass.eq(k, vm)) {
+        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+        if (getSwitchWindow()) {
             char *prop = frame && frame->client()->adopted()
                        ? frame->client()->classHint()->resource() : nullptr;
-            wmapp->getSwitchWindow()->begin(true, key.state, prop);
-            return true;
+            getSwitchWindow()->begin(true, key.state, prop);
         }
+        return true;
     }
-    if (IS_WMKEY(k, vm, gKeySysWinNext)) {
+    else if (IS_WMKEY(k, vm, gKeySysWinNext)) {
         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
         if (frame) frame->wmNextWindow();
         return true;
@@ -338,19 +451,11 @@ bool YWindowManager::handleWMKey(const XKeyEvent &key, KeySym k, unsigned int /*
         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
         wmActionListener->actionPerformed(actionWindowList, 0);
         return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspacePrev)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToPrevWorkspace(false);
+    }
+    else if (handleSwitchWorkspaceKey(key, k, vm)) {
         return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspaceNext)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToNextWorkspace(false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspaceLast)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToLastWorkspace(false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspacePrevTakeWin)) {
+    }
+    else if (IS_WMKEY(k, vm, gKeySysWorkspacePrevTakeWin)) {
         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
         switchToPrevWorkspace(true);
         return true;
@@ -361,54 +466,6 @@ bool YWindowManager::handleWMKey(const XKeyEvent &key, KeySym k, unsigned int /*
     } else if (IS_WMKEY(k, vm, gKeySysWorkspaceLastTakeWin)) {
         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
         switchToLastWorkspace(true);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace1)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(0, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace2)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(1, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace3)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(2, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace4)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(3, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace5)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(4, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace6)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(5, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace7)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(6, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace8)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(7, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace9)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(8, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace10)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(9, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace11)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(10, false);
-        return true;
-    } else if (IS_WMKEY(k, vm, gKeySysWorkspace12)) {
-        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        switchToWorkspace(11, false);
         return true;
     } else if (IS_WMKEY(k, vm, gKeySysWorkspace1TakeWin)) {
         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
@@ -533,7 +590,7 @@ bool YWindowManager::handleKey(const XKeyEvent &key) {
         unsigned int vm = VMod(m);
 
         MSG(("down key: %lu, mod: %d", k, m));
-        bool handled = handleWMKey(key, k, m, vm);
+        bool handled = handleWMKey(key, k, vm);
         if (xapp->WinMask && win95keys) {
             if (handled) {
             } else if (k == xapp->Win_L || k == xapp->Win_R) {
@@ -893,7 +950,7 @@ YFrameClient *YWindowManager::findClient(Window win) {
     return clientContext.find(win);
 }
 
-void YWindowManager::setFocus(YFrameWindow *f, bool canWarp) {
+void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
     YFrameClient *c = f ? f->client() : nullptr;
     Window w = None;
 
@@ -902,8 +959,7 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp) {
     MSG(("SET FOCUS f=%p", f));
 
     if (f == nullptr) {
-        YFrameWindow *ff = getFocus();
-        if (ff) switchFocusFrom(ff);
+        switchFocusFrom(getFocus());
     }
 
     if (f && f->visible()) {
@@ -913,7 +969,7 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp) {
             w = f->handle();
 
         if (f->getInputFocusHint())
-            switchFocusTo(f);
+            switchFocusTo(f, reorder);
 
         f->setWmUrgency(false);
     }
@@ -1648,6 +1704,8 @@ void YWindowManager::manageClient(Window win, bool mapClient) {
                 frame->wmRaise();
             frame->setWmUrgency(true);
         }
+        if (switchWindowVisible())
+            fSwitchWindow->createdFrame(frame);
     }
     updateFullscreenLayerEnable(true);
 end:
@@ -1950,8 +2008,19 @@ void YWindowManager::restackWindows() {
     else if (statusWorkspace && statusWorkspace->visible())
         w.append(statusWorkspace->handle());
 
+    int top = w.getCount();
+
     for (YFrameWindow* f = topLayer(); f; f = f->nextLayer()) {
         w.append(f->handle());
+    }
+
+    if (quickSwitchRaiseCandidate && switchWindowVisible()) {
+        YFrameWindow* active = fSwitchWindow->current();
+        if (active) {
+            Window handle = active->handle();
+            if (findRemove(w, handle))
+                w.insert(top, handle);
+        }
     }
 
     if (w.getCount() > 1) {
@@ -2382,7 +2451,7 @@ void YWindowManager::activateWorkspace(long workspace) {
         unlockFocus();
 
         YFrameWindow *toFocus = getLastFocus(true, workspace);
-        setFocus(toFocus);
+        setFocus(toFocus, false, !switchWindowVisible());
         resetColormap(true);
 
         if (taskBar) {
@@ -2867,6 +2936,8 @@ void YWindowManager::removeClientFrame(YFrameWindow *frame) {
             setColormapWindow(getFocus());
         if (frame->affectsWorkArea())
             updateWorkArea();
+        if (switchWindowVisible())
+            fSwitchWindow->destroyedFrame(frame);
     }
 }
 
@@ -2898,12 +2969,9 @@ void YWindowManager::switchFocusTo(YFrameWindow *frame, bool reorderFocus) {
 }
 
 void YWindowManager::switchFocusFrom(YFrameWindow *frame) {
-    if (frame == fFocusWin) {
-        if (fFocusWin) {
-            ///msg("losing %lX", fFocusWin);
-            fFocusWin->loseWinFocus();
-        }
+    if (fFocusWin == frame && frame) {
         fFocusWin = nullptr;
+        frame->loseWinFocus();
     }
 }
 
@@ -2940,7 +3008,7 @@ void YWindowManager::switchToWorkspace(long nw, bool takeCurrent) {
             frame->wmOccupyAll();
             frame->wmRaise();
             activateWorkspace(nw);
-            frame->wmOccupyOnlyWorkspace(nw);
+            frame->wmOccupyWorkspace(nw);
             unlockFocus();
             frame->wmRaise();
             setFocus(frame);

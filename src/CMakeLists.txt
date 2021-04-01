@@ -418,7 +418,7 @@ add_library(ice STATIC ${ICE_COMMON_SRCS})
 target_compile_options(ice PUBLIC ${icewm_pc_flags})
 
 SET(ITK_SRCS ymenu.cc ylabel.cc yscrollview.cc ymenuitem.cc
-             yscrollbar.cc ybutton.cc ylistbox.cc yinput.cc
+             yscrollbar.cc ybutton.cc ylistbox.cc yinputline.cc
              globit.cc yicon.cc wmconfig.cc wpixres.cc)
 
 add_library(itk STATIC ${ITK_SRCS})
@@ -431,9 +431,10 @@ SET(ICEWM_SRCS
     wmcontainer.cc wmclient.cc wmmgr.cc wmapp.cc
     wmframe.cc wmbutton.cc wmminiicon.cc wmtitle.cc
     movesize.cc themes.cc decorate.cc browse.cc
+    objbar.cc objbutton.cc objmenu.cc
     wmmenu.cc wmprog.cc wmpref.cc atasks.cc aworkspaces.cc
     amailbox.cc aclock.cc acpustatus.cc amemstatus.cc
-    applet.cc apppstatus.cc aaddressbar.cc objbar.cc
+    applet.cc apppstatus.cc aaddressbar.cc
     akeyboard.cc aapm.cc atray.cc ysmapp.cc yxtray.cc
     )
 

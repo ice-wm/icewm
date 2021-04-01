@@ -137,14 +137,12 @@ void YFrameClient::getSizeHints() {
         long supplied;
 
         if (!prop.wm_normal_hints ||
-            !XGetWMNormalHints(xapp->display(),
-                               handle(),
-                               fSizeHints, &supplied))
+            !XGetWMNormalHints(xapp->display(), handle(), fSizeHints, &supplied))
             fSizeHints->flags = 0;
 
-        if (fSizeHints->flags & PResizeInc) {
-        } else
+        if (notbit(fSizeHints->flags, PResizeInc)) {
             fSizeHints->width_inc = fSizeHints->height_inc = 1;
+        }
 
         if (!(fSizeHints->flags & PBaseSize)) {
             if (fSizeHints->flags & PMinSize) {
@@ -533,8 +531,15 @@ void YFrameClient::handleProperty(const XPropertyEvent &property) {
         if (prop.wm_class) {
             ClassHint old(fClassHint);
             getClassHint();
-            if (fClassHint.nonempty() && fClassHint != old && getFrame()) {
-                getFrame()->getFrameHints();
+            if (fClassHint.nonempty() && fClassHint != old) {
+                YFrameWindow* frame = getFrame();
+                if (frame){
+                    frame->getFrameHints();
+                    if (taskBarTaskGrouping) {
+                        frame->removeAppStatus();
+                        frame->updateAppStatus();
+                    }
+                }
             }
         }
         break;
@@ -707,7 +712,10 @@ void YFrameClient::handleShapeNotify(const XShapeEvent &shape) {
                 fShaped = newShaped;
             if (getFrame())
                 getFrame()->setShape();
-            fShaped = newShaped;
+            if (fShaped && !newShaped) {
+                fShaped = newShaped;
+                getFrame()->updateMwmHints(fSizeHints);
+            }
         }
     }
 }
