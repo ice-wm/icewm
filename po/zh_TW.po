@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-01 14:52+0200\n"
+"POT-Creation-Date: 2021-04-04 02:12+0200\n"
 "PO-Revision-Date: 2021-03-20 11:56+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/icewm/"
@@ -994,12 +994,12 @@ msgstr "換列"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:74
+#: src/icewmbg.cc:73
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "載入影像「%s」失敗。"
 
-#: src/icewmbg.cc:881
+#: src/icewmbg.cc:875
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1097,7 +1097,7 @@ msgstr ""
 " center:1 scaled:1 = 沿兩個方向填充並保持長寬比率\n"
 "\n"
 
-#: src/icewmbg.cc:1086
+#: src/icewmbg.cc:1080
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "無法啟動，因為另一個 icewmbg 仍在執行中。"
 
@@ -1546,7 +1546,7 @@ msgid "_Cancel"
 msgstr "取消(_C)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:447 src/wmprog.cc:449 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:449 src/wmprog.cc:451 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "登出(_L)..."
@@ -1556,7 +1556,7 @@ msgid "_Restart icewm"
 msgstr "重新啟動 icewm(_R)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:415 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:76 src/wmprog.cc:417 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "關於(_A)"
 
@@ -1590,76 +1590,76 @@ msgstr "未知視窗選項：%s"
 msgid "Syntax error in window options on line %d of %s"
 msgstr "第 %d 行 (%s) 中的視窗選項語法有誤"
 
-#: src/wmprog.cc:322
+#: src/wmprog.cc:324
 msgid "_Click to focus"
 msgstr "點擊以取得焦點(_C)"
 
-#: src/wmprog.cc:323
+#: src/wmprog.cc:325
 msgid "_Explicit focus"
 msgstr "顯性焦點(_E)"
 
-#: src/wmprog.cc:324
+#: src/wmprog.cc:326
 msgid "_Sloppy mouse focus"
 msgstr "粗略的滑鼠焦點(_S)"
 
-#: src/wmprog.cc:325
+#: src/wmprog.cc:327
 msgid "S_trict mouse focus"
 msgstr "精確滑鼠焦點(_T)"
 
-#: src/wmprog.cc:326
+#: src/wmprog.cc:328
 msgid "_Quiet sloppy focus"
 msgstr "安靜的粗略焦點(_Q)"
 
-#: src/wmprog.cc:327
+#: src/wmprog.cc:329
 msgid "Custo_m"
 msgstr "自訂(_M)"
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:351
 msgid "_Manual"
 msgstr "手動(_M)"
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:352
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:353
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:352
+#: src/wmprog.cc:354
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:401
+#: src/wmprog.cc:403
 msgid "Programs"
 msgstr "程式"
 
-#: src/wmprog.cc:405
+#: src/wmprog.cc:407
 msgid "_Run..."
 msgstr "執行(_R)..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:409 src/wmtaskbar.cc:233
+#: src/wmprog.cc:411 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "視窗(_W)"
 
-#: src/wmprog.cc:420
+#: src/wmprog.cc:422
 msgid "_Help"
 msgstr "求助(_H)"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:427
 msgid "_Focus"
 msgstr "焦點(_F)"
 
-#: src/wmprog.cc:430
+#: src/wmprog.cc:432
 msgid "_Preferences"
 msgstr "優先設定(_P)"
 
-#: src/wmprog.cc:435
+#: src/wmprog.cc:437
 msgid "_Themes"
 msgstr "主題(_T)"
 
-#: src/wmprog.cc:439
+#: src/wmprog.cc:441
 msgid "Se_ttings"
 msgstr "設定(_T)"
 
@@ -1894,12 +1894,12 @@ msgstr "無效的多位元字串「%s」：%s"
 msgid "_OK"
 msgstr "確定(_O)"
 
-#: src/ypaths.cc:94
+#: src/ypaths.cc:87
 #, c-format
 msgid "Image not readable: %s"
 msgstr "圖案無法讀取：%s"
 
-#: src/ypaths.cc:117
+#: src/ypaths.cc:110
 #, c-format
 msgid "Could not find image %s"
 msgstr "找不到圖案 %s"

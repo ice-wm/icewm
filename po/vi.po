@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.21pre1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-01 14:52+0200\n"
+"POT-Creation-Date: 2021-04-04 02:12+0200\n"
 "PO-Revision-Date: 2016-08-25 08:19+0000\n"
 "Last-Translator: Hoàng Phạm <pnhoang96@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.opensuse.org/projects/icewm/"
@@ -956,12 +956,12 @@ msgstr "Khuôn dòng"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:74
+#: src/icewmbg.cc:73
 #, fuzzy, c-format
 msgid "Failed to load image '%s'."
 msgstr "Lỗi khi mở %s: %s"
 
-#: src/icewmbg.cc:881
+#: src/icewmbg.cc:875
 #, fuzzy
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
@@ -1027,7 +1027,7 @@ msgstr ""
 " center:0 scaled:0 = kiểu lát gạch\n"
 " center:1 scaled:1 = giữ tỉ lệ nền\n"
 
-#: src/icewmbg.cc:1086
+#: src/icewmbg.cc:1080
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -1461,7 +1461,7 @@ msgid "_Cancel"
 msgstr "Đón_g hộp thoại"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:447 src/wmprog.cc:449 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:449 src/wmprog.cc:451 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Thoát..."
@@ -1471,7 +1471,7 @@ msgid "_Restart icewm"
 msgstr "_Chạy lại icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:415 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:76 src/wmprog.cc:417 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Giới thiệu về icewm"
 
@@ -1505,78 +1505,78 @@ msgstr "Không rõ tuỳ chọn cửa sổ: %s"
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Lỗi cú pháp trong tuỳ chọn cửa sổ"
 
-#: src/wmprog.cc:322
+#: src/wmprog.cc:324
 msgid "_Click to focus"
 msgstr "Nhấn _chuột để tập trung"
 
-#: src/wmprog.cc:323
+#: src/wmprog.cc:325
 #, fuzzy
 msgid "_Explicit focus"
 msgstr "Nhấn _chuột để tập trung"
 
-#: src/wmprog.cc:324
+#: src/wmprog.cc:326
 msgid "_Sloppy mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:325
+#: src/wmprog.cc:327
 #, fuzzy
 msgid "S_trict mouse focus"
 msgstr "Nhấn _chuột để tập trung"
 
-#: src/wmprog.cc:326
+#: src/wmprog.cc:328
 msgid "_Quiet sloppy focus"
 msgstr ""
 
-#: src/wmprog.cc:327
+#: src/wmprog.cc:329
 msgid "Custo_m"
 msgstr ""
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:351
 msgid "_Manual"
 msgstr ""
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:352
 msgid "_Icewm(1)"
 msgstr ""
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:353
 msgid "Icewm_Bg(1)"
 msgstr ""
 
-#: src/wmprog.cc:352
+#: src/wmprog.cc:354
 msgid "Ice_Sound(1)"
 msgstr ""
 
-#: src/wmprog.cc:401
+#: src/wmprog.cc:403
 msgid "Programs"
 msgstr "Chương trình"
 
-#: src/wmprog.cc:405
+#: src/wmprog.cc:407
 msgid "_Run..."
 msgstr "_Chạy..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:409 src/wmtaskbar.cc:233
+#: src/wmprog.cc:411 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Cửa sổ"
 
-#: src/wmprog.cc:420
+#: src/wmprog.cc:422
 msgid "_Help"
 msgstr "_Trợ giúp"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:427
 msgid "_Focus"
 msgstr ""
 
-#: src/wmprog.cc:430
+#: src/wmprog.cc:432
 msgid "_Preferences"
 msgstr ""
 
-#: src/wmprog.cc:435
+#: src/wmprog.cc:437
 msgid "_Themes"
 msgstr "_Sắc thái"
 
-#: src/wmprog.cc:439
+#: src/wmprog.cc:441
 msgid "Se_ttings"
 msgstr "Cài đặ_t"
 
@@ -1827,12 +1827,12 @@ msgstr "Lỗi chuỗi nhiều byte \"%s\": %s"
 msgid "_OK"
 msgstr "_Có"
 
-#: src/ypaths.cc:94
+#: src/ypaths.cc:87
 #, c-format
 msgid "Image not readable: %s"
 msgstr "Không đọc được ảnh: %s"
 
-#: src/ypaths.cc:117
+#: src/ypaths.cc:110
 #, c-format
 msgid "Could not find image %s"
 msgstr "Không tìm thấy ảnh %s"

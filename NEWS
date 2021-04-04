@@ -1,11 +1,37 @@
-icewm -- history of user-visible changes.  2021-04-01
+icewm -- history of user-visible changes.  2021-04-04
+
+Release icewm-2.3.1 released 2021-04-04
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.3.0...2.3.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (17):
+      Remove use of resource paths.
+      Prefer object icon over default icon.
+      Use override consistently.
+      Restore use of isKey in ISwitchItems to fix switchkey.
+      Add begin+end to properly support for-each on MStringArrays.
+      Test for large icon in YMsgBox to prevent accessing nil pointer.
+      Smaller simpler YCursor.
+      Prefer for-each loops when iterating over resource paths.
+      Enable iteration over a switchkey menu.
+      Fix for submenus when switching themes for issue #571 and #572.
+      Drop wmMoveToWorkspace.
+      Repaint the background when icewm restarts to evade bug in X server.
+      Avoid iterating over an empty array in MStringArray::begin() for #571.
+      Support drawing rounded rectangles.
+      Support different ways to indicate TaskBarTaskGrouping and closes #565.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
 
 Release icewm-2.3.0 released 2021-04-01
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.2.1...2.3.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (65):
+Bert Gijsbers <gijsbers@science.uva.nl> (66):
       Add option to only show running net interfaces in status bar by alspitz
         and closes ice-wm/icewm#44.
       Improve formatting.
@@ -97,6 +123,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (65):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge remote-tracking branch 'origin/icewm-1-4-BRANCH'
+      Prepare 2.3.0 release
 
 Grace Yu <grace.yu@excel-gits.com> (6):
       Translated using Weblate (Chinese (China))
@@ -312,56 +339,4 @@ Eduard Bloch <blade@debian.org> (3):
       Option for Alt-F4ing windows in quick-switch
       Restore the old position in quickswitch on window destruction
       Option to move the ShowDesktop button to the right side
-
-
-Release icewm-2.0.1 released 2021-01-02
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.0.0...2.0.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (16):
-      Handle horizontal scroll keys in window list window.
-      Search for icewm icon for internal windows.
-      Fix setting option values for #535.
-      Allow to set background opacity for QuickSwitch background for #534.
-      Clarify startMoveSize.
-      Communicate the window ID of the icon window in WM_STATE when iconifying
-        to desktop.
-      Make isUrgent a member of ClientData.
-      Reset horizontal scrolling when using the Home and End keys for the window
-        list.
-      Add IceVM explanation to README for ice-wm/icewm#35
-      Update to 2.0.0.
-      Note that support was added for icon_pixmap and icon_window fields of
-        WM_HINTS property in 2.0.0.
-      Improve getting icon window for WM_STATE.
-      Fix spelling of Gerenciador for pt_BR.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.0.1 release
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-01 14:52+0200\n"
+"POT-Creation-Date: 2021-04-04 02:12+0200\n"
 "PO-Revision-Date: 2003-01-27 22:26+0300\n"
 "Last-Translator: Hleb Valoska <el_globus@tut.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -936,12 +936,12 @@ msgstr "Пераносіць радкі"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:74
+#: src/icewmbg.cc:73
 #, fuzzy, c-format
 msgid "Failed to load image '%s'."
 msgstr "Няўдалае адкрыцьцё %s: %s"
 
-#: src/icewmbg.cc:881
+#: src/icewmbg.cc:875
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -992,7 +992,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1086
+#: src/icewmbg.cc:1080
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -1432,7 +1432,7 @@ msgid "_Cancel"
 msgstr "_Адмена"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:447 src/wmprog.cc:449 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:449 src/wmprog.cc:451 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Скончыць сэанс"
@@ -1442,7 +1442,7 @@ msgid "_Restart icewm"
 msgstr "_Перазапусьціць icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:415 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:76 src/wmprog.cc:417 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "Пр_а"
 
@@ -1476,76 +1476,76 @@ msgstr "Невядомая опцыя вакна: %s"
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Сынтаксычная памылка ў опцыях вакна"
 
-#: src/wmprog.cc:322
+#: src/wmprog.cc:324
 msgid "_Click to focus"
 msgstr ""
 
-#: src/wmprog.cc:323
+#: src/wmprog.cc:325
 msgid "_Explicit focus"
 msgstr ""
 
-#: src/wmprog.cc:324
+#: src/wmprog.cc:326
 msgid "_Sloppy mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:325
+#: src/wmprog.cc:327
 msgid "S_trict mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:326
+#: src/wmprog.cc:328
 msgid "_Quiet sloppy focus"
 msgstr ""
 
-#: src/wmprog.cc:327
+#: src/wmprog.cc:329
 msgid "Custo_m"
 msgstr ""
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:351
 msgid "_Manual"
 msgstr ""
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:352
 msgid "_Icewm(1)"
 msgstr ""
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:353
 msgid "Icewm_Bg(1)"
 msgstr ""
 
-#: src/wmprog.cc:352
+#: src/wmprog.cc:354
 msgid "Ice_Sound(1)"
 msgstr ""
 
-#: src/wmprog.cc:401
+#: src/wmprog.cc:403
 msgid "Programs"
 msgstr "Праграмы"
 
-#: src/wmprog.cc:405
+#: src/wmprog.cc:407
 msgid "_Run..."
 msgstr "_Выканаць..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:409 src/wmtaskbar.cc:233
+#: src/wmprog.cc:411 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "В_окны"
 
-#: src/wmprog.cc:420
+#: src/wmprog.cc:422
 msgid "_Help"
 msgstr "Да_ведка"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:427
 msgid "_Focus"
 msgstr ""
 
-#: src/wmprog.cc:430
+#: src/wmprog.cc:432
 msgid "_Preferences"
 msgstr ""
 
-#: src/wmprog.cc:435
+#: src/wmprog.cc:437
 msgid "_Themes"
 msgstr "_Тэмы"
 
-#: src/wmprog.cc:439
+#: src/wmprog.cc:441
 msgid "Se_ttings"
 msgstr ""
 
@@ -1799,12 +1799,12 @@ msgstr "Няправільны шматбайтавы радок \"%s\": %s"
 msgid "_OK"
 msgstr "_Так"
 
-#: src/ypaths.cc:94
+#: src/ypaths.cc:87
 #, c-format
 msgid "Image not readable: %s"
 msgstr ""
 
-#: src/ypaths.cc:117
+#: src/ypaths.cc:110
 #, fuzzy, c-format
 msgid "Could not find image %s"
 msgstr "Немагчыма знайсьці мапу піксаляў %s"

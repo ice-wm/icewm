@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.15pre3\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-01 14:52+0200\n"
+"POT-Creation-Date: 2021-04-04 02:12+0200\n"
 "PO-Revision-Date: 2021-03-25 13:56+0000\n"
 "Last-Translator: Sophie Leroy <sophie@stoquart.com>\n"
 "Language-Team: French <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1023,12 +1023,12 @@ msgstr "Retour à la ligne automatique"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:74
+#: src/icewmbg.cc:73
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Échec du chargement de l'image '%s'."
 
-#: src/icewmbg.cc:881
+#: src/icewmbg.cc:875
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1138,7 +1138,7 @@ msgstr ""
 " center:0 scaled:1 = deux dimensions complètes et respect des proportions\n"
 "\n"
 
-#: src/icewmbg.cc:1086
+#: src/icewmbg.cc:1080
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 "Impossible de démarrer, parce qu'une autre instance d'icewmbg est en cours "
@@ -1606,7 +1606,7 @@ msgid "_Cancel"
 msgstr "A_nnuler"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:447 src/wmprog.cc:449 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:71 src/wmprog.cc:449 src/wmprog.cc:451 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Déconnexion ..."
@@ -1616,7 +1616,7 @@ msgid "_Restart icewm"
 msgstr "_Redémarrer IceWM"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:415 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:76 src/wmprog.cc:417 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "À _propos"
 
@@ -1651,76 +1651,76 @@ msgstr "Option de fenêtre inconnue : %s"
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Erreur de syntaxe dans les options de fenêtre à la ligne %d de %s"
 
-#: src/wmprog.cc:322
+#: src/wmprog.cc:324
 msgid "_Click to focus"
 msgstr "_Cliquer pour prendre le focus"
 
-#: src/wmprog.cc:323
+#: src/wmprog.cc:325
 msgid "_Explicit focus"
 msgstr "Focus _explicite"
 
-#: src/wmprog.cc:324
+#: src/wmprog.cc:326
 msgid "_Sloppy mouse focus"
 msgstr "Focu_s souris relâché"
 
-#: src/wmprog.cc:325
+#: src/wmprog.cc:327
 msgid "S_trict mouse focus"
 msgstr "Focus souris s_trict"
 
-#: src/wmprog.cc:326
+#: src/wmprog.cc:328
 msgid "_Quiet sloppy focus"
 msgstr "Focus relâc_hé silencieux"
 
-#: src/wmprog.cc:327
+#: src/wmprog.cc:329
 msgid "Custo_m"
 msgstr "_Personnalisé"
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:351
 msgid "_Manual"
 msgstr "_Manuel"
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:352
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:353
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:352
+#: src/wmprog.cc:354
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:401
+#: src/wmprog.cc:403
 msgid "Programs"
 msgstr "Programmes"
 
-#: src/wmprog.cc:405
+#: src/wmprog.cc:407
 msgid "_Run..."
 msgstr "_Exécuter ..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:409 src/wmtaskbar.cc:233
+#: src/wmprog.cc:411 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Fenêtres"
 
-#: src/wmprog.cc:420
+#: src/wmprog.cc:422
 msgid "_Help"
 msgstr "_Aide"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:427
 msgid "_Focus"
 msgstr "_Focus"
 
-#: src/wmprog.cc:430
+#: src/wmprog.cc:432
 msgid "_Preferences"
 msgstr "_Préférences"
 
-#: src/wmprog.cc:435
+#: src/wmprog.cc:437
 msgid "_Themes"
 msgstr "_Thèmes"
 
-#: src/wmprog.cc:439
+#: src/wmprog.cc:441
 msgid "Se_ttings"
 msgstr "_Réglages"
 
@@ -1959,12 +1959,12 @@ msgstr "Chaîne de caractère multi-octects incorrecte \"%s\" : %s"
 msgid "_OK"
 msgstr "_Valider"
 
-#: src/ypaths.cc:94
+#: src/ypaths.cc:87
 #, c-format
 msgid "Image not readable: %s"
 msgstr "Image non lisible : %s"
 
-#: src/ypaths.cc:117
+#: src/ypaths.cc:110
 #, c-format
 msgid "Could not find image %s"
 msgstr "Impossible de trouver l'image %s"
