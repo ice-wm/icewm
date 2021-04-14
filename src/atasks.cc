@@ -18,8 +18,8 @@ static YColorName minimizedTaskBarAppFg(&clrMinimizedTaskBarAppText);
 static YColorName minimizedTaskBarAppBg(&clrMinimizedTaskBarApp);
 static YColorName invisibleTaskBarAppFg(&clrInvisibleTaskBarAppText);
 static YColorName invisibleTaskBarAppBg(&clrInvisibleTaskBarApp);
-static YColorName groupingBg(&clrActiveTitleBar);
-static YColorName groupingFg(&clrActiveTitleBarText);
+static YColorName groupingBg(&clrActiveTaskBarAppText);
+static YColorName groupingFg(&clrActiveTaskBarApp);
 static ref<YFont> normalTaskBarFont;
 static ref<YFont> activeTaskBarFont;
 
@@ -175,7 +175,7 @@ void TaskButton::remove(TaskBarApp* tapp) {
     if (fActive == nullptr) {
         fTaskPane->remove(this);
     }
-    else if (visible()) {
+    else if (visible() && manager->isRunning()) {
         if (getShown())
             repaint();
         else
@@ -473,7 +473,6 @@ void TaskButton::paint(Graphics& g, const YRect& r) {
         }
     }
 
-    bool textDrawn = false;
     int textX = 0;
     int textY = 0;
     mstring str(fActive ? fActive->getIconTitle() : null);
@@ -502,25 +501,16 @@ void TaskButton::paint(Graphics& g, const YRect& r) {
                 int x = 0;
                 if (groupings && (grouping() & 1)) {
                     mstring cnt(groupCount);
-                    int margins = 2;
-                    x = font->textWidth(cnt, cnt.length()) + margins * 2;
+                    x = font->textWidth(cnt, cnt.length()) + 4;
                     g.setColor(groupingBg);
-                    int linewidth = (font->ascent() + 1) / 2;
-                    g.setLineWidth(linewidth);
-                    g.setPenStyle(false, CapRound, JoinRound);
-                    // Circle will not work here because grouping is
-                    // often used by users who open 10+ windows.
-                    // is there a way to draw "rounded corners" instead?
-                    g.drawRect(textX + linewidth / 2,
-                               textY - font->ascent() + 2 + linewidth / 2,
-                               x - linewidth, font->ascent() - linewidth);
+                    int h = font->ascent();
+                    g.fillRect(textX, textY - font->ascent() + 3, x, h, 5);
                     g.setColor(groupingFg);
-                    g.drawStringEllipsis(textX + margins, textY + 1, cnt, wm);
+                    g.drawStringEllipsis(textX + 2, textY + 1, cnt, wm);
                     x += 1;
                 }
                 g.setColor(fg);
                 g.drawStringEllipsis(textX + x, textY, str, wm);
-                textDrawn = true;
             }
         }
     }
@@ -661,7 +651,7 @@ void TaskButton::handleButton(const XButtonEvent& button) {
             }
         }
         if (button.button == Button1 || button.button == Button2) {
-            selected = 0;
+            deselect();
             repaint();
         }
     }
@@ -697,7 +687,7 @@ void TaskButton::handleCrossing(const XCrossingEvent& crossing) {
             selected = 2;
             repaint();
         } else if (crossing.type == LeaveNotify) {
-            selected = 1;
+            deselect();
             repaint();
         }
     }
@@ -730,7 +720,7 @@ void TaskButton::handleDNDEnter() {
 
 void TaskButton::handleDNDLeave() {
     fRaiseTimer = null;
-    selected = 0;
+    deselect();
     repaint();
 }
 
@@ -758,12 +748,14 @@ bool TaskButton::handleTimer(YTimer* t) {
     return false;
 }
 
-void TaskButton::handleBeginDrag(const XButtonEvent& down, const XMotionEvent& motion) {
+bool TaskButton::handleBeginDrag(const XButtonEvent& down, const XMotionEvent& motion) {
     if (down.button == Button1) {
         raise();
         fTaskPane->startDrag(this, 0, down.x + x(), down.y + y());
         fTaskPane->processDrag(motion.x + x(), motion.y + y());
+        return true;
     }
+    return false;
 }
 
 TaskPane::TaskPane(IAppletContainer* taskBar, YWindow* parent):
@@ -1080,6 +1072,7 @@ void TaskPane::processDrag(int mx, int my) {
 void TaskPane::endDrag() {
     if (fDragging) {
         xapp->releaseEvents();
+        fDragging->deselect();
         fDragging = nullptr;
         relayout(true);
     }

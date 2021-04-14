@@ -120,14 +120,16 @@ void WorkspaceButton::handleDNDLeave() {
     repaint();
 }
 
-void WorkspaceButton::handleBeginDrag(const XButtonEvent& d, const XMotionEvent& m)
+bool WorkspaceButton::handleBeginDrag(const XButtonEvent& d, const XMotionEvent& m)
 {
-    if (d.button == Button1) {
+    if (d.button == Button1 && fPane->limited()) {
         fDragging = true;
         fDownX = d.x_root;
         fDelta = m.x_root - d.x_root;
         fPane->drag(fWorkspace, fDelta, true, false);
+        return true;
     }
+    return false;
 }
 
 void WorkspaceButton::handleDrag(const XButtonEvent& d, const XMotionEvent& m)
@@ -164,6 +166,7 @@ void WorkspaceButton::inputReturn(YInputLine* input) {
             swap(*&str, *workspaces[fWorkspace]);
             manager->setDesktopNames();
             fPane->relabel(fWorkspace);
+            repaint();
         }
         fInput = nullptr;
     }
@@ -460,6 +463,10 @@ void WorkspacesPane::setPressed(long ws, bool set) {
             }
         }
     }
+}
+
+bool WorkspacesPane::limited() const {
+    return 0 < count() && (last()->extent() - fButtons[0]->x()) > int(width());
 }
 
 void WorkspacesPane::drag(int ws, int dx, bool start, bool end) {

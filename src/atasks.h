@@ -49,6 +49,7 @@ public:
     TaskButton(TaskPane* taskPane);
     virtual ~TaskButton();
 
+    void deselect() { selected = 0; }
     void setShown(TaskBarApp* app, bool show);
     bool getShown();
     virtual bool isFocusTraversable();
@@ -60,7 +61,7 @@ public:
     virtual void handleCrossing(const XCrossingEvent& crossing);
     virtual void handleDNDEnter();
     virtual void handleDNDLeave();
-    virtual void handleBeginDrag(const XButtonEvent& down, const XMotionEvent& motion);
+    virtual bool handleBeginDrag(const XButtonEvent&, const XMotionEvent&);
     virtual void handleExpose(const XExposeEvent& expose);
     virtual void configure(const YRect2& r);
     virtual void repaint();
