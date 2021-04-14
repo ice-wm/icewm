@@ -1,11 +1,61 @@
-icewm -- history of user-visible changes.  2021-04-04
+icewm -- history of user-visible changes.  2021-04-15
+
+Release icewm-2.3.2 released 2021-04-15
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.3.1...2.3.2
+
+Bert Gijsbers <gijsbers@science.uva.nl> (26):
+      Remove unused variable textDrawn to prevent a compiler warning.
+      Optimize allocation of icon path strings.
+      Improve removing the last element from an array. Add array pop and last.
+        Remove classes YStack and YStackSet.
+      Make testarray.cc mostly silent by default.
+      Add testarray as a test target to cmake test.
+      Refactor common code from dialogs to ydialog.cc. Improve layout design.
+      Add declarations for center and become to YDialog.
+      Free the memory for the About dialog after it is closed.
+      Reduce the number of frame updates to only those frames visible on the
+        previous and the current workspace when changing workspace.
+      Support ModSuperIsCtrlAlt when testing the Super modifier in the quick
+        switch. This fixes issues #574.
+      Change the default value for ModSuperIsCtrlAlt from true to false to see
+        if anyone complains for issue #574.
+      Repaint workspace button after editing the workspace name.
+      Pop down YInputMenu before deleting. Don't report focus lost when popping
+        YInputMenu.
+      Allow button clicks where there is mouse motion between button press and
+        release for issue #575.
+      Permit negative button position in function limited.
+      Fix segv in verifyPaths and closes #577.
+      Dissolve the disparity between dragged and non-dragged task buttons for
+        issue #576.
+      Use reversed active taskbar app text colors for drawing grouping number
+        for issue #565. Improve drawing rectangles with rounded corners. Don't
+        update grouping when shutting down.
+      Reduce reactiveness to mouse motion of task button by deselecting task
+        button when dragging ends.
+      Add append and replace to YProperty. Improve reporting detail when
+        XOpenDisplay fails.
+      Enforce the completion of the deallocation of the single YWMApp object.
+      Improve rounded rectangle corner painting detail.
+      First synchronize with icewm, before updating background after icewm
+        restart.
+      Document more workspace button features.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Tommi Nieminen <software@legisign.org> (1):
+      Translated using Weblate (Finnish)
+
 
 Release icewm-2.3.1 released 2021-04-04
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.3.0...2.3.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (17):
+Bert Gijsbers <gijsbers@science.uva.nl> (18):
       Remove use of resource paths.
       Prefer object icon over default icon.
       Use override consistently.
@@ -24,6 +74,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (17):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.3.1 release
 
 
 Release icewm-2.3.0 released 2021-04-01
@@ -312,31 +363,4 @@ git shortlog -e -n -w80,6,8 2.1.0...2.1.1
 
 Bert Gijsbers <gijsbers@science.uva.nl> (1):
       Commit release 2.1.1.
-
-
-Release icewm-2.1.0 released 2021-01-23
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.0.1...2.1.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (9):
-      Revert "Clarify startMoveSize." to fix issue #540.
-      Split the TaskBarApp class in a button class and an app class for issue
-        #198.
-      Restore icesh setTrayOption and getTrayOption for issue #537. Make support
-        for "_NET_WM_FULLSCREEN_MONITORS" better conformant to EWMH spec. Add
-        "monitors", "frame", "properties" commands to icesh. Make preference
-        FullscreenUseAllMonitors use just all the monitors.
-      Fix dragging task buttons.
-      Disarm button on release of mouse for issue #527.
-      Remember maximized when fullscreen for issues #538 and #533.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.1.0 release
-
-Eduard Bloch <blade@debian.org> (3):
-      Option for Alt-F4ing windows in quick-switch
-      Restore the old position in quickswitch on window destruction
-      Option to move the ShowDesktop button to the right side
 

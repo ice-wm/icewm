@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.10\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-04 02:12+0200\n"
+"POT-Creation-Date: 2021-04-15 01:25+0200\n"
 "PO-Revision-Date: 2017-02-26 21:51+0000\n"
 "Last-Translator: Shyukri Shyukriev <shshyukriev@suse.com>\n"
 "Language-Team: Bulgarian <https://l10n.opensuse.org/projects/icewm/icewm-1-3-"
@@ -299,7 +299,7 @@ msgstr "Развива"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:595 src/wmstatus.cc:207
+#: src/aworkspaces.cc:602 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Работно поле: "
 
@@ -601,8 +601,8 @@ msgstr "Действие `%s' изисква минимум %d аргумент�
 msgid "Invalid expression: `%s'"
 msgstr "Неправилен израз: `%s'"
 
-#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1066
-#: src/yxapp.cc:1030
+#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1068
+#: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -950,12 +950,12 @@ msgstr "Свиване на редовете"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:73
+#: src/icewmbg.cc:72
 #, fuzzy, c-format
 msgid "Failed to load image '%s'."
 msgstr "Не мога да отворя %s: %s"
 
-#: src/icewmbg.cc:875
+#: src/icewmbg.cc:913
 #, fuzzy
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
@@ -1015,7 +1015,7 @@ msgstr ""
 " DesktopTransparencyColor - Цвят за полу-прозрачни прозорци\n"
 " DesktopTransparencyImage - Изображение за полу-прозрачни прозорци\n"
 
-#: src/icewmbg.cc:1080
+#: src/icewmbg.cc:1118
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -1050,43 +1050,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "Неизвестна посока при move/resize заявка: %d"
 
-#: src/wmabout.cc:28 src/wmabout.cc:29
+#: src/wmabout.cc:29 src/wmabout.cc:30
 msgid "(C)"
 msgstr "(C)"
 
-#: src/wmabout.cc:39
+#: src/wmabout.cc:40
 msgid "Theme:"
 msgstr "Тема:"
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:41
 msgid "Theme Description:"
 msgstr "Описание на тема:"
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:42
 msgid "Theme Author:"
 msgstr "Автор на тема:"
 
-#: src/wmabout.cc:50
+#: src/wmabout.cc:51
 msgid "CodeSet:"
 msgstr ""
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:52
 msgid "Language:"
 msgstr "Език:"
 
-#: src/wmabout.cc:55
+#: src/wmabout.cc:56
 msgid "DoubleBuffer"
 msgstr ""
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:57
 msgid "AlphaBlending"
 msgstr ""
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:58
 msgid "Renderer:"
 msgstr ""
 
-#: src/wmabout.cc:65
+#: src/wmabout.cc:64
 msgid "icewm - About"
 msgstr "За IceWM"
 
@@ -1276,23 +1276,23 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1067 src/yxapp.cc:1031
+#: src/wmapp.cc:1069 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<нищо>"
 
-#: src/wmapp.cc:1369
+#: src/wmapp.cc:1383
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1375
+#: src/wmapp.cc:1389
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1383
+#: src/wmapp.cc:1397
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1303,7 +1303,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1406
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1361,26 +1361,26 @@ msgstr ""
 "Посетете https://ice-wm.org/ за съобщения за грешки,предложения и "
 "коментари...\n"
 
-#: src/wmapp.cc:1454
+#: src/wmapp.cc:1468
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1536
+#: src/wmapp.cc:1550
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Неразпозната опция: %s\n"
 
-#: src/wmapp.cc:1614
+#: src/wmapp.cc:1628
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Неразпозната опция: %s\n"
 
-#: src/wmapp.cc:1666
+#: src/wmapp.cc:1672
 msgid "Confirm Logout"
 msgstr "Потвърди Изход"
 
-#: src/wmapp.cc:1667
+#: src/wmapp.cc:1673
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1476,11 +1476,11 @@ msgstr ""
 "ВНИМАНИЕ! Всички незапазени промени ще бъдат изгубени, когато този клиент "
 "бъде убит. Искате ли да продължите?"
 
-#: src/wmmgr.cc:3230
+#: src/wmmgr.cc:3231
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3231
+#: src/wmmgr.cc:3232
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -1812,12 +1812,12 @@ msgstr "Invalid multibyte string \"%s\": %s"
 msgid "_OK"
 msgstr "_ОК"
 
-#: src/ypaths.cc:87
+#: src/ypaths.cc:88
 #, c-format
 msgid "Image not readable: %s"
 msgstr "Изображението е недостъпно: %s"
 
-#: src/ypaths.cc:110
+#: src/ypaths.cc:111
 #, fuzzy, c-format
 msgid "Could not find image %s"
 msgstr "Could not find pixel map %s"

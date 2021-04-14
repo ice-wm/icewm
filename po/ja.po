@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-04 02:12+0200\n"
+"POT-Creation-Date: 2021-04-15 01:25+0200\n"
 "PO-Revision-Date: 2021-03-20 00:56+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -293,7 +293,7 @@ msgstr "ダウン"
 msgid "NET"
 msgstr "ネット"
 
-#: src/aworkspaces.cc:595 src/wmstatus.cc:207
+#: src/aworkspaces.cc:602 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "ワークスペース: "
 
@@ -619,8 +619,8 @@ msgstr "アクション `%s' には少なくとも %d 個のパラメータが�
 msgid "Invalid expression: `%s'"
 msgstr "表現が正しくありません: `%s'"
 
-#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1066
-#: src/yxapp.cc:1030
+#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1068
+#: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1015,12 +1015,12 @@ msgstr "行折り返し"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:73
+#: src/icewmbg.cc:72
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "画像 '%s' の読み込みに失敗しました。"
 
-#: src/icewmbg.cc:875
+#: src/icewmbg.cc:913
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1122,7 +1122,7 @@ msgstr ""
 " center:0 scaled:1 = 縦横の両方を埋め、アスペクト比を維持\n"
 "\n"
 
-#: src/icewmbg.cc:1080
+#: src/icewmbg.cc:1118
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "既に icewmbg が動作しているため、新しく起動することができません。"
 
@@ -1163,43 +1163,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "移動／サイズ変更の要求において、未知の方向を指定しています: %d"
 
-#: src/wmabout.cc:28 src/wmabout.cc:29
+#: src/wmabout.cc:29 src/wmabout.cc:30
 msgid "(C)"
 msgstr "(C)"
 
-#: src/wmabout.cc:39
+#: src/wmabout.cc:40
 msgid "Theme:"
 msgstr "テーマ:"
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:41
 msgid "Theme Description:"
 msgstr "テーマの説明:"
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:42
 msgid "Theme Author:"
 msgstr "テーマの作者:"
 
-#: src/wmabout.cc:50
+#: src/wmabout.cc:51
 msgid "CodeSet:"
 msgstr "コードセット:"
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:52
 msgid "Language:"
 msgstr "言語:"
 
-#: src/wmabout.cc:55
+#: src/wmabout.cc:56
 msgid "DoubleBuffer"
 msgstr "ダブルバッファ"
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:57
 msgid "AlphaBlending"
 msgstr "アルファブレンディング"
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:58
 msgid "Renderer:"
 msgstr "レンダラ:"
 
-#: src/wmabout.cc:65
+#: src/wmabout.cc:64
 msgid "icewm - About"
 msgstr "icewm について"
 
@@ -1388,18 +1388,18 @@ msgstr ""
 "全てのアプリケーションを管理から外し、\n"
 "端末として再起動します。よろしいですか？"
 
-#: src/wmapp.cc:1067 src/yxapp.cc:1031
+#: src/wmapp.cc:1069 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<なし>"
 
-#: src/wmapp.cc:1369
+#: src/wmapp.cc:1383
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      セッションマネージャに接続する際のクライアント ID を指"
 "定します。\n"
 
-#: src/wmapp.cc:1375
+#: src/wmapp.cc:1389
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1410,7 +1410,7 @@ msgstr ""
 "  --debug-z           ウインドウのスタック処理に関連するデバッグメッセージを"
 "表示します。\n"
 
-#: src/wmapp.cc:1383
+#: src/wmapp.cc:1397
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1428,7 +1428,7 @@ msgstr ""
 "  -p, --postpreferences  全ての処理が終了したあと、設定内容を表示します。\n"
 "  --trace=conf,icon   設定の読み込み時に使用するパスをトレースします。\n"
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1406
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1488,26 +1488,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1454
+#: src/wmapp.cc:1468
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s の設定ディレクトリ:\n"
 
-#: src/wmapp.cc:1536
+#: src/wmapp.cc:1550
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s の設定済みオプション: %s\n"
 
-#: src/wmapp.cc:1614
+#: src/wmapp.cc:1628
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "認識できないオプション '%s' です。"
 
-#: src/wmapp.cc:1666
+#: src/wmapp.cc:1672
 msgid "Confirm Logout"
 msgstr "ログアウトの確認"
 
-#: src/wmapp.cc:1667
+#: src/wmapp.cc:1673
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1603,11 +1603,11 @@ msgstr ""
 "このクライアントを強制終了すると、保存されて\n"
 "いない変更点が失われてしまいます。処理を続けてよろしいですか？"
 
-#: src/wmmgr.cc:3230
+#: src/wmmgr.cc:3231
 msgid "Missing program setxkbmap"
 msgstr "プログラム setxkbmap がありません"
 
-#: src/wmmgr.cc:3231
+#: src/wmmgr.cc:3232
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 "キーボードの切り替えを行なうため、 setxkbmap をインストールしてください。"
@@ -1936,12 +1936,12 @@ msgstr "マルチバイト文字列が正しくありません \"%s\": %s"
 msgid "_OK"
 msgstr "_OK"
 
-#: src/ypaths.cc:87
+#: src/ypaths.cc:88
 #, c-format
 msgid "Image not readable: %s"
 msgstr "画像を読み込むことができません: %s"
 
-#: src/ypaths.cc:110
+#: src/ypaths.cc:111
 #, c-format
 msgid "Could not find image %s"
 msgstr "画像 %s が見つかりません"

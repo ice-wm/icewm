@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-04 02:12+0200\n"
+"POT-Creation-Date: 2021-04-15 01:25+0200\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -299,7 +299,7 @@ msgstr "말아내리기"
 msgid "NET"
 msgstr "NET"
 
-#: src/aworkspaces.cc:595 src/wmstatus.cc:207
+#: src/aworkspaces.cc:602 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "작업공간: "
 
@@ -634,8 +634,8 @@ msgstr "`%s' 동작은 최소 %d 개의 인수를 요구한다."
 msgid "Invalid expression: `%s'"
 msgstr "잘못된 표현: `%s'"
 
-#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1066
-#: src/yxapp.cc:1030
+#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1068
+#: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "디스플레이를 열지 못함: %s. X 실행 중여야 하고 $DISPLAY 정해야 함."
@@ -1088,12 +1088,12 @@ msgstr "줄 넘기기"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:73
+#: src/icewmbg.cc:72
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "이미지 '%s'을(를) 로드하지 못했습니다."
 
-#: src/icewmbg.cc:875
+#: src/icewmbg.cc:913
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1191,7 +1191,7 @@ msgstr ""
 " 가운데: 0 배율: 1 = 2차원 채우기 및 가로세로비 유지형\n"
 "\n"
 
-#: src/icewmbg.cc:1080
+#: src/icewmbg.cc:1118
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "다른 icewmbg가 여전히 실행 중이므로 시작할 수 없습니다."
 
@@ -1232,43 +1232,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "이동/크기조절 요구에서 알 수 없는 방향: %d"
 
-#: src/wmabout.cc:28 src/wmabout.cc:29
+#: src/wmabout.cc:29 src/wmabout.cc:30
 msgid "(C)"
 msgstr "(C)"
 
-#: src/wmabout.cc:39
+#: src/wmabout.cc:40
 msgid "Theme:"
 msgstr "테마:"
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:41
 msgid "Theme Description:"
 msgstr "테마 설명:"
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:42
 msgid "Theme Author:"
 msgstr "테마 만든이:"
 
-#: src/wmabout.cc:50
+#: src/wmabout.cc:51
 msgid "CodeSet:"
 msgstr "CodeSet:"
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:52
 msgid "Language:"
 msgstr "언어:"
 
-#: src/wmabout.cc:55
+#: src/wmabout.cc:56
 msgid "DoubleBuffer"
 msgstr ""
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:57
 msgid "AlphaBlending"
 msgstr ""
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:58
 msgid "Renderer:"
 msgstr ""
 
-#: src/wmabout.cc:65
+#: src/wmabout.cc:64
 msgid "icewm - About"
 msgstr "icewm에 관하여"
 
@@ -1454,17 +1454,17 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1067 src/yxapp.cc:1031
+#: src/wmapp.cc:1069 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<none>"
 
-#: src/wmapp.cc:1369
+#: src/wmapp.cc:1383
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      세션 관리자에게 문의할 때 사용할 클라이언트 ID입니다.\n"
 
-#: src/wmapp.cc:1375
+#: src/wmapp.cc:1389
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1474,7 +1474,7 @@ msgstr ""
 "  --debug             일반 디버그 메시지를 인쇄합니다.\n"
 "  --debug-z           창 스택 관련 디버그 메시지를 인쇄합니다.\n"
 
-#: src/wmapp.cc:1383
+#: src/wmapp.cc:1397
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1495,7 +1495,7 @@ msgstr ""
 "  -t, --theme=FILE    FILE에서 테마를 로드합니다.\n"
 "  --postpreferences   모든 처리 후 기본 설정을 인쇄합니다.\n"
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1406
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1554,26 +1554,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1454
+#: src/wmapp.cc:1468
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s 구성 디렉터리:\n"
 
-#: src/wmapp.cc:1536
+#: src/wmapp.cc:1550
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s 구성된 옵션: %s\n"
 
-#: src/wmapp.cc:1614
+#: src/wmapp.cc:1628
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "알아볼 수 없는 옵션: '%s'"
 
-#: src/wmapp.cc:1666
+#: src/wmapp.cc:1672
 msgid "Confirm Logout"
 msgstr "종료 확인"
 
-#: src/wmapp.cc:1667
+#: src/wmapp.cc:1673
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1669,11 +1669,11 @@ msgstr ""
 "경고! 이 클라이언트를 죽이면 저장되지 않은\n"
 "변경 사항을 모두 잃어버립니다. 계속할까요?"
 
-#: src/wmmgr.cc:3230
+#: src/wmmgr.cc:3231
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3231
+#: src/wmmgr.cc:3232
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -1993,12 +1993,12 @@ msgstr "잘못된 멀티바이트 문자열 \"%s\": %s"
 msgid "_OK"
 msgstr "예(_O)"
 
-#: src/ypaths.cc:87
+#: src/ypaths.cc:88
 #, c-format
 msgid "Image not readable: %s"
 msgstr "이미지를 읽을 수 없음: %s"
 
-#: src/ypaths.cc:110
+#: src/ypaths.cc:111
 #, c-format
 msgid "Could not find image %s"
 msgstr "%s 이미지를 찾을 수 없음"

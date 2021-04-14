@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-04 02:12+0200\n"
+"POT-Creation-Date: 2021-04-15 01:25+0200\n"
 "PO-Revision-Date: 2018-04-14 08:08+0000\n"
 "Last-Translator: Andriy Bandura <andriykopanytsia@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -303,7 +303,7 @@ msgstr "Розгорнути смужку"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:595 src/wmstatus.cc:207
+#: src/aworkspaces.cc:602 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Робоче місце: "
 
@@ -636,8 +636,8 @@ msgstr "Дія \"%s\" вимагає як мінімум %d аргументу(�
 msgid "Invalid expression: `%s'"
 msgstr "Неправильний вираз: \"%s\""
 
-#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1066
-#: src/yxapp.cc:1030
+#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1068
+#: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1077,12 +1077,12 @@ msgstr "Вирівняти рядки"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:73
+#: src/icewmbg.cc:72
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Помилка завантаження зображення %s."
 
-#: src/icewmbg.cc:875
+#: src/icewmbg.cc:913
 #, fuzzy
 #| msgid ""
 #| "Usage: icewmbg [OPTIONS]\n"
@@ -1223,7 +1223,7 @@ msgstr ""
 " center:0 scaled:1 = заповнити обидва розміри і зберігати співвідношення\n"
 "\n"
 
-#: src/icewmbg.cc:1080
+#: src/icewmbg.cc:1118
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Помилка запуску, інший процес icewmbg вже запущений."
 
@@ -1265,43 +1265,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "Невідомий напрямок у запиті на пересування/зміну розміру: %d"
 
-#: src/wmabout.cc:28 src/wmabout.cc:29
+#: src/wmabout.cc:29 src/wmabout.cc:30
 msgid "(C)"
 msgstr "(C)"
 
-#: src/wmabout.cc:39
+#: src/wmabout.cc:40
 msgid "Theme:"
 msgstr "Тема:"
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:41
 msgid "Theme Description:"
 msgstr "Опис теми:"
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:42
 msgid "Theme Author:"
 msgstr "Автор теми:"
 
-#: src/wmabout.cc:50
+#: src/wmabout.cc:51
 msgid "CodeSet:"
 msgstr "Кодування:"
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:52
 msgid "Language:"
 msgstr "Мова:"
 
-#: src/wmabout.cc:55
+#: src/wmabout.cc:56
 msgid "DoubleBuffer"
 msgstr ""
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:57
 msgid "AlphaBlending"
 msgstr ""
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:58
 msgid "Renderer:"
 msgstr ""
 
-#: src/wmabout.cc:65
+#: src/wmabout.cc:64
 msgid "icewm - About"
 msgstr "Про IceWM"
 
@@ -1491,18 +1491,18 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1067 src/yxapp.cc:1031
+#: src/wmapp.cc:1069 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<немає>"
 
-#: src/wmapp.cc:1369
+#: src/wmapp.cc:1383
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Ідентифікатор клієнта для зв'язку із менеджером "
 "сеансів.\n"
 
-#: src/wmapp.cc:1375
+#: src/wmapp.cc:1389
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1513,7 +1513,7 @@ msgstr ""
 "  --debug-z           Друкує зневаджувальні повідомлення, які стосуються "
 "стеку вікон.\n"
 
-#: src/wmapp.cc:1383
+#: src/wmapp.cc:1397
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1534,7 +1534,7 @@ msgstr ""
 "  -t, --theme=FILE    Завантаження теми із файлу FILE.\n"
 "  --postpreferences   Друк налаштувань після завершення обробки.\n"
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1406
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1596,26 +1596,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1454
+#: src/wmapp.cc:1468
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s каталоги конфігурації:\n"
 
-#: src/wmapp.cc:1536
+#: src/wmapp.cc:1550
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s налаштовані параметри:%s\n"
 
-#: src/wmapp.cc:1614
+#: src/wmapp.cc:1628
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Нерозпізнаний параметр: %s."
 
-#: src/wmapp.cc:1666
+#: src/wmapp.cc:1672
 msgid "Confirm Logout"
 msgstr "Підтвердження виходу"
 
-#: src/wmapp.cc:1667
+#: src/wmapp.cc:1673
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1711,11 +1711,11 @@ msgstr ""
 "УВАГА! Всі незбережені дані будуть втрачені\n"
 "при закритті цього вікна. Ви бажаєте закрити його?"
 
-#: src/wmmgr.cc:3230
+#: src/wmmgr.cc:3231
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3231
+#: src/wmmgr.cc:3232
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2046,12 +2046,12 @@ msgstr "Невірна багатобайтова стрічка \"%s\": %s"
 msgid "_OK"
 msgstr "_Гаразд"
 
-#: src/ypaths.cc:87
+#: src/ypaths.cc:88
 #, c-format
 msgid "Image not readable: %s"
 msgstr "Зображення не читається: %s"
 
-#: src/ypaths.cc:110
+#: src/ypaths.cc:111
 #, c-format
 msgid "Could not find image %s"
 msgstr "Не можу знайти малюнок %s"

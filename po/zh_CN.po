@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (China) (icewm)\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-04 02:12+0200\n"
+"POT-Creation-Date: 2021-04-15 01:25+0200\n"
 "PO-Revision-Date: 2021-03-30 04:56+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/icewm/"
@@ -289,7 +289,7 @@ msgstr "关闭"
 msgid "NET"
 msgstr "网络"
 
-#: src/aworkspaces.cc:595 src/wmstatus.cc:207
+#: src/aworkspaces.cc:602 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "工作区： "
 
@@ -609,8 +609,8 @@ msgstr "命令 `%s' 需要至少 %d 个参数。"
 msgid "Invalid expression: `%s'"
 msgstr "无效表达式: `%s'"
 
-#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1066
-#: src/yxapp.cc:1030
+#: src/icesh.cc:3219 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1068
+#: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "无法打开显示：%s。 X必须正在执行且设定 $DISPLAY。"
@@ -992,12 +992,12 @@ msgstr "换行"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icewmbg.cc:73
+#: src/icewmbg.cc:72
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "加载图片 '%s' 失败。"
 
-#: src/icewmbg.cc:875
+#: src/icewmbg.cc:913
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1095,7 +1095,7 @@ msgstr ""
 " center:0 scaled:1 = 沿双方向填充并保持缩放率\n"
 "\n"
 
-#: src/icewmbg.cc:1080
+#: src/icewmbg.cc:1118
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "无法启动，因为其他 icewmbg 仍在运行。"
 
@@ -1136,43 +1136,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "移动/调整大小请求中的方向未知：%d"
 
-#: src/wmabout.cc:28 src/wmabout.cc:29
+#: src/wmabout.cc:29 src/wmabout.cc:30
 msgid "(C)"
 msgstr "(C)"
 
-#: src/wmabout.cc:39
+#: src/wmabout.cc:40
 msgid "Theme:"
 msgstr "主题："
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:41
 msgid "Theme Description:"
 msgstr "主题描述："
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:42
 msgid "Theme Author:"
 msgstr "主题作者："
 
-#: src/wmabout.cc:50
+#: src/wmabout.cc:51
 msgid "CodeSet:"
 msgstr "编码集："
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:52
 msgid "Language:"
 msgstr "语言："
 
-#: src/wmabout.cc:55
+#: src/wmabout.cc:56
 msgid "DoubleBuffer"
 msgstr "DoubleBuffer"
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:57
 msgid "AlphaBlending"
 msgstr "AlphaBlending"
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:58
 msgid "Renderer:"
 msgstr "渲染器："
 
-#: src/wmabout.cc:65
+#: src/wmabout.cc:64
 msgid "icewm - About"
 msgstr "icewm - 关于"
 
@@ -1359,16 +1359,16 @@ msgstr ""
 "取消管理所有应用程序并作为终端\n"
 "重启动。是否继续？"
 
-#: src/wmapp.cc:1067 src/yxapp.cc:1031
+#: src/wmapp.cc:1069 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<无>"
 
-#: src/wmapp.cc:1369
+#: src/wmapp.cc:1383
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr "  --client-id=ID      与会话管理器通信时使用客户端 ID\n"
 
-#: src/wmapp.cc:1375
+#: src/wmapp.cc:1389
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1378,7 +1378,7 @@ msgstr ""
 "  --debug             打印通用调试信息。\n"
 "  --debug-z           窗口层叠时打印调试信息。\n"
 
-#: src/wmapp.cc:1383
+#: src/wmapp.cc:1397
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1396,7 +1396,7 @@ msgstr ""
 "  -p, --postpreferences  处理完成后显示配置选项。\n"
 "  --trace=conf,icon   追踪用于加载配置文件的路径。\n"
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1406
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1455,26 +1455,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1454
+#: src/wmapp.cc:1468
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s 配置选项目录：\n"
 
-#: src/wmapp.cc:1536
+#: src/wmapp.cc:1550
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s 配置选项：%s\n"
 
-#: src/wmapp.cc:1614
+#: src/wmapp.cc:1628
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "无法识别的选项：'%s'。"
 
-#: src/wmapp.cc:1666
+#: src/wmapp.cc:1672
 msgid "Confirm Logout"
 msgstr "确认退出"
 
-#: src/wmapp.cc:1667
+#: src/wmapp.cc:1673
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1570,11 +1570,11 @@ msgstr ""
 "警告！当这个客户程序被杀死时，所有\n"
 "没有保存的修改将丢失。你想继续吗？"
 
-#: src/wmmgr.cc:3230
+#: src/wmmgr.cc:3231
 msgid "Missing program setxkbmap"
 msgstr "缺少程序 setxkbmap"
 
-#: src/wmmgr.cc:3231
+#: src/wmmgr.cc:3232
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "要使用键盘切换，请安装 setxkbmap。"
 
@@ -1892,12 +1892,12 @@ msgstr "错误的多字节字符串“%s”：%s"
 msgid "_OK"
 msgstr "确定(_O)"
 
-#: src/ypaths.cc:87
+#: src/ypaths.cc:88
 #, c-format
 msgid "Image not readable: %s"
 msgstr "图片无法读取：%s"
 
-#: src/ypaths.cc:110
+#: src/ypaths.cc:111
 #, c-format
 msgid "Could not find image %s"
 msgstr "无法找到图片 %s"
