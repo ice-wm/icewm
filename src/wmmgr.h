@@ -155,8 +155,8 @@ public:
 
     void initWorkspaces();
 
-    long activeWorkspace() const { return fActiveWorkspace; }
-    long lastWorkspace() const { return fLastWorkspace; }
+    int activeWorkspace() const { return int(fActiveWorkspace); }
+    int lastWorkspace() const { return int(fLastWorkspace); }
     void activateWorkspace(long workspace);
 
     void appendNewWorkspaces(long extra);
@@ -255,6 +255,7 @@ public:
     enum WMState { wmSTARTUP, wmRUNNING, wmSHUTDOWN };
 
     WMState wmState() const { return fWmState; }
+    bool isRunning() const { return fWmState == wmRUNNING; }
     bool fullscreenEnabled() { return fFullscreenEnabled; }
     void setFullscreenEnabled(bool enable) { fFullscreenEnabled = enable; }
     const UserTime& lastUserTime() const { return fLastUserTime; }
