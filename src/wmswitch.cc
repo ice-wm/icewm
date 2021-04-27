@@ -56,7 +56,7 @@ class WindowItemsCtrlr : public ISwitchItems
 
     void changeFocusTo(YFrameWindow *frame)  {
         if (frame->visible())
-            manager->setFocus(frame, false, !quickSwitchRaiseCandidate);
+            manager->setFocus(frame, false, false);
         if (quickSwitchRaiseCandidate)
             manager->restackWindows();
     }
@@ -286,6 +286,12 @@ public:
     virtual bool isKey(KeySym k, unsigned vm) override {
         return gKeySysSwitchNext.eq(k, vm) || (fWMClass &&
                gKeySysSwitchClass.eq(k, vm));
+    }
+
+    unsigned modifiers() override {
+        return gKeySysSwitchNext.mod
+             | gKeySysSwitchLast.mod
+             | gKeySysSwitchClass.mod;
     }
 };
 
@@ -830,9 +836,7 @@ bool SwitchWindow::isKey(KeySym k, unsigned vm) {
 }
 
 unsigned SwitchWindow::modifiers() {
-    return gKeySysSwitchNext.mod
-         | gKeySysSwitchLast.mod
-         | gKeySysSwitchClass.mod;
+    return zItems->modifiers();
 }
 
 bool SwitchWindow::isModKey(KeyCode c) {
