@@ -1,6 +1,13 @@
-icewm -- authors file.  2021-04-15
+icewm -- authors file.  2021-04-28
 
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Author: Freek de Kruijf <freek@opensuse.org>
+Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
+Author: Guillaume GARDET <guillaume.gardet@opensuse.org>
+Author: David Medina <medipas@gmail.com>
+Author: openSUSE Weblate <weblate-noreply@opensuse.org>
+Author: Panwar <caspian7pena@gmail.com>
 Author: Tommi Nieminen <software@legisign.org>
 Author: Jorge Gallegos Carrasco <jcarrascochih@gmail.com>
 Author: Antonio Simón <antonio@trans-mission.com>
@@ -10,17 +17,12 @@ Author: Gemineo <vistatec@gemineo.de>
 Author: Davide Aiello <davide.aiello@novilingulists.com>
 Author: Hugo Carvalho <hugokarvalho@hotmail.com>
 Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
-Author: David Medina <medipas@gmail.com>
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Author: Freek de Kruijf <freek@opensuse.org>
 Author: Aleš Kastner <alkas@volny.cz>
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
 Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
 Author: Stanislav Brabec <sbrabec@suse.cz>
 Author: Hela Basa <R45XvezA@pm.me>
 Author: Eduard Bloch <blade@debian.org>
 Author: Claudio Cesar de Sá <ccs1664@gmail.com>
-Author: Panwar <caspian7pena@gmail.com>
 Author: Paolo Za <zapaolo@email.it>
 Author: Code7R <Code7R@users.noreply.github.com>
 Author: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>
@@ -28,7 +30,6 @@ Author: Arif Budiman <arifpedia@gmail.com>
 Author: Sarah Kriesch <ada.lovelace@gmx.de>
 Author: WhiredPlanck <47623588+whriedplanck@users.noreply.github.com>
 Author: DieSpinne <62444221+DieSpinne@users.noreply.github.com>
-Author: openSUSE Weblate <weblate-noreply@opensuse.org>
 Author: Jens <jens@karatek.net>
 Author: Adolfo Jayme Barrientos <fitoschido@gmail.com>
 Author: Jens Maucher <jens.maucher@gmx.de>
@@ -108,7 +109,6 @@ Author: Dmitry Semyonov <linulin@gmail.com>
 Author: Attila Kinali <attila@kinali.ch>
 Author: Benoît Monin <benoit.monin@gmx.fr>
 Author: Karl Ove Hufthammer <karl@huftis.org>
-Author: Guillaume GARDET <guillaume.gardet@opensuse.org>
 Author: Bernhard Wiedemann <bwiedemann@suse.com>
 Author: Mario <kdesi@kdesi.sk>
 Author: Ivan Borzenkov <ivan.borzenkov@gmail.com>

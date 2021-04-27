@@ -1,11 +1,58 @@
-icewm -- history of user-visible changes.  2021-04-15
+icewm -- history of user-visible changes.  2021-04-28
+
+Release icewm-2.3.3 released 2021-04-28
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.3.2...2.3.3
+
+Bert Gijsbers <gijsbers@science.uva.nl> (15):
+      Add a toggle option "^" to the "netState" command for issue #580.
+      Add support for conditional expressions to icesh.
+      Defer loading internationalized help text until required.
+      Don't reorder focus when Alt+Tabbing for issue #579.
+      Make the modifiers dependent on the type of QuickSwitch: either from the
+        Alt+Tab or from the "switchkey" keyword for issue #583.
+      Improve documentation for options for Super/Windows key modifiers.
+      Add new icewm option --rewrite-preferences to update preferences.
+      make update-po
+      Correct type of all button preferences as unsigned.
+      Remove superfluous cast and class qualifications.
+      Permit scroll wheel to control rolling up or down for issue #584.
+      Document default winoption format .OPTION.
+      Fix compiler warning about the C++ One Definition Rule.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (2):
+      Translated using Weblate (Slovak)
+      Translated using Weblate (Slovak)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Guillaume GARDET <guillaume.gardet@opensuse.org> (1):
+      Translated using Weblate (French)
+
+Panwar <caspian7pena@gmail.com> (1):
+      Translated using Weblate (Hindi)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
+openSUSE Weblate <weblate-noreply@opensuse.org> (1):
+      Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
+
 
 Release icewm-2.3.2 released 2021-04-15
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.3.1...2.3.2
 
-Bert Gijsbers <gijsbers@science.uva.nl> (26):
+Bert Gijsbers <gijsbers@science.uva.nl> (27):
       Remove unused variable textDrawn to prevent a compiler warning.
       Optimize allocation of icon path strings.
       Improve removing the last element from an array. Add array pop and last.
@@ -45,6 +92,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (26):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.3.2 release
 
 Tommi Nieminen <software@legisign.org> (1):
       Translated using Weblate (Finnish)
@@ -354,13 +402,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (20):
 
 Eduard Bloch <blade@debian.org> (1):
       Don't abort directory scanning on bad menu items
-
-
-Release icewm-2.1.1 released 2021-01-28
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.1.0...2.1.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (1):
-      Commit release 2.1.1.
 

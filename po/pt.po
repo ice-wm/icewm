@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.6.6.83\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-04-26 19:30+0200\n"
+"POT-Creation-Date: 2021-04-28 00:27+0200\n"
 "PO-Revision-Date: 2021-03-24 00:56+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.opensuse.org/projects/icewm/"
@@ -1594,11 +1594,11 @@ msgstr "_Reiniciar icewm"
 msgid "_About"
 msgstr "So_bre"
 
-#: src/wmframe.cc:1401
+#: src/wmframe.cc:1395
 msgid "Kill Client: "
 msgstr "Interromper cliente: "
 
-#: src/wmframe.cc:1402
+#: src/wmframe.cc:1396
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
