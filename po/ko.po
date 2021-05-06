@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-05-06 19:26+0200\n"
+"POT-Creation-Date: 2021-05-07 01:30+0200\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -303,170 +303,170 @@ msgstr "NET"
 msgid "Workspace: "
 msgstr "작업공간: "
 
-#: src/icehelp.cc:1278
+#: src/icehelp.cc:1281
 msgid "Back"
 msgstr "뒤로"
 
-#: src/icehelp.cc:1278
+#: src/icehelp.cc:1281
 msgid "Alt+Left"
 msgstr "Alt+Left"
 
-#: src/icehelp.cc:1280
+#: src/icehelp.cc:1283
 msgid "Forward"
 msgstr "앞으로"
 
-#: src/icehelp.cc:1280
+#: src/icehelp.cc:1283
 msgid "Alt+Right"
 msgstr "Alt+Right"
 
-#: src/icehelp.cc:1283
+#: src/icehelp.cc:1286
 msgid "Previous"
 msgstr "이전으로"
 
-#: src/icehelp.cc:1284
+#: src/icehelp.cc:1287
 msgid "Next"
 msgstr "다음으로"
 
-#: src/icehelp.cc:1286
+#: src/icehelp.cc:1289
 msgid "Contents"
 msgstr "내용"
 
-#: src/icehelp.cc:1287
+#: src/icehelp.cc:1290
 msgid "Index"
 msgstr "색인"
 
-#: src/icehelp.cc:1290
+#: src/icehelp.cc:1293
 #, fuzzy
 #| msgid "WebBrowser"
 msgid "Open in Browser"
 msgstr "웹 브라우저"
 
-#: src/icehelp.cc:1290
+#: src/icehelp.cc:1293
 #, fuzzy
 #| msgid "Ctrl+Q"
 msgid "Ctrl+B"
 msgstr "Ctrl+Q"
 
-#: src/icehelp.cc:1292
+#: src/icehelp.cc:1295
 msgid "Reload"
 msgstr ""
 
-#: src/icehelp.cc:1292 src/icesame.cc:60
+#: src/icehelp.cc:1295 src/icesame.cc:60
 msgid "Ctrl+R"
 msgstr "Ctrl+R"
 
-#: src/icehelp.cc:1293 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
+#: src/icehelp.cc:1296 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
 msgid "Close"
 msgstr "닫기"
 
-#: src/icehelp.cc:1293 src/icesame.cc:62 src/iceview.cc:59
+#: src/icehelp.cc:1296 src/icesame.cc:62 src/iceview.cc:59
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: src/icehelp.cc:1298
+#: src/icehelp.cc:1301
 msgid "Icewm(1)"
 msgstr "Icewm(1)"
 
-#: src/icehelp.cc:1298
+#: src/icehelp.cc:1301
 #, fuzzy
 #| msgid "Ctrl+Q"
 msgid "Ctrl+I"
 msgstr "Ctrl+Q"
 
-#: src/icehelp.cc:1300
+#: src/icehelp.cc:1303
 msgid "Icewmbg(1)"
 msgstr "Icewmbg(1)"
 
-#: src/icehelp.cc:1302
+#: src/icehelp.cc:1305
 msgid "Icesound(1)"
 msgstr "Icesound(1)"
 
-#: src/icehelp.cc:1304
+#: src/icehelp.cc:1307
 msgid "FAQ"
 msgstr "FAQ"
 
-#: src/icehelp.cc:1306
+#: src/icehelp.cc:1309
 msgid "Manual"
 msgstr "매뉴얼"
 
-#: src/icehelp.cc:1306
+#: src/icehelp.cc:1309
 #, fuzzy
 #| msgid "Ctrl+Q"
 msgid "Ctrl+M"
 msgstr "Ctrl+Q"
 
-#: src/icehelp.cc:1308
+#: src/icehelp.cc:1311
 msgid "Support"
 msgstr "지원"
 
-#: src/icehelp.cc:1310
+#: src/icehelp.cc:1313
 msgid "Theme Howto"
 msgstr "테마 만드는 방법"
 
-#: src/icehelp.cc:1310 src/iceview.cc:56
+#: src/icehelp.cc:1313 src/iceview.cc:56
 msgid "Ctrl+T"
 msgstr "Ctrl+T"
 
-#: src/icehelp.cc:1312
+#: src/icehelp.cc:1315
 msgid "Website"
 msgstr "웹 사이트"
 
-#: src/icehelp.cc:1312 src/iceview.cc:57
+#: src/icehelp.cc:1315 src/iceview.cc:57
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icehelp.cc:1314
+#: src/icehelp.cc:1317
 msgid "Github"
 msgstr "Github"
 
-#: src/icehelp.cc:1318 src/yinputline.cc:19
+#: src/icehelp.cc:1321 src/yinputline.cc:19
 msgid "Ctrl+X"
 msgstr "Ctrl+X"
 
-#: src/icehelp.cc:1323 src/yinputline.cc:20
+#: src/icehelp.cc:1326 src/yinputline.cc:20
 msgid "Ctrl+V"
 msgstr "Ctrl+V"
 
-#: src/icehelp.cc:2077
+#: src/icehelp.cc:2080
 msgid "Unsupported protocol."
 msgstr "프로토콜 지원 안 됨."
 
-#: src/icehelp.cc:2156
+#: src/icehelp.cc:2159
 #, c-format
 msgid "Invalid path: %s\n"
 msgstr "잘못된 경로: %s\n"
 
-#: src/icehelp.cc:2180
+#: src/icehelp.cc:2183
 msgid "Path does not refer to a file."
 msgstr "경로가 파일을 참조하지 않습니다."
 
-#: src/icehelp.cc:2185
+#: src/icehelp.cc:2188
 msgid "Failed to open file for reading."
 msgstr "읽기 위해 파일을 열지 못했습니다."
 
-#: src/icehelp.cc:2214
+#: src/icehelp.cc:2217
 msgid "Failed to create a temporary file"
 msgstr "임시 파일 만들기 실패"
 
-#: src/icehelp.cc:2307
+#: src/icehelp.cc:2310
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr "시스템을 실행하지 못했습니다(%s)(%d)."
 
-#: src/icehelp.cc:2330
+#: src/icehelp.cc:2333
 #, c-format
 msgid "Failed to decompress %s"
 msgstr "%s를 압축을 푸는 데 실패"
 
-#: src/icehelp.cc:2338
+#: src/icehelp.cc:2341
 msgid "Could not locate curl or wget in PATH"
 msgstr "PATH에서 curl 또는 wget을 찾을 수 없습니다."
 
-#: src/icehelp.cc:2342
+#: src/icehelp.cc:2345
 msgid "Unsafe characters in URL"
 msgstr "URL의 안전하지 않은 문자"
 
-#: src/icehelp.cc:2379
+#: src/icehelp.cc:2382
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -538,7 +538,7 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/icehelp.cc:2469
+#: src/icehelp.cc:2472
 #, c-format
 msgid "Ignoring option '%s'"
 msgstr "옵션 '%s' 무시"

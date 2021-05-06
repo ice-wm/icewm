@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm-1.2.22\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-05-06 19:26+0200\n"
+"POT-Creation-Date: 2021-05-07 01:30+0200\n"
 "PO-Revision-Date: 2021-05-06 15:57+0000\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -297,166 +297,166 @@ msgstr "NET"
 msgid "Workspace: "
 msgstr "Pracovná plocha: "
 
-#: src/icehelp.cc:1278
+#: src/icehelp.cc:1281
 msgid "Back"
 msgstr "Späť"
 
-#: src/icehelp.cc:1278
+#: src/icehelp.cc:1281
 msgid "Alt+Left"
 msgstr "Alt+Vľavo"
 
-#: src/icehelp.cc:1280
+#: src/icehelp.cc:1283
 msgid "Forward"
 msgstr "Dopredu"
 
-#: src/icehelp.cc:1280
+#: src/icehelp.cc:1283
 msgid "Alt+Right"
 msgstr "Alt+Vpravo"
 
-#: src/icehelp.cc:1283
+#: src/icehelp.cc:1286
 msgid "Previous"
 msgstr "Predchádzajúce"
 
-#: src/icehelp.cc:1284
+#: src/icehelp.cc:1287
 msgid "Next"
 msgstr "Nasledujúce"
 
-#: src/icehelp.cc:1286
+#: src/icehelp.cc:1289
 msgid "Contents"
 msgstr "Obsah"
 
-#: src/icehelp.cc:1287
+#: src/icehelp.cc:1290
 msgid "Index"
 msgstr "Index"
 
-#: src/icehelp.cc:1290
+#: src/icehelp.cc:1293
 msgid "Open in Browser"
 msgstr "Otvoriť v prehliadači"
 
-#: src/icehelp.cc:1290
+#: src/icehelp.cc:1293
 msgid "Ctrl+B"
 msgstr "Ctrl+B"
 
-#: src/icehelp.cc:1292
+#: src/icehelp.cc:1295
 msgid "Reload"
 msgstr ""
 
-#: src/icehelp.cc:1292 src/icesame.cc:60
+#: src/icehelp.cc:1295 src/icesame.cc:60
 msgid "Ctrl+R"
 msgstr "Ctrl+R"
 
-#: src/icehelp.cc:1293 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
+#: src/icehelp.cc:1296 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
 msgid "Close"
 msgstr "Zavrieť"
 
-#: src/icehelp.cc:1293 src/icesame.cc:62 src/iceview.cc:59
+#: src/icehelp.cc:1296 src/icesame.cc:62 src/iceview.cc:59
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: src/icehelp.cc:1298
+#: src/icehelp.cc:1301
 msgid "Icewm(1)"
 msgstr "Icewm(1)"
 
-#: src/icehelp.cc:1298
+#: src/icehelp.cc:1301
 #, fuzzy
 #| msgid "Ctrl+B"
 msgid "Ctrl+I"
 msgstr "Ctrl+B"
 
-#: src/icehelp.cc:1300
+#: src/icehelp.cc:1303
 msgid "Icewmbg(1)"
 msgstr "Icewmbg(1)"
 
-#: src/icehelp.cc:1302
+#: src/icehelp.cc:1305
 msgid "Icesound(1)"
 msgstr "Icesound(1)"
 
-#: src/icehelp.cc:1304
+#: src/icehelp.cc:1307
 msgid "FAQ"
 msgstr "FAQ"
 
-#: src/icehelp.cc:1306
+#: src/icehelp.cc:1309
 msgid "Manual"
 msgstr "Ručne"
 
-#: src/icehelp.cc:1306
+#: src/icehelp.cc:1309
 #, fuzzy
 #| msgid "Ctrl+B"
 msgid "Ctrl+M"
 msgstr "Ctrl+B"
 
-#: src/icehelp.cc:1308
+#: src/icehelp.cc:1311
 msgid "Support"
 msgstr "Podpora"
 
-#: src/icehelp.cc:1310
+#: src/icehelp.cc:1313
 msgid "Theme Howto"
 msgstr "Howto témy"
 
-#: src/icehelp.cc:1310 src/iceview.cc:56
+#: src/icehelp.cc:1313 src/iceview.cc:56
 msgid "Ctrl+T"
 msgstr "Ctrl+T"
 
-#: src/icehelp.cc:1312
+#: src/icehelp.cc:1315
 msgid "Website"
 msgstr "Webové stránky"
 
-#: src/icehelp.cc:1312 src/iceview.cc:57
+#: src/icehelp.cc:1315 src/iceview.cc:57
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icehelp.cc:1314
+#: src/icehelp.cc:1317
 msgid "Github"
 msgstr "Github"
 
-#: src/icehelp.cc:1318 src/yinputline.cc:19
+#: src/icehelp.cc:1321 src/yinputline.cc:19
 msgid "Ctrl+X"
 msgstr "Ctrl+X"
 
-#: src/icehelp.cc:1323 src/yinputline.cc:20
+#: src/icehelp.cc:1326 src/yinputline.cc:20
 msgid "Ctrl+V"
 msgstr "Ctrl+V"
 
-#: src/icehelp.cc:2077
+#: src/icehelp.cc:2080
 msgid "Unsupported protocol."
 msgstr "Nepodporovaný protokol."
 
-#: src/icehelp.cc:2156
+#: src/icehelp.cc:2159
 #, c-format
 msgid "Invalid path: %s\n"
 msgstr "Neplatná cesta: %s\n"
 
-#: src/icehelp.cc:2180
+#: src/icehelp.cc:2183
 msgid "Path does not refer to a file."
 msgstr "Cesta neodkazuje na súbor."
 
-#: src/icehelp.cc:2185
+#: src/icehelp.cc:2188
 msgid "Failed to open file for reading."
 msgstr "Zlyhalo otvorenie súboru na čítanie."
 
-#: src/icehelp.cc:2214
+#: src/icehelp.cc:2217
 msgid "Failed to create a temporary file"
 msgstr "Zlyhalo vytvorenie dočasného súboru"
 
-#: src/icehelp.cc:2307
+#: src/icehelp.cc:2310
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr "Zlyhalo vykonanie system(%s) (%d)"
 
-#: src/icehelp.cc:2330
+#: src/icehelp.cc:2333
 #, c-format
 msgid "Failed to decompress %s"
 msgstr "Zlyhalo rozbalenie %s"
 
-#: src/icehelp.cc:2338
+#: src/icehelp.cc:2341
 msgid "Could not locate curl or wget in PATH"
 msgstr "Nebolo možné nájsť curl alebo wget v PATH"
 
-#: src/icehelp.cc:2342
+#: src/icehelp.cc:2345
 msgid "Unsafe characters in URL"
 msgstr "Nebezpečné znaky v URL"
 
-#: src/icehelp.cc:2379
+#: src/icehelp.cc:2382
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -528,7 +528,7 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/icehelp.cc:2469
+#: src/icehelp.cc:2472
 #, c-format
 msgid "Ignoring option '%s'"
 msgstr "Ignorovanie voľby '%s'"

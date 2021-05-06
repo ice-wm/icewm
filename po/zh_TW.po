@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-05-06 19:26+0200\n"
+"POT-Creation-Date: 2021-05-07 01:30+0200\n"
 "PO-Revision-Date: 2021-03-20 11:56+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/icewm/"
@@ -299,166 +299,166 @@ msgstr "NET"
 msgid "Workspace: "
 msgstr "工作區："
 
-#: src/icehelp.cc:1278
+#: src/icehelp.cc:1281
 msgid "Back"
 msgstr "後退"
 
-#: src/icehelp.cc:1278
+#: src/icehelp.cc:1281
 msgid "Alt+Left"
 msgstr "Alt+Left"
 
-#: src/icehelp.cc:1280
+#: src/icehelp.cc:1283
 msgid "Forward"
 msgstr "前進"
 
-#: src/icehelp.cc:1280
+#: src/icehelp.cc:1283
 msgid "Alt+Right"
 msgstr "Alt+Right"
 
-#: src/icehelp.cc:1283
+#: src/icehelp.cc:1286
 msgid "Previous"
 msgstr "上一個"
 
-#: src/icehelp.cc:1284
+#: src/icehelp.cc:1287
 msgid "Next"
 msgstr "下一個"
 
-#: src/icehelp.cc:1286
+#: src/icehelp.cc:1289
 msgid "Contents"
 msgstr "內容"
 
-#: src/icehelp.cc:1287
+#: src/icehelp.cc:1290
 msgid "Index"
 msgstr "索引"
 
-#: src/icehelp.cc:1290
+#: src/icehelp.cc:1293
 msgid "Open in Browser"
 msgstr "在瀏覽器中開啟"
 
-#: src/icehelp.cc:1290
+#: src/icehelp.cc:1293
 msgid "Ctrl+B"
 msgstr "Ctrl+B"
 
-#: src/icehelp.cc:1292
+#: src/icehelp.cc:1295
 msgid "Reload"
 msgstr ""
 
-#: src/icehelp.cc:1292 src/icesame.cc:60
+#: src/icehelp.cc:1295 src/icesame.cc:60
 msgid "Ctrl+R"
 msgstr "Ctrl+R"
 
-#: src/icehelp.cc:1293 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
+#: src/icehelp.cc:1296 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
 msgid "Close"
 msgstr "關閉"
 
-#: src/icehelp.cc:1293 src/icesame.cc:62 src/iceview.cc:59
+#: src/icehelp.cc:1296 src/icesame.cc:62 src/iceview.cc:59
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: src/icehelp.cc:1298
+#: src/icehelp.cc:1301
 msgid "Icewm(1)"
 msgstr "Icewm(1)"
 
-#: src/icehelp.cc:1298
+#: src/icehelp.cc:1301
 #, fuzzy
 #| msgid "Ctrl+B"
 msgid "Ctrl+I"
 msgstr "Ctrl+B"
 
-#: src/icehelp.cc:1300
+#: src/icehelp.cc:1303
 msgid "Icewmbg(1)"
 msgstr "Icewmbg(1)"
 
-#: src/icehelp.cc:1302
+#: src/icehelp.cc:1305
 msgid "Icesound(1)"
 msgstr "Icesound(1)"
 
-#: src/icehelp.cc:1304
+#: src/icehelp.cc:1307
 msgid "FAQ"
 msgstr "FAQ"
 
-#: src/icehelp.cc:1306
+#: src/icehelp.cc:1309
 msgid "Manual"
 msgstr "手動"
 
-#: src/icehelp.cc:1306
+#: src/icehelp.cc:1309
 #, fuzzy
 #| msgid "Ctrl+B"
 msgid "Ctrl+M"
 msgstr "Ctrl+B"
 
-#: src/icehelp.cc:1308
+#: src/icehelp.cc:1311
 msgid "Support"
 msgstr "支援"
 
-#: src/icehelp.cc:1310
+#: src/icehelp.cc:1313
 msgid "Theme Howto"
 msgstr "佈景主題 Howto"
 
-#: src/icehelp.cc:1310 src/iceview.cc:56
+#: src/icehelp.cc:1313 src/iceview.cc:56
 msgid "Ctrl+T"
 msgstr "Ctrl+T"
 
-#: src/icehelp.cc:1312
+#: src/icehelp.cc:1315
 msgid "Website"
 msgstr "網站"
 
-#: src/icehelp.cc:1312 src/iceview.cc:57
+#: src/icehelp.cc:1315 src/iceview.cc:57
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/icehelp.cc:1314
+#: src/icehelp.cc:1317
 msgid "Github"
 msgstr "Github"
 
-#: src/icehelp.cc:1318 src/yinputline.cc:19
+#: src/icehelp.cc:1321 src/yinputline.cc:19
 msgid "Ctrl+X"
 msgstr "Ctrl+X"
 
-#: src/icehelp.cc:1323 src/yinputline.cc:20
+#: src/icehelp.cc:1326 src/yinputline.cc:20
 msgid "Ctrl+V"
 msgstr "Ctrl+V"
 
-#: src/icehelp.cc:2077
+#: src/icehelp.cc:2080
 msgid "Unsupported protocol."
 msgstr "不支援的通訊協定。"
 
-#: src/icehelp.cc:2156
+#: src/icehelp.cc:2159
 #, c-format
 msgid "Invalid path: %s\n"
 msgstr "路徑無效：%s\n"
 
-#: src/icehelp.cc:2180
+#: src/icehelp.cc:2183
 msgid "Path does not refer to a file."
 msgstr "路徑未參考檔案。"
 
-#: src/icehelp.cc:2185
+#: src/icehelp.cc:2188
 msgid "Failed to open file for reading."
 msgstr "無法開啟要閱讀的檔案。"
 
-#: src/icehelp.cc:2214
+#: src/icehelp.cc:2217
 msgid "Failed to create a temporary file"
 msgstr "建立臨時檔案失敗"
 
-#: src/icehelp.cc:2307
+#: src/icehelp.cc:2310
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr "執行系統 (%s) (%d) 失敗"
 
-#: src/icehelp.cc:2330
+#: src/icehelp.cc:2333
 #, c-format
 msgid "Failed to decompress %s"
 msgstr "解壓縮 %s 失敗"
 
-#: src/icehelp.cc:2338
+#: src/icehelp.cc:2341
 msgid "Could not locate curl or wget in PATH"
 msgstr "在 PATH 中找不到 curl 或 wget"
 
-#: src/icehelp.cc:2342
+#: src/icehelp.cc:2345
 msgid "Unsafe characters in URL"
 msgstr "URL 中存在不安全的字元"
 
-#: src/icehelp.cc:2379
+#: src/icehelp.cc:2382
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -528,7 +528,7 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/icehelp.cc:2469
+#: src/icehelp.cc:2472
 #, c-format
 msgid "Ignoring option '%s'"
 msgstr "正在忽略選項「%s」"

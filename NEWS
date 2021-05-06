@@ -1,11 +1,72 @@
-icewm -- history of user-visible changes.  2021-04-28
+icewm -- history of user-visible changes.  2021-05-07
+
+Release icewm-2.3.4 released 2021-05-07
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.3.3...2.3.4
+
+Bert Gijsbers <gijsbers@science.uva.nl> (25):
+      Only use RTTI when debugging for issue ice-wm/icewm#48.
+      Fix icesh exit code for #585.
+      Add equality operators for lazy pointers.
+      Add flags to test WM_PROTOCOLS.
+      Add PingTimeout for issue ice-wm/icewm#47. When ping timeouts then request
+        user permission to terminate for issue ice-wm/icewm#47.
+      Let icehelp handle scrollbar keys when mouse pointer is inside a
+        scrollbar.
+      Attempt to improve vertical alignment of text with different font faces in
+        icehelp.
+      Empty strings are equal to null strings and remove optimization when
+        updating preferences file.
+      Generate preferences in sorted order.
+      Add a button for a menu in icehelp. Support anti-aliased fonts in icehelp.
+      Fix for snapping frame borders for themes with mask shaped top sides.
+      Fix for positioning new frames for themes with mask shaped top sides.
+      Always rebuild manpages when Makefile changes.
+      make update-po
+      Add a --disable-rsvg option to configure for issue #587.
+      Add setNetName.
+      Add reverse color.
+      Don't adjust workarea when snapping from outside the workarea.
+      Improve accuracy of clicking on links in icehelp. Support reverse video in
+        icehelp. Add more keyboard shortcuts to icehelp.
+      Add PingTimeout.
+      Check input lengths.
+      make update-po
+      Reduce freetype font size for icehelp. Improve reversed link color for
+        icehelp.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Guillaume GARDET <guillaume.gardet@opensuse.org> (1):
+      Translated using Weblate (French)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-2.3.3 released 2021-04-28
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.3.2...2.3.3
 
-Bert Gijsbers <gijsbers@science.uva.nl> (15):
+Bert Gijsbers <gijsbers@science.uva.nl> (16):
       Add a toggle option "^" to the "netState" command for issue #580.
       Add support for conditional expressions to icesh.
       Defer loading internationalized help text until required.
@@ -23,6 +84,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (15):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.3.3 release
 
 Ferdinand Galko <galko.ferdinand@gmail.com> (2):
       Translated using Weblate (Slovak)
@@ -366,40 +428,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (30):
       Improve merge of 'upstream/icewm-1-4-BRANCH'.
       Merge branch 'icewm-1-4-BRANCH'
       Prepare 2.2.0 release
-
-
-Release icewm-2.1.2 released 2021-02-09
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.1.1...2.1.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (20):
-      Provide drawable context when creating pixmap cursors with Imlib2 for
-        issue #541.
-      Don't unarm menu popup buttons for issue #527.
-      Fix issue #542 for texturing background of task pane.
-      Improve the isValid test for Imlib2 custom cursors.
-      Detail.
-      Moving towards 2.1.1.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Prepare 2.1.1 release
-      Only add a separator if previous item is not.
-      Create a Settings submenu to reduce Start menu items for issue #543.
-      Add 'urgent' action to icesh.
-      Initialize TaskButton object.
-      Remove updateUrgency, fWmUrgency, fClientUrgency, fOldState, fOldLayer
-        from frames. Remove the urgent state flag from frame when gaining or
-        losing focus.
-      Free empty settings menu.
-      Add test for XShm extension+pixmaps.
-      Relayout task buttons whenever a task button is removed for issue #548.
-      Preparing 2.1.2.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.1.2 release
-
-Eduard Bloch <blade@debian.org> (1):
-      Don't abort directory scanning on bad menu items
 
