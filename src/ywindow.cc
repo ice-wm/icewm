@@ -1454,6 +1454,12 @@ void YWindow::setProperty(Atom property, Atom propType, Atom value) {
     setProperty(property, propType, &value, 1);
 }
 
+void YWindow::setNetName(const char* name) {
+    int length = int(strlen(name));
+    XChangeProperty(xapp->display(), handle(), _XA_NET_WM_NAME, _XA_UTF8_STRING,
+                    8, PropModeReplace, (const unsigned char *) name, length);
+}
+
 void YWindow::setNetWindowType(Atom window_type) {
     setProperty(_XA_NET_WM_WINDOW_TYPE, XA_ATOM, window_type);
 }
@@ -1683,11 +1689,13 @@ YDesktop::YDesktop(YWindow *aParent, Window win):
 }
 
 YDesktop::~YDesktop() {
+#if DEBUG || PRECON
     for (YWindow* w; (w = firstWindow()) != nullptr; delete w) {
         char* name = demangle(typeid(*w).name());
         INFO("deleting stray %s", name);
         free(name);
     }
+#endif
     if (desktop == this)
         desktop = nullptr;
 }

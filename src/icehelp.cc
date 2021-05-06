@@ -42,7 +42,7 @@ enum ViewerDimensions {
 
 char const * ApplicationName = "icehelp";
 
-static bool verbose, nodelete, complain;
+static bool verbose, complain, ignoreClose, noFreeType, reverseVideo;
 
 class cbuffer {
     size_t cap, ins;
@@ -201,14 +201,14 @@ public:
 class text_node {
 public:
     text_node(const char *t, int l, int f, int _x, int _y, int _w, int _h) :
-        text(t), len(l), fl(f), x(_x), y(_y), w(_w), h(_h), next(nullptr)
+        text(t), len(l), fl(f), x(_x), y(_y), tw(_w), th(_h), next(nullptr)
     {
     }
 
     const char *text;
     int len, fl;
     int x, y;
-    int w, h;
+    int tw, th;
     text_node *next;
 };
 
@@ -616,7 +616,8 @@ static node *parse(FILE *fp, int flags, node *parent, node *&nextsub, node::node
                     c = getc(fp);
                 }
 
-                node::node_type type = node::get_type(buf);
+                node::node_type type = buf.nonempty()
+                                     ? node::get_type(buf) : node::unknown;
                 node *n = new node(type);
                 if (n == nullptr)
                     break;
@@ -641,7 +642,8 @@ static node *parse(FILE *fp, int flags, node *parent, node *&nextsub, node::node
                                 c = getc(fp);
                             }
                         }
-                        n->add_attribute(abuf, vbuf);
+                        if (abuf.nonempty())
+                            n->add_attribute(abuf, vbuf);
                     }
                 }
 
@@ -759,13 +761,13 @@ static node *parse(FILE *fp, int flags, node *parent, node *&nextsub, node::node
                         buf += "(R)"; // registered sign
                         continue;
                     }
-                    else if (strcmp(entity + 2, "tilde") == 0) {
+                    else if (entity.len() > 2 && !strcmp(entity + 2, "tilde")) {
                         c = entity[1];
                     }
-                    else if (strcmp(entity + 2, "acute") == 0) {
+                    else if (entity.len() > 2 && !strcmp(entity + 2, "acute")) {
                         c = entity[1];
                     }
-                    else if (strcmp(entity + 2, "uml") == 0) {
+                    else if (entity.len() > 2 && !strcmp(entity + 2, "uml")) {
                         c = entity[1];
                     }
                     else {
@@ -873,39 +875,44 @@ public:
     static FontEntry table[];
     static const FontRef noFont;
     static FontRef get(int size, int flags);
+    static void reset() {
+        for (int k = 0; table[k].size; ++k) {
+            table[k].font = noFont;
+        }
+    }
 };
 const FontRef FontTable::noFont;
 FontEntry FontTable::table[] = {
     { 12, 0,
         "-adobe-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1",
-        "sans-serif-12", noFont },
+        "Snap:size=10,sans-serif:size=10", noFont },
     { 14, 0,
         "-adobe-helvetica-medium-r-normal--14-140-75-75-p-77-iso8859-1",
-        "sans-serif-14", noFont },
+        "Snap:size=12,sans-serif:size=12", noFont },
     { 18, 0,
         "-adobe-helvetica-medium-r-normal--18-180-75-75-p-98-iso8859-1",
-        "sans-serif-18", noFont },
+        "Snap:size=14,sans-serif:size=14", noFont },
     { 12, BOLD,
         "-adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1",
-        "sans-serif-12:bold", noFont },
+        "Snap:size=10:bold,sans-serif:size=10:bold", noFont },
     { 14, BOLD,
         "-adobe-helvetica-bold-r-normal--14-140-75-75-p-82-iso8859-1",
-        "sans-serif-14:bold", noFont },
+        "Snap:size=12:bold,sans-serif:size=12:bold", noFont },
     { 18, BOLD,
         "-adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1",
-        "sans-serif-18:bold", noFont },
+        "Snap:size=14:bold,sans-serif:size=14:bold", noFont },
     { 12, MONO,
         "-adobe-courier-medium-r-normal--12-120-75-75-m-70-iso8859-1",
-        "sans-serif-12:spacing=mono", noFont },
+        "courier:size=10,monospace:size=10", noFont },
     { 17, MONO | BOLD,
         "-adobe-courier-bold-r-normal--17-120-100-100-m-100-iso8859-1",
-        "sans-serif-17:bold:spacing=mono", noFont },
+        "courier:size=14,monospace:size=14", noFont },
     { 12, ITAL,
         "-adobe-helvetica-medium-o-normal--12-120-75-75-p-67-iso8859-1",
-        "sans-serif-12:slant=oblique,italic", noFont },
+        "sans-serif:size=10:oblique", noFont },
     { 14, ITAL,
         "-adobe-helvetica-medium-o-normal--14-140-75-75-p-78-iso8859-1",
-        "sans-serif-14:slant=oblique,italic", noFont },
+        "sans-serif:size=12:oblique", noFont },
     { 0, 0, nullptr, nullptr, noFont },
 };
 FontRef FontTable::get(int size, int flags) {
@@ -938,7 +945,8 @@ FontRef FontTable::get(int size, int flags) {
         }
     }
     if (table[best].font == noFont) {
-        table[best].font = YFont::getFont(table[best].core, null, true);
+        const char* xeft = noFreeType ? nullptr : table[best].xeft;
+        table[best].font = YFont::getFont(table[best].core, xeft, true);
     }
     return table[best].font;
 }
@@ -1013,6 +1021,18 @@ public:
     virtual void paint(Graphics &g, const YRect &r) {
         g.setColor(bg);
         g.fillRect(r.x(), r.y(), r.width(), r.height());
+
+        if (ty < 20) {
+            int sz = 19;
+            g.setColor(reverseVideo ? normalFg.darker().reverse() : bg.darker());
+            g.fillRect(width() - 20, 20 - ty - sz, sz, sz, 1);
+            g.setColor(bg.brighter());
+            for (int i = 0; i <= 2; ++i) {
+                g.drawLine(width() - 20 +  2, 20 - ty - 15 + i * 5,
+                           width() - 20 + 16, 20 - ty - 15 + i * 5);
+            }
+        }
+
         g.setColor(normalFg);
         g.setFont(font);
 
@@ -1080,6 +1100,9 @@ public:
         else if (action == actionBrowser) {
             listener->openBrowser(history.current());
         }
+        else if (action == actionReload) {
+            listener->activateURL(history.current(), false);
+        }
         else if (action == actionNext) {
             if (actionNext->isEnabled())
                 listener->activateURL(nextURL, true);
@@ -1140,6 +1163,34 @@ public:
             if (actionLink[8]->isEnabled())
                 listener->activateURL(ICEGIT_SITE);
         }
+#ifdef CONFIG_XFREETYPE
+        else if (action == actionFreeType) {
+            noFreeType = !noFreeType;
+            actionFreeType->setChecked(!noFreeType);
+            FontTable::reset();
+            actionPerformed(actionReload);
+        }
+#endif
+        else if (action == actionReversed) {
+            reverseVideo = !reverseVideo;
+            actionReversed->setChecked(reverseVideo);
+            if (reverseVideo) {
+                bg = FOREGROUND;
+                normalFg = BACKGROUND;
+                linkFg = LINK_COLOR;
+                linkFg.reverse();
+            } else {
+                bg = BACKGROUND;
+                normalFg = FOREGROUND;
+                linkFg = LINK_COLOR;
+            }
+            repaint();
+            YScrollBar::reverseVideo();
+            if (fHorizontalScroll->visible())
+                fHorizontalScroll->repaint();
+            if (fVerticalScroll->visible())
+                fVerticalScroll->repaint();
+        }
     }
 
     virtual void configure(const YRect &r) {
@@ -1172,9 +1223,12 @@ private:
     ActionItem actionIndex;
     ActionItem actionPrev;
     ActionItem actionNext;
+    ActionItem actionReload;
     ActionItem actionBrowser;
     ActionItem actionContents;
     ActionItem actionLink[10];
+    ActionItem actionFreeType;
+    ActionItem actionReversed;
     HTListener *listener;
 
     mstring prevURL;
@@ -1220,6 +1274,7 @@ HTextView::HTextView(HTListener *fL, YScrollView *v, YWindow *parent):
     fontFlag = 0;
     fontSize = 0;
     flagFont(0);
+    setTitle("HTextView");
 
     menu = new YMenu();
     menu->setActionListener(this);
@@ -1237,12 +1292,13 @@ HTextView::HTextView(HTListener *fL, YScrollView *v, YWindow *parent):
     menu->addSeparator();
     actionBrowser = menu->addItem(_("Open in Browser"), 0, _("Ctrl+B"),
                                   actionBrowser);
+    actionReload = menu->addItem(_("Reload"), 0, _("Ctrl+R"), actionReload);
     actionClose = menu->addItem(_("Close"), 0, _("Ctrl+Q"), actionClose);
     menu->addSeparator();
 
     int k = -1;
     k++;
-    actionLink[k] = menu->addItem(_("Icewm(1)"), 2, null, actionLink[k]);
+    actionLink[k] = menu->addItem(_("Icewm(1)"), 2, _("Ctrl+I"), actionLink[k]);
     k++;
     actionLink[k] = menu->addItem(_("Icewmbg(1)"), 5, null, actionLink[k]);
     k++;
@@ -1250,15 +1306,25 @@ HTextView::HTextView(HTListener *fL, YScrollView *v, YWindow *parent):
     k++;
     actionLink[k] = menu->addItem(_("FAQ"), 0, null, actionLink[k]);
     k++;
-    actionLink[k] = menu->addItem(_("Manual"), 0, null, actionLink[k]);
+    actionLink[k] = menu->addItem(_("Manual"), 0, _("Ctrl+M"), actionLink[k]);
     k++;
     actionLink[k] = menu->addItem(_("Support"), 0, null, actionLink[k]);
     k++;
-    actionLink[k] = menu->addItem(_("Theme Howto"), 0, null, actionLink[k]);
+    actionLink[k] = menu->addItem(_("Theme Howto"), 0, _("Ctrl+T"), actionLink[k]);
     k++;
-    actionLink[k] = menu->addItem(_("Website"), 0, null, actionLink[k]);
+    actionLink[k] = menu->addItem(_("Website"), 0, _("Ctrl+W"), actionLink[k]);
     k++;
     actionLink[k] = menu->addItem(_("Github"), 0, null, actionLink[k]);
+
+    menu->addSeparator();
+#ifdef CONFIG_XFREETYPE
+    actionFreeType = menu->addItem("FreeType fonts", -1, _("Ctrl+X"), actionFreeType);
+    actionFreeType->setChecked(!noFreeType);
+#else
+    noFreeType = true;
+#endif
+    actionReversed = menu->addItem("Reverse video", -1, _("Ctrl+V"), actionReversed);
+    actionReversed->setChecked(reverseVideo);
 }
 
 HTextView::~HTextView() {
@@ -1285,8 +1351,8 @@ node *HTextView::find_node(node *n, int x, int y, node *&anchor, node::node_type
             }
         }
         for (text_node *t = n->wrap; t; t = t->next) {
-            if (x >= t->x && x < t->x + t->w &&
-                y >= t->y && y < t->y + t->h)
+            if (x >= t->x && x < t->x + t->tw &&
+                y < t->y && y > t->y - t->th)
                 return n;
         }
     }
@@ -1464,7 +1530,7 @@ void HTextView::layout(
                     addState(state, sfText);
 
                     n->wrap.add(new text_node(b, c - b, flags,
-                                x, y, wc, font->height()));
+                                x, y + 12, wc, font->height()));
                     if (y + (int)font->height() > (int)h)
                         h = y + font->height();
 
@@ -1720,10 +1786,10 @@ void HTextView::draw(Graphics &g, node *n1, bool isHref) {
             for (text_node *t = n->wrap; t; t = t->next) {
                 flagFont(t->fl);
                 g.setFont(font);
-                g.drawChars(t->text, 0, t->len, t->x - tx, t->y + font->ascent() - ty);
+                int y = t->y + t->th - font->height() - ty - 5;
+                g.drawChars(t->text, 0, t->len, t->x - tx, y);
                 if (isHref) {
-                    g.drawLine(t->x - tx, t->y - ty + font->ascent() + 1,
-                               t->x + t->w - tx, t->y - ty + font->ascent() + 1);
+                    g.drawLine(t->x - tx, y + 1, t->x + t->tw - tx, y + 1);
                 }
             }
             break;
@@ -1749,7 +1815,7 @@ void HTextView::draw(Graphics &g, node *n1, bool isHref) {
             break;
 
         case node::li:
-            g.fillArc(n->xr - tx, n->yr + (font->height() - 7) / 2 - ty, 7, 7, 0, 360 * 64);
+            g.fillArc(n->xr - tx, n->yr - ty - 2, 7, 7, 0, 360 * 64);
             if (n->container)
                 draw(g, n->container, isHref);
             break;
@@ -1781,6 +1847,34 @@ bool HTextView::handleKey(const XKeyEvent &key) {
                 actionPerformed(actionBrowser);
                 return true;
             }
+            if (k == XK_r) {
+                actionPerformed(actionReload);
+                return true;
+            }
+            if (k == XK_i) {
+                actionPerformed(actionLink[0]);
+                return true;
+            }
+            if (k == XK_m) {
+                actionPerformed(actionLink[4]);
+                return true;
+            }
+            if (k == XK_t) {
+                actionPerformed(actionLink[6]);
+                return true;
+            }
+            if (k == XK_w) {
+                actionPerformed(actionLink[7]);
+                return true;
+            }
+            if (k == XK_v) {
+                actionPerformed(actionReversed);
+                return true;
+            }
+            if (k == XK_x) {
+                actionPerformed(actionFreeType);
+                return true;
+            }
         }
         if ((m & xapp->AltMask) != 0 && (m & ~xapp->AltMask) == 0) {
             if (k == XK_Left || k == XK_KP_Left) {
@@ -1802,13 +1896,19 @@ void HTextView::handleButton(const XButtonEvent &button) {
 }
 
 void HTextView::handleClick(const XButtonEvent &up, int /*count*/) {
-    if (up.button == 3) {
+    if (up.button == Button3) {
         menu->popup(nullptr, nullptr, nullptr, up.x_root, up.y_root,
                     YPopupWindow::pfCanFlipVertical |
                     YPopupWindow::pfCanFlipHorizontal /*|
                     YPopupWindow::pfPopupMenu*/);
-        return ;
-    } else if (up.button == 1) {
+    }
+    else if (up.button == Button1 && up.x >= int(width()) - 20 && up.y <= 20 - ty) {
+        menu->popup(this, nullptr, nullptr,
+                    up.x_root - up.x + int(width()) - 1,
+                    up.y_root - up.y,
+                    YPopupWindow::pfFlipHorizontal);
+    }
+    else if (up.button == Button1) {
         node *anchor = nullptr;
         node *n = find_node(fRoot, up.x + tx, up.y + ty, anchor, node::anchor);
         if (n && anchor) {
@@ -1826,6 +1926,7 @@ public:
     ~FileView() {
         delete view;
         delete scroll;
+        FontTable::reset();
     }
 
     void activateURL(mstring url, bool relative = false);
@@ -1837,7 +1938,9 @@ public:
     }
 
     virtual void handleClose() {
-        app->exitLoop(0);
+        if (ignoreClose == false) {
+            app->exitLoop(0);
+        }
     }
     virtual void handleExpose(const XExposeEvent& expose) {
     }
@@ -1848,6 +1951,10 @@ private:
     void invalidPath(upath path, const char *reason);
     void run(const char* path, const char* arg1 = nullptr,
              const char* arg2 = nullptr, const char* arg3 = nullptr);
+
+    bool handleKey(const XKeyEvent &key) {
+        return view->handleKey(key);
+    }
 
     upath fPath;
     YApplication *app;
@@ -1862,9 +1969,11 @@ FileView::FileView(YApplication *iapp, int argc, char **argv)
     : fPath(), app(iapp), view(nullptr), scroll(nullptr)
 {
     setDND(true);
+    setStyle(wsNoExpose);
+    setTitle("IceHelp");
 
     scroll = new YScrollView(this);
-    view = new HTextView(this, scroll, this);
+    view = new HTextView(this, scroll, scroll);
     scroll->setView(view);
 
     view->show();
@@ -1987,8 +2096,8 @@ void FileView::activateURL(mstring url, bool relative) {
         path = fPath.path() + path;
     }
     view->addHistory(path);
-    setTitle(path + " -- IceHelp");
     fPath = path;
+    setNetName(path);
 }
 
 void FileView::openBrowser(mstring url) {
@@ -2066,6 +2175,7 @@ void FileView::invalidPath(upath path, const char *reason) {
     nodes.add(txt);
 
     view->setData(root);
+    view->repaint();
 }
 
 bool FileView::loadFile(upath path) {
@@ -2310,6 +2420,7 @@ static void print_help()
 int main(int argc, char **argv) {
     YLocale locale;
     const char *helpfile(nullptr);
+    bool nodelete = false, netping = false;
 
     for (char **arg = 1 + argv; arg < argv + argc; ++arg) {
         if (**arg == '-') {
@@ -2337,12 +2448,22 @@ int main(int argc, char **argv) {
                 print_version_exit(VERSION);
             else if (is_copying_switch(*arg))
                 print_copying_exit();
+            else if (is_long_switch(*arg, "noclose"))
+                ignoreClose = true;
             else if (is_long_switch(*arg, "nodelete"))
                 nodelete = true;
+            else if (is_long_switch(*arg, "noxft"))
+                noFreeType = true;
+            else if (is_long_switch(*arg, "reverse"))
+                reverseVideo = true;
+            else if (is_long_switch(*arg, "netping"))
+                netping = true;
             else if (is_long_switch(*arg, "verbose"))
                 verbose = true;
             else if (is_long_switch(*arg, "sync")) {
-                /*ignore*/; }
+                YXApplication::synchronizeX11 = true; }
+            else if (is_long_switch(*arg, "logevents"))
+                toggleLogEvents();
             else {
                 char *dummy(nullptr);
                 if (GetArgument(dummy, "d", "display", arg, argv + argc)) {
@@ -2368,17 +2489,18 @@ int main(int argc, char **argv) {
     }
 
     XSetErrorHandler(handler);
-
     YXApplication app(&argc, &argv);
-
     FileView view(&app, argc, argv);
-    view.activateURL(helpfile);
-
     if (nodelete) {
         extern Atom _XA_WM_PROTOCOLS;
         XDeleteProperty(app.display(), view.handle(), _XA_WM_PROTOCOLS);
     }
-
+    if (netping) {
+        extern Atom _XA_NET_WM_PING, _XA_WM_DELETE_WINDOW;
+        Atom proto[] = { _XA_NET_WM_PING, _XA_WM_DELETE_WINDOW, };
+        XSetWMProtocols(app.display(), view.handle(), proto, 2 - nodelete);
+    }
+    view.activateURL(helpfile);
     view.show();
     app.mainLoop();
 
