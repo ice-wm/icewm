@@ -53,6 +53,7 @@ YFrameClient::YFrameClient(YWindow *parent, YFrameWindow *frame, Window win,
     fBorder = 0;
     fProtocols = 0;
     fColormap = colormap;
+    fDocked = false;
     fShaped = false;
     fTimedOut = false;
     fPinging = false;
@@ -347,11 +348,16 @@ bool YFrameClient::handleTimer(YTimer* timer) {
         fPingTimer = null;
         fPinging = false;
         fTimedOut = true;
-        if (fPid == 0 && !getNetWMPid(&fPid) && fFrame->owner()) {
+        if (fPid == 0 && !getNetWMPid(&fPid) && fFrame && fFrame->owner()) {
             fFrame->owner()->client()->getNetWMPid(&fPid);
         }
         if ( !destroyed()) {
-            if (fFrame->frameOption(YFrameWindow::foForcedClose)) {
+            if (fFrame == nullptr) {
+                if (isDocked() && killPid() == false) {
+                    XKillClient(xapp->display(), handle());
+                }
+            }
+            else if (fFrame->frameOption(YFrameWindow::foForcedClose)) {
                 if (killPid() == false) {
                     fFrame->wmKill();
                 }
@@ -464,7 +470,7 @@ void YFrameClient::setFrameState(FrameState state) {
     }
     else if (state != fSavedFrameState) {
         Atom iconic = (state == IconicState && getFrame()->isMinimized()
-                    && minimizeToDesktop && getFrame()->getMiniIcon())
+                       && getFrame()->getMiniIcon())
                     ? getFrame()->getMiniIcon()->iconWindow() : None;
         Atom arg[2] = { Atom(state), iconic };
         setProperty(_XA_WM_STATE, _XA_WM_STATE, arg, 2);
@@ -505,7 +511,7 @@ void YFrameClient::handleUnmap(const XUnmapEvent &unmap) {
             destroy = (adopted() && destroyed() == false && testDestroyed());
         }
     } while (unmanage && destroy);
-    if (unmanage) {
+    if (unmanage && isDocked() == false) {
         manager->unmanageClient(this);
     }
 }
@@ -1045,6 +1051,18 @@ void YFrameClient::actionPerformed(YAction action) {
     if (getFrame()) {
         getFrame()->actionPerformed(action, 0U);
     }
+    else if (isDocked()) {
+        if (action == actionClose) {
+            Window icon = iconWindowHint();
+            sendDelete();
+            XDestroyWindow(xapp->display(), handle());
+            if (icon != handle()) {
+                XDestroyWindow(xapp->display(), icon);
+            }
+            setDestroyed();
+            xapp->sync();
+        }
+    }
 }
 
 void YFrameClient::getNameHint() {
@@ -1120,6 +1138,55 @@ Pixmap YFrameClient::iconPixmapHint() const {
 
 Pixmap YFrameClient::iconMaskHint() const {
     return wmHint(IconMaskHint) ? fHints->icon_mask : None;
+}
+
+bool YFrameClient::isDockApp() const {
+    return isDockAppIcon() || isDockAppWindow();
+}
+
+bool YFrameClient::isDockAppIcon() const {
+    if ((wmHint(StateHint) && fHints->initial_state == WithdrawnState) ||
+        (fClassHint.res_class && 0 == strcmp(fClassHint.res_class, "DockApp")) ||
+        (fSizeHints &&
+         hasbits(fSizeHints->flags, USPosition | USSize) &&
+         fSizeHints->x == 0 && fSizeHints->width == 64 &&
+         fSizeHints->y == 0 && fSizeHints->height == 64 &&
+         fClassHint.res_name && 0 == strncmp(fClassHint.res_name, "wm", 2) &&
+         fClassHint.res_class && 0 == strncmp(fClassHint.res_class, "WM", 2)))
+    {
+        XWindowAttributes attr;
+        Window icon = iconWindowHint();
+        if (icon && XGetWindowAttributes(xapp->display(), icon, &attr)) {
+            if (attr.width <= 64 && attr.height <= 64) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool YFrameClient::isDockAppWindow() const {
+    if (fSizeHints &&
+        hasbits(fSizeHints->flags, PMinSize | PMaxSize) &&
+        fSizeHints->min_width == 64 && fSizeHints->min_height == 64 &&
+        fSizeHints->max_width == 64 && fSizeHints->max_height == 64 &&
+        iconWindowHint() == None &&
+        fClassHint.res_name && 0 == strncmp(fClassHint.res_name, "wm", 2) &&
+        fClassHint.res_class && 0 == strncmp(fClassHint.res_class, "WM", 2))
+    {
+        return true;
+    }
+    if (fSizeHints &&
+        hasbits(fSizeHints->flags, USPosition | USSize) &&
+        fSizeHints->x == 0 && fSizeHints->width == 64 &&
+        fSizeHints->y == 0 && fSizeHints->height == 64 &&
+        iconWindowHint() == None &&
+        fClassHint.res_name && 0 == strncmp(fClassHint.res_name, "wm", 2) &&
+        fClassHint.res_class && 0 == strncmp(fClassHint.res_class, "WM", 2))
+    {
+        return true;
+    }
+    return false;
 }
 
 void YFrameClient::getMwmHints() {
