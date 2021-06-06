@@ -1,11 +1,87 @@
-icewm -- history of user-visible changes.  2021-05-07
+icewm -- history of user-visible changes.  2021-06-07
+
+Release icewm-2.4.0 released 2021-06-07
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.3.4...2.4.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (23):
+      Prevent compiler warnings.
+      Don't reverse the alpha value, only the RGB color components.
+      Improve centrally placing transient windows over their leader window when
+        CenterTransientsOnOwner is enabled. Fix for when CenterLarge is true.
+      Support WM_TAKE_FOCUS by setting wsTakeFocus flag.
+      Add constructor with integer dimensions to YRect.
+      Support scrolling the pixmap of a GraphicsBuffer.
+      Improve icehelp colors and search in icehelp document with Ctrl+F and F3.
+      Cleanup manageClient and split it up in smaller functions.
+      Improve recovery from restart failures.
+      Add support for DockApps.
+      Consider AllWorkspaces to be equal to the active workspace, when
+        QuickSwitchGroupWorkspaces is enabled, for issue #589.
+      Support Ctrl+Mouse buttons to control dockapps.
+      Enforce that focus remains with IceTopWin for issue #593.
+      Move Dockapps with Ctrl+Button1. Honor order winoption for Dockapps.
+        Respect startClose winoption for Dockapps. Preserve Dockapps ordering
+        over restarts. Be resilient against a newly manage client exiting
+        immediately. Add support for Dockapps to icesh.
+      Only let icewm notify icewm-session at start and when not catchsegv.
+      Support forcedClose winoption on Dockapps.
+      Be pessimistic about the chances to locate a file icon on AntiX.
+      Prevent a compilerwarning.
+      Fix indentation and expand tabs.
+      Check parameter against null in createFromImage.
+      Reduce the bugs section to the essential and closes issue #592.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Agah Emir <agahemir986@gmail.com> (2):
+      Translated using Weblate (Turkish)
+      Translated using Weblate (Turkish)
+
+Gemineo <vistatec@gemineo.de> (2):
+      Translated using Weblate (German)
+      Translated using Weblate (German)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (2):
+      Translated using Weblate (Portuguese)
+      Translated using Weblate (Portuguese)
+
+Aleš Kastner <alkas@volny.cz> (1):
+      Translated using Weblate (Czech)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Davide Aiello <davide.aiello@novilingulists.com> (1):
+      Translated using Weblate (Italian)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Lucie Charrier <c.chalu@free.fr> (1):
+      Translated using Weblate (French)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com> (1):
+      Translated using Weblate (Lithuanian)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-2.3.4 released 2021-05-07
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.3.3...2.3.4
 
-Bert Gijsbers <gijsbers@science.uva.nl> (25):
+Bert Gijsbers <gijsbers@science.uva.nl> (26):
       Only use RTTI when debugging for issue ice-wm/icewm#48.
       Fix icesh exit code for #585.
       Add equality operators for lazy pointers.
@@ -38,6 +114,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (25):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.3.4 release
 
 David Medina <medipas@gmail.com> (1):
       Translated using Weblate (Catalan)
@@ -384,48 +461,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (13):
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
       Prepare 2.2.1 release
-
-
-Release icewm-2.2.0 released 2021-02-28
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.1.2...2.2.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (30):
-      If an application resizes itself partially outside the work area, then
-        move it back inside the work area, if possible, for issue #550.
-      Fix ignoreQuickSwitch winoption for focused windows for issue #552.
-      Call setlocale via YLocale for issue #553.
-      Fix CMake build for ylocale.cc.
-      Better fix for CMake build.
-      Add testpointer test to CMake.
-      Add testpointer.
-      Only reposition when resizing outside of bottom right corner to permit
-        negative positions in issue #550.
-      Define ice and itk libraries to reduce cmake build by a third.
-      Fix cmake test target and closes ice-wm/icewm#41.
-      Add clock format %H:%M and closes #554.
-      Drop support for nonICCCMconfigureRequest.
-      Fix for immediately redrawing after setting default clock format.
-      Simplify file read.
-      Fix test logoutMenu.
-      Add intmax and intmin to cfoption.
-      Improve YInputLine in YMsgBox and simplify creating a YMsgBox.
-      Remove bogus comment.
-      Fix modifying and saving of all preferences by menu in icewm.
-      Show the preferences comment line in the message box when modifying
-        preference. Allow to reset a key or string option in the preferences
-        menu. Check if message box operation equals OK. Remove a failed
-        preference modification from the modification save set.
-      Add compositor and replace read by executed.
-      Give each preference option a meaningful description.
-      make update-po
-      Permit undefinition of keys.
-      Show the bounds of integer options in the message box.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Improve merge of 'upstream/icewm-1-4-BRANCH'.
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.2.0 release
 
