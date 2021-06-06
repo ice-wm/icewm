@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-05-07 01:30+0200\n"
-"PO-Revision-Date: 2018-05-09 06:03+0000\n"
+"POT-Creation-Date: 2021-05-06 19:26+0200\n"
+"PO-Revision-Date: 2021-05-14 07:59+0000\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.opensuse.org/projects/icewm/"
 "icewm-1-4-branch/lt/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.6.2\n"
 
 #: src/aapm.cc:186 src/aapm.cc:465 src/aapm.cc:686 src/aapm.cc:810
 msgid " - Power"
@@ -47,11 +47,11 @@ msgstr "maitinimas:\t%s"
 
 #: src/aclock.cc:179
 msgid "CLOCK"
-msgstr ""
+msgstr "LAIKRODIS"
 
 #: src/aclock.cc:185
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: src/aclock.cc:186 src/themes.cc:80
 msgid "Default"
@@ -84,16 +84,13 @@ msgstr ""
 "Ram (laisva): %5.2f (%.2f) M"
 
 #: src/acpustatus.cc:306
-#, fuzzy, c-format
-#| msgid ""
-#| "\n"
-#| "Swap (free): %.2f (%.2f) M"
+#, c-format
 msgid ""
 "\n"
 "Swap (free): %.3f (%.3f) G"
 msgstr ""
 "\n"
-"Swap (laisva): %.2f (%.2f) M"
+"Swap (laisva): %.3f (%.3f) G"
 
 #: src/acpustatus.cc:312
 #, c-format
@@ -122,16 +119,13 @@ msgid "Load: "
 msgstr "Apkrova: "
 
 #: src/acpustatus.cc:363
-#, fuzzy, c-format
-#| msgid ""
-#| "\n"
-#| "Ram (free): %5.2f (%.2f) M"
+#, c-format
 msgid ""
 "\n"
 "Ram (user): %5.3f (%.3f) G"
 msgstr ""
 "\n"
-"Ram (laisva): %5.2f (%.2f) M"
+"Ram (laisva): %5.3f (%.3f) G"
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
@@ -146,11 +140,11 @@ msgstr ""
 
 #: src/acpustatus.cc:662
 msgid "_Combine"
-msgstr ""
+msgstr "_Apjungti"
 
 #: src/acpustatus.cc:664
 msgid "_Separate"
-msgstr ""
+msgstr "_Atskirti"
 
 #: src/amailbox.cc:62
 #, c-format
@@ -311,171 +305,171 @@ msgstr ""
 msgid "Workspace: "
 msgstr "Darbalaukis: "
 
-#: src/icehelp.cc:1281
+#: src/icehelp.cc:1278
 msgid "Back"
 msgstr "Atgal"
 
-#: src/icehelp.cc:1281
+#: src/icehelp.cc:1278
 msgid "Alt+Left"
 msgstr "Alt + Kairėn"
 
-#: src/icehelp.cc:1283
+#: src/icehelp.cc:1280
 msgid "Forward"
 msgstr "Pirmyn"
 
-#: src/icehelp.cc:1283
+#: src/icehelp.cc:1280
 msgid "Alt+Right"
 msgstr "Alt + Dešinėn"
 
-#: src/icehelp.cc:1286
+#: src/icehelp.cc:1283
 msgid "Previous"
 msgstr "Ankstesnis"
 
-#: src/icehelp.cc:1287
+#: src/icehelp.cc:1284
 msgid "Next"
 msgstr "Tolesnis"
 
-#: src/icehelp.cc:1289
+#: src/icehelp.cc:1286
 msgid "Contents"
 msgstr "Turinys"
 
-#: src/icehelp.cc:1290
+#: src/icehelp.cc:1287
 msgid "Index"
 msgstr "Rodyklė"
 
-#: src/icehelp.cc:1293
+#: src/icehelp.cc:1290
 msgid "Open in Browser"
 msgstr ""
 
-#: src/icehelp.cc:1293
+#: src/icehelp.cc:1290
 #, fuzzy
 #| msgid "Ctrl+Q"
 msgid "Ctrl+B"
 msgstr "Vald+Q"
 
-#: src/icehelp.cc:1295
+#: src/icehelp.cc:1292
 msgid "Reload"
 msgstr ""
 
-#: src/icehelp.cc:1295 src/icesame.cc:60
+#: src/icehelp.cc:1292 src/icesame.cc:60
 msgid "Ctrl+R"
 msgstr "Vald+R"
 
-#: src/icehelp.cc:1296 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
+#: src/icehelp.cc:1293 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
 msgid "Close"
 msgstr "Užverti"
 
-#: src/icehelp.cc:1296 src/icesame.cc:62 src/iceview.cc:59
+#: src/icehelp.cc:1293 src/icesame.cc:62 src/iceview.cc:59
 msgid "Ctrl+Q"
 msgstr "Vald+Q"
 
-#: src/icehelp.cc:1301
+#: src/icehelp.cc:1298
 msgid "Icewm(1)"
 msgstr ""
 
-#: src/icehelp.cc:1301
+#: src/icehelp.cc:1298
 #, fuzzy
 #| msgid "Ctrl+Q"
 msgid "Ctrl+I"
 msgstr "Vald+Q"
 
-#: src/icehelp.cc:1303
+#: src/icehelp.cc:1300
 msgid "Icewmbg(1)"
 msgstr ""
 
-#: src/icehelp.cc:1305
+#: src/icehelp.cc:1302
 msgid "Icesound(1)"
 msgstr ""
 
-#: src/icehelp.cc:1307
+#: src/icehelp.cc:1304
 msgid "FAQ"
-msgstr ""
+msgstr "D.U.K."
 
-#: src/icehelp.cc:1309
+#: src/icehelp.cc:1306
 msgid "Manual"
 msgstr ""
 
-#: src/icehelp.cc:1309
+#: src/icehelp.cc:1306
 #, fuzzy
 #| msgid "Ctrl+Q"
 msgid "Ctrl+M"
 msgstr "Vald+Q"
 
-#: src/icehelp.cc:1311
+#: src/icehelp.cc:1308
 msgid "Support"
 msgstr ""
 
-#: src/icehelp.cc:1313
+#: src/icehelp.cc:1310
 #, fuzzy
 msgid "Theme Howto"
 msgstr "Apipavidalinimo kūrėjas:"
 
-#: src/icehelp.cc:1313 src/iceview.cc:56
+#: src/icehelp.cc:1310 src/iceview.cc:56
 msgid "Ctrl+T"
 msgstr "Vald+T"
 
-#: src/icehelp.cc:1315
+#: src/icehelp.cc:1312
 msgid "Website"
 msgstr ""
 
-#: src/icehelp.cc:1315 src/iceview.cc:57
+#: src/icehelp.cc:1312 src/iceview.cc:57
 msgid "Ctrl+W"
 msgstr "Vald+W"
 
-#: src/icehelp.cc:1317
+#: src/icehelp.cc:1314
 msgid "Github"
 msgstr ""
 
-#: src/icehelp.cc:1321 src/yinputline.cc:19
+#: src/icehelp.cc:1318 src/yinputline.cc:19
 msgid "Ctrl+X"
 msgstr "Vald+X"
 
-#: src/icehelp.cc:1326 src/yinputline.cc:20
+#: src/icehelp.cc:1323 src/yinputline.cc:20
 msgid "Ctrl+V"
 msgstr "Vald+V"
 
-#: src/icehelp.cc:2080
+#: src/icehelp.cc:2077
 #, fuzzy
 msgid "Unsupported protocol."
 msgstr "Nepalaikoma sąsaja: %s."
 
-#: src/icehelp.cc:2159
+#: src/icehelp.cc:2156
 #, c-format
 msgid "Invalid path: %s\n"
 msgstr "Neteisingas kelias: %s\n"
 
-#: src/icehelp.cc:2183
+#: src/icehelp.cc:2180
 msgid "Path does not refer to a file."
 msgstr ""
 
-#: src/icehelp.cc:2188
+#: src/icehelp.cc:2185
 msgid "Failed to open file for reading."
 msgstr ""
 
-#: src/icehelp.cc:2217
+#: src/icehelp.cc:2214
 #, fuzzy
 msgid "Failed to create a temporary file"
 msgstr "Nepavyko įrašyti istorijos bylos %s: %s"
 
-#: src/icehelp.cc:2310
+#: src/icehelp.cc:2307
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr ""
 
-#: src/icehelp.cc:2333
+#: src/icehelp.cc:2330
 #, fuzzy, c-format
 msgid "Failed to decompress %s"
 msgstr "Nepavyko įrašyti istorijos bylos %s: %s"
 
-#: src/icehelp.cc:2341
+#: src/icehelp.cc:2338
 msgid "Could not locate curl or wget in PATH"
 msgstr ""
 
-#: src/icehelp.cc:2345
+#: src/icehelp.cc:2342
 msgid "Unsafe characters in URL"
 msgstr ""
 
-#: src/icehelp.cc:2382
+#: src/icehelp.cc:2379
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -513,7 +507,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icehelp.cc:2472
+#: src/icehelp.cc:2469
 #, fuzzy, c-format
 msgid "Ignoring option '%s'"
 msgstr "Nežinomas veiksmas: „%s“"
@@ -1567,7 +1561,7 @@ msgstr "_Fokusavimas"
 
 #: src/wmprog.cc:439
 msgid "_Preferences"
-msgstr ""
+msgstr "_Nuostatos"
 
 #: src/wmprog.cc:444
 msgid "_Themes"
@@ -2231,10 +2225,8 @@ msgstr "Žaidimai"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:187
-#, fuzzy
-#| msgid "Language:"
 msgid "Languages"
-msgstr "Kalba:"
+msgstr "Kalbos"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:189
@@ -2289,7 +2281,7 @@ msgstr "Įvairialypė terpė"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo or Education
 #: src/fdospecgen.h:209
 msgid "Music"
-msgstr ""
+msgstr "Muzika"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:211
@@ -2299,7 +2291,7 @@ msgstr "Tinklas"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:213
 msgid "News"
-msgstr ""
+msgstr "Naujienos"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education;Math or Science;Math
 #: src/fdospecgen.h:215

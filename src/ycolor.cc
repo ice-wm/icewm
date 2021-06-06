@@ -50,11 +50,11 @@ public:
         if (sizeof(unsigned long) < 8) {
             return (r & 0xFF00) << 16 | (g & 0xFF00) << 8 | ((b >> 8) & 0xFF)
                  | ((a & 0xFF) << 24);
-	}
+        }
         else {
             return (uint64_t) r << 32 | (uint64_t) g << 16 | b
                  | (uint64_t) (a & 0xFF) << 48;
-	}
+        }
     }
     unsigned short red() const {
         if (sizeof(unsigned long) < 8)
@@ -263,7 +263,7 @@ YColor& YColor::reverse() {
         fPixel = cache.get(0xFFFF - fPixel->red(),
                            0xFFFF - fPixel->green(),
                            0xFFFF - fPixel->blue(),
-                           0xFFFF - fPixel->alpha());
+                           fPixel->alpha());
     }
     return *this;
 }

@@ -16,6 +16,7 @@ class YFrameClient;
 class YFrameWindow;
 class YSMListener;
 class SwitchWindow;
+class DockApp;
 class IApp;
 
 class EdgeSwitch: public YWindow, public YTimerListener {
@@ -93,7 +94,7 @@ public:
 
     YFrameWindow *findFrame(Window win);
     YFrameClient *findClient(Window win);
-    void manageClient(Window win, bool mapClient = false);
+    void manageClient(YFrameClient* client, bool mapClient = false);
     void unmanageClient(YFrameClient *client);
     void destroyedClient(Window win);
     void mapClient(Window win);
@@ -108,6 +109,7 @@ public:
     void removeClientFrame(YFrameWindow *frame);
 
     void updateScreenSize(XEvent *event);
+    void getWorkArea(int *mx, int *my, int *Mx, int *My);
     void getWorkArea(const YFrameWindow *frame, int *mx, int *my, int *Mx, int *My, int xiscreen = -1);
     void getWorkAreaSize(YFrameWindow *frame, int *Mw,int *Mh);
 
@@ -255,7 +257,9 @@ public:
     enum WMState { wmSTARTUP, wmRUNNING, wmSHUTDOWN };
 
     WMState wmState() const { return fWmState; }
+    bool isStartup() const { return fWmState == wmSTARTUP; }
     bool isRunning() const { return fWmState == wmRUNNING; }
+    bool notRunning() const { return fWmState != wmRUNNING; }
     bool fullscreenEnabled() { return fFullscreenEnabled; }
     void setFullscreenEnabled(bool enable) { fFullscreenEnabled = enable; }
     const UserTime& lastUserTime() const { return fLastUserTime; }
@@ -282,6 +286,8 @@ private:
         YFrameWindow *frame;
     };
 
+    YFrameClient* allocateClient(Window win, bool mapClient);
+    YFrameWindow* allocateFrame(YFrameClient* client);
     void updateArea(long workspace, int screen_number, int l, int t, int r, int b);
     bool handleWMKey(const XKeyEvent &key, KeySym k, unsigned vm);
     void setWmState(WMState newWmState);
@@ -352,6 +358,7 @@ private:
     int fDefaultKeyboard;
     SwitchWindow* fSwitchWindow;
     lazy<YTimer> fSwitchDownTimer;
+    DockApp* fDockApp;
 };
 
 extern YWindowManager *manager;
