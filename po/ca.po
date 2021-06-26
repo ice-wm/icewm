@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-17 17:23+0200\n"
+"POT-Creation-Date: 2021-06-26 11:41+0200\n"
 "PO-Revision-Date: 2021-06-17 17:58+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/ca/>\n"
+"Language-Team: Catalan <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -587,81 +587,81 @@ msgstr "El mateix joc"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Per a l'ajuda, consulteu la pàgina del manual icesh(1).\n"
 
-#: src/icesh.cc:1508
+#: src/icesh.cc:1520
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Símbols anomenats del domini \"%s\" (gamma numèrica: %ld-%ld):\n"
 
-#: src/icesh.cc:1566
+#: src/icesh.cc:1578
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Escriptori fora de l'abast: %ld"
 
-#: src/icesh.cc:1587
+#: src/icesh.cc:1599
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Nom d'escriptori no vàlid: %s"
 
-#: src/icesh.cc:1872
+#: src/icesh.cc:1884
 msgid "GNOME window layer"
 msgstr "Capa de finestra del GNOME"
 
-#: src/icesh.cc:1873
+#: src/icesh.cc:1885
 msgid "IceWM tray option"
 msgstr "Opció de la safata de l'IceWM"
 
-#: src/icesh.cc:1874
+#: src/icesh.cc:1886
 msgid "Gravity symbols"
 msgstr "Símbols de gravetat"
 
-#: src/icesh.cc:1875
+#: src/icesh.cc:1887
 msgid "Motif functions"
 msgstr "Funcions del Motif"
 
-#: src/icesh.cc:1876
+#: src/icesh.cc:1888
 msgid "Motif decorations"
 msgstr "Decoracions del Motif"
 
-#: src/icesh.cc:1877
+#: src/icesh.cc:1889
 msgid "EWMH window state"
 msgstr "Estat de la finestra de l'EWMH"
 
-#: src/icesh.cc:1959 src/icesh.cc:2032
+#: src/icesh.cc:1971 src/icesh.cc:2044
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "Escriptori #%d: \"%s\"\n"
 
-#: src/icesh.cc:2267 src/icesh.cc:3584 src/icesh.cc:4057
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Estat no vàlid: %s."
 
-#: src/icesh.cc:3119
+#: src/icesh.cc:3131
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "No es pot obtenir una geometria de finestra de 0x%lx."
 
-#: src/icesh.cc:3144
+#: src/icesh.cc:3156
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Xinerama no vàlid: %s."
 
-#: src/icesh.cc:3191 src/icesh.cc:3241
+#: src/icesh.cc:3203 src/icesh.cc:3253
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Argument no vàlid: %s"
 
-#: src/icesh.cc:3207
+#: src/icesh.cc:3219
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "L'acció \"%s\" necessita com a mínim %d arguments."
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3228
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Expressió no vàlida: %s"
 
-#: src/icesh.cc:3227 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1067
 #: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -669,35 +669,35 @@ msgstr ""
 "No es pot obrir la pantalla: %s. X ha d'estar funcionant i $DISPLAY "
 "configurat."
 
-#: src/icesh.cc:3341
+#: src/icesh.cc:3355
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "No esperat: %s."
 
-#: src/icesh.cc:3370
+#: src/icesh.cc:3384
 msgid "No windows found."
 msgstr "No s'ha trobat cap finestra."
 
-#: src/icesh.cc:3385
+#: src/icesh.cc:3399
 msgid "No actions specified."
 msgstr "No s'ha especificat cap acció."
 
-#: src/icesh.cc:3501
+#: src/icesh.cc:3529
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Identificador de finestra no vàlid: %s"
 
-#: src/icesh.cc:3518
+#: src/icesh.cc:3546
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "PID no vàlid: %s"
 
-#: src/icesh.cc:3554
+#: src/icesh.cc:3582
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Capa no vàlida: %s."
 
-#: src/icesh.cc:4365
+#: src/icesh.cc:4393
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Acció desconeguda: \"%s\""
@@ -1418,18 +1418,18 @@ msgstr ""
 "Deixa de gestionar totes les aplicacions\n"
 "i reinicia com a terminal. Endavant?"
 
-#: src/wmapp.cc:1073 src/yxapp.cc:1033
+#: src/wmapp.cc:1068 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<cap>"
 
-#: src/wmapp.cc:1386
+#: src/wmapp.cc:1381
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Id de client per usar quan es contacti amb el gestor "
 "de sessions.\n"
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1387
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1440,7 +1440,7 @@ msgstr ""
 "  --debug-z           Imprimeix els missatges de depuració sobre l'apilament "
 "de finestres.\n"
 
-#: src/wmapp.cc:1400
+#: src/wmapp.cc:1395
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1461,7 +1461,7 @@ msgstr ""
 "  --rewrite-preferences  Actualitza un fitxer de preferències existent.\n"
 "  --trace=conf,icon   Traça els camins usats per carregar la configuració.\n"
 
-#: src/wmapp.cc:1410
+#: src/wmapp.cc:1405
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1521,26 +1521,26 @@ msgstr ""
 "%s.\n"
 "\n"
 
-#: src/wmapp.cc:1472
+#: src/wmapp.cc:1467
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s directoris de configuració:\n"
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1549
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s opcions configurades:%s\n"
 
-#: src/wmapp.cc:1635
+#: src/wmapp.cc:1630
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opció no reconeguda: \"%s\"."
 
-#: src/wmapp.cc:1681
+#: src/wmapp.cc:1676
 msgid "Confirm Logout"
 msgstr "Confirmació de la sortida"
 
-#: src/wmapp.cc:1682
+#: src/wmapp.cc:1677
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1633,7 +1633,7 @@ msgstr "_Reinicia l'icewm"
 msgid "_About"
 msgstr "_Quant a"
 
-#: src/wmframe.cc:1439
+#: src/wmframe.cc:1441
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1641,15 +1641,15 @@ msgstr ""
 "ATENCIÓ! Tots els canvis no desats es perdran en\n"
 "matar el client. Encara voleu continuar?"
 
-#: src/wmframe.cc:1446
+#: src/wmframe.cc:1448
 msgid "Kill Client: "
 msgstr "Mata el client: "
 
-#: src/wmmgr.cc:3254
+#: src/wmmgr.cc:3257
 msgid "Missing program setxkbmap"
 msgstr "Manca el programa setxkbmap."
 
-#: src/wmmgr.cc:3255
+#: src/wmmgr.cc:3258
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Per canviar el teclat, si us plau, instal·leu setxkbmap."
 

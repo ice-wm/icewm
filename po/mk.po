@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-17 17:23+0200\n"
+"POT-Creation-Date: 2021-06-26 11:41+0200\n"
 "PO-Revision-Date: 2006-01-26 23:29+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team:  <mk@li.org>\n"
@@ -557,90 +557,90 @@ msgstr "Истата игра"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 
-#: src/icesh.cc:1508
+#: src/icesh.cc:1520
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Именувани симболи од доменот „%s“ (нумерички опсег: %ld-%ld):\n"
 
-#: src/icesh.cc:1566
+#: src/icesh.cc:1578
 #, fuzzy, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Работниот простор е надвор од опсегот: %d"
 
-#: src/icesh.cc:1587
+#: src/icesh.cc:1599
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Невалидно име на работен простор: „%s“"
 
-#: src/icesh.cc:1872
+#: src/icesh.cc:1884
 msgid "GNOME window layer"
 msgstr "Слој на GNOME-прозорец"
 
-#: src/icesh.cc:1873
+#: src/icesh.cc:1885
 msgid "IceWM tray option"
 msgstr "Опција за сис. лента на IceWM"
 
-#: src/icesh.cc:1874
+#: src/icesh.cc:1886
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:1875
+#: src/icesh.cc:1887
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif functions"
 msgstr "Омилени апликации"
 
-#: src/icesh.cc:1876
+#: src/icesh.cc:1888
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif decorations"
 msgstr "Омилени апликации"
 
-#: src/icesh.cc:1877
+#: src/icesh.cc:1889
 #, fuzzy
 #| msgid "GNOME window state"
 msgid "EWMH window state"
 msgstr "Состојба на GNOME-прозорец"
 
-#: src/icesh.cc:1959 src/icesh.cc:2032
+#: src/icesh.cc:1971 src/icesh.cc:2044
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "работен простор бр. %d: „%s“\n"
 
-#: src/icesh.cc:2267 src/icesh.cc:3584 src/icesh.cc:4057
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:3119
+#: src/icesh.cc:3131
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3144
+#: src/icesh.cc:3156
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid Xinerama: `%s'."
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:3191 src/icesh.cc:3241
+#: src/icesh.cc:3203 src/icesh.cc:3253
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:3207
+#: src/icesh.cc:3219
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Дејството „%s“ бара најмалку %d аргументи."
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3228
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Невалиден израз: „%s“"
 
-#: src/icesh.cc:3227 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1067
 #: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -648,37 +648,37 @@ msgstr ""
 "Не можам да го отворам екранот: %s. X мора да работи и $DISPLAY мора да е "
 "поставено."
 
-#: src/icesh.cc:3341
+#: src/icesh.cc:3355
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "Неочекуван клучен збор: %s"
 
-#: src/icesh.cc:3370
+#: src/icesh.cc:3384
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:3385
+#: src/icesh.cc:3399
 msgid "No actions specified."
 msgstr "Нема зададени дејства."
 
-#: src/icesh.cc:3501
+#: src/icesh.cc:3529
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Невалиден ид. на прозорец: „%s“"
 
-#: src/icesh.cc:3518
+#: src/icesh.cc:3546
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:3554
+#: src/icesh.cc:3582
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:4365
+#: src/icesh.cc:4393
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Непознато дејство: „%s“"
@@ -1319,23 +1319,23 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1073 src/yxapp.cc:1033
+#: src/wmapp.cc:1068 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<нема>"
 
-#: src/wmapp.cc:1386
+#: src/wmapp.cc:1381
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1387
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1400
+#: src/wmapp.cc:1395
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1347,7 +1347,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1410
+#: src/wmapp.cc:1405
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1406,26 +1406,26 @@ msgstr ""
 "Посете ја страницата https://ice-wm.org/ за да известите за бубачки,\n"
 "за барања за поддршка, коментари итн...\n"
 
-#: src/wmapp.cc:1472
+#: src/wmapp.cc:1467
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1549
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Непрепознаена опција: %s\n"
 
-#: src/wmapp.cc:1635
+#: src/wmapp.cc:1630
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Непрепознаена опција: %s\n"
 
-#: src/wmapp.cc:1681
+#: src/wmapp.cc:1676
 msgid "Confirm Logout"
 msgstr "Потврда на одјавувањето"
 
-#: src/wmapp.cc:1682
+#: src/wmapp.cc:1677
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1517,7 +1517,7 @@ msgstr "_Рестартирај го icewm"
 msgid "_About"
 msgstr "З_а"
 
-#: src/wmframe.cc:1439
+#: src/wmframe.cc:1441
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1525,15 +1525,15 @@ msgstr ""
 "ВНИМАНИЕ! Сите неснимени промени ќе бидат изгубени кога\n"
 "овој клиент ќе биде прекинат. Дали сакате да продолжите?"
 
-#: src/wmframe.cc:1446
+#: src/wmframe.cc:1448
 msgid "Kill Client: "
 msgstr "Прекини клиент: "
 
-#: src/wmmgr.cc:3254
+#: src/wmmgr.cc:3257
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3255
+#: src/wmmgr.cc:3258
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

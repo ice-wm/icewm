@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm-1.2.22\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-17 17:23+0200\n"
+"POT-Creation-Date: 2021-06-26 11:41+0200\n"
 "PO-Revision-Date: 2021-06-18 07:58+0000\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
-"Language-Team: Slovak <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/sk/>\n"
+"Language-Team: Slovak <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -585,81 +585,81 @@ msgstr "Rovnaká hra"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Pomoc nájdete na manuálovej stránke cesh(1).\n"
 
-#: src/icesh.cc:1508
+#: src/icesh.cc:1520
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Pomenované znaky domény `%s' (číselný rozsah: %ld-%ld):\n"
 
-#: src/icesh.cc:1566
+#: src/icesh.cc:1578
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Pracovná plocha je mimo rozsah: %ld"
 
-#: src/icesh.cc:1587
+#: src/icesh.cc:1599
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Neplatný názov plochy: `%s'"
 
-#: src/icesh.cc:1872
+#: src/icesh.cc:1884
 msgid "GNOME window layer"
 msgstr "GNOME vrstva okna"
 
-#: src/icesh.cc:1873
+#: src/icesh.cc:1885
 msgid "IceWM tray option"
 msgstr "IceWM nastavenia lišty"
 
-#: src/icesh.cc:1874
+#: src/icesh.cc:1886
 msgid "Gravity symbols"
 msgstr "Gravitačné symboly"
 
-#: src/icesh.cc:1875
+#: src/icesh.cc:1887
 msgid "Motif functions"
 msgstr "Funkcie Motif"
 
-#: src/icesh.cc:1876
+#: src/icesh.cc:1888
 msgid "Motif decorations"
 msgstr "Dekorácie Motif"
 
-#: src/icesh.cc:1877
+#: src/icesh.cc:1889
 msgid "EWMH window state"
 msgstr "EWMH stav okna"
 
-#: src/icesh.cc:1959 src/icesh.cc:2032
+#: src/icesh.cc:1971 src/icesh.cc:2044
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "pracovná plocha #%d: `%s'\n"
 
-#: src/icesh.cc:2267 src/icesh.cc:3584 src/icesh.cc:4057
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Neplatný stav: `%s'."
 
-#: src/icesh.cc:3119
+#: src/icesh.cc:3131
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Nie je možné získať geometriu okna 0x%lx"
 
-#: src/icesh.cc:3144
+#: src/icesh.cc:3156
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Neplatná Xinerama: `%s'."
 
-#: src/icesh.cc:3191 src/icesh.cc:3241
+#: src/icesh.cc:3203 src/icesh.cc:3253
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Neplatná hodnota: `%s'"
 
-#: src/icesh.cc:3207
+#: src/icesh.cc:3219
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Akcia `%s' vyžaduje najmenej %d argumentov."
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3228
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Neplatný výraz: `%s'"
 
-#: src/icesh.cc:3227 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1067
 #: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -667,35 +667,35 @@ msgstr ""
 "Neide otvoriť displej: %s. Server X musí byť spustený a premenná $DISPLAY "
 "nastavená."
 
-#: src/icesh.cc:3341
+#: src/icesh.cc:3355
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Neočakávané: `%s'."
 
-#: src/icesh.cc:3370
+#: src/icesh.cc:3384
 msgid "No windows found."
 msgstr "Neboli nájdené žiadne okná."
 
-#: src/icesh.cc:3385
+#: src/icesh.cc:3399
 msgid "No actions specified."
 msgstr "Nebola zadaná žiadna akcia."
 
-#: src/icesh.cc:3501
+#: src/icesh.cc:3529
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Neplatné označenie okna: `%s'"
 
-#: src/icesh.cc:3518
+#: src/icesh.cc:3546
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Neplatné PID: `%s'"
 
-#: src/icesh.cc:3554
+#: src/icesh.cc:3582
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Neplatná vrstva: `%s'."
 
-#: src/icesh.cc:4365
+#: src/icesh.cc:4393
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Neznáma akcia: `%s'"
@@ -1414,18 +1414,18 @@ msgstr ""
 "Zrušiť správu všetkých aplikácií a reštartovať\n"
 "ako terminál. Pokračovať?"
 
-#: src/wmapp.cc:1073 src/yxapp.cc:1033
+#: src/wmapp.cc:1068 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<žiadny>"
 
-#: src/wmapp.cc:1386
+#: src/wmapp.cc:1381
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      ID klienta, ktoré bude použité pri kontaktovaní "
 "správcu sedenia.\n"
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1387
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1435,7 +1435,7 @@ msgstr ""
 "  --debug             Vypíše všeobecné ladiace správy.\n"
 "  --debug-z           Vypíše ladiace správy týkajúce naskladania okien.\n"
 
-#: src/wmapp.cc:1400
+#: src/wmapp.cc:1395
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1455,7 +1455,7 @@ msgstr ""
 "  --rewrite-preferences  Aktualizuje existujúci súbor predvolieb.\n"
 "  --trace=conf,icon   Stopové cesty použité na načítanie konfigurácie.\n"
 
-#: src/wmapp.cc:1410
+#: src/wmapp.cc:1405
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1515,26 +1515,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1472
+#: src/wmapp.cc:1467
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s konfiguračné adresáre:\n"
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1549
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s nakonfigurované voľby: %s\n"
 
-#: src/wmapp.cc:1635
+#: src/wmapp.cc:1630
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nerozpoznaná voľba: '%s'."
 
-#: src/wmapp.cc:1681
+#: src/wmapp.cc:1676
 msgid "Confirm Logout"
 msgstr "Potvrdiť odhlásenie"
 
-#: src/wmapp.cc:1682
+#: src/wmapp.cc:1677
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1627,7 +1627,7 @@ msgstr "_Reštartovať icewm"
 msgid "_About"
 msgstr "O _aplikacii"
 
-#: src/wmframe.cc:1439
+#: src/wmframe.cc:1441
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1635,15 +1635,15 @@ msgstr ""
 "VAROVANIE! Ak bude tento klient zabitý, budú\n"
 "všetky neuložené dáta stratené. Chcete pokračovať?"
 
-#: src/wmframe.cc:1446
+#: src/wmframe.cc:1448
 msgid "Kill Client: "
 msgstr "Zabiť klienta: "
 
-#: src/wmmgr.cc:3254
+#: src/wmmgr.cc:3257
 msgid "Missing program setxkbmap"
 msgstr "Chýba program setxkbmap"
 
-#: src/wmmgr.cc:3255
+#: src/wmmgr.cc:3258
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Pre prepínanie klávesníc nainštalujte setxkbmap."
 

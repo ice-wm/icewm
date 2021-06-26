@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.12\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-17 17:23+0200\n"
+"POT-Creation-Date: 2021-06-26 11:41+0200\n"
 "PO-Revision-Date: 2021-05-29 16:58+0000\n"
 "Last-Translator: Agah Emir <agahemir986@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -594,117 +594,117 @@ msgstr "Benzer Oyun"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Yardım için lütfen icesh(1) man sayfasına bakın.\n"
 
-#: src/icesh.cc:1508
+#: src/icesh.cc:1520
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr ""
 "Alan adının isimlendirilmiş sembolleri`%s' (numerik aralık: %ld-%ld):\n"
 
-#: src/icesh.cc:1566
+#: src/icesh.cc:1578
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Çalışma alanı limit dışında: %ld"
 
-#: src/icesh.cc:1587
+#: src/icesh.cc:1599
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Hatalı çalışma alanı adı: «%s»"
 
-#: src/icesh.cc:1872
+#: src/icesh.cc:1884
 msgid "GNOME window layer"
 msgstr "GNOME pencere katmanı"
 
-#: src/icesh.cc:1873
+#: src/icesh.cc:1885
 msgid "IceWM tray option"
 msgstr "IceWM tray seçeneği"
 
-#: src/icesh.cc:1874
+#: src/icesh.cc:1886
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:1875
+#: src/icesh.cc:1887
 msgid "Motif functions"
 msgstr "Motif fonksiyonları"
 
-#: src/icesh.cc:1876
+#: src/icesh.cc:1888
 msgid "Motif decorations"
 msgstr "Motif dekorasyonları"
 
-#: src/icesh.cc:1877
+#: src/icesh.cc:1889
 msgid "EWMH window state"
 msgstr "EWMH pencere durumu"
 
-#: src/icesh.cc:1959 src/icesh.cc:2032
+#: src/icesh.cc:1971 src/icesh.cc:2044
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "çalışma alanı #%d: «%s»\n"
 
-#: src/icesh.cc:2267 src/icesh.cc:3584 src/icesh.cc:4057
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Geçersiz durum: '%s'."
 
-#: src/icesh.cc:3119
+#: src/icesh.cc:3131
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "0x%lx penceresinin geometrisi alınamıyor"
 
-#: src/icesh.cc:3144
+#: src/icesh.cc:3156
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid Xinerama: `%s'."
 msgstr "Hatalı argüman: «%s»."
 
-#: src/icesh.cc:3191 src/icesh.cc:3241
+#: src/icesh.cc:3203 src/icesh.cc:3253
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Geçersiz argüman: '%s'"
 
-#: src/icesh.cc:3207
+#: src/icesh.cc:3219
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "«%s» işlemi en az %d argüman gerektirir."
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3228
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Hatalı ifade: «%s»"
 
-#: src/icesh.cc:3227 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1067
 #: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Display açılamıyor: %s. X çalışıyor ve $DISPLAY ayarlanmış olmalı"
 
-#: src/icesh.cc:3341
+#: src/icesh.cc:3355
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Beklenmeyen: '%s'."
 
-#: src/icesh.cc:3370
+#: src/icesh.cc:3384
 msgid "No windows found."
 msgstr "Pencere bulunamadı."
 
-#: src/icesh.cc:3385
+#: src/icesh.cc:3399
 msgid "No actions specified."
 msgstr "İşlem belirtilmedi."
 
-#: src/icesh.cc:3501
+#: src/icesh.cc:3529
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Hatalı pencere belirteci: «%s»"
 
-#: src/icesh.cc:3518
+#: src/icesh.cc:3546
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Geçersiz PID: '%s'"
 
-#: src/icesh.cc:3554
+#: src/icesh.cc:3582
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Geçersiz katman: '%s'."
 
-#: src/icesh.cc:4365
+#: src/icesh.cc:4393
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Bilinmeyen işlem: «%s»"
@@ -1403,23 +1403,23 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1073 src/yxapp.cc:1033
+#: src/wmapp.cc:1068 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<yok>"
 
-#: src/wmapp.cc:1386
+#: src/wmapp.cc:1381
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1387
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1400
+#: src/wmapp.cc:1395
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1431,7 +1431,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1410
+#: src/wmapp.cc:1405
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1488,26 +1488,26 @@ msgstr ""
 "Hata raporları, destek talebi ve yorumlar için  https://ice-wm.org/ adresini "
 "ziyaret ediniz...\n"
 
-#: src/wmapp.cc:1472
+#: src/wmapp.cc:1467
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1549
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s yapılandırılmış seçenekler:%s\n"
 
-#: src/wmapp.cc:1635
+#: src/wmapp.cc:1630
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Tanınmayan seçenek ' %s'."
 
-#: src/wmapp.cc:1681
+#: src/wmapp.cc:1676
 msgid "Confirm Logout"
 msgstr "Oturum Kapatma Onayı"
 
-#: src/wmapp.cc:1682
+#: src/wmapp.cc:1677
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1599,7 +1599,7 @@ msgstr "I_ceVM'i Yeniden Başlat"
 msgid "_About"
 msgstr "_Hakkında"
 
-#: src/wmframe.cc:1439
+#: src/wmframe.cc:1441
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1607,15 +1607,15 @@ msgstr ""
 "DİKKAT!! Bu istemci öldürüldüğünde tüm kaydedilmemiş\n"
 "değişiklikler kaybedilecektir. Emin misiniz?"
 
-#: src/wmframe.cc:1446
+#: src/wmframe.cc:1448
 msgid "Kill Client: "
 msgstr "İstemciyi öldür: "
 
-#: src/wmmgr.cc:3254
+#: src/wmmgr.cc:3257
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3255
+#: src/wmmgr.cc:3258
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

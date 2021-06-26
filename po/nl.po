@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.23\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-17 17:23+0200\n"
+"POT-Creation-Date: 2021-06-26 11:41+0200\n"
 "PO-Revision-Date: 2021-06-18 12:58+0000\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
-"Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/nl/>\n"
+"Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -590,81 +590,81 @@ msgstr "Hetzelfde spel"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Voor hulp bekijk de manpagina icesh(1).\n"
 
-#: src/icesh.cc:1508
+#: src/icesh.cc:1520
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Genoemde symbolen van het domein »%s« (Bereik: %ld-%ld):\n"
 
-#: src/icesh.cc:1566
+#: src/icesh.cc:1578
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Werkruimte buiten bereik: %ld"
 
-#: src/icesh.cc:1587
+#: src/icesh.cc:1599
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Ongeldig werkruimtenummer: »%s«"
 
-#: src/icesh.cc:1872
+#: src/icesh.cc:1884
 msgid "GNOME window layer"
 msgstr "GNOME venster laag"
 
-#: src/icesh.cc:1873
+#: src/icesh.cc:1885
 msgid "IceWM tray option"
 msgstr "IceWM tray optie"
 
-#: src/icesh.cc:1874
+#: src/icesh.cc:1886
 msgid "Gravity symbols"
 msgstr "Gravitatiesymbolen"
 
-#: src/icesh.cc:1875
+#: src/icesh.cc:1887
 msgid "Motif functions"
 msgstr "Motif-functies"
 
-#: src/icesh.cc:1876
+#: src/icesh.cc:1888
 msgid "Motif decorations"
 msgstr "Motif-decoraties"
 
-#: src/icesh.cc:1877
+#: src/icesh.cc:1889
 msgid "EWMH window state"
 msgstr "EWMH-vensterstatus"
 
-#: src/icesh.cc:1959 src/icesh.cc:2032
+#: src/icesh.cc:1971 src/icesh.cc:2044
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "Werkruimte #%d: »%s«\n"
 
-#: src/icesh.cc:2267 src/icesh.cc:3584 src/icesh.cc:4057
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Ongeldige status: `%s'."
 
-#: src/icesh.cc:3119
+#: src/icesh.cc:3131
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Kan geometrie van venster 0x%lx niet ophalen"
 
-#: src/icesh.cc:3144
+#: src/icesh.cc:3156
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Ongeldig Xinerama: `%s'."
 
-#: src/icesh.cc:3191 src/icesh.cc:3241
+#: src/icesh.cc:3203 src/icesh.cc:3253
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Ongeldig argument: '%s'"
 
-#: src/icesh.cc:3207
+#: src/icesh.cc:3219
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Actie `%s' heeft minimaal %d argumenten nodig."
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3228
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Ongeldige expressie: »%s«"
 
-#: src/icesh.cc:3227 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1067
 #: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -672,35 +672,35 @@ msgstr ""
 "Kan het display %s niet openen. De X-Server moet werken en de "
 "omgevingsvariabele $DISPLAY moet hiernaar verwijzen."
 
-#: src/icesh.cc:3341
+#: src/icesh.cc:3355
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Onverwacht: '%s'."
 
-#: src/icesh.cc:3370
+#: src/icesh.cc:3384
 msgid "No windows found."
 msgstr "Geen vensters gevonden."
 
-#: src/icesh.cc:3385
+#: src/icesh.cc:3399
 msgid "No actions specified."
 msgstr "Geen aktie aangegeven."
 
-#: src/icesh.cc:3501
+#: src/icesh.cc:3529
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Ongeldige venster identificatie: »%s«"
 
-#: src/icesh.cc:3518
+#: src/icesh.cc:3546
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Ongeldige PID: `%s'"
 
-#: src/icesh.cc:3554
+#: src/icesh.cc:3582
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Ongeldige laag: `%s'."
 
-#: src/icesh.cc:4365
+#: src/icesh.cc:4393
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Onbekende actie: »%s«"
@@ -1426,18 +1426,18 @@ msgstr ""
 "Hef beheer van alle toepassing op en herstart\n"
 "als een terminal. Doorgaan?"
 
-#: src/wmapp.cc:1073 src/yxapp.cc:1033
+#: src/wmapp.cc:1068 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<geen>"
 
-#: src/wmapp.cc:1386
+#: src/wmapp.cc:1381
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Te gebruiken client-id bij contact maken met de "
 "sessiemanager.\n"
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1387
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1447,7 +1447,7 @@ msgstr ""
 "  --debug             Algemene debugberichten afdrukken.\n"
 "  --debug-z           Debugberichten over stapelen van vensters afdrukken.\n"
 
-#: src/wmapp.cc:1400
+#: src/wmapp.cc:1395
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1467,7 +1467,7 @@ msgstr ""
 "--rewrite-preferences  Een bestaand bestand met voorkeuren bijwerken.\n"
 "  --trace=conf,icon   Paden volgen gebruiken om configuratie te laden.\n"
 
-#: src/wmapp.cc:1410
+#: src/wmapp.cc:1405
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1526,26 +1526,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1472
+#: src/wmapp.cc:1467
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s configuratiemappen:\n"
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1549
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s geconfigureerde opties:%s\n"
 
-#: src/wmapp.cc:1635
+#: src/wmapp.cc:1630
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Onbekende optie: '%s'."
 
-#: src/wmapp.cc:1681
+#: src/wmapp.cc:1676
 msgid "Confirm Logout"
 msgstr "Afmelden bevestigen"
 
-#: src/wmapp.cc:1682
+#: src/wmapp.cc:1677
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1639,7 +1639,7 @@ msgstr "IceWM _herstarten"
 msgid "_About"
 msgstr "_Over"
 
-#: src/wmframe.cc:1439
+#: src/wmframe.cc:1441
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1648,15 +1648,15 @@ msgstr ""
 "als u dit programma stopt! Wilt u doorgaan?"
 
 #
-#: src/wmframe.cc:1446
+#: src/wmframe.cc:1448
 msgid "Kill Client: "
 msgstr "Stoppen van: "
 
-#: src/wmmgr.cc:3254
+#: src/wmmgr.cc:3257
 msgid "Missing program setxkbmap"
 msgstr "Programma setxkbmap ontbreekt"
 
-#: src/wmmgr.cc:3255
+#: src/wmmgr.cc:3258
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Om van toetsenbord te wisselen, installeer setxkbmap."
 

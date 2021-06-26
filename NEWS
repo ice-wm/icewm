@@ -1,11 +1,72 @@
-icewm -- history of user-visible changes.  2021-06-07
+icewm -- history of user-visible changes.  2021-06-26
+
+Release icewm-2.5.0 released 2021-06-26
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.4.0...2.5.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (22):
+      CMake builds html pages for ice-wm/icewm#50.
+      Replace paths with configured directories in generated manpages for CMake
+        build and also fix spaces and double quotes.
+      Surround variable expansion with double quotes.
+      Revert "Enforce that focus remains with IceTopWin for issue #593." This
+        reverts commit 8306aba186294074054c5a4067ccfe7ddfeda75b.
+      Transition testnetwmhints.cc from _WIN_ to _NET_ properties.
+      Give hints on setGeometry format.
+      Add full support for application modal dialogs.  Support WM_TRANSIENT_FOR
+        being set to the root window per the EWMH standard in section:
+        "Implementing enhanced support for application transient windows".
+        Change long to int in YFrameWindow structure.
+      make update-po
+      Add -unmapped and -viewable filters. Restore the window selection after an
+        "end" clause. Include the selection flags inside the test for
+        conditional evaluation.
+      Fix icesh example in manpage.
+      Use colored backgrounds when creating test windows in testnetwmhints.
+      Collect windows to arrange from layers OnTop, Normal and Below.
+      Add "eventName()" for event logging.
+      Add option parsing and event name logging to testmap.cc.
+      Remove 6 obsolete macros from base.h.
+      Add test for WM_HINTS XUrgencyHint.
+      Clear the UrgencyHint in the WM_HINTS structure to stop the flashing.
+      Change YTextProperty memory allocation type to malloc/free.
+      Guard against frames without a client when destructing frames with kill
+        message boxes.
+      Reread properties list for internal clients.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Kukuh Syafaat <syafaatkukuh@gmail.com> (2):
+      Translated using Weblate (Indonesian)
+      Translated using Weblate (Indonesian)
+
+Aleš Kastner <alkas@volny.cz> (1):
+      Translated using Weblate (Czech)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-2.4.0 released 2021-06-07
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.3.4...2.4.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (23):
+Bert Gijsbers <gijsbers@science.uva.nl> (24):
       Prevent compiler warnings.
       Don't reverse the alpha value, only the RGB color components.
       Improve centrally placing transient windows over their leader window when
@@ -35,6 +96,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (23):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.4.0 release
 
 Agah Emir <agahemir986@gmail.com> (2):
       Translated using Weblate (Turkish)
@@ -436,29 +498,4 @@ Stanislav Brabec <sbrabec@suse.cz> (1):
 
 Tommi Nieminen <software@legisign.org> (1):
       Translated using Weblate (Finnish)
-
-
-Release icewm-2.2.1 released 2021-03-02
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.2.0...2.2.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (13):
-      Position the move/size-status on the screen of the window.
-      Taskbar may have a non-zero screen due to XineramaPrimaryScreen in
-        getNewPos.  Only consider workarea when using same screen as taskbar,
-        otherwise allow entire desktop for issue #557.
-      Simplify icewm manpage.
-      When modifying preferences, only trim input for scalar options.
-      Make input field focus traversable when editing preferences.
-      Draw an icon in the preference edit popup.
-      Set margin of message box to 18.
-      Draw an icon in each message box popup.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Add testpointer to Makefile.am.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.2.1 release
 

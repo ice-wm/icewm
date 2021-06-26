@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-17 17:23+0200\n"
+"POT-Creation-Date: 2021-06-26 11:41+0200\n"
 "PO-Revision-Date: 2001-03-25 17:00+GMT1\n"
 "Last-Translator: Vlatko Kosturjak <kost@iname.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
@@ -546,118 +546,118 @@ msgstr "Ista igra"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 
-#: src/icesh.cc:1508
+#: src/icesh.cc:1520
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr ""
 
-#: src/icesh.cc:1566
+#: src/icesh.cc:1578
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr ""
 
-#: src/icesh.cc:1587
+#: src/icesh.cc:1599
 #, fuzzy, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:1872
+#: src/icesh.cc:1884
 msgid "GNOME window layer"
 msgstr ""
 
-#: src/icesh.cc:1873
+#: src/icesh.cc:1885
 msgid "IceWM tray option"
 msgstr ""
 
-#: src/icesh.cc:1874
+#: src/icesh.cc:1886
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:1875
+#: src/icesh.cc:1887
 msgid "Motif functions"
 msgstr ""
 
-#: src/icesh.cc:1876
+#: src/icesh.cc:1888
 msgid "Motif decorations"
 msgstr ""
 
-#: src/icesh.cc:1877
+#: src/icesh.cc:1889
 #, fuzzy
 #| msgid "Window list"
 msgid "EWMH window state"
 msgstr "Popis prozora"
 
-#: src/icesh.cc:1959 src/icesh.cc:2032
+#: src/icesh.cc:1971 src/icesh.cc:2044
 #, fuzzy, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "Radni prostor: "
 
-#: src/icesh.cc:2267 src/icesh.cc:3584 src/icesh.cc:4057
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
 #, fuzzy, c-format
 msgid "Invalid state: `%s'."
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:3119
+#: src/icesh.cc:3131
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3144
+#: src/icesh.cc:3156
 #, fuzzy, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:3191 src/icesh.cc:3241
+#: src/icesh.cc:3203 src/icesh.cc:3253
 #, fuzzy, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:3207
+#: src/icesh.cc:3219
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr ""
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3228
 #, fuzzy, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:3227 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1067
 #: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Ne mogu otvoriti zaslon: %s. X-i moraju biti pokrenuti i $DISPLAY postavljen."
 
-#: src/icesh.cc:3341
+#: src/icesh.cc:3355
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr ""
 
-#: src/icesh.cc:3370
+#: src/icesh.cc:3384
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:3385
+#: src/icesh.cc:3399
 msgid "No actions specified."
 msgstr ""
 
-#: src/icesh.cc:3501
+#: src/icesh.cc:3529
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr ""
 
-#: src/icesh.cc:3518
+#: src/icesh.cc:3546
 #, fuzzy, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:3554
+#: src/icesh.cc:3582
 #, fuzzy, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:4365
+#: src/icesh.cc:4393
 #, fuzzy, c-format
 msgid "Unknown action: `%s'"
 msgstr "Nepoznata opcija prozora: %s"
@@ -1239,23 +1239,23 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1073 src/yxapp.cc:1033
+#: src/wmapp.cc:1068 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<nema>"
 
-#: src/wmapp.cc:1386
+#: src/wmapp.cc:1381
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1387
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1400
+#: src/wmapp.cc:1395
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1267,7 +1267,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1410
+#: src/wmapp.cc:1405
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1299,26 +1299,26 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/wmapp.cc:1472
+#: src/wmapp.cc:1467
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1549
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Nepoznata opcija prozora: %s"
 
-#: src/wmapp.cc:1635
+#: src/wmapp.cc:1630
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nepoznata opcija prozora: %s"
 
-#: src/wmapp.cc:1681
+#: src/wmapp.cc:1676
 msgid "Confirm Logout"
 msgstr "Potvrdite odjavljivanje"
 
-#: src/wmapp.cc:1682
+#: src/wmapp.cc:1677
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1410,21 +1410,21 @@ msgstr "_Ponovno pokreni icewm"
 msgid "_About"
 msgstr "_O programu"
 
-#: src/wmframe.cc:1439
+#: src/wmframe.cc:1441
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
 msgstr ""
 
-#: src/wmframe.cc:1446
+#: src/wmframe.cc:1448
 msgid "Kill Client: "
 msgstr "Ubij klijent: "
 
-#: src/wmmgr.cc:3254
+#: src/wmmgr.cc:3257
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3255
+#: src/wmmgr.cc:3258
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

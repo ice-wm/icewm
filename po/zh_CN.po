@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (China) (icewm)\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-17 17:23+0200\n"
+"POT-Creation-Date: 2021-06-26 11:41+0200\n"
 "PO-Revision-Date: 2021-03-30 04:56+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/icewm/"
@@ -585,116 +585,116 @@ msgstr "Same 游戏"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "如需帮助，请参阅 icesh(1) 手册页。\n"
 
-#: src/icesh.cc:1508
+#: src/icesh.cc:1520
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "域 `%s' 中已命名的标志（数字范围： %ld-%ld）：\n"
 
-#: src/icesh.cc:1566
+#: src/icesh.cc:1578
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "工作区超出了范围：%ld"
 
-#: src/icesh.cc:1587
+#: src/icesh.cc:1599
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "无效的工作区名: `%s'"
 
-#: src/icesh.cc:1872
+#: src/icesh.cc:1884
 msgid "GNOME window layer"
 msgstr "GNOME 窗口层次"
 
-#: src/icesh.cc:1873
+#: src/icesh.cc:1885
 msgid "IceWM tray option"
 msgstr "IceWM 托盘选项"
 
-#: src/icesh.cc:1874
+#: src/icesh.cc:1886
 msgid "Gravity symbols"
 msgstr "重力符号"
 
-#: src/icesh.cc:1875
+#: src/icesh.cc:1887
 msgid "Motif functions"
 msgstr "Motif 函数"
 
-#: src/icesh.cc:1876
+#: src/icesh.cc:1888
 msgid "Motif decorations"
 msgstr "Motif 修饰器"
 
-#: src/icesh.cc:1877
+#: src/icesh.cc:1889
 msgid "EWMH window state"
 msgstr "EWMH 窗口状态"
 
-#: src/icesh.cc:1959 src/icesh.cc:2032
+#: src/icesh.cc:1971 src/icesh.cc:2044
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "工作区 #%d: `%s'\n"
 
-#: src/icesh.cc:2267 src/icesh.cc:3584 src/icesh.cc:4057
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "无效状态：`%s'。"
 
-#: src/icesh.cc:3119
+#: src/icesh.cc:3131
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "无法获得窗口 0x%lx 的内存信息"
 
-#: src/icesh.cc:3144
+#: src/icesh.cc:3156
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "无效 Xinerama：`%s'。"
 
-#: src/icesh.cc:3191 src/icesh.cc:3241
+#: src/icesh.cc:3203 src/icesh.cc:3253
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "无效参数：`%s'"
 
-#: src/icesh.cc:3207
+#: src/icesh.cc:3219
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "命令 `%s' 需要至少 %d 个参数。"
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3228
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "无效表达式: `%s'"
 
-#: src/icesh.cc:3227 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1067
 #: src/yxapp.cc:1032
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "无法打开显示：%s。 X必须正在执行且设定 $DISPLAY。"
 
-#: src/icesh.cc:3341
+#: src/icesh.cc:3355
 #, fuzzy, c-format
 #| msgid "Unexepected menu keyword: '%s'"
 msgid "Unexpected: `%s'."
 msgstr "未期望的菜单关键词：'%s'"
 
-#: src/icesh.cc:3370
+#: src/icesh.cc:3384
 msgid "No windows found."
 msgstr "未找到窗口。"
 
-#: src/icesh.cc:3385
+#: src/icesh.cc:3399
 msgid "No actions specified."
 msgstr "未指定行为。"
 
-#: src/icesh.cc:3501
+#: src/icesh.cc:3529
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "无效的窗口标识符：`%s'"
 
-#: src/icesh.cc:3518
+#: src/icesh.cc:3546
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "无效 PID：`%s'"
 
-#: src/icesh.cc:3554
+#: src/icesh.cc:3582
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "无效层：`%s'。"
 
-#: src/icesh.cc:4365
+#: src/icesh.cc:4393
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "未知的行为：`%s'"
@@ -1407,16 +1407,16 @@ msgstr ""
 "取消管理所有应用程序并作为终端\n"
 "重启动。是否继续？"
 
-#: src/wmapp.cc:1073 src/yxapp.cc:1033
+#: src/wmapp.cc:1068 src/yxapp.cc:1033
 msgid "<none>"
 msgstr "<无>"
 
-#: src/wmapp.cc:1386
+#: src/wmapp.cc:1381
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr "  --client-id=ID      与会话管理器通信时使用客户端 ID\n"
 
-#: src/wmapp.cc:1392
+#: src/wmapp.cc:1387
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1426,7 +1426,7 @@ msgstr ""
 "  --debug             打印通用调试信息。\n"
 "  --debug-z           窗口层叠时打印调试信息。\n"
 
-#: src/wmapp.cc:1400
+#: src/wmapp.cc:1395
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1454,7 +1454,7 @@ msgstr ""
 "  -p, --postpreferences  处理完成后显示配置选项。\n"
 "  --trace=conf,icon   追踪用于加载配置文件的路径。\n"
 
-#: src/wmapp.cc:1410
+#: src/wmapp.cc:1405
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1513,26 +1513,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1472
+#: src/wmapp.cc:1467
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s 配置选项目录：\n"
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1549
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s 配置选项：%s\n"
 
-#: src/wmapp.cc:1635
+#: src/wmapp.cc:1630
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "无法识别的选项：'%s'。"
 
-#: src/wmapp.cc:1681
+#: src/wmapp.cc:1676
 msgid "Confirm Logout"
 msgstr "确认退出"
 
-#: src/wmapp.cc:1682
+#: src/wmapp.cc:1677
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1623,7 +1623,7 @@ msgstr "重启 icewm(_R)"
 msgid "_About"
 msgstr "关于(_A)"
 
-#: src/wmframe.cc:1439
+#: src/wmframe.cc:1441
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1631,15 +1631,15 @@ msgstr ""
 "警告！当这个客户程序被杀死时，所有\n"
 "没有保存的修改将丢失。你想继续吗？"
 
-#: src/wmframe.cc:1446
+#: src/wmframe.cc:1448
 msgid "Kill Client: "
 msgstr "杀死客户端： "
 
-#: src/wmmgr.cc:3254
+#: src/wmmgr.cc:3257
 msgid "Missing program setxkbmap"
 msgstr "缺少程序 setxkbmap"
 
-#: src/wmmgr.cc:3255
+#: src/wmmgr.cc:3258
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "要使用键盘切换，请安装 setxkbmap。"
 
