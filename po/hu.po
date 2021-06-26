@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-07 01:16+0200\n"
+"POT-Creation-Date: 2021-06-17 17:23+0200\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Robert Taisz <robert.taisz@emerald.hu>\n"
 "Language-Team: Hungarian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1811,7 +1811,7 @@ msgstr "Legörget"
 msgid "Rollup"
 msgstr "Felgörgetés"
 
-#: src/wmclient.cc:369
+#: src/wmclient.cc:367
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -1872,7 +1872,7 @@ msgstr "Az _IceWM újraindítása"
 msgid "_About"
 msgstr "N_évjegy"
 
-#: src/wmframe.cc:1388
+#: src/wmframe.cc:1439
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1883,15 +1883,15 @@ msgstr ""
 
 #
 # ../src/wmframe.cc:1183
-#: src/wmframe.cc:1395
+#: src/wmframe.cc:1446
 msgid "Kill Client: "
 msgstr "Kliens leölése: "
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3254
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3259
+#: src/wmmgr.cc:3255
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

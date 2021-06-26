@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-07 01:16+0200\n"
+"POT-Creation-Date: 2021-06-17 17:23+0200\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1658,7 +1658,7 @@ msgstr "말아내리기"
 msgid "Rollup"
 msgstr "말아올리기"
 
-#: src/wmclient.cc:369
+#: src/wmclient.cc:367
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -1713,7 +1713,7 @@ msgstr "icewm 다시 시작(_R)"
 msgid "_About"
 msgstr "정보(_A)"
 
-#: src/wmframe.cc:1388
+#: src/wmframe.cc:1439
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1721,15 +1721,15 @@ msgstr ""
 "경고! 이 클라이언트를 죽이면 저장되지 않은\n"
 "변경 사항을 모두 잃어버립니다. 계속할까요?"
 
-#: src/wmframe.cc:1395
+#: src/wmframe.cc:1446
 msgid "Kill Client: "
 msgstr "클라이언트 죽이기: "
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3254
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3259
+#: src/wmmgr.cc:3255
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-07 01:16+0200\n"
+"POT-Creation-Date: 2021-06-17 17:23+0200\n"
 "PO-Revision-Date: 2005-06-12 12:59+0300\n"
 "Last-Translator: Kristaps Kaupe <kristaps.kaupe@inbox.lv>\n"
 "Language-Team: \n"
@@ -1453,7 +1453,7 @@ msgstr "Atritināt"
 msgid "Rollup"
 msgstr "Saritināt"
 
-#: src/wmclient.cc:369
+#: src/wmclient.cc:367
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -1509,7 +1509,7 @@ msgstr "Pā_rstartēt icewm"
 msgid "_About"
 msgstr "P_ar"
 
-#: src/wmframe.cc:1388
+#: src/wmframe.cc:1439
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1517,15 +1517,15 @@ msgstr ""
 "UZMANĪBU! Visas nesaglabātās izmaiņas tiks zaudētas, kad\n"
 "šis klients tiks nogalināts. Vai jūs vēlaties turpināt?"
 
-#: src/wmframe.cc:1395
+#: src/wmframe.cc:1446
 msgid "Kill Client: "
 msgstr "Nogalināt klientu:"
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3254
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3259
+#: src/wmmgr.cc:3255
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

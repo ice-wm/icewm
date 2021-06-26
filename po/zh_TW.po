@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-07 01:16+0200\n"
+"POT-Creation-Date: 2021-06-17 17:23+0200\n"
 "PO-Revision-Date: 2021-03-20 11:56+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/icewm/"
@@ -1570,7 +1570,7 @@ msgstr "向下循環"
 msgid "Rollup"
 msgstr "向上循環"
 
-#: src/wmclient.cc:369
+#: src/wmclient.cc:367
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -1625,7 +1625,7 @@ msgstr "重新啟動 icewm(_R)"
 msgid "_About"
 msgstr "關於(_A)"
 
-#: src/wmframe.cc:1388
+#: src/wmframe.cc:1439
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1633,15 +1633,15 @@ msgstr ""
 "【警告】！當這個客戶端程式被砍掉時，將會失去所有未儲存的變更。\n"
 "您希望繼續進行嗎？"
 
-#: src/wmframe.cc:1395
+#: src/wmframe.cc:1446
 msgid "Kill Client: "
 msgstr "砍掉客戶端："
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3254
 msgid "Missing program setxkbmap"
 msgstr "缺少程式 setxkbmap"
 
-#: src/wmmgr.cc:3259
+#: src/wmmgr.cc:3255
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "若要進行鍵盤切換，請安裝 setxkbmap。"
 

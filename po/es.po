@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.26\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-07 01:16+0200\n"
+"POT-Creation-Date: 2021-06-17 17:23+0200\n"
 "PO-Revision-Date: 2021-03-31 14:56+0000\n"
 "Last-Translator: Jorge Gallegos Carrasco <jcarrascochih@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1603,7 +1603,7 @@ msgstr "Desenrollar"
 msgid "Rollup"
 msgstr "Enrollar"
 
-#: src/wmclient.cc:369
+#: src/wmclient.cc:367
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -1658,7 +1658,7 @@ msgstr "Reiniciar _icewm"
 msgid "_About"
 msgstr "_Acerca de"
 
-#: src/wmframe.cc:1388
+#: src/wmframe.cc:1439
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -1666,15 +1666,15 @@ msgstr ""
 "¡AVISO! Todos los cambios sin guardar se perderán\n"
 "cuando este cliente sea terminado. ¿Desea continuar?"
 
-#: src/wmframe.cc:1395
+#: src/wmframe.cc:1446
 msgid "Kill Client: "
 msgstr "Matar el cliente: "
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3254
 msgid "Missing program setxkbmap"
 msgstr "Falta el programa setxkbmap"
 
-#: src/wmmgr.cc:3259
+#: src/wmmgr.cc:3255
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Instale setxkbmap para cambiar de teclados."
 
