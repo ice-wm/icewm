@@ -1,11 +1,51 @@
-icewm -- history of user-visible changes.  2021-06-26
+icewm -- history of user-visible changes.  2021-07-08
+
+Release icewm-2.6.0 released 2021-07-08
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.5.0...2.6.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (21):
+      Release the passive button grab from a focused window when a button click
+        wouldn't raise it, for improved menu handling.
+      When a focused window can't raise, or there is no overlapping window, then
+        there shouldn't be a passive button grab by icewm, in order to improve
+        internal menu handling by the application.
+      Guard against buffer overflow when copying the degrees centigrade symbol.
+      Use the "override" keyword consistently to avoid warnings.
+      Prevent a warning on nullptr dereference.
+      Define string field widths when using sscanf.
+      Initialize all object fields.
+      Prevent a hypothetical memory leak.
+      Fix a type to boolean.
+      Fix a fscanf format string type mismatch.
+      Only do a passive grab on buttons which are defined by the
+        ButtonRaiseMask.
+      Use absolute paths for the Exec definition.
+      Eliminate memory leaks in icon handling.
+      Fix for browse menu's for root and home in start menu.
+      Free start menu and windowlist menu on exit.
+      Fix a memory leak for dynamic menu's.
+      Keep track of changes to modal flag. Optimize raising of modals.
+      Add a second modal dialog to testing.
+      Remove superfluous includes.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Lucie Charrier <c.chalu@free.fr> (1):
+      Translated using Weblate (French)
+
+openSUSE Weblate <weblate-noreply@opensuse.org> (1):
+      Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
+
 
 Release icewm-2.5.0 released 2021-06-26
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.4.0...2.5.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (22):
+Bert Gijsbers <gijsbers@science.uva.nl> (23):
       CMake builds html pages for ice-wm/icewm#50.
       Replace paths with configured directories in generated manpages for CMake
         build and also fix spaces and double quotes.
@@ -37,6 +77,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (22):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.5.0 release
 
 Kukuh Syafaat <syafaatkukuh@gmail.com> (2):
       Translated using Weblate (Indonesian)
@@ -324,178 +365,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (18):
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
       Prepare 2.3.1 release
-
-
-Release icewm-2.3.0 released 2021-04-01
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.2.1...2.3.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (66):
-      Add option to only show running net interfaces in status bar by alspitz
-        and closes ice-wm/icewm#44.
-      Improve formatting.
-      Only update tooltips when a tooltip window is visible. Remove obsolete
-        phonenumber from network status monitor.
-      Fixes for tooltips.
-      Postpone creating tooltips.
-      Cleanup empty handleCrossing.
-      Smaller timers.
-      Reduce systemcalls as much as possible when updating network status.
-      Enforce updateLocation when without system tray for issue #559.
-      Update translations.
-      Redraw task button when name changes.
-      Print detail for all in icesh motif.
-      When client loses its X shape then update frame functions. This fixes
-        toggling "Use system title bar and borders" in Chrome.
-      Simplify filereader to reduce number of read system calls.
-      Add new option TaskBarTaskGrouping to group similar applications under one
-        task button for issue #198.
-      Remove superfluous field wmActionListener from ObjectMenu.
-      Remove unneeded includes.
-      Move ObjectButton to its own source file. Rename yinput.cc to
-        yinputline.cc.
-      Move signalGuiEvent into its own class GuiSignaler.
-      Iterate backwards over fUpdates.
-      Consider grouping in updateAppStatus.
-      Add menu option to icehelp to open current document in a browser.
-      Improve update tracking to grouped task buttons.
-      Remove the actionPerformed callback from menu items.
-      Fix use of nullptr.
-      Renamed yinput.cc as yinputline.cc.
-      Make group menu popup via a click and restore dragging.
-      Support switching workspaces via window menu list.
-      Update documentation.
-      make update-po
-      Fix pointer type.
-      Set icon on task app.
-      When WM_CLASS and grouping is on then reinsert task app status.
-      When WM_CLASS changes and task grouping is on, then reinsert task app
-        status.
-      Merge
-      Add command "denormal" to icesh for issue #561.
-      Restore dynamic menus like Start, for issue #562.
-      Allow to switch workspaces when in Alt+Tab mode for issue #563.
-      Allow to switch workspaces when the Alt+Tab QuickSwitch window is active
-        for #563.
-      Add missing modifiers declaration to fix compilation and closes #567
-      Support buttons up to button number 9 for issue #333.
-      Restart the QuickSwitch when changing workspace by key for issue #563.
-        Improve handling of modifier keys in QuickSwitch.
-      Enable immediate toggling ofTaskBarTaskGrouping without a restart.
-      Add contains.
-      Add setPopDownListener.
-      Add support for operation by arrow keys and Home and End. Support Delete
-        key to close a window. Move SwitchWindow away from wmapp and frames and
-        into manager. Support highlighting the active quickswitch frame by
-        reordering the X stacking order. Use the more lightweight setFocus to
-        give input focus. Fix for quickswitch on fullscreen for issue #558. Fix
-        for quickswitch raise for issue #564.
-      make update-po
-      Reorder popup and displayFocus in QuickSwitch for immediate focus+raise
-        effect.
-      Improve tracking of popup deactivation for SwitchWindow. Avoid closing
-        down SwitchWindow when a button release occurs outside of the
-        SwitchWindow. Support keys '1' to '9' to index the SwitchWindow.
-      Add optional reorder flag to setFocus and dont reorder for QuickSwitch for
-        issue #564.
-      Don't reorder focus when switching workspaces for issue #564. Cancel
-        QuickSwitch when clicking outside the window. Improve calculating hinted
-        item. Support rotating mouse wheel buttons when scrolling over windows.
-      Replace inefficient GetZList with efficient updateList in QuickSwitch.
-      When QuickSwitch is up and a new window is created, then add the new
-        window to the existing QuickSwitch, if the conditions are met.
-      Support colorful colors when using libXpm for issue ice-wm/icewm#45.
-      Add preference QuickSwitchRaiseCandidate to raise a selected QuickSwitch
-        window for issue #558 and #564.
-      Let canRaise also consider the future workspace.
-      When activating a frame on another workspace, ignore any focus events on
-        the root window, for more reliable quick switching.
-      Improve changing workspace when quick switching for issue #564. Allow to
-        accept the current quick switch selection by hitting the Return key.
-        Restore reordering of quick switch items when not raising candidates for
-        issue #558. Get rid of IClosablePopup.
-      Complete QuickSwitch documentation.
-      Update QuickSwitch preferences.
-      Use wmOccupyWorkspace instead of identical wmOccupyOnlyWorkspace.
-      Ensure that descriptions are terminated with a dot.
-      Also terminate with a dot when outputting in perl pod format.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge remote-tracking branch 'origin/icewm-1-4-BRANCH'
-      Prepare 2.3.0 release
-
-Grace Yu <grace.yu@excel-gits.com> (6):
-      Translated using Weblate (Chinese (China))
-      Translated using Weblate (Chinese (Taiwan))
-      Translated using Weblate (Chinese (China))
-      Translated using Weblate (Chinese (China))
-      Translated using Weblate (Chinese (Taiwan))
-      Translated using Weblate (Chinese (China))
-
-Aleš Kastner <alkas@volny.cz> (3):
-      Translated using Weblate (Czech)
-      Translated using Weblate (Czech)
-      Translated using Weblate (Czech)
-
-Antonio Simón <antonio@trans-mission.com> (3):
-      Translated using Weblate (Spanish)
-      Translated using Weblate (Spanish)
-      Translated using Weblate (Spanish)
-
-David Medina <medipas@gmail.com> (3):
-      Translated using Weblate (Catalan)
-      Translated using Weblate (Catalan)
-      Translated using Weblate (Catalan)
-
-Davide Aiello <davide.aiello@novilingulists.com> (3):
-      Translated using Weblate (Italian)
-      Translated using Weblate (Italian)
-      Translated using Weblate (Italian)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (3):
-      Translated using Weblate (Slovak)
-      Translated using Weblate (Slovak)
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (3):
-      Translated using Weblate (Dutch)
-      Translated using Weblate (Dutch)
-      Translated using Weblate (Dutch)
-
-Gemineo <vistatec@gemineo.de> (3):
-      Translated using Weblate (German)
-      Translated using Weblate (German)
-      Translated using Weblate (German)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (3):
-      Translated using Weblate (Japanese)
-      Translated using Weblate (Japanese)
-      Translated using Weblate (Japanese)
-
-Sophie Leroy <sophie@stoquart.com> (2):
-      Translated using Weblate (French)
-      Translated using Weblate (French)
-
-Hela Basa <R45XvezA@pm.me> (1):
-      Added translation using Weblate (Sinhala)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Jorge Gallegos Carrasco <jcarrascochih@gmail.com> (1):
-      Translated using Weblate (Spanish)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Stanislav Brabec <sbrabec@suse.cz> (1):
-      Merge remote-tracking branch 'weblate/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-
-Tommi Nieminen <software@legisign.org> (1):
-      Translated using Weblate (Finnish)
 

@@ -1,6 +1,6 @@
-[icewm -- release notes.  2020-12-14]: #
+[icewm -- release notes.  2021-07-08]: #
 
-Release 2.0.0
+Release 2.6.0
 =============
 
 Included in the release is an autoconf tarball for building the package

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-26 11:41+0200\n"
+"POT-Creation-Date: 2021-07-08 08:14+0200\n"
 "PO-Revision-Date: 2006-01-26 23:29+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team:  <mk@li.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11\n"
 
-#: src/aapm.cc:186 src/aapm.cc:465 src/aapm.cc:686 src/aapm.cc:810
+#: src/aapm.cc:184 src/aapm.cc:463 src/aapm.cc:684 src/aapm.cc:809
 msgid " - Power"
 msgstr " - напојување"
 
-#: src/aapm.cc:188 src/aapm.cc:468 src/aapm.cc:689
+#: src/aapm.cc:186 src/aapm.cc:466 src/aapm.cc:687
 msgid "P"
 msgstr "Н"
 
-#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669 src/aapm.cc:778
+#: src/aapm.cc:190 src/aapm.cc:440 src/aapm.cc:667 src/aapm.cc:777
 msgid " - Charging"
 msgstr " - се полни"
 
-#: src/aapm.cc:194 src/aapm.cc:444 src/aapm.cc:671
+#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669
 msgid "C"
 msgstr "П"
 
-#: src/aapm.cc:446
+#: src/aapm.cc:444
 msgid " - Full"
 msgstr ""
 
-#: src/aapm.cc:990
+#: src/aapm.cc:989
 #, c-format
 msgid "power:\t%s"
 msgstr ""
@@ -51,11 +51,11 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: src/aclock.cc:186 src/themes.cc:80
+#: src/aclock.cc:186 src/themes.cc:81
 msgid "Default"
 msgstr "Стандардно"
 
-#: src/aclock.cc:187 src/acpustatus.cc:660 src/amailbox.cc:953
+#: src/aclock.cc:187 src/acpustatus.cc:663 src/amailbox.cc:954
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr ""
@@ -97,7 +97,7 @@ msgid ""
 "CPU Freq: %.3fGHz"
 msgstr ""
 
-#: src/acpustatus.cc:348 src/acpustatus.cc:655
+#: src/acpustatus.cc:348 src/acpustatus.cc:658
 msgid "CPU"
 msgstr ""
 
@@ -119,16 +119,16 @@ msgstr ""
 msgid "°C"
 msgstr ""
 
-#: src/acpustatus.cc:656
+#: src/acpustatus.cc:659
 #, c-format
 msgid "CPU%d"
 msgstr ""
 
-#: src/acpustatus.cc:662
+#: src/acpustatus.cc:665
 msgid "_Combine"
 msgstr ""
 
-#: src/acpustatus.cc:664
+#: src/acpustatus.cc:667
 msgid "_Separate"
 msgstr ""
 
@@ -172,48 +172,48 @@ msgstr "Не успеав да отворам %s: %s"
 msgid "Write to socket failed: %s"
 msgstr ""
 
-#: src/amailbox.cc:683
+#: src/amailbox.cc:684
 #, c-format
 msgid "Using MailBox \"%s\"\n"
 msgstr "Користам пошт. сандаче „%s“\n"
 
-#: src/amailbox.cc:790
+#: src/amailbox.cc:791
 msgid "Suspended"
 msgstr ""
 
-#: src/amailbox.cc:794
+#: src/amailbox.cc:795
 msgid "Error checking mailbox."
 msgstr "Грешка при проверката на пошт. сандаче."
 
-#: src/amailbox.cc:801
+#: src/amailbox.cc:802
 #, fuzzy, c-format
 msgid "%ld mail message, %ld unread."
 msgstr "%ld е-пошт. порака."
 
-#: src/amailbox.cc:802
+#: src/amailbox.cc:803
 #, fuzzy, c-format
 msgid "%ld mail messages, %ld unread."
 msgstr "%ld е-пошт. пораки."
 
-#: src/amailbox.cc:808
+#: src/amailbox.cc:809
 #, c-format
 msgid "%ld mail message."
 msgstr "%ld е-пошт. порака."
 
-#: src/amailbox.cc:809
+#: src/amailbox.cc:810
 #, c-format
 msgid "%ld mail messages."
 msgstr "%ld е-пошт. пораки."
 
-#: src/amailbox.cc:950
+#: src/amailbox.cc:951
 msgid "MAIL"
 msgstr ""
 
-#: src/amailbox.cc:952
+#: src/amailbox.cc:953
 msgid "_Check"
 msgstr ""
 
-#: src/amailbox.cc:954
+#: src/amailbox.cc:955
 msgid "_Suspend"
 msgstr ""
 
@@ -288,7 +288,7 @@ msgstr "Свиткај надолу"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:602 src/wmstatus.cc:207
+#: src/aworkspaces.cc:603 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Работен простор: "
 
@@ -1323,19 +1323,19 @@ msgstr ""
 msgid "<none>"
 msgstr "<нема>"
 
-#: src/wmapp.cc:1381
+#: src/wmapp.cc:1387
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1387
+#: src/wmapp.cc:1393
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1395
+#: src/wmapp.cc:1401
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1347,7 +1347,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1405
+#: src/wmapp.cc:1411
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1406,26 +1406,26 @@ msgstr ""
 "Посете ја страницата https://ice-wm.org/ за да известите за бубачки,\n"
 "за барања за поддршка, коментари итн...\n"
 
-#: src/wmapp.cc:1467
+#: src/wmapp.cc:1473
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1549
+#: src/wmapp.cc:1555
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Непрепознаена опција: %s\n"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1636
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Непрепознаена опција: %s\n"
 
-#: src/wmapp.cc:1676
+#: src/wmapp.cc:1682
 msgid "Confirm Logout"
 msgstr "Потврда на одјавувањето"
 
-#: src/wmapp.cc:1677
+#: src/wmapp.cc:1683
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1529,11 +1529,11 @@ msgstr ""
 msgid "Kill Client: "
 msgstr "Прекини клиент: "
 
-#: src/wmmgr.cc:3257
+#: src/wmmgr.cc:3259
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3260
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

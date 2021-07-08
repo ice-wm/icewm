@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.26\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-26 11:41+0200\n"
+"POT-Creation-Date: 2021-07-08 08:14+0200\n"
 "PO-Revision-Date: 2021-03-31 14:56+0000\n"
 "Last-Translator: Jorge Gallegos Carrasco <jcarrascochih@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -19,27 +19,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.6.1\n"
 
-#: src/aapm.cc:186 src/aapm.cc:465 src/aapm.cc:686 src/aapm.cc:810
+#: src/aapm.cc:184 src/aapm.cc:463 src/aapm.cc:684 src/aapm.cc:809
 msgid " - Power"
 msgstr " - Energía"
 
-#: src/aapm.cc:188 src/aapm.cc:468 src/aapm.cc:689
+#: src/aapm.cc:186 src/aapm.cc:466 src/aapm.cc:687
 msgid "P"
 msgstr "E"
 
-#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669 src/aapm.cc:778
+#: src/aapm.cc:190 src/aapm.cc:440 src/aapm.cc:667 src/aapm.cc:777
 msgid " - Charging"
 msgstr " - Cargando"
 
-#: src/aapm.cc:194 src/aapm.cc:444 src/aapm.cc:671
+#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669
 msgid "C"
 msgstr "C"
 
-#: src/aapm.cc:446
+#: src/aapm.cc:444
 msgid " - Full"
 msgstr " - Completa"
 
-#: src/aapm.cc:990
+#: src/aapm.cc:989
 #, c-format
 msgid "power:\t%s"
 msgstr "energía:\t%s"
@@ -52,11 +52,11 @@ msgstr "RELOJ"
 msgid "Date"
 msgstr "Fecha"
 
-#: src/aclock.cc:186 src/themes.cc:80
+#: src/aclock.cc:186 src/themes.cc:81
 msgid "Default"
 msgstr "Predeterminado"
 
-#: src/aclock.cc:187 src/acpustatus.cc:660 src/amailbox.cc:953
+#: src/aclock.cc:187 src/acpustatus.cc:663 src/amailbox.cc:954
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Inhabilitar"
@@ -106,7 +106,7 @@ msgstr ""
 "\n"
 "Frecuencia de la CPU: %.3fGHz"
 
-#: src/acpustatus.cc:348 src/acpustatus.cc:655
+#: src/acpustatus.cc:348 src/acpustatus.cc:658
 msgid "CPU"
 msgstr "CPU"
 
@@ -129,16 +129,16 @@ msgstr ""
 msgid "°C"
 msgstr "°C"
 
-#: src/acpustatus.cc:656
+#: src/acpustatus.cc:659
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:662
+#: src/acpustatus.cc:665
 msgid "_Combine"
 msgstr "_Combinar"
 
-#: src/acpustatus.cc:664
+#: src/acpustatus.cc:667
 msgid "_Separate"
 msgstr "_Separar"
 
@@ -182,48 +182,48 @@ msgstr "Error al ejecutar %s"
 msgid "Write to socket failed: %s"
 msgstr "Error al escribir en el socket: %s"
 
-#: src/amailbox.cc:683
+#: src/amailbox.cc:684
 #, c-format
 msgid "Using MailBox \"%s\"\n"
 msgstr "Usando el buzón «%s»\n"
 
-#: src/amailbox.cc:790
+#: src/amailbox.cc:791
 msgid "Suspended"
 msgstr "Suspendido"
 
-#: src/amailbox.cc:794
+#: src/amailbox.cc:795
 msgid "Error checking mailbox."
 msgstr "Error al comprobar el buzón."
 
-#: src/amailbox.cc:801
+#: src/amailbox.cc:802
 #, c-format
 msgid "%ld mail message, %ld unread."
 msgstr "%ld mensaje de correo, %ld sin leer."
 
-#: src/amailbox.cc:802
+#: src/amailbox.cc:803
 #, c-format
 msgid "%ld mail messages, %ld unread."
 msgstr "%ld mensajes de correo, %ld sin leer."
 
-#: src/amailbox.cc:808
+#: src/amailbox.cc:809
 #, c-format
 msgid "%ld mail message."
 msgstr "%ld mensaje de correo."
 
-#: src/amailbox.cc:809
+#: src/amailbox.cc:810
 #, c-format
 msgid "%ld mail messages."
 msgstr "%ld mensajes de correo."
 
-#: src/amailbox.cc:950
+#: src/amailbox.cc:951
 msgid "MAIL"
 msgstr "CORREO"
 
-#: src/amailbox.cc:952
+#: src/amailbox.cc:953
 msgid "_Check"
 msgstr "_Comprobar"
 
-#: src/amailbox.cc:954
+#: src/amailbox.cc:955
 msgid "_Suspend"
 msgstr "_Suspender"
 
@@ -294,7 +294,7 @@ msgstr "desactivado"
 msgid "NET"
 msgstr "RED"
 
-#: src/aworkspaces.cc:602 src/wmstatus.cc:207
+#: src/aworkspaces.cc:603 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Área de trabajo: "
 
@@ -1439,14 +1439,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<ninguno>"
 
-#: src/wmapp.cc:1381
+#: src/wmapp.cc:1387
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Identificador de cliente a usar al contactar con el "
 "administrador de sesiones.\n"
 
-#: src/wmapp.cc:1387
+#: src/wmapp.cc:1393
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1457,7 +1457,7 @@ msgstr ""
 "  --debug-z           Muestra mensajes de depuración relacionados con la "
 "pila de ventanas.\n"
 
-#: src/wmapp.cc:1395
+#: src/wmapp.cc:1401
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1487,7 +1487,7 @@ msgstr ""
 "  --trace=conf,icon   Rastrea las rutas usadas para cargar la "
 "configuración.\n"
 
-#: src/wmapp.cc:1405
+#: src/wmapp.cc:1411
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1548,26 +1548,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1467
+#: src/wmapp.cc:1473
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s directorios de configuración:\n"
 
-#: src/wmapp.cc:1549
+#: src/wmapp.cc:1555
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s opciones configuradas:%s\n"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1636
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opción no reconocida «%s»."
 
-#: src/wmapp.cc:1676
+#: src/wmapp.cc:1682
 msgid "Confirm Logout"
 msgstr "Confirmar el cierre de sesión"
 
-#: src/wmapp.cc:1677
+#: src/wmapp.cc:1683
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1670,11 +1670,11 @@ msgstr ""
 msgid "Kill Client: "
 msgstr "Matar el cliente: "
 
-#: src/wmmgr.cc:3257
+#: src/wmmgr.cc:3259
 msgid "Missing program setxkbmap"
 msgstr "Falta el programa setxkbmap"
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3260
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Instale setxkbmap para cambiar de teclados."
 

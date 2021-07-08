@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.12\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-26 11:41+0200\n"
+"POT-Creation-Date: 2021-07-08 08:14+0200\n"
 "PO-Revision-Date: 2021-05-29 16:58+0000\n"
 "Last-Translator: Agah Emir <agahemir986@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -19,27 +19,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.6.2\n"
 
-#: src/aapm.cc:186 src/aapm.cc:465 src/aapm.cc:686 src/aapm.cc:810
+#: src/aapm.cc:184 src/aapm.cc:463 src/aapm.cc:684 src/aapm.cc:809
 msgid " - Power"
 msgstr " - Güç"
 
-#: src/aapm.cc:188 src/aapm.cc:468 src/aapm.cc:689
+#: src/aapm.cc:186 src/aapm.cc:466 src/aapm.cc:687
 msgid "P"
 msgstr "P"
 
-#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669 src/aapm.cc:778
+#: src/aapm.cc:190 src/aapm.cc:440 src/aapm.cc:667 src/aapm.cc:777
 msgid " - Charging"
 msgstr " - Şarj oluyor"
 
-#: src/aapm.cc:194 src/aapm.cc:444 src/aapm.cc:671
+#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669
 msgid "C"
 msgstr "C"
 
-#: src/aapm.cc:446
+#: src/aapm.cc:444
 msgid " - Full"
 msgstr " - Dolu"
 
-#: src/aapm.cc:990
+#: src/aapm.cc:989
 #, c-format
 msgid "power:\t%s"
 msgstr "güç:\t%s"
@@ -52,11 +52,11 @@ msgstr "SAAT"
 msgid "Date"
 msgstr "Tarih"
 
-#: src/aclock.cc:186 src/themes.cc:80
+#: src/aclock.cc:186 src/themes.cc:81
 msgid "Default"
 msgstr "Varsayılan"
 
-#: src/aclock.cc:187 src/acpustatus.cc:660 src/amailbox.cc:953
+#: src/aclock.cc:187 src/acpustatus.cc:663 src/amailbox.cc:954
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Devre dışı"
@@ -106,7 +106,7 @@ msgstr ""
 "\n"
 "CPU Frekansı: %.3fGHz"
 
-#: src/acpustatus.cc:348 src/acpustatus.cc:655
+#: src/acpustatus.cc:348 src/acpustatus.cc:658
 msgid "CPU"
 msgstr "CPU"
 
@@ -129,16 +129,16 @@ msgstr ""
 msgid "°C"
 msgstr "Santigrat Sıcaklık"
 
-#: src/acpustatus.cc:656
+#: src/acpustatus.cc:659
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:662
+#: src/acpustatus.cc:665
 msgid "_Combine"
 msgstr "Birleştir"
 
-#: src/acpustatus.cc:664
+#: src/acpustatus.cc:667
 #, fuzzy
 msgid "_Separate"
 msgstr "_Ayır"
@@ -183,48 +183,48 @@ msgstr "%s Açılamadı"
 msgid "Write to socket failed: %s"
 msgstr "Sokete yazma başarısız oldu: %s"
 
-#: src/amailbox.cc:683
+#: src/amailbox.cc:684
 #, c-format
 msgid "Using MailBox \"%s\"\n"
 msgstr "Kullanılan Posta Kutusu, «%s»\n"
 
-#: src/amailbox.cc:790
+#: src/amailbox.cc:791
 msgid "Suspended"
 msgstr "Askıya Alındı"
 
-#: src/amailbox.cc:794
+#: src/amailbox.cc:795
 msgid "Error checking mailbox."
 msgstr "Posta kutusu denetlenirken hata oluştu."
 
-#: src/amailbox.cc:801
+#: src/amailbox.cc:802
 #, c-format
 msgid "%ld mail message, %ld unread."
 msgstr "%ld posta mesajı, %ld okunmamış."
 
-#: src/amailbox.cc:802
+#: src/amailbox.cc:803
 #, c-format
 msgid "%ld mail messages, %ld unread."
 msgstr "%ld posta mesajı, %ld okunmadı."
 
-#: src/amailbox.cc:808
+#: src/amailbox.cc:809
 #, c-format
 msgid "%ld mail message."
 msgstr "%ld posta mesajı."
 
-#: src/amailbox.cc:809
+#: src/amailbox.cc:810
 #, c-format
 msgid "%ld mail messages."
 msgstr "%ld posta mesajı."
 
-#: src/amailbox.cc:950
+#: src/amailbox.cc:951
 msgid "MAIL"
 msgstr "POSTA"
 
-#: src/amailbox.cc:952
+#: src/amailbox.cc:953
 msgid "_Check"
 msgstr "_Kontrol"
 
-#: src/amailbox.cc:954
+#: src/amailbox.cc:955
 msgid "_Suspend"
 msgstr "_Askıya Al"
 
@@ -297,7 +297,7 @@ msgstr "aşağı"
 msgid "NET"
 msgstr "NET"
 
-#: src/aworkspaces.cc:602 src/wmstatus.cc:207
+#: src/aworkspaces.cc:603 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Çalışma Alanı: "
 
@@ -1407,19 +1407,19 @@ msgstr ""
 msgid "<none>"
 msgstr "<yok>"
 
-#: src/wmapp.cc:1381
+#: src/wmapp.cc:1387
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1387
+#: src/wmapp.cc:1393
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1395
+#: src/wmapp.cc:1401
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -1431,7 +1431,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1405
+#: src/wmapp.cc:1411
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1488,26 +1488,26 @@ msgstr ""
 "Hata raporları, destek talebi ve yorumlar için  https://ice-wm.org/ adresini "
 "ziyaret ediniz...\n"
 
-#: src/wmapp.cc:1467
+#: src/wmapp.cc:1473
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1549
+#: src/wmapp.cc:1555
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s yapılandırılmış seçenekler:%s\n"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1636
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Tanınmayan seçenek ' %s'."
 
-#: src/wmapp.cc:1676
+#: src/wmapp.cc:1682
 msgid "Confirm Logout"
 msgstr "Oturum Kapatma Onayı"
 
-#: src/wmapp.cc:1677
+#: src/wmapp.cc:1683
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1611,11 +1611,11 @@ msgstr ""
 msgid "Kill Client: "
 msgstr "İstemciyi öldür: "
 
-#: src/wmmgr.cc:3257
+#: src/wmmgr.cc:3259
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3260
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

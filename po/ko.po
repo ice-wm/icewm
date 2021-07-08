@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-26 11:41+0200\n"
+"POT-Creation-Date: 2021-07-08 08:14+0200\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -20,27 +20,27 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.3\n"
 
-#: src/aapm.cc:186 src/aapm.cc:465 src/aapm.cc:686 src/aapm.cc:810
+#: src/aapm.cc:184 src/aapm.cc:463 src/aapm.cc:684 src/aapm.cc:809
 msgid " - Power"
 msgstr " - 전력"
 
-#: src/aapm.cc:188 src/aapm.cc:468 src/aapm.cc:689
+#: src/aapm.cc:186 src/aapm.cc:466 src/aapm.cc:687
 msgid "P"
 msgstr "P"
 
-#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669 src/aapm.cc:778
+#: src/aapm.cc:190 src/aapm.cc:440 src/aapm.cc:667 src/aapm.cc:777
 msgid " - Charging"
 msgstr " - 충전 중"
 
-#: src/aapm.cc:194 src/aapm.cc:444 src/aapm.cc:671
+#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669
 msgid "C"
 msgstr "C"
 
-#: src/aapm.cc:446
+#: src/aapm.cc:444
 msgid " - Full"
 msgstr " - 전체"
 
-#: src/aapm.cc:990
+#: src/aapm.cc:989
 #, c-format
 msgid "power:\t%s"
 msgstr "전원:\t%s"
@@ -53,11 +53,11 @@ msgstr "클럭"
 msgid "Date"
 msgstr "날짜"
 
-#: src/aclock.cc:186 src/themes.cc:80
+#: src/aclock.cc:186 src/themes.cc:81
 msgid "Default"
 msgstr "기본값"
 
-#: src/aclock.cc:187 src/acpustatus.cc:660 src/amailbox.cc:953
+#: src/aclock.cc:187 src/acpustatus.cc:663 src/amailbox.cc:954
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Disable"
@@ -107,7 +107,7 @@ msgstr ""
 "\n"
 "CPU 속도: %.3fGHz"
 
-#: src/acpustatus.cc:348 src/acpustatus.cc:655
+#: src/acpustatus.cc:348 src/acpustatus.cc:658
 msgid "CPU"
 msgstr "CPU"
 
@@ -130,16 +130,16 @@ msgstr ""
 msgid "°C"
 msgstr "°C"
 
-#: src/acpustatus.cc:656
+#: src/acpustatus.cc:659
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:662
+#: src/acpustatus.cc:665
 msgid "_Combine"
 msgstr "_Combine"
 
-#: src/acpustatus.cc:664
+#: src/acpustatus.cc:667
 msgid "_Separate"
 msgstr "_Separate"
 
@@ -183,48 +183,48 @@ msgstr "%s을(를) 실행하지 못함"
 msgid "Write to socket failed: %s"
 msgstr "소켓에 기록하지 못함: %s"
 
-#: src/amailbox.cc:683
+#: src/amailbox.cc:684
 #, c-format
 msgid "Using MailBox \"%s\"\n"
 msgstr "\"%s\" 우편함 사용\n"
 
-#: src/amailbox.cc:790
+#: src/amailbox.cc:791
 msgid "Suspended"
 msgstr "일시 중단"
 
-#: src/amailbox.cc:794
+#: src/amailbox.cc:795
 msgid "Error checking mailbox."
 msgstr "우편함 점검 오류."
 
-#: src/amailbox.cc:801
+#: src/amailbox.cc:802
 #, c-format
 msgid "%ld mail message, %ld unread."
 msgstr "메일 메시지 %ld개, 읽지 않은 메시지 %ld개."
 
-#: src/amailbox.cc:802
+#: src/amailbox.cc:803
 #, c-format
 msgid "%ld mail messages, %ld unread."
 msgstr "메일 메시지 %ld개, 읽지 않은 메시지 %ld개."
 
-#: src/amailbox.cc:808
+#: src/amailbox.cc:809
 #, c-format
 msgid "%ld mail message."
 msgstr "%ld 메일 메시지."
 
-#: src/amailbox.cc:809
+#: src/amailbox.cc:810
 #, c-format
 msgid "%ld mail messages."
 msgstr "%ld 메일 메시지."
 
-#: src/amailbox.cc:950
+#: src/amailbox.cc:951
 msgid "MAIL"
 msgstr "MAIL"
 
-#: src/amailbox.cc:952
+#: src/amailbox.cc:953
 msgid "_Check"
 msgstr "확인(_C)"
 
-#: src/amailbox.cc:954
+#: src/amailbox.cc:955
 msgid "_Suspend"
 msgstr "일시 중단(_S)"
 
@@ -299,7 +299,7 @@ msgstr "말아내리기"
 msgid "NET"
 msgstr "NET"
 
-#: src/aworkspaces.cc:602 src/wmstatus.cc:207
+#: src/aworkspaces.cc:603 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "작업공간: "
 
@@ -1506,13 +1506,13 @@ msgstr ""
 msgid "<none>"
 msgstr "<none>"
 
-#: src/wmapp.cc:1381
+#: src/wmapp.cc:1387
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      세션 관리자에게 문의할 때 사용할 클라이언트 ID입니다.\n"
 
-#: src/wmapp.cc:1387
+#: src/wmapp.cc:1393
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -1522,7 +1522,7 @@ msgstr ""
 "  --debug             일반 디버그 메시지를 인쇄합니다.\n"
 "  --debug-z           창 스택 관련 디버그 메시지를 인쇄합니다.\n"
 
-#: src/wmapp.cc:1395
+#: src/wmapp.cc:1401
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -1544,7 +1544,7 @@ msgstr ""
 "  -t, --theme=FILE    FILE에서 테마를 로드합니다.\n"
 "  --postpreferences   모든 처리 후 기본 설정을 인쇄합니다.\n"
 
-#: src/wmapp.cc:1405
+#: src/wmapp.cc:1411
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1603,26 +1603,26 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1467
+#: src/wmapp.cc:1473
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s 구성 디렉터리:\n"
 
-#: src/wmapp.cc:1549
+#: src/wmapp.cc:1555
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s 구성된 옵션: %s\n"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1636
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "알아볼 수 없는 옵션: '%s'"
 
-#: src/wmapp.cc:1676
+#: src/wmapp.cc:1682
 msgid "Confirm Logout"
 msgstr "종료 확인"
 
-#: src/wmapp.cc:1677
+#: src/wmapp.cc:1683
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -1725,11 +1725,11 @@ msgstr ""
 msgid "Kill Client: "
 msgstr "클라이언트 죽이기: "
 
-#: src/wmmgr.cc:3257
+#: src/wmmgr.cc:3259
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3258
+#: src/wmmgr.cc:3260
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
