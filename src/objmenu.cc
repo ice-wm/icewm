@@ -9,6 +9,9 @@ ObjectMenu::ObjectMenu(YActionListener* actionListener, YWindow* parent):
 }
 
 ObjectMenu::~ObjectMenu() {
+    for (const ObjectAction& obj : fArray) {
+        delete obj.object;
+    }
 }
 
 void ObjectMenu::actionPerformed(YAction action, unsigned modifiers) {
@@ -50,6 +53,9 @@ YMenuItem* ObjectMenu::addObject(DObject* object, const char* icon,
             item->setChecked(true);
         }
         add(item);
+        if (sub) {
+            item->setSubmenu(sub);
+        }
     }
     return item;
 }
