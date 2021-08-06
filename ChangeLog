@@ -1,5 +1,749 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 774ad699969a1c5b429fe3e2809c6d4b6959a1e6
+Merge: e73b5cd3 64e3b8d6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Aug 6 14:17:45 2021 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 64e3b8d66c78294fbbff21ebd1e5b8d43176b2c1
+Merge: febb2cfc 9f544539
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Aug 6 14:17:25 2021 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 9f54453900505452de2c99ac53e58d709bdcf9ff
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Aug 6 14:15:54 2021 +0200
+
+    Add test executables to CLEANFILES.
+
+ src/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit febb2cfcbad82c902d9315eb0c880d8f92b02b1a
+Merge: 89a219b3 feaad36e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Aug 6 14:10:01 2021 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit feaad36e2651b59b0fbd8e57c511f06c15701433
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Aug 6 14:09:14 2021 +0200
+
+    Remove test sources from POTFILES.in.
+
+ po/POTFILES.in |   9 ----
+ po/ar.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/be.po       | 118 ++++++++++++++++++++++++++--------------------------
+ po/bg.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/ca.po       | 120 ++++++++++++++++++++++++++---------------------------
+ po/cs.po       | 120 ++++++++++++++++++++++++++---------------------------
+ po/da.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/de.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/el.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/en.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/es.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/fi.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/fr.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/he.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/hr.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/hu.po       | 118 ++++++++++++++++++++++++++--------------------------
+ po/icewm.pot   | 118 ++++++++++++++++++++++++++--------------------------
+ po/id.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/it.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/ja.po       | 120 ++++++++++++++++++++++++++---------------------------
+ po/ko.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/lt.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/lv.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/mk.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/nb.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/nl.po       | 120 ++++++++++++++++++++++++++---------------------------
+ po/no.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/pl.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/pt.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/pt_BR.po    | 116 +++++++++++++++++++++++++--------------------------
+ po/ro.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/ru.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/sk.po       | 120 ++++++++++++++++++++++++++---------------------------
+ po/sl.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/sv.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/tr.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/uk.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/vi.po       | 116 +++++++++++++++++++++++++--------------------------
+ po/zh_CN.po    | 116 +++++++++++++++++++++++++--------------------------
+ po/zh_TW.po    | 116 +++++++++++++++++++++++++--------------------------
+ 40 files changed, 2275 insertions(+), 2284 deletions(-)
+
+commit 89a219b37294c4c4b9f3c99293dc42f76fe1b290
+Merge: 3685e59b 767d06b0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Aug 6 13:58:15 2021 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 767d06b03d85efbbb9917ff04de9896076ccac7e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Aug 5 21:16:45 2021 +0200
+
+    Add support for a default background to the CMake build.
+
+ src/CMakeLists.txt    |  1 +
+ src/config.cmake.h.in |  1 +
+ src/icewmbg.cc        | 22 +++++++++++++---------
+ 3 files changed, 15 insertions(+), 9 deletions(-)
+
+commit 033db0dac6cf36a3aee5e8eac7dc6670a7050186
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Aug 4 22:21:37 2021 +0200
+
+    Increase the maximum value for TaskbarButtonWidthDivisor from 25 to 50.
+
+ src/default.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c98b54824fd9fb49921630c807c712978cec3585
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Aug 4 22:20:43 2021 +0200
+
+    Add a --with-background= option to configure to set the default background
+    path.
+
+ configure.ac   |  6 ++++++
+ src/genpref.cc |  6 ++++++
+ src/icewmbg.cc | 12 ++++++++++++
+ 3 files changed, 24 insertions(+)
+
+commit 97ab2f2a6d809178406adb3c4102b12f85efd4b3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Aug 4 21:08:54 2021 +0200
+
+    Improve the responsiveness of icewmbg, by reducing the number of image
+    scaling and pixmap operations.
+
+ src/icewmbg.cc | 148 +++++++++++++++++++++++++++--------------------------
+ src/ypixmap.cc |  13 +++++
+ src/ypixmap.h  |  13 +----
+ 3 files changed, 90 insertions(+), 84 deletions(-)
+
+commit 51f1918013340ee7050f9b0d50a5f28c8a2f3aac
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Aug 2 20:11:51 2021 +0200
+
+    Reduce memory consumption by icewmbg further.
+
+ src/icewmbg.cc | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit 0c4fc4027390e590d37d930cf352365683632709
+Author: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>
+Date:   Sun Aug 1 22:17:38 2021 +0000
+
+    Translated using Weblate (Portuguese (Brazil))
+
+    Currently translated at 100.0% (500 of 500 strings)
+
+ po/pt_BR.po | 46 +++++++++++++++++++---------------------------
+ 1 file changed, 19 insertions(+), 27 deletions(-)
+
+commit 0349828ce44221f90ac578571bd06098c3c71187
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:43:57 2021 +0200
+
+    Restore strtest.
+
+ src/strtest.cc | 48 ++++++++++++++++++++++++++----------------------
+ 1 file changed, 26 insertions(+), 22 deletions(-)
+
+commit dc3fe1d257f68067099558f9d51d1ea38087b6bc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:33:30 2021 +0200
+
+    Increase reliability of motion compression by also testing for subwindow
+    equality.
+
+ src/ywindow.cc | 25 +++++++++++--------------
+ 1 file changed, 11 insertions(+), 14 deletions(-)
+
+commit 9f2fc8cc7526612c651745e54bfdf1f9a88be8a3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:31:50 2021 +0200
+
+    Reduce memory size of icewmbg. Speedup directory scanning in icewmbg.
+
+ src/icewmbg.cc      | 172 ++++++++++++++++--------------------------------
+ src/icewmbg_prefs.h |   2 +-
+ 2 files changed, 56 insertions(+), 118 deletions(-)
+
+commit 747bf20ec99b6aa3771f1d07041bcfc091750afd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:30:48 2021 +0200
+
+    Prefer nextExt when scanning directory for cursors.
+
+ src/wmapp.cc | 38 ++++++++++++++++++--------------------
+ 1 file changed, 18 insertions(+), 20 deletions(-)
+
+commit 32447054436821cc0962ff1d516f82b4153dd4fb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:29:52 2021 +0200
+
+    Add for-each on directory entries. Support efficient file type detection.
+
+ src/udir.cc | 251 +++++++++++++++++++++++++++++++++++---------------------
+ src/udir.h  |  58 +++++++------
+ 2 files changed, 191 insertions(+), 118 deletions(-)
+
+commit b45dc6417bd6cbe71e7e4b4e5215a5c11c8b682d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:28:35 2021 +0200
+
+    Decrease number of system calls for path lookups.
+
+ src/misc.cc | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit bf29b18480b209231f76e08d4790d74081e54bae
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:27:10 2021 +0200
+
+    Add min+max on three parameters.
+
+ src/base.h | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit dcaec8ede1995e9703986acd83e3920b94856df3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:09:45 2021 +0200
+
+    Guard against array indexing with negative indices.
+
+ src/yarray.cc | 88 ++++++++++++++++++++++++++++++++-----------------------
+ src/yarray.h  | 27 +++++------------
+ 2 files changed, 60 insertions(+), 55 deletions(-)
+
+commit 16aa147116e11b0b55f48d578e3681fac54bdf70
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:08:50 2021 +0200
+
+    Add more tests on YStringArray.
+
+ src/testarray.cc | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit 3322e63eea50c82348316f3b7a52ef76bf71e52d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Aug 1 23:08:12 2021 +0200
+
+    Remove obsolete macros.
+
+ src/sysdep.h | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+commit 769e478a2141d8fdf4e2c570c73603afb30d6287
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Date:   Thu Jul 29 17:27:03 2021 +0000
+
+    Translated using Weblate (Slovak)
+
+    Currently translated at 100.0% (500 of 500 strings)
+
+ po/sk.po | 48 ++++++++++++++++++++----------------------------
+ 1 file changed, 20 insertions(+), 28 deletions(-)
+
+commit 191e9e43944329d1b93dd62032500c84b723edbd
+Author: Freek de Kruijf <freek@opensuse.org>
+Date:   Thu Jul 29 09:29:29 2021 +0000
+
+    Translated using Weblate (Dutch)
+
+    Currently translated at 100.0% (500 of 500 strings)
+
+ po/nl.po | 48 ++++++++++++++++++++----------------------------
+ 1 file changed, 20 insertions(+), 28 deletions(-)
+
+commit bbbff7e3e03fe0e9dda1e0490422bb21d42419fe
+Author: Aleš Kastner <alkas@volny.cz>
+Date:   Thu Jul 29 10:14:52 2021 +0000
+
+    Translated using Weblate (Czech)
+
+    Currently translated at 100.0% (500 of 500 strings)
+
+ po/cs.po | 49 ++++++++++++++++++++-----------------------------
+ 1 file changed, 20 insertions(+), 29 deletions(-)
+
+commit 7c319aac79c3c58bb0a5765821bc9f42e9cd5981
+Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
+Date:   Wed Jul 28 22:12:51 2021 +0000
+
+    Translated using Weblate (Japanese)
+
+    Currently translated at 100.0% (500 of 500 strings)
+
+ po/ja.po | 50 +++++++++++++++++++++-----------------------------
+ 1 file changed, 21 insertions(+), 29 deletions(-)
+
+commit cfdd71072ac7dd6624c5212ea29c931fb278d965
+Author: David Medina <medipas@gmail.com>
+Date:   Wed Jul 28 19:19:02 2021 +0000
+
+    Translated using Weblate (Catalan)
+
+    Currently translated at 100.0% (500 of 500 strings)
+
+ po/ca.po | 48 ++++++++++++++++++++----------------------------
+ 1 file changed, 20 insertions(+), 28 deletions(-)
+
+commit 0af76ceb261ae1a5a2f863e2a5c5eee1b9de0be2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 28 20:52:44 2021 +0200
+
+    Double the timeout for the dynamic menu generator to 1.4 seconds.
+
+ src/wmmenu.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c6241ada6499cc74dd4018dde78b55ca70adfe82
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 28 20:51:40 2021 +0200
+
+    Add a test for for-each on a MStringArray to testarray.cc.
+
+ src/testarray.cc | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 1301692284f5214282ae47d24c3e6778e48c7e1d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 28 20:51:03 2021 +0200
+
+    Add 3 tests to automake for a "make check".
+
+ src/Makefile.am | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+commit e22b6536f7f54c374dfbbdd8d9cb827c4a220815
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 28 20:46:52 2021 +0200
+
+    Add src/fdospecgen.h to POTFILES.in.
+
+ po/POTFILES.in |    1 +
+ po/ar.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/be.po       |  757 +++++++++++++++++++++++++++++++++--
+ po/bg.po       |  874 +++++++++++++++++++++++++++++++++-------
+ po/ca.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/cs.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/da.po       | 1118 ++++++++++++++++++++++++++++++++--------------------
+ po/de.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/el.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/en.po       |  692 +++++++++++++++++++++++++++++++-
+ po/es.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/fi.po       |  730 +++++++++++++++++++++++++++++++++-
+ po/fr.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/he.po       |  866 ++++++++++++++++++++++++++++++++++------
+ po/hr.po       |  757 +++++++++++++++++++++++++++++++++--
+ po/hu.po       | 1114 +++++++++++++++++++++++++++++++--------------------
+ po/icewm.pot   |  692 +++++++++++++++++++++++++++++++-
+ po/id.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/it.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/ja.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/ko.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/lt.po       |  881 ++++++++++++++++++++++++++++++++++-------
+ po/lv.po       |  750 +++++++++++++++++++++++++++++++++--
+ po/mk.po       |  750 +++++++++++++++++++++++++++++++++--
+ po/nb.po       |  757 +++++++++++++++++++++++++++++++++--
+ po/nl.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/no.po       |  757 +++++++++++++++++++++++++++++++++--
+ po/pl.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/pt.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/pt_BR.po    | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/ro.po       |  757 +++++++++++++++++++++++++++++++++--
+ po/ru.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/sk.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/sl.po       |  757 +++++++++++++++++++++++++++++++++--
+ po/sv.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/tr.po       | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/uk.po       |  879 ++++++++++++++++++++++++++++++++++-------
+ po/vi.po       |  869 ++++++++++++++++++++++++++++++++++------
+ po/zh_CN.po    | 1106 ++++++++++++++++++++++++++++++++-------------------
+ po/zh_TW.po    | 1106 ++++++++++++++++++++++++++++++++-------------------
+ 40 files changed, 27459 insertions(+), 10525 deletions(-)
+
+commit 67e09071c21f0d6969928f23bd21c78d5cbec5da
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 28 20:42:36 2021 +0200
+
+    Update potfiles.
+
+ po/POTFILES.in |   17 +-
+ po/ar.po       | 1509 ++++++++++++++++++++++----------------------------
+ po/be.po       | 1110 +++++++++----------------------------
+ po/bg.po       | 1155 +++++++++++----------------------------
+ po/ca.po       | 1521 ++++++++++++++++++++++-----------------------------
+ po/cs.po       | 1521 ++++++++++++++++++++++-----------------------------
+ po/da.po       | 1505 ++++++++++++++++++++++----------------------------
+ po/de.po       | 1517 ++++++++++++++++++++++-----------------------------
+ po/el.po       | 1500 ++++++++++++++++++++++----------------------------
+ po/en.po       | 1045 ++++++++---------------------------
+ po/es.po       | 1517 ++++++++++++++++++++++-----------------------------
+ po/fi.po       | 1088 +++++++++---------------------------
+ po/fr.po       | 1521 ++++++++++++++++++++++-----------------------------
+ po/he.po       | 1140 +++++++++++---------------------------
+ po/hr.po       | 1091 +++++++++----------------------------
+ po/hu.po       | 1523 ++++++++++++++++++++++-----------------------------
+ po/icewm.pot   | 1047 ++++++++---------------------------
+ po/id.po       | 1517 ++++++++++++++++++++++-----------------------------
+ po/it.po       | 1517 ++++++++++++++++++++++-----------------------------
+ po/ja.po       | 1519 ++++++++++++++++++++++-----------------------------
+ po/ko.po       | 1513 ++++++++++++++++++++++-----------------------------
+ po/lt.po       | 1159 +++++++++++----------------------------
+ po/lv.po       | 1103 +++++++++----------------------------
+ po/mk.po       | 1103 +++++++++----------------------------
+ po/nb.po       | 1106 +++++++++----------------------------
+ po/nl.po       | 1521 ++++++++++++++++++++++-----------------------------
+ po/no.po       | 1106 +++++++++----------------------------
+ po/pl.po       | 1513 ++++++++++++++++++++++-----------------------------
+ po/pt.po       | 1484 ++++++++++++++++++++++----------------------------
+ po/pt_BR.po    | 1517 ++++++++++++++++++++++-----------------------------
+ po/ro.po       | 1106 +++++++++----------------------------
+ po/ru.po       | 1513 ++++++++++++++++++++++-----------------------------
+ po/sk.po       | 1521 ++++++++++++++++++++++-----------------------------
+ po/sl.po       | 1106 +++++++++----------------------------
+ po/sv.po       | 1513 ++++++++++++++++++++++-----------------------------
+ po/tr.po       | 1542 +++++++++++++++++++++++-----------------------------
+ po/uk.po       | 1172 +++++++++++----------------------------
+ po/vi.po       | 1155 +++++++++++----------------------------
+ po/zh_CN.po    | 1513 ++++++++++++++++++++++-----------------------------
+ po/zh_TW.po    | 1515 ++++++++++++++++++++++-----------------------------
+ 40 files changed, 19347 insertions(+), 33314 deletions(-)
+
+commit f4579647abb117680de767a6f7762bffac9baf65
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Wed Jul 21 07:46:30 2021 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (481 of 481 strings)
+
+ po/tr.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 9e18677e0f28d189c4d0e201bb8255f483c3a676
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Mon Jul 19 10:19:49 2021 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (481 of 481 strings)
+
+ po/tr.po | 27 ++++++++++++++-------------
+ 1 file changed, 14 insertions(+), 13 deletions(-)
+
+commit 63d2f0108f0da238482675981de1019263f07ace
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 19 01:18:56 2021 +0200
+
+    Eliminate most of the inefficiences when looking for icon directories.
+
+ src/yicon.cc | 386 ++++++++++++++++++++++++++++++++-----------------------
+ 1 file changed, 224 insertions(+), 162 deletions(-)
+
+commit 77dda0352cd2853fcf70c866f0d5cde7ac654f71
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 19 01:17:39 2021 +0200
+
+    Delay the loading of cursors as much as possible,
+    because some cursors are seldomly used.
+
+ src/wmapp.cc   | 87 +++++++++++++++++++++++++++++++-----------------------
+ src/wmapp.h    | 30 +++++++++----------
+ src/ycursor.cc | 21 +++++++++++++
+ src/ycursor.h  | 11 +++++++
+ 4 files changed, 97 insertions(+), 52 deletions(-)
+
+commit 8edd38dd65e8004f989b94485ad58c0c52a31e0c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 19 01:16:49 2021 +0200
+
+    Also test find on MStringArray.
+
+ src/testarray.cc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 5a22443bd777552c2b1f1d8d169cd43d3b9f019b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 19 01:16:17 2021 +0200
+
+    Ensure that PATH_MAX is defined.
+
+ src/misc.cc  | 7 ++++---
+ src/sysdep.h | 3 +++
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit 11b2f98379344275f55f3b02a0a96d1b4ae9b9b6
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Sun Jul 18 19:14:09 2021 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (481 of 481 strings)
+
+ po/tr.po | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+commit db306f7b1c9ea12cb9edd56e6242543602a713e6
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Sun Jul 18 19:10:59 2021 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (481 of 481 strings)
+
+ po/tr.po | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+commit c16c44e936856bcebf11c8fd36028119c021e0cc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 21:36:20 2021 +0200
+
+    Rewrite task successor and task predecessor to properly take into
+    account the
+    separation of TaskBarApp and TaskButton as well as task grouping.
+    Resolves #602, resolves #604.
+
+ src/atasks.cc | 82 ++++++++++++++++++++++++++++++++++++++++++++-----------
+ src/atasks.h  |  2 ++
+ 2 files changed, 68 insertions(+), 16 deletions(-)
+
+commit 784236b33075cf783ddef398b01ff2fe5ce8f790
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 21:11:01 2021 +0200
+
+    Avoid one level of indirection to speedup debugging.
+
+ src/yarray.h | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit fbc00000b224277a388604370bc60452b8ac9a74
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 21:07:54 2021 +0200
+
+    Cache the looked up value for the openssl path.
+
+ src/amailbox.cc | 24 +++++++++++++++++-------
+ src/amailbox.h  |  2 ++
+ 2 files changed, 19 insertions(+), 7 deletions(-)
+
+commit 96ff0e650a904041b79a88e2809f1c400bb4cbfe
+Author: Alexander Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date:   Thu Jul 15 19:59:22 2021 +0100
+
+    Allow using cmake -GNinja (#603)
+
+    The CMake Ninja generator complains about duplicate targets otherwise since
+    the `ADD_CUSTOM_COMMAND(OUTPUT ${_tempPO}` already creates a target with
+    the name ${_lang}.po: ninja: error: build.ninja:2446: multiple rules
+    generate po/pl.po [-wdupbuild=err].
+    Rename the custom target to work around this.
+
+ po/CMakeLists.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit da2db635bff853900041017ddf6f9fd99dbd6a02
+Author: Alexander Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date:   Thu Jul 15 19:53:21 2021 +0100
+
+    Fix building on a case-insensitive file system (#601)
+
+    When compiling on a case-insensitive file system, adding the root
+    directory to the means that C++ headers including the stanard library
+    header <version> end up including the VERSION file in the root directory
+    instead. This include path does not appear to be not needed so we can
+    just drop it.
+
+ CMakeLists.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 34c91428643452b82ff78993388f8d3af1eab92a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 12:43:57 2021 +0200
+
+    Remove obsolete files ypaths.cc and ypaths.h.
+
+ src/ypaths.cc | 127 ------------------------------------------------------
+ src/ypaths.h  |  44 -------------------
+ 2 files changed, 171 deletions(-)
+
+commit 5a3d89ef0c46140adf51b98a477081265b4bba0c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 12:12:57 2021 +0200
+
+    Refresh icewmbg manpage.
+
+ man/icewmbg.pod | 68 ++++++++++++++++++++++++++---------------------------
+ 1 file changed, 33 insertions(+), 35 deletions(-)
+
+commit 7d2844e01aa7a74a0af27e4d9caf775cdf0fb3e2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 12:12:44 2021 +0200
+
+    Make it compile.
+
+ src/iceicon.cc | 2 +-
+ src/icelist.cc | 6 +++---
+ src/iceskt.cc  | 1 -
+ 3 files changed, 4 insertions(+), 5 deletions(-)
+
+commit 58af5b60cc8d5b42cb28462516648ce1af52cc59
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 12:12:33 2021 +0200
+
+    Print active window.
+
+ src/testnetwmhints.cc | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit d70e47e0bba7675a72afd6aac62ed373c97f5229
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 12:11:54 2021 +0200
+
+    Update icewmbg.
+
+ src/icewmbg.cc | 19 ++++++-------------
+ 1 file changed, 6 insertions(+), 13 deletions(-)
+
+commit f554478c89d72235dab4a9348c45cb438f8f74b7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 12:10:30 2021 +0200
+
+    When changing themeName, allocate it dynamically.
+
+ src/wmconfig.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b7a27edb98f5d7f06e83fd473e36d2025ec7d703
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 15 12:08:04 2021 +0200
+
+    Get rid of unneeded classes YCursor and YResourcePaths.
+    This also reduces the number of stat(2) system calls on startup.
+
+ src/CMakeLists.txt |   2 +-
+ src/Makefile.am    |   7 --
+ src/atasks.cc      |   4 +-
+ src/aworkspaces.cc |   7 +-
+ src/genpref.cc     |   2 +
+ src/movesize.cc    |   6 +-
+ src/wmapp.cc       | 192 ++++++++++++++++++++++++++++++++++++++++---------
+ src/wmapp.h        |  40 +++++++----
+ src/wmcontainer.cc |   4 +-
+ src/wmdialog.cc    |   2 +-
+ src/wmframe.cc     |   2 +-
+ src/wmmgr.cc       |   8 +--
+ src/wmmgr.h        |   2 +-
+ src/wmprog.h       |   4 +-
+ src/wmtaskbar.cc   |   6 +-
+ src/wmwinmenu.h    |   4 +-
+ src/wpixres.cc     |  50 +++++++------
+ src/wpixres.h      |   6 +-
+ src/yapp.cc        |  16 +++++
+ src/yapp.h         |   8 ++-
+ src/yconfig.cc     |   1 -
+ src/ycursor.cc     |  79 ++++----------------
+ src/ycursor.h      |  51 +------------
+ src/yicon.cc       |  26 +++++--
+ src/yicon.h        |   1 +
+ src/ypopup.cc      |   2 +-
+ src/yprefs.h       |   2 +-
+ src/ywindow.cc     |  38 ++++------
+ src/ywindow.h      |  11 ++-
+ src/yxapp.cc       |  15 +---
+ src/yxapp.h        |   6 +-
+ 31 files changed, 332 insertions(+), 272 deletions(-)
+
+commit 39a36e9d4ed78f1780843a4a5db77ed502ddad0e
+Author: Mehmet Akif <madanadam@gmail.com>
+Date:   Thu Jul 15 12:58:03 2021 +0300
+
+    Minor Changes and Additions (#600)
+
+    Thank you for your contribution!
+
+ po/tr.po | 692 ++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 348 insertions(+), 344 deletions(-)
+
+commit df787c550cfda092075123ab0fae379855093ae7
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Thu Jul 8 14:01:46 2021 +0000
+
+    Translated using Weblate (Portuguese)
+
+    Currently translated at 100.0% (481 of 481 strings)
+
+ po/pt.po | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
+
+commit e73b5cd3bc4338ae6d53f04a752dbed2e1156d01
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 8 08:15:51 2021 +0200
+
+    Prepare 2.6.0 release
+
+ AUTHORS      |   6 +-
+ ChangeLog    | 585 +++++++++++++++++++++++++------------------------------
+ NEWS         | 219 ++++-----------------
+ README.md    |  36 ++--
+ RELEASE.md   |   4 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  70 +++----
+ po/be.po     |  70 +++----
+ po/bg.po     |  70 +++----
+ po/ca.po     |  70 +++----
+ po/cs.po     |  70 +++----
+ po/da.po     |  70 +++----
+ po/de.po     |  70 +++----
+ po/el.po     |  70 +++----
+ po/en.po     |  70 +++----
+ po/es.po     |  70 +++----
+ po/fi.po     |  70 +++----
+ po/fr.po     | 128 ++++++------
+ po/he.po     |  70 +++----
+ po/hr.po     |  70 +++----
+ po/hu.po     |  70 +++----
+ po/icewm.pot |  72 +++----
+ po/id.po     |  70 +++----
+ po/it.po     |  70 +++----
+ po/ja.po     |  70 +++----
+ po/ko.po     |  70 +++----
+ po/lt.po     |  70 +++----
+ po/lv.po     |  70 +++----
+ po/mk.po     |  70 +++----
+ po/nb.po     |  70 +++----
+ po/nl.po     |  70 +++----
+ po/no.po     |  70 +++----
+ po/pl.po     |  70 +++----
+ po/pt.po     |  70 +++----
+ po/pt_BR.po  |  70 +++----
+ po/ro.po     |  70 +++----
+ po/ru.po     |  70 +++----
+ po/sk.po     |  70 +++----
+ po/sl.po     |  70 +++----
+ po/sv.po     |  70 +++----
+ po/tr.po     |  70 +++----
+ po/uk.po     |  70 +++----
+ po/vi.po     |  70 +++----
+ po/zh_CN.po  |  70 +++----
+ po/zh_TW.po  |  70 +++----
+ 46 files changed, 1734 insertions(+), 1918 deletions(-)
+
 commit b671b365391539f67545fcf9d4bfd468b39214d1
 Merge: 6c377bf4 3685e59b
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5657,770 +6401,3 @@ Date:   Sun Nov 22 20:16:55 2020 +0100
 
  src/ylayout.h | 233 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 233 insertions(+)
-
-commit dce01caf0a6d9cbd951c32d39f53fa39cf7e1998
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 22 20:16:19 2020 +0100
-
-    YLabel and YMsgBox use cstrings.
-
- src/wmframe.cc |  2 +-
- src/wmframe.h  |  2 +-
- src/ylabel.cc  |  2 +-
- src/ylabel.h   | 10 +++++-----
- src/ymsgbox.cc |  5 +++--
- src/ymsgbox.h  |  4 ++--
- 6 files changed, 13 insertions(+), 12 deletions(-)
-
-commit 03d7f5ce0383c047ced4525dbb7f0d42b1126123
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 22 20:16:19 2020 +0100
-
-    Add errno_string.
-
- src/base.h  | 1 +
- src/misc.cc | 4 ++++
- 2 files changed, 5 insertions(+)
-
-commit 12664c2e2e6df9d022c413c956fc71e8e262c244
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Nov 21 00:18:35 2020 +0100
-
-    Don't resize when trying to move when dragging at y=0 for issue #520.
-
- src/wmtitle.cc | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-commit 18736d55513c28866d551cf9098a4eab6e3cc033
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Nov 20 00:55:22 2020 +0100
-
-    Only change a schema key if it exists for issue ice-wm/man#1.
-
- icewm-set-gnomewm | 16 ++++++++++++----
- 1 file changed, 12 insertions(+), 4 deletions(-)
-
-commit ff4b5e185c19e80cf4525f9400bbe98ddeae5612
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 18 23:20:33 2020 +0100
-
-    Report errors if enabled packages are missing for issue #516.
-
- configure.ac | 26 +++++++++++++++-----------
- 1 file changed, 15 insertions(+), 11 deletions(-)
-
-commit 6f0591795d3d320093497aeb6f80e0c453f38df4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 18 21:50:20 2020 +0100
-
-    Instead of render.h include Xrender.h for dependency checking for
-    issue #516.
-
- src/ypixmap.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 3b97e59cfdaf4db12da2573cf35c5a732a439f6e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Nov 17 00:34:39 2020 +0100
-
-    Improve alpha thresholding for Imlib2 support for issue #513.
-
- src/yimage2.cc | 46 +++++++++++++++++++++++++---------------------
- 1 file changed, 25 insertions(+), 21 deletions(-)
-
-commit 17ffd865d58c6318d3434ddc4de874ab817eccde
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Nov 17 00:33:27 2020 +0100
-
-    Free fAutoScroll when its YWindow is destroyed.
-
- src/ywindow.cc | 2 --
- 1 file changed, 2 deletions(-)
-
-commit 17b3d77c700226749775512f3ab530c3f0cdbd3c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Nov 16 01:43:20 2020 +0100
-
-    Improve rendering quality for MiniIcons for issue #513.
-
- src/wmminiicon.cc | 2 +-
- src/yimage.h      | 1 +
- src/yimage2.cc    | 8 ++++++++
- 3 files changed, 10 insertions(+), 1 deletion(-)
-
-commit 282923b24a260e60b1b4ad8e6fe1352dc78698fd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Nov 16 01:42:48 2020 +0100
-
-    Add imlib2 to dependencies.
-
- rebuild.sh | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 304b1f37483803bceaf30ee3c16e8cb518efd4ea
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 15 22:55:46 2020 +0100
-
-    Prevent unsigned overflow.
-
- src/yimage2.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 403b2bc767813907afeb0d15a59a728e9a3dfebd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 15 22:55:31 2020 +0100
-
-    Convert last IMLIB to IMLIB2.
-
- src/CMakeLists.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 312cada031d9ba3aea1dc10d9aba80bee2c0e7f1
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sun Nov 15 22:42:35 2020 +0100
-
-    [cmake] Print CONFIG_IMLIB2 variable status
-
- src/CMakeLists.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 922aa5fcbb46d80b9d6b4f722216b434f3c457a4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 15 22:18:22 2020 +0100
-
-    Improve alpha blending for Imlib2 support for issue #513.
-
- src/yimage2.cc | 39 ++++++++++++++++++++++++++++-----------
- 1 file changed, 28 insertions(+), 11 deletions(-)
-
-commit aa51e2eb179a32154e1cbb6186aaf56bc7e3ffc8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 15 00:45:07 2020 +0100
-
-    Add support for Imlib2 as a possible replacement for gdk-pixbuf for
-    issue #513.
-
- configure.ac          |  37 ++++-
- rebuild.sh            |  14 +-
- src/CMakeLists.txt    |  38 ++---
- src/Makefile.am       |   1 +
- src/config.cmake.h.in |   2 +-
- src/wmapp.cc          |   3 +
- src/ycursor.cc        | 173 +++++++++++------------
- src/yimage2.cc        | 345 ++++++++++++++++++++++++++++++++++++++++++++++
- src/yximage.cc        |  15 +-
- 9 files changed, 502 insertions(+), 126 deletions(-)
-
-commit a094216d06e3afa319419c1d7537fc1ef5265d50
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sat Nov 14 14:13:21 2020 +0100
-
-    Revert "Revert "Stop overpainting clock every second when not needed""
-
-    This reverts commit 98e27dc1095deefd51bc11badfba51cb51119716.
-
-     - one improvement of spaghetti code was left out (for "political" reasons)
-     - LOC reduced and the forced draw in debug mode fixed
-
- src/aclock.cc | 26 +++++++++++++++-----------
- src/aclock.h  |  2 +-
- 2 files changed, 16 insertions(+), 12 deletions(-)
-
-commit 06c56501d5b406265212ce50d68e379217016fd1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 12 20:43:11 2020 +0100
-
-    Set task title.
-
- src/aapm.cc   | 1 -
- src/atasks.cc | 4 +++-
- 2 files changed, 3 insertions(+), 2 deletions(-)
-
-commit ddd5905bf74ab4a12a2ed08e2eb6efdedffc6acb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 12 20:42:41 2020 +0100
-
-    Prefer actionPerformed().
-
- src/wmminiicon.cc | 12 +++++-------
- 1 file changed, 5 insertions(+), 7 deletions(-)
-
-commit 4f5960e3aa4c2e40a3834f43ba50c4908ef6de09
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 12 20:42:23 2020 +0100
-
-    Remove loseFocus().
-
- src/wmmgr.cc | 9 +--------
- 1 file changed, 1 insertion(+), 8 deletions(-)
-
-commit 3c429f61f85927d324bb4d868905efa207eea4df
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 12 20:41:56 2020 +0100
-
-    Remove wmmgr.h from wmframe.h. Add classHint() to ClientData.
-
- src/atray.cc       |  3 +--
- src/aworkspaces.cc |  2 +-
- src/decorate.cc    |  2 +-
- src/movesize.cc    |  1 +
- src/wmabout.cc     |  1 +
- src/wmapp.cc       |  1 +
- src/wmclient.h     | 47 ++++++++++++++++++++++++++++++++++++++++++++---
- src/wmcontainer.cc |  2 +-
- src/wmframe.cc     | 21 ++++++++++++---------
- src/wmframe.h      |  6 ++++--
- src/wmmgr.h        | 41 -----------------------------------------
- src/wmsession.cc   |  1 +
- src/wmswitch.cc    |  1 +
- src/wmtaskbar.cc   |  1 +
- src/wmwinlist.cc   |  1 +
- src/ymsgbox.cc     |  1 +
- 16 files changed, 72 insertions(+), 60 deletions(-)
-
-commit aefcbe5ec93f8e43925965a3824b3cc60d0529e1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 12 19:09:27 2020 +0100
-
-    Fix positioning of window list title for non-standard SmallIconSize
-    settings for issue #514.
-
- src/ylistbox.cc | 14 ++++++--------
- 1 file changed, 6 insertions(+), 8 deletions(-)
-
-commit 84abbd6ae374008e1b16fc62011874b136bad268
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Nov 10 00:54:09 2020 +0100
-
-    Prepare 1.9.2 release
-
- AUTHORS      |   2 +-
- ChangeLog    | 320 +++++++++++++++++++++++++++++++++++--------------------
- NEWS         | 148 ++++---------------------
- README.md    |  36 +++----
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |   2 +-
- po/be.po     |   2 +-
- po/bg.po     |   2 +-
- po/ca.po     |   2 +-
- po/cs.po     |   2 +-
- po/da.po     |   2 +-
- po/de.po     |   2 +-
- po/el.po     |   2 +-
- po/en.po     |   2 +-
- po/es.po     |   2 +-
- po/fi.po     |   2 +-
- po/fr.po     |   2 +-
- po/he.po     |   2 +-
- po/hr.po     |   2 +-
- po/hu.po     |   2 +-
- po/icewm.pot |   4 +-
- po/id.po     |   2 +-
- po/it.po     |   2 +-
- po/ja.po     |   2 +-
- po/ko.po     |   2 +-
- po/lt.po     |   2 +-
- po/lv.po     |   2 +-
- po/mk.po     |   2 +-
- po/nb.po     |   2 +-
- po/nl.po     |   2 +-
- po/no.po     |   2 +-
- po/pl.po     |   2 +-
- po/pt.po     |   2 +-
- po/pt_BR.po  |   2 +-
- po/ro.po     |   2 +-
- po/ru.po     |   2 +-
- po/sk.po     |   2 +-
- po/sl.po     |   2 +-
- po/sv.po     |   2 +-
- po/tr.po     |   2 +-
- po/uk.po     |   2 +-
- po/vi.po     |   2 +-
- po/zh_CN.po  |   2 +-
- po/zh_TW.po  |   2 +-
- 46 files changed, 293 insertions(+), 307 deletions(-)
-
-commit 8af9740bffca94ffa08ff57c1b1f2677243f2c22
-Merge: a7e868d6 8c6ed08b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Nov 10 00:46:54 2020 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 8c6ed08b2fdf9a68bc8b5d6ae7b51a18a2a3b906
-Merge: 61b47eb7 15f49b18
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Nov 10 00:45:07 2020 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 15f49b18d8ef1ec635b68525fbef912bc3713015
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Nov 10 00:44:09 2020 +0100
-
-    make update-po
-
- po/ar.po     | 50 +++++++++++++++++++++++++-------------------------
- po/be.po     | 50 +++++++++++++++++++++++++-------------------------
- po/bg.po     | 50 +++++++++++++++++++++++++-------------------------
- po/ca.po     | 50 +++++++++++++++++++++++++-------------------------
- po/cs.po     | 50 +++++++++++++++++++++++++-------------------------
- po/da.po     | 50 +++++++++++++++++++++++++-------------------------
- po/de.po     | 50 +++++++++++++++++++++++++-------------------------
- po/el.po     | 50 +++++++++++++++++++++++++-------------------------
- po/en.po     | 50 +++++++++++++++++++++++++-------------------------
- po/es.po     | 50 +++++++++++++++++++++++++-------------------------
- po/fi.po     | 50 +++++++++++++++++++++++++-------------------------
- po/fr.po     | 50 +++++++++++++++++++++++++-------------------------
- po/he.po     | 50 +++++++++++++++++++++++++-------------------------
- po/hr.po     | 50 +++++++++++++++++++++++++-------------------------
- po/hu.po     | 50 +++++++++++++++++++++++++-------------------------
- po/icewm.pot | 52 ++++++++++++++++++++++++++--------------------------
- po/id.po     | 50 +++++++++++++++++++++++++-------------------------
- po/it.po     | 50 +++++++++++++++++++++++++-------------------------
- po/ja.po     | 50 +++++++++++++++++++++++++-------------------------
- po/ko.po     | 50 +++++++++++++++++++++++++-------------------------
- po/lt.po     | 50 +++++++++++++++++++++++++-------------------------
- po/lv.po     | 50 +++++++++++++++++++++++++-------------------------
- po/mk.po     | 50 +++++++++++++++++++++++++-------------------------
- po/nb.po     | 50 +++++++++++++++++++++++++-------------------------
- po/nl.po     | 50 +++++++++++++++++++++++++-------------------------
- po/no.po     | 50 +++++++++++++++++++++++++-------------------------
- po/pl.po     | 50 +++++++++++++++++++++++++-------------------------
- po/pt.po     | 50 +++++++++++++++++++++++++-------------------------
- po/pt_BR.po  | 50 +++++++++++++++++++++++++-------------------------
- po/ro.po     | 50 +++++++++++++++++++++++++-------------------------
- po/ru.po     | 50 +++++++++++++++++++++++++-------------------------
- po/sk.po     | 50 +++++++++++++++++++++++++-------------------------
- po/sl.po     | 50 +++++++++++++++++++++++++-------------------------
- po/sv.po     | 50 +++++++++++++++++++++++++-------------------------
- po/tr.po     | 50 +++++++++++++++++++++++++-------------------------
- po/uk.po     | 50 +++++++++++++++++++++++++-------------------------
- po/vi.po     | 50 +++++++++++++++++++++++++-------------------------
- po/zh_CN.po  | 50 +++++++++++++++++++++++++-------------------------
- po/zh_TW.po  | 50 +++++++++++++++++++++++++-------------------------
- 39 files changed, 976 insertions(+), 976 deletions(-)
-
-commit 0a286691d1e1c82a3c56c3db052f78608c74e3f4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 8 20:09:41 2020 +0100
-
-    Use just one set of XSizeHints for issue ice-wm/icewm#28.
-
- src/wmclient.cc | 14 --------------
- src/wmclient.h  |  4 ----
- src/wmframe.cc  | 20 +-------------------
- 3 files changed, 1 insertion(+), 37 deletions(-)
-
-commit 5d788433895ea9023cacc198f0eb22010f86780c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 8 20:08:33 2020 +0100
-
-    Improve logConfigureNotify details.
-
- src/logevent.cc | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
-
-commit e3dc92cd81aaaf6755e3053f5f6db975b8fe862c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 8 16:54:52 2020 +0100
-
-    Prevent inadvertent growing of windows in issue #512.
-
- src/wmclient.cc |  8 ++++----
- src/wmclient.h  |  3 ++-
- src/wmframe.cc  | 36 +++++++++++++++++++-----------------
- src/wmframe.h   |  8 ++++----
- 4 files changed, 29 insertions(+), 26 deletions(-)
-
-commit 2d4fbc96ad59265f8903ca637b5abe176410f0a6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 8 16:53:57 2020 +0100
-
-    Do XAllowEvents first.
-
- src/wmmgr.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 75f83455c283647ac8882b2a18eb8377cef058c8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 8 16:53:33 2020 +0100
-
-    Simplify use of XClassHint.
-
- src/wmsession.cc | 22 ++++------------------
- 1 file changed, 4 insertions(+), 18 deletions(-)
-
-commit a91665cc04607c8a0fdcb183837517d4fd0dcb13
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 8 16:53:17 2020 +0100
-
-    Show toolbar button titles.
-
- src/obj.h     | 2 +-
- src/objbar.cc | 6 ++++--
- src/objbar.h  | 4 ++--
- src/objmenu.h | 2 +-
- src/wmprog.cc | 3 +--
- 5 files changed, 9 insertions(+), 8 deletions(-)
-
-commit 8b9cbcda42ef8cb707fece9bcf3108820a338fcc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 8 16:51:26 2020 +0100
-
-    Move DND to subclass YDndWindow.
-
- src/icehelp.cc   |  2 +-
- src/iceicon.cc   |  3 +-
- src/icelist.cc   |  8 ++---
- src/iceview.cc   |  3 +-
- src/wmtaskbar.cc |  2 +-
- src/wmtaskbar.h  |  2 +-
- src/ywindow.cc   | 97 ++++++++++++++++++++++++++++++----------------------
- src/ywindow.h    | 40 +++++++++++++---------
- 8 files changed, 89 insertions(+), 68 deletions(-)
-
-commit 94ddebf95dcdde84c752175fc433bae6adef62c5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 8 16:51:26 2020 +0100
-
-    Remove setDND.
-
- src/aclock.cc | 1 -
- 1 file changed, 1 deletion(-)
-
-commit a7e868d646639aaaf4bd57a56de2fc2fd364b2bb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 5 00:51:27 2020 +0100
-
-    Prepare 1.9.1 release
-
- AUTHORS      |   2 +-
- ChangeLog    | 470 +++++++++++++++++++++++++++++++------------------------
- NEWS         | 148 ++++--------------
- README.md    |  38 ++---
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |   2 +-
- po/be.po     |   2 +-
- po/bg.po     |   2 +-
- po/ca.po     |   2 +-
- po/cs.po     |   2 +-
- po/da.po     |   2 +-
- po/de.po     |   2 +-
- po/el.po     |   2 +-
- po/en.po     |   2 +-
- po/es.po     |   2 +-
- po/fi.po     |   2 +-
- po/fr.po     |   2 +-
- po/he.po     |   2 +-
- po/hr.po     |   2 +-
- po/hu.po     |   2 +-
- po/icewm.pot |   4 +-
- po/id.po     |   2 +-
- po/it.po     |   2 +-
- po/ja.po     |   2 +-
- po/ko.po     |   2 +-
- po/lt.po     |   2 +-
- po/lv.po     |   2 +-
- po/mk.po     |   2 +-
- po/nb.po     |   2 +-
- po/nl.po     |   2 +-
- po/no.po     |   2 +-
- po/pl.po     |   2 +-
- po/pt.po     |   2 +-
- po/pt_BR.po  |   2 +-
- po/ro.po     |   2 +-
- po/ru.po     |   2 +-
- po/sk.po     |   2 +-
- po/sl.po     |   2 +-
- po/sv.po     |   2 +-
- po/tr.po     |   2 +-
- po/uk.po     |   2 +-
- po/vi.po     |   2 +-
- po/zh_CN.po  |   2 +-
- po/zh_TW.po  |   2 +-
- 46 files changed, 361 insertions(+), 391 deletions(-)
-
-commit 5bf1b4817586bce00f696f21e711e6132ae9f9a9
-Merge: 29abd06a 61b47eb7
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 5 00:42:08 2020 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 61b47eb7e9545859f743431db85e940fd0f02386
-Merge: 813dd473 d48c1b46
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 5 00:40:57 2020 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit d48c1b460770291e2f012cc631fe9f2ca812186e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 23:21:18 2020 +0100
-
-    Fix compilation on OpenBSD.
-
- src/yxapp.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 57e5ed0ba16a4b9cc43ef7bee9bc7410fe62f0f5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 23:12:07 2020 +0100
-
-    Update XDND protocol implementation.
-
- src/ywindow.cc | 163 +++++++++++++----------
- src/ywindow.h  |  16 ++-
- src/yxapp.cc   | 382 +++++++++++++++++++++++++++--------------------------
- 3 files changed, 298 insertions(+), 263 deletions(-)
-
-commit 8adba6cbc83a85f33f19a6a141eb860c0e653976
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 23:10:20 2020 +0100
-
-    make update-po
-
- po/ar.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/be.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/bg.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/ca.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/cs.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/da.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/de.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/el.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/en.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/es.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/fi.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/fr.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/he.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/hr.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/hu.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/icewm.pot | 114 +++++++++++++++++++++++++++----------------------------
- po/id.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/it.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/ja.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/ko.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/lt.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/lv.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/mk.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/nb.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/nl.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/no.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/pl.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/pt.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/pt_BR.po  | 112 +++++++++++++++++++++++++++---------------------------
- po/ro.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/ru.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/sk.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/sl.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/sv.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/tr.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/uk.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/vi.po     | 112 +++++++++++++++++++++++++++---------------------------
- po/zh_CN.po  | 112 +++++++++++++++++++++++++++---------------------------
- po/zh_TW.po  | 112 +++++++++++++++++++++++++++---------------------------
- 39 files changed, 2185 insertions(+), 2185 deletions(-)
-
-commit 14a03bd88095bd11be785b2e75ab807b4559f9d3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 20:32:42 2020 +0100
-
-    Update XDND version from 3 to 5.
-
- src/wmapp.cc    |  2 +-
- src/wmclient.cc |  4 ++--
- src/ywindow.cc  | 19 ++++++-------------
- src/yxapp.h     |  2 +-
- 4 files changed, 10 insertions(+), 17 deletions(-)
-
-commit af5ba372bab1954e11104ecb32559bd66979d5bd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 20:32:42 2020 +0100
-
-    Remove unused.
-
- src/base.h | 8 --------
- 1 file changed, 8 deletions(-)
-
-commit 8dbc525ba4e148e577fadea5f05b0abbc28cb334
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 18:48:54 2020 +0100
-
-    Add actionLayers. Switch on action in actionPerformed.
-
- src/wmaction.h  | 21 ++++++++++--
- src/wmapp.cc    | 14 ++++----
- src/wmclient.cc |  8 ++---
- src/wmframe.cc  | 95 ++++++++++++++++++++++++++++++++++++-----------------
- src/wmmgr.cc    | 19 ++++++++++-
- 5 files changed, 113 insertions(+), 44 deletions(-)
-
-commit eb711548a1b650e7ed836dccd3138f7a6aaaf44e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 18:47:11 2020 +0100
-
-    Remove unused frame members.
-
- src/wmframe.h | 7 -------
- 1 file changed, 7 deletions(-)
-
-commit 2655cd1cd2e89a9f8cc962c401988c9b13979a0c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 18:46:38 2020 +0100
-
-    Apply SKIP_PAGER for PagerShowPreview.
-
- src/aworkspaces.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit 6b84a4dbd958e1a16e48a8394e75734e7fb1aaf6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 13:50:43 2020 +0100
-
-    Explain where delays are in milliseconds.
-
- src/default.h | 34 +++++++++++++++++-----------------
- 1 file changed, 17 insertions(+), 17 deletions(-)
-
-commit 18aec0b62f03a6e9fdb980ee07aaa35eba5accd8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 13:46:53 2020 +0100
-
-    Use a minimum delay of 10 ms for taskbar delays to avoid #508.
-
- src/wmtaskbar.cc | 9 +++------
- 1 file changed, 3 insertions(+), 6 deletions(-)
-
-commit be3313b8c4953c367dfb4811fa27c11b1b98fd66
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 13:45:42 2020 +0100
-
-    Fix for changing layers when ABOVE or BELOW bit is set.
-
- src/wmframe.cc | 31 ++++++++++++++++++-------------
- 1 file changed, 18 insertions(+), 13 deletions(-)
-
-commit 37a138ed4cd5a6e74cbcc19058f525fa300f1883
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 4 13:45:09 2020 +0100
-
-    Handle _WIN_LAYER messages via actionPerformed.
-
- src/wmclient.cc | 11 +++++++----
- 1 file changed, 7 insertions(+), 4 deletions(-)
-
-commit 560cbbd246a67330147d3917183a521374f9ffd2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Oct 30 19:24:57 2020 +0100
-
-    Only direct focus if frame is mapped.
-
- src/wmwinlist.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 5fc5f5599c399716be4c6454516e96e628030ceb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Oct 30 19:24:52 2020 +0100
-
-    Catch changes in width_inc and height_inc for #510.
-
- src/wmframe.cc | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-commit e14aaa8d5a8c8126698e3752bd2d30d3696a735f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Oct 30 19:23:53 2020 +0100
-
-    Define colors at top and lighten up the grey a bit.
-
- src/icehelp.cc | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
-
-commit 70fc4111234c051433b5e110ba34636dafe39fbe
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Oct 30 19:22:32 2020 +0100
-
-    Update to 1.9.0.
-
- AUTHORS      |   22 +-
- ChangeLog    | 8529 ++++++++++++++++++++++++++++--------------------------
- NEWS         |  362 ++-
- VERSION      |    2 +-
- configure.ac |   10 +-
- 5 files changed, 4597 insertions(+), 4328 deletions(-)
-
-commit 29abd06add8b047c20176d44de6ba3bd84161f78
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 29 20:28:57 2020 +0100
-
-    Prepare 1.9.0 release
-
- AUTHORS      |   22 +-
- ChangeLog    | 8529 ++++++++++++++++++++++++++++--------------------------
- NEWS         |  362 ++-
- README.md    |    2 +-
- RELEASE.md   |    2 +-
- VERSION      |    2 +-
- configure.ac |   10 +-
- po/ar.po     |    2 +-
- po/be.po     |    2 +-
- po/bg.po     |    2 +-
- po/ca.po     |    2 +-
- po/cs.po     |    2 +-
- po/da.po     |    2 +-
- po/de.po     |    2 +-
- po/el.po     |    2 +-
- po/en.po     |    2 +-
- po/es.po     |    2 +-
- po/fi.po     |    2 +-
- po/fr.po     |    2 +-
- po/he.po     |    2 +-
- po/hr.po     |    2 +-
- po/hu.po     |    2 +-
- po/icewm.pot |    4 +-
- po/id.po     |    2 +-
- po/it.po     |    2 +-
- po/ja.po     |    2 +-
- po/ko.po     |    2 +-
- po/lt.po     |    2 +-
- po/lv.po     |    2 +-
- po/mk.po     |    2 +-
- po/nb.po     |    2 +-
- po/nl.po     |    2 +-
- po/no.po     |    2 +-
- po/pl.po     |    2 +-
- po/pt.po     |    2 +-
- po/pt_BR.po  |    2 +-
- po/ro.po     |    2 +-
- po/ru.po     |    2 +-
- po/sk.po     |    2 +-
- po/sl.po     |    2 +-
- po/sv.po     |    2 +-
- po/tr.po     |    2 +-
- po/uk.po     |    2 +-
- po/vi.po     |    2 +-
- po/zh_CN.po  |    2 +-
- po/zh_TW.po  |    2 +-
- 46 files changed, 4639 insertions(+), 4370 deletions(-)
-
-commit 4ea1941841189fc119e6640f50516c8267c0c895
-Merge: 6554e52f 813dd473
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 29 20:21:16 2020 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 813dd4736a185b740a0e0db134ead9fada9c0412
-Merge: 31304553 d1e7a8f8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 29 20:16:25 2020 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
