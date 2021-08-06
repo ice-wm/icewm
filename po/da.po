@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.4.2.1038\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-07-08 08:14+0200\n"
+"POT-Creation-Date: 2021-08-06 14:08+0200\n"
 "PO-Revision-Date: 2020-03-13 16:55+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -56,7 +56,7 @@ msgstr "Dato"
 msgid "Default"
 msgstr "Standard"
 
-#: src/aclock.cc:187 src/acpustatus.cc:663 src/amailbox.cc:954
+#: src/aclock.cc:187 src/acpustatus.cc:663 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Deaktivér"
@@ -142,88 +142,92 @@ msgstr "_Kombiner"
 msgid "_Separate"
 msgstr "_Separer"
 
-#: src/amailbox.cc:62
+#: src/akeyboard.cc:76
+msgid "Keyboard"
+msgstr ""
+
+#: src/amailbox.cc:64
 #, c-format
 msgid "Invalid mailbox protocol: \"%s\""
 msgstr "Ugyldig postkasseprotokol: \"%s\""
 
-#: src/amailbox.cc:64
+#: src/amailbox.cc:66
 #, c-format
 msgid "Invalid mailbox path: \"%s\""
 msgstr "Ugyldig postkassesti: \"%s\""
 
-#: src/amailbox.cc:133
+#: src/amailbox.cc:140
 #, c-format
 msgid "DNS name lookup failed for %s"
 msgstr "DNS-navneopslag mislykkedes for %s"
 
-#: src/amailbox.cc:149
+#: src/amailbox.cc:156
 #, c-format
 msgid "Invalid mailbox port: \"%s\""
 msgstr "Ugyldig postkasseport: \"%s\""
 
-#: src/amailbox.cc:307
+#: src/amailbox.cc:314
 #, c-format
 msgid "Could not connect to %s: %s"
 msgstr "Kan ikke oprette forbindelse til %s: %s"
 
-#: src/amailbox.cc:325
+#: src/amailbox.cc:334
 #, c-format
 msgid "Failed to find %s command"
 msgstr "Kunne ikke finde %s-kommandoen"
 
-#: src/amailbox.cc:353 src/yapp.cc:417
+#: src/amailbox.cc:363 src/yapp.cc:418
 #, c-format
 msgid "Failed to execute %s"
 msgstr "Kunne ikke eksekvere %s"
 
-#: src/amailbox.cc:437
+#: src/amailbox.cc:447
 #, c-format
 msgid "Write to socket failed: %s"
 msgstr "Skrivning til sokkel mislykkedes: %s"
 
-#: src/amailbox.cc:684
+#: src/amailbox.cc:694
 #, c-format
 msgid "Using MailBox \"%s\"\n"
 msgstr "Bruger postkasse \"%s\"\n"
 
-#: src/amailbox.cc:791
+#: src/amailbox.cc:801
 msgid "Suspended"
 msgstr "I hvile"
 
-#: src/amailbox.cc:795
+#: src/amailbox.cc:805
 msgid "Error checking mailbox."
 msgstr "Fejl under kontrol af postkasse."
 
-#: src/amailbox.cc:802
+#: src/amailbox.cc:812
 #, c-format
 msgid "%ld mail message, %ld unread."
 msgstr "%ld postbesked, %ld ulæst."
 
-#: src/amailbox.cc:803
+#: src/amailbox.cc:813
 #, c-format
 msgid "%ld mail messages, %ld unread."
 msgstr "%ld postbeskeder, %ld ulæst."
 
-#: src/amailbox.cc:809
+#: src/amailbox.cc:819
 #, c-format
 msgid "%ld mail message."
 msgstr "%ld postbesked."
 
-#: src/amailbox.cc:810
+#: src/amailbox.cc:820
 #, c-format
 msgid "%ld mail messages."
 msgstr "%ld postbeskeder."
 
-#: src/amailbox.cc:951
+#: src/amailbox.cc:961
 msgid "MAIL"
 msgstr "POST"
 
-#: src/amailbox.cc:953
+#: src/amailbox.cc:963
 msgid "_Check"
 msgstr "_Tjek"
 
-#: src/amailbox.cc:955
+#: src/amailbox.cc:965
 msgid "_Suspend"
 msgstr "_Hvile"
 
@@ -296,1734 +300,9 @@ msgstr "Rul ned"
 msgid "NET"
 msgstr "NET"
 
-#: src/aworkspaces.cc:603 src/wmstatus.cc:207
+#: src/aworkspaces.cc:604 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "Arbejdsområde: "
-
-#: src/icehelp.cc:1326
-msgid "Back"
-msgstr "Tilbage"
-
-#: src/icehelp.cc:1326
-msgid "Alt+Left"
-msgstr "Alt+Venstre"
-
-#: src/icehelp.cc:1328
-msgid "Forward"
-msgstr "Frem"
-
-#: src/icehelp.cc:1328
-msgid "Alt+Right"
-msgstr "Alt+Højre"
-
-#: src/icehelp.cc:1331
-msgid "Previous"
-msgstr "Foregående"
-
-#: src/icehelp.cc:1332
-msgid "Next"
-msgstr "Næste"
-
-#: src/icehelp.cc:1334
-msgid "Contents"
-msgstr "Indhold"
-
-#: src/icehelp.cc:1335
-msgid "Index"
-msgstr "Indeks"
-
-#: src/icehelp.cc:1337
-msgid "Find..."
-msgstr ""
-
-#: src/icehelp.cc:1337
-#, fuzzy
-#| msgid "Ctrl+Q"
-msgid "Ctrl+F"
-msgstr "Ctrl+Q"
-
-#: src/icehelp.cc:1338
-msgid "Find next"
-msgstr ""
-
-#: src/icehelp.cc:1338
-msgid "F3"
-msgstr ""
-
-#: src/icehelp.cc:1340
-#, fuzzy
-#| msgid "WebBrowser"
-msgid "Open in Browser"
-msgstr "Webbrowser"
-
-#: src/icehelp.cc:1340
-#, fuzzy
-#| msgid "Ctrl+Q"
-msgid "Ctrl+B"
-msgstr "Ctrl+Q"
-
-#: src/icehelp.cc:1342
-msgid "Reload"
-msgstr ""
-
-#: src/icehelp.cc:1342 src/icesame.cc:60
-msgid "Ctrl+R"
-msgstr "Ctrl+R"
-
-#: src/icehelp.cc:1343 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
-msgid "Close"
-msgstr "Luk"
-
-#: src/icehelp.cc:1343 src/icesame.cc:62 src/iceview.cc:59
-msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
-
-#: src/icehelp.cc:1348
-msgid "Icewm(1)"
-msgstr "Icewm(1)"
-
-#: src/icehelp.cc:1348
-#, fuzzy
-#| msgid "Ctrl+Q"
-msgid "Ctrl+I"
-msgstr "Ctrl+Q"
-
-#: src/icehelp.cc:1350
-msgid "Icewmbg(1)"
-msgstr "Icewmbg(1)"
-
-#: src/icehelp.cc:1352
-msgid "Icesound(1)"
-msgstr "Icesound(1)"
-
-#: src/icehelp.cc:1354
-msgid "FAQ"
-msgstr "OSS"
-
-#: src/icehelp.cc:1356
-msgid "Manual"
-msgstr "Manuelt"
-
-#: src/icehelp.cc:1356
-#, fuzzy
-#| msgid "Ctrl+Q"
-msgid "Ctrl+M"
-msgstr "Ctrl+Q"
-
-#: src/icehelp.cc:1358
-msgid "Support"
-msgstr "Support"
-
-#: src/icehelp.cc:1360
-msgid "Theme Howto"
-msgstr "Temaers Howto"
-
-#: src/icehelp.cc:1360 src/iceview.cc:56
-msgid "Ctrl+T"
-msgstr "Ctrl+T"
-
-#: src/icehelp.cc:1362
-msgid "Website"
-msgstr "Websted"
-
-#: src/icehelp.cc:1362 src/iceview.cc:57
-msgid "Ctrl+W"
-msgstr "Ctrl+W"
-
-#: src/icehelp.cc:1364
-msgid "Github"
-msgstr "Github"
-
-#: src/icehelp.cc:1368 src/yinputline.cc:19
-msgid "Ctrl+X"
-msgstr "Ctrl+X"
-
-#: src/icehelp.cc:1373 src/yinputline.cc:20
-msgid "Ctrl+V"
-msgstr "Ctrl+V"
-
-#: src/icehelp.cc:2180
-msgid "Unsupported protocol."
-msgstr "Ikke-understøttet protokol."
-
-#: src/icehelp.cc:2259
-#, c-format
-msgid "Invalid path: %s\n"
-msgstr "Ugyldig sti: %s\n"
-
-#: src/icehelp.cc:2283
-msgid "Path does not refer to a file."
-msgstr "Stien refererer ikke til en fil."
-
-#: src/icehelp.cc:2288
-msgid "Failed to open file for reading."
-msgstr "Kunne ikke åbn fil til læsning."
-
-#: src/icehelp.cc:2317
-msgid "Failed to create a temporary file"
-msgstr "Kunne ikke oprette en midlertidig fil"
-
-#: src/icehelp.cc:2410
-#, c-format
-msgid "Failed to execute system(%s) (%d)"
-msgstr "Kunne ikke eksekvere system(%s) (%d)"
-
-#: src/icehelp.cc:2433
-#, c-format
-msgid "Failed to decompress %s"
-msgstr "Kunne ikke udpakke %s"
-
-#: src/icehelp.cc:2441
-msgid "Could not locate curl or wget in PATH"
-msgstr "Kunne ikke finde curl eller wget i PATH"
-
-#: src/icehelp.cc:2445
-msgid "Unsafe characters in URL"
-msgstr "Usikre tegn i URL"
-
-#: src/icehelp.cc:2482
-#, c-format
-msgid ""
-"Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
-"\n"
-"IceHelp is a very simple HTML browser for the IceWM window manager.\n"
-"It can display a HTML document from file, or browse a website.\n"
-"It remembers visited pages in a history, which is navigable\n"
-"by key bindings and a context menu (right mouse click).\n"
-"It neither supports rendering of images nor JavaScript.\n"
-"If no file or URL is given it will display the IceWM Manual\n"
-"from %s.\n"
-"\n"
-"Options:\n"
-"  -d, --display=NAME  NAME of the X server to use.\n"
-"  --sync              Synchronize X11 commands.\n"
-"\n"
-"  -B                  Display the IceWM icewmbg manpage.\n"
-"  -b, --bugs          Display the IceWM bug reports (primitively).\n"
-"  -f, --faq           Display the IceWM FAQ and Howto.\n"
-"  -g                  Display the IceWM Github website.\n"
-"  -i, --icewm         Display the IceWM icewm manpage.\n"
-"  -m, --manual        Display the IceWM Manual (default).\n"
-"  -s                  Display the IceWM icesound manpage.\n"
-"  -t, --theme         Display the IceWM themes Howto.\n"
-"  -w, --website       Display the IceWM website.\n"
-"\n"
-"  -V, --version       Prints version information and exits.\n"
-"  -h, --help          Prints this usage screen and exits.\n"
-"\n"
-"Environment variables:\n"
-"  DISPLAY=NAME        Name of the X server to use.\n"
-"\n"
-"To report bugs, support requests, comments please visit:\n"
-"%s\n"
-"\n"
-msgstr ""
-"Anvendelse: %s [TILVALG] [ FILNAVN | URL ]\n"
-"\n"
-"IceHelp er en meget simpel HTML-browser til IceWM-vindueshåndteringen.\n"
-"Den kan vise et HTML-dokument fra en fil eller gennemse et websted.\n"
-"Den husker besøgte sider i en historik, som kan navigeres\n"
-"med tastebindinger og en genvejsmenu (højreklik med musen).\n"
-"Den understøtter hverken gengivelse af billeder eller JavaScript.\n"
-"Hvis der ikke angives nogen fil eller URL, så viser den IceWM-manualen\n"
-"fra %s.\n"
-"\n"
-"Tilvalg:\n"
-"  --display=NAVN      NAVN på X-serveren som skal bruges.\n"
-"  --sync              Synkroniser X11-kommandoer.\n"
-"\n"
-"  -B                  Vis IceWM icewmbg-mansiden.\n"
-"  -b, --bugs          Vis IceWM-fejlrapporter (primitivt).\n"
-"  -f, --faq           Vis IceWM-FAQ og -Howto.\n"
-"  -g                  Vis IceWM Github-webstedet.\n"
-"  -i, --icewm         Vis IceWM icewm-mansiden.\n"
-"  -m, --manual        Vis IceWM-manual (standard).\n"
-"  -s                  Vis IceWM icesound-mansiden.\n"
-"  -t, --theme         Vis IceWM-temaers Howto.\n"
-"  -w, --website       Vis IceWM-webstedet.\n"
-"\n"
-"  -V, --version       Udskriver versionsinformation og afslutter.\n"
-"  -h, --help          Udskriver denne anvendelsesskærm og afslutter.\n"
-"\n"
-"Miljøvariabler:\n"
-"  DISPLAY=NAVN        Navn på X-serveren som skal bruges.\n"
-"\n"
-"Rapportér fejl, supportforespørgsler og kommentarer ved at besøge:\n"
-"%s\n"
-"\n"
-
-#: src/icehelp.cc:2572
-#, c-format
-msgid "Ignoring option '%s'"
-msgstr "Ignorerer tilvalg \"%s\""
-
-#: src/icelist.cc:60
-msgid "List View"
-msgstr "Listevisning"
-
-#: src/icelist.cc:61
-msgid "Icon View"
-msgstr "Ikonvisning"
-
-#: src/icelist.cc:65
-msgid "Open"
-msgstr "Åbn"
-
-#: src/icesame.cc:57
-msgid "Undo"
-msgstr "Fortryd"
-
-#: src/icesame.cc:57
-msgid "Ctrl+Z"
-msgstr "Ctrl+Z"
-
-#: src/icesame.cc:59
-msgid "New"
-msgstr "Ny"
-
-#: src/icesame.cc:59
-msgid "Ctrl+N"
-msgstr "Ctrl+N"
-
-#: src/icesame.cc:60
-msgid "Restart"
-msgstr "Genstart"
-
-#: src/icesame.cc:65
-msgid "Same Game"
-msgstr "Start spillet igen"
-
-#: src/icesh.cc:73
-msgid "For help please consult the man page icesh(1).\n"
-msgstr "Se man-siden for icesh(1), for at få hjælp.\n"
-
-#: src/icesh.cc:1520
-#, c-format
-msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
-msgstr "Navngivne symboler af domænet \"%s\" (numerisk område: %ld-%ld):\n"
-
-#: src/icesh.cc:1578
-#, c-format
-msgid "Workspace out of range: %ld"
-msgstr "Arbejdsområde udenfor område: %ld"
-
-#: src/icesh.cc:1599
-#, c-format
-msgid "Invalid workspace name: `%s'"
-msgstr "Ugyldigt arbejdsområdenavn: \"%s\""
-
-#: src/icesh.cc:1884
-msgid "GNOME window layer"
-msgstr "GNOME vindueslag"
-
-#: src/icesh.cc:1885
-msgid "IceWM tray option"
-msgstr "IceWM-bakketilvalg"
-
-#: src/icesh.cc:1886
-msgid "Gravity symbols"
-msgstr "Tyngdekraftsymboler"
-
-#: src/icesh.cc:1887
-msgid "Motif functions"
-msgstr "Motif-funktioner"
-
-#: src/icesh.cc:1888
-msgid "Motif decorations"
-msgstr "Motif-dekorationer"
-
-#: src/icesh.cc:1889
-#, fuzzy
-#| msgid "GNOME window state"
-msgid "EWMH window state"
-msgstr "GNOME vinduestilstand"
-
-#: src/icesh.cc:1971 src/icesh.cc:2044
-#, c-format
-msgid "workspace #%d: `%s'\n"
-msgstr "arbejdsområde nr. %d: \"%s\"\n"
-
-#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
-#, c-format
-msgid "Invalid state: `%s'."
-msgstr "Ugyldig tilstand: \"%s\"."
-
-#: src/icesh.cc:3131
-#, c-format
-msgid "Cannot get geometry of window 0x%lx"
-msgstr "Kan ikke hente geometrien af vinduet 0x%lx"
-
-#: src/icesh.cc:3156
-#, c-format
-msgid "Invalid Xinerama: `%s'."
-msgstr "Ugyldigt Xinerama: \"%s\"."
-
-#: src/icesh.cc:3203 src/icesh.cc:3253
-#, c-format
-msgid "Invalid argument: `%s'"
-msgstr "Ugyldigt argument: \"%s\""
-
-#: src/icesh.cc:3219
-#, c-format
-msgid "Action `%s' requires at least %d arguments."
-msgstr "Handlingen \"%s\" kræver mindst %d argumenter."
-
-#: src/icesh.cc:3228
-#, c-format
-msgid "Invalid expression: `%s'"
-msgstr "Ugyldigt udtryk: \"%s\""
-
-#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1067
-#: src/yxapp.cc:1032
-#, c-format
-msgid "Can't open display: %s. X must be running and $DISPLAY set."
-msgstr "Kan ikke åbne skærm: %s. X skal køre og $DISPLAY sat."
-
-#: src/icesh.cc:3355
-#, fuzzy, c-format
-#| msgid "Unexepected menu keyword: '%s'"
-msgid "Unexpected: `%s'."
-msgstr "Uventet menunøgleord: \"%s\""
-
-#: src/icesh.cc:3384
-msgid "No windows found."
-msgstr "Ingen vinduer fundet."
-
-#: src/icesh.cc:3399
-msgid "No actions specified."
-msgstr "Ingen handlinger anført."
-
-#: src/icesh.cc:3529
-#, c-format
-msgid "Invalid window identifier: `%s'"
-msgstr "Ugyldig vinduesidentifikator: \"%s\""
-
-#: src/icesh.cc:3546
-#, c-format
-msgid "Invalid PID: `%s'"
-msgstr "Ugyldig PID: \"%s\""
-
-#: src/icesh.cc:3582
-#, c-format
-msgid "Invalid layer: `%s'."
-msgstr "Ugyldigt lag: \"%s\"."
-
-#: src/icesh.cc:4393
-#, c-format
-msgid "Unknown action: `%s'"
-msgstr "Ukendt handling: \"%s\""
-
-#: src/iceskt.cc:42
-#, c-format
-msgid "Socket error: %d"
-msgstr "Sokkelfejl: %d"
-
-#: src/icesm.cc:69
-#, fuzzy
-#| msgid ""
-#| "  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
-#| "  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
-#| "\n"
-#| "  -d, --display=NAME  Use NAME to connect to the X server.\n"
-#| "  -a, --alpha         Use a 32-bit visual for translucency.\n"
-#| "  --sync              Synchronize communication with X11 server.\n"
-#| "\n"
-#| "  -i, --icewm=FILE    Use FILE as the IceWM window manager.\n"
-#| "  -b, --nobg          Do not start icewmbg.\n"
-#| "  -n, --notray        Do not start icewmtray.\n"
-#| "  -s, --sound         Also start icesound.\n"
-msgid ""
-"  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
-"  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
-"\n"
-"  -d, --display=NAME  Use NAME to connect to the X server.\n"
-"  -a, --alpha         Use a 32-bit visual for translucency.\n"
-"  --sync              Synchronize communication with X11 server.\n"
-"\n"
-"  -i, --icewm=FILE    Use FILE as the IceWM window manager.\n"
-"  -o, --output=FILE   Redirect all output to FILE.\n"
-"\n"
-"  -b, --nobg          Do not start icewmbg.\n"
-"  -n, --notray        Do not start icewmtray.\n"
-"  -s, --sound         Also start icesound.\n"
-msgstr ""
-"  -c, --config=FIL    Lad IceWM indlæse præferencer fra FIL.\n"
-"  -t, --theme=FIL     Lad IceWM indlæse temaet fra FIL.\n"
-"\n"
-"  -d, --display=NAVN  Brug NAVN til at oprette forbindelse til X-serveren.\n"
-"  -a, --alpha         Brug en 32-bit visuel for gennemsigtighed.\n"
-"  --sync              Synkroniser kommunikation med X11-server.\n"
-"\n"
-"  -i, --icewm=FIL     Brug FIL som IceWM-vindueshåndteringen.\n"
-"  -b, --nobg          Start ikke icewmbg.\n"
-"  -n, --notray        Start ikke icewmtray.\n"
-"  -s, --sound         Start også icesound.\n"
-
-#: src/icesm.cc:85
-msgid ""
-"\n"
-"Debugging options:\n"
-"  -v, --valgrind      Let \"/usr/bin/valgrind\" run icewm.\n"
-"                      Thoroughly examines the execution of icewm.\n"
-"  -g, --catchsegv     Let \"/usr/bin/catchsegv\" run icewm.\n"
-"                      Gives a backtrace if icewm segfaults.\n"
-msgstr ""
-
-#: src/icesm.cc:188
-#, c-format
-msgid "Unknown option '%s'"
-msgstr "Ukendt tilvalg \"%s\""
-
-#: src/icesm.cc:462 src/icesm.cc:622
-#, c-format
-msgid "restart %s."
-msgstr "genstart %s."
-
-#: src/icesm.cc:468
-#, c-format
-msgid "%s exited with status %d."
-msgstr "%s afsluttede med status %d."
-
-#: src/icesm.cc:474 src/icesm.cc:628
-#, c-format
-msgid "%s was killed by signal %d."
-msgstr "%s blev dræbt med signal %d."
-
-#: src/icesm.cc:513
-#, fuzzy
-#| msgid ""
-#| " IceWM crashed for the second time in 10 seconds. \n"
-#| " Do you wish to:\n"
-#| "\n"
-#| "\t1: Restart IceWM?\n"
-#| "\t2: Abort this session?\n"
-msgid ""
-" IceWM crashed for the second time in 10 seconds. \n"
-" Do you wish to:\n"
-"\n"
-"\t1: Restart IceWM?\n"
-"\t2: Abort this session?\n"
-"\t3: Run a terminal?\n"
-msgstr ""
-" IceWM holdt op med at virke for anden gang indenfor 10 sekunder. \n"
-" Vil du:\n"
-"\n"
-"\t1: Genstarte IceWM?\n"
-"\t2: Afbryde sessionen?\n"
-
-#: src/icesm.cc:519
-msgid "IceWM crash response"
-msgstr "Svar til IceWM-nedbrud"
-
-#: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
-#, c-format
-msgid "Playing sample #%d (%s)"
-msgstr "Afspiller prøve nr. %d (%s)"
-
-#: src/icesound.cc:329
-#, c-format
-msgid "%s: Invalid number of channels"
-msgstr "%s: Ugyldigt antal kanaler"
-
-#: src/icesound.cc:335 src/icesound.cc:340
-msgid "Could not set OSS channels"
-msgstr "Kunne ikke sætte OSS-kanaler"
-
-#: src/icesound.cc:345 src/icesound.cc:373
-msgid "Could not sync OSS"
-msgstr "Kunne ikke synkronisere OSS"
-
-#: src/icesound.cc:357
-msgid "OSS write failed"
-msgstr "OSS-skrivning mislykkedes"
-
-#: src/icesound.cc:361
-#, c-format
-msgid "OSS incomplete write (%d/%d)"
-msgstr "OSS ufuldstændig skrivning (%d/%d)"
-
-#: src/icesound.cc:368
-msgid "Could not post OSS"
-msgstr "Kunne ikke indsende OSS"
-
-#: src/icesound.cc:397
-#, c-format
-msgid "Could not open OSS device %s"
-msgstr "Kunne ikke åbne OSS-enhed %s"
-
-#: src/icesound.cc:402
-msgid "Could not set OSS stereo"
-msgstr "Kunne ikke sætte OSS-stereo"
-
-#: src/icesound.cc:407
-msgid "Could not reset OSS DSP"
-msgstr "Kunne ikke nulstille OSS-DSP"
-
-#: src/icesound.cc:412
-msgid "Could not set OSS format"
-msgstr "Kunne ikke sætte OSS-format"
-
-#: src/icesound.cc:499
-#, c-format
-msgid "ao_open_live failed with %d"
-msgstr "ao_open_live mislykkedes med %d"
-
-#: src/icesound.cc:510
-msgid "ao_play failed"
-msgstr "ao_play mislykkedes"
-
-#: src/icesound.cc:676
-#, c-format
-msgid "Unrecognized option: %s\n"
-msgstr "Ugenkendeligt tilvalg: %s\n"
-
-#: src/icesound.cc:679 src/icesound.cc:972
-#, c-format
-msgid "Unrecognized argument: %s\n"
-msgstr "Ugenkendeligt argument: %s\n"
-
-#: src/icesound.cc:688
-#, c-format
-msgid ""
-"Usage: %s [OPTION]...\n"
-"\n"
-"Plays audio files on GUI events raised by IceWM.\n"
-"The currently configured sound interfaces are: %s.\n"
-"Icesound will choose the first of these which is usable.\n"
-"\n"
-"Options:\n"
-"\n"
-" -d, --display=DISPLAY   X11 display used by IceWM (default: $DISPLAY).\n"
-"\n"
-" -s, --sample-dir=DIR    Specifies a directory with sound files.\n"
-"                         Default is $HOME/.config/icewm/sounds.\n"
-"\n"
-" -i, --interface=LIST    Specifies audio output interfaces. One or more of:\n"
-"                         %s separated by commas.\n"
-"\n"
-" -D, --device=DEVICE     Backwards compatibility only: the default device. \n"
-"                         Please prefer one of the -A/-O/-S options.\n"
-"\n"
-" -O, --oss=DEVICE        Specifies the OSS device (default: \"%s\").\n"
-"\n"
-" -A, --alsa=DEVICE       Specifies the ALSA device (default: \"%s\").\n"
-"\n"
-" -z, --snooze=millisecs  Specifies the snooze interval between sound events\n"
-"                         in milliseconds. Default is 500 milliseconds.\n"
-"\n"
-" -p, --play=sound        Plays the given sound (name or number) and exits.\n"
-"\n"
-" -l, --list-files        Lists the available sound file paths and exits.\n"
-"\n"
-"     --list-sounds       Lists the supported sound filenames and exits.\n"
-"\n"
-"     --list-interfaces   Lists the supported audio interfaces and exits.\n"
-"\n"
-" -v, --verbose           Be verbose and print out each sound event.\n"
-"\n"
-" -V, --version           Prints version information and exits.\n"
-"\n"
-" -h, --help              Prints this help screen and exits.\n"
-"\n"
-"Return values:\n"
-"\n"
-"  0    Success.\n"
-"  1    General error.\n"
-"  2    Command line error.\n"
-"  3    Subsystems error (ie cannot connect to server).\n"
-"\n"
-msgstr ""
-"Anvendelse: %s [TILVALG]...\n"
-"\n"
-"Afspiller lydfiler ved GUI-hændelser som er rejst af IceWM.\n"
-"De nuværende konfigurerede lydgrænseflader er: %s.\n"
-"Icesound vil vælge den første som kan anvendes.\n"
-"\n"
-"Tilvalg:\n"
-"\n"
-" -d, --display=DISPLAY   Display brugt af IceWM (standard: $DISPLAY).\n"
-"\n"
-" -s, --sample-dir=MAPPE  Angiver en mappe med lydfiler.\n"
-"                         Standard er $HOME/.config/icewm/sounds.\n"
-"\n"
-" -i, --interface=LISTE   Angiver lydoutput-grænseflader. En eller flere af:\n"
-"                         %s adskilt af kommaer.\n"
-"\n"
-" -D, --device=ENHED      Kun bagudkompatibel: standardenheden.\n"
-"                         Foretræk venligst et af tilvalgende -A/-O/-S.\n"
-"\n"
-" -O, --oss=ENHED         Angiver OSS-enheden (standard: \"%s\").\n"
-"\n"
-" -A, --alsa=ENHED        Angiver ALSA-enheden (standard: \"%s\").\n"
-"\n"
-" -z, --snooze=millisek   Angiver snooze-intervallet mellem lydhændelser\n"
-"                         i millisekunder. Standard er 500 millisekunder.\n"
-"\n"
-" -p, --play=lyd          Afspiller den givne lyd (navn eller nummer) og "
-"afslutter.\n"
-"\n"
-" -l, --list-files        Viser de tilgængelig lydfilstier og afslutter.\n"
-"\n"
-"     --list-sounds       Viser de understøttede lydfilnavne og afslutter.\n"
-"\n"
-"     --list-interfaces   Viser de understøttede lydgrænseflader og "
-"afslutter.\n"
-"\n"
-" -v, --verbose           Vær udførlig og udskriv hver lydhændelse.\n"
-"\n"
-" -V, --version           Udskriver versionsinformation og afslutter.\n"
-"\n"
-" -h, --help              Udskriver denne hjælp-skærm og afslutter.\n"
-"\n"
-"Returværdier:\n"
-"\n"
-"  0    Succes.\n"
-"  1    Generel fejl.\n"
-"  2    Fejl ved kommandolinje.\n"
-"  3    Fejl ved undersystem (dvs. kan ikke oprette forbindelse til server).\n"
-"\n"
-
-#: src/icesound.cc:779
-#, c-format
-msgid "No audio for %s"
-msgstr "Ingen lyd til %s"
-
-#: src/icesound.cc:856
-msgid "Could not get GUI event property"
-msgstr "Kunne ikke få GUI-hændelse-egenskab"
-
-#: src/icesound.cc:860
-#, c-format
-msgid "Received invalid GUI event %d"
-msgstr "Modtog ugyldig GUI-hændelse %d"
-
-#: src/icesound.cc:864
-#, c-format
-msgid "Received GUI event %s"
-msgstr "Modtog GUI-hændelse %s"
-
-#: src/icesound.cc:878
-#, c-format
-msgid "Too quick; ignoring %s."
-msgstr "For hurtig; ignorerer %s."
-
-#: src/icesound.cc:882
-#, c-format
-msgid "Support for the %s interface not compiled."
-msgstr "Understøttelse for %s grænseflade ikke oversat."
-
-#: src/icesound.cc:915
-#, c-format
-msgid "Unsupported interface: %s."
-msgstr "Ikke-understøttet grænseflade: %s."
-
-#: src/icesound.cc:924
-#, c-format
-msgid "Using %s audio."
-msgstr "Bruger %s-lyd."
-
-#: src/icesound.cc:928
-#, c-format
-msgid "Failed to connect to audio interfaces %s."
-msgstr "Kunne ikke oprette forbindelse til lydgrænseflader %s."
-
-#: src/icesound.cc:940
-#, c-format
-msgid "Received signal %s: Terminating..."
-msgstr "Modtog signal %s: Afslutter..."
-
-#: src/icetray.cc:220
-msgid ""
-"  -n, --notify        Notify parent process by sending signal USR1.\n"
-"  --display=NAME      Use NAME to connect to the X server.\n"
-"  --sync              Synchronize communication with X11 server.\n"
-"\n"
-"  -c, --config=FILE   Load preferences from FILE.\n"
-"  -t, --theme=FILE    Load the theme from FILE.\n"
-msgstr ""
-"  -n, --notify        Underret forælderproces ved at sende signal USR1.\n"
-"  --display=NAVN      Brug NAVN til at oprette forbindelse til X-serveren.\n"
-"  --sync              Synkroniser kommunikation med X11-server.\n"
-"\n"
-"  -c, --config=FIL    Indlæs præferencer fra FIL.\n"
-"  -t, --theme=FIL     Indlæs temaet fra FIL.\n"
-
-#: src/iceview.cc:55
-msgid "Hex View"
-msgstr "Hex-visning"
-
-#: src/iceview.cc:55
-msgid "Ctrl+H"
-msgstr "Ctrl+H"
-
-#: src/iceview.cc:56
-msgid "Expand Tabs"
-msgstr "Udvid faneblade"
-
-#: src/iceview.cc:57
-msgid "Wrap Lines"
-msgstr "Ombryd linjer"
-
-#: src/icewmbg.cc:72
-#, c-format
-msgid "Failed to load image '%s'."
-msgstr "Kunne ikke indlæse billede \"%s\"."
-
-#: src/icewmbg.cc:913
-msgid ""
-"Usage: icewmbg [OPTIONS]\n"
-"Where multiple values can be given they are separated by commas.\n"
-"When image is a directory then all images from that directory are used.\n"
-"\n"
-"Options:\n"
-"  -p, --replace        Replace an existing icewmbg.\n"
-"  -q, --quit           Tell the running icewmbg to quit.\n"
-"  -r, --restart        Tell the running icewmbg to restart itself.\n"
-"  -u, --shuffle        Shuffle/reshuffle the list of background images.\n"
-"\n"
-"  -c, --config=FILE    Load preferences from FILE.\n"
-"  -t, --theme=NAME     Load the theme with name NAME.\n"
-"\n"
-"  -i, --image=FILE(S)  Load background image(s) from FILE(S).\n"
-"  -k, --color=NAME(S)  Use background color(s) from NAME(S).\n"
-"\n"
-"  -s, --semis=FILE(S)  Load transparency image(s) from FILE(S).\n"
-"  -x, --trans=NAME(S)  Use transparency color(s) from NAME(S).\n"
-"\n"
-"  -e, --center=0/1     Disable/Enable centering background.\n"
-"  -a, --scaled=0/1     Disable/Enable scaling background.\n"
-"  -m, --multi=0/1      Disable/Enable multihead background.\n"
-"  -y, --cycle=SECONDS  Cycle backgrounds every SECONDS.\n"
-"\n"
-"  --display=NAME       Use NAME to connect to the X server.\n"
-"  --sync               Synchronize communication with X11 server.\n"
-"\n"
-"  -h, --help           Print this usage screen and exit.\n"
-"  -V, --version        Prints version information and exits.\n"
-"\n"
-"Loads desktop background according to preferences file:\n"
-" DesktopBackgroundCenter  - Display desktop background centered\n"
-" DesktopBackgroundScaled  - Display desktop background scaled\n"
-" DesktopBackgroundColor   - Desktop background color(s)\n"
-" DesktopBackgroundImage   - Desktop background image(s)\n"
-" ShuffleBackgroundImages  - Shuffle the list of background images\n"
-" SupportSemitransparency  - Support for semitransparent terminals\n"
-" DesktopTransparencyColor - Semitransparency background color(s)\n"
-" DesktopTransparencyImage - Semitransparency background image(s)\n"
-" DesktopBackgroundMultihead - One background over all monitors\n"
-" CycleBackgroundsPeriod   - Seconds between cycling over backgrounds\n"
-"\n"
-" center:0 scaled:0 = tiled\n"
-" center:1 scaled:0 = centered\n"
-" center:1 scaled:1 = fill one dimension and keep aspect ratio\n"
-" center:0 scaled:1 = fill both dimensions and keep aspect ratio\n"
-"\n"
-msgstr ""
-"Anvendelse: icewmbg [TILVALG]\n"
-"Hvor flere værdier kan gives adskilles de med kommaer.\n"
-"Når billede er en mappe bruges alle billeder fra den mappe.\n"
-"\n"
-"Tilvalg:\n"
-"  -p, --replace        Erstat en eksisterende icewmbg.\n"
-"  -q, --quit           Fortæl den kørende icewmbg at den skal afslutte.\n"
-"  -r, --restart        Fortæl den kørende icewmbg at den skal genstarte sig "
-"selv.\n"
-"  -u, --shuffle        Bland/genbland listen over baggrundsbilleder.\n"
-"\n"
-"  -c, --config=FIL     Indlæs præferencer fra FIL.\n"
-"  -t, --theme=NAVN     Indlæs temaet med navnet NAVN.\n"
-"\n"
-"  -i, --image=FIL(ER)  Indlæs baggrundsbillede(r) fra FIL(ER).\n"
-"  -k, --color=NAVN(E)  Brug baggrundsfarve(r) fra NAVN(E).\n"
-"\n"
-"  -s, --semis=FIL(ER)  Indlæs transparente billede(r) fra FIL(ER).\n"
-"  -x, --trans=NAVN(E)  Brug transparente farve(r) fra NAVN(E).\n"
-"\n"
-"  -e, --center=0/1     Deaktivér/aktivér centrering af baggrund.\n"
-"  -a, --scaled=0/1     Deaktivér/aktivér skalering af baggrund.\n"
-"  -m, --multi=0/1      Deaktivér/aktivér multihead-baggrund.\n"
-"  -y, --cycle=SEKUNDER Gennemløb baggrunde hvert SEKUNDER.\n"
-"\n"
-"  --display=NAVN       Brug NAVN til at oprette forbindelse til X-serveren.\n"
-"  --sync               Synkroniser kommunikation med X11-server.\n"
-"\n"
-"  -h, --help           Udskriv denne anvendelsesskærm og afslut.\n"
-"  -V, --version        Udskriver versionsinformation og afslutter.\n"
-"\n"
-"Indlæser skrivebordsbaggrund i henhold til præferencefilen:\n"
-" DesktopBackgroundCenter  - Vis skrivebordsbaggrund centreret\n"
-" DesktopBackgroundScaled  - Vis skrivebordsbaggrund skaleret\n"
-" DesktopBackgroundColor   - Skrivebordets baggrundsfarve(r)\n"
-" DesktopBackgroundImage   - Skrivebordets baggrundsbillede(r)\n"
-" ShuffleBackgroundImages  - Bland listen over baggrundsbilleder\n"
-" SupportSemitransparency  - Understøttelse af delvist transparente "
-"terminaler\n"
-" DesktopTransparencyColor - Delvist transparente baggrundsfarve(r)\n"
-" DesktopTransparencyImage - Delvist transparente baggrundsbillede(r)\n"
-" DesktopBackgroundMultihead - Én baggrund på alle skærme\n"
-" CycleBackgroundsPeriod   - Sekunder mellem gennemløb af baggrunde\n"
-"\n"
-" center:0 scaled:0 = fliselagt\n"
-" center:1 scaled:0 = centreret\n"
-" center:1 scaled:1 = udfyld en dimension og behold højde-bredde-forhold\n"
-" center:0 scaled:1 = udfyld begge dimensioner og behold højde-bredde-"
-"forhold\n"
-"\n"
-
-#: src/icewmbg.cc:1118
-msgid "Cannot start, because another icewmbg is still running."
-msgstr "Kan ikke starte eftersom en anden icewmbg stadig kører."
-
-#: src/icewmhint.cc:20
-msgid "Usage: icewmhint class.instance option arg\n"
-msgstr "Anvendelse: icewmhint klasse.instans tilvalg arg\n"
-
-#: src/icewmhint.cc:57
-#, c-format
-msgid "Out of memory (len=%d)."
-msgstr "Ikke mere ledig hukommelse (len=%d)."
-
-#: src/misc.cc:70 src/misc.cc:82
-msgid "Warning: "
-msgstr "Advarsel: "
-
-#: src/misc.cc:376
-#, c-format
-msgid ""
-"Usage: %s [OPTIONS]\n"
-"Options:\n"
-"%s\n"
-"  -C, --copying       Prints license information and exits.\n"
-"  -V, --version       Prints version information and exits.\n"
-"  -h, --help          Prints this usage screen and exits.\n"
-"\n"
-msgstr ""
-"Anvendelse: %s [TILVALG]\n"
-"Tilvalg:\n"
-"%s\n"
-"  -C, --copying       Udskriver licensinformation og afslutter.\n"
-"  -V, --version       Udskriver versionsinformation og afslutter.\n"
-"  -h, --help          Udskriver denne anvendelsesskærm og afslutter.\n"
-"\n"
-
-#: src/movesize.cc:872
-#, c-format
-msgid "Unknown direction in move/resize request: %d"
-msgstr "Ukendt retning i flyt-/tilpas størrelse-forespørgsel: %d"
-
-#: src/wmabout.cc:29 src/wmabout.cc:30
-msgid "(C)"
-msgstr "(C)"
-
-#: src/wmabout.cc:40
-msgid "Theme:"
-msgstr "Tema:"
-
-#: src/wmabout.cc:41
-msgid "Theme Description:"
-msgstr "Temaets beskrivelse:"
-
-#: src/wmabout.cc:42
-msgid "Theme Author:"
-msgstr "Temaets forfatter:"
-
-#: src/wmabout.cc:51
-msgid "CodeSet:"
-msgstr "Tegnsæt:"
-
-#: src/wmabout.cc:52
-msgid "Language:"
-msgstr "Sprog:"
-
-#: src/wmabout.cc:56
-msgid "DoubleBuffer"
-msgstr ""
-
-#: src/wmabout.cc:57
-msgid "AlphaBlending"
-msgstr ""
-
-#: src/wmabout.cc:58
-msgid "Renderer:"
-msgstr ""
-
-#: src/wmabout.cc:64
-msgid "icewm - About"
-msgstr "icewm - Om"
-
-#: src/wmapp.cc:80
-msgid "A window manager is already running, use --replace to replace it"
-msgstr ""
-"En anden vindueshåndtering kører allerede, brug --replace til at erstatte den"
-
-#: src/wmapp.cc:98
-#, c-format
-msgid "Failed to become the owner of the %s selection"
-msgstr "Kunne ikke blive ejeren af %s-valget"
-
-#: src/wmapp.cc:102
-msgid "Waiting to replace the old window manager"
-msgstr "Venter på at erstatte den gamle vindueshåndtering"
-
-#: src/wmapp.cc:107
-msgid "done."
-msgstr "færdig."
-
-#: src/wmapp.cc:371
-msgid "_Logout"
-msgstr "Log _ud"
-
-#: src/wmapp.cc:372
-msgid "_Cancel logout"
-msgstr "_Annuller udlogning"
-
-#: src/wmapp.cc:377
-msgid "Lock _Workstation"
-msgstr "Lås _arbejdsstation"
-
-#: src/wmapp.cc:379 src/wmdialog.cc:72
-msgid "Re_boot"
-msgstr "_Genstart"
-
-#: src/wmapp.cc:381 src/wmdialog.cc:73
-msgid "Shut_down"
-msgstr "_Luk ned"
-
-#. TRANSLATORS: This means "energy saving mode" or "suspended system". Not "interrupt". Not "hibernate".
-#: src/wmapp.cc:383 src/wmdialog.cc:69
-msgid "_Sleep mode"
-msgstr "_Slumretilstand"
-
-#: src/wmapp.cc:388
-msgid "Restart _Icewm"
-msgstr "Genstart _Icewm"
-
-# scootergrisen: tjek om det er korrekt med "Xterm". Synes ikke Xterm virker som forventet.
-#: src/wmapp.cc:390
-msgid "Restart _Xterm"
-msgstr "Genstart _Xterm"
-
-#: src/wmapp.cc:400
-msgid "_Menu"
-msgstr "_Menu"
-
-#: src/wmapp.cc:401
-msgid "_Above Dock"
-msgstr "_Over dok"
-
-#: src/wmapp.cc:402
-msgid "_Dock"
-msgstr "_Dok"
-
-#: src/wmapp.cc:403
-msgid "_OnTop"
-msgstr "Ø_verst"
-
-#: src/wmapp.cc:404
-msgid "_Normal"
-msgstr "_Normal"
-
-#: src/wmapp.cc:405
-msgid "_Below"
-msgstr "_Under"
-
-#: src/wmapp.cc:406
-msgid "D_esktop"
-msgstr "_Skrivebord"
-
-#: src/wmapp.cc:441 src/wmwinlist.cc:362
-msgid "_Restore"
-msgstr "_Gendan"
-
-#: src/wmapp.cc:443
-msgid "_Move"
-msgstr "_Flyt"
-
-#: src/wmapp.cc:445
-msgid "_Size"
-msgstr "Stø_rrelse"
-
-#: src/wmapp.cc:447 src/wmwinlist.cc:363
-msgid "Mi_nimize"
-msgstr "Mi_nimer"
-
-#: src/wmapp.cc:449 src/wmwinlist.cc:364
-msgid "Ma_ximize"
-msgstr "Ma_ksimer"
-
-#: src/wmapp.cc:450 src/wmwinlist.cc:365
-msgid "Maximize_Vert"
-msgstr "Maksimer_Lodret"
-
-#: src/wmapp.cc:451 src/wmwinlist.cc:366
-msgid "MaximizeHori_z"
-msgstr "Maksimer_Vandret"
-
-#: src/wmapp.cc:454 src/wmwinlist.cc:367
-msgid "_Fullscreen"
-msgstr "F_uldskærm"
-
-#: src/wmapp.cc:457 src/wmwinlist.cc:369
-msgid "_Hide"
-msgstr "Sk_jul"
-
-#: src/wmapp.cc:459 src/wmwinlist.cc:370
-msgid "Roll_up"
-msgstr "Rul _op"
-
-#: src/wmapp.cc:466
-msgid "R_aise"
-msgstr "_Hæv"
-
-#: src/wmapp.cc:468 src/wmwinlist.cc:372
-msgid "_Lower"
-msgstr "_Sænk"
-
-#: src/wmapp.cc:470 src/wmwinlist.cc:373
-msgid "La_yer"
-msgstr "L_ag"
-
-#: src/wmapp.cc:474 src/wmwinlist.cc:375
-msgid "Move _To"
-msgstr "Flyt _til"
-
-#: src/wmapp.cc:475 src/wmwinlist.cc:376
-msgid "Occupy _All"
-msgstr "_På alle"
-
-#: src/wmapp.cc:481
-msgid "Limit _Workarea"
-msgstr "Afgræns _arbejdsområde"
-
-#: src/wmapp.cc:485 src/wmwinlist.cc:377
-msgid "Tray _icon"
-msgstr "_Bakkeikon"
-
-#: src/wmapp.cc:490 src/wmwinlist.cc:392 src/wmwinlist.cc:400
-msgid "_Close"
-msgstr "_Luk"
-
-#: src/wmapp.cc:492 src/wmwinlist.cc:394
-msgid "_Kill Client"
-msgstr "_Dræb klient"
-
-#: src/wmapp.cc:495 src/wmdialog.cc:74 src/wmwinmenu.cc:130
-msgid "_Window list"
-msgstr "_Vinduesliste"
-
-#: src/wmapp.cc:528
-msgid "Another window manager already running, exiting..."
-msgstr "En anden vindueshåndtering kører allerede, afslutter..."
-
-#: src/wmapp.cc:603
-#, c-format
-msgid ""
-"Could not restart: %s\n"
-"Does $PATH lead to %s?"
-msgstr ""
-"Kunne ikke genstarte: %s\n"
-"Leder $PATH til %s?"
-
-#: src/wmapp.cc:766
-msgid "Confirm Restart as Terminal"
-msgstr ""
-
-#: src/wmapp.cc:767
-msgid ""
-"Unmanage all applications and restart\n"
-"as a terminal. Proceed?"
-msgstr ""
-
-#: src/wmapp.cc:1068 src/yxapp.cc:1033
-msgid "<none>"
-msgstr "<ingen>"
-
-#: src/wmapp.cc:1387
-msgid ""
-"  --client-id=ID      Client id to use when contacting session manager.\n"
-msgstr ""
-"  --client-id=ID      Klient-id som skal bruges når sessionshåndteringen "
-"kontaktes.\n"
-
-#: src/wmapp.cc:1393
-msgid ""
-"\n"
-"  --debug             Print generic debug messages.\n"
-"  --debug-z           Print debug messages regarding window stacking.\n"
-msgstr ""
-"\n"
-"  --debug             Udskriv generiske fejlsøgningsmeddelelser.\n"
-"  --debug-z           Udskriv fejlsøgningsmeddelelser vedrørende "
-"vinduesstakning.\n"
-
-#: src/wmapp.cc:1401
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "  -a, --alpha         Use a 32-bit visual for translucency.\n"
-#| "  -c, --config=FILE   Load preferences from FILE.\n"
-#| "  -t, --theme=FILE    Load theme from FILE.\n"
-#| "  -s, --splash=IMAGE  Briefly show IMAGE on startup.\n"
-#| "  -p, --postpreferences  Print preferences after all processing.\n"
-#| "  --trace=conf,icon   Trace paths used to load configuration.\n"
-msgid ""
-"\n"
-"  -a, --alpha         Use a 32-bit visual for translucency.\n"
-"  -c, --config=FILE   Load preferences from FILE.\n"
-"  -t, --theme=FILE    Load theme from FILE.\n"
-"  -s, --splash=IMAGE  Briefly show IMAGE on startup.\n"
-"  -p, --postpreferences  Print preferences after all processing.\n"
-"  --rewrite-preferences  Update an existing preferences file.\n"
-"  --trace=conf,icon   Trace paths used to load configuration.\n"
-msgstr ""
-"\n"
-"  -a, --alpha         Brug en 32-bit visuel for gennemsigtighed.\n"
-"  -c, --config=FIL    Indlæs præferencer fra FIL.\n"
-"  -t, --theme=FIL     Indlæs tema fra FIL.\n"
-"  -s, --splash=BILLEDE Vis kortvarigt BILLEDE under opstart.\n"
-"  -p, --postpreferences  Udskriv præferencer efter endt behandling.\n"
-"  --trace=konf,ikon   Spor stier som blev brugt til at indlæse "
-"konfiguration.\n"
-
-#: src/wmapp.cc:1411
-#, c-format
-msgid ""
-"Usage: %s [OPTIONS]\n"
-"Starts the IceWM window manager.\n"
-"\n"
-"Options:\n"
-"  -d, --display=NAME  NAME of the X server to use.\n"
-"%s  --sync              Synchronize X11 commands.\n"
-"%s\n"
-"  -V, --version       Prints version information and exits.\n"
-"  -h, --help          Prints this usage screen and exits.\n"
-"%s\n"
-"  --replace           Replace an existing window manager.\n"
-"  -r, --restart       Tell the running icewm to restart itself.\n"
-"\n"
-"  --configured        Print the compile time configuration.\n"
-"  --directories       Print the configuration directories.\n"
-"  -l, --list-themes   Print a list of all available themes.\n"
-"\n"
-"Environment variables:\n"
-"  ICEWM_PRIVCFG=PATH  Directory for user configuration files,\n"
-"                      \"$XDG_CONFIG_HOME/icewm\" if exists or\n"
-"                      \"$HOME/.icewm\" by default.\n"
-"  DISPLAY=NAME        Name of the X server to use.\n"
-"  MAIL=URL            Location of your mailbox.\n"
-"\n"
-"To report bugs, support requests, comments please visit:\n"
-"%s\n"
-"\n"
-msgstr ""
-"Anvendelse: %s [TILVALG]\n"
-"Starter IceWM-vindueshåndtering.\n"
-"\n"
-"Tilvalg:\n"
-"  -d, --display=NAME  NAVN på X-serveren som skal bruges.\n"
-"%s  --sync              Synkroniser X11-kommandoer.\n"
-"%s\n"
-"  -V, --version       Udskriver versionsinformation og afslutter.\n"
-"  -h, --help          Udskriver denne anvendelsesskærm og afslutter.\n"
-"%s\n"
-"  --replace           Erstat en eksisterende vindueshåndtering.\n"
-"  -r, --restart       Fortæl den kørende icewm at den skal genstarte sig "
-"selv.\n"
-"\n"
-"  --configured        Udskriv konfigurationen for kompileringstiden.\n"
-"  --directories       Udskriv mapperne for konfigurationen.\n"
-"  -l, --list-themes   Udskriv en liste med alle tilgængelige temaer.\n"
-"\n"
-"Miljøvariabler:\n"
-"  ICEWM_PRIVCFG=STI   Mappe som skal bruges til brugerens "
-"konfigurationsfiler,\n"
-"                      \"$XDG_CONFIG_HOME/icewm\" hvis den findes, ellers\n"
-"                      \"$HOME/.icewm/\" som standard.\n"
-"  DISPLAY=NAVN        Navn på X-serveren som skal bruges.\n"
-"  MAIL=URL            Placeringen af din postkasse.\n"
-"\n"
-"Rapportér fejl, supportforespørgsler og kommentarer ved at besøge:\n"
-"%s\n"
-"\n"
-
-#: src/wmapp.cc:1473
-#, c-format
-msgid "%s configuration directories:\n"
-msgstr "%s konfigurationsmapper:\n"
-
-#: src/wmapp.cc:1555
-#, c-format
-msgid "%s configured options:%s\n"
-msgstr "%s konfigurerede tilvalg:%s\n"
-
-#: src/wmapp.cc:1636
-#, c-format
-msgid "Unrecognized option '%s'."
-msgstr "Ugenkendeligt tilvalg \"%s\"."
-
-#: src/wmapp.cc:1682
-msgid "Confirm Logout"
-msgstr "Bekræft udlogning"
-
-#: src/wmapp.cc:1683
-msgid ""
-"Logout will close all active applications.\n"
-"Proceed?"
-msgstr ""
-"Udlogning vil lukke alle aktive programmer.\n"
-"Fortsæt?"
-
-#: src/wmbutton.cc:85
-msgid "Raise/Lower"
-msgstr "Hæv/sænk"
-
-#: src/wmbutton.cc:90
-msgid "Hide"
-msgstr "Skjul"
-
-#: src/wmbutton.cc:96
-msgid "Restore"
-msgstr "Gendan"
-
-#: src/wmbutton.cc:100
-msgid "Maximize"
-msgstr "Maksimer"
-
-#: src/wmbutton.cc:106
-msgid "Minimize"
-msgstr "Minimer"
-
-#: src/wmbutton.cc:112
-msgid "Rolldown"
-msgstr "Rul ned"
-
-#: src/wmbutton.cc:115
-msgid "Rollup"
-msgstr "Rul op"
-
-#: src/wmclient.cc:367
-#, c-format
-msgid ""
-"Client %s with PID %ld fails to respond.\n"
-"Do you wish to terminate this client?\n"
-msgstr ""
-
-#: src/wmconfig.cc:35 src/wmconfig.cc:40 src/wmconfig.cc:46
-#, c-format
-msgid "Failed to load theme %s"
-msgstr "Kunne ikke indlæse tema %s"
-
-#: src/wmconfig.cc:113
-#, c-format
-msgid "Unknown value '%s' for option '%s'."
-msgstr "Ukendt værdi \"%s\" for tilvalg \"%s\"."
-
-#: src/wmconfig.cc:121
-#, c-format
-msgid "Unable to create directory %s"
-msgstr "Kan ikke oprette mappe %s"
-
-#: src/wmconfig.cc:148
-#, c-format
-msgid "Unable to write to %s"
-msgstr "Kan ikke skrive til %s"
-
-#: src/wmconfig.cc:184
-#, c-format
-msgid "Unable to rename %s to %s"
-msgstr "Kan ikke omdøbe %s til %s"
-
-#: src/wmdialog.cc:67
-msgid "Loc_k Workstation"
-msgstr "Lås _arbejdsstation"
-
-#: src/wmdialog.cc:70 src/ymsgbox.cc:51
-msgid "_Cancel"
-msgstr "_Annuller"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:243
-#: src/wmtaskbar.cc:245
-msgid "_Logout..."
-msgstr "Log _ud..."
-
-#: src/wmdialog.cc:75
-msgid "_Restart icewm"
-msgstr "Gensta_rt icewm"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:424 src/wmtaskbar.cc:238
-msgid "_About"
-msgstr "O_m"
-
-#: src/wmframe.cc:1441
-msgid ""
-"WARNING! All unsaved changes will be lost when\n"
-"this client is killed. Do you wish to proceed?"
-msgstr ""
-"ADVARSEL! Alle ændringer som ikke er gemt, vil gå tabt, når\n"
-"denne klient dræbes. Vil du fortsætte?"
-
-#: src/wmframe.cc:1448
-msgid "Kill Client: "
-msgstr "Dræb klient: "
-
-#: src/wmmgr.cc:3259
-msgid "Missing program setxkbmap"
-msgstr ""
-
-#: src/wmmgr.cc:3260
-msgid "For keyboard switching, please install setxkbmap."
-msgstr ""
-
-#: src/wmoption.cc:259
-#, c-format
-msgid "Unknown window option: %s"
-msgstr "Ukendt vinduestilvalg: %s"
-
-#: src/wmoption.cc:330
-#, c-format
-msgid "Syntax error in window options on line %d of %s"
-msgstr "Syntaksfejl i vinduestilvalg på linje %d af %s"
-
-#: src/wmprog.cc:331
-msgid "_Click to focus"
-msgstr "_Klik for at fokusere"
-
-#: src/wmprog.cc:332
-msgid "_Explicit focus"
-msgstr "_Eksplicit fokus"
-
-#: src/wmprog.cc:333
-msgid "_Sloppy mouse focus"
-msgstr "_Sløset musefokus"
-
-#: src/wmprog.cc:334
-msgid "S_trict mouse focus"
-msgstr "_Strengt musefokus"
-
-#: src/wmprog.cc:335
-msgid "_Quiet sloppy focus"
-msgstr "_Stille sløset fokus"
-
-#: src/wmprog.cc:336
-msgid "Custo_m"
-msgstr "_Tilpasset"
-
-#: src/wmprog.cc:358
-msgid "_Manual"
-msgstr "_Manuelt"
-
-#: src/wmprog.cc:359
-msgid "_Icewm(1)"
-msgstr "_Icewm(1)"
-
-#: src/wmprog.cc:360
-msgid "Icewm_Bg(1)"
-msgstr "Icewm_Bg(1)"
-
-#: src/wmprog.cc:361
-msgid "Ice_Sound(1)"
-msgstr "Ice_Sound(1)"
-
-#: src/wmprog.cc:410
-msgid "Programs"
-msgstr "Programmer"
-
-#: src/wmprog.cc:414
-msgid "_Run..."
-msgstr "_Kør..."
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:418 src/wmtaskbar.cc:233
-msgid "_Windows"
-msgstr "Vin_duer"
-
-#: src/wmprog.cc:429
-msgid "_Help"
-msgstr "_Hjælp"
-
-#: src/wmprog.cc:434
-msgid "_Focus"
-msgstr "_Fokus"
-
-#: src/wmprog.cc:439
-msgid "_Preferences"
-msgstr "_Præferencer"
-
-#: src/wmprog.cc:444
-msgid "_Themes"
-msgstr "_Temaer"
-
-#: src/wmprog.cc:448
-msgid "Se_ttings"
-msgstr "_Indstillinger"
-
-#: src/wmsession.cc:214 src/wmsession.cc:230 src/wmsession.cc:240
-#, c-format
-msgid "Session Manager: Unknown line %s"
-msgstr "Sessionshåndtering: Ukendt linje %s"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:215 src/wmwinlist.cc:379 src/wmwinlist.cc:412
-msgid "Tile _Vertically"
-msgstr "Fliselæg _lodret"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:217 src/wmwinlist.cc:380 src/wmwinlist.cc:413
-msgid "T_ile Horizontally"
-msgstr "Fliselæg _vandret"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:381 src/wmwinlist.cc:414
-msgid "Ca_scade"
-msgstr "_Overlappet"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:382 src/wmwinlist.cc:415
-msgid "_Arrange"
-msgstr "_Arranger"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:384 src/wmwinlist.cc:416
-msgid "_Minimize All"
-msgstr "Mi_nimer alle"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:385 src/wmwinlist.cc:417
-msgid "_Hide All"
-msgstr "_Skjul alle"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:386 src/wmwinlist.cc:418
-msgid "_Undo"
-msgstr "_Fortryd"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:230
-msgid "Arrange _Icons"
-msgstr "Arranger _ikoner"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:236
-msgid "_Refresh"
-msgstr "_Opdater"
-
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:967
-msgid "Hide Taskbar"
-msgstr "Skjul værktøjslinje"
-
-#: src/wmtaskbar.cc:332
-msgid "Favorite Applications"
-msgstr "Favoritprogrammer"
-
-#: src/wmtaskbar.cc:357
-msgid "Window List Menu"
-msgstr "Vindueslistemenu"
-
-#: src/wmtaskbar.cc:366
-msgid "Show Desktop"
-msgstr "Vis skrivebord"
-
-#: src/wmtaskbar.cc:967
-msgid "Show Taskbar"
-msgstr "Vis værktøjslinje"
-
-#: src/wmwinlist.cc:46
-msgid "All Workspaces"
-msgstr "Alle arbejdsområder"
-
-#: src/wmwinlist.cc:368
-msgid "_Show"
-msgstr "_Vis"
-
-#: src/wmwinlist.cc:371
-msgid "_Raise"
-msgstr "_Hæv"
-
-#: src/wmwinlist.cc:392
-msgid "Del"
-msgstr "Slet"
-
-#: src/wmwinlist.cc:396
-msgid "_Terminate Process"
-msgstr "_Afslut proces"
-
-#: src/wmwinlist.cc:397
-msgid "Kill _Process"
-msgstr "Dræb _proces"
-
-#: src/wmwinlist.cc:432 src/wmwinlist.cc:433
-msgid "Window list"
-msgstr "Vinduesliste"
-
-# scootergrisen: er i tvivl om "arbejdsområde" skal være med stort eller småt. Synes det ser forkert ud med stort.
-#: src/wmwinmenu.cc:121
-#, c-format
-msgid "%lu. Workspace %-.32s"
-msgstr "%lu. arbejdsområde %-.32s"
-
-#: src/yapp.cc:295
-#, c-format
-msgid "%s: select failed"
-msgstr "%s: valg mislykkedes"
-
-#: src/yconfig.cc:114
-#, c-format
-msgid "Unknown key name %s in %s"
-msgstr "Ukendt nøglenavn %s i %s"
-
-#: src/yconfig.cc:129 src/yconfig.cc:140 src/yconfig.cc:152
-#, c-format
-msgid "Bad argument: %s for %s [%d,%d]"
-msgstr "Dårligt argument: %s for %s [%d,%d]"
-
-#: src/ycursor.cc:112
-#, c-format
-msgid "Loading of pixmap \"%s\" failed: %s"
-msgstr "Indlæsning af pixelkort \"%s\" mislykkedes: %s"
-
-#: src/ycursor.cc:138
-#, c-format
-msgid "Loading of pixmap \"%s\" failed"
-msgstr "Indlæsning af pixelkort \"%s\" mislykkedes"
-
-#: src/ycursor.cc:182
-#, c-format
-msgid "BUG? Imlib was able to read \"%s\""
-msgstr "FEJL? Imlib kunne godt læse \"%s\""
-
-#: src/ycursor.cc:207
-#, c-format
-msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
-msgstr "FEJL? Fejlformatteret XPM-hoved men Imlib kunne godt fortolke \"%s\""
-
-#: src/ycursor.cc:215
-#, c-format
-msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
-msgstr ""
-"FEJL? Uventet afslutning på XPM-fil men Imlib kunne godt fortolke \"%s\""
-
-#: src/ycursor.cc:218
-#, c-format
-msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
-msgstr "FEJL? Uventet tegn men Imlib kunne godt fortolke \"%s\""
-
-#: src/yfontcore.cc:72 src/yfontxft.cc:164
-#, c-format
-msgid "Could not load font \"%s\"."
-msgstr "Kunne ikke indlæse skrifttype \"%s\"."
-
-#: src/yfontcore.cc:75 src/yfontcore.cc:123 src/yfontxft.cc:187
-#, c-format
-msgid "Loading of fallback font \"%s\" failed."
-msgstr "Indlæsning af standardskrifttype \"%s\" mislykkedes."
-
-#: src/yfontcore.cc:116
-#, c-format
-msgid "Could not load fontset \"%s\"."
-msgstr "Kunne ikke indlæse skrifttypesæt \"%s\"."
-
-#: src/yfontcore.cc:128
-#, c-format
-msgid "Missing codesets for fontset \"%s\":"
-msgstr "Manglende tegnsæt for skrifttypesæt \"%s\":"
-
-#: src/yinputline.cc:18
-msgid "_Copy"
-msgstr "K_opiér"
-
-#: src/yinputline.cc:18
-msgid "Ctrl+C"
-msgstr "Ctrl+C"
-
-#: src/yinputline.cc:19
-msgid "Cu_t"
-msgstr "_Klip"
-
-#: src/yinputline.cc:20
-msgid "_Paste"
-msgstr "_Indsæt"
-
-#: src/yinputline.cc:21
-msgid "Paste _Selection"
-msgstr "Ind_sæt markering"
-
-#: src/yinputline.cc:21
-msgid "Ctrl+P"
-msgstr "Ctrl+P"
-
-#: src/yinputline.cc:23
-msgid "Select _All"
-msgstr "Markér _alt"
-
-#: src/yinputline.cc:23
-msgid "Ctrl+A"
-msgstr "Ctrl+A"
-
-#: src/ylocale.cc:55
-msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
-msgstr ""
-"Lokalitet understøttes ikke af C-biblioteket or Xlib. Indlæser standard-\"C"
-"\"-lokalitet."
-
-#: src/ylocale.cc:90
-msgid ""
-"Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
-msgstr ""
-"Kunne ikke fastsætte tegnsættet for den nuværende lokalitet. Antager "
-"ISO-8859-1.\n"
-
-#: src/ylocale.cc:123 src/ylocale.cc:131
-#, c-format
-msgid "iconv doesn't supply (sufficient) %s to %s converters."
-msgstr "iconv leverer ikke (tilstrækkelig) %s til %s konvertere."
-
-#: src/ylocale.cc:231
-#, c-format
-msgid "Invalid multibyte string \"%s\": %s"
-msgstr "Ugyldig multibytestreng \"%s\": %s"
-
-#: src/ymsgbox.cc:48
-msgid "_OK"
-msgstr "_OK"
-
-#: src/ypaths.cc:88
-#, c-format
-msgid "Image not readable: %s"
-msgstr "Billede kan ikke læses: %s"
-
-#: src/ypaths.cc:111
-#, c-format
-msgid "Could not find image %s"
-msgstr "Kunne ikke finde pixelkort %s"
-
-#: src/ysmapp.cc:98
-msgid "$USER or $LOGNAME not set?"
-msgstr "$USER eller $LOGNAME ikke sat?"
-
-#: src/yurl.cc:145
-#, c-format
-msgid "Failed to parse URL \"%s\"."
-msgstr "Kunne ikke fortolke URL'en \"%s\"."
-
-#: src/yurl.cc:161
-#, c-format
-msgid "Incomplete hex escape in URL at position %d."
-msgstr "Ufuldstændig hex-undvigelse i URL på placeringen %d."
-
-#: src/yurl.cc:168
-#, c-format
-msgid "Invalid hex escape in URL at position %d."
-msgstr "Ugyldig hex-undvigelse i URL på placeringen %d."
-
-#: src/yxapp.cc:991
-msgid ""
-"  -d, --display=NAME  NAME of the X server to use.\n"
-"  --sync              Synchronize X11 commands.\n"
-msgstr ""
-"  -d, --display=NAVN  NAVN på X-serveren som skal bruges.\n"
-"  --sync              Synkroniser X11-kommandoer.\n"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics
 #: src/fdospecgen.h:43
@@ -2721,6 +1000,1828 @@ msgstr "Webudvikling"
 msgid "WordProcessor"
 msgstr "Tekstbehandler"
 
+#: src/icehelp.cc:1326
+msgid "Back"
+msgstr "Tilbage"
+
+#: src/icehelp.cc:1326
+msgid "Alt+Left"
+msgstr "Alt+Venstre"
+
+#: src/icehelp.cc:1328
+msgid "Forward"
+msgstr "Frem"
+
+#: src/icehelp.cc:1328
+msgid "Alt+Right"
+msgstr "Alt+Højre"
+
+#: src/icehelp.cc:1331
+msgid "Previous"
+msgstr "Foregående"
+
+#: src/icehelp.cc:1332
+msgid "Next"
+msgstr "Næste"
+
+#: src/icehelp.cc:1334
+msgid "Contents"
+msgstr "Indhold"
+
+#: src/icehelp.cc:1335
+msgid "Index"
+msgstr "Indeks"
+
+#: src/icehelp.cc:1337
+msgid "Find..."
+msgstr ""
+
+#: src/icehelp.cc:1337
+#, fuzzy
+#| msgid "Ctrl+Q"
+msgid "Ctrl+F"
+msgstr "Ctrl+Q"
+
+#: src/icehelp.cc:1338
+msgid "Find next"
+msgstr ""
+
+#: src/icehelp.cc:1338
+msgid "F3"
+msgstr ""
+
+#: src/icehelp.cc:1340
+#, fuzzy
+#| msgid "WebBrowser"
+msgid "Open in Browser"
+msgstr "Webbrowser"
+
+#: src/icehelp.cc:1340
+#, fuzzy
+#| msgid "Ctrl+Q"
+msgid "Ctrl+B"
+msgstr "Ctrl+Q"
+
+#: src/icehelp.cc:1342
+msgid "Reload"
+msgstr ""
+
+#: src/icehelp.cc:1342 src/icesame.cc:60
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: src/icehelp.cc:1343 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
+msgid "Close"
+msgstr "Luk"
+
+#: src/icehelp.cc:1343 src/icesame.cc:62 src/iceview.cc:59
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: src/icehelp.cc:1348
+msgid "Icewm(1)"
+msgstr "Icewm(1)"
+
+#: src/icehelp.cc:1348
+#, fuzzy
+#| msgid "Ctrl+Q"
+msgid "Ctrl+I"
+msgstr "Ctrl+Q"
+
+#: src/icehelp.cc:1350
+msgid "Icewmbg(1)"
+msgstr "Icewmbg(1)"
+
+#: src/icehelp.cc:1352
+msgid "Icesound(1)"
+msgstr "Icesound(1)"
+
+#: src/icehelp.cc:1354
+msgid "FAQ"
+msgstr "OSS"
+
+#: src/icehelp.cc:1356
+msgid "Manual"
+msgstr "Manuelt"
+
+#: src/icehelp.cc:1356
+#, fuzzy
+#| msgid "Ctrl+Q"
+msgid "Ctrl+M"
+msgstr "Ctrl+Q"
+
+#: src/icehelp.cc:1358
+msgid "Support"
+msgstr "Support"
+
+#: src/icehelp.cc:1360
+msgid "Theme Howto"
+msgstr "Temaers Howto"
+
+#: src/icehelp.cc:1360 src/iceview.cc:56
+msgid "Ctrl+T"
+msgstr "Ctrl+T"
+
+#: src/icehelp.cc:1362
+msgid "Website"
+msgstr "Websted"
+
+#: src/icehelp.cc:1362 src/iceview.cc:57
+msgid "Ctrl+W"
+msgstr "Ctrl+W"
+
+#: src/icehelp.cc:1364
+msgid "Github"
+msgstr "Github"
+
+#: src/icehelp.cc:1368 src/yinputline.cc:19
+msgid "Ctrl+X"
+msgstr "Ctrl+X"
+
+#: src/icehelp.cc:1373 src/yinputline.cc:20
+msgid "Ctrl+V"
+msgstr "Ctrl+V"
+
+#: src/icehelp.cc:2180
+msgid "Unsupported protocol."
+msgstr "Ikke-understøttet protokol."
+
+#: src/icehelp.cc:2259
+#, c-format
+msgid "Invalid path: %s\n"
+msgstr "Ugyldig sti: %s\n"
+
+#: src/icehelp.cc:2283
+msgid "Path does not refer to a file."
+msgstr "Stien refererer ikke til en fil."
+
+#: src/icehelp.cc:2288
+msgid "Failed to open file for reading."
+msgstr "Kunne ikke åbn fil til læsning."
+
+#: src/icehelp.cc:2317
+msgid "Failed to create a temporary file"
+msgstr "Kunne ikke oprette en midlertidig fil"
+
+#: src/icehelp.cc:2410
+#, c-format
+msgid "Failed to execute system(%s) (%d)"
+msgstr "Kunne ikke eksekvere system(%s) (%d)"
+
+#: src/icehelp.cc:2433
+#, c-format
+msgid "Failed to decompress %s"
+msgstr "Kunne ikke udpakke %s"
+
+#: src/icehelp.cc:2441
+msgid "Could not locate curl or wget in PATH"
+msgstr "Kunne ikke finde curl eller wget i PATH"
+
+#: src/icehelp.cc:2445
+msgid "Unsafe characters in URL"
+msgstr "Usikre tegn i URL"
+
+#: src/icehelp.cc:2482
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
+"\n"
+"IceHelp is a very simple HTML browser for the IceWM window manager.\n"
+"It can display a HTML document from file, or browse a website.\n"
+"It remembers visited pages in a history, which is navigable\n"
+"by key bindings and a context menu (right mouse click).\n"
+"It neither supports rendering of images nor JavaScript.\n"
+"If no file or URL is given it will display the IceWM Manual\n"
+"from %s.\n"
+"\n"
+"Options:\n"
+"  -d, --display=NAME  NAME of the X server to use.\n"
+"  --sync              Synchronize X11 commands.\n"
+"\n"
+"  -B                  Display the IceWM icewmbg manpage.\n"
+"  -b, --bugs          Display the IceWM bug reports (primitively).\n"
+"  -f, --faq           Display the IceWM FAQ and Howto.\n"
+"  -g                  Display the IceWM Github website.\n"
+"  -i, --icewm         Display the IceWM icewm manpage.\n"
+"  -m, --manual        Display the IceWM Manual (default).\n"
+"  -s                  Display the IceWM icesound manpage.\n"
+"  -t, --theme         Display the IceWM themes Howto.\n"
+"  -w, --website       Display the IceWM website.\n"
+"\n"
+"  -V, --version       Prints version information and exits.\n"
+"  -h, --help          Prints this usage screen and exits.\n"
+"\n"
+"Environment variables:\n"
+"  DISPLAY=NAME        Name of the X server to use.\n"
+"\n"
+"To report bugs, support requests, comments please visit:\n"
+"%s\n"
+"\n"
+msgstr ""
+"Anvendelse: %s [TILVALG] [ FILNAVN | URL ]\n"
+"\n"
+"IceHelp er en meget simpel HTML-browser til IceWM-vindueshåndteringen.\n"
+"Den kan vise et HTML-dokument fra en fil eller gennemse et websted.\n"
+"Den husker besøgte sider i en historik, som kan navigeres\n"
+"med tastebindinger og en genvejsmenu (højreklik med musen).\n"
+"Den understøtter hverken gengivelse af billeder eller JavaScript.\n"
+"Hvis der ikke angives nogen fil eller URL, så viser den IceWM-manualen\n"
+"fra %s.\n"
+"\n"
+"Tilvalg:\n"
+"  --display=NAVN      NAVN på X-serveren som skal bruges.\n"
+"  --sync              Synkroniser X11-kommandoer.\n"
+"\n"
+"  -B                  Vis IceWM icewmbg-mansiden.\n"
+"  -b, --bugs          Vis IceWM-fejlrapporter (primitivt).\n"
+"  -f, --faq           Vis IceWM-FAQ og -Howto.\n"
+"  -g                  Vis IceWM Github-webstedet.\n"
+"  -i, --icewm         Vis IceWM icewm-mansiden.\n"
+"  -m, --manual        Vis IceWM-manual (standard).\n"
+"  -s                  Vis IceWM icesound-mansiden.\n"
+"  -t, --theme         Vis IceWM-temaers Howto.\n"
+"  -w, --website       Vis IceWM-webstedet.\n"
+"\n"
+"  -V, --version       Udskriver versionsinformation og afslutter.\n"
+"  -h, --help          Udskriver denne anvendelsesskærm og afslutter.\n"
+"\n"
+"Miljøvariabler:\n"
+"  DISPLAY=NAVN        Navn på X-serveren som skal bruges.\n"
+"\n"
+"Rapportér fejl, supportforespørgsler og kommentarer ved at besøge:\n"
+"%s\n"
+"\n"
+
+#: src/icehelp.cc:2572
+#, c-format
+msgid "Ignoring option '%s'"
+msgstr "Ignorerer tilvalg \"%s\""
+
+#: src/icelist.cc:60
+msgid "List View"
+msgstr "Listevisning"
+
+#: src/icelist.cc:61
+msgid "Icon View"
+msgstr "Ikonvisning"
+
+#: src/icelist.cc:65
+msgid "Open"
+msgstr "Åbn"
+
+#: src/icesame.cc:57
+msgid "Undo"
+msgstr "Fortryd"
+
+#: src/icesame.cc:57
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: src/icesame.cc:59
+msgid "New"
+msgstr "Ny"
+
+#: src/icesame.cc:59
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: src/icesame.cc:60
+msgid "Restart"
+msgstr "Genstart"
+
+#: src/icesame.cc:65
+msgid "Same Game"
+msgstr "Start spillet igen"
+
+#: src/icesh.cc:73
+msgid "For help please consult the man page icesh(1).\n"
+msgstr "Se man-siden for icesh(1), for at få hjælp.\n"
+
+#: src/icesh.cc:1520
+#, c-format
+msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
+msgstr "Navngivne symboler af domænet \"%s\" (numerisk område: %ld-%ld):\n"
+
+#: src/icesh.cc:1578
+#, c-format
+msgid "Workspace out of range: %ld"
+msgstr "Arbejdsområde udenfor område: %ld"
+
+#: src/icesh.cc:1599
+#, c-format
+msgid "Invalid workspace name: `%s'"
+msgstr "Ugyldigt arbejdsområdenavn: \"%s\""
+
+#: src/icesh.cc:1884
+msgid "GNOME window layer"
+msgstr "GNOME vindueslag"
+
+#: src/icesh.cc:1885
+msgid "IceWM tray option"
+msgstr "IceWM-bakketilvalg"
+
+#: src/icesh.cc:1886
+msgid "Gravity symbols"
+msgstr "Tyngdekraftsymboler"
+
+#: src/icesh.cc:1887
+msgid "Motif functions"
+msgstr "Motif-funktioner"
+
+#: src/icesh.cc:1888
+msgid "Motif decorations"
+msgstr "Motif-dekorationer"
+
+#: src/icesh.cc:1889
+#, fuzzy
+#| msgid "GNOME window state"
+msgid "EWMH window state"
+msgstr "GNOME vinduestilstand"
+
+#: src/icesh.cc:1971 src/icesh.cc:2044
+#, c-format
+msgid "workspace #%d: `%s'\n"
+msgstr "arbejdsområde nr. %d: \"%s\"\n"
+
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
+#, c-format
+msgid "Invalid state: `%s'."
+msgstr "Ugyldig tilstand: \"%s\"."
+
+#: src/icesh.cc:3131
+#, c-format
+msgid "Cannot get geometry of window 0x%lx"
+msgstr "Kan ikke hente geometrien af vinduet 0x%lx"
+
+#: src/icesh.cc:3156
+#, c-format
+msgid "Invalid Xinerama: `%s'."
+msgstr "Ugyldigt Xinerama: \"%s\"."
+
+#: src/icesh.cc:3203 src/icesh.cc:3253
+#, c-format
+msgid "Invalid argument: `%s'"
+msgstr "Ugyldigt argument: \"%s\""
+
+#: src/icesh.cc:3219
+#, c-format
+msgid "Action `%s' requires at least %d arguments."
+msgstr "Handlingen \"%s\" kræver mindst %d argumenter."
+
+#: src/icesh.cc:3228
+#, c-format
+msgid "Invalid expression: `%s'"
+msgstr "Ugyldigt udtryk: \"%s\""
+
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1195
+#: src/yxapp.cc:1022
+#, c-format
+msgid "Can't open display: %s. X must be running and $DISPLAY set."
+msgstr "Kan ikke åbne skærm: %s. X skal køre og $DISPLAY sat."
+
+#: src/icesh.cc:3355
+#, fuzzy, c-format
+#| msgid "Unexepected menu keyword: '%s'"
+msgid "Unexpected: `%s'."
+msgstr "Uventet menunøgleord: \"%s\""
+
+#: src/icesh.cc:3384
+msgid "No windows found."
+msgstr "Ingen vinduer fundet."
+
+#: src/icesh.cc:3399
+msgid "No actions specified."
+msgstr "Ingen handlinger anført."
+
+#: src/icesh.cc:3529
+#, c-format
+msgid "Invalid window identifier: `%s'"
+msgstr "Ugyldig vinduesidentifikator: \"%s\""
+
+#: src/icesh.cc:3546
+#, c-format
+msgid "Invalid PID: `%s'"
+msgstr "Ugyldig PID: \"%s\""
+
+#: src/icesh.cc:3582
+#, c-format
+msgid "Invalid layer: `%s'."
+msgstr "Ugyldigt lag: \"%s\"."
+
+#: src/icesh.cc:4393
+#, c-format
+msgid "Unknown action: `%s'"
+msgstr "Ukendt handling: \"%s\""
+
+#: src/iceskt.cc:41
+#, c-format
+msgid "Socket error: %d"
+msgstr "Sokkelfejl: %d"
+
+#: src/icesm.cc:69
+#, fuzzy
+#| msgid ""
+#| "  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
+#| "  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
+#| "\n"
+#| "  -d, --display=NAME  Use NAME to connect to the X server.\n"
+#| "  -a, --alpha         Use a 32-bit visual for translucency.\n"
+#| "  --sync              Synchronize communication with X11 server.\n"
+#| "\n"
+#| "  -i, --icewm=FILE    Use FILE as the IceWM window manager.\n"
+#| "  -b, --nobg          Do not start icewmbg.\n"
+#| "  -n, --notray        Do not start icewmtray.\n"
+#| "  -s, --sound         Also start icesound.\n"
+msgid ""
+"  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
+"  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
+"\n"
+"  -d, --display=NAME  Use NAME to connect to the X server.\n"
+"  -a, --alpha         Use a 32-bit visual for translucency.\n"
+"  --sync              Synchronize communication with X11 server.\n"
+"\n"
+"  -i, --icewm=FILE    Use FILE as the IceWM window manager.\n"
+"  -o, --output=FILE   Redirect all output to FILE.\n"
+"\n"
+"  -b, --nobg          Do not start icewmbg.\n"
+"  -n, --notray        Do not start icewmtray.\n"
+"  -s, --sound         Also start icesound.\n"
+msgstr ""
+"  -c, --config=FIL    Lad IceWM indlæse præferencer fra FIL.\n"
+"  -t, --theme=FIL     Lad IceWM indlæse temaet fra FIL.\n"
+"\n"
+"  -d, --display=NAVN  Brug NAVN til at oprette forbindelse til X-serveren.\n"
+"  -a, --alpha         Brug en 32-bit visuel for gennemsigtighed.\n"
+"  --sync              Synkroniser kommunikation med X11-server.\n"
+"\n"
+"  -i, --icewm=FIL     Brug FIL som IceWM-vindueshåndteringen.\n"
+"  -b, --nobg          Start ikke icewmbg.\n"
+"  -n, --notray        Start ikke icewmtray.\n"
+"  -s, --sound         Start også icesound.\n"
+
+#: src/icesm.cc:85
+msgid ""
+"\n"
+"Debugging options:\n"
+"  -v, --valgrind      Let \"/usr/bin/valgrind\" run icewm.\n"
+"                      Thoroughly examines the execution of icewm.\n"
+"  -g, --catchsegv     Let \"/usr/bin/catchsegv\" run icewm.\n"
+"                      Gives a backtrace if icewm segfaults.\n"
+msgstr ""
+
+#: src/icesm.cc:188
+#, c-format
+msgid "Unknown option '%s'"
+msgstr "Ukendt tilvalg \"%s\""
+
+#: src/icesm.cc:462 src/icesm.cc:622
+#, c-format
+msgid "restart %s."
+msgstr "genstart %s."
+
+#: src/icesm.cc:468
+#, c-format
+msgid "%s exited with status %d."
+msgstr "%s afsluttede med status %d."
+
+#: src/icesm.cc:474 src/icesm.cc:628
+#, c-format
+msgid "%s was killed by signal %d."
+msgstr "%s blev dræbt med signal %d."
+
+#: src/icesm.cc:513
+#, fuzzy
+#| msgid ""
+#| " IceWM crashed for the second time in 10 seconds. \n"
+#| " Do you wish to:\n"
+#| "\n"
+#| "\t1: Restart IceWM?\n"
+#| "\t2: Abort this session?\n"
+msgid ""
+" IceWM crashed for the second time in 10 seconds. \n"
+" Do you wish to:\n"
+"\n"
+"\t1: Restart IceWM?\n"
+"\t2: Abort this session?\n"
+"\t3: Run a terminal?\n"
+msgstr ""
+" IceWM holdt op med at virke for anden gang indenfor 10 sekunder. \n"
+" Vil du:\n"
+"\n"
+"\t1: Genstarte IceWM?\n"
+"\t2: Afbryde sessionen?\n"
+
+#: src/icesm.cc:519
+msgid "IceWM crash response"
+msgstr "Svar til IceWM-nedbrud"
+
+#: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
+#, c-format
+msgid "Playing sample #%d (%s)"
+msgstr "Afspiller prøve nr. %d (%s)"
+
+#: src/icesound.cc:329
+#, c-format
+msgid "%s: Invalid number of channels"
+msgstr "%s: Ugyldigt antal kanaler"
+
+#: src/icesound.cc:335 src/icesound.cc:340
+msgid "Could not set OSS channels"
+msgstr "Kunne ikke sætte OSS-kanaler"
+
+#: src/icesound.cc:345 src/icesound.cc:373
+msgid "Could not sync OSS"
+msgstr "Kunne ikke synkronisere OSS"
+
+#: src/icesound.cc:357
+msgid "OSS write failed"
+msgstr "OSS-skrivning mislykkedes"
+
+#: src/icesound.cc:361
+#, c-format
+msgid "OSS incomplete write (%d/%d)"
+msgstr "OSS ufuldstændig skrivning (%d/%d)"
+
+#: src/icesound.cc:368
+msgid "Could not post OSS"
+msgstr "Kunne ikke indsende OSS"
+
+#: src/icesound.cc:397
+#, c-format
+msgid "Could not open OSS device %s"
+msgstr "Kunne ikke åbne OSS-enhed %s"
+
+#: src/icesound.cc:402
+msgid "Could not set OSS stereo"
+msgstr "Kunne ikke sætte OSS-stereo"
+
+#: src/icesound.cc:407
+msgid "Could not reset OSS DSP"
+msgstr "Kunne ikke nulstille OSS-DSP"
+
+#: src/icesound.cc:412
+msgid "Could not set OSS format"
+msgstr "Kunne ikke sætte OSS-format"
+
+#: src/icesound.cc:499
+#, c-format
+msgid "ao_open_live failed with %d"
+msgstr "ao_open_live mislykkedes med %d"
+
+#: src/icesound.cc:510
+msgid "ao_play failed"
+msgstr "ao_play mislykkedes"
+
+#: src/icesound.cc:676
+#, c-format
+msgid "Unrecognized option: %s\n"
+msgstr "Ugenkendeligt tilvalg: %s\n"
+
+#: src/icesound.cc:679 src/icesound.cc:972
+#, c-format
+msgid "Unrecognized argument: %s\n"
+msgstr "Ugenkendeligt argument: %s\n"
+
+#: src/icesound.cc:688
+#, c-format
+msgid ""
+"Usage: %s [OPTION]...\n"
+"\n"
+"Plays audio files on GUI events raised by IceWM.\n"
+"The currently configured sound interfaces are: %s.\n"
+"Icesound will choose the first of these which is usable.\n"
+"\n"
+"Options:\n"
+"\n"
+" -d, --display=DISPLAY   X11 display used by IceWM (default: $DISPLAY).\n"
+"\n"
+" -s, --sample-dir=DIR    Specifies a directory with sound files.\n"
+"                         Default is $HOME/.config/icewm/sounds.\n"
+"\n"
+" -i, --interface=LIST    Specifies audio output interfaces. One or more of:\n"
+"                         %s separated by commas.\n"
+"\n"
+" -D, --device=DEVICE     Backwards compatibility only: the default device. \n"
+"                         Please prefer one of the -A/-O/-S options.\n"
+"\n"
+" -O, --oss=DEVICE        Specifies the OSS device (default: \"%s\").\n"
+"\n"
+" -A, --alsa=DEVICE       Specifies the ALSA device (default: \"%s\").\n"
+"\n"
+" -z, --snooze=millisecs  Specifies the snooze interval between sound events\n"
+"                         in milliseconds. Default is 500 milliseconds.\n"
+"\n"
+" -p, --play=sound        Plays the given sound (name or number) and exits.\n"
+"\n"
+" -l, --list-files        Lists the available sound file paths and exits.\n"
+"\n"
+"     --list-sounds       Lists the supported sound filenames and exits.\n"
+"\n"
+"     --list-interfaces   Lists the supported audio interfaces and exits.\n"
+"\n"
+" -v, --verbose           Be verbose and print out each sound event.\n"
+"\n"
+" -V, --version           Prints version information and exits.\n"
+"\n"
+" -h, --help              Prints this help screen and exits.\n"
+"\n"
+"Return values:\n"
+"\n"
+"  0    Success.\n"
+"  1    General error.\n"
+"  2    Command line error.\n"
+"  3    Subsystems error (ie cannot connect to server).\n"
+"\n"
+msgstr ""
+"Anvendelse: %s [TILVALG]...\n"
+"\n"
+"Afspiller lydfiler ved GUI-hændelser som er rejst af IceWM.\n"
+"De nuværende konfigurerede lydgrænseflader er: %s.\n"
+"Icesound vil vælge den første som kan anvendes.\n"
+"\n"
+"Tilvalg:\n"
+"\n"
+" -d, --display=DISPLAY   Display brugt af IceWM (standard: $DISPLAY).\n"
+"\n"
+" -s, --sample-dir=MAPPE  Angiver en mappe med lydfiler.\n"
+"                         Standard er $HOME/.config/icewm/sounds.\n"
+"\n"
+" -i, --interface=LISTE   Angiver lydoutput-grænseflader. En eller flere af:\n"
+"                         %s adskilt af kommaer.\n"
+"\n"
+" -D, --device=ENHED      Kun bagudkompatibel: standardenheden.\n"
+"                         Foretræk venligst et af tilvalgende -A/-O/-S.\n"
+"\n"
+" -O, --oss=ENHED         Angiver OSS-enheden (standard: \"%s\").\n"
+"\n"
+" -A, --alsa=ENHED        Angiver ALSA-enheden (standard: \"%s\").\n"
+"\n"
+" -z, --snooze=millisek   Angiver snooze-intervallet mellem lydhændelser\n"
+"                         i millisekunder. Standard er 500 millisekunder.\n"
+"\n"
+" -p, --play=lyd          Afspiller den givne lyd (navn eller nummer) og "
+"afslutter.\n"
+"\n"
+" -l, --list-files        Viser de tilgængelig lydfilstier og afslutter.\n"
+"\n"
+"     --list-sounds       Viser de understøttede lydfilnavne og afslutter.\n"
+"\n"
+"     --list-interfaces   Viser de understøttede lydgrænseflader og "
+"afslutter.\n"
+"\n"
+" -v, --verbose           Vær udførlig og udskriv hver lydhændelse.\n"
+"\n"
+" -V, --version           Udskriver versionsinformation og afslutter.\n"
+"\n"
+" -h, --help              Udskriver denne hjælp-skærm og afslutter.\n"
+"\n"
+"Returværdier:\n"
+"\n"
+"  0    Succes.\n"
+"  1    Generel fejl.\n"
+"  2    Fejl ved kommandolinje.\n"
+"  3    Fejl ved undersystem (dvs. kan ikke oprette forbindelse til server).\n"
+"\n"
+
+#: src/icesound.cc:779
+#, c-format
+msgid "No audio for %s"
+msgstr "Ingen lyd til %s"
+
+#: src/icesound.cc:856
+msgid "Could not get GUI event property"
+msgstr "Kunne ikke få GUI-hændelse-egenskab"
+
+#: src/icesound.cc:860
+#, c-format
+msgid "Received invalid GUI event %d"
+msgstr "Modtog ugyldig GUI-hændelse %d"
+
+#: src/icesound.cc:864
+#, c-format
+msgid "Received GUI event %s"
+msgstr "Modtog GUI-hændelse %s"
+
+#: src/icesound.cc:878
+#, c-format
+msgid "Too quick; ignoring %s."
+msgstr "For hurtig; ignorerer %s."
+
+#: src/icesound.cc:882
+#, c-format
+msgid "Support for the %s interface not compiled."
+msgstr "Understøttelse for %s grænseflade ikke oversat."
+
+#: src/icesound.cc:915
+#, c-format
+msgid "Unsupported interface: %s."
+msgstr "Ikke-understøttet grænseflade: %s."
+
+#: src/icesound.cc:924
+#, c-format
+msgid "Using %s audio."
+msgstr "Bruger %s-lyd."
+
+#: src/icesound.cc:928
+#, c-format
+msgid "Failed to connect to audio interfaces %s."
+msgstr "Kunne ikke oprette forbindelse til lydgrænseflader %s."
+
+#: src/icesound.cc:940
+#, c-format
+msgid "Received signal %s: Terminating..."
+msgstr "Modtog signal %s: Afslutter..."
+
+#: src/icetray.cc:220
+msgid ""
+"  -n, --notify        Notify parent process by sending signal USR1.\n"
+"  --display=NAME      Use NAME to connect to the X server.\n"
+"  --sync              Synchronize communication with X11 server.\n"
+"\n"
+"  -c, --config=FILE   Load preferences from FILE.\n"
+"  -t, --theme=FILE    Load the theme from FILE.\n"
+msgstr ""
+"  -n, --notify        Underret forælderproces ved at sende signal USR1.\n"
+"  --display=NAVN      Brug NAVN til at oprette forbindelse til X-serveren.\n"
+"  --sync              Synkroniser kommunikation med X11-server.\n"
+"\n"
+"  -c, --config=FIL    Indlæs præferencer fra FIL.\n"
+"  -t, --theme=FIL     Indlæs temaet fra FIL.\n"
+
+#: src/iceview.cc:55
+msgid "Hex View"
+msgstr "Hex-visning"
+
+#: src/iceview.cc:55
+msgid "Ctrl+H"
+msgstr "Ctrl+H"
+
+#: src/iceview.cc:56
+msgid "Expand Tabs"
+msgstr "Udvid faneblade"
+
+#: src/iceview.cc:57
+msgid "Wrap Lines"
+msgstr "Ombryd linjer"
+
+#: src/icewmbg.cc:34
+#, c-format
+msgid "Failed to load image '%s'."
+msgstr "Kunne ikke indlæse billede \"%s\"."
+
+#: src/icewmbg.cc:854
+msgid ""
+"Usage: icewmbg [OPTIONS]\n"
+"Where multiple values can be given they are separated by commas.\n"
+"When image is a directory then all images from that directory are used.\n"
+"\n"
+"Options:\n"
+"  -p, --replace        Replace an existing icewmbg.\n"
+"  -q, --quit           Tell the running icewmbg to quit.\n"
+"  -r, --restart        Tell the running icewmbg to restart itself.\n"
+"  -u, --shuffle        Shuffle/reshuffle the list of background images.\n"
+"\n"
+"  -c, --config=FILE    Load preferences from FILE.\n"
+"  -t, --theme=NAME     Load the theme with name NAME.\n"
+"\n"
+"  -i, --image=FILE(S)  Load background image(s) from FILE(S).\n"
+"  -k, --color=NAME(S)  Use background color(s) from NAME(S).\n"
+"\n"
+"  -s, --semis=FILE(S)  Load transparency image(s) from FILE(S).\n"
+"  -x, --trans=NAME(S)  Use transparency color(s) from NAME(S).\n"
+"\n"
+"  -e, --center=0/1     Disable/Enable centering background.\n"
+"  -a, --scaled=0/1     Disable/Enable scaling background.\n"
+"  -m, --multi=0/1      Disable/Enable multihead background.\n"
+"  -y, --cycle=SECONDS  Cycle backgrounds every SECONDS.\n"
+"\n"
+"  --display=NAME       Use NAME to connect to the X server.\n"
+"  --sync               Synchronize communication with X11 server.\n"
+"\n"
+"  -h, --help           Print this usage screen and exit.\n"
+"  -V, --version        Prints version information and exits.\n"
+"\n"
+"Loads desktop background according to preferences file:\n"
+" DesktopBackgroundCenter  - Display desktop background centered\n"
+" DesktopBackgroundScaled  - Display desktop background scaled\n"
+" DesktopBackgroundColor   - Desktop background color(s)\n"
+" DesktopBackgroundImage   - Desktop background image(s)\n"
+" ShuffleBackgroundImages  - Shuffle the list of background images\n"
+" SupportSemitransparency  - Support for semitransparent terminals\n"
+" DesktopTransparencyColor - Semitransparency background color(s)\n"
+" DesktopTransparencyImage - Semitransparency background image(s)\n"
+" DesktopBackgroundMultihead - One background over all monitors\n"
+" CycleBackgroundsPeriod   - Seconds between cycling over backgrounds\n"
+"\n"
+" center:0 scaled:0 = tiled\n"
+" center:1 scaled:0 = centered\n"
+" center:1 scaled:1 = fill one dimension and keep aspect ratio\n"
+" center:0 scaled:1 = fill both dimensions and keep aspect ratio\n"
+"\n"
+msgstr ""
+"Anvendelse: icewmbg [TILVALG]\n"
+"Hvor flere værdier kan gives adskilles de med kommaer.\n"
+"Når billede er en mappe bruges alle billeder fra den mappe.\n"
+"\n"
+"Tilvalg:\n"
+"  -p, --replace        Erstat en eksisterende icewmbg.\n"
+"  -q, --quit           Fortæl den kørende icewmbg at den skal afslutte.\n"
+"  -r, --restart        Fortæl den kørende icewmbg at den skal genstarte sig "
+"selv.\n"
+"  -u, --shuffle        Bland/genbland listen over baggrundsbilleder.\n"
+"\n"
+"  -c, --config=FIL     Indlæs præferencer fra FIL.\n"
+"  -t, --theme=NAVN     Indlæs temaet med navnet NAVN.\n"
+"\n"
+"  -i, --image=FIL(ER)  Indlæs baggrundsbillede(r) fra FIL(ER).\n"
+"  -k, --color=NAVN(E)  Brug baggrundsfarve(r) fra NAVN(E).\n"
+"\n"
+"  -s, --semis=FIL(ER)  Indlæs transparente billede(r) fra FIL(ER).\n"
+"  -x, --trans=NAVN(E)  Brug transparente farve(r) fra NAVN(E).\n"
+"\n"
+"  -e, --center=0/1     Deaktivér/aktivér centrering af baggrund.\n"
+"  -a, --scaled=0/1     Deaktivér/aktivér skalering af baggrund.\n"
+"  -m, --multi=0/1      Deaktivér/aktivér multihead-baggrund.\n"
+"  -y, --cycle=SEKUNDER Gennemløb baggrunde hvert SEKUNDER.\n"
+"\n"
+"  --display=NAVN       Brug NAVN til at oprette forbindelse til X-serveren.\n"
+"  --sync               Synkroniser kommunikation med X11-server.\n"
+"\n"
+"  -h, --help           Udskriv denne anvendelsesskærm og afslut.\n"
+"  -V, --version        Udskriver versionsinformation og afslutter.\n"
+"\n"
+"Indlæser skrivebordsbaggrund i henhold til præferencefilen:\n"
+" DesktopBackgroundCenter  - Vis skrivebordsbaggrund centreret\n"
+" DesktopBackgroundScaled  - Vis skrivebordsbaggrund skaleret\n"
+" DesktopBackgroundColor   - Skrivebordets baggrundsfarve(r)\n"
+" DesktopBackgroundImage   - Skrivebordets baggrundsbillede(r)\n"
+" ShuffleBackgroundImages  - Bland listen over baggrundsbilleder\n"
+" SupportSemitransparency  - Understøttelse af delvist transparente "
+"terminaler\n"
+" DesktopTransparencyColor - Delvist transparente baggrundsfarve(r)\n"
+" DesktopTransparencyImage - Delvist transparente baggrundsbillede(r)\n"
+" DesktopBackgroundMultihead - Én baggrund på alle skærme\n"
+" CycleBackgroundsPeriod   - Sekunder mellem gennemløb af baggrunde\n"
+"\n"
+" center:0 scaled:0 = fliselagt\n"
+" center:1 scaled:0 = centreret\n"
+" center:1 scaled:1 = udfyld en dimension og behold højde-bredde-forhold\n"
+" center:0 scaled:1 = udfyld begge dimensioner og behold højde-bredde-"
+"forhold\n"
+"\n"
+
+#: src/icewmbg.cc:1039 src/wmapp.cc:1770
+#, c-format
+msgid "Unrecognized option '%s'."
+msgstr "Ugenkendeligt tilvalg \"%s\"."
+
+#: src/icewmbg.cc:1066
+msgid "Cannot start, because another icewmbg is still running."
+msgstr "Kan ikke starte eftersom en anden icewmbg stadig kører."
+
+#: src/icewmhint.cc:20
+msgid "Usage: icewmhint class.instance option arg\n"
+msgstr "Anvendelse: icewmhint klasse.instans tilvalg arg\n"
+
+#: src/icewmhint.cc:57
+#, c-format
+msgid "Out of memory (len=%d)."
+msgstr "Ikke mere ledig hukommelse (len=%d)."
+
+#: src/misc.cc:70 src/misc.cc:82
+msgid "Warning: "
+msgstr "Advarsel: "
+
+#: src/misc.cc:376
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS]\n"
+"Options:\n"
+"%s\n"
+"  -C, --copying       Prints license information and exits.\n"
+"  -V, --version       Prints version information and exits.\n"
+"  -h, --help          Prints this usage screen and exits.\n"
+"\n"
+msgstr ""
+"Anvendelse: %s [TILVALG]\n"
+"Tilvalg:\n"
+"%s\n"
+"  -C, --copying       Udskriver licensinformation og afslutter.\n"
+"  -V, --version       Udskriver versionsinformation og afslutter.\n"
+"  -h, --help          Udskriver denne anvendelsesskærm og afslutter.\n"
+"\n"
+
+#: src/movesize.cc:872
+#, c-format
+msgid "Unknown direction in move/resize request: %d"
+msgstr "Ukendt retning i flyt-/tilpas størrelse-forespørgsel: %d"
+
+#: src/wmabout.cc:29 src/wmabout.cc:30
+msgid "(C)"
+msgstr "(C)"
+
+#: src/wmabout.cc:40
+msgid "Theme:"
+msgstr "Tema:"
+
+#: src/wmabout.cc:41
+msgid "Theme Description:"
+msgstr "Temaets beskrivelse:"
+
+#: src/wmabout.cc:42
+msgid "Theme Author:"
+msgstr "Temaets forfatter:"
+
+#: src/wmabout.cc:51
+msgid "CodeSet:"
+msgstr "Tegnsæt:"
+
+#: src/wmabout.cc:52
+msgid "Language:"
+msgstr "Sprog:"
+
+#: src/wmabout.cc:56
+msgid "DoubleBuffer"
+msgstr ""
+
+#: src/wmabout.cc:57
+msgid "AlphaBlending"
+msgstr ""
+
+#: src/wmabout.cc:58
+msgid "Renderer:"
+msgstr ""
+
+#: src/wmabout.cc:64
+msgid "icewm - About"
+msgstr "icewm - Om"
+
+#: src/wmapp.cc:83
+msgid "A window manager is already running, use --replace to replace it"
+msgstr ""
+"En anden vindueshåndtering kører allerede, brug --replace til at erstatte den"
+
+#: src/wmapp.cc:101
+#, c-format
+msgid "Failed to become the owner of the %s selection"
+msgstr "Kunne ikke blive ejeren af %s-valget"
+
+#: src/wmapp.cc:105
+msgid "Waiting to replace the old window manager"
+msgstr "Venter på at erstatte den gamle vindueshåndtering"
+
+#: src/wmapp.cc:110
+msgid "done."
+msgstr "færdig."
+
+#: src/wmapp.cc:494
+msgid "_Logout"
+msgstr "Log _ud"
+
+#: src/wmapp.cc:495
+msgid "_Cancel logout"
+msgstr "_Annuller udlogning"
+
+#: src/wmapp.cc:500
+msgid "Lock _Workstation"
+msgstr "Lås _arbejdsstation"
+
+#: src/wmapp.cc:502 src/wmdialog.cc:72
+msgid "Re_boot"
+msgstr "_Genstart"
+
+#: src/wmapp.cc:504 src/wmdialog.cc:73
+msgid "Shut_down"
+msgstr "_Luk ned"
+
+#. TRANSLATORS: This means "energy saving mode" or "suspended system". Not "interrupt". Not "hibernate".
+#: src/wmapp.cc:506 src/wmdialog.cc:69
+msgid "_Sleep mode"
+msgstr "_Slumretilstand"
+
+#: src/wmapp.cc:511
+msgid "Restart _Icewm"
+msgstr "Genstart _Icewm"
+
+# scootergrisen: tjek om det er korrekt med "Xterm". Synes ikke Xterm virker som forventet.
+#: src/wmapp.cc:513
+msgid "Restart _Xterm"
+msgstr "Genstart _Xterm"
+
+#: src/wmapp.cc:523
+msgid "_Menu"
+msgstr "_Menu"
+
+#: src/wmapp.cc:524
+msgid "_Above Dock"
+msgstr "_Over dok"
+
+#: src/wmapp.cc:525
+msgid "_Dock"
+msgstr "_Dok"
+
+#: src/wmapp.cc:526
+msgid "_OnTop"
+msgstr "Ø_verst"
+
+#: src/wmapp.cc:527
+msgid "_Normal"
+msgstr "_Normal"
+
+#: src/wmapp.cc:528
+msgid "_Below"
+msgstr "_Under"
+
+#: src/wmapp.cc:529
+msgid "D_esktop"
+msgstr "_Skrivebord"
+
+#: src/wmapp.cc:564 src/wmwinlist.cc:362
+msgid "_Restore"
+msgstr "_Gendan"
+
+#: src/wmapp.cc:566
+msgid "_Move"
+msgstr "_Flyt"
+
+#: src/wmapp.cc:568
+msgid "_Size"
+msgstr "Stø_rrelse"
+
+#: src/wmapp.cc:570 src/wmwinlist.cc:363
+msgid "Mi_nimize"
+msgstr "Mi_nimer"
+
+#: src/wmapp.cc:572 src/wmwinlist.cc:364
+msgid "Ma_ximize"
+msgstr "Ma_ksimer"
+
+#: src/wmapp.cc:573 src/wmwinlist.cc:365
+msgid "Maximize_Vert"
+msgstr "Maksimer_Lodret"
+
+#: src/wmapp.cc:574 src/wmwinlist.cc:366
+msgid "MaximizeHori_z"
+msgstr "Maksimer_Vandret"
+
+#: src/wmapp.cc:577 src/wmwinlist.cc:367
+msgid "_Fullscreen"
+msgstr "F_uldskærm"
+
+#: src/wmapp.cc:580 src/wmwinlist.cc:369
+msgid "_Hide"
+msgstr "Sk_jul"
+
+#: src/wmapp.cc:582 src/wmwinlist.cc:370
+msgid "Roll_up"
+msgstr "Rul _op"
+
+#: src/wmapp.cc:589
+msgid "R_aise"
+msgstr "_Hæv"
+
+#: src/wmapp.cc:591 src/wmwinlist.cc:372
+msgid "_Lower"
+msgstr "_Sænk"
+
+#: src/wmapp.cc:593 src/wmwinlist.cc:373
+msgid "La_yer"
+msgstr "L_ag"
+
+#: src/wmapp.cc:597 src/wmwinlist.cc:375
+msgid "Move _To"
+msgstr "Flyt _til"
+
+#: src/wmapp.cc:598 src/wmwinlist.cc:376
+msgid "Occupy _All"
+msgstr "_På alle"
+
+#: src/wmapp.cc:604
+msgid "Limit _Workarea"
+msgstr "Afgræns _arbejdsområde"
+
+#: src/wmapp.cc:608 src/wmwinlist.cc:377
+msgid "Tray _icon"
+msgstr "_Bakkeikon"
+
+#: src/wmapp.cc:613 src/wmwinlist.cc:392 src/wmwinlist.cc:400
+msgid "_Close"
+msgstr "_Luk"
+
+#: src/wmapp.cc:615 src/wmwinlist.cc:394
+msgid "_Kill Client"
+msgstr "_Dræb klient"
+
+#: src/wmapp.cc:618 src/wmdialog.cc:74 src/wmwinmenu.cc:130
+msgid "_Window list"
+msgstr "_Vinduesliste"
+
+#: src/wmapp.cc:656
+msgid "Another window manager already running, exiting..."
+msgstr "En anden vindueshåndtering kører allerede, afslutter..."
+
+#: src/wmapp.cc:731
+#, c-format
+msgid ""
+"Could not restart: %s\n"
+"Does $PATH lead to %s?"
+msgstr ""
+"Kunne ikke genstarte: %s\n"
+"Leder $PATH til %s?"
+
+#: src/wmapp.cc:894
+msgid "Confirm Restart as Terminal"
+msgstr ""
+
+#: src/wmapp.cc:895
+msgid ""
+"Unmanage all applications and restart\n"
+"as a terminal. Proceed?"
+msgstr ""
+
+#: src/wmapp.cc:1196 src/yxapp.cc:1023
+msgid "<none>"
+msgstr "<ingen>"
+
+#: src/wmapp.cc:1517
+msgid ""
+"  --client-id=ID      Client id to use when contacting session manager.\n"
+msgstr ""
+"  --client-id=ID      Klient-id som skal bruges når sessionshåndteringen "
+"kontaktes.\n"
+
+#: src/wmapp.cc:1523
+msgid ""
+"\n"
+"  --debug             Print generic debug messages.\n"
+"  --debug-z           Print debug messages regarding window stacking.\n"
+msgstr ""
+"\n"
+"  --debug             Udskriv generiske fejlsøgningsmeddelelser.\n"
+"  --debug-z           Udskriv fejlsøgningsmeddelelser vedrørende "
+"vinduesstakning.\n"
+
+#: src/wmapp.cc:1531
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "  -a, --alpha         Use a 32-bit visual for translucency.\n"
+#| "  -c, --config=FILE   Load preferences from FILE.\n"
+#| "  -t, --theme=FILE    Load theme from FILE.\n"
+#| "  -s, --splash=IMAGE  Briefly show IMAGE on startup.\n"
+#| "  -p, --postpreferences  Print preferences after all processing.\n"
+#| "  --trace=conf,icon   Trace paths used to load configuration.\n"
+msgid ""
+"\n"
+"  -a, --alpha         Use a 32-bit visual for translucency.\n"
+"  -c, --config=FILE   Load preferences from FILE.\n"
+"  -t, --theme=FILE    Load theme from FILE.\n"
+"  -s, --splash=IMAGE  Briefly show IMAGE on startup.\n"
+"  -p, --postpreferences  Print preferences after all processing.\n"
+"  --rewrite-preferences  Update an existing preferences file.\n"
+"  --trace=conf,icon   Trace paths used to load configuration.\n"
+msgstr ""
+"\n"
+"  -a, --alpha         Brug en 32-bit visuel for gennemsigtighed.\n"
+"  -c, --config=FIL    Indlæs præferencer fra FIL.\n"
+"  -t, --theme=FIL     Indlæs tema fra FIL.\n"
+"  -s, --splash=BILLEDE Vis kortvarigt BILLEDE under opstart.\n"
+"  -p, --postpreferences  Udskriv præferencer efter endt behandling.\n"
+"  --trace=konf,ikon   Spor stier som blev brugt til at indlæse "
+"konfiguration.\n"
+
+#: src/wmapp.cc:1541
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS]\n"
+"Starts the IceWM window manager.\n"
+"\n"
+"Options:\n"
+"  -d, --display=NAME  NAME of the X server to use.\n"
+"%s  --sync              Synchronize X11 commands.\n"
+"%s\n"
+"  -V, --version       Prints version information and exits.\n"
+"  -h, --help          Prints this usage screen and exits.\n"
+"%s\n"
+"  --replace           Replace an existing window manager.\n"
+"  -r, --restart       Tell the running icewm to restart itself.\n"
+"\n"
+"  --configured        Print the compile time configuration.\n"
+"  --directories       Print the configuration directories.\n"
+"  -l, --list-themes   Print a list of all available themes.\n"
+"\n"
+"Environment variables:\n"
+"  ICEWM_PRIVCFG=PATH  Directory for user configuration files,\n"
+"                      \"$XDG_CONFIG_HOME/icewm\" if exists or\n"
+"                      \"$HOME/.icewm\" by default.\n"
+"  DISPLAY=NAME        Name of the X server to use.\n"
+"  MAIL=URL            Location of your mailbox.\n"
+"\n"
+"To report bugs, support requests, comments please visit:\n"
+"%s\n"
+"\n"
+msgstr ""
+"Anvendelse: %s [TILVALG]\n"
+"Starter IceWM-vindueshåndtering.\n"
+"\n"
+"Tilvalg:\n"
+"  -d, --display=NAME  NAVN på X-serveren som skal bruges.\n"
+"%s  --sync              Synkroniser X11-kommandoer.\n"
+"%s\n"
+"  -V, --version       Udskriver versionsinformation og afslutter.\n"
+"  -h, --help          Udskriver denne anvendelsesskærm og afslutter.\n"
+"%s\n"
+"  --replace           Erstat en eksisterende vindueshåndtering.\n"
+"  -r, --restart       Fortæl den kørende icewm at den skal genstarte sig "
+"selv.\n"
+"\n"
+"  --configured        Udskriv konfigurationen for kompileringstiden.\n"
+"  --directories       Udskriv mapperne for konfigurationen.\n"
+"  -l, --list-themes   Udskriv en liste med alle tilgængelige temaer.\n"
+"\n"
+"Miljøvariabler:\n"
+"  ICEWM_PRIVCFG=STI   Mappe som skal bruges til brugerens "
+"konfigurationsfiler,\n"
+"                      \"$XDG_CONFIG_HOME/icewm\" hvis den findes, ellers\n"
+"                      \"$HOME/.icewm/\" som standard.\n"
+"  DISPLAY=NAVN        Navn på X-serveren som skal bruges.\n"
+"  MAIL=URL            Placeringen af din postkasse.\n"
+"\n"
+"Rapportér fejl, supportforespørgsler og kommentarer ved at besøge:\n"
+"%s\n"
+"\n"
+
+#: src/wmapp.cc:1607
+#, c-format
+msgid "%s configuration directories:\n"
+msgstr "%s konfigurationsmapper:\n"
+
+#: src/wmapp.cc:1689
+#, c-format
+msgid "%s configured options:%s\n"
+msgstr "%s konfigurerede tilvalg:%s\n"
+
+#: src/wmapp.cc:1819
+msgid "Confirm Logout"
+msgstr "Bekræft udlogning"
+
+#: src/wmapp.cc:1820
+msgid ""
+"Logout will close all active applications.\n"
+"Proceed?"
+msgstr ""
+"Udlogning vil lukke alle aktive programmer.\n"
+"Fortsæt?"
+
+#: src/wmbutton.cc:85
+msgid "Raise/Lower"
+msgstr "Hæv/sænk"
+
+#: src/wmbutton.cc:90
+msgid "Hide"
+msgstr "Skjul"
+
+#: src/wmbutton.cc:96
+msgid "Restore"
+msgstr "Gendan"
+
+#: src/wmbutton.cc:100
+msgid "Maximize"
+msgstr "Maksimer"
+
+#: src/wmbutton.cc:106
+msgid "Minimize"
+msgstr "Minimer"
+
+#: src/wmbutton.cc:112
+msgid "Rolldown"
+msgstr "Rul ned"
+
+#: src/wmbutton.cc:115
+msgid "Rollup"
+msgstr "Rul op"
+
+#: src/wmclient.cc:367
+#, c-format
+msgid ""
+"Client %s with PID %ld fails to respond.\n"
+"Do you wish to terminate this client?\n"
+msgstr ""
+
+#: src/wmconfig.cc:35 src/wmconfig.cc:40 src/wmconfig.cc:46
+#, c-format
+msgid "Failed to load theme %s"
+msgstr "Kunne ikke indlæse tema %s"
+
+#: src/wmconfig.cc:113
+#, c-format
+msgid "Unknown value '%s' for option '%s'."
+msgstr "Ukendt værdi \"%s\" for tilvalg \"%s\"."
+
+#: src/wmconfig.cc:121
+#, c-format
+msgid "Unable to create directory %s"
+msgstr "Kan ikke oprette mappe %s"
+
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#, c-format
+msgid "Unable to write to %s"
+msgstr "Kan ikke skrive til %s"
+
+#: src/wmconfig.cc:184 src/wmsave.cc:305
+#, c-format
+msgid "Unable to rename %s to %s"
+msgstr "Kan ikke omdøbe %s til %s"
+
+#: src/wmdialog.cc:67
+msgid "Loc_k Workstation"
+msgstr "Lås _arbejdsstation"
+
+#: src/wmdialog.cc:70 src/ymsgbox.cc:51
+msgid "_Cancel"
+msgstr "_Annuller"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmdialog.cc:71 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:243
+#: src/wmtaskbar.cc:245
+msgid "_Logout..."
+msgstr "Log _ud..."
+
+#: src/wmdialog.cc:75
+msgid "_Restart icewm"
+msgstr "Gensta_rt icewm"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmdialog.cc:76 src/wmprog.cc:424 src/wmtaskbar.cc:238
+msgid "_About"
+msgstr "O_m"
+
+#: src/wmframe.cc:1441
+msgid ""
+"WARNING! All unsaved changes will be lost when\n"
+"this client is killed. Do you wish to proceed?"
+msgstr ""
+"ADVARSEL! Alle ændringer som ikke er gemt, vil gå tabt, når\n"
+"denne klient dræbes. Vil du fortsætte?"
+
+#: src/wmframe.cc:1448
+msgid "Kill Client: "
+msgstr "Dræb klient: "
+
+#: src/wmmenu.cc:37
+msgid "Missing command argument"
+msgstr "Manglende kommandoargument"
+
+#: src/wmmenu.cc:55
+#, c-format
+msgid "Bad argument %d to command '%s'"
+msgstr "Dårligt argument %d til kommando \"%s\""
+
+#: src/wmmenu.cc:110
+#, c-format
+msgid "Error at keyword '%s' for %s"
+msgstr "Fejl ved nøgleord \"%s\" for %s"
+
+#: src/wmmenu.cc:156
+#, c-format
+msgid "Error at %s '%s'"
+msgstr "Fejl ved %s \"%s\""
+
+#: src/wmmenu.cc:222
+#, fuzzy, c-format
+#| msgid "Unknown keyword '%s'"
+msgid "Unexepected menu keyword: '%s'"
+msgstr "Ukendt nøgleord \"%s\""
+
+#: src/wmmenu.cc:276
+#, c-format
+msgid "Error at menuprog '%s'"
+msgstr "Fejl ved menuprog \"%s\""
+
+#: src/wmmenu.cc:320
+#, fuzzy, c-format
+#| msgid "Error at menuprog '%s'"
+msgid "Error at menuprogreload: '%s'"
+msgstr "Fejl ved menuprog \"%s\""
+
+#: src/wmmenu.cc:347
+msgid "Missing filename argument to include statement"
+msgstr "Manglende filnavn-argument til include-udsagn"
+
+#: src/wmmenu.cc:365
+#, fuzzy, c-format
+#| msgid "Error at menuprog '%s'"
+msgid "Error at includeprog '%s'"
+msgstr "Fejl ved menuprog \"%s\""
+
+#: src/wmmenu.cc:408
+#, c-format
+msgid "Unknown keyword '%s'"
+msgstr "Ukendt nøgleord \"%s\""
+
+#: src/wmmenu.cc:419
+#, c-format
+msgid ""
+"Unknown keyword for a non-container: '%s'.\n"
+"Expected either 'key' or 'runonce' here.\n"
+msgstr ""
+"Ukendt nøgleord for en ikke-beholder: \"%s\".\n"
+"Ventede enten \"key\" eller \"runonce\" her.\n"
+
+#: src/wmmenu.cc:509
+#, c-format
+msgid "'%s' produces no output"
+msgstr "\"%s\" producerer intet output"
+
+#: src/wmmgr.cc:3259
+msgid "Missing program setxkbmap"
+msgstr ""
+
+#: src/wmmgr.cc:3260
+msgid "For keyboard switching, please install setxkbmap."
+msgstr ""
+
+#: src/wmoption.cc:259
+#, c-format
+msgid "Unknown window option: %s"
+msgstr "Ukendt vinduestilvalg: %s"
+
+#: src/wmoption.cc:330
+#, c-format
+msgid "Syntax error in window options on line %d of %s"
+msgstr "Syntaksfejl i vinduestilvalg på linje %d af %s"
+
+#: src/wmpref.cc:101
+msgid "Save Modifications"
+msgstr "Gem ændringer"
+
+#: src/wmpref.cc:180
+#, c-format
+msgid "Enter a new value for %s: "
+msgstr ""
+
+#: src/wmprog.cc:331
+msgid "_Click to focus"
+msgstr "_Klik for at fokusere"
+
+#: src/wmprog.cc:332
+msgid "_Explicit focus"
+msgstr "_Eksplicit fokus"
+
+#: src/wmprog.cc:333
+msgid "_Sloppy mouse focus"
+msgstr "_Sløset musefokus"
+
+#: src/wmprog.cc:334
+msgid "S_trict mouse focus"
+msgstr "_Strengt musefokus"
+
+#: src/wmprog.cc:335
+msgid "_Quiet sloppy focus"
+msgstr "_Stille sløset fokus"
+
+#: src/wmprog.cc:336
+msgid "Custo_m"
+msgstr "_Tilpasset"
+
+#: src/wmprog.cc:358
+msgid "_Manual"
+msgstr "_Manuelt"
+
+#: src/wmprog.cc:359
+msgid "_Icewm(1)"
+msgstr "_Icewm(1)"
+
+#: src/wmprog.cc:360
+msgid "Icewm_Bg(1)"
+msgstr "Icewm_Bg(1)"
+
+#: src/wmprog.cc:361
+msgid "Ice_Sound(1)"
+msgstr "Ice_Sound(1)"
+
+#: src/wmprog.cc:410
+msgid "Programs"
+msgstr "Programmer"
+
+#: src/wmprog.cc:414
+msgid "_Run..."
+msgstr "_Kør..."
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmprog.cc:418 src/wmtaskbar.cc:233
+msgid "_Windows"
+msgstr "Vin_duer"
+
+#: src/wmprog.cc:429
+msgid "_Help"
+msgstr "_Hjælp"
+
+#: src/wmprog.cc:434
+msgid "_Focus"
+msgstr "_Fokus"
+
+#: src/wmprog.cc:439
+msgid "_Preferences"
+msgstr "_Præferencer"
+
+#: src/wmprog.cc:444
+msgid "_Themes"
+msgstr "_Temaer"
+
+#: src/wmprog.cc:448
+msgid "Se_ttings"
+msgstr "_Indstillinger"
+
+#: src/wmsession.cc:214 src/wmsession.cc:230 src/wmsession.cc:240
+#, c-format
+msgid "Session Manager: Unknown line %s"
+msgstr "Sessionshåndtering: Ukendt linje %s"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:215 src/wmwinlist.cc:379 src/wmwinlist.cc:412
+msgid "Tile _Vertically"
+msgstr "Fliselæg _lodret"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:217 src/wmwinlist.cc:380 src/wmwinlist.cc:413
+msgid "T_ile Horizontally"
+msgstr "Fliselæg _vandret"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:381 src/wmwinlist.cc:414
+msgid "Ca_scade"
+msgstr "_Overlappet"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:382 src/wmwinlist.cc:415
+msgid "_Arrange"
+msgstr "_Arranger"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:384 src/wmwinlist.cc:416
+msgid "_Minimize All"
+msgstr "Mi_nimer alle"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:385 src/wmwinlist.cc:417
+msgid "_Hide All"
+msgstr "_Skjul alle"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:386 src/wmwinlist.cc:418
+msgid "_Undo"
+msgstr "_Fortryd"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:230
+msgid "Arrange _Icons"
+msgstr "Arranger _ikoner"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:236
+msgid "_Refresh"
+msgstr "_Opdater"
+
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:967
+msgid "Hide Taskbar"
+msgstr "Skjul værktøjslinje"
+
+#: src/wmtaskbar.cc:332
+msgid "Favorite Applications"
+msgstr "Favoritprogrammer"
+
+#: src/wmtaskbar.cc:357
+msgid "Window List Menu"
+msgstr "Vindueslistemenu"
+
+#: src/wmtaskbar.cc:366
+msgid "Show Desktop"
+msgstr "Vis skrivebord"
+
+#: src/wmtaskbar.cc:967
+msgid "Show Taskbar"
+msgstr "Vis værktøjslinje"
+
+#: src/wmwinlist.cc:46
+msgid "All Workspaces"
+msgstr "Alle arbejdsområder"
+
+#: src/wmwinlist.cc:368
+msgid "_Show"
+msgstr "_Vis"
+
+#: src/wmwinlist.cc:371
+msgid "_Raise"
+msgstr "_Hæv"
+
+#: src/wmwinlist.cc:392
+msgid "Del"
+msgstr "Slet"
+
+#: src/wmwinlist.cc:396
+msgid "_Terminate Process"
+msgstr "_Afslut proces"
+
+#: src/wmwinlist.cc:397
+msgid "Kill _Process"
+msgstr "Dræb _proces"
+
+#: src/wmwinlist.cc:432 src/wmwinlist.cc:433
+msgid "Window list"
+msgstr "Vinduesliste"
+
+# scootergrisen: er i tvivl om "arbejdsområde" skal være med stort eller småt. Synes det ser forkert ud med stort.
+#: src/wmwinmenu.cc:121
+#, c-format
+msgid "%lu. Workspace %-.32s"
+msgstr "%lu. arbejdsområde %-.32s"
+
+#: src/wpixres.cc:93 src/wpixres.cc:100
+#, c-format
+msgid "Image not readable: %s"
+msgstr "Billede kan ikke læses: %s"
+
+#: src/yapp.cc:296
+#, c-format
+msgid "%s: select failed"
+msgstr "%s: valg mislykkedes"
+
+#: src/ycolor.cc:229 src/ycolor.cc:240
+#, fuzzy, c-format
+#| msgid "Could not load font \"%s\"."
+msgid "Could not parse color \"%s\""
+msgstr "Kunne ikke indlæse skrifttype \"%s\"."
+
+#: src/yconfig.cc:113
+#, c-format
+msgid "Unknown key name %s in %s"
+msgstr "Ukendt nøglenavn %s i %s"
+
+#: src/yconfig.cc:128 src/yconfig.cc:139 src/yconfig.cc:151
+#, c-format
+msgid "Bad argument: %s for %s [%d,%d]"
+msgstr "Dårligt argument: %s for %s [%d,%d]"
+
+#: src/ycursor.cc:110
+#, c-format
+msgid "Loading of pixmap \"%s\" failed: %s"
+msgstr "Indlæsning af pixelkort \"%s\" mislykkedes: %s"
+
+#: src/ycursor.cc:135
+#, c-format
+msgid "Loading of pixmap \"%s\" failed"
+msgstr "Indlæsning af pixelkort \"%s\" mislykkedes"
+
+#: src/ycursor.cc:179
+#, c-format
+msgid "BUG? Imlib was able to read \"%s\""
+msgstr "FEJL? Imlib kunne godt læse \"%s\""
+
+#: src/ycursor.cc:204
+#, c-format
+msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
+msgstr "FEJL? Fejlformatteret XPM-hoved men Imlib kunne godt fortolke \"%s\""
+
+#: src/ycursor.cc:212
+#, c-format
+msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
+msgstr ""
+"FEJL? Uventet afslutning på XPM-fil men Imlib kunne godt fortolke \"%s\""
+
+#: src/ycursor.cc:215
+#, c-format
+msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
+msgstr "FEJL? Uventet tegn men Imlib kunne godt fortolke \"%s\""
+
+#: src/yfontcore.cc:72 src/yfontxft.cc:164
+#, c-format
+msgid "Could not load font \"%s\"."
+msgstr "Kunne ikke indlæse skrifttype \"%s\"."
+
+#: src/yfontcore.cc:75 src/yfontcore.cc:123 src/yfontxft.cc:187
+#, c-format
+msgid "Loading of fallback font \"%s\" failed."
+msgstr "Indlæsning af standardskrifttype \"%s\" mislykkedes."
+
+#: src/yfontcore.cc:116
+#, c-format
+msgid "Could not load fontset \"%s\"."
+msgstr "Kunne ikke indlæse skrifttypesæt \"%s\"."
+
+#: src/yfontcore.cc:128
+#, c-format
+msgid "Missing codesets for fontset \"%s\":"
+msgstr "Manglende tegnsæt for skrifttypesæt \"%s\":"
+
+#: src/yinputline.cc:18
+msgid "_Copy"
+msgstr "K_opiér"
+
+#: src/yinputline.cc:18
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: src/yinputline.cc:19
+msgid "Cu_t"
+msgstr "_Klip"
+
+#: src/yinputline.cc:20
+msgid "_Paste"
+msgstr "_Indsæt"
+
+#: src/yinputline.cc:21
+msgid "Paste _Selection"
+msgstr "Ind_sæt markering"
+
+#: src/yinputline.cc:21
+msgid "Ctrl+P"
+msgstr "Ctrl+P"
+
+#: src/yinputline.cc:23
+msgid "Select _All"
+msgstr "Markér _alt"
+
+#: src/yinputline.cc:23
+msgid "Ctrl+A"
+msgstr "Ctrl+A"
+
+#: src/ylocale.cc:55
+msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
+msgstr ""
+"Lokalitet understøttes ikke af C-biblioteket or Xlib. Indlæser standard-\"C"
+"\"-lokalitet."
+
+#: src/ylocale.cc:90
+msgid ""
+"Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
+msgstr ""
+"Kunne ikke fastsætte tegnsættet for den nuværende lokalitet. Antager "
+"ISO-8859-1.\n"
+
+#: src/ylocale.cc:123 src/ylocale.cc:131
+#, c-format
+msgid "iconv doesn't supply (sufficient) %s to %s converters."
+msgstr "iconv leverer ikke (tilstrækkelig) %s til %s konvertere."
+
+#: src/ylocale.cc:231
+#, c-format
+msgid "Invalid multibyte string \"%s\": %s"
+msgstr "Ugyldig multibytestreng \"%s\": %s"
+
+#: src/ymsgbox.cc:48
+msgid "_OK"
+msgstr "_OK"
+
+#: src/ysmapp.cc:98
+msgid "$USER or $LOGNAME not set?"
+msgstr "$USER eller $LOGNAME ikke sat?"
+
+#: src/yurl.cc:145
+#, c-format
+msgid "Failed to parse URL \"%s\"."
+msgstr "Kunne ikke fortolke URL'en \"%s\"."
+
+#: src/yurl.cc:161
+#, c-format
+msgid "Incomplete hex escape in URL at position %d."
+msgstr "Ufuldstændig hex-undvigelse i URL på placeringen %d."
+
+#: src/yurl.cc:168
+#, c-format
+msgid "Invalid hex escape in URL at position %d."
+msgstr "Ugyldig hex-undvigelse i URL på placeringen %d."
+
+#: src/yxapp.cc:981
+msgid ""
+"  -d, --display=NAME  NAME of the X server to use.\n"
+"  --sync              Synchronize X11 commands.\n"
+msgstr ""
+"  -d, --display=NAVN  NAVN på X-serveren som skal bruges.\n"
+"  --sync              Synkroniser X11-kommandoer.\n"
+
+#: src/yximage.cc:157
+#, fuzzy
+#| msgid "Support for the %s interface not compiled."
+msgid "Support for PNG images was not enabled"
+msgstr "Understøttelse for %s grænseflade ikke oversat."
+
+#: src/yximage.cc:165
+msgid "Support for JPEG images was not enabled"
+msgstr ""
+
+#: src/yximage.cc:171
+#, fuzzy, c-format
+#| msgid "Unsupported interface: %s."
+msgid "Unsupported file format: %s"
+msgstr "Ikke-understøttet grænseflade: %s."
+
+#: src/yximage.cc:175 src/yximage.cc:198
+#, fuzzy, c-format
+#| msgid "Could not find image %s"
+msgid "Could not load image \"%s\""
+msgstr "Kunne ikke finde pixelkort %s"
+
 #~ msgid ""
 #~ "\n"
 #~ "  Caller id:\t"
@@ -2730,9 +2831,6 @@ msgstr "Tekstbehandler"
 
 #~ msgid "Kill IceWM, replace with Xterm"
 #~ msgstr "Dræb IceWM, erstat med Xterm"
-
-#~ msgid "Save Modifications"
-#~ msgstr "Gem ændringer"
 
 #~ msgid "GNOME window state"
 #~ msgstr "GNOME vinduestilstand"
@@ -2927,39 +3025,8 @@ msgstr "Tekstbehandler"
 #~ msgid "_Minimize"
 #~ msgstr "_Minimer"
 
-#~ msgid "Missing command argument"
-#~ msgstr "Manglende kommandoargument"
-
-#~ msgid "Bad argument %d to command '%s'"
-#~ msgstr "Dårligt argument %d til kommando \"%s\""
-
-#~ msgid "Missing filename argument to include statement"
-#~ msgstr "Manglende filnavn-argument til include-udsagn"
-
-#~ msgid "Error at %s '%s'"
-#~ msgstr "Fejl ved %s \"%s\""
-
-#~ msgid "Error at menuprog '%s'"
-#~ msgstr "Fejl ved menuprog \"%s\""
-
 #~ msgid "Error at %s: '%s'"
 #~ msgstr "Fejl ved %s: \"%s\""
-
-#~ msgid "Unknown keyword '%s'"
-#~ msgstr "Ukendt nøgleord \"%s\""
-
-#~ msgid "Error at keyword '%s' for %s"
-#~ msgstr "Fejl ved nøgleord \"%s\" for %s"
-
-#~ msgid ""
-#~ "Unknown keyword for a non-container: '%s'.\n"
-#~ "Expected either 'key' or 'runonce' here.\n"
-#~ msgstr ""
-#~ "Ukendt nøgleord for en ikke-beholder: \"%s\".\n"
-#~ "Ventede enten \"key\" eller \"runonce\" her.\n"
-
-#~ msgid "'%s' produces no output"
-#~ msgstr "\"%s\" producerer intet output"
 
 #~ msgid "\"%s\" contains no scheme description"
 #~ msgstr "\"%s\" indeholder ingen skemabeskrivelse"

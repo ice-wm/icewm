@@ -76,6 +76,7 @@ option(ENABLE_LOGEVENTS "Enable logging of X11 events" off)
 
 set(LOGEVENTS ${ENABLE_LOGEVENTS})
 SET(CONFIG_DEFAULT_THEME "default/default.theme" CACHE STRING "Name of default theme")
+SET(CONFIG_DEFAULT_BACKGROUND "" CACHE STRING "Default background image or directory")
 SET(CONFIG_UNICODE_SET "" CACHE STRING "Your iconv unicode set in machine endian encoding (e.g. WCHAR_T, UCS-4-INTERNAL, UCS-4LE, UCS-4BE)")
 # turn off when empty, see config.h template for details
 IF("" STREQUAL "${CONFIG_UNICODE_SET}")
@@ -402,7 +403,7 @@ set(icewm_pc_flags ${CXXFLAGS_COMMON} ${fontconfig_CFLAGS} ${xft_CFLAGS}
 
 SET(ICE_COMMON_SRCS udir.cc upath.cc yapp.cc yxapp.cc ytimer.cc yprefs.cc
                     ywindow.cc ypaint.cc ypopup.cc ycursor.cc ysocket.cc
-                    ypaths.cc ypipereader.cc yxembed.cc yconfig.cc yfont.cc
+                    ypipereader.cc yxembed.cc yconfig.cc yfont.cc
                     ypixmap.cc yimage2.cc yimage_gdk.cc yximage.cc ycolor.cc
                     ytooltip.cc ylocale.cc yarray.cc yfileio.cc ytime.cc
                     mstring.cc ref.cc logevent.cc misc.cc)

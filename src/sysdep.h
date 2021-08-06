@@ -1,9 +1,5 @@
-#ifndef __SYSDEP_H
-#define __SYSDEP_H
-
-#define PATHSEP ':'
-#define SLASH '/'
-#define ISSLASH(c) ((c) == SLASH)
+#ifndef SYSDEP_H
+#define SYSDEP_H
 
 #include <assert.h>
 #include <stdio.h>
@@ -39,6 +35,9 @@
 #endif
 #ifndef HOST_NAME_MAX
 # define HOST_NAME_MAX 64
+#endif
+#ifndef PATH_MAX
+# define PATH_MAX 1024
 #endif
 
 #endif

@@ -47,6 +47,8 @@ bin_PROGRAMS = \
 noinst_PROGRAMS = \
 	genpref
 
+TESTS = strtest testpointer testarray
+
 if BUILD_TESTS
 noinst_PROGRAMS += \
 	testarray \
@@ -138,8 +140,6 @@ libice_la_SOURCES = \
 	ymsgbox.h \
 	ypaint.cc \
 	ypaint.h \
-	ypaths.cc \
-	ypaths.h \
 	ypipereader.cc \
 	ypipereader.h \
 	ypixmap.cc \
@@ -232,7 +232,6 @@ libitk_la_SOURCES = \
 	ymenuitem.h \
 	ymsgbox.h \
 	ypaint.h \
-	ypaths.h \
 	ypixmap.h \
 	ypointer.h \
 	ypoll.h \
@@ -395,7 +394,6 @@ icewm_session_SOURCES = \
 	intl.h \
 	sysdep.h \
 	yapp.h \
-	ytrace.h \
 	ytime.h \
 	ytimer.h \
 	icesm.cc
@@ -414,11 +412,8 @@ icewmbg_SOURCES = \
 	base.h \
 	themable.h \
 	default.h \
-	ykey.h \
-	yfull.h \
 	yxapp.h \
 	yprefs.h \
-	ypaths.h \
 	icewmbg.cc \
 	icewmbg_prefs.h
 icewmbg_LDADD = libice.la $(IMAGE_LIBS) $(CORE_LIBS) @LIBINTL@
@@ -482,11 +477,9 @@ iceclock_SOURCES = \
 iceclock_LDADD = libitk.la libice.la $(IMAGE_LIBS) $(CORE_LIBS) @LIBINTL@
 
 strtest_SOURCES = \
-	intl.h \
-	debug.h \
-	sysdep.h \
 	base.h \
 	udir.h \
+	upath.h \
 	strtest.cc \
 	mstring.h
 strtest_LDADD = libice.la
@@ -642,7 +635,6 @@ testlocale_SOURCES = \
 testlocale_LDADD = libice.la $(CORE_LIBS) @LIBINTL@
 
 testarray_SOURCES = \
-	intl.h \
 	mstring.h \
 	yarray.h \
 	base.h \
@@ -660,5 +652,5 @@ nodist_pkgdata_DATA = \
 preferences: genpref$(EXEEXT)
 	$(AM_V_GEN)./genpref$(EXEEXT) -o $@ -s
 
-CLEANFILES = preferences
+CLEANFILES = preferences strtest testarray testpointer
 

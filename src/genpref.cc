@@ -18,7 +18,9 @@ void addBgImage(const char *, const char *, bool) {}
 //#include "default.h"
 #define CFGDEF
 #define GENPREF
+#define extern
 #include "yprefs.h"
+#undef extern
 #include "bindkey.h"
 #include "default.h"
 #include "themable.h"
@@ -91,6 +93,12 @@ static void show(cfoption *options) {
                 look[4] = ASCII::toLower(look[4]);
                 printf("# %s=\"%s\"\n", options[i].name, look + 4);
             }
+#ifdef CONFIG_DEFAULT_BACKGROUND
+            else if (0 == strcmp("DesktopBackgroundImage", options[i].name)) {
+                char path[] = CONFIG_DEFAULT_BACKGROUND "";
+                printf("# %s=\"%s\"\n", options[i].name, path);
+            }
+#endif
             else {
                 printf("# %s=\"\"\n", options[i].name);
             }
