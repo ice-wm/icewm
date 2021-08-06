@@ -19,7 +19,7 @@ static int total;
 
 static void bad(const char* str, int line) {
     fails++;
-    printf("%s: test failed at line %d\n", ApplicationName, line);
+    printf("%s: test failed at line %d: %s\n", ApplicationName, line, str);
 }
 
 static void report(const char* mod) {
@@ -231,10 +231,16 @@ static void test_str() {
     const YStringArray copy(orig);
     assert(orig.getCount() == 0);
     assert(copy.getCount() == 3);
+    assert(copy[0] && !strcmp(copy[0], "check"));
+    assert(copy[1] && !strcmp(copy[1], "this"));
+    assert(copy[2] && !strcmp(copy[2], "out"));
     const YStringArray copy2(copy);
     assert(orig.getCount() == 0);
     assert(copy.getCount() == 3);
     assert(copy2.getCount() == 3);
+    assert(copy2[0] && !strcmp(copy2[0], "check"));
+    assert(copy2[1] && !strcmp(copy2[1], "this"));
+    assert(copy2[2] && !strcmp(copy2[2], "out"));
 
     dump("orig", orig);
     dump("copy", copy);
@@ -256,7 +262,7 @@ static void test_mstr() {
     watch mark;
 
     char buf[24];
-    const int N = 12345;
+    const int N = 1234;
     asmart<mstring> ms(new mstring[N]);
     for (int i = 0; i < N; ++i) {
         snprintf(buf, sizeof buf, "%d", i);
@@ -265,6 +271,12 @@ static void test_mstr() {
     MStringArray ma;
     for (int i = 0; i < N; ++i) {
         ma.append(ms[i]);
+        assert(find(ma, ms[i]) == i);
+    }
+    long n = 0L;
+    for (mstring& m : ma) {
+        assert(m == mstring(n));
+        n++;
     }
 
     int c = 0;
@@ -386,7 +398,7 @@ static void test_options(int argc, char** argv) {
             test_dump = true;
         }
         else {
-            assert(!"invalid option");
+            printf("invalid option: %s\n", s);
         }
     }
 }

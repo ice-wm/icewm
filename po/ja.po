@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-06-17 17:23+0200\n"
-"PO-Revision-Date: 2021-06-18 12:58+0000\n"
+"POT-Creation-Date: 2021-07-28 20:46+0200\n"
+"PO-Revision-Date: 2021-07-29 01:11+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/icewm/"
 "icewm-1-4-branch/ja/>\n"
@@ -16,29 +16,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.6.2\n"
+"X-Generator: Weblate 4.7.1\n"
 
-#: src/aapm.cc:186 src/aapm.cc:465 src/aapm.cc:686 src/aapm.cc:810
+#: src/aapm.cc:184 src/aapm.cc:463 src/aapm.cc:684 src/aapm.cc:809
 msgid " - Power"
 msgstr " - 給電中"
 
-#: src/aapm.cc:188 src/aapm.cc:468 src/aapm.cc:689
+#: src/aapm.cc:186 src/aapm.cc:466 src/aapm.cc:687
 msgid "P"
 msgstr "P"
 
-#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669 src/aapm.cc:778
+#: src/aapm.cc:190 src/aapm.cc:440 src/aapm.cc:667 src/aapm.cc:777
 msgid " - Charging"
 msgstr " - 充電中"
 
-#: src/aapm.cc:194 src/aapm.cc:444 src/aapm.cc:671
+#: src/aapm.cc:192 src/aapm.cc:442 src/aapm.cc:669
 msgid "C"
 msgstr "C"
 
-#: src/aapm.cc:446
+#: src/aapm.cc:444
 msgid " - Full"
 msgstr " - 充電完了"
 
-#: src/aapm.cc:990
+#: src/aapm.cc:989
 #, c-format
 msgid "power:\t%s"
 msgstr "電源: \t%s"
@@ -51,11 +51,11 @@ msgstr "時計"
 msgid "Date"
 msgstr "日付"
 
-#: src/aclock.cc:186 src/themes.cc:80
+#: src/aclock.cc:186 src/themes.cc:81
 msgid "Default"
 msgstr "既定値"
 
-#: src/aclock.cc:187 src/acpustatus.cc:660 src/amailbox.cc:953
+#: src/aclock.cc:187 src/acpustatus.cc:663 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "無効 (_D)"
@@ -105,7 +105,7 @@ msgstr ""
 "\n"
 "CPU 周波数: %.3fGHz"
 
-#: src/acpustatus.cc:348 src/acpustatus.cc:655
+#: src/acpustatus.cc:348 src/acpustatus.cc:658
 msgid "CPU"
 msgstr "CPU"
 
@@ -128,101 +128,105 @@ msgstr ""
 msgid "°C"
 msgstr "度 (摂氏)"
 
-#: src/acpustatus.cc:656
+#: src/acpustatus.cc:659
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:662
+#: src/acpustatus.cc:665
 msgid "_Combine"
 msgstr "一括 (_C)"
 
-#: src/acpustatus.cc:664
+#: src/acpustatus.cc:667
 msgid "_Separate"
 msgstr "個別 (_S)"
 
-#: src/amailbox.cc:62
+#: src/akeyboard.cc:76
+msgid "Keyboard"
+msgstr "キーボード"
+
+#: src/amailbox.cc:64
 #, c-format
 msgid "Invalid mailbox protocol: \"%s\""
 msgstr "メールボックスのプロトコルが正しくありません: \"%s\""
 
-#: src/amailbox.cc:64
+#: src/amailbox.cc:66
 #, c-format
 msgid "Invalid mailbox path: \"%s\""
 msgstr "メールボックスのパスが正しくありません: \"%s\""
 
-#: src/amailbox.cc:133
+#: src/amailbox.cc:140
 #, c-format
 msgid "DNS name lookup failed for %s"
 msgstr "%s に対する DNS 名前参照が失敗しました"
 
-#: src/amailbox.cc:149
+#: src/amailbox.cc:156
 #, c-format
 msgid "Invalid mailbox port: \"%s\""
 msgstr "メールボックスのポートが正しくありません: \"%s\""
 
-#: src/amailbox.cc:307
+#: src/amailbox.cc:314
 #, c-format
 msgid "Could not connect to %s: %s"
 msgstr "%s:%s に接続できませんでした"
 
-#: src/amailbox.cc:325
+#: src/amailbox.cc:334
 #, c-format
 msgid "Failed to find %s command"
 msgstr "%s コマンドの検出に失敗しました"
 
-#: src/amailbox.cc:353 src/yapp.cc:417
+#: src/amailbox.cc:363 src/yapp.cc:418
 #, c-format
 msgid "Failed to execute %s"
 msgstr "%s の実行に失敗しました"
 
-#: src/amailbox.cc:437
+#: src/amailbox.cc:447
 #, c-format
 msgid "Write to socket failed: %s"
 msgstr "ソケットへの書き込みに失敗しました: %s"
 
-#: src/amailbox.cc:683
+#: src/amailbox.cc:694
 #, c-format
 msgid "Using MailBox \"%s\"\n"
 msgstr "使用中メールボックス \"%s\"\n"
 
-#: src/amailbox.cc:790
+#: src/amailbox.cc:801
 msgid "Suspended"
 msgstr "一時停止"
 
-#: src/amailbox.cc:794
+#: src/amailbox.cc:805
 msgid "Error checking mailbox."
 msgstr "メールボックスの確認時にエラーが発生しました。"
 
-#: src/amailbox.cc:801
+#: src/amailbox.cc:812
 #, c-format
 msgid "%ld mail message, %ld unread."
 msgstr "%ld 通のメールがあります。そのうち %ld 通が未読です。"
 
-#: src/amailbox.cc:802
+#: src/amailbox.cc:813
 #, c-format
 msgid "%ld mail messages, %ld unread."
 msgstr "%ld 通のメールがあります。そのうち %ld 通が未読です。"
 
-#: src/amailbox.cc:808
+#: src/amailbox.cc:819
 #, c-format
 msgid "%ld mail message."
 msgstr "%ld 通のメールがあります。"
 
-#: src/amailbox.cc:809
+#: src/amailbox.cc:820
 #, c-format
 msgid "%ld mail messages."
 msgstr "%ld 通のメールがあります。"
 
-#: src/amailbox.cc:950
+#: src/amailbox.cc:961
 msgid "MAIL"
 msgstr "メール"
 
-#: src/amailbox.cc:952
+#: src/amailbox.cc:963
 msgid "_Check"
 msgstr "チェック (_C)"
 
-#: src/amailbox.cc:954
+#: src/amailbox.cc:965
 msgid "_Suspend"
 msgstr "一時停止 (_S)"
 
@@ -293,1729 +297,9 @@ msgstr "ダウン"
 msgid "NET"
 msgstr "ネット"
 
-#: src/aworkspaces.cc:602 src/wmstatus.cc:207
+#: src/aworkspaces.cc:604 src/wmstatus.cc:207
 msgid "Workspace: "
 msgstr "ワークスペース: "
-
-#: src/icehelp.cc:1326
-msgid "Back"
-msgstr "戻る"
-
-#: src/icehelp.cc:1326
-msgid "Alt+Left"
-msgstr "Alt+Left"
-
-#: src/icehelp.cc:1328
-msgid "Forward"
-msgstr "進む"
-
-#: src/icehelp.cc:1328
-msgid "Alt+Right"
-msgstr "Alt+Right"
-
-#: src/icehelp.cc:1331
-msgid "Previous"
-msgstr "前"
-
-#: src/icehelp.cc:1332
-msgid "Next"
-msgstr "次"
-
-#: src/icehelp.cc:1334
-msgid "Contents"
-msgstr "内容"
-
-#: src/icehelp.cc:1335
-msgid "Index"
-msgstr "目次"
-
-#: src/icehelp.cc:1337
-msgid "Find..."
-msgstr "検索..."
-
-#: src/icehelp.cc:1337
-msgid "Ctrl+F"
-msgstr "Ctrl+F"
-
-#: src/icehelp.cc:1338
-msgid "Find next"
-msgstr "次を検索"
-
-#: src/icehelp.cc:1338
-msgid "F3"
-msgstr "F3"
-
-#: src/icehelp.cc:1340
-msgid "Open in Browser"
-msgstr "ブラウザで開く"
-
-#: src/icehelp.cc:1340
-msgid "Ctrl+B"
-msgstr "Ctrl+B"
-
-#: src/icehelp.cc:1342
-msgid "Reload"
-msgstr "再読み込み"
-
-#: src/icehelp.cc:1342 src/icesame.cc:60
-msgid "Ctrl+R"
-msgstr "Ctrl+R"
-
-#: src/icehelp.cc:1343 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
-msgid "Close"
-msgstr "閉じる"
-
-#: src/icehelp.cc:1343 src/icesame.cc:62 src/iceview.cc:59
-msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
-
-#: src/icehelp.cc:1348
-msgid "Icewm(1)"
-msgstr "Icewm(1)"
-
-#: src/icehelp.cc:1348
-msgid "Ctrl+I"
-msgstr "Ctrl+I"
-
-#: src/icehelp.cc:1350
-msgid "Icewmbg(1)"
-msgstr "Icewmbg(1)"
-
-#: src/icehelp.cc:1352
-msgid "Icesound(1)"
-msgstr "Icesound(1)"
-
-#: src/icehelp.cc:1354
-msgid "FAQ"
-msgstr "FAQ"
-
-#: src/icehelp.cc:1356
-msgid "Manual"
-msgstr "マニュアル"
-
-#: src/icehelp.cc:1356
-msgid "Ctrl+M"
-msgstr "Ctrl+M"
-
-#: src/icehelp.cc:1358
-msgid "Support"
-msgstr "サポート"
-
-#: src/icehelp.cc:1360
-msgid "Theme Howto"
-msgstr "テーマの作成方法について"
-
-#: src/icehelp.cc:1360 src/iceview.cc:56
-msgid "Ctrl+T"
-msgstr "Ctrl+T"
-
-#: src/icehelp.cc:1362
-msgid "Website"
-msgstr "Web サイト"
-
-#: src/icehelp.cc:1362 src/iceview.cc:57
-msgid "Ctrl+W"
-msgstr "Ctrl+W"
-
-#: src/icehelp.cc:1364
-msgid "Github"
-msgstr "Github"
-
-#: src/icehelp.cc:1368 src/yinputline.cc:19
-msgid "Ctrl+X"
-msgstr "Ctrl+X"
-
-#: src/icehelp.cc:1373 src/yinputline.cc:20
-msgid "Ctrl+V"
-msgstr "Ctrl+V"
-
-#: src/icehelp.cc:2180
-msgid "Unsupported protocol."
-msgstr "未対応のプロトコルです。"
-
-#: src/icehelp.cc:2259
-#, c-format
-msgid "Invalid path: %s\n"
-msgstr "パスが正しくありません: %s\n"
-
-#: src/icehelp.cc:2283
-msgid "Path does not refer to a file."
-msgstr "パスの指定がファイルを指し示していません。"
-
-#: src/icehelp.cc:2288
-msgid "Failed to open file for reading."
-msgstr "ファイルを読み込み用に開く処理が失敗しました。"
-
-#: src/icehelp.cc:2317
-msgid "Failed to create a temporary file"
-msgstr "一時ファイルを作成する処理が失敗しました"
-
-#: src/icehelp.cc:2410
-#, c-format
-msgid "Failed to execute system(%s) (%d)"
-msgstr "system(%s) の実行に失敗しました (%d)"
-
-#: src/icehelp.cc:2433
-#, c-format
-msgid "Failed to decompress %s"
-msgstr "%s の展開に失敗しました"
-
-#: src/icehelp.cc:2441
-msgid "Could not locate curl or wget in PATH"
-msgstr "PATH 内に curl および wget のどちらも見つかりません"
-
-#: src/icehelp.cc:2445
-msgid "Unsafe characters in URL"
-msgstr "URL 内に安全ではない文字が含まれています"
-
-#: src/icehelp.cc:2482
-#, c-format
-msgid ""
-"Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
-"\n"
-"IceHelp is a very simple HTML browser for the IceWM window manager.\n"
-"It can display a HTML document from file, or browse a website.\n"
-"It remembers visited pages in a history, which is navigable\n"
-"by key bindings and a context menu (right mouse click).\n"
-"It neither supports rendering of images nor JavaScript.\n"
-"If no file or URL is given it will display the IceWM Manual\n"
-"from %s.\n"
-"\n"
-"Options:\n"
-"  -d, --display=NAME  NAME of the X server to use.\n"
-"  --sync              Synchronize X11 commands.\n"
-"\n"
-"  -B                  Display the IceWM icewmbg manpage.\n"
-"  -b, --bugs          Display the IceWM bug reports (primitively).\n"
-"  -f, --faq           Display the IceWM FAQ and Howto.\n"
-"  -g                  Display the IceWM Github website.\n"
-"  -i, --icewm         Display the IceWM icewm manpage.\n"
-"  -m, --manual        Display the IceWM Manual (default).\n"
-"  -s                  Display the IceWM icesound manpage.\n"
-"  -t, --theme         Display the IceWM themes Howto.\n"
-"  -w, --website       Display the IceWM website.\n"
-"\n"
-"  -V, --version       Prints version information and exits.\n"
-"  -h, --help          Prints this usage screen and exits.\n"
-"\n"
-"Environment variables:\n"
-"  DISPLAY=NAME        Name of the X server to use.\n"
-"\n"
-"To report bugs, support requests, comments please visit:\n"
-"%s\n"
-"\n"
-msgstr ""
-"使用方法: %s [オプション] [ ファイル名 | URL ]\n"
-"\n"
-"IceHelp は、 IceWM ウインドウマネージャ向けに作られたシンプルな HTML ブラウザ"
-"です。\n"
-"ファイルとして保存されている HTML 文書を表示することができるほか、 Web サイト"
-"を表示\n"
-"することもできます。また、訪問済みのページを履歴として記憶することができるほ"
-"か、その\n"
-"履歴をキーボード操作やコンテキストメニュー (マウスの右クリック) で表示するこ"
-"とができます。\n"
-"画像の表示や JavaScript には対応していません。ファイルや URL を指定しない場合"
-"は、\n"
-"%s にある IceWM のマニュアルを表示します。\n"
-"\n"
-"オプション:\n"
-"  --display=NAME      使用すべき X サーバの名前を指定します。\n"
-"  --sync              X11 のコマンドを同期して実行します。\n"
-"\n"
-"  -B                  IceWM の icewmbg のマニュアルページを表示します。\n"
-"  -b, --bugs          IceWM のバグ報告サイトを表示します。\n"
-"  -f, --faq           IceWM の FAQ と Howto を表示します。\n"
-"  -g                  IceWM の Github Web サイトを表示します。\n"
-"  -i, --icewm         IceWM の Web サイトを表示します。\n"
-"  -m, --manual        IceWM のマニュアルを表示します (既定値)。\n"
-"  -s                  IceWM の icesound のマニュアルページを表示します。\n"
-"  -t, --theme         IceWM テーマの Howto を表示します。\n"
-"  -w, --website       IceWM の Web サイトを表示します。\n"
-"\n"
-"  -V, --version       バージョン情報を表示して終了します。\n"
-"  -h, --help          この使用方法の説明を表示して終了します。\n"
-"\n"
-"環境変数:\n"
-"  DISPLAY=NAME        使用すべき X サーバの名前を指定することができます。\n"
-"\n"
-"バグの報告やサポートの要求、コメントなどは下記をご覧ください:\n"
-"%s\n"
-"\n"
-
-#: src/icehelp.cc:2572
-#, c-format
-msgid "Ignoring option '%s'"
-msgstr "下記のオプションは無視されます: '%s'"
-
-#: src/icelist.cc:60
-msgid "List View"
-msgstr "リスト閲覧"
-
-#: src/icelist.cc:61
-msgid "Icon View"
-msgstr "アイコン閲覧"
-
-#: src/icelist.cc:65
-msgid "Open"
-msgstr "開く"
-
-#: src/icesame.cc:57
-msgid "Undo"
-msgstr "元に戻す"
-
-#: src/icesame.cc:57
-msgid "Ctrl+Z"
-msgstr "Ctrl+Z"
-
-#: src/icesame.cc:59
-msgid "New"
-msgstr "新規"
-
-#: src/icesame.cc:59
-msgid "Ctrl+N"
-msgstr "Ctrl+N"
-
-#: src/icesame.cc:60
-msgid "Restart"
-msgstr "再起動"
-
-#: src/icesame.cc:65
-msgid "Same Game"
-msgstr "さめがめ"
-
-#: src/icesh.cc:73
-msgid "For help please consult the man page icesh(1).\n"
-msgstr ""
-"ヘルプを読みたい場合は icesh(1) のマニュアルページを参照してください。\n"
-
-#: src/icesh.cc:1508
-#, c-format
-msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
-msgstr "領域 `%s' に対するシンボル名 (数値範囲: %ld-%ld):\n"
-
-#: src/icesh.cc:1566
-#, c-format
-msgid "Workspace out of range: %ld"
-msgstr "ワークスペースの範囲が正しくありません: %ld"
-
-#: src/icesh.cc:1587
-#, c-format
-msgid "Invalid workspace name: `%s'"
-msgstr "ワークスペース名が正しくありません: `%s'"
-
-#: src/icesh.cc:1872
-msgid "GNOME window layer"
-msgstr "GNOME ウインドウレイヤ"
-
-#: src/icesh.cc:1873
-msgid "IceWM tray option"
-msgstr "IceWM トレイアイコン"
-
-#: src/icesh.cc:1874
-msgid "Gravity symbols"
-msgstr "グラビティシンボル"
-
-#: src/icesh.cc:1875
-msgid "Motif functions"
-msgstr "Motif 機能"
-
-#: src/icesh.cc:1876
-msgid "Motif decorations"
-msgstr "Motif 装飾"
-
-#: src/icesh.cc:1877
-msgid "EWMH window state"
-msgstr "EWMH ウインドウ状態"
-
-#: src/icesh.cc:1959 src/icesh.cc:2032
-#, c-format
-msgid "workspace #%d: `%s'\n"
-msgstr "ワークスペース #%d: `%s'\n"
-
-#: src/icesh.cc:2267 src/icesh.cc:3584 src/icesh.cc:4057
-#, c-format
-msgid "Invalid state: `%s'."
-msgstr "状態が正しくありません: `%s'."
-
-#: src/icesh.cc:3119
-#, c-format
-msgid "Cannot get geometry of window 0x%lx"
-msgstr "ウインドウ 0x%lx のジオメトリを取得できません"
-
-#: src/icesh.cc:3144
-#, c-format
-msgid "Invalid Xinerama: `%s'."
-msgstr "Xinerama が正しくありません: `%s'."
-
-#: src/icesh.cc:3191 src/icesh.cc:3241
-#, c-format
-msgid "Invalid argument: `%s'"
-msgstr "パラメータが正しくありません: `%s'"
-
-#: src/icesh.cc:3207
-#, c-format
-msgid "Action `%s' requires at least %d arguments."
-msgstr "アクション `%s' には少なくとも %d 個のパラメータが必要です。"
-
-#: src/icesh.cc:3216
-#, c-format
-msgid "Invalid expression: `%s'"
-msgstr "表現が正しくありません: `%s'"
-
-#: src/icesh.cc:3227 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1072
-#: src/yxapp.cc:1032
-#, c-format
-msgid "Can't open display: %s. X must be running and $DISPLAY set."
-msgstr ""
-"ディスプレイ %s を開くことができません。X が起動されていて、かつ $DISPLAY が"
-"セットされていなければなりません。"
-
-#: src/icesh.cc:3341
-#, c-format
-msgid "Unexpected: `%s'."
-msgstr "予期しないキーワードです: '%s'."
-
-#: src/icesh.cc:3370
-msgid "No windows found."
-msgstr "ウインドウが見つかりませんでした。"
-
-#: src/icesh.cc:3385
-msgid "No actions specified."
-msgstr "アクションが指定されていません。"
-
-#: src/icesh.cc:3501
-#, c-format
-msgid "Invalid window identifier: `%s'"
-msgstr "ウインドウの識別子が正しくありません: `%s'"
-
-#: src/icesh.cc:3518
-#, c-format
-msgid "Invalid PID: `%s'"
-msgstr "PID が正しくありません: `%s'"
-
-#: src/icesh.cc:3554
-#, c-format
-msgid "Invalid layer: `%s'."
-msgstr "レイヤが正しくありません: `%s'."
-
-#: src/icesh.cc:4365
-#, c-format
-msgid "Unknown action: `%s'"
-msgstr "不明なアクションです: `%s'"
-
-#: src/iceskt.cc:42
-#, c-format
-msgid "Socket error: %d"
-msgstr "ソケットエラー: %d"
-
-#: src/icesm.cc:69
-msgid ""
-"  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
-"  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
-"\n"
-"  -d, --display=NAME  Use NAME to connect to the X server.\n"
-"  -a, --alpha         Use a 32-bit visual for translucency.\n"
-"  --sync              Synchronize communication with X11 server.\n"
-"\n"
-"  -i, --icewm=FILE    Use FILE as the IceWM window manager.\n"
-"  -o, --output=FILE   Redirect all output to FILE.\n"
-"\n"
-"  -b, --nobg          Do not start icewmbg.\n"
-"  -n, --notray        Do not start icewmtray.\n"
-"  -s, --sound         Also start icesound.\n"
-msgstr ""
-"  -c, --config=FILE   IceWM に対して、 FILE で指定したファイルから設定を読み"
-"込むように指示します。\n"
-"  -t, --theme=FILE    IceWM に対して、 FILE で指定したファイルからテーマを読"
-"み込むように指示します。\n"
-"\n"
-"  -d, --display=NAME  NAME で指定した指定した X サーバに接続します。\n"
-"  -a, --alpha         透過処理に対して 32 ビットの視覚情報を使用します。\n"
-"  --sync              X11 サーバとの通信を同期して処理するようにします。\n"
-"\n"
-"  -i, --icewm=FILE    FILE を IceWM ウインドウマネージャとして使用します。\n"
-"  -o, --output=FILE   全ての出力を FILE に書き込みます。\n"
-"\n"
-"  -b, --nobg          icewmbg を起動しないようにします。\n"
-"  -n, --notray        icewmtray を起動しないようにします。\n"
-"  -s, --sound         icesound も併せて起動するようにします。\n"
-
-#: src/icesm.cc:85
-msgid ""
-"\n"
-"Debugging options:\n"
-"  -v, --valgrind      Let \"/usr/bin/valgrind\" run icewm.\n"
-"                      Thoroughly examines the execution of icewm.\n"
-"  -g, --catchsegv     Let \"/usr/bin/catchsegv\" run icewm.\n"
-"                      Gives a backtrace if icewm segfaults.\n"
-msgstr ""
-"\n"
-"デバッグオプション:\n"
-"  -v, --valgrind      \"/usr/bin/valgrind\" 経由で icewm を実行します。\n"
-"                      icewm の実行をまんべんなく調査することができます。\n"
-"  -g, --catchsegv     \"/usr/bin/catchsegv\" 経由で icewm を実行します。\n"
-"                      icewm がセグメント違反で停止した場合、バックトレースを"
-"表示します。\n"
-
-#: src/icesm.cc:188
-#, c-format
-msgid "Unknown option '%s'"
-msgstr "不明なオプションです: `%s'"
-
-#: src/icesm.cc:462 src/icesm.cc:622
-#, c-format
-msgid "restart %s."
-msgstr "%s を再起動します。"
-
-#: src/icesm.cc:468
-#, c-format
-msgid "%s exited with status %d."
-msgstr "%s はステータスコード %d で終了しました。"
-
-#: src/icesm.cc:474 src/icesm.cc:628
-#, c-format
-msgid "%s was killed by signal %d."
-msgstr "%s はシグナル %d で終了しました。"
-
-#: src/icesm.cc:513
-msgid ""
-" IceWM crashed for the second time in 10 seconds. \n"
-" Do you wish to:\n"
-"\n"
-"\t1: Restart IceWM?\n"
-"\t2: Abort this session?\n"
-"\t3: Run a terminal?\n"
-msgstr ""
-" IceWM が 10 秒以内に 2 度クラッシュしてしまいました。\n"
-" 下記のいずれかを選択してください:\n"
-"\n"
-"\t1: IceWM を再起動しますか？\n"
-"\t2: このセッションを中止しますか？\n"
-"\t3: 端末を起動しますか？\n"
-
-#: src/icesm.cc:519
-msgid "IceWM crash response"
-msgstr "IceWM クラッシュ応答"
-
-#: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
-#, c-format
-msgid "Playing sample #%d (%s)"
-msgstr "サンプル #%d を再生しています (%s)"
-
-#: src/icesound.cc:329
-#, c-format
-msgid "%s: Invalid number of channels"
-msgstr "%s: チャンネル数が正しくありません"
-
-#: src/icesound.cc:335 src/icesound.cc:340
-msgid "Could not set OSS channels"
-msgstr "OSS チャンネルの設定ができませんでした"
-
-#: src/icesound.cc:345 src/icesound.cc:373
-msgid "Could not sync OSS"
-msgstr "OSS の同期ができませんでした"
-
-#: src/icesound.cc:357
-msgid "OSS write failed"
-msgstr "OSS の書き込みに失敗しました"
-
-#: src/icesound.cc:361
-#, c-format
-msgid "OSS incomplete write (%d/%d)"
-msgstr "OSS への書き込みが完了しませんでした (%d/%d)"
-
-#: src/icesound.cc:368
-msgid "Could not post OSS"
-msgstr "OSS をポストできませんでした"
-
-#: src/icesound.cc:397
-#, c-format
-msgid "Could not open OSS device %s"
-msgstr "OSS デバイス %s を開くことができませんでした"
-
-#: src/icesound.cc:402
-msgid "Could not set OSS stereo"
-msgstr "OSS ステレオの設定ができませんでした"
-
-#: src/icesound.cc:407
-msgid "Could not reset OSS DSP"
-msgstr "OSS DSP のリセットができませんでした"
-
-#: src/icesound.cc:412
-msgid "Could not set OSS format"
-msgstr "OSS の形式設定ができませんでした"
-
-#: src/icesound.cc:499
-#, c-format
-msgid "ao_open_live failed with %d"
-msgstr "ao_open_live が %d で失敗しました"
-
-#: src/icesound.cc:510
-msgid "ao_play failed"
-msgstr "ao_play が失敗しました"
-
-#: src/icesound.cc:676
-#, c-format
-msgid "Unrecognized option: %s\n"
-msgstr "認識できないオプションです: %s\n"
-
-#: src/icesound.cc:679 src/icesound.cc:972
-#, c-format
-msgid "Unrecognized argument: %s\n"
-msgstr "認識できないパラメータです: %s\n"
-
-#: src/icesound.cc:688
-#, c-format
-msgid ""
-"Usage: %s [OPTION]...\n"
-"\n"
-"Plays audio files on GUI events raised by IceWM.\n"
-"The currently configured sound interfaces are: %s.\n"
-"Icesound will choose the first of these which is usable.\n"
-"\n"
-"Options:\n"
-"\n"
-" -d, --display=DISPLAY   X11 display used by IceWM (default: $DISPLAY).\n"
-"\n"
-" -s, --sample-dir=DIR    Specifies a directory with sound files.\n"
-"                         Default is $HOME/.config/icewm/sounds.\n"
-"\n"
-" -i, --interface=LIST    Specifies audio output interfaces. One or more of:\n"
-"                         %s separated by commas.\n"
-"\n"
-" -D, --device=DEVICE     Backwards compatibility only: the default device. \n"
-"                         Please prefer one of the -A/-O/-S options.\n"
-"\n"
-" -O, --oss=DEVICE        Specifies the OSS device (default: \"%s\").\n"
-"\n"
-" -A, --alsa=DEVICE       Specifies the ALSA device (default: \"%s\").\n"
-"\n"
-" -z, --snooze=millisecs  Specifies the snooze interval between sound events\n"
-"                         in milliseconds. Default is 500 milliseconds.\n"
-"\n"
-" -p, --play=sound        Plays the given sound (name or number) and exits.\n"
-"\n"
-" -l, --list-files        Lists the available sound file paths and exits.\n"
-"\n"
-"     --list-sounds       Lists the supported sound filenames and exits.\n"
-"\n"
-"     --list-interfaces   Lists the supported audio interfaces and exits.\n"
-"\n"
-" -v, --verbose           Be verbose and print out each sound event.\n"
-"\n"
-" -V, --version           Prints version information and exits.\n"
-"\n"
-" -h, --help              Prints this help screen and exits.\n"
-"\n"
-"Return values:\n"
-"\n"
-"  0    Success.\n"
-"  1    General error.\n"
-"  2    Command line error.\n"
-"  3    Subsystems error (ie cannot connect to server).\n"
-"\n"
-msgstr ""
-"使用方法: %s [オプション]...\n"
-"\n"
-"IceWM が発生させた GUI イベントに対して、オーディオファイルを再生します。\n"
-"現時点で設定済みのサウンドインターフェイスは下記の通りです: %s\n"
-"Icesound は利用可能な最初のインターフェイスを選択します。\n"
-"\n"
-"オプション:\n"
-"\n"
-" -d, --display=DISPLAY   IceWM が使用するディスプレイを指定します (既定値: "
-"$DISPLAY) 。\n"
-"\n"
-" -s, --sample-dir=DIR    サウンドファイルが含まれているディレクトリを指定しま"
-"す。\n"
-"                         既定値は $HOME/.config/icewm/sounds です。\n"
-"\n"
-" -i, --interface=LIST    サウンド出力のインターフェイスを指定します。下記の中"
-"から 1 つ以上を指定します:\n"
-"                         %s 。複数を指定したい場合はカンマで区切ります。\n"
-"\n"
-" -D, --device=DEVICE     後方互換性のためだけに用意されているオプションで、既"
-"定のデバイスを指定します。\n"
-"                         -A/-O/-S の各オプションの使用をお勧めします。\n"
-"\n"
-" -O, --oss=DEVICE        OSS デバイスを指定します (既定値: \"%s\") 。\n"
-"\n"
-" -A, --alsa=DEVICE       ALSA デバイスを指定します (既定値: \"%s\") 。\n"
-"\n"
-" -z, --snooze=millisecs  サウンドイベント同士のスヌーズ間隔をミリ秒単位で指定"
-"します。\n"
-"                         既定値は 500 ミリ秒です。\n"
-"\n"
-" -p, --play=sound        指定されたサウンド (名前または番号) を再生して終了し"
-"ます。\n"
-"\n"
-" -l, --list-files        利用可能なサウンドファイルパスの一覧を表示して終了し"
-"ます。\n"
-"\n"
-"     --list-sounds       対応するサウンドファイル名の一覧を表示して終了しま"
-"す。\n"
-"\n"
-"     --list-interfaces   対応するオーディオインターフェイスの一覧を表示して終"
-"了します。\n"
-"\n"
-" -v, --verbose           冗長な出力を行ないます (それぞれのサウンドイベント"
-"を stdout に出力します) 。\n"
-"\n"
-" -V, --version           バージョン情報を表示して終了します。\n"
-"\n"
-" -h, --help              このヘルプ画面を表示して終了します。\n"
-"\n"
-"返り値:\n"
-"\n"
-"  0    成功\n"
-"  1    一般的なエラー\n"
-"  2    コマンドラインのエラー\n"
-"  3    サブシステムのエラー (サーバに接続できないなど)\n"
-"\n"
-
-#: src/icesound.cc:779
-#, c-format
-msgid "No audio for %s"
-msgstr "%s に対するサウンドがありません"
-
-#: src/icesound.cc:856
-msgid "Could not get GUI event property"
-msgstr "GUI イベントプロパティの取得ができませんでした"
-
-#: src/icesound.cc:860
-#, c-format
-msgid "Received invalid GUI event %d"
-msgstr "正しくない GUI イベント %d を受信しました"
-
-#: src/icesound.cc:864
-#, c-format
-msgid "Received GUI event %s"
-msgstr "GUI イベント %s を受信しました"
-
-#: src/icesound.cc:878
-#, c-format
-msgid "Too quick; ignoring %s."
-msgstr "間隔が短すぎます; %s を無視しています。"
-
-#: src/icesound.cc:882
-#, c-format
-msgid "Support for the %s interface not compiled."
-msgstr "%s インターフェイスへの対応はコンパイルされていません。"
-
-#: src/icesound.cc:915
-#, c-format
-msgid "Unsupported interface: %s."
-msgstr "未対応のインターフェイスです: %s"
-
-#: src/icesound.cc:924
-#, c-format
-msgid "Using %s audio."
-msgstr "%s オーディオを使用しています。"
-
-#: src/icesound.cc:928
-#, c-format
-msgid "Failed to connect to audio interfaces %s."
-msgstr "オーディオインターフェイス %s への接続に失敗しました。"
-
-#: src/icesound.cc:940
-#, c-format
-msgid "Received signal %s: Terminating..."
-msgstr "シグナル %s を受け取りました。終了しています..."
-
-#: src/icetray.cc:220
-msgid ""
-"  -n, --notify        Notify parent process by sending signal USR1.\n"
-"  --display=NAME      Use NAME to connect to the X server.\n"
-"  --sync              Synchronize communication with X11 server.\n"
-"\n"
-"  -c, --config=FILE   Load preferences from FILE.\n"
-"  -t, --theme=FILE    Load the theme from FILE.\n"
-msgstr ""
-"  -n, --notify        シグナル USR1 を送信することで親プロセスに通知を送信し"
-"ます。\n"
-"  --display=NAME      NAME で指定した指定した X server に接続します。\n"
-"  --sync              X11 サーバとの通信を同期して処理するようにします。\n"
-"\n"
-"  -c, --config=FILE   FILE で指定したファイルから設定を読み込みます。\n"
-"  -t, --theme=FILE    FILE で指定したファイルからテーマを読み込みます。\n"
-
-#: src/iceview.cc:55
-msgid "Hex View"
-msgstr "16 進表示"
-
-#: src/iceview.cc:55
-msgid "Ctrl+H"
-msgstr "Ctrl+H"
-
-#: src/iceview.cc:56
-msgid "Expand Tabs"
-msgstr "タブ拡張"
-
-#: src/iceview.cc:57
-msgid "Wrap Lines"
-msgstr "行折り返し"
-
-#: src/icewmbg.cc:72
-#, c-format
-msgid "Failed to load image '%s'."
-msgstr "画像 '%s' の読み込みに失敗しました。"
-
-#: src/icewmbg.cc:913
-msgid ""
-"Usage: icewmbg [OPTIONS]\n"
-"Where multiple values can be given they are separated by commas.\n"
-"When image is a directory then all images from that directory are used.\n"
-"\n"
-"Options:\n"
-"  -p, --replace        Replace an existing icewmbg.\n"
-"  -q, --quit           Tell the running icewmbg to quit.\n"
-"  -r, --restart        Tell the running icewmbg to restart itself.\n"
-"  -u, --shuffle        Shuffle/reshuffle the list of background images.\n"
-"\n"
-"  -c, --config=FILE    Load preferences from FILE.\n"
-"  -t, --theme=NAME     Load the theme with name NAME.\n"
-"\n"
-"  -i, --image=FILE(S)  Load background image(s) from FILE(S).\n"
-"  -k, --color=NAME(S)  Use background color(s) from NAME(S).\n"
-"\n"
-"  -s, --semis=FILE(S)  Load transparency image(s) from FILE(S).\n"
-"  -x, --trans=NAME(S)  Use transparency color(s) from NAME(S).\n"
-"\n"
-"  -e, --center=0/1     Disable/Enable centering background.\n"
-"  -a, --scaled=0/1     Disable/Enable scaling background.\n"
-"  -m, --multi=0/1      Disable/Enable multihead background.\n"
-"  -y, --cycle=SECONDS  Cycle backgrounds every SECONDS.\n"
-"\n"
-"  --display=NAME       Use NAME to connect to the X server.\n"
-"  --sync               Synchronize communication with X11 server.\n"
-"\n"
-"  -h, --help           Print this usage screen and exit.\n"
-"  -V, --version        Prints version information and exits.\n"
-"\n"
-"Loads desktop background according to preferences file:\n"
-" DesktopBackgroundCenter  - Display desktop background centered\n"
-" DesktopBackgroundScaled  - Display desktop background scaled\n"
-" DesktopBackgroundColor   - Desktop background color(s)\n"
-" DesktopBackgroundImage   - Desktop background image(s)\n"
-" ShuffleBackgroundImages  - Shuffle the list of background images\n"
-" SupportSemitransparency  - Support for semitransparent terminals\n"
-" DesktopTransparencyColor - Semitransparency background color(s)\n"
-" DesktopTransparencyImage - Semitransparency background image(s)\n"
-" DesktopBackgroundMultihead - One background over all monitors\n"
-" CycleBackgroundsPeriod   - Seconds between cycling over backgrounds\n"
-"\n"
-" center:0 scaled:0 = tiled\n"
-" center:1 scaled:0 = centered\n"
-" center:1 scaled:1 = fill one dimension and keep aspect ratio\n"
-" center:0 scaled:1 = fill both dimensions and keep aspect ratio\n"
-"\n"
-msgstr ""
-"使用方法: icewmbg [オプション]\n"
-"複数の値を指定したい場合は、カンマで区切って指定してください。\n"
-"画像としてディレクトリを指定すると、そのディレクトリ内にある全ての画像を使用"
-"します。\n"
-"\n"
-"オプション:\n"
-"  -p, --replace        既存の icewmbg を置き換えます。\n"
-"  -q, --quit           現在動作中の icewmbg に対して、終了するように依頼しま"
-"す。\n"
-"  -r, --restart        現在動作中の icewmbg に対して、再起動するように依頼し"
-"ます。\n"
-"  -u, --shuffle        背景画像の一覧を無作為に入れ替えます。\n"
-"\n"
-"  -c, --config=FILE    設定を FILE で指定したファイルから読み込みます。\n"
-"  -t, --theme=NAME     テーマを NAME で指定した名前から読み込みます。\n"
-"\n"
-"  -i, --image=FILE(S)  FILE(S) で指定した背景画像を読み込みます。\n"
-"  -k, --color=NAME(S)  NAME(S) で指定した背景色を使用します。\n"
-"\n"
-"  -s, --semis=FILE(S)  FILE(S) で指定した透過画像を読み込みます。\n"
-"  -x, --trans=NAME(S)  NAME(S) で指定した透過色を使用します。\n"
-"\n"
-"  -e, --center=0/1     背景の中央寄せを有効または無効にします。\n"
-"  -a, --scaled=0/1     背景の拡大／縮小を有効または無効にします。\n"
-"  -m, --multi=0/1      マルチモニタ向けの背景を有効または無効にします。\n"
-"  -y, --cycle=SECONDS  指定した秒数ごとに背景を切り替えます。\n"
-"\n"
-"  --display=NAME       NAME で指定した指定した X server に接続します。\n"
-"  --sync               X11 サーバとの通信を同期して処理します。\n"
-"\n"
-"  -h, --help           この使用方法の説明を表示して終了します。\n"
-"  -V, --version        バージョン情報を表示して終了します。\n"
-"\n"
-"デスクトップの背景は、設定ファイルに従って読み込みを行ないます:\n"
-" DesktopBackgroundCenter  - デスクトップの背景を中央揃えで表示します\n"
-" DesktopBackgroundScaled  - デスクトップの背景を拡大／縮小して表示します\n"
-" DesktopBackgroundColor   - デスクトップの背景色を指定します\n"
-" DesktopBackgroundImage   - デスクトップの背景画像を指定します\n"
-" ShuffleBackgroundImages  - 背景画像の一覧を無作為に入れ替えます\n"
-" SupportSemitransparency  - 半透明の端末に対応させます\n"
-" DesktopTransparencyColor - 半透明のウインドウに通知する色を指定します\n"
-" DesktopTransparencyImage - 半透明のウインドウに通知する画像を指定します\n"
-" DesktopBackgroundMultihead - 全てのモニタに対して単一の背景を使用するように"
-"します\n"
-" CycleBackgroundsPeriod   - 背景を切り替える際の秒数を指定します\n"
-"\n"
-" center:0 scaled:0 = タイル表示\n"
-" center:1 scaled:0 = 中央に表示\n"
-" center:1 scaled:1 = 縦横のいずれかを埋め、アスペクト比を維持\n"
-" center:0 scaled:1 = 縦横の両方を埋め、アスペクト比を維持\n"
-"\n"
-
-#: src/icewmbg.cc:1118
-msgid "Cannot start, because another icewmbg is still running."
-msgstr "既に icewmbg が動作しているため、新しく起動することができません。"
-
-#: src/icewmhint.cc:20
-msgid "Usage: icewmhint class.instance option arg\n"
-msgstr "使用方法: icewmhint クラス.インスタンス オプションパラメータ\n"
-
-#: src/icewmhint.cc:57
-#, c-format
-msgid "Out of memory (len=%d)."
-msgstr "メモリ不足 (長さ=%d)."
-
-#: src/misc.cc:70 src/misc.cc:82
-msgid "Warning: "
-msgstr "警告: "
-
-#: src/misc.cc:376
-#, c-format
-msgid ""
-"Usage: %s [OPTIONS]\n"
-"Options:\n"
-"%s\n"
-"  -C, --copying       Prints license information and exits.\n"
-"  -V, --version       Prints version information and exits.\n"
-"  -h, --help          Prints this usage screen and exits.\n"
-"\n"
-msgstr ""
-"使用方法: %s [オプション]\n"
-"オプション:\n"
-"%s\n"
-"  -C, --copying       ライセンス情報を表示して終了します。\n"
-"  -V, --version       バージョン情報を表示して終了します。\n"
-"  -h, --help          この使用方法を表示して終了します。\n"
-"\n"
-
-#: src/movesize.cc:872
-#, c-format
-msgid "Unknown direction in move/resize request: %d"
-msgstr "移動／サイズ変更の要求において、未知の方向を指定しています: %d"
-
-#: src/wmabout.cc:29 src/wmabout.cc:30
-msgid "(C)"
-msgstr "(C)"
-
-#: src/wmabout.cc:40
-msgid "Theme:"
-msgstr "テーマ:"
-
-#: src/wmabout.cc:41
-msgid "Theme Description:"
-msgstr "テーマの説明:"
-
-#: src/wmabout.cc:42
-msgid "Theme Author:"
-msgstr "テーマの作者:"
-
-#: src/wmabout.cc:51
-msgid "CodeSet:"
-msgstr "コードセット:"
-
-#: src/wmabout.cc:52
-msgid "Language:"
-msgstr "言語:"
-
-#: src/wmabout.cc:56
-msgid "DoubleBuffer"
-msgstr "ダブルバッファ"
-
-#: src/wmabout.cc:57
-msgid "AlphaBlending"
-msgstr "アルファブレンディング"
-
-#: src/wmabout.cc:58
-msgid "Renderer:"
-msgstr "レンダラ:"
-
-#: src/wmabout.cc:64
-msgid "icewm - About"
-msgstr "icewm について"
-
-#: src/wmapp.cc:80
-msgid "A window manager is already running, use --replace to replace it"
-msgstr ""
-"ウインドウマネージャは既に起動しています。 --replace オプションを指定すること"
-"で、新しいウインドウマネージャに置き換えることができます"
-
-#: src/wmapp.cc:98
-#, c-format
-msgid "Failed to become the owner of the %s selection"
-msgstr "%s の選択に対する所有者になることができませんでした"
-
-#: src/wmapp.cc:102
-msgid "Waiting to replace the old window manager"
-msgstr "以前のウインドウマネージャの置き換えを待っています"
-
-#: src/wmapp.cc:107
-msgid "done."
-msgstr "完了。"
-
-#: src/wmapp.cc:371
-msgid "_Logout"
-msgstr "ログアウト (_L)"
-
-#: src/wmapp.cc:372
-msgid "_Cancel logout"
-msgstr "ログアウトを破棄 (_C)"
-
-#: src/wmapp.cc:377
-msgid "Lock _Workstation"
-msgstr "ワークステーションをロック (_W)"
-
-#: src/wmapp.cc:379 src/wmdialog.cc:72
-msgid "Re_boot"
-msgstr "再起動 (_B)"
-
-#: src/wmapp.cc:381 src/wmdialog.cc:73
-msgid "Shut_down"
-msgstr "シャットダウン (_D)"
-
-#. TRANSLATORS: This means "energy saving mode" or "suspended system". Not "interrupt". Not "hibernate".
-#: src/wmapp.cc:383 src/wmdialog.cc:69
-msgid "_Sleep mode"
-msgstr "スリープモード (_S)"
-
-#: src/wmapp.cc:388
-msgid "Restart _Icewm"
-msgstr "icewm を再起動 (_I)"
-
-#: src/wmapp.cc:390
-msgid "Restart _Xterm"
-msgstr "xterm を再起動 (_X)"
-
-#: src/wmapp.cc:400
-msgid "_Menu"
-msgstr "メニュー (_M)"
-
-#: src/wmapp.cc:401
-msgid "_Above Dock"
-msgstr "ドックの上 (_A)"
-
-#: src/wmapp.cc:402
-msgid "_Dock"
-msgstr "ドック (_D)"
-
-#: src/wmapp.cc:403
-msgid "_OnTop"
-msgstr "上に (_O)"
-
-#: src/wmapp.cc:404
-msgid "_Normal"
-msgstr "通常 (_N)"
-
-#: src/wmapp.cc:405
-msgid "_Below"
-msgstr "下に (_B)"
-
-#: src/wmapp.cc:406
-msgid "D_esktop"
-msgstr "デスクトップ (_E)"
-
-#: src/wmapp.cc:441 src/wmwinlist.cc:362
-msgid "_Restore"
-msgstr "元に戻す (_R)"
-
-#: src/wmapp.cc:443
-msgid "_Move"
-msgstr "移動 (_M)"
-
-#: src/wmapp.cc:445
-msgid "_Size"
-msgstr "サイズ (_S)"
-
-#: src/wmapp.cc:447 src/wmwinlist.cc:363
-msgid "Mi_nimize"
-msgstr "最小化 (_N)"
-
-#: src/wmapp.cc:449 src/wmwinlist.cc:364
-msgid "Ma_ximize"
-msgstr "最大化 (_X)"
-
-#: src/wmapp.cc:450 src/wmwinlist.cc:365
-msgid "Maximize_Vert"
-msgstr "垂直方向に最大化 (_V)"
-
-#: src/wmapp.cc:451 src/wmwinlist.cc:366
-msgid "MaximizeHori_z"
-msgstr "水平方向に最大化 (_Z)"
-
-#: src/wmapp.cc:454 src/wmwinlist.cc:367
-msgid "_Fullscreen"
-msgstr "フルスクリーン (_F)"
-
-#: src/wmapp.cc:457 src/wmwinlist.cc:369
-msgid "_Hide"
-msgstr "隠す (_H)"
-
-#: src/wmapp.cc:459 src/wmwinlist.cc:370
-msgid "Roll_up"
-msgstr "シェード (_U)"
-
-#: src/wmapp.cc:466
-msgid "R_aise"
-msgstr "上に表示 (_A)"
-
-#: src/wmapp.cc:468 src/wmwinlist.cc:372
-msgid "_Lower"
-msgstr "下に表示 (_L)"
-
-#: src/wmapp.cc:470 src/wmwinlist.cc:373
-msgid "La_yer"
-msgstr "レイヤ (_Y)"
-
-#: src/wmapp.cc:474 src/wmwinlist.cc:375
-msgid "Move _To"
-msgstr "移動 (_T)"
-
-#: src/wmapp.cc:475 src/wmwinlist.cc:376
-msgid "Occupy _All"
-msgstr "居座る (_A)"
-
-#: src/wmapp.cc:481
-msgid "Limit _Workarea"
-msgstr "作業領域の制限 (_W)"
-
-#: src/wmapp.cc:485 src/wmwinlist.cc:377
-msgid "Tray _icon"
-msgstr "トレイアイコン (_I)"
-
-#: src/wmapp.cc:490 src/wmwinlist.cc:392 src/wmwinlist.cc:400
-msgid "_Close"
-msgstr "閉じる (_C)"
-
-#: src/wmapp.cc:492 src/wmwinlist.cc:394
-msgid "_Kill Client"
-msgstr "クライアント強制終了 (_K)"
-
-#: src/wmapp.cc:495 src/wmdialog.cc:74 src/wmwinmenu.cc:130
-msgid "_Window list"
-msgstr "ウインドウ一覧 (_W)"
-
-#: src/wmapp.cc:528
-msgid "Another window manager already running, exiting..."
-msgstr "他のウインドウマネージャが既に起動しています。終了します..."
-
-#: src/wmapp.cc:603
-#, c-format
-msgid ""
-"Could not restart: %s\n"
-"Does $PATH lead to %s?"
-msgstr ""
-"%s を再起動できません。\n"
-"$PATH 内に %s がありますか？"
-
-#: src/wmapp.cc:766
-msgid "Confirm Restart as Terminal"
-msgstr "端末として再起動を行なう確認"
-
-#: src/wmapp.cc:767
-msgid ""
-"Unmanage all applications and restart\n"
-"as a terminal. Proceed?"
-msgstr ""
-"全てのアプリケーションを管理から外し、\n"
-"端末として再起動します。よろしいですか？"
-
-#: src/wmapp.cc:1073 src/yxapp.cc:1033
-msgid "<none>"
-msgstr "<なし>"
-
-#: src/wmapp.cc:1386
-msgid ""
-"  --client-id=ID      Client id to use when contacting session manager.\n"
-msgstr ""
-"  --client-id=ID      セッションマネージャに接続する際のクライアント ID を指"
-"定します。\n"
-
-#: src/wmapp.cc:1392
-msgid ""
-"\n"
-"  --debug             Print generic debug messages.\n"
-"  --debug-z           Print debug messages regarding window stacking.\n"
-msgstr ""
-"\n"
-"  --debug             一般的なデバッグメッセージを表示します。\n"
-"  --debug-z           ウインドウのスタック処理に関連するデバッグメッセージを"
-"表示します。\n"
-
-#: src/wmapp.cc:1400
-msgid ""
-"\n"
-"  -a, --alpha         Use a 32-bit visual for translucency.\n"
-"  -c, --config=FILE   Load preferences from FILE.\n"
-"  -t, --theme=FILE    Load theme from FILE.\n"
-"  -s, --splash=IMAGE  Briefly show IMAGE on startup.\n"
-"  -p, --postpreferences  Print preferences after all processing.\n"
-"  --rewrite-preferences  Update an existing preferences file.\n"
-"  --trace=conf,icon   Trace paths used to load configuration.\n"
-msgstr ""
-"\n"
-"  -a, --alpha         透過処理に対して 32 ビットの視覚情報を使用します。\n"
-"  -c, --config=FILE   FILE で指定したファイルから設定を読み込みます。\n"
-"  -t, --theme=FILE    FILE で指定したファイルからテーマを読み込みます。\n"
-"  -s, --splash=IMAGE  起動時に IMAGE で指定した画像を表示します。\n"
-"  -p, --postpreferences  全ての処理が終了したあと、設定内容を表示します。\n"
-"  --rewrite-preferences  既存の設定ファイルを更新します。\n"
-"  --trace=conf,icon   設定の読み込み時に使用するパスをトレースします。\n"
-
-#: src/wmapp.cc:1410
-#, c-format
-msgid ""
-"Usage: %s [OPTIONS]\n"
-"Starts the IceWM window manager.\n"
-"\n"
-"Options:\n"
-"  -d, --display=NAME  NAME of the X server to use.\n"
-"%s  --sync              Synchronize X11 commands.\n"
-"%s\n"
-"  -V, --version       Prints version information and exits.\n"
-"  -h, --help          Prints this usage screen and exits.\n"
-"%s\n"
-"  --replace           Replace an existing window manager.\n"
-"  -r, --restart       Tell the running icewm to restart itself.\n"
-"\n"
-"  --configured        Print the compile time configuration.\n"
-"  --directories       Print the configuration directories.\n"
-"  -l, --list-themes   Print a list of all available themes.\n"
-"\n"
-"Environment variables:\n"
-"  ICEWM_PRIVCFG=PATH  Directory for user configuration files,\n"
-"                      \"$XDG_CONFIG_HOME/icewm\" if exists or\n"
-"                      \"$HOME/.icewm\" by default.\n"
-"  DISPLAY=NAME        Name of the X server to use.\n"
-"  MAIL=URL            Location of your mailbox.\n"
-"\n"
-"To report bugs, support requests, comments please visit:\n"
-"%s\n"
-"\n"
-msgstr ""
-"使用方法: %s [オプション]\n"
-"IceWM ウインドウマネージャを起動します。\n"
-"\n"
-"オプション:\n"
-"  -d, --display=NAME  使用する X サーバを指定します。\n"
-"%s  --sync              X11 コマンドを同期して処理します。\n"
-"%s\n"
-"  -V, --version       バージョン情報を表示して終了します。\n"
-"  -h, --help          この使用方法画面を表示して終了します。\n"
-"%s\n"
-"  --replace           既存のウインドウマネージャを置き換えます。\n"
-"  -r, --restart       動作中の icewm に対して再起動を指示します。\n"
-"\n"
-"  --configured        コンパイル時の設定を表示します。\n"
-"  --directories       設定ディレクトリを表示します。\n"
-"  -l, --list-themes   利用可能な全てのテーマを一覧表示します。\n"
-"\n"
-"環境変数:\n"
-"  ICEWM_PRIVCFG=PATH  ユーザの設定ファイルとして使用するディレクトリ。\n"
-"                      既定値は \"$XDG_CONFIG_HOME/icewm\" (存在すれば) また"
-"は\n"
-"                      \"$HOME/.icewm\" です。\n"
-"  DISPLAY=NAME        使用する X サーバを指定します。\n"
-"  MAIL=URL            メールボックスの場所を指定します。\n"
-"\n"
-"バグ報告やサポートの要求、コメントなどは下記をご覧ください:\n"
-"%s\n"
-"\n"
-
-#: src/wmapp.cc:1472
-#, c-format
-msgid "%s configuration directories:\n"
-msgstr "%s の設定ディレクトリ:\n"
-
-#: src/wmapp.cc:1554
-#, c-format
-msgid "%s configured options:%s\n"
-msgstr "%s の設定済みオプション: %s\n"
-
-#: src/wmapp.cc:1635
-#, c-format
-msgid "Unrecognized option '%s'."
-msgstr "認識できないオプション '%s' です。"
-
-#: src/wmapp.cc:1681
-msgid "Confirm Logout"
-msgstr "ログアウトの確認"
-
-#: src/wmapp.cc:1682
-msgid ""
-"Logout will close all active applications.\n"
-"Proceed?"
-msgstr ""
-"ログアウトすると起動中のアプリケーションを\n"
-"全て終了します。処理を続けてよろしいですか？"
-
-#: src/wmbutton.cc:85
-msgid "Raise/Lower"
-msgstr "上/下に表示"
-
-#: src/wmbutton.cc:90
-msgid "Hide"
-msgstr "隠す"
-
-#: src/wmbutton.cc:96
-msgid "Restore"
-msgstr "元に戻す"
-
-#: src/wmbutton.cc:100
-msgid "Maximize"
-msgstr "最大化"
-
-#: src/wmbutton.cc:106
-msgid "Minimize"
-msgstr "最小化"
-
-#: src/wmbutton.cc:112
-msgid "Rolldown"
-msgstr "シェード解除"
-
-#: src/wmbutton.cc:115
-msgid "Rollup"
-msgstr "シェード"
-
-#: src/wmclient.cc:367
-#, c-format
-msgid ""
-"Client %s with PID %ld fails to respond.\n"
-"Do you wish to terminate this client?\n"
-msgstr ""
-"クライアント %s (PID: %ld) が応答しません。\n"
-"このクライアントを終了してよろしいですか？\n"
-
-#: src/wmconfig.cc:35 src/wmconfig.cc:40 src/wmconfig.cc:46
-#, c-format
-msgid "Failed to load theme %s"
-msgstr "テーマ %s の読み込みに失敗しました"
-
-#: src/wmconfig.cc:113
-#, c-format
-msgid "Unknown value '%s' for option '%s'."
-msgstr "オプション '%2$s' に対する値 '%1$s' が不明です。"
-
-#: src/wmconfig.cc:121
-#, c-format
-msgid "Unable to create directory %s"
-msgstr "ディレクトリ %s を作成できません"
-
-#: src/wmconfig.cc:148
-#, c-format
-msgid "Unable to write to %s"
-msgstr "%s に書き込めません"
-
-#: src/wmconfig.cc:184
-#, c-format
-msgid "Unable to rename %s to %s"
-msgstr "%s を %s に名前変更できません"
-
-#: src/wmdialog.cc:67
-msgid "Loc_k Workstation"
-msgstr "ワークステーションをロック (_K)"
-
-#: src/wmdialog.cc:70 src/ymsgbox.cc:51
-msgid "_Cancel"
-msgstr "キャンセル (_C)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:243
-#: src/wmtaskbar.cc:245
-msgid "_Logout..."
-msgstr "ログアウト (_L)..."
-
-#: src/wmdialog.cc:75
-msgid "_Restart icewm"
-msgstr "icewm を再起動 (_R)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:424 src/wmtaskbar.cc:238
-msgid "_About"
-msgstr "情報 (_A)"
-
-#: src/wmframe.cc:1439
-msgid ""
-"WARNING! All unsaved changes will be lost when\n"
-"this client is killed. Do you wish to proceed?"
-msgstr ""
-"このクライアントを強制終了すると、保存されて\n"
-"いない変更点が失われてしまいます。処理を続けてよろしいですか？"
-
-#: src/wmframe.cc:1446
-msgid "Kill Client: "
-msgstr "クライアント強制終了: "
-
-#: src/wmmgr.cc:3254
-msgid "Missing program setxkbmap"
-msgstr "プログラム setxkbmap がありません"
-
-#: src/wmmgr.cc:3255
-msgid "For keyboard switching, please install setxkbmap."
-msgstr ""
-"キーボードの切り替えを行なうため、 setxkbmap をインストールしてください。"
-
-#: src/wmoption.cc:259
-#, c-format
-msgid "Unknown window option: %s"
-msgstr "未知のウインドウオプションです: %s"
-
-#: src/wmoption.cc:330
-#, c-format
-msgid "Syntax error in window options on line %d of %s"
-msgstr "%d 行目 (%s) のウインドウオプション内に文法エラーがあります"
-
-#: src/wmprog.cc:331
-msgid "_Click to focus"
-msgstr "クリックしてフォーカス (_C)"
-
-#: src/wmprog.cc:332
-msgid "_Explicit focus"
-msgstr "明示的なフォーカス (_E)"
-
-#: src/wmprog.cc:333
-msgid "_Sloppy mouse focus"
-msgstr "あいまいなマウスフォーカス (_S)"
-
-#: src/wmprog.cc:334
-msgid "S_trict mouse focus"
-msgstr "厳密なマウスフォーカス (_T)"
-
-#: src/wmprog.cc:335
-msgid "_Quiet sloppy focus"
-msgstr "静寂であいまいなマウスフォーカス (_Q)"
-
-#: src/wmprog.cc:336
-msgid "Custo_m"
-msgstr "独自 (_M)"
-
-#: src/wmprog.cc:358
-msgid "_Manual"
-msgstr "マニュアル (_M)"
-
-#: src/wmprog.cc:359
-msgid "_Icewm(1)"
-msgstr "_Icewm(1)"
-
-#: src/wmprog.cc:360
-msgid "Icewm_Bg(1)"
-msgstr "Icewm_Bg(1)"
-
-#: src/wmprog.cc:361
-msgid "Ice_Sound(1)"
-msgstr "Ice_Sound(1)"
-
-#: src/wmprog.cc:410
-msgid "Programs"
-msgstr "プログラム"
-
-#: src/wmprog.cc:414
-msgid "_Run..."
-msgstr "実行 (_R)..."
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:418 src/wmtaskbar.cc:233
-msgid "_Windows"
-msgstr "ウインドウ一覧 (_W)"
-
-#: src/wmprog.cc:429
-msgid "_Help"
-msgstr "ヘルプ (_H)"
-
-#: src/wmprog.cc:434
-msgid "_Focus"
-msgstr "フォーカス (_F)"
-
-#: src/wmprog.cc:439
-msgid "_Preferences"
-msgstr "設定 (_P)"
-
-#: src/wmprog.cc:444
-msgid "_Themes"
-msgstr "テーマ (_T)"
-
-#: src/wmprog.cc:448
-msgid "Se_ttings"
-msgstr "設定 (_T)"
-
-#: src/wmsession.cc:214 src/wmsession.cc:230 src/wmsession.cc:240
-#, c-format
-msgid "Session Manager: Unknown line %s"
-msgstr "セッションマネージャ: 未知の行 %s"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:215 src/wmwinlist.cc:379 src/wmwinlist.cc:412
-msgid "Tile _Vertically"
-msgstr "垂直に並べる (_V)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:217 src/wmwinlist.cc:380 src/wmwinlist.cc:413
-msgid "T_ile Horizontally"
-msgstr "水平に並べる (_I)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:381 src/wmwinlist.cc:414
-msgid "Ca_scade"
-msgstr "カスケード (_S)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:382 src/wmwinlist.cc:415
-msgid "_Arrange"
-msgstr "整列 (_A)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:384 src/wmwinlist.cc:416
-msgid "_Minimize All"
-msgstr "全て最小化 (_M)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:385 src/wmwinlist.cc:417
-msgid "_Hide All"
-msgstr "全て隠す (_H)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:386 src/wmwinlist.cc:418
-msgid "_Undo"
-msgstr "元に戻す (_U)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:230
-msgid "Arrange _Icons"
-msgstr "アイコン整列 (_I)"
-
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:236
-msgid "_Refresh"
-msgstr "再描画 (_R)"
-
-#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:967
-msgid "Hide Taskbar"
-msgstr "タスクバーを隠す"
-
-#: src/wmtaskbar.cc:332
-msgid "Favorite Applications"
-msgstr "お気に入りのアプリケーション"
-
-#: src/wmtaskbar.cc:357
-msgid "Window List Menu"
-msgstr "ウインドウ一覧メニュー"
-
-#: src/wmtaskbar.cc:366
-msgid "Show Desktop"
-msgstr "デスクトップの表示"
-
-#: src/wmtaskbar.cc:967
-msgid "Show Taskbar"
-msgstr "タスクバーを表示"
-
-#: src/wmwinlist.cc:46
-msgid "All Workspaces"
-msgstr "全てのワークスペース"
-
-#: src/wmwinlist.cc:368
-msgid "_Show"
-msgstr "表示 (_S)"
-
-#: src/wmwinlist.cc:371
-msgid "_Raise"
-msgstr "上に表示 (_R)"
-
-#: src/wmwinlist.cc:392
-msgid "Del"
-msgstr "削除"
-
-#: src/wmwinlist.cc:396
-msgid "_Terminate Process"
-msgstr "プロセス終了 (_T)"
-
-#: src/wmwinlist.cc:397
-msgid "Kill _Process"
-msgstr "プロセス強制終了 (_P)"
-
-#: src/wmwinlist.cc:432 src/wmwinlist.cc:433
-msgid "Window list"
-msgstr "ウインドウ一覧"
-
-#: src/wmwinmenu.cc:121
-#, c-format
-msgid "%lu. Workspace %-.32s"
-msgstr "%lu. ワークスペース %-.32s"
-
-#: src/yapp.cc:295
-#, c-format
-msgid "%s: select failed"
-msgstr "%s: select が失敗しました"
-
-#: src/yconfig.cc:114
-#, c-format
-msgid "Unknown key name %s in %s"
-msgstr "%2$s 内に未知のキー名 %1$s があります"
-
-#: src/yconfig.cc:129 src/yconfig.cc:140 src/yconfig.cc:152
-#, c-format
-msgid "Bad argument: %s for %s [%d,%d]"
-msgstr "無効な引数: %2$s に対して %1$s [%3$d,%4$d]"
-
-#: src/ycursor.cc:112
-#, c-format
-msgid "Loading of pixmap \"%s\" failed: %s"
-msgstr "ピクセルマップ \"%s\" の読み込みに失敗しました: %s"
-
-#: src/ycursor.cc:138
-#, c-format
-msgid "Loading of pixmap \"%s\" failed"
-msgstr "ピクセルマップ \"%s\" の読み込みに失敗しました"
-
-#: src/ycursor.cc:182
-#, c-format
-msgid "BUG? Imlib was able to read \"%s\""
-msgstr "バグ？ imlib が \"%s\" を読み込めませんでした"
-
-#: src/ycursor.cc:207
-#, c-format
-msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
-msgstr ""
-"バグ？ \"%s\" の XPM ヘッダが正しくありませんが、 imlib 側で読み込めてしまい"
-"ました"
-
-#: src/ycursor.cc:215
-#, c-format
-msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
-msgstr ""
-"バグ？ \"%s\" の XPM ファイルの終了部が正しくありませんが、 imlib 側で読み込"
-"めてしまいました"
-
-#: src/ycursor.cc:218
-#, c-format
-msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
-msgstr ""
-"バグ？ \"%s\" で予期しない文字が現われましたが、 imlib 側で読み込めてしまいま"
-"した"
-
-#: src/yfontcore.cc:72 src/yfontxft.cc:164
-#, c-format
-msgid "Could not load font \"%s\"."
-msgstr "フォント \"%s\" を読み込めませんでした。"
-
-#: src/yfontcore.cc:75 src/yfontcore.cc:123 src/yfontxft.cc:187
-#, c-format
-msgid "Loading of fallback font \"%s\" failed."
-msgstr "フォールバックフォント \"%s\" の読み込みに失敗しました。"
-
-#: src/yfontcore.cc:116
-#, c-format
-msgid "Could not load fontset \"%s\"."
-msgstr "フォントセット \"%s\" を読み込めませんでした。"
-
-#: src/yfontcore.cc:128
-#, c-format
-msgid "Missing codesets for fontset \"%s\":"
-msgstr "フォントセット \"%s\" に対するコードセットがありません:"
-
-#: src/yinputline.cc:18
-msgid "_Copy"
-msgstr "コピー (_C)"
-
-#: src/yinputline.cc:18
-msgid "Ctrl+C"
-msgstr "Ctrl+C"
-
-#: src/yinputline.cc:19
-msgid "Cu_t"
-msgstr "切り取り (_T)"
-
-#: src/yinputline.cc:20
-msgid "_Paste"
-msgstr "貼り付け (_P)"
-
-#: src/yinputline.cc:21
-msgid "Paste _Selection"
-msgstr "貼り付け選択 (_S)"
-
-#: src/yinputline.cc:21
-msgid "Ctrl+P"
-msgstr "Ctrl+P"
-
-#: src/yinputline.cc:23
-msgid "Select _All"
-msgstr "全て選択 (_A)"
-
-#: src/yinputline.cc:23
-msgid "Ctrl+A"
-msgstr "Ctrl+A"
-
-#: src/ylocale.cc:55
-msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
-msgstr ""
-"C ライブラリまたは Xlib がロケールに対応していません。 'C' ロケールにフォール"
-"バックします。"
-
-#: src/ylocale.cc:90
-msgid ""
-"Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
-msgstr ""
-"現在のロケールに対するコードセットを判別できませんでした。 ISO-8859-1 と仮定"
-"します。\n"
-
-#: src/ylocale.cc:123 src/ylocale.cc:131
-#, c-format
-msgid "iconv doesn't supply (sufficient) %s to %s converters."
-msgstr "iconv は %s から %s への変換に対応していません。"
-
-#: src/ylocale.cc:231
-#, c-format
-msgid "Invalid multibyte string \"%s\": %s"
-msgstr "マルチバイト文字列が正しくありません \"%s\": %s"
-
-#: src/ymsgbox.cc:48
-msgid "_OK"
-msgstr "_OK"
-
-#: src/ypaths.cc:88
-#, c-format
-msgid "Image not readable: %s"
-msgstr "画像を読み込むことができません: %s"
-
-#: src/ypaths.cc:111
-#, c-format
-msgid "Could not find image %s"
-msgstr "画像 %s が見つかりません"
-
-#: src/ysmapp.cc:98
-msgid "$USER or $LOGNAME not set?"
-msgstr "$USER または $LOGNAME がセットされていないようです？"
-
-#: src/yurl.cc:145
-#, c-format
-msgid "Failed to parse URL \"%s\"."
-msgstr "URL \"%s\" の処理に失敗しました。"
-
-#: src/yurl.cc:161
-#, c-format
-msgid "Incomplete hex escape in URL at position %d."
-msgstr "URL 内の位置 %d に不完全な HEX エスケープが存在しています。"
-
-#: src/yurl.cc:168
-#, c-format
-msgid "Invalid hex escape in URL at position %d."
-msgstr "URL 内の位置 %d に不正な HEX エスケープが存在しています。"
-
-#: src/yxapp.cc:991
-msgid ""
-"  -d, --display=NAME  NAME of the X server to use.\n"
-"  --sync              Synchronize X11 commands.\n"
-msgstr ""
-"  -d, --display=NAME  使用する X サーバを指定します。\n"
-"  --sync              X11 コマンドを同期させます。\n"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics
 #: src/fdospecgen.h:43
@@ -2707,6 +991,1815 @@ msgstr "Web開発"
 msgid "WordProcessor"
 msgstr "ワードプロセッサ"
 
+#: src/icehelp.cc:1326
+msgid "Back"
+msgstr "戻る"
+
+#: src/icehelp.cc:1326
+msgid "Alt+Left"
+msgstr "Alt+Left"
+
+#: src/icehelp.cc:1328
+msgid "Forward"
+msgstr "進む"
+
+#: src/icehelp.cc:1328
+msgid "Alt+Right"
+msgstr "Alt+Right"
+
+#: src/icehelp.cc:1331
+msgid "Previous"
+msgstr "前"
+
+#: src/icehelp.cc:1332
+msgid "Next"
+msgstr "次"
+
+#: src/icehelp.cc:1334
+msgid "Contents"
+msgstr "内容"
+
+#: src/icehelp.cc:1335
+msgid "Index"
+msgstr "目次"
+
+#: src/icehelp.cc:1337
+msgid "Find..."
+msgstr "検索..."
+
+#: src/icehelp.cc:1337
+msgid "Ctrl+F"
+msgstr "Ctrl+F"
+
+#: src/icehelp.cc:1338
+msgid "Find next"
+msgstr "次を検索"
+
+#: src/icehelp.cc:1338
+msgid "F3"
+msgstr "F3"
+
+#: src/icehelp.cc:1340
+msgid "Open in Browser"
+msgstr "ブラウザで開く"
+
+#: src/icehelp.cc:1340
+msgid "Ctrl+B"
+msgstr "Ctrl+B"
+
+#: src/icehelp.cc:1342
+msgid "Reload"
+msgstr "再読み込み"
+
+#: src/icehelp.cc:1342 src/icesame.cc:60
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: src/icehelp.cc:1343 src/icesame.cc:62 src/iceview.cc:59 src/wmbutton.cc:127
+msgid "Close"
+msgstr "閉じる"
+
+#: src/icehelp.cc:1343 src/icesame.cc:62 src/iceview.cc:59
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: src/icehelp.cc:1348
+msgid "Icewm(1)"
+msgstr "Icewm(1)"
+
+#: src/icehelp.cc:1348
+msgid "Ctrl+I"
+msgstr "Ctrl+I"
+
+#: src/icehelp.cc:1350
+msgid "Icewmbg(1)"
+msgstr "Icewmbg(1)"
+
+#: src/icehelp.cc:1352
+msgid "Icesound(1)"
+msgstr "Icesound(1)"
+
+#: src/icehelp.cc:1354
+msgid "FAQ"
+msgstr "FAQ"
+
+#: src/icehelp.cc:1356
+msgid "Manual"
+msgstr "マニュアル"
+
+#: src/icehelp.cc:1356
+msgid "Ctrl+M"
+msgstr "Ctrl+M"
+
+#: src/icehelp.cc:1358
+msgid "Support"
+msgstr "サポート"
+
+#: src/icehelp.cc:1360
+msgid "Theme Howto"
+msgstr "テーマの作成方法について"
+
+#: src/icehelp.cc:1360 src/iceview.cc:56
+msgid "Ctrl+T"
+msgstr "Ctrl+T"
+
+#: src/icehelp.cc:1362
+msgid "Website"
+msgstr "Web サイト"
+
+#: src/icehelp.cc:1362 src/iceview.cc:57
+msgid "Ctrl+W"
+msgstr "Ctrl+W"
+
+#: src/icehelp.cc:1364
+msgid "Github"
+msgstr "Github"
+
+#: src/icehelp.cc:1368 src/yinputline.cc:19
+msgid "Ctrl+X"
+msgstr "Ctrl+X"
+
+#: src/icehelp.cc:1373 src/yinputline.cc:20
+msgid "Ctrl+V"
+msgstr "Ctrl+V"
+
+#: src/icehelp.cc:2180
+msgid "Unsupported protocol."
+msgstr "未対応のプロトコルです。"
+
+#: src/icehelp.cc:2259
+#, c-format
+msgid "Invalid path: %s\n"
+msgstr "パスが正しくありません: %s\n"
+
+#: src/icehelp.cc:2283
+msgid "Path does not refer to a file."
+msgstr "パスの指定がファイルを指し示していません。"
+
+#: src/icehelp.cc:2288
+msgid "Failed to open file for reading."
+msgstr "ファイルを読み込み用に開く処理が失敗しました。"
+
+#: src/icehelp.cc:2317
+msgid "Failed to create a temporary file"
+msgstr "一時ファイルを作成する処理が失敗しました"
+
+#: src/icehelp.cc:2410
+#, c-format
+msgid "Failed to execute system(%s) (%d)"
+msgstr "system(%s) の実行に失敗しました (%d)"
+
+#: src/icehelp.cc:2433
+#, c-format
+msgid "Failed to decompress %s"
+msgstr "%s の展開に失敗しました"
+
+#: src/icehelp.cc:2441
+msgid "Could not locate curl or wget in PATH"
+msgstr "PATH 内に curl および wget のどちらも見つかりません"
+
+#: src/icehelp.cc:2445
+msgid "Unsafe characters in URL"
+msgstr "URL 内に安全ではない文字が含まれています"
+
+#: src/icehelp.cc:2482
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
+"\n"
+"IceHelp is a very simple HTML browser for the IceWM window manager.\n"
+"It can display a HTML document from file, or browse a website.\n"
+"It remembers visited pages in a history, which is navigable\n"
+"by key bindings and a context menu (right mouse click).\n"
+"It neither supports rendering of images nor JavaScript.\n"
+"If no file or URL is given it will display the IceWM Manual\n"
+"from %s.\n"
+"\n"
+"Options:\n"
+"  -d, --display=NAME  NAME of the X server to use.\n"
+"  --sync              Synchronize X11 commands.\n"
+"\n"
+"  -B                  Display the IceWM icewmbg manpage.\n"
+"  -b, --bugs          Display the IceWM bug reports (primitively).\n"
+"  -f, --faq           Display the IceWM FAQ and Howto.\n"
+"  -g                  Display the IceWM Github website.\n"
+"  -i, --icewm         Display the IceWM icewm manpage.\n"
+"  -m, --manual        Display the IceWM Manual (default).\n"
+"  -s                  Display the IceWM icesound manpage.\n"
+"  -t, --theme         Display the IceWM themes Howto.\n"
+"  -w, --website       Display the IceWM website.\n"
+"\n"
+"  -V, --version       Prints version information and exits.\n"
+"  -h, --help          Prints this usage screen and exits.\n"
+"\n"
+"Environment variables:\n"
+"  DISPLAY=NAME        Name of the X server to use.\n"
+"\n"
+"To report bugs, support requests, comments please visit:\n"
+"%s\n"
+"\n"
+msgstr ""
+"使用方法: %s [オプション] [ ファイル名 | URL ]\n"
+"\n"
+"IceHelp は、 IceWM ウインドウマネージャ向けに作られたシンプルな HTML ブラウザ"
+"です。\n"
+"ファイルとして保存されている HTML 文書を表示することができるほか、 Web サイト"
+"を表示\n"
+"することもできます。また、訪問済みのページを履歴として記憶することができるほ"
+"か、その\n"
+"履歴をキーボード操作やコンテキストメニュー (マウスの右クリック) で表示するこ"
+"とができます。\n"
+"画像の表示や JavaScript には対応していません。ファイルや URL を指定しない場合"
+"は、\n"
+"%s にある IceWM のマニュアルを表示します。\n"
+"\n"
+"オプション:\n"
+"  --display=NAME      使用すべき X サーバの名前を指定します。\n"
+"  --sync              X11 のコマンドを同期して実行します。\n"
+"\n"
+"  -B                  IceWM の icewmbg のマニュアルページを表示します。\n"
+"  -b, --bugs          IceWM のバグ報告サイトを表示します。\n"
+"  -f, --faq           IceWM の FAQ と Howto を表示します。\n"
+"  -g                  IceWM の Github Web サイトを表示します。\n"
+"  -i, --icewm         IceWM の Web サイトを表示します。\n"
+"  -m, --manual        IceWM のマニュアルを表示します (既定値)。\n"
+"  -s                  IceWM の icesound のマニュアルページを表示します。\n"
+"  -t, --theme         IceWM テーマの Howto を表示します。\n"
+"  -w, --website       IceWM の Web サイトを表示します。\n"
+"\n"
+"  -V, --version       バージョン情報を表示して終了します。\n"
+"  -h, --help          この使用方法の説明を表示して終了します。\n"
+"\n"
+"環境変数:\n"
+"  DISPLAY=NAME        使用すべき X サーバの名前を指定することができます。\n"
+"\n"
+"バグの報告やサポートの要求、コメントなどは下記をご覧ください:\n"
+"%s\n"
+"\n"
+
+#: src/icehelp.cc:2572
+#, c-format
+msgid "Ignoring option '%s'"
+msgstr "下記のオプションは無視されます: '%s'"
+
+#: src/icelist.cc:60
+msgid "List View"
+msgstr "リスト閲覧"
+
+#: src/icelist.cc:61
+msgid "Icon View"
+msgstr "アイコン閲覧"
+
+#: src/icelist.cc:65
+msgid "Open"
+msgstr "開く"
+
+#: src/icesame.cc:57
+msgid "Undo"
+msgstr "元に戻す"
+
+#: src/icesame.cc:57
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: src/icesame.cc:59
+msgid "New"
+msgstr "新規"
+
+#: src/icesame.cc:59
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: src/icesame.cc:60
+msgid "Restart"
+msgstr "再起動"
+
+#: src/icesame.cc:65
+msgid "Same Game"
+msgstr "さめがめ"
+
+#: src/icesh.cc:73
+msgid "For help please consult the man page icesh(1).\n"
+msgstr ""
+"ヘルプを読みたい場合は icesh(1) のマニュアルページを参照してください。\n"
+
+#: src/icesh.cc:1520
+#, c-format
+msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
+msgstr "領域 `%s' に対するシンボル名 (数値範囲: %ld-%ld):\n"
+
+#: src/icesh.cc:1578
+#, c-format
+msgid "Workspace out of range: %ld"
+msgstr "ワークスペースの範囲が正しくありません: %ld"
+
+#: src/icesh.cc:1599
+#, c-format
+msgid "Invalid workspace name: `%s'"
+msgstr "ワークスペース名が正しくありません: `%s'"
+
+#: src/icesh.cc:1884
+msgid "GNOME window layer"
+msgstr "GNOME ウインドウレイヤ"
+
+#: src/icesh.cc:1885
+msgid "IceWM tray option"
+msgstr "IceWM トレイアイコン"
+
+#: src/icesh.cc:1886
+msgid "Gravity symbols"
+msgstr "グラビティシンボル"
+
+#: src/icesh.cc:1887
+msgid "Motif functions"
+msgstr "Motif 機能"
+
+#: src/icesh.cc:1888
+msgid "Motif decorations"
+msgstr "Motif 装飾"
+
+#: src/icesh.cc:1889
+msgid "EWMH window state"
+msgstr "EWMH ウインドウ状態"
+
+#: src/icesh.cc:1971 src/icesh.cc:2044
+#, c-format
+msgid "workspace #%d: `%s'\n"
+msgstr "ワークスペース #%d: `%s'\n"
+
+#: src/icesh.cc:2279 src/icesh.cc:3612 src/icesh.cc:4085
+#, c-format
+msgid "Invalid state: `%s'."
+msgstr "状態が正しくありません: `%s'."
+
+#: src/icesh.cc:3131
+#, c-format
+msgid "Cannot get geometry of window 0x%lx"
+msgstr "ウインドウ 0x%lx のジオメトリを取得できません"
+
+#: src/icesh.cc:3156
+#, c-format
+msgid "Invalid Xinerama: `%s'."
+msgstr "Xinerama が正しくありません: `%s'."
+
+#: src/icesh.cc:3203 src/icesh.cc:3253
+#, c-format
+msgid "Invalid argument: `%s'"
+msgstr "パラメータが正しくありません: `%s'"
+
+#: src/icesh.cc:3219
+#, c-format
+msgid "Action `%s' requires at least %d arguments."
+msgstr "アクション `%s' には少なくとも %d 個のパラメータが必要です。"
+
+#: src/icesh.cc:3228
+#, c-format
+msgid "Invalid expression: `%s'"
+msgstr "表現が正しくありません: `%s'"
+
+#: src/icesh.cc:3239 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1198
+#: src/yxapp.cc:1022
+#, c-format
+msgid "Can't open display: %s. X must be running and $DISPLAY set."
+msgstr ""
+"ディスプレイ %s を開くことができません。X が起動されていて、かつ $DISPLAY が"
+"セットされていなければなりません。"
+
+#: src/icesh.cc:3355
+#, c-format
+msgid "Unexpected: `%s'."
+msgstr "予期しないキーワードです: '%s'."
+
+#: src/icesh.cc:3384
+msgid "No windows found."
+msgstr "ウインドウが見つかりませんでした。"
+
+#: src/icesh.cc:3399
+msgid "No actions specified."
+msgstr "アクションが指定されていません。"
+
+#: src/icesh.cc:3529
+#, c-format
+msgid "Invalid window identifier: `%s'"
+msgstr "ウインドウの識別子が正しくありません: `%s'"
+
+#: src/icesh.cc:3546
+#, c-format
+msgid "Invalid PID: `%s'"
+msgstr "PID が正しくありません: `%s'"
+
+#: src/icesh.cc:3582
+#, c-format
+msgid "Invalid layer: `%s'."
+msgstr "レイヤが正しくありません: `%s'."
+
+#: src/icesh.cc:4393
+#, c-format
+msgid "Unknown action: `%s'"
+msgstr "不明なアクションです: `%s'"
+
+#: src/iceskt.cc:41
+#, c-format
+msgid "Socket error: %d"
+msgstr "ソケットエラー: %d"
+
+#: src/icesm.cc:69
+msgid ""
+"  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
+"  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
+"\n"
+"  -d, --display=NAME  Use NAME to connect to the X server.\n"
+"  -a, --alpha         Use a 32-bit visual for translucency.\n"
+"  --sync              Synchronize communication with X11 server.\n"
+"\n"
+"  -i, --icewm=FILE    Use FILE as the IceWM window manager.\n"
+"  -o, --output=FILE   Redirect all output to FILE.\n"
+"\n"
+"  -b, --nobg          Do not start icewmbg.\n"
+"  -n, --notray        Do not start icewmtray.\n"
+"  -s, --sound         Also start icesound.\n"
+msgstr ""
+"  -c, --config=FILE   IceWM に対して、 FILE で指定したファイルから設定を読み"
+"込むように指示します。\n"
+"  -t, --theme=FILE    IceWM に対して、 FILE で指定したファイルからテーマを読"
+"み込むように指示します。\n"
+"\n"
+"  -d, --display=NAME  NAME で指定した指定した X サーバに接続します。\n"
+"  -a, --alpha         透過処理に対して 32 ビットの視覚情報を使用します。\n"
+"  --sync              X11 サーバとの通信を同期して処理するようにします。\n"
+"\n"
+"  -i, --icewm=FILE    FILE を IceWM ウインドウマネージャとして使用します。\n"
+"  -o, --output=FILE   全ての出力を FILE に書き込みます。\n"
+"\n"
+"  -b, --nobg          icewmbg を起動しないようにします。\n"
+"  -n, --notray        icewmtray を起動しないようにします。\n"
+"  -s, --sound         icesound も併せて起動するようにします。\n"
+
+#: src/icesm.cc:85
+msgid ""
+"\n"
+"Debugging options:\n"
+"  -v, --valgrind      Let \"/usr/bin/valgrind\" run icewm.\n"
+"                      Thoroughly examines the execution of icewm.\n"
+"  -g, --catchsegv     Let \"/usr/bin/catchsegv\" run icewm.\n"
+"                      Gives a backtrace if icewm segfaults.\n"
+msgstr ""
+"\n"
+"デバッグオプション:\n"
+"  -v, --valgrind      \"/usr/bin/valgrind\" 経由で icewm を実行します。\n"
+"                      icewm の実行をまんべんなく調査することができます。\n"
+"  -g, --catchsegv     \"/usr/bin/catchsegv\" 経由で icewm を実行します。\n"
+"                      icewm がセグメント違反で停止した場合、バックトレースを"
+"表示します。\n"
+
+#: src/icesm.cc:188
+#, c-format
+msgid "Unknown option '%s'"
+msgstr "不明なオプションです: `%s'"
+
+#: src/icesm.cc:462 src/icesm.cc:622
+#, c-format
+msgid "restart %s."
+msgstr "%s を再起動します。"
+
+#: src/icesm.cc:468
+#, c-format
+msgid "%s exited with status %d."
+msgstr "%s はステータスコード %d で終了しました。"
+
+#: src/icesm.cc:474 src/icesm.cc:628
+#, c-format
+msgid "%s was killed by signal %d."
+msgstr "%s はシグナル %d で終了しました。"
+
+#: src/icesm.cc:513
+msgid ""
+" IceWM crashed for the second time in 10 seconds. \n"
+" Do you wish to:\n"
+"\n"
+"\t1: Restart IceWM?\n"
+"\t2: Abort this session?\n"
+"\t3: Run a terminal?\n"
+msgstr ""
+" IceWM が 10 秒以内に 2 度クラッシュしてしまいました。\n"
+" 下記のいずれかを選択してください:\n"
+"\n"
+"\t1: IceWM を再起動しますか？\n"
+"\t2: このセッションを中止しますか？\n"
+"\t3: 端末を起動しますか？\n"
+
+#: src/icesm.cc:519
+msgid "IceWM crash response"
+msgstr "IceWM クラッシュ応答"
+
+#: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
+#, c-format
+msgid "Playing sample #%d (%s)"
+msgstr "サンプル #%d を再生しています (%s)"
+
+#: src/icesound.cc:329
+#, c-format
+msgid "%s: Invalid number of channels"
+msgstr "%s: チャンネル数が正しくありません"
+
+#: src/icesound.cc:335 src/icesound.cc:340
+msgid "Could not set OSS channels"
+msgstr "OSS チャンネルの設定ができませんでした"
+
+#: src/icesound.cc:345 src/icesound.cc:373
+msgid "Could not sync OSS"
+msgstr "OSS の同期ができませんでした"
+
+#: src/icesound.cc:357
+msgid "OSS write failed"
+msgstr "OSS の書き込みに失敗しました"
+
+#: src/icesound.cc:361
+#, c-format
+msgid "OSS incomplete write (%d/%d)"
+msgstr "OSS への書き込みが完了しませんでした (%d/%d)"
+
+#: src/icesound.cc:368
+msgid "Could not post OSS"
+msgstr "OSS をポストできませんでした"
+
+#: src/icesound.cc:397
+#, c-format
+msgid "Could not open OSS device %s"
+msgstr "OSS デバイス %s を開くことができませんでした"
+
+#: src/icesound.cc:402
+msgid "Could not set OSS stereo"
+msgstr "OSS ステレオの設定ができませんでした"
+
+#: src/icesound.cc:407
+msgid "Could not reset OSS DSP"
+msgstr "OSS DSP のリセットができませんでした"
+
+#: src/icesound.cc:412
+msgid "Could not set OSS format"
+msgstr "OSS の形式設定ができませんでした"
+
+#: src/icesound.cc:499
+#, c-format
+msgid "ao_open_live failed with %d"
+msgstr "ao_open_live が %d で失敗しました"
+
+#: src/icesound.cc:510
+msgid "ao_play failed"
+msgstr "ao_play が失敗しました"
+
+#: src/icesound.cc:676
+#, c-format
+msgid "Unrecognized option: %s\n"
+msgstr "認識できないオプションです: %s\n"
+
+#: src/icesound.cc:679 src/icesound.cc:972
+#, c-format
+msgid "Unrecognized argument: %s\n"
+msgstr "認識できないパラメータです: %s\n"
+
+#: src/icesound.cc:688
+#, c-format
+msgid ""
+"Usage: %s [OPTION]...\n"
+"\n"
+"Plays audio files on GUI events raised by IceWM.\n"
+"The currently configured sound interfaces are: %s.\n"
+"Icesound will choose the first of these which is usable.\n"
+"\n"
+"Options:\n"
+"\n"
+" -d, --display=DISPLAY   X11 display used by IceWM (default: $DISPLAY).\n"
+"\n"
+" -s, --sample-dir=DIR    Specifies a directory with sound files.\n"
+"                         Default is $HOME/.config/icewm/sounds.\n"
+"\n"
+" -i, --interface=LIST    Specifies audio output interfaces. One or more of:\n"
+"                         %s separated by commas.\n"
+"\n"
+" -D, --device=DEVICE     Backwards compatibility only: the default device. \n"
+"                         Please prefer one of the -A/-O/-S options.\n"
+"\n"
+" -O, --oss=DEVICE        Specifies the OSS device (default: \"%s\").\n"
+"\n"
+" -A, --alsa=DEVICE       Specifies the ALSA device (default: \"%s\").\n"
+"\n"
+" -z, --snooze=millisecs  Specifies the snooze interval between sound events\n"
+"                         in milliseconds. Default is 500 milliseconds.\n"
+"\n"
+" -p, --play=sound        Plays the given sound (name or number) and exits.\n"
+"\n"
+" -l, --list-files        Lists the available sound file paths and exits.\n"
+"\n"
+"     --list-sounds       Lists the supported sound filenames and exits.\n"
+"\n"
+"     --list-interfaces   Lists the supported audio interfaces and exits.\n"
+"\n"
+" -v, --verbose           Be verbose and print out each sound event.\n"
+"\n"
+" -V, --version           Prints version information and exits.\n"
+"\n"
+" -h, --help              Prints this help screen and exits.\n"
+"\n"
+"Return values:\n"
+"\n"
+"  0    Success.\n"
+"  1    General error.\n"
+"  2    Command line error.\n"
+"  3    Subsystems error (ie cannot connect to server).\n"
+"\n"
+msgstr ""
+"使用方法: %s [オプション]...\n"
+"\n"
+"IceWM が発生させた GUI イベントに対して、オーディオファイルを再生します。\n"
+"現時点で設定済みのサウンドインターフェイスは下記の通りです: %s\n"
+"Icesound は利用可能な最初のインターフェイスを選択します。\n"
+"\n"
+"オプション:\n"
+"\n"
+" -d, --display=DISPLAY   IceWM が使用するディスプレイを指定します (既定値: "
+"$DISPLAY) 。\n"
+"\n"
+" -s, --sample-dir=DIR    サウンドファイルが含まれているディレクトリを指定しま"
+"す。\n"
+"                         既定値は $HOME/.config/icewm/sounds です。\n"
+"\n"
+" -i, --interface=LIST    サウンド出力のインターフェイスを指定します。下記の中"
+"から 1 つ以上を指定します:\n"
+"                         %s 。複数を指定したい場合はカンマで区切ります。\n"
+"\n"
+" -D, --device=DEVICE     後方互換性のためだけに用意されているオプションで、既"
+"定のデバイスを指定します。\n"
+"                         -A/-O/-S の各オプションの使用をお勧めします。\n"
+"\n"
+" -O, --oss=DEVICE        OSS デバイスを指定します (既定値: \"%s\") 。\n"
+"\n"
+" -A, --alsa=DEVICE       ALSA デバイスを指定します (既定値: \"%s\") 。\n"
+"\n"
+" -z, --snooze=millisecs  サウンドイベント同士のスヌーズ間隔をミリ秒単位で指定"
+"します。\n"
+"                         既定値は 500 ミリ秒です。\n"
+"\n"
+" -p, --play=sound        指定されたサウンド (名前または番号) を再生して終了し"
+"ます。\n"
+"\n"
+" -l, --list-files        利用可能なサウンドファイルパスの一覧を表示して終了し"
+"ます。\n"
+"\n"
+"     --list-sounds       対応するサウンドファイル名の一覧を表示して終了しま"
+"す。\n"
+"\n"
+"     --list-interfaces   対応するオーディオインターフェイスの一覧を表示して終"
+"了します。\n"
+"\n"
+" -v, --verbose           冗長な出力を行ないます (それぞれのサウンドイベント"
+"を stdout に出力します) 。\n"
+"\n"
+" -V, --version           バージョン情報を表示して終了します。\n"
+"\n"
+" -h, --help              このヘルプ画面を表示して終了します。\n"
+"\n"
+"返り値:\n"
+"\n"
+"  0    成功\n"
+"  1    一般的なエラー\n"
+"  2    コマンドラインのエラー\n"
+"  3    サブシステムのエラー (サーバに接続できないなど)\n"
+"\n"
+
+#: src/icesound.cc:779
+#, c-format
+msgid "No audio for %s"
+msgstr "%s に対するサウンドがありません"
+
+#: src/icesound.cc:856
+msgid "Could not get GUI event property"
+msgstr "GUI イベントプロパティの取得ができませんでした"
+
+#: src/icesound.cc:860
+#, c-format
+msgid "Received invalid GUI event %d"
+msgstr "正しくない GUI イベント %d を受信しました"
+
+#: src/icesound.cc:864
+#, c-format
+msgid "Received GUI event %s"
+msgstr "GUI イベント %s を受信しました"
+
+#: src/icesound.cc:878
+#, c-format
+msgid "Too quick; ignoring %s."
+msgstr "間隔が短すぎます; %s を無視しています。"
+
+#: src/icesound.cc:882
+#, c-format
+msgid "Support for the %s interface not compiled."
+msgstr "%s インターフェイスへの対応はコンパイルされていません。"
+
+#: src/icesound.cc:915
+#, c-format
+msgid "Unsupported interface: %s."
+msgstr "未対応のインターフェイスです: %s"
+
+#: src/icesound.cc:924
+#, c-format
+msgid "Using %s audio."
+msgstr "%s オーディオを使用しています。"
+
+#: src/icesound.cc:928
+#, c-format
+msgid "Failed to connect to audio interfaces %s."
+msgstr "オーディオインターフェイス %s への接続に失敗しました。"
+
+#: src/icesound.cc:940
+#, c-format
+msgid "Received signal %s: Terminating..."
+msgstr "シグナル %s を受け取りました。終了しています..."
+
+#: src/icetray.cc:220
+msgid ""
+"  -n, --notify        Notify parent process by sending signal USR1.\n"
+"  --display=NAME      Use NAME to connect to the X server.\n"
+"  --sync              Synchronize communication with X11 server.\n"
+"\n"
+"  -c, --config=FILE   Load preferences from FILE.\n"
+"  -t, --theme=FILE    Load the theme from FILE.\n"
+msgstr ""
+"  -n, --notify        シグナル USR1 を送信することで親プロセスに通知を送信し"
+"ます。\n"
+"  --display=NAME      NAME で指定した指定した X server に接続します。\n"
+"  --sync              X11 サーバとの通信を同期して処理するようにします。\n"
+"\n"
+"  -c, --config=FILE   FILE で指定したファイルから設定を読み込みます。\n"
+"  -t, --theme=FILE    FILE で指定したファイルからテーマを読み込みます。\n"
+
+#: src/iceview.cc:55
+msgid "Hex View"
+msgstr "16 進表示"
+
+#: src/iceview.cc:55
+msgid "Ctrl+H"
+msgstr "Ctrl+H"
+
+#: src/iceview.cc:56
+msgid "Expand Tabs"
+msgstr "タブ拡張"
+
+#: src/iceview.cc:57
+msgid "Wrap Lines"
+msgstr "行折り返し"
+
+#: src/icewmbg.cc:64
+#, c-format
+msgid "Failed to load image '%s'."
+msgstr "画像 '%s' の読み込みに失敗しました。"
+
+#: src/icewmbg.cc:906
+msgid ""
+"Usage: icewmbg [OPTIONS]\n"
+"Where multiple values can be given they are separated by commas.\n"
+"When image is a directory then all images from that directory are used.\n"
+"\n"
+"Options:\n"
+"  -p, --replace        Replace an existing icewmbg.\n"
+"  -q, --quit           Tell the running icewmbg to quit.\n"
+"  -r, --restart        Tell the running icewmbg to restart itself.\n"
+"  -u, --shuffle        Shuffle/reshuffle the list of background images.\n"
+"\n"
+"  -c, --config=FILE    Load preferences from FILE.\n"
+"  -t, --theme=NAME     Load the theme with name NAME.\n"
+"\n"
+"  -i, --image=FILE(S)  Load background image(s) from FILE(S).\n"
+"  -k, --color=NAME(S)  Use background color(s) from NAME(S).\n"
+"\n"
+"  -s, --semis=FILE(S)  Load transparency image(s) from FILE(S).\n"
+"  -x, --trans=NAME(S)  Use transparency color(s) from NAME(S).\n"
+"\n"
+"  -e, --center=0/1     Disable/Enable centering background.\n"
+"  -a, --scaled=0/1     Disable/Enable scaling background.\n"
+"  -m, --multi=0/1      Disable/Enable multihead background.\n"
+"  -y, --cycle=SECONDS  Cycle backgrounds every SECONDS.\n"
+"\n"
+"  --display=NAME       Use NAME to connect to the X server.\n"
+"  --sync               Synchronize communication with X11 server.\n"
+"\n"
+"  -h, --help           Print this usage screen and exit.\n"
+"  -V, --version        Prints version information and exits.\n"
+"\n"
+"Loads desktop background according to preferences file:\n"
+" DesktopBackgroundCenter  - Display desktop background centered\n"
+" DesktopBackgroundScaled  - Display desktop background scaled\n"
+" DesktopBackgroundColor   - Desktop background color(s)\n"
+" DesktopBackgroundImage   - Desktop background image(s)\n"
+" ShuffleBackgroundImages  - Shuffle the list of background images\n"
+" SupportSemitransparency  - Support for semitransparent terminals\n"
+" DesktopTransparencyColor - Semitransparency background color(s)\n"
+" DesktopTransparencyImage - Semitransparency background image(s)\n"
+" DesktopBackgroundMultihead - One background over all monitors\n"
+" CycleBackgroundsPeriod   - Seconds between cycling over backgrounds\n"
+"\n"
+" center:0 scaled:0 = tiled\n"
+" center:1 scaled:0 = centered\n"
+" center:1 scaled:1 = fill one dimension and keep aspect ratio\n"
+" center:0 scaled:1 = fill both dimensions and keep aspect ratio\n"
+"\n"
+msgstr ""
+"使用方法: icewmbg [オプション]\n"
+"複数の値を指定したい場合は、カンマで区切って指定してください。\n"
+"画像としてディレクトリを指定すると、そのディレクトリ内にある全ての画像を使用"
+"します。\n"
+"\n"
+"オプション:\n"
+"  -p, --replace        既存の icewmbg を置き換えます。\n"
+"  -q, --quit           現在動作中の icewmbg に対して、終了するように依頼しま"
+"す。\n"
+"  -r, --restart        現在動作中の icewmbg に対して、再起動するように依頼し"
+"ます。\n"
+"  -u, --shuffle        背景画像の一覧を無作為に入れ替えます。\n"
+"\n"
+"  -c, --config=FILE    設定を FILE で指定したファイルから読み込みます。\n"
+"  -t, --theme=NAME     テーマを NAME で指定した名前から読み込みます。\n"
+"\n"
+"  -i, --image=FILE(S)  FILE(S) で指定した背景画像を読み込みます。\n"
+"  -k, --color=NAME(S)  NAME(S) で指定した背景色を使用します。\n"
+"\n"
+"  -s, --semis=FILE(S)  FILE(S) で指定した透過画像を読み込みます。\n"
+"  -x, --trans=NAME(S)  NAME(S) で指定した透過色を使用します。\n"
+"\n"
+"  -e, --center=0/1     背景の中央寄せを有効または無効にします。\n"
+"  -a, --scaled=0/1     背景の拡大／縮小を有効または無効にします。\n"
+"  -m, --multi=0/1      マルチモニタ向けの背景を有効または無効にします。\n"
+"  -y, --cycle=SECONDS  指定した秒数ごとに背景を切り替えます。\n"
+"\n"
+"  --display=NAME       NAME で指定した指定した X server に接続します。\n"
+"  --sync               X11 サーバとの通信を同期して処理します。\n"
+"\n"
+"  -h, --help           この使用方法の説明を表示して終了します。\n"
+"  -V, --version        バージョン情報を表示して終了します。\n"
+"\n"
+"デスクトップの背景は、設定ファイルに従って読み込みを行ないます:\n"
+" DesktopBackgroundCenter  - デスクトップの背景を中央揃えで表示します\n"
+" DesktopBackgroundScaled  - デスクトップの背景を拡大／縮小して表示します\n"
+" DesktopBackgroundColor   - デスクトップの背景色を指定します\n"
+" DesktopBackgroundImage   - デスクトップの背景画像を指定します\n"
+" ShuffleBackgroundImages  - 背景画像の一覧を無作為に入れ替えます\n"
+" SupportSemitransparency  - 半透明の端末に対応させます\n"
+" DesktopTransparencyColor - 半透明のウインドウに通知する色を指定します\n"
+" DesktopTransparencyImage - 半透明のウインドウに通知する画像を指定します\n"
+" DesktopBackgroundMultihead - 全てのモニタに対して単一の背景を使用するように"
+"します\n"
+" CycleBackgroundsPeriod   - 背景を切り替える際の秒数を指定します\n"
+"\n"
+" center:0 scaled:0 = タイル表示\n"
+" center:1 scaled:0 = 中央に表示\n"
+" center:1 scaled:1 = 縦横のいずれかを埋め、アスペクト比を維持\n"
+" center:0 scaled:1 = 縦横の両方を埋め、アスペクト比を維持\n"
+"\n"
+
+#: src/icewmbg.cc:1111
+msgid "Cannot start, because another icewmbg is still running."
+msgstr "既に icewmbg が動作しているため、新しく起動することができません。"
+
+#: src/icewmhint.cc:20
+msgid "Usage: icewmhint class.instance option arg\n"
+msgstr "使用方法: icewmhint クラス.インスタンス オプションパラメータ\n"
+
+#: src/icewmhint.cc:57
+#, c-format
+msgid "Out of memory (len=%d)."
+msgstr "メモリ不足 (長さ=%d)."
+
+#: src/misc.cc:70 src/misc.cc:82
+msgid "Warning: "
+msgstr "警告: "
+
+#: src/misc.cc:376
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS]\n"
+"Options:\n"
+"%s\n"
+"  -C, --copying       Prints license information and exits.\n"
+"  -V, --version       Prints version information and exits.\n"
+"  -h, --help          Prints this usage screen and exits.\n"
+"\n"
+msgstr ""
+"使用方法: %s [オプション]\n"
+"オプション:\n"
+"%s\n"
+"  -C, --copying       ライセンス情報を表示して終了します。\n"
+"  -V, --version       バージョン情報を表示して終了します。\n"
+"  -h, --help          この使用方法を表示して終了します。\n"
+"\n"
+
+#: src/movesize.cc:872
+#, c-format
+msgid "Unknown direction in move/resize request: %d"
+msgstr "移動／サイズ変更の要求において、未知の方向を指定しています: %d"
+
+#: src/wmabout.cc:29 src/wmabout.cc:30
+msgid "(C)"
+msgstr "(C)"
+
+#: src/wmabout.cc:40
+msgid "Theme:"
+msgstr "テーマ:"
+
+#: src/wmabout.cc:41
+msgid "Theme Description:"
+msgstr "テーマの説明:"
+
+#: src/wmabout.cc:42
+msgid "Theme Author:"
+msgstr "テーマの作者:"
+
+#: src/wmabout.cc:51
+msgid "CodeSet:"
+msgstr "コードセット:"
+
+#: src/wmabout.cc:52
+msgid "Language:"
+msgstr "言語:"
+
+#: src/wmabout.cc:56
+msgid "DoubleBuffer"
+msgstr "ダブルバッファ"
+
+#: src/wmabout.cc:57
+msgid "AlphaBlending"
+msgstr "アルファブレンディング"
+
+#: src/wmabout.cc:58
+msgid "Renderer:"
+msgstr "レンダラ:"
+
+#: src/wmabout.cc:64
+msgid "icewm - About"
+msgstr "icewm について"
+
+#: src/wmapp.cc:83
+msgid "A window manager is already running, use --replace to replace it"
+msgstr ""
+"ウインドウマネージャは既に起動しています。 --replace オプションを指定すること"
+"で、新しいウインドウマネージャに置き換えることができます"
+
+#: src/wmapp.cc:101
+#, c-format
+msgid "Failed to become the owner of the %s selection"
+msgstr "%s の選択に対する所有者になることができませんでした"
+
+#: src/wmapp.cc:105
+msgid "Waiting to replace the old window manager"
+msgstr "以前のウインドウマネージャの置き換えを待っています"
+
+#: src/wmapp.cc:110
+msgid "done."
+msgstr "完了。"
+
+#: src/wmapp.cc:497
+msgid "_Logout"
+msgstr "ログアウト (_L)"
+
+#: src/wmapp.cc:498
+msgid "_Cancel logout"
+msgstr "ログアウトを破棄 (_C)"
+
+#: src/wmapp.cc:503
+msgid "Lock _Workstation"
+msgstr "ワークステーションをロック (_W)"
+
+#: src/wmapp.cc:505 src/wmdialog.cc:72
+msgid "Re_boot"
+msgstr "再起動 (_B)"
+
+#: src/wmapp.cc:507 src/wmdialog.cc:73
+msgid "Shut_down"
+msgstr "シャットダウン (_D)"
+
+#. TRANSLATORS: This means "energy saving mode" or "suspended system". Not "interrupt". Not "hibernate".
+#: src/wmapp.cc:509 src/wmdialog.cc:69
+msgid "_Sleep mode"
+msgstr "スリープモード (_S)"
+
+#: src/wmapp.cc:514
+msgid "Restart _Icewm"
+msgstr "icewm を再起動 (_I)"
+
+#: src/wmapp.cc:516
+msgid "Restart _Xterm"
+msgstr "xterm を再起動 (_X)"
+
+#: src/wmapp.cc:526
+msgid "_Menu"
+msgstr "メニュー (_M)"
+
+#: src/wmapp.cc:527
+msgid "_Above Dock"
+msgstr "ドックの上 (_A)"
+
+#: src/wmapp.cc:528
+msgid "_Dock"
+msgstr "ドック (_D)"
+
+#: src/wmapp.cc:529
+msgid "_OnTop"
+msgstr "上に (_O)"
+
+#: src/wmapp.cc:530
+msgid "_Normal"
+msgstr "通常 (_N)"
+
+#: src/wmapp.cc:531
+msgid "_Below"
+msgstr "下に (_B)"
+
+#: src/wmapp.cc:532
+msgid "D_esktop"
+msgstr "デスクトップ (_E)"
+
+#: src/wmapp.cc:567 src/wmwinlist.cc:362
+msgid "_Restore"
+msgstr "元に戻す (_R)"
+
+#: src/wmapp.cc:569
+msgid "_Move"
+msgstr "移動 (_M)"
+
+#: src/wmapp.cc:571
+msgid "_Size"
+msgstr "サイズ (_S)"
+
+#: src/wmapp.cc:573 src/wmwinlist.cc:363
+msgid "Mi_nimize"
+msgstr "最小化 (_N)"
+
+#: src/wmapp.cc:575 src/wmwinlist.cc:364
+msgid "Ma_ximize"
+msgstr "最大化 (_X)"
+
+#: src/wmapp.cc:576 src/wmwinlist.cc:365
+msgid "Maximize_Vert"
+msgstr "垂直方向に最大化 (_V)"
+
+#: src/wmapp.cc:577 src/wmwinlist.cc:366
+msgid "MaximizeHori_z"
+msgstr "水平方向に最大化 (_Z)"
+
+#: src/wmapp.cc:580 src/wmwinlist.cc:367
+msgid "_Fullscreen"
+msgstr "フルスクリーン (_F)"
+
+#: src/wmapp.cc:583 src/wmwinlist.cc:369
+msgid "_Hide"
+msgstr "隠す (_H)"
+
+#: src/wmapp.cc:585 src/wmwinlist.cc:370
+msgid "Roll_up"
+msgstr "シェード (_U)"
+
+#: src/wmapp.cc:592
+msgid "R_aise"
+msgstr "上に表示 (_A)"
+
+#: src/wmapp.cc:594 src/wmwinlist.cc:372
+msgid "_Lower"
+msgstr "下に表示 (_L)"
+
+#: src/wmapp.cc:596 src/wmwinlist.cc:373
+msgid "La_yer"
+msgstr "レイヤ (_Y)"
+
+#: src/wmapp.cc:600 src/wmwinlist.cc:375
+msgid "Move _To"
+msgstr "移動 (_T)"
+
+#: src/wmapp.cc:601 src/wmwinlist.cc:376
+msgid "Occupy _All"
+msgstr "居座る (_A)"
+
+#: src/wmapp.cc:607
+msgid "Limit _Workarea"
+msgstr "作業領域の制限 (_W)"
+
+#: src/wmapp.cc:611 src/wmwinlist.cc:377
+msgid "Tray _icon"
+msgstr "トレイアイコン (_I)"
+
+#: src/wmapp.cc:616 src/wmwinlist.cc:392 src/wmwinlist.cc:400
+msgid "_Close"
+msgstr "閉じる (_C)"
+
+#: src/wmapp.cc:618 src/wmwinlist.cc:394
+msgid "_Kill Client"
+msgstr "クライアント強制終了 (_K)"
+
+#: src/wmapp.cc:621 src/wmdialog.cc:74 src/wmwinmenu.cc:130
+msgid "_Window list"
+msgstr "ウインドウ一覧 (_W)"
+
+#: src/wmapp.cc:659
+msgid "Another window manager already running, exiting..."
+msgstr "他のウインドウマネージャが既に起動しています。終了します..."
+
+#: src/wmapp.cc:734
+#, c-format
+msgid ""
+"Could not restart: %s\n"
+"Does $PATH lead to %s?"
+msgstr ""
+"%s を再起動できません。\n"
+"$PATH 内に %s がありますか？"
+
+#: src/wmapp.cc:897
+msgid "Confirm Restart as Terminal"
+msgstr "端末として再起動を行なう確認"
+
+#: src/wmapp.cc:898
+msgid ""
+"Unmanage all applications and restart\n"
+"as a terminal. Proceed?"
+msgstr ""
+"全てのアプリケーションを管理から外し、\n"
+"端末として再起動します。よろしいですか？"
+
+#: src/wmapp.cc:1199 src/yxapp.cc:1023
+msgid "<none>"
+msgstr "<なし>"
+
+#: src/wmapp.cc:1520
+msgid ""
+"  --client-id=ID      Client id to use when contacting session manager.\n"
+msgstr ""
+"  --client-id=ID      セッションマネージャに接続する際のクライアント ID を指"
+"定します。\n"
+
+#: src/wmapp.cc:1526
+msgid ""
+"\n"
+"  --debug             Print generic debug messages.\n"
+"  --debug-z           Print debug messages regarding window stacking.\n"
+msgstr ""
+"\n"
+"  --debug             一般的なデバッグメッセージを表示します。\n"
+"  --debug-z           ウインドウのスタック処理に関連するデバッグメッセージを"
+"表示します。\n"
+
+#: src/wmapp.cc:1534
+msgid ""
+"\n"
+"  -a, --alpha         Use a 32-bit visual for translucency.\n"
+"  -c, --config=FILE   Load preferences from FILE.\n"
+"  -t, --theme=FILE    Load theme from FILE.\n"
+"  -s, --splash=IMAGE  Briefly show IMAGE on startup.\n"
+"  -p, --postpreferences  Print preferences after all processing.\n"
+"  --rewrite-preferences  Update an existing preferences file.\n"
+"  --trace=conf,icon   Trace paths used to load configuration.\n"
+msgstr ""
+"\n"
+"  -a, --alpha         透過処理に対して 32 ビットの視覚情報を使用します。\n"
+"  -c, --config=FILE   FILE で指定したファイルから設定を読み込みます。\n"
+"  -t, --theme=FILE    FILE で指定したファイルからテーマを読み込みます。\n"
+"  -s, --splash=IMAGE  起動時に IMAGE で指定した画像を表示します。\n"
+"  -p, --postpreferences  全ての処理が終了したあと、設定内容を表示します。\n"
+"  --rewrite-preferences  既存の設定ファイルを更新します。\n"
+"  --trace=conf,icon   設定の読み込み時に使用するパスをトレースします。\n"
+
+#: src/wmapp.cc:1544
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS]\n"
+"Starts the IceWM window manager.\n"
+"\n"
+"Options:\n"
+"  -d, --display=NAME  NAME of the X server to use.\n"
+"%s  --sync              Synchronize X11 commands.\n"
+"%s\n"
+"  -V, --version       Prints version information and exits.\n"
+"  -h, --help          Prints this usage screen and exits.\n"
+"%s\n"
+"  --replace           Replace an existing window manager.\n"
+"  -r, --restart       Tell the running icewm to restart itself.\n"
+"\n"
+"  --configured        Print the compile time configuration.\n"
+"  --directories       Print the configuration directories.\n"
+"  -l, --list-themes   Print a list of all available themes.\n"
+"\n"
+"Environment variables:\n"
+"  ICEWM_PRIVCFG=PATH  Directory for user configuration files,\n"
+"                      \"$XDG_CONFIG_HOME/icewm\" if exists or\n"
+"                      \"$HOME/.icewm\" by default.\n"
+"  DISPLAY=NAME        Name of the X server to use.\n"
+"  MAIL=URL            Location of your mailbox.\n"
+"\n"
+"To report bugs, support requests, comments please visit:\n"
+"%s\n"
+"\n"
+msgstr ""
+"使用方法: %s [オプション]\n"
+"IceWM ウインドウマネージャを起動します。\n"
+"\n"
+"オプション:\n"
+"  -d, --display=NAME  使用する X サーバを指定します。\n"
+"%s  --sync              X11 コマンドを同期して処理します。\n"
+"%s\n"
+"  -V, --version       バージョン情報を表示して終了します。\n"
+"  -h, --help          この使用方法画面を表示して終了します。\n"
+"%s\n"
+"  --replace           既存のウインドウマネージャを置き換えます。\n"
+"  -r, --restart       動作中の icewm に対して再起動を指示します。\n"
+"\n"
+"  --configured        コンパイル時の設定を表示します。\n"
+"  --directories       設定ディレクトリを表示します。\n"
+"  -l, --list-themes   利用可能な全てのテーマを一覧表示します。\n"
+"\n"
+"環境変数:\n"
+"  ICEWM_PRIVCFG=PATH  ユーザの設定ファイルとして使用するディレクトリ。\n"
+"                      既定値は \"$XDG_CONFIG_HOME/icewm\" (存在すれば) また"
+"は\n"
+"                      \"$HOME/.icewm\" です。\n"
+"  DISPLAY=NAME        使用する X サーバを指定します。\n"
+"  MAIL=URL            メールボックスの場所を指定します。\n"
+"\n"
+"バグ報告やサポートの要求、コメントなどは下記をご覧ください:\n"
+"%s\n"
+"\n"
+
+#: src/wmapp.cc:1609
+#, c-format
+msgid "%s configuration directories:\n"
+msgstr "%s の設定ディレクトリ:\n"
+
+#: src/wmapp.cc:1691
+#, c-format
+msgid "%s configured options:%s\n"
+msgstr "%s の設定済みオプション: %s\n"
+
+#: src/wmapp.cc:1772
+#, c-format
+msgid "Unrecognized option '%s'."
+msgstr "認識できないオプション '%s' です。"
+
+#: src/wmapp.cc:1821
+msgid "Confirm Logout"
+msgstr "ログアウトの確認"
+
+#: src/wmapp.cc:1822
+msgid ""
+"Logout will close all active applications.\n"
+"Proceed?"
+msgstr ""
+"ログアウトすると起動中のアプリケーションを\n"
+"全て終了します。処理を続けてよろしいですか？"
+
+#: src/wmbutton.cc:85
+msgid "Raise/Lower"
+msgstr "上/下に表示"
+
+#: src/wmbutton.cc:90
+msgid "Hide"
+msgstr "隠す"
+
+#: src/wmbutton.cc:96
+msgid "Restore"
+msgstr "元に戻す"
+
+#: src/wmbutton.cc:100
+msgid "Maximize"
+msgstr "最大化"
+
+#: src/wmbutton.cc:106
+msgid "Minimize"
+msgstr "最小化"
+
+#: src/wmbutton.cc:112
+msgid "Rolldown"
+msgstr "シェード解除"
+
+#: src/wmbutton.cc:115
+msgid "Rollup"
+msgstr "シェード"
+
+#: src/wmclient.cc:367
+#, c-format
+msgid ""
+"Client %s with PID %ld fails to respond.\n"
+"Do you wish to terminate this client?\n"
+msgstr ""
+"クライアント %s (PID: %ld) が応答しません。\n"
+"このクライアントを終了してよろしいですか？\n"
+
+#: src/wmconfig.cc:35 src/wmconfig.cc:40 src/wmconfig.cc:46
+#, c-format
+msgid "Failed to load theme %s"
+msgstr "テーマ %s の読み込みに失敗しました"
+
+#: src/wmconfig.cc:113
+#, c-format
+msgid "Unknown value '%s' for option '%s'."
+msgstr "オプション '%2$s' に対する値 '%1$s' が不明です。"
+
+#: src/wmconfig.cc:121
+#, c-format
+msgid "Unable to create directory %s"
+msgstr "ディレクトリ %s を作成できません"
+
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#, c-format
+msgid "Unable to write to %s"
+msgstr "%s に書き込めません"
+
+#: src/wmconfig.cc:184 src/wmsave.cc:305
+#, c-format
+msgid "Unable to rename %s to %s"
+msgstr "%s を %s に名前変更できません"
+
+#: src/wmdialog.cc:67
+msgid "Loc_k Workstation"
+msgstr "ワークステーションをロック (_K)"
+
+#: src/wmdialog.cc:70 src/ymsgbox.cc:51
+msgid "_Cancel"
+msgstr "キャンセル (_C)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmdialog.cc:71 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:243
+#: src/wmtaskbar.cc:245
+msgid "_Logout..."
+msgstr "ログアウト (_L)..."
+
+#: src/wmdialog.cc:75
+msgid "_Restart icewm"
+msgstr "icewm を再起動 (_R)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmdialog.cc:76 src/wmprog.cc:424 src/wmtaskbar.cc:238
+msgid "_About"
+msgstr "情報 (_A)"
+
+#: src/wmframe.cc:1441
+msgid ""
+"WARNING! All unsaved changes will be lost when\n"
+"this client is killed. Do you wish to proceed?"
+msgstr ""
+"このクライアントを強制終了すると、保存されて\n"
+"いない変更点が失われてしまいます。処理を続けてよろしいですか？"
+
+#: src/wmframe.cc:1448
+msgid "Kill Client: "
+msgstr "クライアント強制終了: "
+
+#: src/wmmenu.cc:37
+msgid "Missing command argument"
+msgstr "コマンドのパラメータが足りません"
+
+#: src/wmmenu.cc:55
+#, c-format
+msgid "Bad argument %d to command '%s'"
+msgstr "コマンド '%2$s' に対するパラメータ %1$d が誤っています"
+
+#: src/wmmenu.cc:110
+#, c-format
+msgid "Error at keyword '%s' for %s"
+msgstr "%2$s に対するキーワード '%1$s' でエラーです"
+
+#: src/wmmenu.cc:156
+#, c-format
+msgid "Error at %s '%s'"
+msgstr "%s '%s' でエラーです"
+
+#: src/wmmenu.cc:222
+#, c-format
+msgid "Unexepected menu keyword: '%s'"
+msgstr "予期しないメニューキーワードです: `%s'"
+
+#: src/wmmenu.cc:276
+#, c-format
+msgid "Error at menuprog '%s'"
+msgstr "menuprog '%s' でエラーが発生しました"
+
+#: src/wmmenu.cc:320
+#, c-format
+msgid "Error at menuprogreload: '%s'"
+msgstr "menuprogreload でエラーが発生しました: '%s'"
+
+#: src/wmmenu.cc:347
+msgid "Missing filename argument to include statement"
+msgstr "include ステートメントにファイル名のパラメータが指定されていません"
+
+#: src/wmmenu.cc:365
+#, c-format
+msgid "Error at includeprog '%s'"
+msgstr "includeprog '%s' でエラーが発生しました"
+
+#: src/wmmenu.cc:408
+#, c-format
+msgid "Unknown keyword '%s'"
+msgstr "不明なキーワードです: `%s'"
+
+#: src/wmmenu.cc:419
+#, c-format
+msgid ""
+"Unknown keyword for a non-container: '%s'.\n"
+"Expected either 'key' or 'runonce' here.\n"
+msgstr ""
+"非コンテナに対する不明なキーワードです: '%s' 。\n"
+"ここでは 'key' もしくは 'runonce' のいずれかが期待されます。\n"
+
+#: src/wmmenu.cc:509
+#, c-format
+msgid "'%s' produces no output"
+msgstr "'%s' は何も出力しませんでした"
+
+#: src/wmmgr.cc:3259
+msgid "Missing program setxkbmap"
+msgstr "プログラム setxkbmap がありません"
+
+#: src/wmmgr.cc:3260
+msgid "For keyboard switching, please install setxkbmap."
+msgstr ""
+"キーボードの切り替えを行なうため、 setxkbmap をインストールしてください。"
+
+#: src/wmoption.cc:259
+#, c-format
+msgid "Unknown window option: %s"
+msgstr "未知のウインドウオプションです: %s"
+
+#: src/wmoption.cc:330
+#, c-format
+msgid "Syntax error in window options on line %d of %s"
+msgstr "%d 行目 (%s) のウインドウオプション内に文法エラーがあります"
+
+#: src/wmpref.cc:101
+msgid "Save Modifications"
+msgstr "修正内容の保存"
+
+#: src/wmpref.cc:180
+#, c-format
+msgid "Enter a new value for %s: "
+msgstr "%s に対する新しい値を入力してください: "
+
+#: src/wmprog.cc:331
+msgid "_Click to focus"
+msgstr "クリックしてフォーカス (_C)"
+
+#: src/wmprog.cc:332
+msgid "_Explicit focus"
+msgstr "明示的なフォーカス (_E)"
+
+#: src/wmprog.cc:333
+msgid "_Sloppy mouse focus"
+msgstr "あいまいなマウスフォーカス (_S)"
+
+#: src/wmprog.cc:334
+msgid "S_trict mouse focus"
+msgstr "厳密なマウスフォーカス (_T)"
+
+#: src/wmprog.cc:335
+msgid "_Quiet sloppy focus"
+msgstr "静寂であいまいなマウスフォーカス (_Q)"
+
+#: src/wmprog.cc:336
+msgid "Custo_m"
+msgstr "独自 (_M)"
+
+#: src/wmprog.cc:358
+msgid "_Manual"
+msgstr "マニュアル (_M)"
+
+#: src/wmprog.cc:359
+msgid "_Icewm(1)"
+msgstr "_Icewm(1)"
+
+#: src/wmprog.cc:360
+msgid "Icewm_Bg(1)"
+msgstr "Icewm_Bg(1)"
+
+#: src/wmprog.cc:361
+msgid "Ice_Sound(1)"
+msgstr "Ice_Sound(1)"
+
+#: src/wmprog.cc:410
+msgid "Programs"
+msgstr "プログラム"
+
+#: src/wmprog.cc:414
+msgid "_Run..."
+msgstr "実行 (_R)..."
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmprog.cc:418 src/wmtaskbar.cc:233
+msgid "_Windows"
+msgstr "ウインドウ一覧 (_W)"
+
+#: src/wmprog.cc:429
+msgid "_Help"
+msgstr "ヘルプ (_H)"
+
+#: src/wmprog.cc:434
+msgid "_Focus"
+msgstr "フォーカス (_F)"
+
+#: src/wmprog.cc:439
+msgid "_Preferences"
+msgstr "設定 (_P)"
+
+#: src/wmprog.cc:444
+msgid "_Themes"
+msgstr "テーマ (_T)"
+
+#: src/wmprog.cc:448
+msgid "Se_ttings"
+msgstr "設定 (_T)"
+
+#: src/wmsession.cc:214 src/wmsession.cc:230 src/wmsession.cc:240
+#, c-format
+msgid "Session Manager: Unknown line %s"
+msgstr "セッションマネージャ: 未知の行 %s"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:215 src/wmwinlist.cc:379 src/wmwinlist.cc:412
+msgid "Tile _Vertically"
+msgstr "垂直に並べる (_V)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:217 src/wmwinlist.cc:380 src/wmwinlist.cc:413
+msgid "T_ile Horizontally"
+msgstr "水平に並べる (_I)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:381 src/wmwinlist.cc:414
+msgid "Ca_scade"
+msgstr "カスケード (_S)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:382 src/wmwinlist.cc:415
+msgid "_Arrange"
+msgstr "整列 (_A)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:384 src/wmwinlist.cc:416
+msgid "_Minimize All"
+msgstr "全て最小化 (_M)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:385 src/wmwinlist.cc:417
+msgid "_Hide All"
+msgstr "全て隠す (_H)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:386 src/wmwinlist.cc:418
+msgid "_Undo"
+msgstr "元に戻す (_U)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:230
+msgid "Arrange _Icons"
+msgstr "アイコン整列 (_I)"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmtaskbar.cc:236
+msgid "_Refresh"
+msgstr "再描画 (_R)"
+
+#: src/wmtaskbar.cc:309 src/wmtaskbar.cc:967
+msgid "Hide Taskbar"
+msgstr "タスクバーを隠す"
+
+#: src/wmtaskbar.cc:332
+msgid "Favorite Applications"
+msgstr "お気に入りのアプリケーション"
+
+#: src/wmtaskbar.cc:357
+msgid "Window List Menu"
+msgstr "ウインドウ一覧メニュー"
+
+#: src/wmtaskbar.cc:366
+msgid "Show Desktop"
+msgstr "デスクトップの表示"
+
+#: src/wmtaskbar.cc:967
+msgid "Show Taskbar"
+msgstr "タスクバーを表示"
+
+#: src/wmwinlist.cc:46
+msgid "All Workspaces"
+msgstr "全てのワークスペース"
+
+#: src/wmwinlist.cc:368
+msgid "_Show"
+msgstr "表示 (_S)"
+
+#: src/wmwinlist.cc:371
+msgid "_Raise"
+msgstr "上に表示 (_R)"
+
+#: src/wmwinlist.cc:392
+msgid "Del"
+msgstr "削除"
+
+#: src/wmwinlist.cc:396
+msgid "_Terminate Process"
+msgstr "プロセス終了 (_T)"
+
+#: src/wmwinlist.cc:397
+msgid "Kill _Process"
+msgstr "プロセス強制終了 (_P)"
+
+#: src/wmwinlist.cc:432 src/wmwinlist.cc:433
+msgid "Window list"
+msgstr "ウインドウ一覧"
+
+#: src/wmwinmenu.cc:121
+#, c-format
+msgid "%lu. Workspace %-.32s"
+msgstr "%lu. ワークスペース %-.32s"
+
+#: src/wpixres.cc:93 src/wpixres.cc:100
+#, c-format
+msgid "Image not readable: %s"
+msgstr "画像を読み込むことができません: %s"
+
+#: src/yapp.cc:296
+#, c-format
+msgid "%s: select failed"
+msgstr "%s: select が失敗しました"
+
+#: src/ycolor.cc:229 src/ycolor.cc:240
+#, c-format
+msgid "Could not parse color \"%s\""
+msgstr "色 \"%s\" を処理できませんでした"
+
+#: src/yconfig.cc:113
+#, c-format
+msgid "Unknown key name %s in %s"
+msgstr "%2$s 内に未知のキー名 %1$s があります"
+
+#: src/yconfig.cc:128 src/yconfig.cc:139 src/yconfig.cc:151
+#, c-format
+msgid "Bad argument: %s for %s [%d,%d]"
+msgstr "無効な引数: %2$s に対して %1$s [%3$d,%4$d]"
+
+#: src/ycursor.cc:110
+#, c-format
+msgid "Loading of pixmap \"%s\" failed: %s"
+msgstr "ピクセルマップ \"%s\" の読み込みに失敗しました: %s"
+
+#: src/ycursor.cc:135
+#, c-format
+msgid "Loading of pixmap \"%s\" failed"
+msgstr "ピクセルマップ \"%s\" の読み込みに失敗しました"
+
+#: src/ycursor.cc:179
+#, c-format
+msgid "BUG? Imlib was able to read \"%s\""
+msgstr "バグ？ imlib が \"%s\" を読み込めませんでした"
+
+#: src/ycursor.cc:204
+#, c-format
+msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
+msgstr ""
+"バグ？ \"%s\" の XPM ヘッダが正しくありませんが、 imlib 側で読み込めてしまい"
+"ました"
+
+#: src/ycursor.cc:212
+#, c-format
+msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
+msgstr ""
+"バグ？ \"%s\" の XPM ファイルの終了部が正しくありませんが、 imlib 側で読み込"
+"めてしまいました"
+
+#: src/ycursor.cc:215
+#, c-format
+msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
+msgstr ""
+"バグ？ \"%s\" で予期しない文字が現われましたが、 imlib 側で読み込めてしまいま"
+"した"
+
+#: src/yfontcore.cc:72 src/yfontxft.cc:164
+#, c-format
+msgid "Could not load font \"%s\"."
+msgstr "フォント \"%s\" を読み込めませんでした。"
+
+#: src/yfontcore.cc:75 src/yfontcore.cc:123 src/yfontxft.cc:187
+#, c-format
+msgid "Loading of fallback font \"%s\" failed."
+msgstr "フォールバックフォント \"%s\" の読み込みに失敗しました。"
+
+#: src/yfontcore.cc:116
+#, c-format
+msgid "Could not load fontset \"%s\"."
+msgstr "フォントセット \"%s\" を読み込めませんでした。"
+
+#: src/yfontcore.cc:128
+#, c-format
+msgid "Missing codesets for fontset \"%s\":"
+msgstr "フォントセット \"%s\" に対するコードセットがありません:"
+
+#: src/yinputline.cc:18
+msgid "_Copy"
+msgstr "コピー (_C)"
+
+#: src/yinputline.cc:18
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: src/yinputline.cc:19
+msgid "Cu_t"
+msgstr "切り取り (_T)"
+
+#: src/yinputline.cc:20
+msgid "_Paste"
+msgstr "貼り付け (_P)"
+
+#: src/yinputline.cc:21
+msgid "Paste _Selection"
+msgstr "貼り付け選択 (_S)"
+
+#: src/yinputline.cc:21
+msgid "Ctrl+P"
+msgstr "Ctrl+P"
+
+#: src/yinputline.cc:23
+msgid "Select _All"
+msgstr "全て選択 (_A)"
+
+#: src/yinputline.cc:23
+msgid "Ctrl+A"
+msgstr "Ctrl+A"
+
+#: src/ylocale.cc:55
+msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
+msgstr ""
+"C ライブラリまたは Xlib がロケールに対応していません。 'C' ロケールにフォール"
+"バックします。"
+
+#: src/ylocale.cc:90
+msgid ""
+"Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
+msgstr ""
+"現在のロケールに対するコードセットを判別できませんでした。 ISO-8859-1 と仮定"
+"します。\n"
+
+#: src/ylocale.cc:123 src/ylocale.cc:131
+#, c-format
+msgid "iconv doesn't supply (sufficient) %s to %s converters."
+msgstr "iconv は %s から %s への変換に対応していません。"
+
+#: src/ylocale.cc:231
+#, c-format
+msgid "Invalid multibyte string \"%s\": %s"
+msgstr "マルチバイト文字列が正しくありません \"%s\": %s"
+
+#: src/ymsgbox.cc:48
+msgid "_OK"
+msgstr "_OK"
+
+#: src/ysmapp.cc:98
+msgid "$USER or $LOGNAME not set?"
+msgstr "$USER または $LOGNAME がセットされていないようです？"
+
+#: src/yurl.cc:145
+#, c-format
+msgid "Failed to parse URL \"%s\"."
+msgstr "URL \"%s\" の処理に失敗しました。"
+
+#: src/yurl.cc:161
+#, c-format
+msgid "Incomplete hex escape in URL at position %d."
+msgstr "URL 内の位置 %d に不完全な HEX エスケープが存在しています。"
+
+#: src/yurl.cc:168
+#, c-format
+msgid "Invalid hex escape in URL at position %d."
+msgstr "URL 内の位置 %d に不正な HEX エスケープが存在しています。"
+
+#: src/yxapp.cc:981
+msgid ""
+"  -d, --display=NAME  NAME of the X server to use.\n"
+"  --sync              Synchronize X11 commands.\n"
+msgstr ""
+"  -d, --display=NAME  使用する X サーバを指定します。\n"
+"  --sync              X11 コマンドを同期させます。\n"
+
+#: src/yximage.cc:157
+msgid "Support for PNG images was not enabled"
+msgstr "PNG 画像への対応が有効化されていません"
+
+#: src/yximage.cc:165
+msgid "Support for JPEG images was not enabled"
+msgstr "JPEG 画像への対応が有効化されていません"
+
+#: src/yximage.cc:171
+#, c-format
+msgid "Unsupported file format: %s"
+msgstr "未対応のファイル形式です: %s"
+
+#: src/yximage.cc:175 src/yximage.cc:198
+#, c-format
+msgid "Could not load image \"%s\""
+msgstr "画像 \"%s\" を読み込めませんでした"
+
 #~ msgid ""
 #~ "\n"
 #~ "  Caller id:\t"
@@ -2716,9 +2809,6 @@ msgstr "ワードプロセッサ"
 
 #~ msgid "Kill IceWM, replace with Xterm"
 #~ msgstr "IceWM を kill し、 Xterm に置き換えます"
-
-#~ msgid "Save Modifications"
-#~ msgstr "修正内容の保存"
 
 #~ msgid "GNOME window state"
 #~ msgstr "GNOME ウインドウ状態"
@@ -2940,39 +3030,8 @@ msgstr "ワードプロセッサ"
 #~ msgid "_Minimize"
 #~ msgstr "最小化 (_M)"
 
-#~ msgid "Missing command argument"
-#~ msgstr "コマンドのパラメータが足りません"
-
-#~ msgid "Bad argument %d to command '%s'"
-#~ msgstr "コマンド  '%2$s' に対するパラメータ %1$d が誤っています"
-
-#~ msgid "Missing filename argument to include statement"
-#~ msgstr "include ステートメントにファイル名のパラメータが指定されていません"
-
-#~ msgid "Error at %s '%s'"
-#~ msgstr "%s '%s' でエラーです"
-
-#~ msgid "Error at menuprog '%s'"
-#~ msgstr "menuprog '%s' でエラーが発生しました"
-
 #~ msgid "Error at %s: '%s'"
 #~ msgstr "%s: '%s'　でエラーです"
-
-#~ msgid "Unknown keyword '%s'"
-#~ msgstr "不明なキーワードです: `%s'"
-
-#~ msgid "Error at keyword '%s' for %s"
-#~ msgstr "%2$s に対するキーワード '%1$s' でエラーです"
-
-#~ msgid ""
-#~ "Unknown keyword for a non-container: '%s'.\n"
-#~ "Expected either 'key' or 'runonce' here.\n"
-#~ msgstr ""
-#~ "非コンテナに対する不明なキーワードです: '%s' 。\n"
-#~ "ここでは 'key' もしくは 'runonce' のいずれかが期待されます。\n"
-
-#~ msgid "'%s' produces no output"
-#~ msgstr "'%s' は何も出力しませんでした"
 
 #~ msgid "\"%s\" contains no scheme description"
 #~ msgstr "\"%s\" にはスキームの指定がありません"
