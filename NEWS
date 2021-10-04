@@ -1,11 +1,92 @@
-icewm -- history of user-visible changes.  2021-08-06
+icewm -- history of user-visible changes.  2021-10-04
+
+Release icewm-2.8.0 released 2021-10-04
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.7.0...2.8.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (27):
+      Fix overflows in battery calculations for issue #607. Change defines to
+        enums. Use longs for capacity numbers.
+      Prevent a pedantic warning for netDevice.
+      Fix typo in sizeby description.
+      Update date and version number to 2.7.0.
+      Fix potential trailing -I flag for issue ice-wm/icewm#57.
+      Move SVG loader in a dedicated source file.  Only support SVG for icons,
+        not for icewmbg backgrounds. Let icewmbg pixmaps free its associated
+        Image to reduce memory usage.
+      Include string.h in ysvg.cc to fix build for some.
+      Improve filtering on WM_CLASS property in icesh.
+      Update pot files.
+      Include yimage.h for gdk-pixbuf.
+      Add +group and +Class select options to icesh.
+      In the window list window group similar application windows together.
+      Improve performance and scalability of the window list menu.
+      Update to pt_BR.po by marcelocripe and closes ice-wm/icewm#60.
+      Add yimage2.h.
+      Remove obsolete Makefile.os2.
+      Remove obsolete preferences.xml.
+      Guard against a color name being set to the empty string for issue #614.
+      Explain how to spy on client messages.
+      Update winoptions example on DockApps.
+      Update potfiles.
+      Clarify some preferences.
+      Clarify MailBoxPath.
+      When rearranging windows with tile placement, cascade placement, correct
+        for the top side vertical offset, in those themes which have a masked
+        top border.
+      Improve the explanation on how to spy on client messages.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+marcelo cripe <marcelocripe@gmail.com> (5):
+      Translated using Weblate (Portuguese (Brazil))
+      Translated using Weblate (Portuguese (Brazil))
+      Translated using Weblate (Portuguese (Brazil))
+      Translated using Weblate (Portuguese (Brazil))
+      Translated using Weblate (Portuguese (Brazil))
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (3):
+      Translated using Weblate (Portuguese)
+      Translated using Weblate (Portuguese)
+      Translated using Weblate (Portuguese)
+
+Henrik Tunedal <tunedal@gmail.com> (2):
+      Fix OSS/ALSA defaults in icesound man page (#608)
+      Fix OSS/ALSA defaults in icesound help message (#609)
+
+Aleš Kastner <alkas@volny.cz> (1):
+      Translated using Weblate (Czech)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Efstathios Iosifidis <eiosifidis@gmail.com> (1):
+      Translated using Weblate (Greek)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
+      Translated using Weblate (Indonesian)
+
+Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-2.7.0 released 2021-08-06
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.6.0...2.7.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (40):
+Bert Gijsbers <gijsbers@science.uva.nl> (41):
       Get rid of unneeded classes YCursor and YResourcePaths. This also reduces
         the number of stat(2) system calls on startup.
       When changing themeName, allocate it dynamically.
@@ -56,6 +137,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (40):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.7.0 release
 
 Mehmet Akif 9oglu <madanadam@gmail.com> (4):
       Translated using Weblate (Turkish)
@@ -380,55 +462,4 @@ Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
 
 openSUSE Weblate <weblate-noreply@opensuse.org> (1):
       Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
-
-
-Release icewm-2.3.2 released 2021-04-15
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.3.1...2.3.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (27):
-      Remove unused variable textDrawn to prevent a compiler warning.
-      Optimize allocation of icon path strings.
-      Improve removing the last element from an array. Add array pop and last.
-        Remove classes YStack and YStackSet.
-      Make testarray.cc mostly silent by default.
-      Add testarray as a test target to cmake test.
-      Refactor common code from dialogs to ydialog.cc. Improve layout design.
-      Add declarations for center and become to YDialog.
-      Free the memory for the About dialog after it is closed.
-      Reduce the number of frame updates to only those frames visible on the
-        previous and the current workspace when changing workspace.
-      Support ModSuperIsCtrlAlt when testing the Super modifier in the quick
-        switch. This fixes issues #574.
-      Change the default value for ModSuperIsCtrlAlt from true to false to see
-        if anyone complains for issue #574.
-      Repaint workspace button after editing the workspace name.
-      Pop down YInputMenu before deleting. Don't report focus lost when popping
-        YInputMenu.
-      Allow button clicks where there is mouse motion between button press and
-        release for issue #575.
-      Permit negative button position in function limited.
-      Fix segv in verifyPaths and closes #577.
-      Dissolve the disparity between dragged and non-dragged task buttons for
-        issue #576.
-      Use reversed active taskbar app text colors for drawing grouping number
-        for issue #565. Improve drawing rectangles with rounded corners. Don't
-        update grouping when shutting down.
-      Reduce reactiveness to mouse motion of task button by deselecting task
-        button when dragging ends.
-      Add append and replace to YProperty. Improve reporting detail when
-        XOpenDisplay fails.
-      Enforce the completion of the deallocation of the single YWMApp object.
-      Improve rounded rectangle corner painting detail.
-      First synchronize with icewm, before updating background after icewm
-        restart.
-      Document more workspace button features.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.3.2 release
-
-Tommi Nieminen <software@legisign.org> (1):
-      Translated using Weblate (Finnish)
 

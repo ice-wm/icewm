@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icewm 1.2.0-beta1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-09-30 22:26+0200\n"
+"POT-Creation-Date: 2021-10-04 20:31+0200\n"
 "PO-Revision-Date: 2020-05-07 08:52+0000\n"
 "Last-Translator: ingemar karlsson <ingemar_bengt@hotmail.com>\n"
 "Language-Team: Swedish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1384,7 +1384,7 @@ msgstr "Åtgärden `%s'  kräver minst %d argument."
 msgid "Invalid expression: `%s'"
 msgstr "Felaktigt uttryck: `%s'"
 
-#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1195
+#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1176
 #: src/yxapp.cc:1022
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1876,7 +1876,7 @@ msgstr ""
 " center:0 scaled:1 = fyll båda dimensioner och bevara bildformat\n"
 "\n"
 
-#: src/icewmbg.cc:1042 src/wmapp.cc:1774
+#: src/icewmbg.cc:1042 src/wmapp.cc:1751
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Okänd väljare '%s'."
@@ -2040,7 +2040,7 @@ msgstr "_Under"
 msgid "D_esktop"
 msgstr "Skriv_bord"
 
-#: src/wmapp.cc:564 src/wmwinlist.cc:365
+#: src/wmapp.cc:564 src/wmwinlist.cc:366
 msgid "_Restore"
 msgstr "_Återställ"
 
@@ -2052,31 +2052,31 @@ msgstr "_Flytta"
 msgid "_Size"
 msgstr "_Storlek"
 
-#: src/wmapp.cc:570 src/wmwinlist.cc:366
+#: src/wmapp.cc:570 src/wmwinlist.cc:367
 msgid "Mi_nimize"
 msgstr "Mi_nimera"
 
-#: src/wmapp.cc:572 src/wmwinlist.cc:367
+#: src/wmapp.cc:572 src/wmwinlist.cc:368
 msgid "Ma_ximize"
 msgstr "Ma_ximera"
 
-#: src/wmapp.cc:573 src/wmwinlist.cc:368
+#: src/wmapp.cc:573 src/wmwinlist.cc:369
 msgid "Maximize_Vert"
 msgstr "Maximera_Vert"
 
-#: src/wmapp.cc:574 src/wmwinlist.cc:369
+#: src/wmapp.cc:574 src/wmwinlist.cc:370
 msgid "MaximizeHori_z"
 msgstr "Maximera Hori_z"
 
-#: src/wmapp.cc:577 src/wmwinlist.cc:370
+#: src/wmapp.cc:577 src/wmwinlist.cc:371
 msgid "_Fullscreen"
 msgstr "_Helskärm"
 
-#: src/wmapp.cc:580 src/wmwinlist.cc:372
+#: src/wmapp.cc:580 src/wmwinlist.cc:373
 msgid "_Hide"
 msgstr "_Göm"
 
-#: src/wmapp.cc:582 src/wmwinlist.cc:373
+#: src/wmapp.cc:582 src/wmwinlist.cc:374
 msgid "Roll_up"
 msgstr "Rulla _ihop"
 
@@ -2084,19 +2084,19 @@ msgstr "Rulla _ihop"
 msgid "R_aise"
 msgstr "_Höj"
 
-#: src/wmapp.cc:591 src/wmwinlist.cc:375
+#: src/wmapp.cc:591 src/wmwinlist.cc:376
 msgid "_Lower"
 msgstr "Sän_k"
 
-#: src/wmapp.cc:593 src/wmwinlist.cc:376
+#: src/wmapp.cc:593 src/wmwinlist.cc:377
 msgid "La_yer"
 msgstr "_Lager"
 
-#: src/wmapp.cc:597 src/wmwinlist.cc:378
+#: src/wmapp.cc:597 src/wmwinlist.cc:379
 msgid "Move _To"
 msgstr "Flytta _till"
 
-#: src/wmapp.cc:598 src/wmwinlist.cc:379
+#: src/wmapp.cc:598 src/wmwinlist.cc:380
 msgid "Occupy _All"
 msgstr "Uppta _alla"
 
@@ -2104,15 +2104,15 @@ msgstr "Uppta _alla"
 msgid "Limit _Workarea"
 msgstr "_Begränsa arbetsyta"
 
-#: src/wmapp.cc:608 src/wmwinlist.cc:380
+#: src/wmapp.cc:608 src/wmwinlist.cc:381
 msgid "Tray _icon"
 msgstr "_Programpanelsikon"
 
-#: src/wmapp.cc:613 src/wmwinlist.cc:395 src/wmwinlist.cc:403
+#: src/wmapp.cc:613 src/wmwinlist.cc:396 src/wmwinlist.cc:404
 msgid "_Close"
 msgstr "St_äng"
 
-#: src/wmapp.cc:615 src/wmwinlist.cc:397
+#: src/wmapp.cc:615 src/wmwinlist.cc:398
 msgid "_Kill Client"
 msgstr "_Döda klient"
 
@@ -2143,18 +2143,18 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1196 src/yxapp.cc:1023
+#: src/wmapp.cc:1177 src/yxapp.cc:1023
 msgid "<none>"
 msgstr "<ingen>"
 
-#: src/wmapp.cc:1517
+#: src/wmapp.cc:1498
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Klient-ID som ska användas vid kontakt med "
 "sessionshanteraren.\n"
 
-#: src/wmapp.cc:1523
+#: src/wmapp.cc:1504
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2164,7 +2164,7 @@ msgstr ""
 "  --debug             Skriv ut allmänna felsökningsmeddelanden.\n"
 "  --debug-z           Skriv ut felsökningsmeddelanden om fönsterstackning.\n"
 
-#: src/wmapp.cc:1531
+#: src/wmapp.cc:1512
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -2192,7 +2192,7 @@ msgstr ""
 "  -p, --postpreferences   Skriv ut inställningar efter all bearbetning.\n"
 "  --trace=conf, icon Sökvägar som används för att ladda konfiguration.\n"
 
-#: src/wmapp.cc:1541
+#: src/wmapp.cc:1522
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2251,21 +2251,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1607
+#: src/wmapp.cc:1588
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s konfigureringskataloger:\n"
 
-#: src/wmapp.cc:1689
+#: src/wmapp.cc:1670
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s konfigurerade väljare:%s\n"
 
-#: src/wmapp.cc:1823
+#: src/wmapp.cc:1800
 msgid "Confirm Logout"
 msgstr "Bekräfta utloggning"
 
-#: src/wmapp.cc:1824
+#: src/wmapp.cc:1801
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2434,11 +2434,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "'%s' genererar inga utdata"
 
-#: src/wmmgr.cc:3259
+#: src/wmmgr.cc:3309
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3260
+#: src/wmmgr.cc:3310
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2540,37 +2540,37 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Sessionshanteraren: Okänd rad %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:215 src/wmwinlist.cc:382 src/wmwinlist.cc:415
+#: src/wmtaskbar.cc:215 src/wmwinlist.cc:383 src/wmwinlist.cc:416
 msgid "Tile _Vertically"
 msgstr "Rada upp _lodrätt"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:217 src/wmwinlist.cc:383 src/wmwinlist.cc:416
+#: src/wmtaskbar.cc:217 src/wmwinlist.cc:384 src/wmwinlist.cc:417
 msgid "T_ile Horizontally"
 msgstr "Rada upp _vågrätt"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:384 src/wmwinlist.cc:417
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:385 src/wmwinlist.cc:418
 msgid "Ca_scade"
 msgstr "_Kaskad"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:385 src/wmwinlist.cc:418
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:386 src/wmwinlist.cc:419
 msgid "_Arrange"
 msgstr "O_rdna"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:387 src/wmwinlist.cc:419
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:388 src/wmwinlist.cc:420
 msgid "_Minimize All"
 msgstr "_Minimera alla"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:388 src/wmwinlist.cc:420
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:389 src/wmwinlist.cc:421
 msgid "_Hide All"
 msgstr "Göm _alla"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:389 src/wmwinlist.cc:421
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:390 src/wmwinlist.cc:422
 msgid "_Undo"
 msgstr "_Ångra"
 
@@ -2608,27 +2608,27 @@ msgstr "Visa aktivitetsfält"
 msgid "All Workspaces"
 msgstr "Alla arbetsytor"
 
-#: src/wmwinlist.cc:371
+#: src/wmwinlist.cc:372
 msgid "_Show"
 msgstr "V_isa"
 
-#: src/wmwinlist.cc:374
+#: src/wmwinlist.cc:375
 msgid "_Raise"
 msgstr "_Höj"
 
-#: src/wmwinlist.cc:395
+#: src/wmwinlist.cc:396
 msgid "Del"
 msgstr "Ta bort"
 
-#: src/wmwinlist.cc:399
+#: src/wmwinlist.cc:400
 msgid "_Terminate Process"
 msgstr "_Avsluta process"
 
-#: src/wmwinlist.cc:400
+#: src/wmwinlist.cc:401
 msgid "Kill _Process"
 msgstr "_Döda process"
 
-#: src/wmwinlist.cc:435 src/wmwinlist.cc:436
+#: src/wmwinlist.cc:436 src/wmwinlist.cc:437
 msgid "Window list"
 msgstr "Fönsterlista"
 
@@ -2745,25 +2745,25 @@ msgstr "Markera _allt"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: src/ylocale.cc:56
+#: src/ylocale.cc:55
 msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
 msgstr ""
 "Språkkonventionen stöds inte av C-biblioteket eller Xlib. Faller tillbaka "
 "till språkkonvention 'C'."
 
-#: src/ylocale.cc:91
+#: src/ylocale.cc:90
 msgid ""
 "Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
 msgstr ""
 "Kunde inte avgöra teckenuppsättning för aktuell språkkonvention. Antar "
 "ISO-8859-1.\n"
 
-#: src/ylocale.cc:124 src/ylocale.cc:132
+#: src/ylocale.cc:123 src/ylocale.cc:131
 #, c-format
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv tillhandahåller inte (tillräckliga) %s till %s-konverterare."
 
-#: src/ylocale.cc:234
+#: src/ylocale.cc:231
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Ogiltig multibyte-sträng \"%s\": %s"

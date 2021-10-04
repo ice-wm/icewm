@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-09-30 22:26+0200\n"
+"POT-Creation-Date: 2021-10-04 20:31+0200\n"
 "PO-Revision-Date: 2003-01-27 22:26+0300\n"
 "Last-Translator: Hleb Valoska <el_globus@tut.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1377,7 +1377,7 @@ msgstr "Дзеяньне `%s' патрабуе прынамсі %d парамэ�
 msgid "Invalid expression: `%s'"
 msgstr "Няправільны выраз: `%s'"
 
-#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1195
+#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1176
 #: src/yxapp.cc:1022
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1779,7 +1779,7 @@ msgid ""
 msgstr ""
 
 # fixme
-#: src/icewmbg.cc:1042 src/wmapp.cc:1774
+#: src/icewmbg.cc:1042 src/wmapp.cc:1751
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Нераспазнаная опцыя: %s\n"
@@ -1940,7 +1940,7 @@ msgstr "_Пад усімі вокнамі"
 msgid "D_esktop"
 msgstr "На ўзроўні _стальца"
 
-#: src/wmapp.cc:564 src/wmwinlist.cc:365
+#: src/wmapp.cc:564 src/wmwinlist.cc:366
 msgid "_Restore"
 msgstr "Вернуць ранейшы _стан"
 
@@ -1952,35 +1952,35 @@ msgstr "_Перасунуць вакно"
 msgid "_Size"
 msgstr "Зьмяніць па_мер"
 
-#: src/wmapp.cc:570 src/wmwinlist.cc:366
+#: src/wmapp.cc:570 src/wmwinlist.cc:367
 msgid "Mi_nimize"
 msgstr "З_гарнуць"
 
-#: src/wmapp.cc:572 src/wmwinlist.cc:367
+#: src/wmapp.cc:572 src/wmwinlist.cc:368
 msgid "Ma_ximize"
 msgstr "_Разгарнуць"
 
-#: src/wmapp.cc:573 src/wmwinlist.cc:368
+#: src/wmapp.cc:573 src/wmwinlist.cc:369
 #, fuzzy
 #| msgid "Maximize"
 msgid "Maximize_Vert"
 msgstr "Разгарнуць"
 
-#: src/wmapp.cc:574 src/wmwinlist.cc:369
+#: src/wmapp.cc:574 src/wmwinlist.cc:370
 #, fuzzy
 #| msgid "Maximize"
 msgid "MaximizeHori_z"
 msgstr "Разгарнуць"
 
-#: src/wmapp.cc:577 src/wmwinlist.cc:370
+#: src/wmapp.cc:577 src/wmwinlist.cc:371
 msgid "_Fullscreen"
 msgstr "На поўны _экран"
 
-#: src/wmapp.cc:580 src/wmwinlist.cc:372
+#: src/wmapp.cc:580 src/wmwinlist.cc:373
 msgid "_Hide"
 msgstr "С_хаваць"
 
-#: src/wmapp.cc:582 src/wmwinlist.cc:373
+#: src/wmapp.cc:582 src/wmwinlist.cc:374
 msgid "Roll_up"
 msgstr "С_круціць угору"
 
@@ -1988,19 +1988,19 @@ msgstr "С_круціць угору"
 msgid "R_aise"
 msgstr "Уз_ьняць над усімі вокнамі"
 
-#: src/wmapp.cc:591 src/wmwinlist.cc:375
+#: src/wmapp.cc:591 src/wmwinlist.cc:376
 msgid "_Lower"
 msgstr "Ап_усьціць пад усе вокны"
 
-#: src/wmapp.cc:593 src/wmwinlist.cc:376
+#: src/wmapp.cc:593 src/wmwinlist.cc:377
 msgid "La_yer"
 msgstr "Узровень разьмя_шчэньня"
 
-#: src/wmapp.cc:597 src/wmwinlist.cc:378
+#: src/wmapp.cc:597 src/wmwinlist.cc:379
 msgid "Move _To"
 msgstr "Перамесьціць на _варштат"
 
-#: src/wmapp.cc:598 src/wmwinlist.cc:379
+#: src/wmapp.cc:598 src/wmwinlist.cc:380
 msgid "Occupy _All"
 msgstr "Хай займае _ўсе варштаты"
 
@@ -2008,15 +2008,15 @@ msgstr "Хай займае _ўсе варштаты"
 msgid "Limit _Workarea"
 msgstr "_Абмежаваць вобласьць"
 
-#: src/wmapp.cc:608 src/wmwinlist.cc:380
+#: src/wmapp.cc:608 src/wmwinlist.cc:381
 msgid "Tray _icon"
 msgstr "Значка _панэлі"
 
-#: src/wmapp.cc:613 src/wmwinlist.cc:395 src/wmwinlist.cc:403
+#: src/wmapp.cc:613 src/wmwinlist.cc:396 src/wmwinlist.cc:404
 msgid "_Close"
 msgstr "За_крыць"
 
-#: src/wmapp.cc:615 src/wmwinlist.cc:397
+#: src/wmapp.cc:615 src/wmwinlist.cc:398
 msgid "_Kill Client"
 msgstr "Заб_іць кліент"
 
@@ -2047,23 +2047,23 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1196 src/yxapp.cc:1023
+#: src/wmapp.cc:1177 src/yxapp.cc:1023
 msgid "<none>"
 msgstr "<няма>"
 
-#: src/wmapp.cc:1517
+#: src/wmapp.cc:1498
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1523
+#: src/wmapp.cc:1504
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1531
+#: src/wmapp.cc:1512
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2075,7 +2075,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1541
+#: src/wmapp.cc:1522
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2132,22 +2132,22 @@ msgstr ""
 "Наведай https://ice-wm.org/ каб паведаміць пра памылкі, запатрабаваць\n"
 "падтрымкі, ці проста выказацца пра IceWM...\n"
 
-#: src/wmapp.cc:1607
+#: src/wmapp.cc:1588
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
 # fixme
-#: src/wmapp.cc:1689
+#: src/wmapp.cc:1670
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Нераспазнаная опцыя: %s\n"
 
-#: src/wmapp.cc:1823
+#: src/wmapp.cc:1800
 msgid "Confirm Logout"
 msgstr "Пацьвердзі выйсьце"
 
-#: src/wmapp.cc:1824
+#: src/wmapp.cc:1801
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2314,11 +2314,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3259
+#: src/wmmgr.cc:3309
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3260
+#: src/wmmgr.cc:3310
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2422,37 +2422,37 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Кіраўнік сэсій: невядомы радок %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:215 src/wmwinlist.cc:382 src/wmwinlist.cc:415
+#: src/wmtaskbar.cc:215 src/wmwinlist.cc:383 src/wmwinlist.cc:416
 msgid "Tile _Vertically"
 msgstr "Побач па _вэртыкалі"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:217 src/wmwinlist.cc:383 src/wmwinlist.cc:416
+#: src/wmtaskbar.cc:217 src/wmwinlist.cc:384 src/wmwinlist.cc:417
 msgid "T_ile Horizontally"
 msgstr "Побач па _гарызанталі"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:384 src/wmwinlist.cc:417
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:385 src/wmwinlist.cc:418
 msgid "Ca_scade"
 msgstr "_Каскадам"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:385 src/wmwinlist.cc:418
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:386 src/wmwinlist.cc:419
 msgid "_Arrange"
 msgstr "_Упарадкавана"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:387 src/wmwinlist.cc:419
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:388 src/wmwinlist.cc:420
 msgid "_Minimize All"
 msgstr "_Згарнуць усе"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:388 src/wmwinlist.cc:420
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:389 src/wmwinlist.cc:421
 msgid "_Hide All"
 msgstr "_Схаваць усе"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:389 src/wmwinlist.cc:421
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:390 src/wmwinlist.cc:422
 msgid "_Undo"
 msgstr "_Вернуць"
 
@@ -2500,30 +2500,30 @@ msgstr "Панэль задач"
 msgid "All Workspaces"
 msgstr "Працоўнае поле: "
 
-#: src/wmwinlist.cc:371
+#: src/wmwinlist.cc:372
 msgid "_Show"
 msgstr "Па_казаць"
 
-#: src/wmwinlist.cc:374
+#: src/wmwinlist.cc:375
 #, fuzzy
 #| msgid "R_aise"
 msgid "_Raise"
 msgstr "Уз_ьняць над усімі вокнамі"
 
-#: src/wmwinlist.cc:395
+#: src/wmwinlist.cc:396
 #, fuzzy
 msgid "Del"
 msgstr "Выдаліць"
 
-#: src/wmwinlist.cc:399
+#: src/wmwinlist.cc:400
 msgid "_Terminate Process"
 msgstr "Ск_ончыць працэс"
 
-#: src/wmwinlist.cc:400
+#: src/wmwinlist.cc:401
 msgid "Kill _Process"
 msgstr "Забіць _працэс"
 
-#: src/wmwinlist.cc:435 src/wmwinlist.cc:436
+#: src/wmwinlist.cc:436 src/wmwinlist.cc:437
 msgid "Window list"
 msgstr "Сьпіс вакон"
 
@@ -2643,24 +2643,24 @@ msgstr "Вылучыць _усё"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: src/ylocale.cc:56
+#: src/ylocale.cc:55
 #, fuzzy
 msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
 msgstr ""
 "Настройкі лякалі не падтрымліваюцца бібліятэкай C: ужываю лякаль \\'С\\'."
 
-#: src/ylocale.cc:91
+#: src/ylocale.cc:90
 msgid ""
 "Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
 msgstr ""
 "Няўдалае вызначэньне кодавага набору ў данай лякалі. Ужываецца ISO-8859-1.\n"
 
-#: src/ylocale.cc:124 src/ylocale.cc:132
+#: src/ylocale.cc:123 src/ylocale.cc:131
 #, c-format
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv не забясьпечвае (дастаткова) пераўтварэньне з %s у %s."
 
-#: src/ylocale.cc:234
+#: src/ylocale.cc:231
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Няправільны шматбайтавы радок \"%s\": %s"

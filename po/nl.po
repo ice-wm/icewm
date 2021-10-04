@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.23\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-09-30 22:26+0200\n"
+"POT-Creation-Date: 2021-10-04 20:31+0200\n"
 "PO-Revision-Date: 2021-09-10 01:11+0000\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
 "Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1373,7 +1373,7 @@ msgstr "Actie `%s' heeft minimaal %d argumenten nodig."
 msgid "Invalid expression: `%s'"
 msgstr "Ongeldige expressie: »%s«"
 
-#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1195
+#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1176
 #: src/yxapp.cc:1022
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1868,7 +1868,7 @@ msgstr ""
 " center:0 scaled:1 = beide dimensies vullen en beeldverhouding behouden\n"
 "\n"
 
-#: src/icewmbg.cc:1042 src/wmapp.cc:1774
+#: src/icewmbg.cc:1042 src/wmapp.cc:1751
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Onbekende optie: '%s'."
@@ -2034,7 +2034,7 @@ msgstr "_Onder"
 msgid "D_esktop"
 msgstr "Bur_eaublad"
 
-#: src/wmapp.cc:564 src/wmwinlist.cc:365
+#: src/wmapp.cc:564 src/wmwinlist.cc:366
 msgid "_Restore"
 msgstr "_Herstellen"
 
@@ -2046,31 +2046,31 @@ msgstr "_Verplaatsen"
 msgid "_Size"
 msgstr "_Grootte veranderen"
 
-#: src/wmapp.cc:570 src/wmwinlist.cc:366
+#: src/wmapp.cc:570 src/wmwinlist.cc:367
 msgid "Mi_nimize"
 msgstr "Mi_nimaliseren"
 
-#: src/wmapp.cc:572 src/wmwinlist.cc:367
+#: src/wmapp.cc:572 src/wmwinlist.cc:368
 msgid "Ma_ximize"
 msgstr "Ma_ximaliseren"
 
-#: src/wmapp.cc:573 src/wmwinlist.cc:368
+#: src/wmapp.cc:573 src/wmwinlist.cc:369
 msgid "Maximize_Vert"
 msgstr "_VertMmaximaliseren"
 
-#: src/wmapp.cc:574 src/wmwinlist.cc:369
+#: src/wmapp.cc:574 src/wmwinlist.cc:370
 msgid "MaximizeHori_z"
 msgstr "Hori_zMaximaliseren"
 
-#: src/wmapp.cc:577 src/wmwinlist.cc:370
+#: src/wmapp.cc:577 src/wmwinlist.cc:371
 msgid "_Fullscreen"
 msgstr "_Volledig scherm"
 
-#: src/wmapp.cc:580 src/wmwinlist.cc:372
+#: src/wmapp.cc:580 src/wmwinlist.cc:373
 msgid "_Hide"
 msgstr "Verb_ergen"
 
-#: src/wmapp.cc:582 src/wmwinlist.cc:373
+#: src/wmapp.cc:582 src/wmwinlist.cc:374
 msgid "Roll_up"
 msgstr "Op_rollen"
 
@@ -2078,19 +2078,19 @@ msgstr "Op_rollen"
 msgid "R_aise"
 msgstr "St_ijgen"
 
-#: src/wmapp.cc:591 src/wmwinlist.cc:375
+#: src/wmapp.cc:591 src/wmwinlist.cc:376
 msgid "_Lower"
 msgstr "Da_len"
 
-#: src/wmapp.cc:593 src/wmwinlist.cc:376
+#: src/wmapp.cc:593 src/wmwinlist.cc:377
 msgid "La_yer"
 msgstr "_Laag"
 
-#: src/wmapp.cc:597 src/wmwinlist.cc:378
+#: src/wmapp.cc:597 src/wmwinlist.cc:379
 msgid "Move _To"
 msgstr "Verschuiven naa_r"
 
-#: src/wmapp.cc:598 src/wmwinlist.cc:379
+#: src/wmapp.cc:598 src/wmwinlist.cc:380
 msgid "Occupy _All"
 msgstr "In _alle werkruimten"
 
@@ -2098,15 +2098,15 @@ msgstr "In _alle werkruimten"
 msgid "Limit _Workarea"
 msgstr "_Beperk werkruimte"
 
-#: src/wmapp.cc:608 src/wmwinlist.cc:380
+#: src/wmapp.cc:608 src/wmwinlist.cc:381
 msgid "Tray _icon"
 msgstr "Tray_icon"
 
-#: src/wmapp.cc:613 src/wmwinlist.cc:395 src/wmwinlist.cc:403
+#: src/wmapp.cc:613 src/wmwinlist.cc:396 src/wmwinlist.cc:404
 msgid "_Close"
 msgstr "_Sluiten"
 
-#: src/wmapp.cc:615 src/wmwinlist.cc:397
+#: src/wmapp.cc:615 src/wmwinlist.cc:398
 msgid "_Kill Client"
 msgstr "Programma stoppen"
 
@@ -2140,18 +2140,18 @@ msgstr ""
 "Hef beheer van alle toepassing op en herstart\n"
 "als een terminal. Doorgaan?"
 
-#: src/wmapp.cc:1196 src/yxapp.cc:1023
+#: src/wmapp.cc:1177 src/yxapp.cc:1023
 msgid "<none>"
 msgstr "<geen>"
 
-#: src/wmapp.cc:1517
+#: src/wmapp.cc:1498
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Te gebruiken client-id bij contact maken met de "
 "sessiemanager.\n"
 
-#: src/wmapp.cc:1523
+#: src/wmapp.cc:1504
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2161,7 +2161,7 @@ msgstr ""
 "  --debug             Algemene debugberichten afdrukken.\n"
 "  --debug-z           Debugberichten over stapelen van vensters afdrukken.\n"
 
-#: src/wmapp.cc:1531
+#: src/wmapp.cc:1512
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2181,7 +2181,7 @@ msgstr ""
 "--rewrite-preferences  Een bestaand bestand met voorkeuren bijwerken.\n"
 "  --trace=conf,icon   Paden volgen gebruiken om configuratie te laden.\n"
 
-#: src/wmapp.cc:1541
+#: src/wmapp.cc:1522
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2240,21 +2240,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1607
+#: src/wmapp.cc:1588
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s configuratiemappen:\n"
 
-#: src/wmapp.cc:1689
+#: src/wmapp.cc:1670
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s geconfigureerde opties:%s\n"
 
-#: src/wmapp.cc:1823
+#: src/wmapp.cc:1800
 msgid "Confirm Logout"
 msgstr "Afmelden bevestigen"
 
-#: src/wmapp.cc:1824
+#: src/wmapp.cc:1801
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2423,11 +2423,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "'%s' produceert geen uitvoer"
 
-#: src/wmmgr.cc:3259
+#: src/wmmgr.cc:3309
 msgid "Missing program setxkbmap"
 msgstr "Programma setxkbmap ontbreekt"
 
-#: src/wmmgr.cc:3260
+#: src/wmmgr.cc:3310
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Om van toetsenbord te wisselen, installeer setxkbmap."
 
@@ -2529,37 +2529,37 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Sessie manager: Onbekende regel %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:215 src/wmwinlist.cc:382 src/wmwinlist.cc:415
+#: src/wmtaskbar.cc:215 src/wmwinlist.cc:383 src/wmwinlist.cc:416
 msgid "Tile _Vertically"
 msgstr "_Vertikaal uitlijnen"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:217 src/wmwinlist.cc:383 src/wmwinlist.cc:416
+#: src/wmtaskbar.cc:217 src/wmwinlist.cc:384 src/wmwinlist.cc:417
 msgid "T_ile Horizontally"
 msgstr "_Horizontaal uitlijnen"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:384 src/wmwinlist.cc:417
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:385 src/wmwinlist.cc:418
 msgid "Ca_scade"
 msgstr "_Overlappend uitlijnen"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:385 src/wmwinlist.cc:418
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:386 src/wmwinlist.cc:419
 msgid "_Arrange"
 msgstr "_Optimaliseren"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:387 src/wmwinlist.cc:419
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:388 src/wmwinlist.cc:420
 msgid "_Minimize All"
 msgstr "Alles _minimaliseren"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:388 src/wmwinlist.cc:420
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:389 src/wmwinlist.cc:421
 msgid "_Hide All"
 msgstr "Alles _verstoppen"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:389 src/wmwinlist.cc:421
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:390 src/wmwinlist.cc:422
 msgid "_Undo"
 msgstr "_Ongedaan"
 
@@ -2597,27 +2597,27 @@ msgstr "Taakbalk tonen"
 msgid "All Workspaces"
 msgstr "Alle werkruimten"
 
-#: src/wmwinlist.cc:371
+#: src/wmwinlist.cc:372
 msgid "_Show"
 msgstr "_Tonen"
 
-#: src/wmwinlist.cc:374
+#: src/wmwinlist.cc:375
 msgid "_Raise"
 msgstr "Om_hoog"
 
-#: src/wmwinlist.cc:395
+#: src/wmwinlist.cc:396
 msgid "Del"
 msgstr "Verwijderen"
 
-#: src/wmwinlist.cc:399
+#: src/wmwinlist.cc:400
 msgid "_Terminate Process"
 msgstr "Programma stoppen"
 
-#: src/wmwinlist.cc:400
+#: src/wmwinlist.cc:401
 msgid "Kill _Process"
 msgstr "Programma stoppen"
 
-#: src/wmwinlist.cc:435 src/wmwinlist.cc:436
+#: src/wmwinlist.cc:436 src/wmwinlist.cc:437
 msgid "Window list"
 msgstr "Window lijst"
 
@@ -2735,23 +2735,23 @@ msgstr "_Alles selecteren"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: src/ylocale.cc:56
+#: src/ylocale.cc:55
 msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
 msgstr ""
 "Taalregio wordt niet ondersteund door C-bibliotheek of Xlib. Er wordt "
 "teruggevallen op de algemene taalregio 'C'."
 
-#: src/ylocale.cc:91
+#: src/ylocale.cc:90
 msgid ""
 "Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
 msgstr "Kom huidige lokaliteit niet bepalen. Ga uit van ISO-8859-1.\n"
 
-#: src/ylocale.cc:124 src/ylocale.cc:132
+#: src/ylocale.cc:123 src/ylocale.cc:131
 #, c-format
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv heeft (onvoldoende) %s naar %s-vertalers."
 
-#: src/ylocale.cc:234
+#: src/ylocale.cc:231
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Ongeldige Multibyte-string »%s«: %s"
