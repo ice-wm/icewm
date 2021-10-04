@@ -212,11 +212,14 @@ XSV(const char *, netCommand,                   TERM " -name netstat -title 'Net
 XSV(const char *, netClassHint,                 "netstat.XTerm")
 #endif
 
-XSV(const char *, netDevice,                    "[ew]*"
 #if __OpenBSD__
-                                                " vio*"
+#define NET_DEVICES                             "[ew]* vio*"
+#else
+#define NET_DEVICES                             "[ew]*"
 #endif
-   )
+XSV(const char *, netDevice,                    NET_DEVICES)
+#undef NET_DEVICES
+
 XSV(const char *, addressBarCommand,            0)
 XSV(const char *, dockApps,                     "right high desktop")
 #ifdef CONFIG_I18N
@@ -539,16 +542,16 @@ cfoption icewm_preferences[] = {
     OKV("KeySysTileHorizontal",                 gKeySysTileHorizontal,          "Tiles all windows from top to bottom maximized horizontally."),
     OKV("KeySysCascade",                        gKeySysCascade,                 "Makes a horizontal cascade of all windows which are maximized vertically."),
     OKV("KeySysArrange",                        gKeySysArrange,                 "Rearranges the windows."),
-    OKV("KeySysArrangeIcons",                   gKeySysArrangeIcons,            "Rearranges icons."),
+    OKV("KeySysArrangeIcons",                   gKeySysArrangeIcons,            "Rearranges the icons on the desktop, if MinimizeToDesktop is true."),
     OKV("KeySysMinimizeAll",                    gKeySysMinimizeAll,             "Minimizes all windows."),
     OKV("KeySysHideAll",                        gKeySysHideAll,                 "Hides all windows."),
     OKV("KeySysUndoArrange",                    gKeySysUndoArrange,             "Undoes arrangement."),
-    OKV("KeySysShowDesktop",                    gKeySysShowDesktop,             "Unmaps all windows to show the desktop."),
-    OKV("KeySysCollapseTaskBar",                gKeySysCollapseTaskBar,         "Hides the task bar."),
+    OKV("KeySysShowDesktop",                    gKeySysShowDesktop,             "Minimizes all windows to show the desktop."),
+    OKV("KeySysCollapseTaskBar",                gKeySysCollapseTaskBar,         "Toggles displaying the task bar."),
 
-    OKF("WorkspaceNames", addWorkspace, "Add a workspace"),
-    OKF("KeyboardLayouts", addKeyboard, "Add a keyboard layout"),
-    OSV("WinMenuItems",                         &winMenuItems,                  "Items supported in menu window (rmsnxfhualytickw)"),
+    OKF("WorkspaceNames",                       addWorkspace, "Add a workspace"),
+    OKF("KeyboardLayouts",                      addKeyboard, "Add a keyboard layout"),
+    OSV("WinMenuItems",                         &winMenuItems,                  "The list of items to be supported in the menu window (rmsnxfhualytickw)"),
     OK0()
 };
 
