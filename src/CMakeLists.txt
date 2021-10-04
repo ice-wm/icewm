@@ -95,7 +95,9 @@ if(ENABLE_NLS OR CONFIG_I18N)
     INCLUDE(FindIntl)
     if(Intl_FOUND)
         LIST(APPEND nls_LIBS ${Intl_LIBRARIES})
-        LIST(APPEND nls_CFLAGS -I${Intl_INCLUDE_DIRS})
+        if(${Intl_INCLUDE_DIRS})
+            LIST(APPEND nls_CFLAGS -I${Intl_INCLUDE_DIRS})
+        endif()
     endif()
 endif()
 
@@ -403,7 +405,7 @@ set(icewm_pc_flags ${CXXFLAGS_COMMON} ${fontconfig_CFLAGS} ${xft_CFLAGS}
 
 SET(ICE_COMMON_SRCS udir.cc upath.cc yapp.cc yxapp.cc ytimer.cc yprefs.cc
                     ywindow.cc ypaint.cc ypopup.cc ycursor.cc ysocket.cc
-                    ypipereader.cc yxembed.cc yconfig.cc yfont.cc
+                    ypipereader.cc yxembed.cc yconfig.cc yfont.cc ysvg.cc
                     ypixmap.cc yimage2.cc yimage_gdk.cc yximage.cc ycolor.cc
                     ytooltip.cc ylocale.cc yarray.cc yfileio.cc ytime.cc
                     mstring.cc ref.cc logevent.cc misc.cc)

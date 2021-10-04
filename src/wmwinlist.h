@@ -11,6 +11,7 @@ class WindowListItem;
 class WindowListBox;
 class YMenu;
 class YActionListener;
+class YArrange;
 
 class WindowListItem: public YListItem {
 public:
@@ -40,7 +41,7 @@ public:
     virtual void actionPerformed(YAction action, unsigned int modifiers);
 
     void enableCommands(YMenu *popup);
-    void getSelectedWindows(YArray<YFrameWindow *> &frames);
+    YArrange getSelectedWindows();
 };
 
 class WindowListPopup : public YMenu {
@@ -79,6 +80,7 @@ public:
     YMenu* getWindowListAllPopup();
 
 private:
+    WindowListItem* allWorkspacesItem;
     osmart<WindowListPopup> windowListPopup;
     osmart<WindowListAllPopup> windowListAllPopup;
     osmart<YScrollView> scroll;

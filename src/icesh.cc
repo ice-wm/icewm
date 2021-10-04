@@ -163,6 +163,7 @@ vector<NAtom*> NAtom::fAtoms;
 
 static NAtom ATOM_WM_STATE("WM_STATE");
 static NAtom ATOM_WM_CHANGE_STATE("WM_CHANGE_STATE");
+static NAtom ATOM_WM_CLIENT_LEADER("WM_CLIENT_LEADER");
 static NAtom ATOM_WM_LOCALE_NAME("WM_LOCALE_NAME");
 static NAtom ATOM_WM_WINDOW_ROLE("WM_WINDOW_ROLE");
 static NAtom ATOM_NET_WM_PID("_NET_WM_PID");
@@ -1036,10 +1037,28 @@ public:
                 match = true;
             }
             else if (prop.format() == 8 && valueString) {
-                if (prop.count() == long(strlen(valueString)) &&
-                    0 == strcmp(prop.data<char>(), valueString))
-                {
-                    match = true;
+                for (int i = 0;; ++i) {
+                    char letter = prop.data<char>(i);
+                    if (valueString[i] == '\0') {
+                        match = (i >= prop.count() || letter == '\0');
+                        break;
+                    }
+                    else if (i >= prop.count()) {
+                        match = (0 == strcmp(valueString + i, "."));
+                        break;
+                    }
+                    else if (letter == '\0') {
+                        if (valueString[i] != '.') {
+                            break;
+                        }
+                        if (valueString[i + 1] == '\0') {
+                            match = true;
+                            break;
+                        }
+                    }
+                    else if (letter != valueString[i]) {
+                        break;
+                    }
                 }
             }
             else if (prop.format() == 32 && valueString) {
@@ -1315,6 +1334,8 @@ private:
     void listXembed(Window w);
     void queryXembed(Window w);
     void queryDockapps();
+    void extendClass();
+    void extendGroup();
     bool listClients();
     bool listWindows();
     bool listScreens();
@@ -1613,6 +1634,23 @@ static Window getFrameWindow(Window window)
         window = parent;
     }
     return None;
+}
+
+static Window getGroupLeader(Window window) {
+    Window lead = None;
+    YClient prop(window, ATOM_WM_CLIENT_LEADER);
+    if (prop) {
+        lead = prop.data()[0];
+    } else {
+        XWMHints* h = XGetWMHints(display, window);
+        if (h) {
+            if (h->flags & WindowGroupHint) {
+                lead = h->window_group;
+            }
+            XFree(h);
+        }
+    }
+    return lead;
 }
 
 static bool getGeometry(Window window, int& x, int& y, int& width, int& height) {
@@ -3055,6 +3093,11 @@ void IceSh::showProperty(Window window, Atom atom, const char* prefix) {
             else {
                 for (int i = 0; i < prop.count(); ++i) {
                     unsigned char ch = prop.data<unsigned char>(i);
+                    if (ch == '\0') {
+                        if (i + 1 == prop.count()) {
+                            break;
+                        }
+                    }
                     putchar(isPrint(ch) ? ch : '.');
                 }
                 newline();
@@ -3162,6 +3205,91 @@ void IceSh::flush()
 {
     if (fflush(stdout) || ferror(stdout))
         throw 1;
+}
+
+void IceSh::extendClass()
+{
+    if ( ! windowList && ! selecting) {
+        Window pick = pickWindow();
+        if (pick <= root)
+            throw 1;
+        setWindow(pick);
+        selecting = true;
+    }
+    if (windowList) {
+        vector<XClassHint> classes;
+        FOREACH_WINDOW(window) {
+            XClassHint h = { nullptr, nullptr };
+            if (XGetClassHint(display, window, &h) == True) {
+                classes.push_back(h);
+            }
+        }
+        YWindowTree clients;
+        clients.getClientList();
+        for (YTreeIter window(clients); window; ++window) {
+            if (windowList.have(window) == false) {
+                XClassHint h = { nullptr, nullptr };
+                if (XGetClassHint(display, window, &h) == True) {
+                    if (nonempty(h.res_class)) {
+                        for (XClassHint c : classes) {
+                            if (nonempty(c.res_class)
+                                && !strcmp(c.res_class, h.res_class)) {
+                                addWindow(window);
+                                break;
+                            }
+                        }
+                    }
+                    else if (nonempty(h.res_name)) {
+                        for (XClassHint c : classes) {
+                            if (isEmpty(c.res_class)
+                                && nonempty(c.res_name)
+                                && !strcmp(c.res_name, h.res_name)) {
+                                addWindow(window);
+                                break;
+                            }
+                        }
+                    }
+                }
+                XFree(h.res_name);
+                XFree(h.res_class);
+            }
+        }
+        for (XClassHint h : classes) {
+            XFree(h.res_name);
+            XFree(h.res_class);
+        }
+        classes.clear();
+    }
+}
+
+void IceSh::extendGroup()
+{
+    if ( ! windowList && ! selecting) {
+        Window pick = pickWindow();
+        if (pick <= root)
+            throw 1;
+        setWindow(pick);
+        selecting = true;
+    }
+    if (windowList) {
+        YWindowTree leaders;
+        FOREACH_WINDOW(window) {
+            Window lead = getGroupLeader(window);
+            if (lead) {
+                leaders.append(lead);
+            }
+        }
+        YWindowTree clients;
+        clients.getClientList();
+        for (YTreeIter window(clients); window; ++window) {
+            if (windowList.have(window) == false) {
+                Window lead = getGroupLeader(window);
+                if (lead && leaders.have(lead)) {
+                    addWindow(window);
+                }
+            }
+        }
+    }
 }
 
 IceSh::IceSh(int ac, char **av) :
@@ -3370,7 +3498,7 @@ void IceSh::flags()
                 arg++;
             flag(arg);
         }
-        else if (argp[0][0] == '+' && strchr("frwT", argp[0][1])) {
+        else if (argp[0][0] == '+' && strchr("fgrwCT", argp[0][1])) {
             flag(getArg());
         }
         else {
@@ -3389,6 +3517,7 @@ void IceSh::flags()
                 if (w <= root)
                     throw 1;
                 setWindow(w);
+                selecting = true;
                 parseAction();
             }
             flush();
@@ -3459,6 +3588,14 @@ void IceSh::flag(char* arg)
         queryDockapps();
         MSG(("dockapps windows selected"));
         selecting = true;
+        return;
+    }
+    if (isOptArg(arg, "+group", "")) {
+        extendGroup();
+        return;
+    }
+    if (isOptArg(arg, "+Class", "")) {
+        extendClass();
         return;
     }
     if (isOptArg(arg, "-last", "")) {
