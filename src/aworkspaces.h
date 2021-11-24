@@ -47,8 +47,8 @@ private:
     virtual bool handleTimer(YTimer *t);
 
     virtual void actionPerformed(YAction button, unsigned int modifiers);
-    virtual ref<YFont> getActiveFont();
-    virtual ref<YFont> getFont();
+    virtual YFont getActiveFont();
+    virtual YFont getFont();
     virtual YColor   getColor();
     virtual YSurface getSurface();
     virtual YDimension getTextSize();
@@ -76,8 +76,8 @@ private:
     static YColorName activeBackupBg;
     static YColorName activeButtonFg;
 
-    static ref<YFont> normalButtonFont;
-    static ref<YFont> activeButtonFont;
+    static YFont normalButtonFont;
+    static YFont activeButtonFont;
 };
 
 class WorkspaceIcons {
@@ -135,6 +135,10 @@ private:
     lazy<YTimer> fRepaintTimer;
     lazy<WorkspaceIcons> paths;
     ArrayType fButtons;
+    WorkspaceButton* index(int ws) const {
+        extern bool rightToLeft;
+        return fButtons[rightToLeft ? count() - ws - 1 : ws];
+    }
     int count() const { return fButtons.getCount(); }
     IterType iterator() { return fButtons.iterator(); }
     WorkspaceButton* last() const { return fButtons[count()-1]; }

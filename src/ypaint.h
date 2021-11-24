@@ -1,9 +1,8 @@
-#ifndef __YPAINT_H
-#define __YPAINT_H
+#ifndef YPAINT_H
+#define YPAINT_H
 
 #include "ypixmap.h"
 #include "yimage.h"
-#include "mstring.h"
 
 #ifdef CONFIG_SHAPE
 #include <X11/extensions/shape.h>
@@ -14,8 +13,11 @@
 #endif
 
 #include "ycolor.h"
+#include "yfontbase.h"
 
+class mstring;
 class YWindow;
+class YFontName;
 
 enum YDirection {
     Up, Left, Down, Right
@@ -52,26 +54,29 @@ struct YDimension {
 /******************************************************************************/
 /******************************************************************************/
 
-class YFont: public virtual refcounted {
+class YFont {
 public:
-    static ref<YFont> getFont(mstring name, mstring xftFont, bool antialias = true);
+    YFont operator=(YFontName& fontName);
 
-    virtual ~YFont() {}
+    YFont() : base(nullptr) { }
+    YFont(YFontName& fontName) : base(nullptr) { operator=(fontName); }
 
-    virtual bool valid() const = 0;
-    virtual int height() const { return ascent() + descent(); }
-    virtual int descent() const = 0;
-    virtual int ascent() const = 0;
-    virtual int textWidth(mstring s) const = 0;
-    virtual int textWidth(char const * str, int len) const = 0;
+    void operator=(null_ref &) { base = nullptr; }
 
-    virtual void drawGlyphs(class Graphics & graphics, int x, int y,
-                            char const * str, int len) = 0;
-    virtual bool supports(unsigned ucs4char) { return ucs4char <= 255; }
+    bool operator==(null_ref &) const { return base == nullptr; }
+    bool operator!=(null_ref &) const { return base != nullptr; }
+    operator bool() const { return base != nullptr; }
 
-    int textWidth(char const * str) const;
-    int multilineTabPos(char const * str) const;
-    YDimension multilineAlloc(char const * str) const;
+    YFontBase* operator->() const { return base; }
+    YFontBase* operator*() const { return base; }
+
+private:
+    operator int() const = delete;
+    operator void*() const = delete;
+
+    typedef YFontBase* (*fontloader)(const char* name);
+    void loadFont(fontloader loader, const char* name);
+    YFontBase* base;
 };
 
 /******************************************************************************/
@@ -89,9 +94,9 @@ struct YSurface {
 
 class Graphics {
 public:
-    Graphics(YWindow & window, unsigned long vmask, XGCValues * gcv);
-    Graphics(YWindow & window);
-    Graphics(ref<YPixmap> pixmap, int x_org, int y_org);
+    Graphics(YWindow& window, unsigned long vmask, XGCValues* gcv);
+    explicit Graphics(YWindow& window);
+    explicit Graphics(ref<YPixmap> pixmap);
     Graphics(Drawable drawable, unsigned w, unsigned h, unsigned depth, unsigned long vmask, XGCValues * gcv);
     Graphics(Drawable drawable, unsigned w, unsigned h, unsigned depth);
     ~Graphics();
@@ -132,15 +137,15 @@ public:
     void drawMask(ref<YPixmap> pix, int x, int y);
     void drawClippedPixmap(Pixmap pix, Pixmap clip,
                            int x, int y, unsigned w, unsigned h, int toX, int toY);
-    void fillRect(int x, int y, unsigned width, unsigned height,
-                  unsigned rounding = 0);
+    void fillRect(int x, int y, unsigned width, unsigned height);
+    void fillRect(int x, int y, unsigned width, unsigned height, unsigned rounding);
     void fillRects(XRectangle * rects, int n);
     void fillPolygon(XPoint * points, int n, int shape,
                      int mode);
     void fillArc(int x, int y, unsigned width, unsigned height, int a1, int a2);
     void setColor(const YColor& aColor);
     void setColorPixel(unsigned long pixel);
-    void setFont(ref<YFont> aFont);
+    void setFont(YFont aFont) { fFont = aFont; }
     void setThinLines() { setLineWidth(0); }
     void setWideLines(unsigned width = 1) { setLineWidth(width >= 1 ? width : 1); }
     void setLineWidth(unsigned width);
@@ -183,7 +188,7 @@ public:
 #endif
 
     YColor   color() const { return fColor; }
-    ref<YFont> font() const { return fFont; }
+    YFont font() const { return fFont; }
     int function() const;
     int xorigin() const { return xOrigin; }
     int yorigin() const { return yOrigin; }
@@ -205,7 +210,7 @@ private:
 #endif
 
     YColor   fColor;
-    ref<YFont> fFont;
+    YFont fFont;
     Picture fPicture;
     int xOrigin, yOrigin;
     unsigned rWidth, rHeight, rDepth;

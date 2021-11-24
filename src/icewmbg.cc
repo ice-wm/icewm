@@ -67,6 +67,7 @@ private:
     virtual bool filterEvent(const XEvent& xev);
     virtual void handleSignal(int sig);
     virtual bool handleTimer(YTimer* timer);
+    virtual int handleError(XErrorEvent* xev);
 
     void restart() const;
     void changeBackground(bool force);
@@ -415,6 +416,10 @@ bool Background::handleTimer(YTimer* timer) {
     return false;
 }
 
+int Background::handleError(XErrorEvent* xev) {
+    return BadRequest;
+}
+
 Image Background::getBackgroundImage() {
     Image image;
     int count = backgroundImages.getCount();
@@ -559,7 +564,7 @@ ref<YPixmap> Background::renderBackground(Image back, YColor color) {
     }
 
     ref<YPixmap> cBack = YPixmap::create(width, height, desktop->depth());
-    Graphics g(cBack, 0, 0);
+    Graphics g(cBack);
     g.setColor(color);
     g.fillRect(0, 0, width, height);
 
@@ -1036,6 +1041,9 @@ int main(int argc, char **argv) {
                 cycle = value;
             }
             else if (GetArgument(value, "d", "display", arg, argv + argc)) {
+                /*ignore*/;
+            }
+            else if (GetArgument(value, "C", "copying", arg, argv + argc)) {
                 /*ignore*/;
             }
             else

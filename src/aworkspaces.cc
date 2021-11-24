@@ -1,7 +1,8 @@
 #include "config.h"
 #include "aworkspaces.h"
 #include "workspaces.h"
-#include "prefs.h"
+#include "default.h"
+#include "yprefs.h"
 #include "yxapp.h"
 #include "wmframe.h"
 #include "wmmgr.h"
@@ -19,8 +20,8 @@ YColorName WorkspaceButton::activeButtonBg(&clrWorkspaceActiveButton);
 YColorName WorkspaceButton::activeBackupBg(&clrActiveButton);
 YColorName WorkspaceButton::activeButtonFg(&clrWorkspaceActiveButtonText);
 
-ref<YFont> WorkspaceButton::normalButtonFont;
-ref<YFont> WorkspaceButton::activeButtonFont;
+YFont WorkspaceButton::normalButtonFont;
+YFont WorkspaceButton::activeButtonFont;
 
 WorkspaceButton::WorkspaceButton(int ws, YWindow *parent, WorkspaceDragger* d):
     super(parent, YAction()),
@@ -368,8 +369,9 @@ void WorkspacesPane::updateButtons() {
     MSG(("WorkspacesPane::udpateButtons(): updating %d -> %d",
          count(), int(workspaceCount)));
 
-    if (count() > workspaceCount)
-        fButtons.shrink(max<int>(1, workspaceCount));
+    while (workspaceCount < count() && 1 < count()) {
+        fButtons.remove(rightToLeft ? 0 : count() - 1);
+    }
 
     int width = extent() - fMoved;
     for (int i = count(), n = workspaceCount; i < n; ++i) {
@@ -391,7 +393,7 @@ void WorkspacesPane::updateButtons() {
 
 WorkspaceButton* WorkspacesPane::create(int workspace, unsigned height) {
     WorkspaceButton *wk = new WorkspaceButton(workspace, this, this);
-    fButtons += wk;
+    fButtons.insert(rightToLeft ? 0 : count(), wk);
     if (pagerShowPreview) {
         unsigned dw = desktop->width();
         unsigned dh = desktop->height();
@@ -444,14 +446,14 @@ void WorkspacesPane::label(WorkspaceButton* wk) {
 }
 
 void WorkspacesPane::relabel(int ws) {
-    label(fButtons[ws]);
+    label(index(ws));
     repositionButtons();
     paths = null;
 }
 
 void WorkspacesPane::setPressed(long ws, bool set) {
     if (inrange<long>(1+ws, 1, count())) {
-        WorkspaceButton* wk = fButtons[int(ws)];
+        WorkspaceButton* wk = index(ws);
         wk->setPressed(set);
         if (set) {
             fActive = int(ws);
@@ -539,10 +541,10 @@ void WorkspacesPane::stopDrag() {
     }
 }
 
-ref<YFont> WorkspaceButton::getActiveFont() {
+YFont WorkspaceButton::getActiveFont() {
     if (activeButtonFont == null) {
-        if (*activeWorkspaceFontName || *activeWorkspaceFontNameXft) {
-            activeButtonFont = YFont::getFont(XFA(activeWorkspaceFontName));
+        if (activeWorkspaceFontName.nonempty()) {
+            activeButtonFont = activeWorkspaceFontName;
         }
         if (activeButtonFont == null) {
             activeButtonFont = YButton::getActiveFont();
@@ -551,13 +553,13 @@ ref<YFont> WorkspaceButton::getActiveFont() {
     return activeButtonFont;
 }
 
-ref<YFont> WorkspaceButton::getFont() {
+YFont WorkspaceButton::getFont() {
     if (isPressed()) {
         return getActiveFont();
     }
     else if (normalButtonFont == null) {
-        if (*normalWorkspaceFontName || *normalWorkspaceFontNameXft) {
-            normalButtonFont = YFont::getFont(XFA(normalWorkspaceFontName));
+        if (normalWorkspaceFontName.nonempty()) {
+            normalButtonFont = normalWorkspaceFontName;
         }
         if (normalButtonFont == null) {
             normalButtonFont = YButton::getFont();
@@ -583,7 +585,7 @@ YSurface WorkspaceButton::getSurface() {
 }
 
 YDimension WorkspaceButton::getTextSize() {
-    ref<YFont> font(getActiveFont());
+    YFont font(getActiveFont());
     return YDimension(font->textWidth(name()), font->height());
 }
 
@@ -713,16 +715,17 @@ void WorkspaceButton::paint(Graphics &g, const YRect& r) {
             strlcpy(label, baseName(), min(5, int(sizeof label)));
         }
         if (label[0] != 0) {
-            ref<YFont> font = getFont();
+            YFont font = getFont();
+            if (font) {
+                int wx = (w - font->textWidth(label)) / 2 + x;
+                int wy = (h - font->height()) / 2 + font->ascent() + y;
 
-            int wx = (w - font->textWidth(label)) / 2 + x;
-            int wy = (h - font->height()) / 2 + font->ascent() + y;
-
-            g.setFont(font);
-            g.setColor(colors[0]);
-            g.drawChars(label, 0, strlen(label), wx+1, wy+1);
-            g.setColor(colors[3]);
-            g.drawChars(label, 0, strlen(label), wx, wy);
+                g.setFont(font);
+                g.setColor(colors[0]);
+                g.drawString(wx+1, wy+1, label);
+                g.setColor(colors[3]);
+                g.drawString(wx, wy, label);
+            }
         }
         if (surface.gradient != null) {
             g.maxOpacity();

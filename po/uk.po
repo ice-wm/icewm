@@ -3,33 +3,32 @@ msgstr ""
 "Project-Id-Version: IceWM 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2021-09-30 22:26+0200\n"
-"PO-Revision-Date: 2018-04-14 08:08+0000\n"
-"Last-Translator: Andriy Bandura <andriykopanytsia@gmail.com>\n"
-"Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/uk/>\n"
+"PO-Revision-Date: 2021-10-31 22:11+0000\n"
+"Last-Translator: Taras Panchenko <top39@ukr.net>\n"
+"Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.8.1\n"
 
 #: src/aapm.cc:66
-#, fuzzy, c-format
-#| msgid "Could not open OSS device %s"
+#, c-format
 msgid "Can't open the APM device %s"
-msgstr "Не вдалося відкрити пристрій OSS %s"
+msgstr "Не вдалося відкрити пристрій APM %s"
 
 #: src/aapm.cc:74 src/aapm.cc:92
 #, c-format
 msgid "Can't ioctl the APM device %s"
-msgstr ""
+msgstr "Не вдалося виконати ioctl для пристрою APM %s"
 
 #: src/aapm.cc:122
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
-msgstr ""
+msgstr "Невідомий формат задіяний пристроєм APM %s (%d)."
 
 #: src/aapm.cc:154 src/aapm.cc:426 src/aapm.cc:636 src/aapm.cc:762
 msgid " - Power"
@@ -37,7 +36,7 @@ msgstr " - Живлення"
 
 #: src/aapm.cc:156 src/aapm.cc:429 src/aapm.cc:639
 msgid "P"
-msgstr "П"
+msgstr "Ж"
 
 #: src/aapm.cc:160 src/aapm.cc:403 src/aapm.cc:619 src/aapm.cc:730
 msgid " - Charging"
@@ -58,53 +57,47 @@ msgstr "потужність:\t%s"
 
 #: src/aclock.cc:179
 msgid "CLOCK"
-msgstr ""
+msgstr "ГОДИННИК"
 
 #: src/aclock.cc:185
 msgid "Date"
-msgstr ""
+msgstr "Дата"
 
 #: src/aclock.cc:186 src/themes.cc:81
 msgid "Default"
-msgstr "Усталено"
+msgstr "Типово"
 
 #: src/aclock.cc:187 src/acpustatus.cc:663 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
-msgstr ""
+msgstr "_Вимкнути"
 
 #: src/aclock.cc:188
 msgid "_UTC"
-msgstr ""
+msgstr "_UTC"
 
 #: src/acpustatus.cc:295
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
-msgstr "Завантаження процесора %s: %3.2f %3.2f %3.2f, %u"
+msgstr "Завантаження ЦП%s: %3.2f %3.2f %3.2f, %u"
 
 #: src/acpustatus.cc:301
-#, fuzzy, c-format
-#| msgid ""
-#| "\n"
-#| "Ram (free): %5.2f (%.2f) M"
+#, c-format
 msgid ""
 "\n"
 "Ram (free): %5.3f (%.3f) G"
 msgstr ""
 "\n"
-"ОП (вільна): %5.2f (%.2f) МБ"
+"ОЗП (вільно): %5.3f (%.3f) Гб"
 
 #: src/acpustatus.cc:306
-#, fuzzy, c-format
-#| msgid ""
-#| "\n"
-#| "Swap (free): %.2f (%.2f) M"
+#, c-format
 msgid ""
 "\n"
 "Swap (free): %.3f (%.3f) G"
 msgstr ""
 "\n"
-"Підкачка (вільна): %.2f (%.2f) МБ"
+"Підкачка (вільно): %.3f (%.3f) Гб"
 
 #: src/acpustatus.cc:312
 #, c-format
@@ -122,7 +115,7 @@ msgid ""
 "CPU Freq: %.3fGHz"
 msgstr ""
 "\n"
-"Частота процесора: %.3fГГц"
+"Частота ЦП: %.3fГГц"
 
 #: src/acpustatus.cc:348 src/acpustatus.cc:658
 msgid "CPU"
@@ -130,19 +123,16 @@ msgstr "ЦП"
 
 #: src/acpustatus.cc:348
 msgid "Load: "
-msgstr "Навантаження ЦП: "
+msgstr "Завантаження ЦП: "
 
 #: src/acpustatus.cc:363
-#, fuzzy, c-format
-#| msgid ""
-#| "\n"
-#| "Ram (free): %5.2f (%.2f) M"
+#, c-format
 msgid ""
 "\n"
 "Ram (user): %5.3f (%.3f) G"
 msgstr ""
 "\n"
-"ОП (вільна): %5.2f (%.2f) МБ"
+"ОЗП (користувач): %5.3f (%.3f) Гб"
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
@@ -153,19 +143,19 @@ msgstr "°C"
 #: src/acpustatus.cc:659
 #, c-format
 msgid "CPU%d"
-msgstr ""
+msgstr "ЦП%d"
 
 #: src/acpustatus.cc:665
 msgid "_Combine"
-msgstr ""
+msgstr "_Поєднати"
 
 #: src/acpustatus.cc:667
 msgid "_Separate"
-msgstr ""
+msgstr "_Розділити"
 
 #: src/akeyboard.cc:76
 msgid "Keyboard"
-msgstr ""
+msgstr "Клавіатура"
 
 #: src/amailbox.cc:64
 #, c-format
@@ -180,7 +170,7 @@ msgstr "Невірний до шлях до поштової скриньки: \
 #: src/amailbox.cc:140
 #, c-format
 msgid "DNS name lookup failed for %s"
-msgstr "Не вдалося знайти ім'я DNS: %s"
+msgstr "Не вдалося знайти ім'я DNS для %s"
 
 #: src/amailbox.cc:156
 #, c-format
@@ -200,7 +190,7 @@ msgstr "Не вдалося знайти команду %s"
 #: src/amailbox.cc:363 src/yapp.cc:418
 #, c-format
 msgid "Failed to execute %s"
-msgstr "Не вдалося виконати команду %s"
+msgstr "Не вдалося виконати %s"
 
 #: src/amailbox.cc:447
 #, c-format
@@ -213,10 +203,8 @@ msgid "Using MailBox \"%s\"\n"
 msgstr "Використовується поштова скринька: \"%s\"\n"
 
 #: src/amailbox.cc:801
-#, fuzzy
-#| msgid "_Suspend"
 msgid "Suspended"
-msgstr "_Призупити"
+msgstr "Призупинено"
 
 #: src/amailbox.cc:805
 msgid "Error checking mailbox."
@@ -225,7 +213,7 @@ msgstr "Помилка перевірки поштової скриньки."
 #: src/amailbox.cc:812
 #, c-format
 msgid "%ld mail message, %ld unread."
-msgstr "%ld поштове повідомлення,  непрочитаних: %ld."
+msgstr "%ld поштове повідомлення, %ld непрочитаних."
 
 #: src/amailbox.cc:813
 #, c-format
@@ -244,15 +232,15 @@ msgstr "%ld поштових повідомлень."
 
 #: src/amailbox.cc:961
 msgid "MAIL"
-msgstr ""
+msgstr "ПОШТА"
 
 #: src/amailbox.cc:963
 msgid "_Check"
-msgstr ""
+msgstr "_Перевірити"
 
 #: src/amailbox.cc:965
 msgid "_Suspend"
-msgstr "_Призупити"
+msgstr "_Призупинити"
 
 #: src/amemstatus.cc:144
 msgid "GB"
@@ -292,7 +280,7 @@ msgstr "Користувач: "
 
 #: src/amemstatus.cc:262
 msgid "MEM"
-msgstr ""
+msgstr "ПАМ'ЯТЬ"
 
 #: src/apppstatus.cc:268
 #, c-format
@@ -306,40 +294,34 @@ msgstr ""
 "Інтерфейс %s:\n"
 "  Поточна швидкість (ввід/вивід):\t%li %s/%li %s\n"
 "  Середня швидкість (ввід/вивід):\t%lli %s/%lli %s\n"
-"  Переслано даних (ввід/вивід):\t%lli %s/%lli %s\n"
-"  Час на лінії:\t%ld:%02ld:%02ld%s%s"
+"  Передано даних (ввід/вивід):\t%lli %s/%lli %s\n"
+"  Час в мережі:\t%ld:%02ld:%02ld%s%s"
 
 #: src/apppstatus.cc:284
 msgid "disconnected"
-msgstr ""
+msgstr "роз'єднано"
 
 #: src/apppstatus.cc:284
-#, fuzzy
-#| msgid "Rolldown"
 msgid "down"
-msgstr "Розгорнути смужку"
+msgstr "донизу"
 
 #: src/apppstatus.cc:705
 msgid "NET"
-msgstr ""
+msgstr "МЕРЕЖА"
 
 #: src/aworkspaces.cc:604 src/wmstatus.cc:207
 msgid "Workspace: "
-msgstr "Робоче місце: "
+msgstr "Робочий простір: "
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics
 #: src/fdospecgen.h:43
-#, fuzzy
-#| msgid "Graphics"
 msgid "2DGraphics"
-msgstr "Графіка"
+msgstr "2D Графіка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics
 #: src/fdospecgen.h:45
-#, fuzzy
-#| msgid "Graphics"
 msgid "3DGraphics"
-msgstr "Графіка"
+msgstr "3D Графіка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings or Utility
 #: src/fdospecgen.h:47 src/fdospecgen.h:49
@@ -353,175 +335,163 @@ msgstr "Аксесуари"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:53
-#, fuzzy
-#| msgid "Same Game"
 msgid "ActionGame"
-msgstr "Гра IceSame"
+msgstr "Екшн-Гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:55
 msgid "Adult"
-msgstr ""
+msgstr "Для дорослих"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:57
-#, fuzzy
-#| msgid "Same Game"
 msgid "AdventureGame"
-msgstr "Гра IceSame"
+msgstr "Пригодницька гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:59
 msgid "Amusement"
-msgstr ""
+msgstr "Розваги"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:61
-#, fuzzy
-#| msgid "Same Game"
 msgid "ArcadeGame"
-msgstr "Гра IceSame"
+msgstr "Аркадна гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:63
 msgid "Archiving"
-msgstr ""
+msgstr "Архівування"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:65
 msgid "Art"
-msgstr ""
+msgstr "Мистецтво"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:67
 msgid "ArtificialIntelligence"
-msgstr ""
+msgstr "Штучний інтелект"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:69
 msgid "Astronomy"
-msgstr ""
+msgstr "Астрономія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:71
 msgid "Audio"
-msgstr ""
+msgstr "Аудіо"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:73
 msgid "AudioVideo"
-msgstr ""
+msgstr "Аудіо та відео"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Audio or Video or AudioVideo
 #: src/fdospecgen.h:75
 msgid "AudioVideoEditing"
-msgstr ""
+msgstr "Аудіо та відео редагування"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:77
 msgid "Biology"
-msgstr ""
+msgstr "Біологія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:79
 msgid "BlocksGame"
-msgstr ""
+msgstr "Гра з блоками"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:81
-#, fuzzy
-#| msgid "Games"
 msgid "BoardGame"
-msgstr "Ігри"
+msgstr "Настільна гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:83
 msgid "Building"
-msgstr ""
+msgstr "Збирання"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:85
 msgid "Calculator"
-msgstr ""
+msgstr "Калькулятор"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:87
 msgid "Calendar"
-msgstr ""
+msgstr "Календар"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:89
-#, fuzzy
-#| msgid "Games"
 msgid "CardGame"
-msgstr "Ігри"
+msgstr "Карткова гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:91
 msgid "Chart"
-msgstr ""
+msgstr "Діаграма"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:93
 msgid "Chat"
-msgstr ""
+msgstr "Гутірка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:95
 msgid "Chemistry"
-msgstr ""
+msgstr "Хімія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:97
 msgid "Clock"
-msgstr ""
+msgstr "Годинник"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility;Archiving
 #: src/fdospecgen.h:99
 msgid "Compression"
-msgstr ""
+msgstr "Стискання"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:101
 msgid "ComputerScience"
-msgstr ""
+msgstr "Інформатика"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:103
 msgid "Construction"
-msgstr ""
+msgstr "Конструювання"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:105
 msgid "ContactManagement"
-msgstr ""
+msgstr "Управління контактами"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:107
 msgid "Core"
-msgstr ""
+msgstr "Ядро"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:109
 msgid "DataVisualization"
-msgstr ""
+msgstr "Візуалізація даних"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office or Development or AudioVideo
 #: src/fdospecgen.h:111
 msgid "Database"
-msgstr ""
+msgstr "База даних"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:113
 msgid "Debugger"
-msgstr ""
+msgstr "Зневадження"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings
 #: src/fdospecgen.h:115
-#, fuzzy
-#| msgid "Settings"
 msgid "DesktopSettings"
-msgstr "Параметри"
+msgstr "Налаштування робочого столу"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:117
@@ -531,27 +501,27 @@ msgstr "Розробка"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:119
 msgid "Dialup"
-msgstr ""
+msgstr "Набирання номеру"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office or TextTools
 #: src/fdospecgen.h:121
 msgid "Dictionary"
-msgstr ""
+msgstr "Словник"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo
 #: src/fdospecgen.h:123
 msgid "DiscBurning"
-msgstr ""
+msgstr "Записування дисків"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:125
 msgid "Documentation"
-msgstr ""
+msgstr "Документація"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:127
 msgid "Economy"
-msgstr ""
+msgstr "Економіка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:129
@@ -566,95 +536,87 @@ msgstr "Освіта"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:133
 msgid "Electricity"
-msgstr ""
+msgstr "Електрика"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:135
 msgid "Electronics"
-msgstr ""
+msgstr "Електроніка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office or Network
 #: src/fdospecgen.h:137
 msgid "Email"
-msgstr ""
+msgstr "Е-пошта"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System or Game
 #: src/fdospecgen.h:139
-#, fuzzy
-#| msgid "Education"
 msgid "Emulator"
-msgstr "Освіта"
+msgstr "Емулятор"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:141
 msgid "Engineering"
-msgstr ""
+msgstr "Інженерія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:143
 msgid "Feed"
-msgstr ""
+msgstr "Передавання"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System;FileTools
 #: src/fdospecgen.h:145
 msgid "FileManager"
-msgstr ""
+msgstr "Файловий Менеджер"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility or System
 #: src/fdospecgen.h:147
 msgid "FileTools"
-msgstr ""
+msgstr "Файлові знаряддя"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:149
 msgid "FileTransfer"
-msgstr ""
+msgstr "Передавання файлів"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System
 #: src/fdospecgen.h:151
-#, fuzzy
-#| msgid "System"
 msgid "Filesystem"
-msgstr "Система"
+msgstr "Файлова система"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:153
-#, fuzzy
-#| msgid "Cancel"
 msgid "Finance"
-msgstr "Скасувати"
+msgstr "Фінанси"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:155
 msgid "FlowChart"
-msgstr ""
+msgstr "Блок-схема"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:157
 msgid "GUIDesigner"
-msgstr ""
+msgstr "Проектування GUI"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:159
-#, fuzzy
-#| msgid "Games"
 msgid "Game"
-msgstr "Ігри"
+msgstr "Гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:161
 msgid "Geography"
-msgstr ""
+msgstr "Географія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:163
 msgid "Geology"
-msgstr ""
+msgstr "Геологія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:165
 msgid "Geoscience"
-msgstr ""
+msgstr "Геонауки"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:167
@@ -664,117 +626,107 @@ msgstr "Графіка"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network or Audio
 #: src/fdospecgen.h:169
 msgid "HamRadio"
-msgstr ""
+msgstr "Аматорський радіозв'язок"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings
 #: src/fdospecgen.h:171
-#, fuzzy
-#| msgid "Settings"
 msgid "HardwareSettings"
-msgstr "Параметри"
+msgstr "Параметри обладнання"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:173
 msgid "History"
-msgstr ""
+msgstr "Історія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:175
 msgid "Humanities"
-msgstr ""
+msgstr "Гуманітарні науки"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:177
 msgid "IDE"
-msgstr ""
+msgstr "Середовище розробки"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:179
 msgid "IRCClient"
-msgstr ""
+msgstr "IRC-клієнт"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:181
-#, fuzzy
-#| msgid "_Terminate Process"
 msgid "ImageProcessing"
-msgstr "_Перервати процес"
+msgstr "Обробка зображень"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:183
 msgid "InstantMessaging"
-msgstr ""
+msgstr "Миттєві повідомлення"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:185
-#, fuzzy
-#| msgid "Games"
 msgid "KidsGame"
-msgstr "Ігри"
+msgstr "Дитяча гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:187
-#, fuzzy
-#| msgid "Language:"
 msgid "Languages"
-msgstr "Мова:"
+msgstr "Мови"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:189
 msgid "Literature"
-msgstr ""
+msgstr "Література"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:191
-#, fuzzy
-#| msgid "Games"
 msgid "LogicGame"
-msgstr "Ігри"
+msgstr "Логічна гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science or Utility
 #: src/fdospecgen.h:193
 msgid "Maps"
-msgstr ""
+msgstr "Мапи"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:195
 msgid "Math"
-msgstr ""
+msgstr "Математика"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:197
 msgid "MedicalSoftware"
-msgstr ""
+msgstr "Медичне ПЗ"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Audio
 #: src/fdospecgen.h:199
 msgid "Midi"
-msgstr ""
+msgstr "MIDI"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Audio
 #: src/fdospecgen.h:201
 msgid "Mixer"
-msgstr ""
+msgstr "Мікшер"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System or Network
 #: src/fdospecgen.h:203
 msgid "Monitor"
-msgstr ""
+msgstr "Моніторинг"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:205
 msgid "Motif"
-msgstr ""
+msgstr "Motif"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:207
 msgid "Multimedia"
-msgstr "Мультимедія"
+msgstr "Мультимедіа"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo or Education
 #: src/fdospecgen.h:209
 msgid "Music"
-msgstr ""
+msgstr "Музика"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:211
@@ -784,17 +736,17 @@ msgstr "Мережа"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:213
 msgid "News"
-msgstr ""
+msgstr "Новини"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education;Math or Science;Math
 #: src/fdospecgen.h:215
 msgid "NumericalAnalysis"
-msgstr ""
+msgstr "Числовий аналіз"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics;Scanning
 #: src/fdospecgen.h:217
 msgid "OCR"
-msgstr ""
+msgstr "Розпізнавання тексту"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:219
@@ -809,104 +761,102 @@ msgstr "Інші"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:223
 msgid "P2P"
-msgstr ""
+msgstr "P2P"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:225
 msgid "PDA"
-msgstr ""
+msgstr "КПК"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings
 #: src/fdospecgen.h:227
 msgid "PackageManager"
-msgstr ""
+msgstr "Менеджер пакетів"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education;ComputerScience or Science;ComputerScience
 #: src/fdospecgen.h:229
 msgid "ParallelComputing"
-msgstr ""
+msgstr "Паралельні обчислення"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics or Office
 #: src/fdospecgen.h:231
 msgid "Photography"
-msgstr ""
+msgstr "Фотографія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:233
 msgid "Physics"
-msgstr ""
+msgstr "Фізика"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Audio or Video or AudioVideo
 #: src/fdospecgen.h:235
 msgid "Player"
-msgstr ""
+msgstr "Програвач"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:237
 msgid "Presentation"
-msgstr ""
+msgstr "Презентація"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings;HardwareSettings
 #: src/fdospecgen.h:239
 msgid "Printing"
-msgstr ""
+msgstr "Друкування"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:241
 msgid "Profiling"
-msgstr ""
+msgstr "Профілювання"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office or Development
 #: src/fdospecgen.h:243
 msgid "ProjectManagement"
-msgstr ""
+msgstr "Управління проектами"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics or Office
 #: src/fdospecgen.h:245
 msgid "Publishing"
-msgstr ""
+msgstr "Видавництво"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics;2DGraphics
 #: src/fdospecgen.h:247
-#, fuzzy
-#| msgid "Graphics"
 msgid "RasterGraphics"
-msgstr "Графіка"
+msgstr "Растрова графіка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Audio or Video or AudioVideo
 #: src/fdospecgen.h:249
 msgid "Recorder"
-msgstr ""
+msgstr "Запис"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:251
 msgid "RemoteAccess"
-msgstr ""
+msgstr "Віддалений доступ"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:253
 msgid "RevisionControl"
-msgstr ""
+msgstr "Керування версіями"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:255
 msgid "Robotics"
-msgstr ""
+msgstr "Робототехніка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:257
 msgid "RolePlaying"
-msgstr ""
+msgstr "Рольові ігри"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics
 #: src/fdospecgen.h:259
 msgid "Scanning"
-msgstr ""
+msgstr "Сканування"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:261
 msgid "Science"
-msgstr ""
+msgstr "Наука"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:263
@@ -916,60 +866,52 @@ msgstr "Зберігачі екрану"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings or System
 #: src/fdospecgen.h:265
 msgid "Security"
-msgstr ""
+msgstr "Безпека"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Audio
 #: src/fdospecgen.h:267
 msgid "Sequencer"
-msgstr ""
+msgstr "Cеквенсер"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:269
 msgid "Settings"
-msgstr "Параметри"
+msgstr "Налаштування"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:271
 msgid "Shooter"
-msgstr ""
+msgstr "Стрілялка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:273
-#, fuzzy
-#| msgid "Education"
 msgid "Simulation"
-msgstr "Освіта"
+msgstr "Моделювання"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science or Utility
 #: src/fdospecgen.h:275
 msgid "Spirituality"
-msgstr ""
+msgstr "Духовність"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:277
-#, fuzzy
-#| msgid "Support"
 msgid "Sports"
-msgstr "Підтримка"
+msgstr "Спорт"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:279
-#, fuzzy
-#| msgid "Support"
 msgid "SportsGame"
-msgstr "Підтримка"
+msgstr "Спортивна гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:281
 msgid "Spreadsheet"
-msgstr ""
+msgstr "Електронна таблиця"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:283
-#, fuzzy
-#| msgid "Same Game"
 msgid "StrategyGame"
-msgstr "Гра IceSame"
+msgstr "Стратегічна гра"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:285
@@ -979,71 +921,67 @@ msgstr "Система"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Video
 #: src/fdospecgen.h:287
 msgid "TV"
-msgstr ""
+msgstr "ТБ"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:289
 msgid "Telephony"
-msgstr ""
+msgstr "Телефонія"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:291
 msgid "TelephonyTools"
-msgstr ""
+msgstr "Інструменти телефонії"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System
 #: src/fdospecgen.h:293
 msgid "TerminalEmulator"
-msgstr ""
+msgstr "Емулятор терміналу"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:295
-#, fuzzy
-#| msgid "Editors"
 msgid "TextEditor"
-msgstr "Редактори"
+msgstr "Текстовий редактор"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:297
 msgid "TextTools"
-msgstr ""
+msgstr "Текстові інструменти"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:299
 msgid "Translation"
-msgstr ""
+msgstr "Перекладання"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Audio
 #: src/fdospecgen.h:301
 msgid "Tuner"
-msgstr ""
+msgstr "Приймач"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:303
 msgid "Utility"
-msgstr ""
+msgstr "Знаряддя"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics;2DGraphics
 #: src/fdospecgen.h:305
-#, fuzzy
-#| msgid "Graphics"
 msgid "VectorGraphics"
-msgstr "Графіка"
+msgstr "Векторна графіка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:307
 msgid "Video"
-msgstr ""
+msgstr "Відео"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:309
 msgid "VideoConference"
-msgstr ""
+msgstr "Відеоконференція"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics or Office
 #: src/fdospecgen.h:311
 msgid "Viewer"
-msgstr ""
+msgstr "Переглядач"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:313
@@ -1053,19 +991,17 @@ msgstr "WINE"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:315
 msgid "WebBrowser"
-msgstr ""
+msgstr "Web-переглядач"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network or Development
 #: src/fdospecgen.h:317
-#, fuzzy
-#| msgid "Development"
 msgid "WebDevelopment"
-msgstr "Розробка"
+msgstr "Web-розробка"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:319
 msgid "WordProcessor"
-msgstr ""
+msgstr "Текстовий процесор"
 
 #: src/icehelp.cc:1326
 msgid "Back"
@@ -1101,35 +1037,31 @@ msgstr "Покажчик"
 
 #: src/icehelp.cc:1337
 msgid "Find..."
-msgstr ""
+msgstr "Пошук..."
 
 #: src/icehelp.cc:1337
-#, fuzzy
-#| msgid "Ctrl+Q"
 msgid "Ctrl+F"
-msgstr "Ctrl+Q"
+msgstr "Ctrl+F"
 
 #: src/icehelp.cc:1338
 msgid "Find next"
-msgstr ""
+msgstr "Знайти далі"
 
 #: src/icehelp.cc:1338
 msgid "F3"
-msgstr ""
+msgstr "F3"
 
 #: src/icehelp.cc:1340
 msgid "Open in Browser"
-msgstr ""
+msgstr "Відкрити у Web-переглядачі"
 
 #: src/icehelp.cc:1340
-#, fuzzy
-#| msgid "Ctrl+Q"
 msgid "Ctrl+B"
-msgstr "Ctrl+Q"
+msgstr "Ctrl+B"
 
 #: src/icehelp.cc:1342
 msgid "Reload"
-msgstr ""
+msgstr "Перезавантажити"
 
 #: src/icehelp.cc:1342 src/icesame.cc:60
 msgid "Ctrl+R"
@@ -1148,10 +1080,8 @@ msgid "Icewm(1)"
 msgstr "Icewm(1)"
 
 #: src/icehelp.cc:1348
-#, fuzzy
-#| msgid "Ctrl+Q"
 msgid "Ctrl+I"
-msgstr "Ctrl+Q"
+msgstr "Ctrl+I"
 
 #: src/icehelp.cc:1350
 msgid "Icewmbg(1)"
@@ -1163,17 +1093,15 @@ msgstr "Icesound(1)"
 
 #: src/icehelp.cc:1354
 msgid "FAQ"
-msgstr "ЧАП"
+msgstr "Поширені питання"
 
 #: src/icehelp.cc:1356
 msgid "Manual"
 msgstr "Посібник"
 
 #: src/icehelp.cc:1356
-#, fuzzy
-#| msgid "Ctrl+Q"
 msgid "Ctrl+M"
-msgstr "Ctrl+Q"
+msgstr "Ctrl+M"
 
 #: src/icehelp.cc:1358
 msgid "Support"
@@ -1189,7 +1117,7 @@ msgstr "Ctrl+T"
 
 #: src/icehelp.cc:1362
 msgid "Website"
-msgstr "Веб-сайт"
+msgstr "Web-сайт"
 
 #: src/icehelp.cc:1362 src/iceview.cc:57
 msgid "Ctrl+W"
@@ -1226,7 +1154,7 @@ msgstr "Не вдалося відкрити файл для читання."
 
 #: src/icehelp.cc:2317
 msgid "Failed to create a temporary file"
-msgstr "Помилка створення тимчасового файлу %s"
+msgstr "Помилка створення тимчасового файлу"
 
 #: src/icehelp.cc:2410
 #, c-format
@@ -1240,11 +1168,11 @@ msgstr "Не вдалося розпакувати %s"
 
 #: src/icehelp.cc:2441
 msgid "Could not locate curl or wget in PATH"
-msgstr "'curl' чи 'wget' в PATH не знайдені"
+msgstr "Не вдалося знайти curl або wget у PATH"
 
 #: src/icehelp.cc:2445
 msgid "Unsafe characters in URL"
-msgstr "Небезпечні знаки в посиланні"
+msgstr "Небезпечні знаки в URL-посиланні"
 
 #: src/icehelp.cc:2482
 #, c-format
@@ -1298,14 +1226,14 @@ msgstr ""
 "  --sync              Синхронізувати команди X11.\n"
 "\n"
 "  -B                  Показати сторінку довідки IceWM icewmbg.\n"
-"  -b, --bugs          Показати звіти про помилки IceWM (спрощено).\n"
-"  -f, --faq           Показати ЧАП та Поради IceWM.\n"
-"  -g                  Показати веб-сайт IceWM Github.\n"
+"  -b, --bugs          Показати звіти про вади IceWM (спрощено).\n"
+"  -f, --faq           Показати Поширені питання та Поради IceWM.\n"
+"  -g                  Показати Web-сайт IceWM Github.\n"
 "  -i, --icewm         Показати сторінку довідки IceWM icewm.\n"
 "  -m, --manual        Показати Посібник IceWM (типово).\n"
 "  -s                  Показати сторінку довідки IceWM icesound.\n"
 "  -t, --theme         Показати поради з тем IceWM.\n"
-"  -w, --website       Показати веб-сайт IceWM.\n"
+"  -w, --website       Показати Web-сайт IceWM.\n"
 "\n"
 "  -V, --version       Показати версію та вийти.\n"
 "  -h, --help          Показати цю довідку та вийти.\n"
@@ -1313,15 +1241,15 @@ msgstr ""
 "Змінні оточення:\n"
 "  DISPLAY=НАЗВА        Назва сервера X для використання.\n"
 "\n"
-"Для надсилання звітів про помилки, питань до підтримки чи коментарів "
-"відвідайте:\n"
+"Для надсилання звітів про вади, питань до підтримки чи коментарів відвідайте:"
+"\n"
 "%s\n"
 "\n"
 
 #: src/icehelp.cc:2572
 #, c-format
 msgid "Ignoring option '%s'"
-msgstr "Невідомий параметр '%s'"
+msgstr "Відхилений параметр '%s'"
 
 #: src/icelist.cc:60
 msgid "List View"
@@ -1357,11 +1285,11 @@ msgstr "Перезапустити"
 
 #: src/icesame.cc:65
 msgid "Same Game"
-msgstr "Гра IceSame"
+msgstr "Гра SameGame"
 
 #: src/icesh.cc:73
 msgid "For help please consult the man page icesh(1).\n"
-msgstr ""
+msgstr "Для довідки зверніться до сторінки посібника icesh(1).\n"
 
 #: src/icesh.cc:1541
 #, c-format
@@ -1371,80 +1299,71 @@ msgstr "Іменовані символи у домені \"%s\" (числови
 #: src/icesh.cc:1599
 #, c-format
 msgid "Workspace out of range: %ld"
-msgstr "Робоче місце за межами діапазону: %ld"
+msgstr "Робочий простір за межами діапазону: %ld"
 
 #: src/icesh.cc:1620
 #, c-format
 msgid "Invalid workspace name: `%s'"
-msgstr "Невірне ім'я робочого простору: \"%s\""
+msgstr "Невірне ім'я робочого простору: `%s'"
 
 #: src/icesh.cc:1922
 msgid "GNOME window layer"
-msgstr "Рівень вікна GNOME"
+msgstr "Віконний пласт GNOME"
 
 #: src/icesh.cc:1923
 msgid "IceWM tray option"
-msgstr "Опція панелі завдань IceWM"
+msgstr "Параметр панелі IceWM"
 
 #: src/icesh.cc:1924
 msgid "Gravity symbols"
-msgstr ""
+msgstr "Gravity-маркери"
 
 #: src/icesh.cc:1925
-#, fuzzy
-#| msgid "Favorite applications"
 msgid "Motif functions"
-msgstr "Улюблені аплікації"
+msgstr "Функції Motif"
 
 #: src/icesh.cc:1926
-#, fuzzy
-#| msgid "Favorite applications"
 msgid "Motif decorations"
-msgstr "Улюблені аплікації"
+msgstr "Прикраси Motif"
 
 #: src/icesh.cc:1927
-#, fuzzy
-#| msgid "GNOME window state"
 msgid "EWMH window state"
-msgstr "Стан вікна GNOME"
+msgstr "Стан вікна EWMH"
 
 #: src/icesh.cc:2009 src/icesh.cc:2082
 #, c-format
 msgid "workspace #%d: `%s'\n"
-msgstr "робоче місце #%d: \"%s\"\n"
+msgstr "робочий простір #%d: `%s'\n"
 
 #: src/icesh.cc:2317 src/icesh.cc:3749 src/icesh.cc:4222
-#, fuzzy, c-format
-#| msgid "Invalid argument: `%s'."
+#, c-format
 msgid "Invalid state: `%s'."
-msgstr "Невірний аргумент: \"%s\"."
+msgstr "Недійсний стан: `%s'."
 
 #: src/icesh.cc:3174
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
-msgstr ""
+msgstr "Не вдається отримати геометрію вікна 0x%lx"
 
 #: src/icesh.cc:3199
-#, fuzzy, c-format
-#| msgid "Invalid argument: `%s'."
+#, c-format
 msgid "Invalid Xinerama: `%s'."
-msgstr "Невірний аргумент: \"%s\"."
+msgstr "Неспроможність Xinerama: `%s'."
 
 #: src/icesh.cc:3331 src/icesh.cc:3381
-#, fuzzy, c-format
-#| msgid "Invalid argument: `%s'."
+#, c-format
 msgid "Invalid argument: `%s'"
-msgstr "Невірний аргумент: \"%s\"."
+msgstr "Невірний аргумент: `%s'"
 
 #: src/icesh.cc:3347
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
-msgstr "Дія \"%s\" вимагає як мінімум %d аргументу(ів)."
+msgstr "Дія `%s' вимагає як мінімум %d аргументу(ів)."
 
 #: src/icesh.cc:3356
 #, c-format
 msgid "Invalid expression: `%s'"
-msgstr "Неправильний вираз: \"%s\""
+msgstr "Невірний вираз: `%s'"
 
 #: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1195
 #: src/yxapp.cc:1022
@@ -1455,14 +1374,13 @@ msgstr ""
 "$DISPLAY встановлена."
 
 #: src/icesh.cc:3483
-#, fuzzy, c-format
-#| msgid "Unexepected menu keyword: '%s'"
+#, c-format
 msgid "Unexpected: `%s'."
-msgstr "Неочікуване ключове слово меню: '%s'"
+msgstr "Не передбачено: `%s'."
 
 #: src/icesh.cc:3512
 msgid "No windows found."
-msgstr ""
+msgstr "Вікна не знайдені."
 
 #: src/icesh.cc:3528
 msgid "No actions specified."
@@ -1471,32 +1389,29 @@ msgstr "Не зазначено ніяких дій."
 #: src/icesh.cc:3666
 #, c-format
 msgid "Invalid window identifier: `%s'"
-msgstr "Невірний ідентифікатор вікна: \"%s\""
+msgstr "Невірний ідентифікатор вікна: `%s'"
 
 #: src/icesh.cc:3683
-#, fuzzy, c-format
-#| msgid "Invalid argument: `%s'."
+#, c-format
 msgid "Invalid PID: `%s'"
-msgstr "Невірний аргумент: \"%s\"."
+msgstr "Недійсний PID: `%s'"
 
 #: src/icesh.cc:3719
-#, fuzzy, c-format
-#| msgid "Invalid argument: `%s'."
+#, c-format
 msgid "Invalid layer: `%s'."
-msgstr "Невірний аргумент: \"%s\"."
+msgstr "Недійсний пласт: `%s'."
 
 #: src/icesh.cc:4530
 #, c-format
 msgid "Unknown action: `%s'"
-msgstr "Невідома дія: \"%s\""
+msgstr "Невідома дія: `%s'"
 
 #: src/iceskt.cc:41
 #, c-format
 msgid "Socket error: %d"
-msgstr "Помилка гнізда: %d"
+msgstr "Помилка сокета: %d"
 
 #: src/icesm.cc:69
-#, fuzzy
 msgid ""
 "  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
 "  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
@@ -1513,12 +1428,16 @@ msgid ""
 "  -s, --sound         Also start icesound.\n"
 msgstr ""
 "  -c, --config=ФАЙЛ   Уможливлює IceWM завантажувати параметри із ФАЙЛ.\n"
-"  -t, --theme=ФАЙЛ   Уможливлює IceWM завантажувати тему із ФАЙЛ.\n"
+"  -t, --theme=ФАЙЛ    Уможливлює IceWM завантажувати тему із ФАЙЛ.\n"
 "\n"
-"  -d, --display=НАЗВА      Використовуйте НАЗВА для з'єднання із сервером "
-"X.\n"
-"  --sync              Синхронізація комунікації із сервером X11.\n"
+"  -d, --display=ІМ'Я  Задіяти ІМ'Я для з'єднання із сервером X.\n"
+"  -a, --alpha         Задіяти 32-бітову візуальну прозорість.\n"
+"  --sync              Синхронізувати зв'язок із сервером X11.\n"
 "\n"
+"  -i, --icewm=ФАЙЛ    Використати ФАЙЛ в якості менеджера вікон IceWM.\n"
+"  -o, --output=ФАЙЛ   Перенаправити весь системний вивід у ФАЙЛ.\n"
+"\n"
+"  -b, --nobg          Не запускати icewmbg.\n"
 "  -n, --notray        Не запускати icewmtray.\n"
 "  -s, --sound         Також запустити icesound.\n"
 
@@ -1531,6 +1450,13 @@ msgid ""
 "  -g, --catchsegv     Let \"/usr/bin/catchsegv\" run icewm.\n"
 "                      Gives a backtrace if icewm segfaults.\n"
 msgstr ""
+"\n"
+"Параметри зневадження:\n"
+"  -v, --valgrind      Дозволяє \"/usr/bin/valgrind\" запускати icewm.\n"
+"                      Ретельно вивчає виконання процесу icewm.\n"
+"  -g, --catchsegv     Дозволяє \"/usr/bin/catchsegv\" запускати icewm.\n"
+"                      Виконує зворотне відстеження, якщо у icewm з'явиться "
+"несправність segfaults.\n"
 
 #: src/icesm.cc:188
 #, c-format
@@ -1538,10 +1464,9 @@ msgid "Unknown option '%s'"
 msgstr "Невідомий параметр '%s'"
 
 #: src/icesm.cc:462 src/icesm.cc:622
-#, fuzzy, c-format
-#| msgid "Restart"
+#, c-format
 msgid "restart %s."
-msgstr "Перезапустити"
+msgstr "перезапустити %s."
 
 #: src/icesm.cc:468
 #, c-format
@@ -1562,17 +1487,21 @@ msgid ""
 "\t2: Abort this session?\n"
 "\t3: Run a terminal?\n"
 msgstr ""
+" IceWM аварійно зупинився вдруге за 10 секунд. \n"
+" Що ви бажаєте:\n"
+"\n"
+"\t1: Перезапустити IceWM?\n"
+"\t2: Перервати поточний сеанс?\n"
+"\t3: Запустити термінал?\n"
 
 #: src/icesm.cc:519
-#, fuzzy
-#| msgid "IceWM tray option"
 msgid "IceWM crash response"
-msgstr "Опція панелі завдань IceWM"
+msgstr "Відгук на збій IceWM"
 
 #: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
 #, c-format
 msgid "Playing sample #%d (%s)"
-msgstr "Граю зразок #%d (%s)"
+msgstr "Програвання зразка #%d (%s)"
 
 #: src/icesound.cc:329
 #, c-format
@@ -1629,7 +1558,7 @@ msgstr "Збій ao_play"
 #: src/icesound.cc:676
 #, c-format
 msgid "Unrecognized option: %s\n"
-msgstr "Невідома опція: %s\n"
+msgstr "Невідомий параметр: %s\n"
 
 #: src/icesound.cc:679 src/icesound.cc:972
 #, c-format
@@ -1637,63 +1566,7 @@ msgid "Unrecognized argument: %s\n"
 msgstr "Невідомий аргумент: %s\n"
 
 #: src/icesound.cc:688
-#, fuzzy, c-format
-#| msgid ""
-#| "Usage: %s [OPTION]...\n"
-#| "\n"
-#| "Plays audio files on GUI events raised by IceWM.\n"
-#| "The currently configured sound interfaces are: %s.\n"
-#| "Icesound will choose the first of these which is usable.\n"
-#| "\n"
-#| "Options:\n"
-#| "\n"
-#| " -d, --display=DISPLAY   X11 display used by IceWM (default: $DISPLAY).\n"
-#| "\n"
-#| " -s, --sample-dir=DIR    Specifies a directory with sound files.\n"
-#| "                         Default is $HOME/.config/icewm/sounds.\n"
-#| "\n"
-#| " -i, --interface=LIST    Specifies audio output interfaces. One or more "
-#| "of:\n"
-#| "                         %s separated by commas.\n"
-#| "\n"
-#| " -D, --device=DEVICE     Backwards compatibility only: the default "
-#| "device. \n"
-#| "                         Please prefer one of the -A/-O/-S options.\n"
-#| "\n"
-#| " -O, --oss=DEVICE        Specifies the OSS device (default: \"%s\").\n"
-#| "\n"
-#| " -A, --alsa=DEVICE       Specifies the ALSA device (default: \"%s\").\n"
-#| "\n"
-#| " -S, --server=ADDR:PORT  Specifies the ESD server address and port "
-#| "number.\n"
-#| "                         For ESD the default is \"localhost:16001\".\n"
-#| "\n"
-#| " -z, --snooze=millisecs  Specifies the snooze interval between sound "
-#| "events\n"
-#| "                         in milliseconds. Default is 500 milliseconds.\n"
-#| "\n"
-#| " -p, --play=sound        Plays the given sound (name or number) and "
-#| "exits.\n"
-#| "\n"
-#| " -l, --list-files        Lists the available sound file paths and exits.\n"
-#| "\n"
-#| "     --list-sounds       Lists the supported sound filenames and exits.\n"
-#| "\n"
-#| "     --list-interfaces   Lists the supported audio interfaces and exits.\n"
-#| "\n"
-#| " -v, --verbose           Be verbose and print out each sound event.\n"
-#| "\n"
-#| " -V, --version           Prints version information and exits.\n"
-#| "\n"
-#| " -h, --help              Prints this help screen and exits.\n"
-#| "\n"
-#| "Return values:\n"
-#| "\n"
-#| "  0    Success.\n"
-#| "  1    General error.\n"
-#| "  2    Command line error.\n"
-#| "  3    Subsystems error (ie cannot connect to server).\n"
-#| "\n"
+#, c-format
 msgid ""
 "Usage: %s [OPTION]...\n"
 "\n"
@@ -1745,35 +1618,32 @@ msgid ""
 msgstr ""
 "Використання: %s [ПАРАМЕТР]...\n"
 "\n"
-"Відтворює аудіо файли на події графічного інтерфейсу користувача, спричинені "
+"Відтворює аудіо файли на події графічного інтерфейсу користувача, викликані "
 "IceWM.\n"
 "Для виведення звуку використовується: %s.\n"
 "Icesound вибирає перший доступний пристрій.\n"
 "\n"
 "Параметри:\n"
 "\n"
-"-d, --display=DISPLAY         Дисплей, який використовується у IceWM "
-"(усталено: $DISPLAY).\n"
-"-s, --sample-dir=DIR          Вказує теку, яка містить\n"
-"                              звукові файли (наприклад ~/.icewm/sounds).\n"
-"-i, --interface=TARGET        Вказує цільову оболонку виведення \n"
-"                            звуку, одна чи декілька із %s, відокремлені "
-"комами\n"
-"-D, --device=DEVICE           (лише ALSA та OSS) вказує пристрій для "
-"використання\n"
-"                               (усталений OSS: /dev/dsp; ALSA: усталений).\n"
+" -d, --display=DISPLAY         Дисплей, який використовується у IceWM "
+"(типово: $DISPLAY).\n"
 "\n"
-" -O, --oss=DEVICE        Вказується пристрій OSS (типово: \"%s 4\").\n"
+" -s, --sample-dir=DIR          Визначає теку, яка містить звукові файли.\n"
+"                               Типово це $HOME/.config/icewm/sounds.\n"
 "\n"
-" -A, --alsa=DEVICE       Вказується пристрій ALSA (типово: \"%s 5\").\n"
+" -i, --interface=LIST        Визначає цільову оболонку виведення звуку,\n"
+"                            одна чи декілька із: %s, відокремлені комами.\n"
 "\n"
-"-S, --server=ADDR:PORT        (ESD та YIFF) вказує адреси серверів та\n"
-"                              номер порту (усталений localhost:16001 для "
-"ESD\n"
-"                              та localhost:9433 для YIFF).\n"
-"-z, --snooze=millisecs  Вказується інтервал сну між звуковими подіями в "
-"мілісекундах.\n"
-"                         Типово це 500 мілісекунд.\n"
+" -D, --device=DEVICE           Тільки для зворотної сумісності: типовий "
+"пристрій.\n"
+"                               Використовуйте один з параметрів -O або -A.\n"
+"\n"
+" -O, --oss=DEVICE        Визначає пристрій OSS (типово: \"%s\").\n"
+"\n"
+" -A, --alsa=DEVICE       Визначає пристрій ALSA (типово: \"%s\").\n"
+"\n"
+" -z, --snooze=millisecs  Визначає інтервал сну між звуковими подіями\n"
+"                         в мілісекундах. Типово це 500 мілісекунд.\n"
 "\n"
 " -p, --play=sound        Відтворює заданий звук (назву або число) та "
 "здійснює вихід.\n"
@@ -1787,20 +1657,20 @@ msgstr ""
 "     --list-interfaces   Перераховує підтримувані інтерфейси аудіо та "
 "здійснює вихід.\n"
 "\n"
-"-v, --verbose                 Докладний вивід (записує кожну звукову подію "
-"у\n"
-"                              stdout).\n"
-"-V, --version                 Друкує інформацію про версію та здійснює "
+" -v, --verbose                 Докладний режим - друкує кожну звукову подію."
+"\n"
+"\n"
+" -V, --version                 Друкує інформацію про версію та здійснює "
 "вихід.\n"
-"-h, --help                    Друкує (цю) сторінку довідки та здійснює "
-"вихід.\n"
+"\n"
+" -h, --help                    Друкує сторінку довідки та здійснює вихід.\n"
 "\n"
 "Повертає значення:\n"
 "\n"
 "0     Успіх.\n"
 "1     Загальна помилка.\n"
 "2     Помилка командного рядка.\n"
-"3     Помилка підсистеми (тобто не можна з'єднатися із сервером).\n"
+"3     Помилка підсистеми (тобто не може з'єднатися із сервером).\n"
 "\n"
 
 #: src/icesound.cc:779
@@ -1830,7 +1700,7 @@ msgstr "Занадто швидко; %s буде проігноровано."
 #: src/icesound.cc:882
 #, c-format
 msgid "Support for the %s interface not compiled."
-msgstr "Підтримка інтерфейсу %s не вкомпільована."
+msgstr "Підтримку інтерфейсу %s не вбудовано."
 
 #: src/icesound.cc:915
 #, c-format
@@ -1871,7 +1741,7 @@ msgstr ""
 
 #: src/iceview.cc:55
 msgid "Hex View"
-msgstr "Вид Hex"
+msgstr "Hex перегляд"
 
 #: src/iceview.cc:55
 msgid "Ctrl+H"
@@ -1891,51 +1761,6 @@ msgid "Failed to load image '%s'."
 msgstr "Помилка завантаження зображення %s."
 
 #: src/icewmbg.cc:857
-#, fuzzy
-#| msgid ""
-#| "Usage: icewmbg [OPTIONS]\n"
-#| "Where multiple values can be given they are separated by commas.\n"
-#| "When image is a directory then all images from that directory are used.\n"
-#| "\n"
-#| "Options:\n"
-#| "  -p, --replace        Replace an existing icewmbg.\n"
-#| "  -q, --quit           Tell the running icewmbg to quit.\n"
-#| "  -r, --restart        Tell the running icewmbg to restart itself.\n"
-#| "\n"
-#| "  -c, --config=FILE    Load preferences from FILE.\n"
-#| "  -t, --theme=NAME     Load the theme with name NAME.\n"
-#| "\n"
-#| "  -i, --image=FILE(S)  Load background image(s) from FILE(S).\n"
-#| "  -k, --color=NAME(S)  Use background color(s) from NAME(S).\n"
-#| "\n"
-#| "  -s, --semis=FILE(S)  Load transparency image(s) from FILE(S).\n"
-#| "  -x, --trans=NAME(S)  Use transparency color(s) from NAME(S).\n"
-#| "\n"
-#| "  -e, --center=0/1     Disable/Enable centering background.\n"
-#| "  -a, --scaled=0/1     Disable/Enable scaling background.\n"
-#| "  -m, --multi=0/1      Disable/Enable multihead background.\n"
-#| "\n"
-#| "  --display=NAME       Use NAME to connect to the X server.\n"
-#| "  --sync               Synchronize communication with X11 server.\n"
-#| "\n"
-#| "  -h, --help           Print this usage screen and exit.\n"
-#| "  -V, --version        Prints version information and exits.\n"
-#| "\n"
-#| "Loads desktop background according to preferences file:\n"
-#| " DesktopBackgroundCenter  - Display desktop background centered\n"
-#| " DesktopBackgroundScaled  - Display desktop background scaled\n"
-#| " DesktopBackgroundColor   - Desktop background color(s)\n"
-#| " DesktopBackgroundImage   - Desktop background image(s)\n"
-#| " SupportSemitransparency  - Support for semitransparent terminals\n"
-#| " DesktopTransparencyColor - Semitransparency background color(s)\n"
-#| " DesktopTransparencyImage - Semitransparency background image(s)\n"
-#| " DesktopBackgroundMultihead - One background over all monitors\n"
-#| "\n"
-#| " center:0 scaled:0 = tiled\n"
-#| " center:1 scaled:0 = centered\n"
-#| " center:1 scaled:1 = fill one dimension and keep aspect ratio\n"
-#| " center:0 scaled:1 = fill both dimensions and keep aspect ratio\n"
-#| "\n"
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1986,17 +1811,18 @@ msgid ""
 "\n"
 msgstr ""
 "Використання: icewmbg [ПАРАМЕТРИ]\n"
-"При вказанні декількох параметрів вони розділяються пробілом.\n"
-"Якщо в --image вказати каталог, то будуть використані усі зображення в "
-"каталозі.\n"
+"При вказанні декількох параметрів вони розділяються комами.\n"
+"Якщо --image є текою, то будуть використані усі зображення в цій теці.\n"
 "\n"
 "Параметри:\n"
-" -p, --replace        Замінити наявний icewmbg.\n"
+"  -p, --replace        Замінити наявний icewmbg.\n"
 "  -q, --quit           Зупинити запущений icewmbg.\n"
 "  -r, --restart        Перезапустити запущений icewmbg.\n"
+"  -u, --shuffle        Перемішати/відновити сортування списку зображень тла."
 "\n"
-"  -c, --config=ФАЙЛ   Завантажити параметри із ФАЙЛ.\n"
-"  -t, --theme=ФАЙЛ    Завантажити тему із ФАЙЛ.\n"
+"\n"
+"  -c, --config=FILE   Завантажити параметри із FILE.\n"
+"  -t, --theme=NAME    Завантажити тему NAME.\n"
 "\n"
 "  -i, --image=FILE(S)  Завантажити фонові зображення із FILE(S).\n"
 "  -k, --color=NAME(S)  Використати фонові кольори із NAME(S).\n"
@@ -2005,8 +1831,9 @@ msgstr ""
 "  -x, --trans=NAME(S)  Використати кольори прозорості із NAME(S).\n"
 "\n"
 "  -e, --center=0/1     Вимкнути/Увімкнути центрування тла.\n"
-"  -a, --scaled=0/1     Вимкнутиa/Увімкнути масштабування тла.\n"
+"  -a, --scaled=0/1     Вимкнути/Увімкнути масштабування тла.\n"
 "  -m, --multi=0/1      Вимкнути/Увімкнути одне тло для всіх моніторів.\n"
+"  -y, --cycle=SECONDS  Змінювати тло циклічно кожні SECONDS секунд.\n"
 "\n"
 "  --display=NAME       Використати NAME для з'єднання із сервером X.\n"
 "  --sync               Синхронізувати комунікацію із сервером X11.\n"
@@ -2014,16 +1841,18 @@ msgstr ""
 "  -h, --help          Друкує цей екран довідки та здійснює вихід.\n"
 "  -V, --version       Друкує відомості про версію та здійснює вихід.\n"
 "\n"
-"Завантажує тло стільниці відповідно файлу налаштувань\n"
+"Завантажує тло стільниці відповідно файлу налаштувань:\n"
 " DesktopBackgroundCenter  - Відображає тло стільниці по центру\n"
 " DesktopBackgroundScaled  - Відображає тло стільниці масштабованим\n"
 " DesktopBackgroundColor   - Колір тла стільниці\n"
 " DesktopBackgroundImage   - Зображення тла стільниці\n"
+" ShuffleBackgroundImages  - Перемішати сортування списку зображень тла.\n"
 " SupportSemitransparency  - Підтримка напівпрозорих терміналів\n"
 " DesktopTransparencyColor - Колір для оголошення у напівпрозорих вікнах\n"
 " DesktopTransparencyImage - Зображення для оголошення у напівпрозорих "
 "вікнах\n"
 " DesktopBackgroundMultihead - Одне зображення тла для всіх моніторів\n"
+" CycleBackgroundsPeriod   - Секунди між циклічною зміною тла.\n"
 "\n"
 " center:0 scaled:0 = плиткою\n"
 " center:1 scaled:0 = по центру\n"
@@ -2034,16 +1863,15 @@ msgstr ""
 #: src/icewmbg.cc:1042 src/wmapp.cc:1774
 #, c-format
 msgid "Unrecognized option '%s'."
-msgstr "Нерозпізнаний параметр: %s."
+msgstr "Невідомий параметр '%s'."
 
 #: src/icewmbg.cc:1069
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Помилка запуску, інший процес icewmbg вже запущений."
 
 #: src/icewmhint.cc:20
-#, fuzzy
 msgid "Usage: icewmhint class.instance option arg\n"
-msgstr "Використання: icewmhint [сlasse.instanсe] option argument\n"
+msgstr "Використання: icewmhint class.instance option arg\n"
 
 #: src/icewmhint.cc:57
 #, c-format
@@ -2068,7 +1896,7 @@ msgstr ""
 "Використання: %s [ПАРАМЕТРИ]\n"
 "Параметри:\n"
 "%s\n"
-" -C, --copying       Друкую інформацію про ліцензію та здійсню вихід.\n"
+"  -C, --copying       Друкую інформацію про ліцензію та здійсню вихід.\n"
 "  -V, --version       Виводить інформацію про версію та здійснює вихід.\n"
 "  -h, --help          Виводить цей екран використання та здійснює вихід.\n"
 "\n"
@@ -2104,15 +1932,15 @@ msgstr "Мова:"
 
 #: src/wmabout.cc:56
 msgid "DoubleBuffer"
-msgstr ""
+msgstr "Подвійний буфер"
 
 #: src/wmabout.cc:57
 msgid "AlphaBlending"
-msgstr ""
+msgstr "Альфа-змішування"
 
 #: src/wmabout.cc:58
 msgid "Renderer:"
-msgstr ""
+msgstr "Відтворювач:"
 
 #: src/wmabout.cc:64
 msgid "icewm - About"
@@ -2142,15 +1970,15 @@ msgstr "_Вихід"
 
 #: src/wmapp.cc:495
 msgid "_Cancel logout"
-msgstr "_Відмінити вихід"
+msgstr "Ві_дмінити вихід"
 
 #: src/wmapp.cc:500
 msgid "Lock _Workstation"
-msgstr "Замкнути станцію"
+msgstr "Заблокувати _станцію"
 
 #: src/wmapp.cc:502 src/wmdialog.cc:72
 msgid "Re_boot"
-msgstr "Перезавантажити"
+msgstr "_Перезавантажити"
 
 #: src/wmapp.cc:504 src/wmdialog.cc:73
 msgid "Shut_down"
@@ -2159,7 +1987,7 @@ msgstr "Ви_мкнути комп'ютер"
 #. TRANSLATORS: This means "energy saving mode" or "suspended system". Not "interrupt". Not "hibernate".
 #: src/wmapp.cc:506 src/wmdialog.cc:69
 msgid "_Sleep mode"
-msgstr ""
+msgstr "При_спати"
 
 #: src/wmapp.cc:511
 msgid "Restart _Icewm"
@@ -2167,7 +1995,7 @@ msgstr "Перезапустити _IceWM"
 
 #: src/wmapp.cc:513
 msgid "Restart _Xterm"
-msgstr "Вийти у _Xterm"
+msgstr "Перезапустити _Xterm"
 
 #: src/wmapp.cc:523
 msgid "_Menu"
@@ -2183,7 +2011,7 @@ msgstr "_Док"
 
 #: src/wmapp.cc:526
 msgid "_OnTop"
-msgstr "Н_а верху"
+msgstr "_Зверху"
 
 #: src/wmapp.cc:527
 msgid "_Normal"
@@ -2191,7 +2019,7 @@ msgstr "_Нормальний"
 
 #: src/wmapp.cc:528
 msgid "_Below"
-msgstr "_Нижче"
+msgstr "Зн_изу"
 
 #: src/wmapp.cc:529
 msgid "D_esktop"
@@ -2218,16 +2046,12 @@ msgid "Ma_ximize"
 msgstr "Розгорнути"
 
 #: src/wmapp.cc:573 src/wmwinlist.cc:368
-#, fuzzy
-#| msgid "Maximize"
 msgid "Maximize_Vert"
-msgstr "Розгорнути"
+msgstr "Розгорнути по _вертикалі"
 
 #: src/wmapp.cc:574 src/wmwinlist.cc:369
-#, fuzzy
-#| msgid "Maximize"
 msgid "MaximizeHori_z"
-msgstr "Розгорнути"
+msgstr "Розгорнути по _горизонталі"
 
 #: src/wmapp.cc:577 src/wmwinlist.cc:370
 msgid "_Fullscreen"
@@ -2251,7 +2075,7 @@ msgstr "_Опустити"
 
 #: src/wmapp.cc:593 src/wmwinlist.cc:376
 msgid "La_yer"
-msgstr "Шар"
+msgstr "П_ласт"
 
 #: src/wmapp.cc:597 src/wmwinlist.cc:378
 msgid "Move _To"
@@ -2275,7 +2099,7 @@ msgstr "Закрити"
 
 #: src/wmapp.cc:615 src/wmwinlist.cc:397
 msgid "_Kill Client"
-msgstr "Вбити _клієнта"
+msgstr "Знищити _клієнта"
 
 #: src/wmapp.cc:618 src/wmdialog.cc:74 src/wmwinmenu.cc:133
 msgid "_Window list"
@@ -2283,7 +2107,7 @@ msgstr "_Список вікон"
 
 #: src/wmapp.cc:656
 msgid "Another window manager already running, exiting..."
-msgstr "Віконний менеджер вже запущений, виходжу..."
+msgstr "Інший менеджер вікон вже запущений, вихід..."
 
 #: src/wmapp.cc:731
 #, c-format
@@ -2296,13 +2120,15 @@ msgstr ""
 
 #: src/wmapp.cc:894
 msgid "Confirm Restart as Terminal"
-msgstr ""
+msgstr "Підтвердження перезапуску як термінал"
 
 #: src/wmapp.cc:895
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
+"Не керувати застосунками та перезапустити\n"
+"як термінал. Продовжити?"
 
 #: src/wmapp.cc:1196 src/yxapp.cc:1023
 msgid "<none>"
@@ -2327,12 +2153,6 @@ msgstr ""
 "стеку вікон.\n"
 
 #: src/wmapp.cc:1531
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "  -c, --config=FILE   Load preferences from FILE.\n"
-#| "  -t, --theme=FILE    Load theme from FILE.\n"
-#| "  --postpreferences   Print preferences after all processing.\n"
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2344,9 +2164,14 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 "\n"
+"  -a, --alpha         Використовувати 32-бітову візуальну прозорість.\n"
 "  -c, --config=FILE   Завантаження налаштувань із файлу FILE.\n"
 "  -t, --theme=FILE    Завантаження теми із файлу FILE.\n"
+"  -s, --splash=IMAGE  Швидко показувати IMAGE під час запуску.\n"
 "  --postpreferences   Друк налаштувань після завершення обробки.\n"
+"  --rewrite-preferences  Оновити існуючий файл налаштувань.\n"
+"  --trace=conf,icon   Відстеження шляхів, що використовуються для "
+"завантаження конфігурації.\n"
 
 #: src/wmapp.cc:1541
 #, c-format
@@ -2383,7 +2208,7 @@ msgstr ""
 "Запускає менеджер вікон IceWM.\n"
 "\n"
 "Параметри:\n"
-"  -d, --display=НАЗВА      НАЗВА X сервера для використання.\n"
+"  -d, --display=НАЗВА  НАЗВА X сервера для використання.\n"
 "%s  --sync              Синхронізує команди X11.\n"
 "%s\n"
 "  -V, --version       Друкує інформацію про версію та здійснює вихід.\n"
@@ -2394,26 +2219,25 @@ msgstr ""
 "перезапустити себе.\n"
 "\n"
 "  --configured        Друкує час запуску налаштувань.\n"
-"  --directories       Друкує каталоги налаштувань.\n"
-" -l, --list-themes   Друкує список усіх доступних тем.\n"
+"  --directories       Друкує теки налаштувань.\n"
+"  -l, --list-themes   Друкує список усіх доступних тем.\n"
 "\n"
 "Змінні оточення:\n"
 "  ICEWM_PRIVCFG=PATH  Тека для використання приватних файлів конфігурації "
 "користувача,\n"
-"   \"$XDG_CONFIG_HOME/icewm\" якщо існує або\n"
-"                      \"$HOME/.icewm/\" типово.\n"
-"                      Усталеною є \"$HOME/.icewm/\".\n"
+"                      \"$XDG_CONFIG_HOME/icewm\" якщо існує або\n"
+"                      \"$HOME/.icewm/\" - типово.\n"
 "  DISPLAY=NAME        Назва X сервера для використання.\n"
 "  MAIL=URL            Розташування вашої поштової скриньки.\n"
 "\n"
-"Щоб прозвітувати про хиби, запитатися, прокоментувати, відвідайте:\n"
+"Щоб прозвітувати про вади, перепитати, прокоментувати, відвідайте:\n"
 "%s\n"
 "\n"
 
 #: src/wmapp.cc:1607
 #, c-format
 msgid "%s configuration directories:\n"
-msgstr "%s каталоги конфігурації:\n"
+msgstr "%s теки конфігурацій:\n"
 
 #: src/wmapp.cc:1689
 #, c-format
@@ -2429,7 +2253,7 @@ msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
 msgstr ""
-"При виході будуть закриті всі активні аплікації.\n"
+"При виході будуть закриті всі активні застосунки.\n"
 "Продовжити?"
 
 #: src/wmbutton.cc:85
@@ -2466,6 +2290,8 @@ msgid ""
 "Client %s with PID %ld fails to respond.\n"
 "Do you wish to terminate this client?\n"
 msgstr ""
+"Клієнт %s з PID %ld не відповідає.\n"
+"Ви бажаєте припинити роботу клієнта?\n"
 
 #: src/wmconfig.cc:35 src/wmconfig.cc:40 src/wmconfig.cc:46
 #, c-format
@@ -2521,20 +2347,20 @@ msgid ""
 "this client is killed. Do you wish to proceed?"
 msgstr ""
 "УВАГА! Всі незбережені дані будуть втрачені\n"
-"при закритті цього вікна. Ви бажаєте закрити його?"
+"при знищенні цього клієнта. Бажаєте продовжити?"
 
 #: src/wmframe.cc:1448
 msgid "Kill Client: "
-msgstr "Вбити клієнта: "
+msgstr "Знищити клієнта: "
 
 #: src/wmmenu.cc:37
 msgid "Missing command argument"
-msgstr "Пропущений аргумент команди"
+msgstr "Відсутній аргумент команди"
 
 #: src/wmmenu.cc:55
 #, c-format
 msgid "Bad argument %d to command '%s'"
-msgstr "Поганий аргумент %d для команди '%s'"
+msgstr "Хибний аргумент %d для команди '%s'"
 
 #: src/wmmenu.cc:110
 #, c-format
@@ -2547,10 +2373,9 @@ msgid "Error at %s '%s'"
 msgstr "Помилка у ключі %s '%s'"
 
 #: src/wmmenu.cc:222
-#, fuzzy, c-format
-#| msgid "Unknown keyword '%s'"
+#, c-format
 msgid "Unexepected menu keyword: '%s'"
-msgstr "Невідоме ключове слово '%s'"
+msgstr "Непередбачене ключове слово меню: '%s'"
 
 #: src/wmmenu.cc:276
 #, c-format
@@ -2558,20 +2383,18 @@ msgid "Error at menuprog '%s'"
 msgstr "Помилка у меню програми '%s'"
 
 #: src/wmmenu.cc:320
-#, fuzzy, c-format
-#| msgid "Error at menuprog '%s'"
+#, c-format
 msgid "Error at menuprogreload: '%s'"
-msgstr "Помилка у меню програми '%s'"
+msgstr "Помилка у menuprogreload: '%s'"
 
 #: src/wmmenu.cc:347
 msgid "Missing filename argument to include statement"
-msgstr "Пропущений аргумент назви файлу для команди include"
+msgstr "Відсутній аргумент filename для команди include"
 
 #: src/wmmenu.cc:365
-#, fuzzy, c-format
-#| msgid "Error at menuprog '%s'"
+#, c-format
 msgid "Error at includeprog '%s'"
-msgstr "Помилка у меню програми '%s'"
+msgstr "Помилка у includeprog '%s'"
 
 #: src/wmmenu.cc:408
 #, c-format
@@ -2584,7 +2407,7 @@ msgid ""
 "Unknown keyword for a non-container: '%s'.\n"
 "Expected either 'key' or 'runonce' here.\n"
 msgstr ""
-"Невідоме ключове слово для  не-контейнера: '%s'.\n"
+"Невідоме ключове слово для не-контейнера: '%s'.\n"
 "Тут очікується або 'key', або 'runonce'.\n"
 
 #: src/wmmenu.cc:509
@@ -2594,16 +2417,16 @@ msgstr "'%s' не створює виводу"
 
 #: src/wmmgr.cc:3259
 msgid "Missing program setxkbmap"
-msgstr ""
+msgstr "Застосунок setxkbmap відсутній"
 
 #: src/wmmgr.cc:3260
 msgid "For keyboard switching, please install setxkbmap."
-msgstr ""
+msgstr "Для перемикання клавіатури потрібно встановити setxkbmap."
 
 #: src/wmoption.cc:259
 #, c-format
 msgid "Unknown window option: %s"
-msgstr "Невідома опція вікна: %s"
+msgstr "Невідомий параметр вікна: %s"
 
 #: src/wmoption.cc:330
 #, c-format
@@ -2611,19 +2434,17 @@ msgid "Syntax error in window options on line %d of %s"
 msgstr "Синтаксична помилка у параметрах вікна в рядку %d із %s"
 
 #: src/wmpref.cc:101
-#, fuzzy
-#| msgid "Favorite applications"
 msgid "Save Modifications"
-msgstr "Улюблені аплікації"
+msgstr "Зберегти зміни"
 
 #: src/wmpref.cc:180
 #, c-format
 msgid "Enter a new value for %s: "
-msgstr ""
+msgstr "Введіть нове значення для %s: "
 
 #: src/wmprog.cc:331
 msgid "_Click to focus"
-msgstr "_Клацання по фокусу"
+msgstr "_Фокус по натисканню"
 
 #: src/wmprog.cc:332
 msgid "_Explicit focus"
@@ -2631,19 +2452,19 @@ msgstr "_Явний фокус"
 
 #: src/wmprog.cc:333
 msgid "_Sloppy mouse focus"
-msgstr "_Фокус недбалої мишки"
+msgstr "_Побічний фокус за мишкою"
 
 #: src/wmprog.cc:334
 msgid "S_trict mouse focus"
-msgstr "_Строгий фокус через мишку"
+msgstr "_Точний фокус за мишкою"
 
 #: src/wmprog.cc:335
 msgid "_Quiet sloppy focus"
-msgstr "_Тихий незграбний фокус"
+msgstr "_Нерухомий побічний фокус"
 
 #: src/wmprog.cc:336
 msgid "Custo_m"
-msgstr "_Особливе"
+msgstr "_Власні"
 
 #: src/wmprog.cc:358
 msgid "_Manual"
@@ -2684,7 +2505,7 @@ msgstr "_Фокус"
 
 #: src/wmprog.cc:439
 msgid "_Preferences"
-msgstr ""
+msgstr "_Налаштування"
 
 #: src/wmprog.cc:444
 msgid "_Themes"
@@ -2697,7 +2518,7 @@ msgstr "Пара_метри"
 #: src/wmsession.cc:214 src/wmsession.cc:230 src/wmsession.cc:240
 #, c-format
 msgid "Session Manager: Unknown line %s"
-msgstr "Session Manager: невідома лінія %s"
+msgstr "Менеджер сеансів: невідомий рядок %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:215 src/wmwinlist.cc:382 src/wmwinlist.cc:415
@@ -2737,7 +2558,7 @@ msgstr "_Повернути"
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:230
 msgid "Arrange _Icons"
-msgstr "Впорядкувати _іконки"
+msgstr "Впорядкувати _піктограми"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:236
@@ -2745,46 +2566,36 @@ msgid "_Refresh"
 msgstr "_Оновити"
 
 #: src/wmtaskbar.cc:309 src/wmtaskbar.cc:967
-#, fuzzy
-#| msgid "Task Bar"
 msgid "Hide Taskbar"
-msgstr "Панель завдань"
+msgstr "Приховати Панель завдань"
 
 #: src/wmtaskbar.cc:332
-#, fuzzy
-#| msgid "Favorite applications"
 msgid "Favorite Applications"
-msgstr "Улюблені аплікації"
+msgstr "Улюблені застосунки"
 
 #: src/wmtaskbar.cc:357
-#, fuzzy
-#| msgid "Window list menu"
 msgid "Window List Menu"
-msgstr "Меню списоку вікон"
+msgstr "Меню списку вікон"
 
 #: src/wmtaskbar.cc:366
 msgid "Show Desktop"
 msgstr "Показати стільницю"
 
 #: src/wmtaskbar.cc:967
-#, fuzzy
-#| msgid "Task Bar"
 msgid "Show Taskbar"
-msgstr "Панель завдань"
+msgstr "Показати Панель завдань"
 
 #: src/wmwinlist.cc:46
 msgid "All Workspaces"
-msgstr "Усі робочі місця"
+msgstr "Усі робочі простори"
 
 #: src/wmwinlist.cc:371
 msgid "_Show"
 msgstr "_Показати"
 
 #: src/wmwinlist.cc:374
-#, fuzzy
-#| msgid "R_aise"
 msgid "_Raise"
-msgstr "Підняти"
+msgstr "_Підняти"
 
 #: src/wmwinlist.cc:395
 msgid "Del"
@@ -2796,7 +2607,7 @@ msgstr "_Перервати процес"
 
 #: src/wmwinlist.cc:400
 msgid "Kill _Process"
-msgstr "Вбити процес"
+msgstr "Знищити _процес"
 
 #: src/wmwinlist.cc:435 src/wmwinlist.cc:436
 msgid "Window list"
@@ -2805,7 +2616,7 @@ msgstr "Список вікон"
 #: src/wmwinmenu.cc:96
 #, c-format
 msgid "%lu. Workspace %-.32s"
-msgstr "%lu. Робоче місце %-.32s"
+msgstr "%lu. Робочий простір %-.32s"
 
 #: src/wpixres.cc:93 src/wpixres.cc:100
 #, c-format
@@ -2818,10 +2629,9 @@ msgid "%s: select failed"
 msgstr "%s: не вдалося вибрати"
 
 #: src/ycolor.cc:229 src/ycolor.cc:240
-#, fuzzy, c-format
-#| msgid "Could not load font \"%s\"."
+#, c-format
 msgid "Could not parse color \"%s\""
-msgstr "Не можу завантажити шрифт \"%s\"."
+msgstr "Не вдалося розібрати колір \"%s\""
 
 #: src/yconfig.cc:113
 #, c-format
@@ -2829,10 +2639,9 @@ msgid "Unknown key name %s in %s"
 msgstr "Невідомий символ %s у %s"
 
 #: src/yconfig.cc:128 src/yconfig.cc:139 src/yconfig.cc:151
-#, fuzzy, c-format
-#| msgid "Bad argument: %s for %s"
+#, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
-msgstr "Невірний argument: %s для %s"
+msgstr "Невірний аргумент: %s for %s [%d,%d]"
 
 #: src/ycursor.cc:110
 #, c-format
@@ -2847,22 +2656,22 @@ msgstr "Помилка завантаження мапи пікселів \"%s\"
 #: src/ycursor.cc:179
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
-msgstr "ХИБА? Imlib прочитав \"%s\""
+msgstr "ВАДА? Imlib прочитав \"%s\""
 
 #: src/ycursor.cc:204
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
-msgstr "ХИБА? Поганий заголовок XPM, але Imlib проаналізував \"%s\""
+msgstr "ВАДА? Поганий заголовок XPM, але Imlib проаналізував \"%s\""
 
 #: src/ycursor.cc:212
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
-msgstr "ХИБА? Неочікуваний кінець файла XPM, але Imlib проаналізував \"%s\""
+msgstr "ВАДА? Неочікуваний кінець файлу XPM, але Imlib проаналізував \"%s\""
 
 #: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
-msgstr "ХИБА? Неочікуваний символ, але Imlib проаналізував \"%s\""
+msgstr "ВАДА? Неочікуваний символ, але Imlib проаналізував \"%s\""
 
 #: src/yfontcore.cc:72 src/yfontxft.cc:164
 #, c-format
@@ -2902,7 +2711,7 @@ msgstr "_Вставити"
 
 #: src/yinputline.cc:21
 msgid "Paste _Selection"
-msgstr "Вс_тавити виділення"
+msgstr "Вс_тавити вибране"
 
 #: src/yinputline.cc:21
 msgid "Ctrl+P"
@@ -2935,7 +2744,7 @@ msgstr "Iconv не підтримує (на достатньому рівні) �
 #: src/ylocale.cc:234
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
-msgstr "Невірна багатобайтова стрічка \"%s\": %s"
+msgstr "Невірний багатобайтовий рядок \"%s\": %s"
 
 #: src/ymsgbox.cc:48
 msgid "_OK"
@@ -2943,23 +2752,22 @@ msgstr "_Гаразд"
 
 #: src/ysmapp.cc:98
 msgid "$USER or $LOGNAME not set?"
-msgstr "Не встановлені змінні $USER і $LOGNAME?"
+msgstr "Змінні $USER та $LOGNAME не визначені?"
 
 #: src/yurl.cc:145
-#, fuzzy, c-format
-#| msgid "Failed to decompress %s"
+#, c-format
 msgid "Failed to parse URL \"%s\"."
-msgstr "Не вдалося розпакувати %s"
+msgstr "Не вдалося розібрати URL \"%s\"."
 
 #: src/yurl.cc:161
 #, c-format
 msgid "Incomplete hex escape in URL at position %d."
-msgstr ""
+msgstr "Неповний hex-перехід у URL-адресі на позиції %d."
 
 #: src/yurl.cc:168
 #, c-format
 msgid "Invalid hex escape in URL at position %d."
-msgstr ""
+msgstr "Невідповідний hex-перехід у URL-адресі на позиції %d."
 
 #: src/yxapp.cc:981
 msgid ""
@@ -2970,26 +2778,22 @@ msgstr ""
 "  --sync              Синхронізація команд X11.\n"
 
 #: src/yximage.cc:157
-#, fuzzy
-#| msgid "Support for the %s interface not compiled."
 msgid "Support for PNG images was not enabled"
-msgstr "Підтримка інтерфейсу %s не вкомпільована."
+msgstr "Підтримку зображень PNG не ввімкнено"
 
 #: src/yximage.cc:165
 msgid "Support for JPEG images was not enabled"
-msgstr ""
+msgstr "Підтримку зображень JPEG не ввімкнено"
 
 #: src/yximage.cc:171
-#, fuzzy, c-format
-#| msgid "Unsupported interface: %s."
+#, c-format
 msgid "Unsupported file format: %s"
-msgstr "Інтерфейс %s не підтримується."
+msgstr "Формат файлу не підтримується: %s"
 
 #: src/yximage.cc:175 src/yximage.cc:198
-#, fuzzy, c-format
-#| msgid "Could not find image %s"
+#, c-format
 msgid "Could not load image \"%s\""
-msgstr "Не можу знайти малюнок %s"
+msgstr "Не можу завантажити малюнок \"%s\""
 
 #~ msgid ""
 #~ "\n"

@@ -66,7 +66,7 @@
 
 extern ref<YPixmap> taskbackPixmap;
 
-ref<YFont> CPUStatus::tempFont;
+YFont CPUStatus::tempFont;
 
 CPUStatus::CPUStatus(YWindow *aParent, CPUStatusHandler *aHandler, int cpuid) :
     IApplet(this, aParent),
@@ -257,13 +257,15 @@ void CPUStatus::temperature(Graphics& g) {
         getAcpiTemp(temp, sizeof(temp));
         g.setColor(fTempColor);
         if (tempFont == null)
-            tempFont = YFont::getFont(XFA(tempFontName));
-        g.setFont(tempFont);
-        int h = height();
-        int y = (h - 1 - tempFont->height()) / 2 + tempFont->ascent();
-        int w = tempFont->textWidth(temp);
-        int x = max(0, (int(g.rwidth()) - w) / 2);
-        g.drawChars(temp, 0, 3, x, y);
+            tempFont = tempFontName;
+        if (tempFont) {
+            g.setFont(tempFont);
+            int h = height();
+            int y = (h - 1 - tempFont->height()) / 2 + tempFont->ascent();
+            int w = tempFont->textWidth(temp);
+            int x = max(0, (int(g.rwidth()) - w) / 2);
+            g.drawChars(temp, 0, 3, x, y);
+        }
     }
 }
 
