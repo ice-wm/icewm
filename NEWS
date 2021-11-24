@@ -1,11 +1,153 @@
-icewm -- history of user-visible changes.  2021-10-04
+icewm -- history of user-visible changes.  2021-11-24
+
+Release icewm-2.9.0 released 2021-11-24
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.8.0...2.9.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (81):
+      Document the -T switch to select the taskbar in icesh for issue
+        ice-wm/icewm#18.
+      Fix the format string for "restart" in Ukrainian to fix the build.
+      Fix for FreeBSD build.
+      Print default locale in testlocale.
+      Detect locale text direction.
+      Only let a frame retake focus on an ungrab event when the manager still
+        believes that frame should have focus. This fixes the flashing of title
+        bar buttons when the window list window is popped up.
+      Set the default background of the window list window to prevent undrawn
+        holes at the bottom of the window when running with a compositor and
+        alpha blending.
+      Support more Right-To-Left languages.
+      Don't kill internal windows.
+      Restore build if CONFIG_I18N is undefined.
+      Add a font cache to prevent repeatedly loading the same fonts, which also
+        makes icewm a little faster on startup.
+      Document the tracing on font loading.
+      Add support for edge switching during drag and drop operations.
+      Document drag and drop.
+      Be resilient to font preferences being set to the empty string.
+      Improve the handling of font loading failures. Improve the handling of
+        setting "PreferFreetypeFonts" to false. Use the font "10x20" as the last
+        resort font to fallback to, instead of the "fixed" font.
+      Move all FriBidi stuff into a dedicated class YBidi.
+      Move FONT macros to header fontmacro.h.
+      Add new class YRange.
+      Add rightToLeft global.
+      Move screen-window intersection into YWindow coverage.
+      Use new FONT macros from fontmacro.h. Remove minimizedWindowFontName.
+      Detect Right-To-Left locales.
+      Flush stdout after printing preferences.
+      Reuse discarded miniicon positions.
+      Take into account Right-To-Left when sorting task buttons, tray icons and
+        workspace buttons.
+      Prefer drawString over drawChars.
+      Take into account Right-To-Left when sorting object buttons.
+      Prefer wchar_t over YUchar.
+      Pass findRemove data parameter by value for 'this'.
+      Remove old FONT macros.
+      Take into account Right-To-Left when ordering task bar subwindows.
+      Take into account Right-To-Left when sorting systray icons.
+      Improve font tracing.
+      Improve vertical font positioning for the address bar.
+      Improve ascent/descent detection for font sets. Improve fallback font
+        pattern generation for font sets. Much faster optimal text length
+        detection for width-limited text fields. Improve the Xft last resort
+        backup font.
+      Fix the horizontal scrollbar for the window list window.
+      Detect right-to-left text.
+      Drop YString and YLocaleString.
+      Modernize casts.
+      Remove old commented out code.
+      Support right-to-left text. Handle width-limited text.
+      Merge id.po.
+      Make DejaVu the default backup font family for corefonts.
+      Print the codeset.
+      Detect UTF-8 locale and support multibyte to wide character conversions.
+      Support right-to-left languages for corefonts when i18n is enabled. When
+        codesets are missing in a fontset, then only search for extra fonts in
+        the same font family, and only when i18n is enabled.
+      Add logout icons to Logout submenu and closes ice-wm/icewm#69.
+      Update minimum required cmake version to 3.2.
+      Remove bidi from textWidth and fix offset.
+      Add cancel-logout icon.
+      Set the background of the bottom right corner of a scrolled view for issue
+        620.
+      Document the "font" argument to the "--trace" option.
+      Postpone the redrawing of the frame borders when there is another expose
+        event in the pipeline.
+      Ignore empty resize events prematurely to reduce flickering while resizing
+        windows in the CoolSteel theme.
+      Fix the last entry in the themes menu for the default theme.
+      Don't repaint the taskbar when it is collapsed.  Clear the taskbar window
+        once more after repainting to prevent background artefacts when
+        collapsing and expanding the taskbar in the CoolSteel theme.
+      Swap titlebar button positions for right-to-left languages.
+      Fix to prevent the dancing taskbar collapse button, when repeatedly
+        collapsing and expanding the taskbar.
+      Prefer to keep the system menu within the frame when opening it from the
+        menu button in the titlebar.
+      Fix for preferring to open the system menu within the frame.
+      Accept -C,--copying without complaining.
+      Fix column alignment in menu's for right-to-left languages.
+      Only free cursor attributes when valid.
+      Fixes for drawing partitioned right-to-left text when using multiple Xft
+        fonts.
+      Only swap title button pixmaps for right-to-left locales when they have
+        the same size.
+      Guard against all fonts not providing some glyph.
+      Add XEMBED_EMBEDDED_NOTIFY and XEMBED_WINDOW_ACTIVATE.
+      Guard against the condition that the taskbar doesn't have a frame.
+      Give icewmbg an error handler to protect against destroyed windows.
+      Increase the right margin of task buttons from one to two for
+        right-to-left titles.
+      Fix typo.
+      Don't maximize buttons on height, because of artefacts in CrystalBlue.
+      Center the inputline to accommodate fonts larger than the addressbar.
+      Left-align right-to-left text if it fits within the size limitation.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Add new headers.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Fix typo.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Taras Panchenko <top39@ukr.net> (9):
+      Translated using Weblate (Ukrainian)
+      Translated using Weblate (Ukrainian)
+      Translated using Weblate (Ukrainian)
+      Translated using Weblate (Ukrainian)
+      Translated using Weblate (Ukrainian)
+      Translated using Weblate (Ukrainian)
+      Translated using Weblate (Ukrainian)
+      Translated using Weblate (Russian)
+      Translated using Weblate (Ukrainian)
+
+marcelo cripe <marcelocripe@gmail.com> (3):
+      Translated (Portuguese (Brazil))
+      Translated using Weblate (Portuguese (Brazil))
+      Translated using Weblate (Portuguese (Brazil))
+
+TarasPanchenko <90216151+TarasPanchenko@users.noreply.github.com> (2):
+      Update icewm-session.desktop (#616)
+      Update icewm.desktop (#617)
+
+Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
+      Translated using Weblate (Indonesian)
+
+wallon <franckjl@hotmail.com> (1):
+      Translated using Weblate (French)
+
 
 Release icewm-2.8.0 released 2021-10-04
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.7.0...2.8.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (27):
+Bert Gijsbers <gijsbers@science.uva.nl> (28):
       Fix overflows in battery calculations for issue #607. Change defines to
         enums. Use longs for capacity numbers.
       Prevent a pedantic warning for netDevice.
@@ -39,6 +181,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (27):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.8.0 release
 
 marcelo cripe <marcelocripe@gmail.com> (5):
       Translated using Weblate (Portuguese (Brazil))
@@ -414,52 +557,4 @@ Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
-
-
-Release icewm-2.3.3 released 2021-04-28
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.3.2...2.3.3
-
-Bert Gijsbers <gijsbers@science.uva.nl> (16):
-      Add a toggle option "^" to the "netState" command for issue #580.
-      Add support for conditional expressions to icesh.
-      Defer loading internationalized help text until required.
-      Don't reorder focus when Alt+Tabbing for issue #579.
-      Make the modifiers dependent on the type of QuickSwitch: either from the
-        Alt+Tab or from the "switchkey" keyword for issue #583.
-      Improve documentation for options for Super/Windows key modifiers.
-      Add new icewm option --rewrite-preferences to update preferences.
-      make update-po
-      Correct type of all button preferences as unsigned.
-      Remove superfluous cast and class qualifications.
-      Permit scroll wheel to control rolling up or down for issue #584.
-      Document default winoption format .OPTION.
-      Fix compiler warning about the C++ One Definition Rule.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.3.3 release
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (2):
-      Translated using Weblate (Slovak)
-      Translated using Weblate (Slovak)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Guillaume GARDET <guillaume.gardet@opensuse.org> (1):
-      Translated using Weblate (French)
-
-Panwar <caspian7pena@gmail.com> (1):
-      Translated using Weblate (Hindi)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
-
-openSUSE Weblate <weblate-noreply@opensuse.org> (1):
-      Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
 
