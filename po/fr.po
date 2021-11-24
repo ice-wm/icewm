@@ -7,33 +7,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.15pre3\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-10-04 20:31+0200\n"
-"PO-Revision-Date: 2021-06-28 20:08+0000\n"
-"Last-Translator: Lucie Charrier <c.chalu@free.fr>\n"
-"Language-Team: French <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/fr/>\n"
+"POT-Creation-Date: 2021-09-30 22:26+0200\n"
+"PO-Revision-Date: 2021-11-07 14:07+0000\n"
+"Last-Translator: wallon <franckjl@hotmail.com>\n"
+"Language-Team: French <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.6.2\n"
+"X-Generator: Weblate 4.8.1\n"
 
 #: src/aapm.cc:66
-#, fuzzy, c-format
-#| msgid "Could not open OSS device %s"
+#, c-format
 msgid "Can't open the APM device %s"
-msgstr "Impossible d'ouvrir le périphérique OSS %s"
+msgstr "Impossible d'ouvrir le dispositif APM %s"
 
 #: src/aapm.cc:74 src/aapm.cc:92
 #, c-format
 msgid "Can't ioctl the APM device %s"
-msgstr ""
+msgstr "Impossible d'ouvrir l'input-ouput-control du dispositif APM %s"
 
 #: src/aapm.cc:122
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
-msgstr ""
+msgstr "Format inconnu utilisé par le dispositif APM %s (%d)."
 
 #: src/aapm.cc:154 src/aapm.cc:426 src/aapm.cc:636 src/aapm.cc:762
 msgid " - Power"
@@ -41,7 +40,7 @@ msgstr " - Courant"
 
 #: src/aapm.cc:156 src/aapm.cc:429 src/aapm.cc:639
 msgid "P"
-msgstr "C"
+msgstr "P"
 
 #: src/aapm.cc:160 src/aapm.cc:403 src/aapm.cc:619 src/aapm.cc:730
 msgid " - Charging"
@@ -160,7 +159,7 @@ msgstr "_Séparer"
 
 #: src/akeyboard.cc:76
 msgid "Keyboard"
-msgstr ""
+msgstr "Clavier"
 
 #: src/amailbox.cc:64
 #, c-format
@@ -205,7 +204,7 @@ msgstr "Échec de l'écriture dans le socket : %s"
 #: src/amailbox.cc:694
 #, c-format
 msgid "Using MailBox \"%s\"\n"
-msgstr "Utilisation de la boîte à lettre \"%s\"\n"
+msgstr "Utilisation de la boîte aux lettres \"%s\"\n"
 
 #: src/amailbox.cc:801
 msgid "Suspended"
@@ -213,7 +212,7 @@ msgstr "Mis en veille"
 
 #: src/amailbox.cc:805
 msgid "Error checking mailbox."
-msgstr "Échec de vérification de la boîte à lettre."
+msgstr "Échec de vérification de la boîte aux lettres."
 
 #: src/amailbox.cc:812
 #, c-format
@@ -861,7 +860,7 @@ msgstr "Balayage"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:261
 msgid "Science"
-msgstr "Science"
+msgstr "Sciences"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:263
@@ -1376,7 +1375,7 @@ msgstr "L'action \"%s\" nécessite au moins %d paramètre(s)."
 msgid "Invalid expression: `%s'"
 msgstr "Expression incorrecte : \"%s\""
 
-#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1176
+#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1195
 #: src/yxapp.cc:1022
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1889,7 +1888,7 @@ msgstr ""
 " center:0 scaled:1 = deux dimensions complètes et respect des proportions\n"
 "\n"
 
-#: src/icewmbg.cc:1042 src/wmapp.cc:1751
+#: src/icewmbg.cc:1042 src/wmapp.cc:1774
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Option non reconnue '%s'."
@@ -2061,7 +2060,7 @@ msgstr "En dess_ous"
 msgid "D_esktop"
 msgstr "Bur_eau"
 
-#: src/wmapp.cc:564 src/wmwinlist.cc:366
+#: src/wmapp.cc:564 src/wmwinlist.cc:365
 msgid "_Restore"
 msgstr "_Restaurer"
 
@@ -2073,31 +2072,31 @@ msgstr "Dé_placer"
 msgid "_Size"
 msgstr "Dimen_sionner"
 
-#: src/wmapp.cc:570 src/wmwinlist.cc:367
+#: src/wmapp.cc:570 src/wmwinlist.cc:366
 msgid "Mi_nimize"
 msgstr "Icô_nifier"
 
-#: src/wmapp.cc:572 src/wmwinlist.cc:368
+#: src/wmapp.cc:572 src/wmwinlist.cc:367
 msgid "Ma_ximize"
 msgstr "Ma_ximiser"
 
-#: src/wmapp.cc:573 src/wmwinlist.cc:369
+#: src/wmapp.cc:573 src/wmwinlist.cc:368
 msgid "Maximize_Vert"
 msgstr "Maximiser_vert"
 
-#: src/wmapp.cc:574 src/wmwinlist.cc:370
+#: src/wmapp.cc:574 src/wmwinlist.cc:369
 msgid "MaximizeHori_z"
 msgstr "Maximiserhori_z"
 
-#: src/wmapp.cc:577 src/wmwinlist.cc:371
+#: src/wmapp.cc:577 src/wmwinlist.cc:370
 msgid "_Fullscreen"
 msgstr "Plein écran"
 
-#: src/wmapp.cc:580 src/wmwinlist.cc:373
+#: src/wmapp.cc:580 src/wmwinlist.cc:372
 msgid "_Hide"
 msgstr "Cac_her"
 
-#: src/wmapp.cc:582 src/wmwinlist.cc:374
+#: src/wmapp.cc:582 src/wmwinlist.cc:373
 msgid "Roll_up"
 msgstr "Enro_uler"
 
@@ -2105,19 +2104,19 @@ msgstr "Enro_uler"
 msgid "R_aise"
 msgstr "A_vant plan"
 
-#: src/wmapp.cc:591 src/wmwinlist.cc:376
+#: src/wmapp.cc:591 src/wmwinlist.cc:375
 msgid "_Lower"
 msgstr "Arr_ière plan"
 
-#: src/wmapp.cc:593 src/wmwinlist.cc:377
+#: src/wmapp.cc:593 src/wmwinlist.cc:376
 msgid "La_yer"
 msgstr "C_ouche"
 
-#: src/wmapp.cc:597 src/wmwinlist.cc:379
+#: src/wmapp.cc:597 src/wmwinlist.cc:378
 msgid "Move _To"
 msgstr "Envo_yer vers"
 
-#: src/wmapp.cc:598 src/wmwinlist.cc:380
+#: src/wmapp.cc:598 src/wmwinlist.cc:379
 msgid "Occupy _All"
 msgstr "Occuper tous les bure_aux"
 
@@ -2125,15 +2124,15 @@ msgstr "Occuper tous les bure_aux"
 msgid "Limit _Workarea"
 msgstr "_Limiter l'aire de travail"
 
-#: src/wmapp.cc:608 src/wmwinlist.cc:381
+#: src/wmapp.cc:608 src/wmwinlist.cc:380
 msgid "Tray _icon"
 msgstr "Icône de barre de tâche"
 
-#: src/wmapp.cc:613 src/wmwinlist.cc:396 src/wmwinlist.cc:404
+#: src/wmapp.cc:613 src/wmwinlist.cc:395 src/wmwinlist.cc:403
 msgid "_Close"
 msgstr "_Fermer"
 
-#: src/wmapp.cc:615 src/wmwinlist.cc:398
+#: src/wmapp.cc:615 src/wmwinlist.cc:397
 msgid "_Kill Client"
 msgstr "Tuer le client X"
 
@@ -2167,18 +2166,18 @@ msgstr ""
 "Annulez la gestion de toutes les applications et redémarrez\n"
 "en tant que terminal. Continuer ?"
 
-#: src/wmapp.cc:1177 src/yxapp.cc:1023
+#: src/wmapp.cc:1196 src/yxapp.cc:1023
 msgid "<none>"
 msgstr "<aucun>"
 
-#: src/wmapp.cc:1498
+#: src/wmapp.cc:1517
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      ID de client à utiliser lors du contact du "
 "gestionnaire de session.\n"
 
-#: src/wmapp.cc:1504
+#: src/wmapp.cc:1523
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2189,7 +2188,7 @@ msgstr ""
 "  --debug-z           Imprime les messages de débogage concernant la pile de "
 "fenêtres.\n"
 
-#: src/wmapp.cc:1512
+#: src/wmapp.cc:1531
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2211,7 +2210,7 @@ msgstr ""
 "  --trace=conf,icon   Trace les chemins utilisés pour charger la "
 "configuration.\n"
 
-#: src/wmapp.cc:1522
+#: src/wmapp.cc:1541
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2274,21 +2273,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1588
+#: src/wmapp.cc:1607
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "Répertoires de configuration de %s :\n"
 
-#: src/wmapp.cc:1670
+#: src/wmapp.cc:1689
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s options configurées : %s\n"
 
-#: src/wmapp.cc:1800
+#: src/wmapp.cc:1823
 msgid "Confirm Logout"
 msgstr "Confirmer la déconnexion"
 
-#: src/wmapp.cc:1801
+#: src/wmapp.cc:1824
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2415,10 +2414,9 @@ msgid "Error at %s '%s'"
 msgstr "Erreur à %s '%s'"
 
 #: src/wmmenu.cc:222
-#, fuzzy, c-format
-#| msgid "Unknown keyword '%s'"
+#, c-format
 msgid "Unexepected menu keyword: '%s'"
-msgstr "Mot-clé inconnu '%s'"
+msgstr "Mot-clé inconnu : '%s'"
 
 #: src/wmmenu.cc:276
 #, c-format
@@ -2426,20 +2424,18 @@ msgid "Error at menuprog '%s'"
 msgstr "Erreur dans la programmation de menu '%s'"
 
 #: src/wmmenu.cc:320
-#, fuzzy, c-format
-#| msgid "Error at menuprog '%s'"
+#, c-format
 msgid "Error at menuprogreload: '%s'"
-msgstr "Erreur dans la programmation de menu '%s'"
+msgstr "Erreur dans la programmation de menu : '%s'"
 
 #: src/wmmenu.cc:347
 msgid "Missing filename argument to include statement"
 msgstr "Un argument de nom de fichier à inclure dans l'énoncé est manquant"
 
 #: src/wmmenu.cc:365
-#, fuzzy, c-format
-#| msgid "Error at menuprog '%s'"
+#, c-format
 msgid "Error at includeprog '%s'"
-msgstr "Erreur dans la programmation de menu '%s'"
+msgstr "Erreur au niveau de l'inclusion du programme '%s'"
 
 #: src/wmmenu.cc:408
 #, c-format
@@ -2460,11 +2456,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "'%s' ne produit aucune sortie"
 
-#: src/wmmgr.cc:3309
+#: src/wmmgr.cc:3259
 msgid "Missing program setxkbmap"
 msgstr "Programme setxkbmap manquant"
 
-#: src/wmmgr.cc:3310
+#: src/wmmgr.cc:3260
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Pour le changement de clavier, installez setxkbmap."
 
@@ -2485,7 +2481,7 @@ msgstr "Sauvegarder les modifications"
 #: src/wmpref.cc:180
 #, c-format
 msgid "Enter a new value for %s: "
-msgstr ""
+msgstr "Saisissez une nouvelle valeur pour %s : "
 
 #: src/wmprog.cc:331
 msgid "_Click to focus"
@@ -2566,37 +2562,37 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Gestionnaire de session : ligne \"%s\" inconnue"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:215 src/wmwinlist.cc:383 src/wmwinlist.cc:416
+#: src/wmtaskbar.cc:215 src/wmwinlist.cc:382 src/wmwinlist.cc:415
 msgid "Tile _Vertically"
 msgstr "Mosaïque _verticale"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:217 src/wmwinlist.cc:384 src/wmwinlist.cc:417
+#: src/wmtaskbar.cc:217 src/wmwinlist.cc:383 src/wmwinlist.cc:416
 msgid "T_ile Horizontally"
 msgstr "Mosaïque hori_zontale"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:385 src/wmwinlist.cc:418
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:384 src/wmwinlist.cc:417
 msgid "Ca_scade"
 msgstr "Ca_scade"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:386 src/wmwinlist.cc:419
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:385 src/wmwinlist.cc:418
 msgid "_Arrange"
 msgstr "_Arranger"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:388 src/wmwinlist.cc:420
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:387 src/wmwinlist.cc:419
 msgid "_Minimize All"
 msgstr "_Tout icônifier"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:389 src/wmwinlist.cc:421
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:388 src/wmwinlist.cc:420
 msgid "_Hide All"
 msgstr "Tout _cacher"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:390 src/wmwinlist.cc:422
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:389 src/wmwinlist.cc:421
 msgid "_Undo"
 msgstr "Ann_uler"
 
@@ -2634,27 +2630,27 @@ msgstr "Afficher la barre de tâche"
 msgid "All Workspaces"
 msgstr "Tous les bureaux"
 
-#: src/wmwinlist.cc:372
+#: src/wmwinlist.cc:371
 msgid "_Show"
 msgstr "_Montrer"
 
-#: src/wmwinlist.cc:375
+#: src/wmwinlist.cc:374
 msgid "_Raise"
 msgstr "A_vant plan"
 
-#: src/wmwinlist.cc:396
+#: src/wmwinlist.cc:395
 msgid "Del"
 msgstr "Suppr"
 
-#: src/wmwinlist.cc:400
+#: src/wmwinlist.cc:399
 msgid "_Terminate Process"
 msgstr "_Terminer le processus"
 
-#: src/wmwinlist.cc:401
+#: src/wmwinlist.cc:400
 msgid "Kill _Process"
 msgstr "Tuer le _processus"
 
-#: src/wmwinlist.cc:436 src/wmwinlist.cc:437
+#: src/wmwinlist.cc:435 src/wmwinlist.cc:436
 msgid "Window list"
 msgstr "Liste des fenêtres"
 
@@ -2674,10 +2670,9 @@ msgid "%s: select failed"
 msgstr "%s : la sélection a échoué"
 
 #: src/ycolor.cc:229 src/ycolor.cc:240
-#, fuzzy, c-format
-#| msgid "Could not load font \"%s\"."
+#, c-format
 msgid "Could not parse color \"%s\""
-msgstr "Impossible de charger la police \"%s\"."
+msgstr "Impossible de charger la police \"%s\""
 
 #: src/yconfig.cc:113
 #, c-format
@@ -2771,25 +2766,25 @@ msgstr "T_out sélectionner"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: src/ylocale.cc:55
+#: src/ylocale.cc:56
 msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
 msgstr ""
 "Paramètres régionaux non pris en charge par la bibliothèque C ou xlib. "
 "Basculement vers les paramètres régionaux de C."
 
-#: src/ylocale.cc:90
+#: src/ylocale.cc:91
 msgid ""
 "Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
 msgstr ""
 "Échec lors de la détection de l'encodage des caractères courants. Par défaut "
 "ISO-8859-1.\n"
 
-#: src/ylocale.cc:123 src/ylocale.cc:131
+#: src/ylocale.cc:124 src/ylocale.cc:132
 #, c-format
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv ne fournit pas de convertisseur %s vers %s suffisant."
 
-#: src/ylocale.cc:231
+#: src/ylocale.cc:234
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Chaîne de caractère multi-octects incorrecte \"%s\" : %s"
@@ -2828,26 +2823,22 @@ msgstr ""
 "  --sync              Synchronise les commandes X11.\n"
 
 #: src/yximage.cc:157
-#, fuzzy
-#| msgid "Support for the %s interface not compiled."
 msgid "Support for PNG images was not enabled"
-msgstr "Support pour l'interface %s non compilé."
+msgstr "Le support des images PNG n'était pas activé"
 
 #: src/yximage.cc:165
 msgid "Support for JPEG images was not enabled"
-msgstr ""
+msgstr "Le support des images JPEG n'était pas activé"
 
 #: src/yximage.cc:171
-#, fuzzy, c-format
-#| msgid "Unsupported interface: %s."
+#, c-format
 msgid "Unsupported file format: %s"
-msgstr "Interface %s non supportée."
+msgstr "Format de fichier non pris en charge : %s"
 
 #: src/yximage.cc:175 src/yximage.cc:198
-#, fuzzy, c-format
-#| msgid "Could not find image %s"
+#, c-format
 msgid "Could not load image \"%s\""
-msgstr "Impossible de trouver l'image %s"
+msgstr "Impossible de charger l'image \"%s\""
 
 #~ msgid ""
 #~ "\n"

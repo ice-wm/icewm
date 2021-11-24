@@ -15,16 +15,19 @@ class YFrameClient;
 class YFrameWindow;
 class YSMListener;
 class SwitchWindow;
+class MiniIcon;
 class DockApp;
 class IApp;
 
-class EdgeSwitch: public YWindow, public YTimerListener {
+class EdgeSwitch: public YDndWindow, public YTimerListener {
 public:
     EdgeSwitch(YWindowManager *manager, int delta, bool vertical);
     virtual ~EdgeSwitch();
 
     virtual void handleCrossing(const XCrossingEvent &crossing);
     virtual bool handleTimer(YTimer *t);
+    virtual void handleDNDEnter();
+    virtual void handleDNDLeave();
     void setGeometry();
 private:
     YWindowManager *fManager;
@@ -203,7 +206,7 @@ public:
     void workAreaUpdated();
     void resizeWindows();
 
-    void getIconPosition(YFrameWindow *frame, int *iconX, int *iconY);
+    void getIconPosition(MiniIcon* iw, int *iconX, int *iconY);
 
     void wmCloseSession();
     void exitAfterLastClient(bool shuttingDown);

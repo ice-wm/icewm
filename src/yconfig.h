@@ -11,15 +11,15 @@
 
 #ifdef CFGDEF
 #define XFV(t,a,b,c) \
-    t a(b); \
-    t a##Xft = c;
+    t a##Core = b; \
+    t a##Xft = c; \
+    YFontName a(&a##Core, &a##Xft);
 #else
 #define XFV(t,a,b,c) \
-    extern t a; \
-    extern t a##Xft;
+    extern t a##Core; \
+    extern t a##Xft; \
+    extern YFontName a;
 #endif
-
-#define XFA(a) a, a##Xft
 
 #ifdef CFGDEF
 #define XIV(t,a,b) t a(b);
@@ -31,25 +31,7 @@
 #define YCONFIG_H
 
 #include <X11/X.h>
-
-#ifdef CONFIG_XFREETYPE
-#define FONT(pt) "-*-sans-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define BOLDFONT(pt) "-*-sans-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define TTFONT(pt) "-*-monospace-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define BOLDTTFONT(pt) "-*-monospace-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#else
-#ifdef FONTS_ADOBE
-#define FONT(pt) "-b&h-lucida-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define BOLDFONT(pt) "-b&h-lucida-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define TTFONT(pt) "-b&h-lucidatypewriter-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define BOLDTTFONT(pt) "-b&h-lucidatypewriter-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#else
-#define FONT(pt) "-adobe-helvetica-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define BOLDFONT(pt) "-adobe-helvetica-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define TTFONT(pt) "-adobe-courier-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#define BOLDTTFONT(pt) "-adobe-courier-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
-#endif
-#endif
+#include "yfontname.h"
 
 #define kfShift  1
 #define kfCtrl   2
@@ -73,14 +55,14 @@ struct WMKey {
 #ifdef CFGDESC
 #define DESC(d) d
 #else
-#define DESC(d) ((const char *) 0)
+#define DESC(d) nullptr
 #endif
 
 #define OBV(n,v,d)     cfoption(n, sizeof(n), v, DESC(d))
 #define OIV(n,v,m,M,d) cfoption(n, sizeof(n), v, m, M, DESC(d))
 #define OUV(n,v,m,M,d) cfoption(n, sizeof(n), v, m, M, DESC(d))
 #define OSV(n,v,d)     cfoption(n, sizeof(n), v, DESC(d))
-#define OFV(n,v,d)     cfoption(n, sizeof(n), v, DESC(d)), \
+#define OFV(n,v,d)     cfoption(n, sizeof(n), v##Core, DESC(d)), \
                        cfoption(n "Xft", sizeof(n "Xft"), v##Xft, DESC(d))
 #define OKV(n,v,d)     cfoption(n, sizeof(n), &v, DESC(d))
 #define OKF(n,f,d)     cfoption(n, sizeof(n), f, DESC(d))

@@ -553,7 +553,9 @@ void YFrameWindow::getNewPos(const XConfigureRequestEvent& cr,
     if (affectsWorkArea() == false) {
         int screen = desktop->getScreenForRect(cx, cy, cw, ch);
         int left, top, right, bottom;
-        if (taskBar && screen == taskBar->getFrame()->getScreen()) {
+        if (taskBar && taskBar->getFrame() &&
+            screen == taskBar->getFrame()->getScreen())
+        {
             manager->getWorkArea(this, &left, &top, &right, &bottom, screen);
         }
         else {
@@ -872,7 +874,8 @@ void YFrameWindow::handleFocus(const XFocusChangeEvent &focus) {
         focus.detail != NotifyInferior &&
         focus.detail != NotifyPointer &&
         focus.detail != NotifyPointerRoot)
-        manager->switchFocusTo(this);
+        if (manager->getFocus() == this)
+            manager->switchFocusTo(this);
 #endif
 #if 0
     else if (focus.type == FocusOut &&
@@ -1062,7 +1065,10 @@ void YFrameWindow::actionPerformed(YAction action, unsigned int modifiers) {
             wmClose();
         break;
     case actionKill:
-        wmConfirmKill();
+        if (client()->adopted())
+            wmConfirmKill();
+        else
+            wmClose();
         break;
     case actionHide:
         if (canHide())
@@ -1703,9 +1709,21 @@ void YFrameWindow::repaint() {
     paint(getGraphics(), geometry());
 }
 
+static Bool checkExpose(Display* display, XEvent* event, XPointer arg) {
+    if (event->type == Expose && event->xexpose.window == *(Window*)arg) {
+        *(Window*)arg = None;
+    }
+    return False;
+}
+
 void YFrameWindow::handleExpose(const XExposeEvent &expose) {
     if (expose.count == 0) {
-        repaint();
+        XEvent check;
+        Window where = expose.window;
+        XCheckIfEvent(xapp->display(), &check, checkExpose, (XPointer) &where);
+        if (where == expose.window) {
+            repaint();
+        }
     }
 }
 
@@ -2195,7 +2213,7 @@ ref<YIcon> newClientIcon(int count, int reclen, long * elem) {
 
         if (depth == 1) {
             ref<YPixmap> img = YPixmap::create(w, h, xapp->depth());
-            Graphics g(img, 0, 0);
+            Graphics g(img);
 
             g.setColorPixel(0xffffffff);
             g.fillRect(0, 0, w, h);
@@ -3018,6 +3036,9 @@ void YFrameWindow::updateNormalSize() {
 }
 
 void YFrameWindow::setCurrentGeometryOuter(YRect newSize) {
+    if (newSize == geometry())
+        return;
+
     MSG(("setCurrentGeometryOuter: %d %d %d %d",
          newSize.x(), newSize.y(), newSize.width(), newSize.height()));
     setWindowGeometry(newSize);

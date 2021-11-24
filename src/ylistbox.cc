@@ -20,7 +20,7 @@
 
 #include <string.h>
 
-static ref<YFont> listBoxFont;
+static YFont listBoxFont;
 static YColorName listBoxBg(&clrListBox);
 static YColorName listBoxFg(&clrListBoxText);
 static YColorName listBoxSelBg(&clrListBoxSelected);
@@ -30,12 +30,6 @@ inline int getIconSize() {
     return int(YIcon::smallSize());
 }
 
-inline ref<YFont> getListBoxFont() {
-    if (listBoxFont == null)
-        listBoxFont = YFont::getFont(XFA(listBoxFontName));
-    return listBoxFont;
-}
-
 int YListBox::fAutoScrollDelta = 0;
 
 int YListItem::getWidth() {
@@ -43,8 +37,8 @@ int YListItem::getWidth() {
     if (getIcon() != null) {
         width += getIconSize();
     }
-    if (getText() != null) {
-        width += getListBoxFont()->textWidth(getText()) + 3;
+    if (getText() != null && listBoxFont) {
+        width += listBoxFont->textWidth(getText()) + 3;
     }
     return width;
 }
@@ -69,7 +63,7 @@ YListBox::YListBox(YScrollView *view, YWindow *aParent):
     fGradient(null)
 {
     if (listBoxFont == null)
-        listBoxFont = YFont::getFont(XFA(listBoxFontName));
+        listBoxFont = listBoxFontName;
     addStyle(wsNoExpose);
     setBitGravity(NorthWestGravity);
     addEventMask(VisibilityChangeMask);
@@ -86,7 +80,6 @@ YListBox::YListBox(YScrollView *view, YWindow *aParent):
 
 YListBox::~YListBox() {
     fGradient = null;
-    listBoxFont = null;
 }
 
 bool YListBox::isFocusTraversable() {
@@ -164,7 +157,7 @@ YListItem *YListBox::getItem(int no) {
 }
 
 int YListBox::getLineHeight() {
-    return max(getIconSize(), listBoxFont->height()) + 2;
+    return max(getIconSize(), listBoxFont ? listBoxFont->height() : 0) + 2;
 }
 
 void YListBox::ensureVisibility(int item) { //!!! horiz too
@@ -506,10 +499,10 @@ void YListBox::paintItem(Graphics &g, int n) {
     YListItem *a = getItem(n);
     int x = 3;
     int lh = getLineHeight();
-    int fh = getListBoxFont()->height();
+    int fh = listBoxFont ? listBoxFont->height() : 8;
     int xpos = 0;
     int y = n * lh;
-    int yPos = y + lh - (lh - fh) / 2 - listBoxFont->descent();
+    int yPos = y + lh - (lh - fh) / 2 - (listBoxFont ? listBoxFont->descent() : 0);
 
     if (a == nullptr)
         return ;
@@ -566,7 +559,7 @@ void YListBox::paintItem(Graphics &g, int n) {
     }
 
     mstring title(a->getText());
-    if (title != null) {
+    if (title != null && listBoxFont) {
         g.setColor(s ? listBoxSelFg : listBoxFg);
         g.setFont(listBoxFont);
         g.drawChars(title,

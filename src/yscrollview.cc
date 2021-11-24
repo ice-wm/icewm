@@ -8,17 +8,14 @@
 #include "yscrollbar.h"
 #include "prefs.h"
 
-static YColorName scrollBarBg(&clrScrollBar);
-
 YScrollView::YScrollView(YWindow *aParent, YScrollable* scroll):
     YWindow(aParent),
     scrollable(scroll),
     scrollVert(new YScrollBar(YScrollBar::Vertical, this)),
     scrollHoriz(new YScrollBar(YScrollBar::Horizontal, this))
 {
-    addStyle(wsNoExpose);
     setTitle("ScrollView");
-    setBackground(scrollBarBg);
+    setBackground(YScrollBar::background());
 }
 
 void YScrollView::setView(YScrollable *s) {
@@ -45,14 +42,18 @@ void YScrollView::layout() {
     getGap(dx, dy);
 
     if (dx > 0 && w > dx) {
-        scrollVert->setGeometry(YRect(w - dx, 0, dx, h > dy ? h - dy : 1));
+        scrollVert->setGeometry(YRect(w - dx, 0,
+                                int(scrollBarWidth),
+                                h > dy ? h - dy : 1));
         scrollVert->enable();
     } else {
         scrollVert->hide();
         dx = 0;
     }
     if (dy > 0 && h > dy) {
-        scrollHoriz->setGeometry(YRect(0, h - dy, w > dx ? w - dx : 1, dx));
+        scrollHoriz->setGeometry(YRect(0, h - dy,
+                                 w > dx ? w - dx : 1,
+                                 int(scrollBarHeight)));
         scrollHoriz->enable();
     } else {
         scrollHoriz->hide();
@@ -78,6 +79,18 @@ void YScrollView::configure(const YRect2& r) {
 bool YScrollView::handleScrollKeys(const XKeyEvent& key) {
     return scrollVert->handleScrollKeys(key)
         | scrollHoriz->handleScrollKeys(key);
+}
+
+void YScrollView::handleExpose(const XExposeEvent& expose) {
+    if (expose.count == 0 && notbit(getStyle(), wsNoExpose)) {
+        addStyle(wsNoExpose);
+        ref<YPixmap> pixmap = YPixmap::create(1, 1, depth());
+        Graphics g(pixmap);
+        g.setColor(YScrollBar::background());
+        g.drawPoint(0, 0);
+        setBackgroundPixmap(pixmap);
+        clearWindow();
+    }
 }
 
 // vim: set sw=4 ts=4 et:

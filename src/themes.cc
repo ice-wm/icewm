@@ -24,7 +24,7 @@
 #include "intl.h"
 
 const unsigned utf32ellipsis = 0x2026;
-extern ref<YFont> menuFont;
+extern YFont menuFont;
 
 DTheme::DTheme(IApp *app, YSMListener *smActionListener, const mstring &label, const mstring &theme):
     DObject(app, label, null), fTheme(theme)
@@ -76,9 +76,12 @@ void ThemesMenu::refresh() {
     findThemes(cnfThemes, this);
     findThemes(libThemes, this);
 
-    addSeparator();
     mstring defTheme(CONFIG_DEFAULT_THEME);
-    newThemeItem(app, smActionListener, _("Default"), defTheme, this);
+    YMenuItem *im = newThemeItem(app, smActionListener, _("Default"), defTheme, this);
+    if (im) {
+        addSeparator();
+        add(im);
+    }
 }
 
 int ThemesMenu::countThemes(const upath& path) {
@@ -149,7 +152,7 @@ void ThemesMenu::findThemes(const upath& path, ObjectMenu* container) {
                 // looks like a submenu but is an item
                 // of that kind... weird, ignore
             }
-            else if (0 > (relatedItemPos = container->findFirstLetRef(fLetter, 0, 1)))
+            else if (0 > (relatedItemPos = container->findFirstLetRef(fLetter, 0)))
             {
                 MSG(("adding: %s to main menu", subdir.string()));
             }

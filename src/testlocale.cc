@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <langinfo.h>
 
 char const *ApplicationName("testlocale");
 bool multiByte(true);
@@ -23,12 +24,12 @@ foreign_str(char const *charset, char const *foreign)
 }
 
 static void
-print_string(const YLChar *lstr, YUChar *ustr)
+print_string(const char *lstr, wchar_t *ustr)
 {
     printf ("In locale encoding: \"%s\"\n", lstr);
     printf ("In unicode encoding: \"");
 
-    for (YUChar * u(ustr); *u; ++u) printf("\\U%04x", *u);
+    for (wchar_t * u(ustr); *u; ++u) printf("\\U%04x", *u);
 
     puts ("\"");
 }
@@ -41,24 +42,31 @@ print_string(const YLChar *lstr, YUChar *ustr)
 
 int main() {
 #ifdef CONFIG_I18N
-    size_t ulen;
+    {
+        YLocale locale;
+        printf("Default locale: %s\n", YLocale::getLocaleName());
+        printf("nl_langinfo(%d): %s\n", CODESET, nl_langinfo(CODESET));
+    }
 
-    const YLChar *lstr("Möhrenkäuter");
-    YUChar *ustr(YLocale("de_DE.iso-8859-1").
-                 unicodeString(lstr, strlen(lstr), ulen));
-    print_string(lstr, ustr);
+    {
+        size_t ulen;
 
-    lstr = foreign_str ("ISO8859-15", "Euro sign: ¤");
-    ustr = YLocale("de_DE.iso-8859-1").
-        unicodeString(lstr, strlen(lstr), ulen);
-    print_string(lstr, ustr);
+        const char *lstr("Möhrenkäuter");
+        wchar_t *ustr(YLocale("de_DE.iso-8859-1").
+                     unicodeString(lstr, strlen(lstr), ulen));
+        print_string(lstr, ustr);
 
+        lstr = foreign_str ("ISO8859-15", "Euro sign: ¤");
+        ustr = YLocale("de_DE.iso-8859-1").
+            unicodeString(lstr, strlen(lstr), ulen);
+        print_string(lstr, ustr);
+    }
 
 /*
-    YLChar * utf8(YLocale("de_DE.utf8").localeString(unicode));
+    char * utf8(YLocale("de_DE.utf8").localeString(unicode));
     printf("utf8: %s\n", utf8);
 
-    YLChar * latin1(YLocale("de_DE.iso-8859-1").localeString(unicode));
+    char * latin1(YLocale("de_DE.iso-8859-1").localeString(unicode));
     printf("iso-8859-1: %s\n", latin1);
 */
 

@@ -25,7 +25,7 @@ YFrameButton::YFrameButton(YFrameTitleBar* parent, char kind) :
     fKind(kind),
     fVisible(false)
 {
-    if (onRight())
+    if (parent->isRight(kind))
         setWinGravity(NorthEastGravity);
 
     addStyle(wsNoExpose);
@@ -48,10 +48,6 @@ YFrameWindow *YFrameButton::getFrame() const {
 
 bool YFrameButton::focused() const {
     return getFrame()->focused();
-}
-
-bool YFrameButton::onRight() const {
-    return (strchr(titleButtonsRight, fKind) != nullptr);
 }
 
 void YFrameButton::setKind(char kind) {

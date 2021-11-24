@@ -7,6 +7,7 @@
 #include "ypaint.h"
 #include "yxapp.h"
 #include "yprefs.h"
+#include "yfontbase.h"
 #include "ascii.h"
 #include "intl.h"
 #include <stdlib.h>
@@ -29,7 +30,7 @@ static inline Display* display()  { return xapp->display(); }
 Graphics::Graphics(YWindow & window,
                    unsigned long vmask, XGCValues * gcv):
     fDrawable(window.handle()),
-    fColor(), fFont(null),
+    fColor(), fFont(),
     fPicture(None),
     xOrigin(0), yOrigin(0)
 {
@@ -44,10 +45,10 @@ Graphics::Graphics(YWindow & window,
 
 Graphics::Graphics(YWindow & window):
     fDrawable(window.handle()),
-    fColor(), fFont(null),
+    fColor(), fFont(),
     fPicture(None),
     xOrigin(0), yOrigin(0)
- {
+{
     rWidth = window.width();
     rHeight = window.height();
     rDepth = (window.depth() ? window.depth() : xapp->depth());
@@ -58,12 +59,12 @@ Graphics::Graphics(YWindow & window):
 #endif
 }
 
-Graphics::Graphics(ref<YPixmap> pixmap, int x_org, int y_org):
+Graphics::Graphics(ref<YPixmap> pixmap):
     fDrawable(pixmap->pixmap()),
-    fColor(), fFont(null),
+    fColor(), fFont(),
     fPicture(None),
-    xOrigin(x_org), yOrigin(y_org)
- {
+    xOrigin(0), yOrigin(0)
+{
     rWidth = pixmap->width();
     rHeight = pixmap->height();
     rDepth = pixmap->depth();
@@ -77,7 +78,7 @@ Graphics::Graphics(ref<YPixmap> pixmap, int x_org, int y_org):
 Graphics::Graphics(Drawable drawable, unsigned w, unsigned h, unsigned depth,
                    unsigned long vmask, XGCValues * gcv):
     fDrawable(drawable),
-    fColor(), fFont(null),
+    fColor(), fFont(),
     fPicture(None),
     xOrigin(0), yOrigin(0),
     rWidth(w), rHeight(h), rDepth(depth)
@@ -90,7 +91,7 @@ Graphics::Graphics(Drawable drawable, unsigned w, unsigned h, unsigned depth,
 
 Graphics::Graphics(Drawable drawable, unsigned w, unsigned h, unsigned depth):
     fDrawable(drawable),
-    fColor(), fFont(null),
+    fColor(), fFont(),
     fPicture(None),
     xOrigin(0), yOrigin(0),
     rWidth(w), rHeight(h), rDepth(depth)
@@ -226,18 +227,22 @@ void Graphics::drawLine(int x1, int y1, int x2, int y2) {
 }
 
 void Graphics::drawSegments(XSegment *segments, int n) {
-    for (int i = 0; i < n; i++) {
-        segments[i].x1 -= xOrigin;
-        segments[i].y1 -= yOrigin;
-        segments[i].x2 -= xOrigin;
-        segments[i].y2 -= yOrigin;
+    if (xOrigin | yOrigin) {
+        for (int i = 0; i < n; i++) {
+            segments[i].x1 -= xOrigin;
+            segments[i].y1 -= yOrigin;
+            segments[i].x2 -= xOrigin;
+            segments[i].y2 -= yOrigin;
+        }
     }
     XDrawSegments(display(), drawable(), gc, segments, n);
-    for (int i = 0; i < n; i++) {
-        segments[i].x1 += xOrigin;
-        segments[i].y1 += yOrigin;
-        segments[i].x2 += xOrigin;
-        segments[i].y2 += yOrigin;
+    if (xOrigin | yOrigin) {
+        for (int i = 0; i < n; i++) {
+            segments[i].x1 += xOrigin;
+            segments[i].y1 += yOrigin;
+            segments[i].x2 += xOrigin;
+            segments[i].y2 += yOrigin;
+        }
     }
 }
 
@@ -247,14 +252,18 @@ void Graphics::drawRect(int x, int y, unsigned width, unsigned height) {
 }
 
 void Graphics::drawRects(XRectangle *rects, unsigned n) {
-    for (unsigned i = 0; i < n; i++) {
-        rects[i].x -= xOrigin;
-        rects[i].y -= yOrigin;
+    if (xOrigin | yOrigin) {
+        for (unsigned i = 0; i < n; i++) {
+            rects[i].x -= xOrigin;
+            rects[i].y -= yOrigin;
+        }
     }
     XDrawRectangles(display(), drawable(), gc, rects, int(n));
-    for (unsigned i = 0; i < n; i++) {
-        rects[i].x += xOrigin;
-        rects[i].y += yOrigin;
+    if (xOrigin | yOrigin) {
+        for (unsigned i = 0; i < n; i++) {
+            rects[i].x += xOrigin;
+            rects[i].y += yOrigin;
+        }
     }
 }
 
@@ -277,7 +286,8 @@ void Graphics::drawChars(const char *data, int offset, int len, int x, int y) {
 }
 
 void Graphics::drawString(int x, int y, char const * str) {
-    drawChars(str, 0, int(strlen(str)), x, y);
+    if (fFont != null)
+        fFont->drawGlyphs(*this, x, y, str, int(strlen(str)));
 }
 
 /**
@@ -285,73 +295,9 @@ void Graphics::drawString(int x, int y, char const * str) {
  * ... character.
  */
 void Graphics::drawStringEllipsis(int x, int y, const char *str, int maxWidth) {
-    const int len(strlen(str));
-
-    if (fFont == null || fFont->textWidth(str, len) <= maxWidth) {
-        drawChars(str, 0, len, x, y);
-        return;
-    }
-
-    auto ellipsis = showEllipsis && fFont->supports(utf32ellipsis) ?
-            utf8ellipsis : "...";
-
-    if (showEllipsis)
-        maxWidth -= fFont->textWidth(ellipsis, 3);
-
-    int rawPos(0), drawPos(0), trimLen(0), trimWid(0);
-
-    if (maxWidth > 0) {
-        while (rawPos < len) {
-            int glyphLen, glyphWidth;
-#ifdef CONFIG_I18N
-            wchar_t wc;
-            if (multiByte) {
-                glyphLen = mbtowc(&wc, str + rawPos, size_t(len - rawPos));
-                if (glyphLen < 1) { // bad things
-                    rawPos++;
-                    continue;
-                }
-                glyphWidth = fFont->textWidth(str + rawPos, glyphLen);
-            } else
-#endif
-            {
-                glyphLen = 1;
-                glyphWidth = fFont->textWidth(str + rawPos, 1);
-            }
-
-            if (drawPos + glyphWidth >= maxWidth)
-                break;
-            bool isSpace =
-#ifdef CONFIG_I18N
-                multiByte ?
-                    !iswprint(wc) :
-#endif
-                    (1 == glyphLen && ASCII::isWhiteSpace(str[rawPos]));
-
-            if (isSpace)
-            {
-                trimLen += glyphLen;
-                trimWid += glyphWidth;
-            } else {
-                trimLen = trimWid = 0;
-            }
-
-            rawPos += glyphLen;
-            drawPos += glyphWidth;
-        }
-        // chop off trailing whitespace
-        rawPos -= trimLen;
-        drawPos -= trimWid;
-    }
-
-    if (rawPos > 0)
-        drawChars(str, 0, rawPos, x, y);
-
-    if (showEllipsis && rawPos < len) {
-        drawChars(ellipsis, 0, 3, x + drawPos, y);
-    }
+    if (fFont != null)
+        fFont->drawGlyphs(*this, x, y, str, int(strlen(str)), maxWidth);
 }
-
 
 void Graphics::drawCharUnderline(int x, int y, const char *str, int charPos) {
 /// TODO #warning "FIXME: don't mess with multibyte here, use a wide char"
@@ -427,14 +373,17 @@ void Graphics::drawStringMultiline(int x, int y, const char *str) {
 
 /******************************************************************************/
 
+void Graphics::fillRect(int x, int y, unsigned width, unsigned height) {
+    XFillRectangle(display(), drawable(), gc,
+                   x - xOrigin, y - yOrigin, width, height);
+}
+
 void Graphics::fillRect(int x, int y, unsigned width, unsigned height,
                         unsigned roundedCornerRadius)
 {
     unsigned rounding = min(roundedCornerRadius, min(width, height) / 2);
-
     if (rounding == 0) {
-        XFillRectangle(display(), drawable(), gc,
-                       x - xOrigin, y - yOrigin, width, height);
+        fillRect(x, y, width, height);
     } else {
         XArc arc[4];
 
@@ -490,14 +439,18 @@ void Graphics::fillRect(int x, int y, unsigned width, unsigned height,
 }
 
 void Graphics::fillRects(XRectangle *rects, int n) {
-    for (int i = 0; i < n; i++) {
-        rects[i].x -= xOrigin;
-        rects[i].y -= yOrigin;
+    if (xOrigin | yOrigin) {
+        for (int i = 0; i < n; i++) {
+            rects[i].x -= xOrigin;
+            rects[i].y -= yOrigin;
+        }
     }
     XFillRectangles(display(), drawable(), gc, rects, n);
-    for (int i = 0; i < n; i++) {
-        rects[i].x += xOrigin;
-        rects[i].y += yOrigin;
+    if (xOrigin | yOrigin) {
+        for (int i = 0; i < n; i++) {
+            rects[i].x += xOrigin;
+            rects[i].y += yOrigin;
+        }
     }
 }
 
@@ -506,14 +459,18 @@ void Graphics::fillPolygon(XPoint *points, int n, int shape,
 {
     int n1 = (mode == CoordModeOrigin) ? n : 1;
 
-    for (int i = 0; i < n1; i++) {
-        points[i].x -= xOrigin;
-        points[i].y -= yOrigin;
+    if (xOrigin | yOrigin) {
+        for (int i = 0; i < n1; i++) {
+            points[i].x -= xOrigin;
+            points[i].y -= yOrigin;
+        }
     }
     XFillPolygon(display(), drawable(), gc, points, n, shape, mode);
-    for (int i = 0; i < n1; i++) {
-        points[i].x += xOrigin;
-        points[i].y += yOrigin;
+    if (xOrigin | yOrigin) {
+        for (int i = 0; i < n1; i++) {
+            points[i].x += xOrigin;
+            points[i].y += yOrigin;
+        }
     }
 }
 
@@ -537,10 +494,6 @@ void Graphics::setColorPixel(unsigned long pixel) {
         pixel |= 0xFF000000;
     }
     XSetForeground(display(), gc, pixel);
-}
-
-void Graphics::setFont(ref<YFont> aFont) {
-    fFont = aFont;
 }
 
 void Graphics::setLineWidth(unsigned width) {
@@ -833,14 +786,18 @@ void Graphics::drawBorderG(int x, int y, unsigned wid, unsigned hei, bool raised
 
 void Graphics::drawLines(XPoint *points, int n, int mode) {
     int n1 = (mode == CoordModeOrigin) ? n : 1;
-    for (int i = 0; i < n1; i++) {
-        points[i].x -= xOrigin;
-        points[i].y -= yOrigin;
+    if (xOrigin | yOrigin) {
+        for (int i = 0; i < n1; i++) {
+            points[i].x -= xOrigin;
+            points[i].y -= yOrigin;
+        }
     }
     XDrawLines(display(), drawable(), gc, points, n, mode);
-    for (int i = 0; i < n1; i++) {
-        points[i].x += xOrigin;
-        points[i].y += yOrigin;
+    if (xOrigin | yOrigin) {
+        for (int i = 0; i < n1; i++) {
+            points[i].x += xOrigin;
+            points[i].y += yOrigin;
+        }
     }
 }
 

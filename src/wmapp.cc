@@ -491,8 +491,9 @@ void LogoutMenu::updatePopup() {
     if (showLogoutMenu) {
         setShared(true); /// !!! get rid of this (refcount objects)
         if (showLogoutSubMenu) {
-            addItem(_("_Logout"), -2, null, actionLogout);
-            addItem(_("_Cancel logout"), -2, null, actionCancelLogout)->setEnabled(false);
+            addItem(_("_Logout"), -2, null, actionLogout, "logout");
+            addItem(_("_Cancel logout"), -2, null, actionCancelLogout,
+                    "cancel-logout")->setEnabled(false);
             addSeparator();
 
             int const oldItemCount = itemCount();
@@ -1364,8 +1365,8 @@ YWMApp::~YWMApp() {
     workspaces.reset();
     WPixRes::freePixmaps();
 
-    extern void freeTitleColorsFonts();
-    freeTitleColorsFonts();
+    extern void clearFontCache();
+    clearFontCache();
 
     YConfig::freeConfig(wmapp_preferences);
 
@@ -1674,6 +1675,8 @@ static void print_configured(const char *argv0) {
 
 static void loadStartup(const char* configFile)
 {
+    rightToLeft = YLocale::RTL();
+
     YConfig(wmapp_preferences).load(configFile);
 
     YXApplication::alphaBlending |= alphaBlending;
@@ -1783,8 +1786,6 @@ void YWMApp::createTaskBar() {
         for (YFrameIter frame = manager->focusedIterator(); ++frame; ) {
             frame->updateAppStatus();
         }
-        taskBar->showBar();
-        taskBar->relayoutNow();
     }
 }
 

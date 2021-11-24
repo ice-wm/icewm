@@ -41,7 +41,7 @@ YInputLine::YInputLine(YWindow *parent, YInputListener *listener):
     fSelecting(false),
     fBlinkTime(333),
     fListener(listener),
-    inputFont(YFont::getFont(XFA(inputFontName))),
+    inputFont(inputFontName),
     inputBg(&clrInput),
     inputFg(&clrInputText),
     inputSelectionBg(&clrInputSelection),
@@ -81,7 +81,7 @@ void YInputLine::configure(const YRect2& r) {
 }
 
 void YInputLine::paint(Graphics &g, const YRect &/*r*/) {
-    ref<YFont> font = inputFont;
+    YFont font = inputFont;
     int min, max, minOfs = 0, maxOfs = 0;
     int textLen = fText.length();
 
@@ -116,9 +116,10 @@ void YInputLine::paint(Graphics &g, const YRect &/*r*/) {
     }
 
     if (font != null) {
-        int yp = 1 + font->ascent();
+        int yo = ::max(0, (int(height()) - int(font->height())) / 2);
+        int yp = font->ascent() + yo;
         int curOfs = font->textWidth(fText.substring(0, curPos));
-        int cx = curOfs - leftOfs;
+        int cx = ::max(1, curOfs - leftOfs);
 
         g.setFont(font);
 
@@ -127,7 +128,7 @@ void YInputLine::paint(Graphics &g, const YRect &/*r*/) {
             if (fText != null)
                 g.drawChars(fText.substring(0, textLen), -leftOfs, yp);
             if (fHasFocus && fCursorVisible)
-                g.drawLine(cx, 0, cx, font->height() + 2);
+                g.drawLine(cx, yo, cx, font->height() + 2);
         } else {
             if (min > 0) {
                 g.setColor(inputFg);
@@ -435,7 +436,7 @@ void YInputLine::handleSelection(const XSelectionEvent &selection) {
 }
 
 unsigned YInputLine::offsetToPos(int offset) {
-    ref<YFont> font = inputFont;
+    YFont font = inputFont;
     int ofs = 0, pos = 0;
     int textLen = fText.length();
 
@@ -526,7 +527,7 @@ void YInputLine::limit() {
     if (markPos > textLen)
         markPos = textLen;
 
-    ref<YFont> font = inputFont;
+    YFont font = inputFont;
     if (font != null) {
         int curOfs = font->textWidth(fText.substring(0, curPos));
         int curLen = font->textWidth(fText.substring(0, textLen));

@@ -16,7 +16,8 @@
 
 #define ISMASK(w,e,n) (((w) & ~(n)) == (e))
 
-static ref<YFont> titleFont;
+static YFont titleFont;
+bool YFrameTitleBar::swapTitleButtons;
 
 static YColorName titleBarBackground[2] = {
     &clrInactiveTitleBar, &clrActiveTitleBar
@@ -30,7 +31,31 @@ static YColorName titleBarShadowText[2] = {
 
 void YFrameTitleBar::initTitleColorsFonts() {
     if (titleFont == null) {
-        titleFont = YFont::getFont(XFA(titleFontName));
+        titleFont = titleFontName;
+        if (rightToLeft) {
+            swapTitleButtons = true;
+            int pn = 0;
+            ref<YPixmap> old;
+            for (char c : YRange<const char>(titleButtonsSupported,
+                                      strlen(titleButtonsSupported))) {
+                ref<YPixmap> pix;
+                switch (c) {
+                    case Depth : pix = depthPixmap[pn]; break;
+                    case Hide  : pix = hidePixmap[pn]; break;
+                    case Mini  : pix = minimizePixmap[pn]; break;
+                    case Maxi  : pix = maximizePixmap[pn]; break;
+                    case Roll  : pix = rollupPixmap[pn]; break;
+                    case Menu  : pix = ::menuButton[pn]; break;
+                    case Close : pix = closePixmap[pn]; break;
+                }
+                if (pix != null) {
+                    if (old != null) {
+                        swapTitleButtons &= (pix->width() == old->width());
+                    }
+                    old = pix;
+                }
+            }
+        }
     }
 }
 
@@ -65,7 +90,12 @@ YFrameTitleBar::~YFrameTitleBar() {
 }
 
 bool YFrameTitleBar::isRight(char c) {
-    return (strchr(titleButtonsRight, c) != nullptr);
+    const char* distant = swapTitleButtons ? titleButtonsLeft : titleButtonsRight;
+    return (strchr(distant, c) != nullptr);
+}
+
+bool YFrameTitleBar::isRight(const YFrameButton* b) {
+    return isRight(b->getKind());
 }
 
 bool YFrameTitleBar::supported(char c) {
@@ -225,13 +255,14 @@ void YFrameTitleBar::layoutButtons() {
     int right(int(getFrame()->width()) - 2 * getFrame()->borderX() -
               (titleQ[pi] != null ? int(titleQ[pi]->width()) : 0));
 
-    if (titleButtonsLeft) {
-        for (const char *bc = titleButtonsLeft; *bc; bc++) {
+    const char* nearby = swapTitleButtons ? titleButtonsRight : titleButtonsLeft;
+    if (nearby) {
+        for (const char *bc = nearby; *bc; bc++) {
             if (*bc == ' ')
                 left++;
             else {
                 YFrameButton *b = getButton(*bc);
-                if (b && b->onRight() == false) {
+                if (b && isRight(b) == false) {
                     if (left + int(b->width()) >= right) {
                         b->hide();
                     } else {
@@ -244,13 +275,14 @@ void YFrameTitleBar::layoutButtons() {
         }
     }
 
-    if (titleButtonsRight) {
-        for (const char *bc = titleButtonsRight; *bc; bc++) {
+    const char* distant = swapTitleButtons ? titleButtonsLeft : titleButtonsRight;
+    if (distant) {
+        for (const char *bc = distant; *bc; bc++) {
             if (*bc == ' ')
                 right--;
             else {
                 YFrameButton *b = getButton(*bc);
-                if (b && b->onRight()) {
+                if (b && isRight(b)) {
                     if (right - int(b->width()) <= left) {
                         b->hide();
                     } else {
@@ -319,36 +351,42 @@ void YFrameTitleBar::paint(Graphics &g, const YRect &/*r*/) {
     if (titleQ[focused()] != null)
         onRight -= int(titleQ[focused()]->width());
 
-    if (titleButtonsLeft) {
-        for (const char *bc = titleButtonsLeft; *bc; bc++) {
+    const char* nearby = swapTitleButtons ? titleButtonsRight : titleButtonsLeft;
+    if (nearby) {
+        for (const char *bc = nearby; *bc; bc++) {
             if (*bc == ' ')
                 ++onLeft;
             else {
                 YFrameButton const *b(getButton(*bc));
-                if (b && b->visible() && b->onRight() == false)
+                if (b && b->visible() && isRight(b) == false)
                     onLeft = max(onLeft, (int)(b->x() + b->width()));
             }
         }
     }
 
-    if (titleButtonsRight) {
-        for (const char *bc = titleButtonsRight; *bc; bc++) {
+    const char* distant = swapTitleButtons ? titleButtonsLeft : titleButtonsRight;
+    if (distant) {
+        for (const char *bc = distant; *bc; bc++) {
             if (*bc == ' ')
                 --onRight;
             else {
                 YFrameButton const *b(getButton(*bc));
-                if (b && b->visible() && b->onRight())
+                if (b && b->visible() && isRight(b))
                     onRight = max(onRight - (int) b->width(), b->x());
             }
         }
     }
 
-    g.setFont(titleFont);
+    if (titleFont) {
+        g.setFont(titleFont);
+    }
 
     mstring title = getFrame()->getTitle();
-    int const yPos(int(height() - titleFont->height()) / 2 +
-                   titleFont->ascent() + titleBarVertOffset);
-    int tlen = title != null ? titleFont->textWidth(title) : 0;
+    int const fontHeight = titleFont ? titleFont->height() : 8;
+    int const fontAscent = titleFont ? titleFont->ascent() : 6;
+    int const yPos(int(height() - fontHeight) / 2 +
+                   fontAscent + titleBarVertOffset);
+    int tlen = title != null && titleFont ? titleFont->textWidth(title) : 0;
 
     int stringOffset(onLeft + (onRight - onLeft - tlen)
                      * (int) titleBarJustify / 100);
@@ -506,13 +544,14 @@ void YFrameTitleBar::renderShape(Graphics& g) {
         if (titleQ[focused()] != null)
             onRight -= int(titleQ[focused()]->width());
 
-        if (titleButtonsLeft)
-            for (const char *bc = titleButtonsLeft; *bc; bc++) {
+        const char* nearby = swapTitleButtons ? titleButtonsRight : titleButtonsLeft;
+        if (nearby)
+            for (const char *bc = nearby; *bc; bc++) {
                 if (*bc == ' ')
                     ++onLeft;
                 else {
                     YFrameButton const *b(getButton(*bc));
-                    if (b && b->visible() && b->onRight() == false) {
+                    if (b && b->visible() && isRight(b) == false) {
                         onLeft = max(onLeft, (int)(b->x() + b->width()));
 
                         ref<YPixmap> pixmap = b->getPixmap(0);
@@ -527,13 +566,14 @@ void YFrameTitleBar::renderShape(Graphics& g) {
                 }
             }
 
-        if (titleButtonsRight)
-            for (const char *bc = titleButtonsRight; *bc; bc++) {
+        const char* distant = swapTitleButtons ? titleButtonsLeft : titleButtonsRight;
+        if (distant)
+            for (const char *bc = distant; *bc; bc++) {
                 if (*bc == ' ')
                     --onRight;
                 else {
                     YFrameButton const *b(getButton(*bc));
-                    if (b && b->visible() && b->onRight()) {
+                    if (b && b->visible() && isRight(b)) {
                         onRight = max(onRight - (int) b->width(), b->x());
 
                         ref<YPixmap> pixmap = b->getPixmap(0);
@@ -552,7 +592,7 @@ void YFrameTitleBar::renderShape(Graphics& g) {
         onRight += x();
 
         mstring title = getFrame()->getTitle();
-        int tlen = title != null ? titleFont->textWidth(title) : 0;
+        int tlen = title != null && titleFont ? titleFont->textWidth(title) : 0;
         bool const pi(focused());
 
         if (titleL[pi] != null) {
