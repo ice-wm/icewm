@@ -1,5 +1,267 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 20df1cb291469f6c519cc04af3a734bda4ce4dd1
+Merge: 0121ea41 99719a51
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 2 03:21:58 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 99719a51a5433e6233ce48cc763e1530c4a06061
+Merge: b4fc37b5 b6c5a2d5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 2 03:20:54 2021 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit b6c5a2d56b14fec4154be5f6f7d7ed0cce7fb969
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 2 03:17:05 2021 +0100
+
+    Fix to focus wine and winecfg for issue #625, which improves commit
+    3612d6e1397943e1cb009562d3cdedce21d5c63a.
+
+ src/wmframe.cc | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit ab4107c25e0452a46413c86eaeb0a1aa2bec99a9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 30 20:32:13 2021 +0100
+
+    Fix the scaling of the taskbar background gradient for double height
+    taskbar.
+
+ src/wmtaskbar.cc | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+
+commit 4a0ac47569032f965c9ed9db192db8aad2a642c6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 30 20:31:59 2021 +0100
+
+    Swap the columns in the about dialog for right-to-left locales.
+
+ src/wmabout.cc |  2 ++
+ src/ylayout.h  | 14 +++++++++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+
+commit 3f27f9ef233773dfb130f3aa3cc3b49d69aa2b88
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Nov 29 20:07:21 2021 +0100
+
+    Replace "sans-serif" with "DejaVu Sans" for Xft fonts, because these
+    support a wider range of characters, which improves support for languages
+    with non-Latin scripts.
+
+ src/themable.h  | 22 +++++++++++-----------
+ src/yfontxft.cc |  2 ++
+ src/yprefs.h    |  2 +-
+ 3 files changed, 14 insertions(+), 12 deletions(-)
+
+commit 4e34c4e6ca2c74db73d4e71643d352187faef56a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Nov 28 23:38:54 2021 +0100
+
+    Add tab separators to the CPU multiline status tooltip for two-column
+    display.
+
+ src/acpustatus.cc | 34 ++++++++++++++++++++++++++++------
+ 1 file changed, 28 insertions(+), 6 deletions(-)
+
+commit e0df45610aa545508e79ebb9938265c1e6758677
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Nov 28 23:38:13 2021 +0100
+
+    Fix multiline tooltips for right-to-left locales.
+
+ src/ypaint.cc   | 54 ++++++++++++++++++++++++++++++-----------------------
+ src/ypaint.h    |  2 +-
+ src/ytooltip.cc |  2 +-
+ 3 files changed, 33 insertions(+), 25 deletions(-)
+
+commit 3c3f7a1987047c11ac6c9c6284200664a11cef66
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Nov 28 23:36:24 2021 +0100
+
+    Ensure that the multiline tab spacing is two character positions.
+
+ src/yfont.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 567e76bb4516066f2218fe22220c41bd9c08dc27
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Nov 28 23:35:54 2021 +0100
+
+    Fix taskbar collapse button for right-to-left locales.
+
+ src/wmtaskbar.cc | 27 ++++++++++++---------------
+ 1 file changed, 12 insertions(+), 15 deletions(-)
+
+commit 85bba6fd7becdfd0b4b6ef634b744dfe9b8017a0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Nov 28 23:35:09 2021 +0100
+
+    Fix workspace pane sizing for right-to-left locales.
+
+ src/aworkspaces.cc | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit d8edc00998b536203f6d11252c8d5978b1f83fb5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Nov 28 17:47:53 2021 +0100
+
+    Update potfiles.
+
+ po/ar.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/be.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/bg.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/ca.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/cs.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/da.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/de.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/el.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/en.po     | 293 +++++++++++++++++++++++++--------------------------
+ po/es.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/fi.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/fr.po     | 302 ++++++++++++++++++++++++++--------------------------
+ po/he.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/hr.po     | 301 ++++++++++++++++++++++++++--------------------------
+ po/hu.po     | 300 ++++++++++++++++++++++++++--------------------------
+ po/icewm.pot | 295 +++++++++++++++++++++++++--------------------------
+ po/id.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/it.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/ja.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/ko.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/lt.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/lv.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/mk.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/nb.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/nl.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/no.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/pl.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/pt.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/pt_BR.po  | 300 ++++++++++++++++++++++++++--------------------------
+ po/ro.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/ru.po     | 313 +++++++++++++++++++++++++++---------------------------
+ po/sk.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/sl.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/sv.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/tr.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/uk.po     | 314 +++++++++++++++++++++++++++----------------------------
+ po/vi.po     | 298 ++++++++++++++++++++++++++--------------------------
+ po/zh_CN.po  | 298 ++++++++++++++++++++++++++--------------------------
+ po/zh_TW.po  | 298 ++++++++++++++++++++++++++--------------------------
+ 39 files changed, 5787 insertions(+), 5869 deletions(-)
+
+commit 06057f626f5cbb213a97f1846f94e862aa7d7e9a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Nov 28 17:37:41 2021 +0100
+
+    When the keyboard layout changes due to external reasons
+    and the taskbar has the keyboard applet, then reflect
+    the new layout in the taskbar applet for issue #622.
+    Make the keyboard applet display all of the output
+    of `setxkbmap -query` in the tooltip for the applet.
+    When the mouse is inside the keyboard applet, then
+    post the tooltip.  Compress all the XMappingEvents
+    to one single keyboard update event.
+    Don't set the text on the taskbar collapse button
+    when there is already a non-zero image for that button.
+    Add leftToRight as an opposite of rightToLeft.
+
+ src/akeyboard.cc | 97 ++++++++++++++++++++++++++++++++++++++++++++++++----
+ src/akeyboard.h  |  8 ++++-
+ src/logevent.cc  | 17 +++++++--
+ src/logevent.h   |  1 +
+ src/wmapp.cc     |  5 +--
+ src/wmapp.h      |  4 +--
+ src/wmmgr.cc     | 23 +++++++++++--
+ src/wmmgr.h      |  3 ++
+ src/wmtaskbar.cc | 27 +++++++++++----
+ src/yapp.cc      |  6 +++-
+ src/yapp.h       |  4 +--
+ src/yprefs.h     |  1 +
+ src/ywindow.cc   |  4 +++
+ src/ywindow.h    |  2 ++
+ src/yxapp.cc     | 12 +++++++
+ 15 files changed, 188 insertions(+), 26 deletions(-)
+
+commit 727d568954455c0d98a84026e22c306be3f89f1b
+Author: marcelo cripe <marcelocripe@gmail.com>
+Date:   Wed Nov 24 16:03:35 2021 +0000
+
+    Translated using Weblate (Portuguese (Brazil))
+
+    Currently translated at 100.0% (503 of 503 strings)
+
+ po/pt_BR.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7b4ce1cff5dc64da04d1798045b18362dc8fa7a8
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Wed Nov 24 11:11:07 2021 +0000
+
+    Translated using Weblate (Portuguese)
+
+    Currently translated at 100.0% (503 of 503 strings)
+
+ po/pt.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 0121ea41b3241590c7818f8f0c9518b6dcbc7b78
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 24 03:09:40 2021 +0100
+
+    Prepare 2.9.0 release
+
+ AUTHORS      |    9 +-
+ ChangeLog    | 9140 ++++++++++++++++++++++++++----------------------------
+ NEWS         |  195 +-
+ README.md    |   36 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |  270 +-
+ po/be.po     |  270 +-
+ po/bg.po     |  270 +-
+ po/ca.po     |  270 +-
+ po/cs.po     |  270 +-
+ po/da.po     |  270 +-
+ po/de.po     |  270 +-
+ po/el.po     |  270 +-
+ po/en.po     |  265 +-
+ po/es.po     |  270 +-
+ po/fi.po     |  270 +-
+ po/fr.po     |  274 +-
+ po/he.po     |  270 +-
+ po/hr.po     |  273 +-
+ po/hu.po     |  272 +-
+ po/icewm.pot |  267 +-
+ po/id.po     |  270 +-
+ po/it.po     |  270 +-
+ po/ja.po     |  270 +-
+ po/ko.po     |  270 +-
+ po/lt.po     |  270 +-
+ po/lv.po     |  270 +-
+ po/mk.po     |  270 +-
+ po/nb.po     |  270 +-
+ po/nl.po     |  270 +-
+ po/no.po     |  270 +-
+ po/pl.po     |  270 +-
+ po/pt.po     |  270 +-
+ po/pt_BR.po  |  272 +-
+ po/ro.po     |  270 +-
+ po/ru.po     |  285 +-
+ po/sk.po     |  270 +-
+ po/sl.po     |  270 +-
+ po/sv.po     |  270 +-
+ po/tr.po     |  270 +-
+ po/uk.po     |  286 +-
+ po/vi.po     |  270 +-
+ po/zh_CN.po  |  270 +-
+ po/zh_TW.po  |  270 +-
+ 46 files changed, 9858 insertions(+), 10100 deletions(-)
+
 commit 8d711242951b6ab0543aa68cff91370f1b1e9ee1
 Merge: 7fadfc74 b4fc37b5
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5977,220 +6239,3 @@ Date:   Sat Mar 13 12:30:19 2021 +0100
  src/amailbox.cc | 25 -------------------------
  src/amailbox.h  |  1 -
  2 files changed, 26 deletions(-)
-
-commit e12eb0bac2093c3d00672046ddf9bc746eaa2e4d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Mar 13 12:30:07 2021 +0100
-
-    Postpone creating tooltips.
-
- src/atray.cc       | 24 +++++++++++++++++-------
- src/atray.h        |  2 ++
- src/aworkspaces.cc | 10 ++++++++--
- src/aworkspaces.h  |  1 +
- src/objbar.cc      | 10 +++++++++-
- src/objbutton.h    |  3 ++-
- src/wmframe.cc     |  7 +------
- src/ywindow.cc     |  4 ++++
- src/ywindow.h      |  1 +
- 9 files changed, 45 insertions(+), 17 deletions(-)
-
-commit 376f481391398ac16efca4eabb2b801a7b7affd2
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Date:   Fri Mar 12 22:23:15 2021 +0000
-
-    Translated using Weblate (Japanese)
-
-    Currently translated at 100.0% (469 of 469 strings)
-
- po/ja.po | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
-
-commit 14d1e319b77832a2ab6e6502b1b3c8b9c0982588
-Author: David Medina <medipas@gmail.com>
-Date:   Fri Mar 12 23:11:44 2021 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (469 of 469 strings)
-
- po/ca.po | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
-
-commit e89809b4f01ba7186534e330a29c5eab38f7e71f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Mar 12 22:20:09 2021 +0100
-
-    Fixes for tooltips.
-
- src/aworkspaces.cc |  2 ++
- src/ytooltip.h     |  1 +
- src/ywindow.cc     | 11 +++++++----
- 3 files changed, 10 insertions(+), 4 deletions(-)
-
-commit 871b80383f47bcebd76446b6037f5aae24ff76dc
-Merge: cc35fab9 98f2dffd
-Author: Stanislav Brabec <sbrabec@suse.cz>
-Date:   Wed Mar 10 04:33:45 2021 +0100
-
-    Merge remote-tracking branch 'weblate/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit cc35fab95ef4da61b45ed44017e29b7f42ecdfca
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 9 22:41:03 2021 +0100
-
-    Only update tooltips when a tooltip window is visible.
-    Remove obsolete phonenumber from network status monitor.
-
- src/aapm.cc       |  1 -
- src/aclock.cc     |  1 -
- src/acpustatus.cc |  1 -
- src/akeyboard.cc  |  8 +++-----
- src/amailbox.cc   |  1 -
- src/amemstatus.cc |  1 -
- src/applet.cc     |  2 +-
- src/apppstatus.cc | 15 ++++++---------
- src/apppstatus.h  |  1 -
- src/ywindow.cc    |  5 +++--
- src/ywindow.h     |  1 +
- src/yxtray.cc     |  2 +-
- 12 files changed, 15 insertions(+), 24 deletions(-)
-
-commit c99dc4bb826f058dcb9b892cfb300f1bee668f80
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 9 22:38:27 2021 +0100
-
-    Improve formatting.
-
- man/icewm-preferences.pod | 22 +++++++++++-----------
- 1 file changed, 11 insertions(+), 11 deletions(-)
-
-commit 0a2a9a68bc65ce727d02d8f4f30e49490a3c2f17
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 9 00:28:51 2021 +0100
-
-    Add option to only show running net interfaces in status bar by alspitz
-    and closes ice-wm/icewm#44.
-
- doc/icewm.adoc            | 6 ++++++
- man/icewm-preferences.pod | 6 ++++++
- src/apppstatus.cc         | 9 ++++++---
- src/default.h             | 2 ++
- 4 files changed, 20 insertions(+), 3 deletions(-)
-
-commit 98f2dffdb02ba5d248f376d7b84751a8d8b7b7bf
-Author: Grace Yu <grace.yu@excel-gits.com>
-Date:   Thu Feb 25 10:08:27 2021 +0000
-
-    Translated using Weblate (Chinese (Taiwan))
-
-    Currently translated at 100.0% (468 of 468 strings)
-
- po/zh_TW.po | 65 +++++++++++++++++++++++----------------------------------
- 1 file changed, 26 insertions(+), 39 deletions(-)
-
-commit 31405184046365a0dde8f39708b18648d3871e34
-Author: Gemineo <vistatec@gemineo.de>
-Date:   Thu Feb 25 12:08:53 2021 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 100.0% (468 of 468 strings)
-
- po/de.po | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-commit 8965444f09494c9af6de7fb37d64bf749b2d0dbf
-Author: Hela Basa <R45XvezA@pm.me>
-Date:   Wed Mar 3 22:25:37 2021 +0000
-
-    Added translation using Weblate (Sinhala)
-
- po/si.po | 2377 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 2377 insertions(+)
-
-commit b37c55c0e66bcf99c8d8f128f8c777130da82b66
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 2 15:50:20 2021 +0100
-
-    Prepare 2.2.1 release
-
- AUTHORS      |   2 +-
- ChangeLog    | 304 +++++++++++++++++++++++++++++++------------------------
- NEWS         |  50 ++++-----
- README.md    |  36 +++----
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  12 +--
- po/be.po     |  12 +--
- po/bg.po     |  12 +--
- po/ca.po     |  12 +--
- po/cs.po     |  12 +--
- po/da.po     |  12 +--
- po/de.po     |  12 +--
- po/el.po     |  12 +--
- po/en.po     |  12 +--
- po/es.po     |  12 +--
- po/fi.po     |  12 +--
- po/fr.po     |  12 +--
- po/he.po     |  12 +--
- po/hr.po     |  12 +--
- po/hu.po     |  12 +--
- po/icewm.pot |  14 +--
- po/id.po     |  12 +--
- po/it.po     |  12 +--
- po/ja.po     |  12 +--
- po/ko.po     |  12 +--
- po/lt.po     |  12 +--
- po/lv.po     |  12 +--
- po/mk.po     |  12 +--
- po/nb.po     |  12 +--
- po/nl.po     |  12 +--
- po/no.po     |  12 +--
- po/pl.po     |  12 +--
- po/pt.po     |  12 +--
- po/pt_BR.po  |  12 +--
- po/ro.po     |  12 +--
- po/ru.po     |  12 +--
- po/sk.po     |  12 +--
- po/sl.po     |  12 +--
- po/sv.po     |  12 +--
- po/tr.po     |  12 +--
- po/uk.po     |  12 +--
- po/vi.po     |  12 +--
- po/zh_CN.po  |  12 +--
- po/zh_TW.po  |  12 +--
- 45 files changed, 458 insertions(+), 416 deletions(-)
-
-commit 6f740d112a8fe755b4f302c7f99057fe2f1cdf54
-Merge: 6d4e1d4a 6d9cfc9a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 2 15:44:51 2021 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 6d9cfc9ae76e9bad609ad24cb08d2dd00882ee8a
-Merge: 5262cdcd 382707a3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 2 15:44:18 2021 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 382707a380c779e59ed0a1b76989fe6a7f4e22cd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 2 15:40:41 2021 +0100
-
-    Add testpointer to Makefile.am.
-
- src/Makefile.am | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-commit 5262cdcdbfec88a3029047b6359780254cd84b4d
-Merge: 03ecd3c8 8b75fa96
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 2 15:29:03 2021 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH

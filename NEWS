@@ -1,11 +1,51 @@
-icewm -- history of user-visible changes.  2021-11-24
+icewm -- history of user-visible changes.  2021-12-02
+
+Release icewm-2.9.1 released 2021-12-02
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.9.0...2.9.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (13):
+      When the keyboard layout changes due to external reasons and the taskbar
+        has the keyboard applet, then reflect the new layout in the taskbar
+        applet for issue #622. Make the keyboard applet display all of the
+        output of `setxkbmap -query` in the tooltip for the applet. When the
+        mouse is inside the keyboard applet, then post the tooltip.  Compress
+        all the XMappingEvents to one single keyboard update event. Don't set
+        the text on the taskbar collapse button when there is already a non-zero
+        image for that button. Add leftToRight as an opposite of rightToLeft.
+      Update potfiles.
+      Fix workspace pane sizing for right-to-left locales.
+      Fix taskbar collapse button for right-to-left locales.
+      Ensure that the multiline tab spacing is two character positions.
+      Fix multiline tooltips for right-to-left locales.
+      Add tab separators to the CPU multiline status tooltip for two-column
+        display.
+      Replace "sans-serif" with "DejaVu Sans" for Xft fonts, because these
+        support a wider range of characters, which improves support for
+        languages with non-Latin scripts.
+      Swap the columns in the about dialog for right-to-left locales.
+      Fix the scaling of the taskbar background gradient for double height
+        taskbar.
+      Fix to focus wine and winecfg for issue #625, which improves commit
+        3612d6e1397943e1cb009562d3cdedce21d5c63a.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+marcelo cripe <marcelocripe@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
 
 Release icewm-2.9.0 released 2021-11-24
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.8.0...2.9.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (81):
+Bert Gijsbers <gijsbers@science.uva.nl> (82):
       Document the -T switch to select the taskbar in icesh for issue
         ice-wm/icewm#18.
       Fix the format string for "restart" in Ukrainian to fix the build.
@@ -114,6 +154,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (81):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.9.0 release
 
 Taras Panchenko <top39@ukr.net> (9):
       Translated using Weblate (Ukrainian)
@@ -492,68 +533,6 @@ Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
 
 Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com> (1):
       Translated using Weblate (Lithuanian)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
-
-
-Release icewm-2.3.4 released 2021-05-07
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.3.3...2.3.4
-
-Bert Gijsbers <gijsbers@science.uva.nl> (26):
-      Only use RTTI when debugging for issue ice-wm/icewm#48.
-      Fix icesh exit code for #585.
-      Add equality operators for lazy pointers.
-      Add flags to test WM_PROTOCOLS.
-      Add PingTimeout for issue ice-wm/icewm#47. When ping timeouts then request
-        user permission to terminate for issue ice-wm/icewm#47.
-      Let icehelp handle scrollbar keys when mouse pointer is inside a
-        scrollbar.
-      Attempt to improve vertical alignment of text with different font faces in
-        icehelp.
-      Empty strings are equal to null strings and remove optimization when
-        updating preferences file.
-      Generate preferences in sorted order.
-      Add a button for a menu in icehelp. Support anti-aliased fonts in icehelp.
-      Fix for snapping frame borders for themes with mask shaped top sides.
-      Fix for positioning new frames for themes with mask shaped top sides.
-      Always rebuild manpages when Makefile changes.
-      make update-po
-      Add a --disable-rsvg option to configure for issue #587.
-      Add setNetName.
-      Add reverse color.
-      Don't adjust workarea when snapping from outside the workarea.
-      Improve accuracy of clicking on links in icehelp. Support reverse video in
-        icehelp. Add more keyboard shortcuts to icehelp.
-      Add PingTimeout.
-      Check input lengths.
-      make update-po
-      Reduce freetype font size for icehelp. Improve reversed link color for
-        icehelp.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.3.4 release
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Guillaume GARDET <guillaume.gardet@opensuse.org> (1):
-      Translated using Weblate (French)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)

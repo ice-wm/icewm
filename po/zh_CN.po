@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (China) (icewm)\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-11-28 17:47+0100\n"
+"POT-Creation-Date: 2021-12-02 03:23+0100\n"
 "PO-Revision-Date: 2021-03-30 04:56+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/icewm/"
@@ -67,7 +67,7 @@ msgstr "日期"
 msgid "Default"
 msgstr "默认"
 
-#: src/aclock.cc:187 src/acpustatus.cc:665 src/amailbox.cc:964
+#: src/aclock.cc:187 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "禁用(_D)"
@@ -76,12 +76,12 @@ msgstr "禁用(_D)"
 msgid "_UTC"
 msgstr "世界标准时(UTC) (_U)"
 
-#: src/acpustatus.cc:297
+#: src/acpustatus.cc:299
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "CPU %s 负载: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:303
+#: src/acpustatus.cc:305
 #, c-format
 msgid ""
 "\n"
@@ -90,7 +90,7 @@ msgstr ""
 "\n"
 "内存 (空闲): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:308
+#: src/acpustatus.cc:310
 #, c-format
 msgid ""
 "\n"
@@ -99,7 +99,7 @@ msgstr ""
 "\n"
 "交换空间 (空闲): %.3f (%.3f) G"
 
-#: src/acpustatus.cc:314
+#: src/acpustatus.cc:316
 #, c-format
 msgid ""
 "\n"
@@ -108,7 +108,7 @@ msgstr ""
 "\n"
 "ACPI 温度： "
 
-#: src/acpustatus.cc:333 src/acpustatus.cc:373
+#: src/acpustatus.cc:335 src/acpustatus.cc:373
 #, c-format
 msgid ""
 "\n"
@@ -117,7 +117,7 @@ msgstr ""
 "\n"
 "CPU 频率：%.3fGHz"
 
-#: src/acpustatus.cc:350 src/acpustatus.cc:660
+#: src/acpustatus.cc:350 src/acpustatus.cc:682
 msgid "CPU"
 msgstr "CPU"
 
@@ -136,20 +136,20 @@ msgstr ""
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:431
+#: src/acpustatus.cc:453
 msgid "°C"
 msgstr "°C"
 
-#: src/acpustatus.cc:661
+#: src/acpustatus.cc:683
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:667
+#: src/acpustatus.cc:689
 msgid "_Combine"
 msgstr "合并(_C)"
 
-#: src/acpustatus.cc:669
+#: src/acpustatus.cc:691
 msgid "_Separate"
 msgstr "分隔(_S)"
 
@@ -319,7 +319,7 @@ msgstr "关闭"
 msgid "NET"
 msgstr "网络"
 
-#: src/aworkspaces.cc:606 src/wmstatus.cc:208
+#: src/aworkspaces.cc:608 src/wmstatus.cc:208
 msgid "Workspace: "
 msgstr "工作区： "
 
@@ -1935,7 +1935,7 @@ msgstr "AlphaBlending"
 msgid "Renderer:"
 msgstr "渲染器："
 
-#: src/wmabout.cc:64
+#: src/wmabout.cc:66
 msgid "icewm - About"
 msgstr "icewm - 关于"
 
@@ -2333,7 +2333,7 @@ msgstr "重启 icewm(_R)"
 msgid "_About"
 msgstr "关于(_A)"
 
-#: src/wmframe.cc:1447
+#: src/wmframe.cc:1446
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2341,7 +2341,7 @@ msgstr ""
 "警告！当这个客户程序被杀死时，所有\n"
 "没有保存的修改将丢失。你想继续吗？"
 
-#: src/wmframe.cc:1454
+#: src/wmframe.cc:1453
 msgid "Kill Client: "
 msgstr "杀死客户端： "
 
@@ -2560,23 +2560,23 @@ msgstr "排列图标(_I)"
 msgid "_Refresh"
 msgstr "刷新(_R)"
 
-#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:985
+#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:986
 msgid "Hide Taskbar"
 msgstr "隐藏任务栏"
 
-#: src/wmtaskbar.cc:336
+#: src/wmtaskbar.cc:338
 msgid "Favorite Applications"
 msgstr "喜欢的应用程序"
 
-#: src/wmtaskbar.cc:361
+#: src/wmtaskbar.cc:363
 msgid "Window List Menu"
 msgstr "窗口列表菜单"
 
-#: src/wmtaskbar.cc:370
+#: src/wmtaskbar.cc:372
 msgid "Show Desktop"
 msgstr "显示桌面"
 
-#: src/wmtaskbar.cc:978
+#: src/wmtaskbar.cc:986
 msgid "Show Taskbar"
 msgstr "显示任务栏"
 

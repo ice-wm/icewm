@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-11-28 17:47+0100\n"
+"POT-Creation-Date: 2021-12-02 03:23+0100\n"
 "PO-Revision-Date: 2001-03-25 17:00+GMT1\n"
 "Last-Translator: Vlatko Kosturjak <kost@iname.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Default"
 msgstr "Obriši"
 
-#: src/aclock.cc:187 src/acpustatus.cc:665 src/amailbox.cc:964
+#: src/aclock.cc:187 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr ""
@@ -77,40 +77,40 @@ msgstr ""
 msgid "_UTC"
 msgstr ""
 
-#: src/acpustatus.cc:297
+#: src/acpustatus.cc:299
 #, fuzzy, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "CPU opterećenje: %3.2f %3.2f %3.2f, %u procesa."
 
-#: src/acpustatus.cc:303
+#: src/acpustatus.cc:305
 #, c-format
 msgid ""
 "\n"
 "Ram (free): %5.3f (%.3f) G"
 msgstr ""
 
-#: src/acpustatus.cc:308
+#: src/acpustatus.cc:310
 #, c-format
 msgid ""
 "\n"
 "Swap (free): %.3f (%.3f) G"
 msgstr ""
 
-#: src/acpustatus.cc:314
+#: src/acpustatus.cc:316
 #, c-format
 msgid ""
 "\n"
 "ACPI Temp: "
 msgstr ""
 
-#: src/acpustatus.cc:333 src/acpustatus.cc:373
+#: src/acpustatus.cc:335 src/acpustatus.cc:373
 #, c-format
 msgid ""
 "\n"
 "CPU Freq: %.3fGHz"
 msgstr ""
 
-#: src/acpustatus.cc:350 src/acpustatus.cc:660
+#: src/acpustatus.cc:350 src/acpustatus.cc:682
 msgid "CPU"
 msgstr ""
 
@@ -127,20 +127,20 @@ msgstr ""
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:431
+#: src/acpustatus.cc:453
 msgid "°C"
 msgstr ""
 
-#: src/acpustatus.cc:661
+#: src/acpustatus.cc:683
 #, c-format
 msgid "CPU%d"
 msgstr ""
 
-#: src/acpustatus.cc:667
+#: src/acpustatus.cc:689
 msgid "_Combine"
 msgstr ""
 
-#: src/acpustatus.cc:669
+#: src/acpustatus.cc:691
 msgid "_Separate"
 msgstr ""
 
@@ -308,7 +308,7 @@ msgstr "Odrolaj"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:606 src/wmstatus.cc:208
+#: src/aworkspaces.cc:608 src/wmstatus.cc:208
 msgid "Workspace: "
 msgstr "Radni prostor: "
 
@@ -1795,7 +1795,7 @@ msgstr ""
 msgid "Renderer:"
 msgstr ""
 
-#: src/wmabout.cc:64
+#: src/wmabout.cc:66
 msgid "icewm - About"
 msgstr "icewm - o"
 
@@ -2149,13 +2149,13 @@ msgstr "_Ponovno pokreni icewm"
 msgid "_About"
 msgstr "_O programu"
 
-#: src/wmframe.cc:1447
+#: src/wmframe.cc:1446
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
 msgstr ""
 
-#: src/wmframe.cc:1454
+#: src/wmframe.cc:1453
 msgid "Kill Client: "
 msgstr "Ubij klijent: "
 
@@ -2369,27 +2369,27 @@ msgstr "Posloži _Ikone"
 msgid "_Refresh"
 msgstr "_Osvježi"
 
-#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:985
+#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:986
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
 msgstr "Traka s alatima"
 
-#: src/wmtaskbar.cc:336
+#: src/wmtaskbar.cc:338
 msgid "Favorite Applications"
 msgstr ""
 
-#: src/wmtaskbar.cc:361
+#: src/wmtaskbar.cc:363
 #, fuzzy
 msgid "Window List Menu"
 msgstr "Popis prozora"
 
-#: src/wmtaskbar.cc:370
+#: src/wmtaskbar.cc:372
 #, fuzzy
 msgid "Show Desktop"
 msgstr "_Radno Okružje"
 
-#: src/wmtaskbar.cc:978
+#: src/wmtaskbar.cc:986
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"

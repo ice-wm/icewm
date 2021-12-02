@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-11-28 17:47+0100\n"
+"POT-Creation-Date: 2021-12-02 03:23+0100\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Robert Taisz <robert.taisz@emerald.hu>\n"
 "Language-Team: Hungarian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -79,7 +79,7 @@ msgstr "Dátum"
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: src/aclock.cc:187 src/acpustatus.cc:665 src/amailbox.cc:964
+#: src/aclock.cc:187 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Letiltás"
@@ -89,12 +89,12 @@ msgid "_UTC"
 msgstr "_UTC"
 
 # ../src/acpustatus.cc:133
-#: src/acpustatus.cc:297
+#: src/acpustatus.cc:299
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "%s CPU terhelése: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:303
+#: src/acpustatus.cc:305
 #, c-format
 msgid ""
 "\n"
@@ -103,7 +103,7 @@ msgstr ""
 "\n"
 "RAM (szabad): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:308
+#: src/acpustatus.cc:310
 #, c-format
 msgid ""
 "\n"
@@ -112,7 +112,7 @@ msgstr ""
 "\n"
 "Lapozófájl (szabad): %.3f (%.3f) G"
 
-#: src/acpustatus.cc:314
+#: src/acpustatus.cc:316
 #, c-format
 msgid ""
 "\n"
@@ -121,7 +121,7 @@ msgstr ""
 "\n"
 "ACPI-hőmérséklet: "
 
-#: src/acpustatus.cc:333 src/acpustatus.cc:373
+#: src/acpustatus.cc:335 src/acpustatus.cc:373
 #, c-format
 msgid ""
 "\n"
@@ -130,7 +130,7 @@ msgstr ""
 "\n"
 "CPU frekvenciája: %.3fGHz"
 
-#: src/acpustatus.cc:350 src/acpustatus.cc:660
+#: src/acpustatus.cc:350 src/acpustatus.cc:682
 msgid "CPU"
 msgstr "CPU"
 
@@ -149,20 +149,20 @@ msgstr ""
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:431
+#: src/acpustatus.cc:453
 msgid "°C"
 msgstr "°C"
 
-#: src/acpustatus.cc:661
+#: src/acpustatus.cc:683
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:667
+#: src/acpustatus.cc:689
 msgid "_Combine"
 msgstr "_Egyesítés"
 
-#: src/acpustatus.cc:669
+#: src/acpustatus.cc:691
 msgid "_Separate"
 msgstr "_Külön"
 
@@ -347,7 +347,7 @@ msgid "NET"
 msgstr "HÁLÓZAT"
 
 # ../src/wmstatus.cc:170
-#: src/aworkspaces.cc:606 src/wmstatus.cc:208
+#: src/aworkspaces.cc:608 src/wmstatus.cc:208
 msgid "Workspace: "
 msgstr "Munkaterület: "
 
@@ -2133,7 +2133,7 @@ msgid "Renderer:"
 msgstr ""
 
 # ../src/wmabout.cc:47
-#: src/wmabout.cc:64
+#: src/wmabout.cc:66
 msgid "icewm - About"
 msgstr "IceWM - Névjegy"
 
@@ -2587,7 +2587,7 @@ msgstr "Az _IceWM újraindítása"
 msgid "_About"
 msgstr "N_évjegy"
 
-#: src/wmframe.cc:1447
+#: src/wmframe.cc:1446
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2598,7 +2598,7 @@ msgstr ""
 
 #
 # ../src/wmframe.cc:1183
-#: src/wmframe.cc:1454
+#: src/wmframe.cc:1453
 msgid "Kill Client: "
 msgstr "Kliens leölése: "
 
@@ -2844,26 +2844,26 @@ msgid "_Refresh"
 msgstr "_Frissítés"
 
 # ../src/wmtaskbar.cc:145 ../src/wmtaskbar.cc:146
-#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:985
+#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:986
 msgid "Hide Taskbar"
 msgstr "Tálca elrejtése"
 
-#: src/wmtaskbar.cc:336
+#: src/wmtaskbar.cc:338
 msgid "Favorite Applications"
 msgstr "Kedvenc alkalmazások"
 
 # ../src/wmwinlist.cc:276 ../src/wmwinlist.cc:277
-#: src/wmtaskbar.cc:361
+#: src/wmtaskbar.cc:363
 msgid "Window List Menu"
 msgstr "Ablaklista menü"
 
 # ../src/wmapp.cc:494
-#: src/wmtaskbar.cc:370
+#: src/wmtaskbar.cc:372
 msgid "Show Desktop"
 msgstr "Asztal megjelenítése"
 
 # ../src/wmtaskbar.cc:145 ../src/wmtaskbar.cc:146
-#: src/wmtaskbar.cc:978
+#: src/wmtaskbar.cc:986
 msgid "Show Taskbar"
 msgstr "Tálca megjelenítése"
 

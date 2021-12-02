@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-11-28 17:47+0100\n"
+"POT-Creation-Date: 2021-12-02 03:23+0100\n"
 "PO-Revision-Date: 2016-06-06 12:13+0000\n"
 "Last-Translator: Stanislav Brabec <sbrabec@suse.com>\n"
 "Language-Team: Hebrew <https://l10n.opensuse.org/projects/icewm/icewm-1-3-"
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Default"
 msgstr "שגרתי"
 
-#: src/aclock.cc:187 src/acpustatus.cc:665 src/amailbox.cc:964
+#: src/aclock.cc:187 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr ""
@@ -80,12 +80,12 @@ msgstr ""
 msgid "_UTC"
 msgstr ""
 
-#: src/acpustatus.cc:297
+#: src/acpustatus.cc:299
 #, fuzzy, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "עומס CPU‏: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:303
+#: src/acpustatus.cc:305
 #, fuzzy, c-format
 #| msgid ""
 #| "\n"
@@ -97,7 +97,7 @@ msgstr ""
 "\n"
 "זיכרון: ‏%5.2f/%.2fM"
 
-#: src/acpustatus.cc:308
+#: src/acpustatus.cc:310
 #, fuzzy, c-format
 #| msgid ""
 #| "\n"
@@ -109,7 +109,7 @@ msgstr ""
 "\n"
 "החלף: ‏%.2f/%.2fמ"
 
-#: src/acpustatus.cc:314
+#: src/acpustatus.cc:316
 #, c-format
 msgid ""
 "\n"
@@ -118,7 +118,7 @@ msgstr ""
 "\n"
 "טמפרטורת ACPI: "
 
-#: src/acpustatus.cc:333 src/acpustatus.cc:373
+#: src/acpustatus.cc:335 src/acpustatus.cc:373
 #, c-format
 msgid ""
 "\n"
@@ -127,7 +127,7 @@ msgstr ""
 "\n"
 "תדירות CPU: ‏%.3fGHz"
 
-#: src/acpustatus.cc:350 src/acpustatus.cc:660
+#: src/acpustatus.cc:350 src/acpustatus.cc:682
 msgid "CPU"
 msgstr ""
 
@@ -150,20 +150,20 @@ msgstr ""
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:431
+#: src/acpustatus.cc:453
 msgid "°C"
 msgstr ""
 
-#: src/acpustatus.cc:661
+#: src/acpustatus.cc:683
 #, c-format
 msgid "CPU%d"
 msgstr ""
 
-#: src/acpustatus.cc:667
+#: src/acpustatus.cc:689
 msgid "_Combine"
 msgstr ""
 
-#: src/acpustatus.cc:669
+#: src/acpustatus.cc:691
 msgid "_Separate"
 msgstr ""
 
@@ -335,7 +335,7 @@ msgstr "גלול מטה"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:606 src/wmstatus.cc:208
+#: src/aworkspaces.cc:608 src/wmstatus.cc:208
 msgid "Workspace: "
 msgstr "חלל עבודה: "
 
@@ -1848,7 +1848,7 @@ msgstr ""
 msgid "Renderer:"
 msgstr ""
 
-#: src/wmabout.cc:64
+#: src/wmabout.cc:66
 msgid "icewm - About"
 msgstr "icewm - אודות"
 
@@ -2207,7 +2207,7 @@ msgid "_About"
 msgstr "_אודות"
 
 # הינו הרוג
-#: src/wmframe.cc:1447
+#: src/wmframe.cc:1446
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2215,7 +2215,7 @@ msgstr ""
 "אזהרה! כל השינויים שלא נשמרו יאבדו כאשר\n"
 "לקוח זה הרוג. האם ברצונך להמשיך?"
 
-#: src/wmframe.cc:1454
+#: src/wmframe.cc:1453
 msgid "Kill Client: "
 msgstr "הרוג לקוח: "
 
@@ -2443,29 +2443,29 @@ msgstr "סדר _סמלים"
 msgid "_Refresh"
 msgstr "_רענן"
 
-#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:985
+#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:986
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
 msgstr "סרגל משימות"
 
-#: src/wmtaskbar.cc:336
+#: src/wmtaskbar.cc:338
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Favorite Applications"
 msgstr "יישומים מועדפים"
 
-#: src/wmtaskbar.cc:361
+#: src/wmtaskbar.cc:363
 #, fuzzy
 #| msgid "Window list menu"
 msgid "Window List Menu"
 msgstr "תפריט רשימת חלון"
 
-#: src/wmtaskbar.cc:370
+#: src/wmtaskbar.cc:372
 msgid "Show Desktop"
 msgstr "הצג שולחן עבודה"
 
-#: src/wmtaskbar.cc:978
+#: src/wmtaskbar.cc:986
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
