@@ -304,8 +304,13 @@ void TaskBar::initApplets() {
         fCollapseButton = new ObjectButton(this, actionCollapseTaskbar);
         if (fCollapseButton) {
             fCollapseButton->setWinGravity(StaticGravity);
-            fCollapseButton->setText(">");
-            fCollapseButton->setImage(taskbarCollapseImage);
+            ref<YImage> image = leftToRight
+                              ? taskbarCollapseImage : taskbarExpandImage;
+            if (image != null) {
+                fCollapseButton->setImage(image);
+            } else {
+                fCollapseButton->setText(leftToRight ? ">" : "<");
+            }
             fCollapseButton->setActionListener(this);
             fCollapseButton->setToolTip(_("Hide Taskbar"));
             fCollapseButton->setTitle("Collapse");
@@ -319,7 +324,7 @@ void TaskBar::initApplets() {
         fMailBoxControl = nullptr;
 
     if (configKeyboards.nonempty()) {
-        fKeyboardStatus = new KeyboardStatus(this, this);
+        fKeyboardStatus = new KeyboardStatus(wmapp, this, this);
     } else
         fKeyboardStatus = nullptr;
 
@@ -593,7 +598,7 @@ void TaskBar::updateLayout(unsigned &size_w, unsigned &size_h) {
 
     if (taskBarShowWindows && fTasks) {
         fTasks->hide();
-        YRect r(left[0], y[0], max(1U, unsigned(right[0] - left[0])), h[0]);
+        YRect r(left[0], y[0], unsigned(max(1, right[0] - left[0])), h[0]);
         if (rightToLeft) {
             r.xx = w - r.xx - r.ww;
         }
@@ -800,8 +805,17 @@ void TaskBar::paint(Graphics &g, const YRect& r) {
          fGradient->width() != width() ||
          fGradient->height() != height()))
     {
-        int gradientHeight = height() / (1 + taskBarDoubleHeight);
-        fGradient = taskbackPixbuf->scale(width(), gradientHeight);
+        if (taskBarDoubleHeight == false) {
+            fGradient = taskbackPixbuf->scale(width(), height());
+        } else {
+            ref<YImage> s = taskbackPixbuf->scale(width(), (height() + 1) / 2);
+            ref<YPixmap> p = YPixmap::create(width(), height(), depth());
+            Graphics g(p);
+            g.clear();
+            g.copyImage(s, 0, 0);
+            g.copyImage(s, 0, height() - s->height());
+            fGradient = YImage::createFromPixmap(p);
+        }
     }
 
     g.setColor(taskBarBg);
@@ -966,9 +980,16 @@ void TaskBar::actionPerformed(YAction action, unsigned int modifiers) {
 void TaskBar::handleCollapseButton() {
     fIsCollapsed = !fIsCollapsed;
     if (fCollapseButton) {
-        fCollapseButton->setText(fIsCollapsed ? "<": ">");
-        fCollapseButton->setImage(fIsCollapsed ? taskbarExpandImage : taskbarCollapseImage);
-        fCollapseButton->setToolTip(fIsCollapsed ? _("Show Taskbar") : _("Hide Taskbar"));
+        ref<YImage> image = (leftToRight == fIsCollapsed)
+                          ? taskbarExpandImage : taskbarCollapseImage;
+        const char* text = (leftToRight == fIsCollapsed) ? "<" : ">";
+        const char* ttip = fIsCollapsed ? _("Show Taskbar") : _("Hide Taskbar");
+        if (image != null) {
+            fCollapseButton->setImage(image);
+        } else {
+            fCollapseButton->setText(text);
+        }
+        fCollapseButton->setToolTip(ttip);
         fCollapseButton->repaint();
     }
 
