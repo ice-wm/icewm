@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-02 03:23+0100\n"
+"POT-Creation-Date: 2021-12-04 23:19+0100\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Robert Taisz <robert.taisz@emerald.hu>\n"
 "Language-Team: Hungarian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -66,25 +66,25 @@ msgstr " - Feltöltve"
 msgid "power:\t%s"
 msgstr "Töltés:\t%s"
 
-#: src/aclock.cc:179
+#: src/aclock.cc:166
 msgid "CLOCK"
 msgstr "ÓRA"
 
-#: src/aclock.cc:185
+#: src/aclock.cc:172
 msgid "Date"
 msgstr "Dátum"
 
 # ../src/wmwinlist.cc:236
-#: src/aclock.cc:186 src/themes.cc:80
+#: src/aclock.cc:173 src/themes.cc:80
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: src/aclock.cc:187 src/acpustatus.cc:687 src/amailbox.cc:964
+#: src/aclock.cc:174 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Letiltás"
 
-#: src/aclock.cc:188
+#: src/aclock.cc:175
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -166,17 +166,36 @@ msgstr "_Egyesítés"
 msgid "_Separate"
 msgstr "_Külön"
 
-#: src/akeyboard.cc:82 src/icesm.cc:468
+#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "A(z) %s kilépett a következő állapottal: %d."
 
-#: src/akeyboard.cc:85 src/icesm.cc:474 src/icesm.cc:628
+#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "A(z) %s programot leállította a(z) %d jel."
 
-#: src/akeyboard.cc:145
+#: src/akeyboard.cc:98
+msgid "rules:"
+msgstr ""
+
+#: src/akeyboard.cc:99
+msgid "model:"
+msgstr ""
+
+#: src/akeyboard.cc:100
+msgid "layout:"
+msgstr ""
+
+# ../src/wmconfig.cc:355
+#: src/akeyboard.cc:101
+#, fuzzy
+#| msgid "Bad option: %s"
+msgid "options:"
+msgstr "Rossz beállítás : %s"
+
+#: src/akeyboard.cc:151
 msgid "Keyboard"
 msgstr ""
 
@@ -213,7 +232,7 @@ msgstr "Sikertelen kapcsolódás: %s, %s"
 msgid "Failed to find %s command"
 msgstr "A(z) %s parancs nem található"
 
-#: src/amailbox.cc:363 src/yapp.cc:422
+#: src/amailbox.cc:363 src/wmmenu.cc:471 src/wmmenu.cc:488 src/yapp.cc:433
 #, c-format
 msgid "Failed to execute %s"
 msgstr "Nem sikerült a(z) %s végrehajtása"
@@ -2068,7 +2087,7 @@ msgstr "Elfogyott a memória (hossz=%d)."
 msgid "Warning: "
 msgstr "Figyelmeztetés: "
 
-#: src/misc.cc:376
+#: src/misc.cc:387
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2175,17 +2194,17 @@ msgid "Lock _Workstation"
 msgstr "Munkaállomás le_zárása"
 
 # ../src/wmdialog.cc:87
-#: src/wmapp.cc:503 src/wmdialog.cc:72
+#: src/wmapp.cc:503 src/wmdialog.cc:70
 msgid "Re_boot"
 msgstr "Ú_jraindítás"
 
 # ../src/wmdialog.cc:94
-#: src/wmapp.cc:505 src/wmdialog.cc:73
+#: src/wmapp.cc:505 src/wmdialog.cc:71
 msgid "Shut_down"
 msgstr "_Kikapcsolás"
 
 #. TRANSLATORS: This means "energy saving mode" or "suspended system". Not "interrupt". Not "hibernate".
-#: src/wmapp.cc:507 src/wmdialog.cc:69
+#: src/wmapp.cc:507 src/wmdialog.cc:67
 msgid "_Sleep mode"
 msgstr "_Alvó mód"
 
@@ -2327,7 +2346,7 @@ msgid "_Kill Client"
 msgstr "_Kliens lelövése"
 
 # ../src/wmapp.cc:527 ../src/wmwinmenu.cc:135
-#: src/wmapp.cc:619 src/wmdialog.cc:74 src/wmwinmenu.cc:133
+#: src/wmapp.cc:619 src/wmdialog.cc:72 src/wmwinmenu.cc:133
 msgid "_Window list"
 msgstr "Ablak_lista"
 
@@ -2560,34 +2579,34 @@ msgid "Unable to rename %s to %s"
 msgstr "A(z) %s nem nevezhető át %s nevűre"
 
 # ../src/wmdialog.cc:59
-#: src/wmdialog.cc:67
+#: src/wmdialog.cc:65
 msgid "Loc_k Workstation"
 msgstr "Munkaállomás le_zárása"
 
 # ../src/wmdialog.cc:73
-#: src/wmdialog.cc:70 src/ymsgbox.cc:51
+#: src/wmdialog.cc:68 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr "_Mégsem"
 
 # ../src/wmdialog.cc:66 ../src/wmprog.cc:629 ../src/wmtaskbar.cc:236
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:71 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:244
+#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:244
 #: src/wmtaskbar.cc:246
 msgid "_Logout..."
 msgstr "_Kilépés..."
 
 # ../src/wmapp.cc:468
-#: src/wmdialog.cc:75
+#: src/wmdialog.cc:73
 msgid "_Restart icewm"
 msgstr "Az _IceWM újraindítása"
 
 # ../src/wmprog.cc:633 ../src/wmtaskbar.cc:230 ../src/wmtaskbar.cc:233
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:76 src/wmprog.cc:424 src/wmtaskbar.cc:239
+#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:239
 msgid "_About"
 msgstr "N_évjegy"
 
-#: src/wmframe.cc:1446
+#: src/wmframe.cc:1445
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2598,7 +2617,7 @@ msgstr ""
 
 #
 # ../src/wmframe.cc:1183
-#: src/wmframe.cc:1453
+#: src/wmframe.cc:1452
 msgid "Kill Client: "
 msgstr "Kliens leölése: "
 
@@ -2671,6 +2690,11 @@ msgstr ""
 "Ismeretlen kulcsszó egy nem tároló elemnél: '%s'.\n"
 "Várt érték: 'key' vagy 'runonce'.\n"
 
+#: src/wmmenu.cc:498
+#, c-format
+msgid "'%s' timed out!"
+msgstr ""
+
 #: src/wmmenu.cc:509
 #, c-format
 msgid "'%s' produces no output"
@@ -2700,7 +2724,7 @@ msgstr "Szintaktikai hiba az ablakbeállításokban, sor: %d (%s)"
 msgid "Save Modifications"
 msgstr "Módosítások mentése"
 
-#: src/wmpref.cc:180
+#: src/wmpref.cc:178
 #, c-format
 msgid "Enter a new value for %s: "
 msgstr ""
@@ -2979,18 +3003,18 @@ msgstr ""
 "elemzését."
 
 # ../src/ypaint.cc:287
-#: src/yfontcore.cc:120 src/yfontxft.cc:114
+#: src/yfontcore.cc:116 src/yfontxft.cc:114
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "Nem betölthető betűkészlet: \"%s\"."
 
-#: src/yfontcore.cc:207
+#: src/yfontcore.cc:203
 #, c-format
 msgid "Missing codesets for fontset \"%s\":"
 msgstr "A(z) \"%s\" betűkészlet kódkészletei hiányoznak:"
 
 # ../src/ypaint.cc:262
-#: src/yfontcore.cc:235
+#: src/yfontcore.cc:231
 #, c-format
 msgid "Could not load fontset \"%s\"."
 msgstr "A betűkészlet nem betölthető: \"%s\"."
@@ -3141,10 +3165,6 @@ msgstr "A(z) %s kép nem található"
 #~ msgid "Invalid cursor pixmap: \"%s\" contains too much unique colors"
 #~ msgstr ""
 #~ "Érvénytelen kurzorkép (pixmap): \"%s\" túl sok egyedi színt tartalmaz"
-
-# ../src/wmconfig.cc:355
-#~ msgid "Bad option: %s"
-#~ msgstr "Rossz beállítás : %s"
 
 #~ msgid ""
 #~ "stat:\tuser = %llu, nice = %llu, sys = %llu, idle = %llu, iowait = %llu, "

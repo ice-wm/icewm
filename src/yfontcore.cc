@@ -99,16 +99,12 @@ YCoreFont::YCoreFont(char const* name)
     , fDescent(0)
 {
     if (strchr(name, ',')) {
-        char* buffer = newstr(name);
-        char* save = nullptr;
-        for (char* str = strtok_r(buffer, ",", &save);
-             str; str = strtok_r(nullptr, ",", &save))
-        {
+        csmart buffer(newstr(name));
+        for (tokens str(buffer, ","); str; ++str) {
             fFont = XLoadQueryFont(xapp->display(), str);
             if (fFont)
                 break;
         }
-        delete[] buffer;
     } else {
         fFont = XLoadQueryFont(xapp->display(), name);
     }
@@ -354,7 +350,6 @@ XFontSet YFontSet::guessFontSet(const char* pattern, char*** missing,
     if (0 < *nMissing) {
         XFreeStringList(*missing);
     }
-    XFreeFontSet(xapp->display(), fontset);
 
     char* family = getNameElement(names[0], 2, "*");
     char* weight = getNameElement(names[0], 3, "medium");
@@ -375,6 +370,7 @@ XFontSet YFontSet::guessFontSet(const char* pattern, char*** missing,
     delete[] pxlsz;
     delete[] slant;
     delete[] weight;
+    XFreeFontSet(xapp->display(), fontset);
 
     MSG(("trying fuzzy fontset pattern: \"%s\"", buffer));
 

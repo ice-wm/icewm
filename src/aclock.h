@@ -1,5 +1,5 @@
-#ifndef __CLOCK_H
-#define __CLOCK_H
+#ifndef ACLOCK_H
+#define ACLOCK_H
 
 #include "ywindow.h"
 #include "ytimer.h"
@@ -18,12 +18,13 @@ class YClock:
     private YActionListener
 {
 public:
-    YClock(YSMListener *smActionListener, IAppletContainer* iapp, YWindow *aParent);
+    YClock(YSMListener* sml, IAppletContainer* iapp, YWindow* parent,
+           const char* envTZ, const char* myTZ, const char* format);
     virtual ~YClock();
 
 private:
     void autoSize();
-    char const * strTimeFmt(struct tm const & t);
+    const char* strTimeFmt(const struct tm& t);
 
     virtual void actionPerformed(YAction action, unsigned int modifiers);
     virtual void handleButton(const XButtonEvent &button);
@@ -49,18 +50,19 @@ private:
     IAppletContainer* iapp;
     osmart<YMenu> fMenu;
     const char* fTimeFormat;
+    const char* fAltFormat;
     long fPid;
 
     void changeTimeFormat(const char* format);
     using IApplet::getPixmap;
     ref<YPixmap> getPixmap(char ch);
-    int calcWidth(const char *s, int count);
+    int calcWidth(const char* str, int count);
     bool hasTransparency();
     bool draw(Graphics& g);
     void fill(Graphics& g);
     void fill(Graphics& g, int x, int y, int w, int h);
-    bool paintPretty(Graphics& g, const char* s, int len);
-    bool paintPlain(Graphics& g, const char* s, int len);
+    bool paintPretty(Graphics& g, const char* str, int len);
+    bool paintPlain(Graphics& g, const char* str, int len);
 
     int negativePosition;
     int positions[TimeSize];
@@ -69,7 +71,27 @@ private:
     YColorName clockBg;
     YColorName clockFg;
     YFont clockFont;
+
+    friend class ClockSet;
+    const char* defaultTimezone;
+    const char* displayTimezone;
+    const char* currentTimezone;
+    bool timezone(bool restore = false);
 };
+
+class ClockSet {
+public:
+    ClockSet(YSMListener* sml, IAppletContainer* iapp, YWindow* parent);
+    ~ClockSet();
+    YClock** begin() const { return clocks.begin(); }
+    YClock** end() const { return clocks.end(); }
+    int count() const { return clocks.getCount(); }
+    YClock* operator[](int index) const { return clocks[index]; }
+private:
+    YObjectArray<YClock> clocks;
+    YArray<char*> specs;
+};
+
 #endif
 
 // vim: set sw=4 ts=4 et:
