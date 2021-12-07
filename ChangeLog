@@ -1,5 +1,318 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 56e90a031d03cad4702d67fdb91619641b919668
+Merge: 1bcf0ed3 ad5bc16f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Dec 7 23:46:58 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit ad5bc16f34196c543470e11e9cc72425f78c46f3
+Merge: 99719a51 6a89b353
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Dec 7 23:46:05 2021 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 6a89b353df777c389f471e7fd9a71ad013bb300c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Dec 7 23:00:23 2021 +0100
+
+    Postpone XFreeFontSet until names are no longer needed.
+
+ src/yfontcore.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit aa9257bcbf77a2d5f934fdf98ff271be32b2fa16
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Dec 7 01:15:15 2021 +0100
+
+    Improve explanation for TimeFormat and give an example.
+
+ man/icewm-preferences.pod | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+commit 0ea5a3c5cba86e9b9609614fc1dd013e03fc909c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Dec 6 21:03:55 2021 +0100
+
+    Add support for multiple clocks in different time zones.
+
+ man/icewm-preferences.pod |   6 +-
+ src/aclock.cc             | 183 +++++++++++++++++++++++++++++-------------
+ src/aclock.h              |  24 +++++-
+ src/wmprog.cc             |   2 +-
+ src/wmtaskbar.cc          |   9 ++-
+ src/wmtaskbar.h           |   6 +-
+ src/yarray.h              |   7 ++
+ 7 files changed, 170 insertions(+), 67 deletions(-)
+
+commit 4315aa3c831bafbbe1303324dd8a73c9483eda18
+Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
+Date:   Mon Dec 6 08:54:29 2021 +0000
+
+    Translated using Weblate (Japanese)
+
+    Currently translated at 100.0% (507 of 507 strings)
+
+ po/ja.po | 20 +++++++++-----------
+ 1 file changed, 9 insertions(+), 11 deletions(-)
+
+commit df0e0e7ab22130869fd610b8b1f2e70de06ddbce
+Author: Taras Panchenko <top39@ukr.net>
+Date:   Sun Dec 5 22:30:22 2021 +0000
+
+    Translated using Weblate (Ukrainian)
+
+    Currently translated at 100.0% (507 of 507 strings)
+
+ po/uk.po | 18 ++++++++----------
+ 1 file changed, 8 insertions(+), 10 deletions(-)
+
+commit 39ba6f339aaeb712740de60b07624aa2062fdea6
+Author: Taras Panchenko <top39@ukr.net>
+Date:   Sun Dec 5 22:35:10 2021 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (507 of 507 strings)
+
+ po/ru.po | 18 ++++++++----------
+ 1 file changed, 8 insertions(+), 10 deletions(-)
+
+commit 7659f8ec4d0b9ba13bb2bb7a343d0e8278e6b6a1
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Dec 5 23:33:55 2021 +0100
+
+    Delay font loading in APM until battery is detected.
+
+ src/aapm.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b4031cf98f852eee0a09294ba893ca723a340729
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Dec 5 23:32:32 2021 +0100
+
+    Prefer PictOpOver over PictOpSrc in drawPixmap for 24-bit displays.
+
+ src/ypaint.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c50fb5c89f314298d6053c86cf5971b0649f67cf
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Date:   Sun Dec 5 16:13:07 2021 +0000
+
+    Translated using Weblate (Slovak)
+
+    Currently translated at 100.0% (507 of 507 strings)
+
+ po/sk.po | 20 +++++++++-----------
+ 1 file changed, 9 insertions(+), 11 deletions(-)
+
+commit c48dd3ad3e7f405a85edd9697d980157a0071634
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 23:35:44 2021 +0100
+
+    Raise the window list before mapping it.
+
+ src/wmwinlist.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 065de4e031f0101709886c9b3354ff6edeaf14e7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 23:19:15 2021 +0100
+
+    Update pot files.
+
+ po/ar.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/be.po     | 114 ++++++++++++++++++++++++++++++++-----------------------
+ po/bg.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/ca.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/cs.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/da.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/de.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/el.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/en.po     | 107 ++++++++++++++++++++++++++++++---------------------
+ po/es.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/fi.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/fr.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/he.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/hr.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/hu.po     | 114 ++++++++++++++++++++++++++++++++-----------------------
+ po/icewm.pot | 107 ++++++++++++++++++++++++++++++---------------------
+ po/id.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/it.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/ja.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/ko.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/lt.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/lv.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/mk.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/nb.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/nl.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/no.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/pl.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/pt.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/pt_BR.po  | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/ro.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/ru.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/sk.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/sl.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/sv.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/tr.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/uk.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/vi.po     | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/zh_CN.po  | 112 ++++++++++++++++++++++++++++++++----------------------
+ po/zh_TW.po  | 112 ++++++++++++++++++++++++++++++++----------------------
+ 39 files changed, 2572 insertions(+), 1790 deletions(-)
+
+commit 8447715b07904685b8c419828b3590a0decd8e90
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 23:11:47 2021 +0100
+
+    Fix the drawing of ledclock pixmaps for some themes like "unusualscars"
+    by means of clipping before calling fillPixmap.
+
+ src/aclock.cc | 112 +++++++++++++++++++++++++-----------------------------
+ src/aclock.h  |  12 +++---
+ 2 files changed, 58 insertions(+), 66 deletions(-)
+
+commit 7db6efc83d94cba8811b8c11ae8b84f6069ab6a5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 23:10:36 2021 +0100
+
+    Prevent negative image positions in fillPixmap.
+
+ src/ypaint.cc | 30 ++++++++++++++++++++++--------
+ 1 file changed, 22 insertions(+), 8 deletions(-)
+
+commit 8240d81b8fcec837b3834d1f497b9aaf6647a17f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 23:08:32 2021 +0100
+
+    Add class YPidWaiter for asynchronous waiting for process termination.
+
+ src/yapp.cc | 51 ++++++++++++++++++++++++++++++++++++++++-----------
+ src/yapp.h  | 15 +++++++++++++--
+ src/ypoll.h | 11 +++++++++--
+ 3 files changed, 62 insertions(+), 15 deletions(-)
+
+commit d0079344e1f5e2480629fdd1c7120023342383fa
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 23:07:23 2021 +0100
+
+    Internationalize the error messages for the dynamic menu.
+
+ src/wmmenu.cc | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit d6fe497d9505d0cb2a36f4252fe7c53d5866a6b5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 23:06:34 2021 +0100
+
+    Use class tokens to hide use of strtok.
+
+ src/wmdialog.cc  |  4 +---
+ src/wmpref.cc    |  8 +++-----
+ src/yfontcore.cc |  8 ++------
+ src/yicon.cc     | 16 ++++++----------
+ 4 files changed, 12 insertions(+), 24 deletions(-)
+
+commit 4ecf3b64a633b9ccc7f3ffc6b88b228baa1d77c0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 23:04:12 2021 +0100
+
+    Include sys/wait.h for FreeBSD and internationalize the keyboard tooltip.
+
+ src/akeyboard.cc | 20 +++++++++++++-------
+ 1 file changed, 13 insertions(+), 7 deletions(-)
+
+commit 56bea6aa31b0ec7e59ca930032bbd91daf07b318
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 21:27:09 2021 +0100
+
+    Add class tokens.
+
+ src/base.h  | 10 ++++++++++
+ src/misc.cc | 16 ++++++++++++----
+ 2 files changed, 22 insertions(+), 4 deletions(-)
+
+commit 42b60bee07e26c5feee02f6f773970d285882709
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 17:50:22 2021 +0100
+
+    Fix against the flashing of title bar buttons when the window list
+    is activated.
+
+ src/wmapp.cc     |  2 +-
+ src/wmmgr.cc     | 13 +++++++++----
+ src/wmmgr.h      |  2 +-
+ src/wmwinlist.cc |  3 ++-
+ 4 files changed, 13 insertions(+), 7 deletions(-)
+
+commit 440a0f1589a8543da9b729479ac8b32e645d8aaa
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 4 17:46:55 2021 +0100
+
+    Fix for fullscreen wine programs for issue ice-wm/icewm#73.
+
+ src/wmframe.cc | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
+
+commit 1bcf0ed34466f9dd9c6fa794d11aacf432e71db2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 2 03:32:14 2021 +0100
+
+    Prepare 2.9.1 release
+
+ AUTHORS      |   4 +-
+ ChangeLog    | 479 ++++++++++++++++++++++++++++++-------------------------
+ NEWS         | 107 +++++--------
+ README.md    |  36 ++---
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  42 ++---
+ po/be.po     |  42 ++---
+ po/bg.po     |  42 ++---
+ po/ca.po     |  42 ++---
+ po/cs.po     |  42 ++---
+ po/da.po     |  42 ++---
+ po/de.po     |  42 ++---
+ po/el.po     |  42 ++---
+ po/en.po     |  42 ++---
+ po/es.po     |  42 ++---
+ po/fi.po     |  42 ++---
+ po/fr.po     |  42 ++---
+ po/he.po     |  42 ++---
+ po/hr.po     |  42 ++---
+ po/hu.po     |  42 ++---
+ po/icewm.pot |  44 ++---
+ po/id.po     |  42 ++---
+ po/it.po     |  42 ++---
+ po/ja.po     |  42 ++---
+ po/ko.po     |  42 ++---
+ po/lt.po     |  42 ++---
+ po/lv.po     |  42 ++---
+ po/mk.po     |  42 ++---
+ po/nb.po     |  42 ++---
+ po/nl.po     |  42 ++---
+ po/no.po     |  42 ++---
+ po/pl.po     |  42 ++---
+ po/pt.po     |  42 ++---
+ po/pt_BR.po  |  42 ++---
+ po/ro.po     |  42 ++---
+ po/ru.po     |  42 ++---
+ po/sk.po     |  42 ++---
+ po/sl.po     |  42 ++---
+ po/sv.po     |  42 ++---
+ po/tr.po     |  42 ++---
+ po/uk.po     |  42 ++---
+ po/vi.po     |  42 ++---
+ po/zh_CN.po  |  42 ++---
+ po/zh_TW.po  |  42 ++---
+ 46 files changed, 1152 insertions(+), 1128 deletions(-)
+
 commit 20df1cb291469f6c519cc04af3a734bda4ce4dd1
 Merge: 0121ea41 99719a51
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5956,286 +6269,3 @@ Date:   Thu Mar 18 21:52:20 2021 +0100
 
  src/wmtaskbar.cc | 6 ++++--
  1 file changed, 4 insertions(+), 2 deletions(-)
-
-commit 2b7e0c09d46f2ef970ffe35b54c9728d6470f28d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Mar 18 21:51:48 2021 +0100
-
-    Move signalGuiEvent into its own class GuiSignaler.
-
- src/guievent.h | 12 +++++++++
- src/wmapp.cc   | 75 ++++++++++++++++++++++++++++++++++--------------------
- src/wmapp.h    |  1 +
- 3 files changed, 61 insertions(+), 27 deletions(-)
-
-commit 8e9661c6334decbf533af1a38ef97b4203f38bfe
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Mar 18 21:46:16 2021 +0100
-
-    Move ObjectButton to its own source file. Rename yinput.cc to
-    yinputline.cc.
-
- po/POTFILES.in     |   3 +-
- src/CMakeLists.txt |   4 +-
- src/Makefile.am    |   3 +-
- src/objbar.cc      |  79 ------
- src/objbutton.cc   |  88 ++++++
- src/yinputline.cc  | 717 +++++++++++++++++++++++++++++++++++++++++++++++++
- 6 files changed, 811 insertions(+), 83 deletions(-)
-
-commit 59ff821e4acb7e3722812fb082c09373cf975608
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 17 01:10:03 2021 +0100
-
-    Remove unneeded includes.
-
- src/wmswitch.cc | 3 +--
- src/wmswitch.h  | 2 --
- 2 files changed, 1 insertion(+), 4 deletions(-)
-
-commit da482737b0605efb6c04f57776572b73a819ece0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 17 01:09:33 2021 +0100
-
-    Remove superfluous field wmActionListener from ObjectMenu.
-
- src/browse.cc | 3 ++-
- src/objbar.h  | 8 ++------
- src/wmprog.cc | 4 ++--
- 3 files changed, 6 insertions(+), 9 deletions(-)
-
-commit 0584515a3fb035ee7970b3d57c33e9d374920502
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 17 01:07:24 2021 +0100
-
-    Add new option TaskBarTaskGrouping to group similar applications under
-    one task button for issue #198.
-
- src/atasks.cc | 323 +++++++++++++++++++++++++++++++++++++++++++-----------
- src/atasks.h  |  29 ++++-
- src/default.h |   4 +-
- 3 files changed, 286 insertions(+), 70 deletions(-)
-
-commit 41847c25b1b2b0faccdc028a531dc06af3799152
-Author: Freek de Kruijf <freek@opensuse.org>
-Date:   Tue Mar 16 10:31:49 2021 +0000
-
-    Translated using Weblate (Dutch)
-
-    Currently translated at 100.0% (470 of 470 strings)
-
- po/nl.po | 14 +++++---------
- 1 file changed, 5 insertions(+), 9 deletions(-)
-
-commit 0ba46c306cabd35b687a237d4ef566c526b2ea43
-Author: Tommi Nieminen <software@legisign.org>
-Date:   Mon Mar 15 12:56:43 2021 +0000
-
-    Translated using Weblate (Finnish)
-
-    Currently translated at 59.6% (280 of 470 strings)
-
- po/fi.po | 63 ++++++++++++++++++++++++++++++++++++++++++++----------------
- 1 file changed, 46 insertions(+), 17 deletions(-)
-
-commit ab0a59a77340677fa9517a0eb844c3dd98950468
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Date:   Mon Mar 15 10:23:34 2021 +0000
-
-    Translated using Weblate (Japanese)
-
-    Currently translated at 100.0% (470 of 470 strings)
-
- po/ja.po | 12 +++++-------
- 1 file changed, 5 insertions(+), 7 deletions(-)
-
-commit 6c5b727b79cebf2c5376396cac70aeb63e64080c
-Author: Aleš Kastner <alkas@volny.cz>
-Date:   Mon Mar 15 07:49:45 2021 +0000
-
-    Translated using Weblate (Czech)
-
-    Currently translated at 100.0% (470 of 470 strings)
-
- po/cs.po | 14 +++++---------
- 1 file changed, 5 insertions(+), 9 deletions(-)
-
-commit ef1bf58c68c5f1f862022c508013ba4209d97280
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 15 01:38:22 2021 +0100
-
-    Simplify filereader to reduce number of read system calls.
-
- src/yfileio.cc | 78 ++++++++++++++++++++++++++++--------------------------
- src/yfileio.h  |  2 ++
- 2 files changed, 43 insertions(+), 37 deletions(-)
-
-commit ef9340cbfb2ea2b9566c0e8ca3b2e78a695e8051
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 15 01:36:09 2021 +0100
-
-    When client loses its X shape then update frame functions.
-    This fixes toggling "Use system title bar and borders" in Chrome.
-
- src/wmclient.cc | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-commit 8c22561d241ebc7ac739de8c1df42a77a0921841
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 15 00:44:41 2021 +0100
-
-    Print detail for all in icesh motif.
-
- src/icesh.cc | 22 ++++++++++++----------
- 1 file changed, 12 insertions(+), 10 deletions(-)
-
-commit eff145f15abe04e8ff6846abe404539ac4caa723
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 15 00:43:47 2021 +0100
-
-    Redraw task button when name changes.
-
- src/wmframe.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 3dec595c346e1fd5ec2eedeb295d01b82f94b83b
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Sun Mar 14 17:25:59 2021 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (470 of 470 strings)
-
- po/sk.po | 14 +++++---------
- 1 file changed, 5 insertions(+), 9 deletions(-)
-
-commit 33270b6b98d23180f534b19cb3ed87a329f5c083
-Author: David Medina <medipas@gmail.com>
-Date:   Sun Mar 14 17:00:07 2021 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (470 of 470 strings)
-
- po/ca.po | 12 +++++-------
- 1 file changed, 5 insertions(+), 7 deletions(-)
-
-commit 558109b7dc6ccd9b7c85b2f296f575222f46fa53
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Mar 14 12:21:42 2021 +0100
-
-    Update translations.
-
- po/ar.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/be.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/bg.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/ca.po     | 121 ++++++++++++++++++++++++++++------------------------
- po/cs.po     | 128 +++++++++++++++++++++++++++++--------------------------
- po/da.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/de.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/el.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/en.po     | 106 +++++++++++++++++++++++----------------------
- po/es.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/fi.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/fr.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/he.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/hr.po     | 108 ++++++++++++++++++++++++----------------------
- po/hu.po     | 125 ++++++++++++++++++++++++++++-------------------------
- po/icewm.pot | 108 +++++++++++++++++++++++-----------------------
- po/id.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/it.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/ja.po     | 121 ++++++++++++++++++++++++++++------------------------
- po/ko.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/lt.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/lv.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/mk.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/nb.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/nl.po     | 128 +++++++++++++++++++++++++++++--------------------------
- po/no.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/pl.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/pt.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/pt_BR.po  | 124 ++++++++++++++++++++++++++++-------------------------
- po/ro.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/ru.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/sk.po     | 128 +++++++++++++++++++++++++++++--------------------------
- po/sl.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/sv.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/tr.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/uk.po     | 117 +++++++++++++++++++++++++++-----------------------
- po/vi.po     | 124 ++++++++++++++++++++++++++++-------------------------
- po/zh_CN.po  | 124 ++++++++++++++++++++++++++++-------------------------
- po/zh_TW.po  | 124 ++++++++++++++++++++++++++++-------------------------
- 39 files changed, 2516 insertions(+), 2207 deletions(-)
-
-commit e8dc345d5e4777aeaa3cfdab9f5583f654e905fc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Mar 14 00:31:02 2021 +0100
-
-    Enforce updateLocation when without system tray for issue #559.
-
- src/wmtaskbar.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 761514c25051d16006f61a3d7d45052707f98475
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Sat Mar 13 13:26:56 2021 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (469 of 469 strings)
-
- po/sk.po | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
-
-commit 4774db302b2c4acda8c35a1f956f3847288adc06
-Author: Freek de Kruijf <freek@opensuse.org>
-Date:   Sat Mar 13 14:35:13 2021 +0000
-
-    Translated using Weblate (Dutch)
-
-    Currently translated at 100.0% (469 of 469 strings)
-
- po/nl.po | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
-
-commit e21607a8995d81da2adcd773cffce04f51d710b6
-Author: Aleš Kastner <alkas@volny.cz>
-Date:   Sat Mar 13 14:03:49 2021 +0000
-
-    Translated using Weblate (Czech)
-
-    Currently translated at 100.0% (469 of 469 strings)
-
- po/cs.po | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
-
-commit 60dfe2ba30ff3b839277c788799d08f6630fea77
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Mar 13 12:32:21 2021 +0100
-
-    Reduce systemcalls as much as possible when updating network status.
-
- src/apppstatus.cc | 332 +++++++++++++++++++++++++++++---------------------
- src/apppstatus.h  |  29 ++---
- 2 files changed, 208 insertions(+), 153 deletions(-)
-
-commit c92526267334b521ae790d793c347f4211572dfd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Mar 13 12:31:45 2021 +0100
-
-    Smaller timers.
-
- src/yapp.cc   | 24 ++++++++++++------------
- src/ytimer.cc | 27 +++++++++++++++------------
- src/ytimer.h  | 12 ++++++++----
- 3 files changed, 35 insertions(+), 28 deletions(-)
-
-commit 6070949a6d1c91332c94b0aab6782c6ca3f75a50
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Mar 13 12:30:19 2021 +0100
-
-    Cleanup empty handleCrossing.
-
- src/amailbox.cc | 25 -------------------------
- src/amailbox.h  |  1 -
- 2 files changed, 26 deletions(-)

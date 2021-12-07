@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icewm 1.2.0-beta1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-04 23:19+0100\n"
+"POT-Creation-Date: 2021-12-07 23:47+0100\n"
 "PO-Revision-Date: 2020-05-07 08:52+0000\n"
 "Last-Translator: ingemar karlsson <ingemar_bengt@hotmail.com>\n"
 "Language-Team: Swedish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -60,24 +60,24 @@ msgstr " - Full"
 msgid "power:\t%s"
 msgstr "ström:\t%s"
 
-#: src/aclock.cc:166
+#: src/aclock.cc:192
 msgid "CLOCK"
 msgstr "KLOCKA"
 
-#: src/aclock.cc:172
+#: src/aclock.cc:198
 msgid "Date"
 msgstr "Datum"
 
-#: src/aclock.cc:173 src/themes.cc:80
+#: src/aclock.cc:199 src/themes.cc:80
 msgid "Default"
 msgstr "Standard"
 
-#: src/aclock.cc:174 src/acpustatus.cc:687 src/amailbox.cc:964
+#: src/aclock.cc:200 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Inaktivera"
 
-#: src/aclock.cc:175
+#: src/aclock.cc:201
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -2607,7 +2607,7 @@ msgstr "Ordna _Ikoner"
 msgid "_Refresh"
 msgstr "_Uppdatera"
 
-#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:986
+#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:989
 msgid "Hide Taskbar"
 msgstr "Dölj aktivitetsfält"
 
@@ -2623,7 +2623,7 @@ msgstr "Fönsterlistmeny"
 msgid "Show Desktop"
 msgstr "Visa skrivbord"
 
-#: src/wmtaskbar.cc:986
+#: src/wmtaskbar.cc:989
 msgid "Show Taskbar"
 msgstr "Visa aktivitetsfält"
 

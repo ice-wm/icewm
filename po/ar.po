@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.3.12.52\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-04 23:19+0100\n"
+"POT-Creation-Date: 2021-12-07 23:47+0100\n"
 "PO-Revision-Date: 2020-05-02 19:50+0000\n"
 "Last-Translator: mohammad alhargan <malham1@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -61,24 +61,24 @@ msgstr " - مشحون"
 msgid "power:\t%s"
 msgstr "الطاقة:\t%s"
 
-#: src/aclock.cc:166
+#: src/aclock.cc:192
 msgid "CLOCK"
 msgstr "الساعة"
 
-#: src/aclock.cc:172
+#: src/aclock.cc:198
 msgid "Date"
 msgstr "التاريخ"
 
-#: src/aclock.cc:173 src/themes.cc:80
+#: src/aclock.cc:199 src/themes.cc:80
 msgid "Default"
 msgstr "إفتراضي"
 
-#: src/aclock.cc:174 src/acpustatus.cc:687 src/amailbox.cc:964
+#: src/aclock.cc:200 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Disable"
 
-#: src/aclock.cc:175
+#: src/aclock.cc:201
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -2614,7 +2614,7 @@ msgstr "رتب الايقونات"
 msgid "_Refresh"
 msgstr "تجديد"
 
-#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:986
+#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:989
 msgid "Hide Taskbar"
 msgstr "إخفاء شريط المهام"
 
@@ -2630,7 +2630,7 @@ msgstr "جدول قوائم النوافذ"
 msgid "Show Desktop"
 msgstr "عرض سطح المكتب"
 
-#: src/wmtaskbar.cc:986
+#: src/wmtaskbar.cc:989
 msgid "Show Taskbar"
 msgstr "إظهار شريط المهام"
 

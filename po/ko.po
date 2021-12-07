@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-04 23:19+0100\n"
+"POT-Creation-Date: 2021-12-07 23:47+0100\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -61,24 +61,24 @@ msgstr " - 전체"
 msgid "power:\t%s"
 msgstr "전원:\t%s"
 
-#: src/aclock.cc:166
+#: src/aclock.cc:192
 msgid "CLOCK"
 msgstr "클럭"
 
-#: src/aclock.cc:172
+#: src/aclock.cc:198
 msgid "Date"
 msgstr "날짜"
 
-#: src/aclock.cc:173 src/themes.cc:80
+#: src/aclock.cc:199 src/themes.cc:80
 msgid "Default"
 msgstr "기본값"
 
-#: src/aclock.cc:174 src/acpustatus.cc:687 src/amailbox.cc:964
+#: src/aclock.cc:200 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Disable"
 
-#: src/aclock.cc:175
+#: src/aclock.cc:201
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -2673,7 +2673,7 @@ msgstr "아이콘 정렬(_I)"
 msgid "_Refresh"
 msgstr "새롭게(_R)"
 
-#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:986
+#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:989
 msgid "Hide Taskbar"
 msgstr "작업 표시줄 숨기기"
 
@@ -2689,7 +2689,7 @@ msgstr "창 목록 메뉴"
 msgid "Show Desktop"
 msgstr "바탕화면 보기"
 
-#: src/wmtaskbar.cc:986
+#: src/wmtaskbar.cc:989
 msgid "Show Taskbar"
 msgstr "작업 표시줄 표시"
 

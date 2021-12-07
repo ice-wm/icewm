@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-04 23:19+0100\n"
+"POT-Creation-Date: 2021-12-07 23:47+0100\n"
 "PO-Revision-Date: 2021-12-06 01:27+0000\n"
 "Last-Translator: Taras Panchenko <top39@ukr.net>\n"
-"Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/ru/>\n"
+"Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,24 +69,24 @@ msgstr " - Полный"
 msgid "power:\t%s"
 msgstr "мощность:\t%s"
 
-#: src/aclock.cc:166
+#: src/aclock.cc:192
 msgid "CLOCK"
 msgstr "ЧАСЫ"
 
-#: src/aclock.cc:172
+#: src/aclock.cc:198
 msgid "Date"
 msgstr "Дата"
 
-#: src/aclock.cc:173 src/themes.cc:80
+#: src/aclock.cc:199 src/themes.cc:80
 msgid "Default"
 msgstr "По умолчанию"
 
-#: src/aclock.cc:174 src/acpustatus.cc:687 src/amailbox.cc:964
+#: src/aclock.cc:200 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Скрыть"
 
-#: src/aclock.cc:175
+#: src/aclock.cc:201
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -2601,7 +2601,7 @@ msgstr "Упорядочить _Иконки"
 msgid "_Refresh"
 msgstr "_Обновить"
 
-#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:986
+#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:989
 msgid "Hide Taskbar"
 msgstr "Скрыть Панель задач"
 
@@ -2617,7 +2617,7 @@ msgstr "Список Окон в Меню"
 msgid "Show Desktop"
 msgstr "Показать Десктоп"
 
-#: src/wmtaskbar.cc:986
+#: src/wmtaskbar.cc:989
 msgid "Show Taskbar"
 msgstr "Показать Панель задач"
 

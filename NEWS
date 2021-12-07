@@ -1,11 +1,50 @@
-icewm -- history of user-visible changes.  2021-12-02
+icewm -- history of user-visible changes.  2021-12-07
+
+Release icewm-2.9.2 released 2021-12-07
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.9.1...2.9.2
+
+Bert Gijsbers <gijsbers@science.uva.nl> (18):
+      Fix for fullscreen wine programs for issue ice-wm/icewm#73.
+      Fix against the flashing of title bar buttons when the window list is
+        activated.
+      Add class tokens.
+      Include sys/wait.h for FreeBSD and internationalize the keyboard tooltip.
+      Use class tokens to hide use of strtok.
+      Internationalize the error messages for the dynamic menu.
+      Add class YPidWaiter for asynchronous waiting for process termination.
+      Prevent negative image positions in fillPixmap.
+      Fix the drawing of ledclock pixmaps for some themes like "unusualscars" by
+        means of clipping before calling fillPixmap.
+      Update pot files.
+      Raise the window list before mapping it.
+      Prefer PictOpOver over PictOpSrc in drawPixmap for 24-bit displays.
+      Delay font loading in APM until battery is detected.
+      Add support for multiple clocks in different time zones.
+      Improve explanation for TimeFormat and give an example.
+      Postpone XFreeFontSet until names are no longer needed.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Taras Panchenko <top39@ukr.net> (2):
+      Translated using Weblate (Russian)
+      Translated using Weblate (Ukrainian)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-2.9.1 released 2021-12-02
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.9.0...2.9.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (13):
+Bert Gijsbers <gijsbers@science.uva.nl> (14):
       When the keyboard layout changes due to external reasons and the taskbar
         has the keyboard applet, then reflect the new layout in the taskbar
         applet for issue #622. Make the keyboard applet display all of the
@@ -32,6 +71,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (13):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.9.1 release
 
 Hugo Carvalho <hugokarvalho@hotmail.com> (1):
       Translated using Weblate (Portuguese)
@@ -456,83 +496,6 @@ Freek de Kruijf <freek@opensuse.org> (1):
 
 Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
       Translated using Weblate (Portuguese (Brazil))
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
-
-
-Release icewm-2.4.0 released 2021-06-07
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.3.4...2.4.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (24):
-      Prevent compiler warnings.
-      Don't reverse the alpha value, only the RGB color components.
-      Improve centrally placing transient windows over their leader window when
-        CenterTransientsOnOwner is enabled. Fix for when CenterLarge is true.
-      Support WM_TAKE_FOCUS by setting wsTakeFocus flag.
-      Add constructor with integer dimensions to YRect.
-      Support scrolling the pixmap of a GraphicsBuffer.
-      Improve icehelp colors and search in icehelp document with Ctrl+F and F3.
-      Cleanup manageClient and split it up in smaller functions.
-      Improve recovery from restart failures.
-      Add support for DockApps.
-      Consider AllWorkspaces to be equal to the active workspace, when
-        QuickSwitchGroupWorkspaces is enabled, for issue #589.
-      Support Ctrl+Mouse buttons to control dockapps.
-      Enforce that focus remains with IceTopWin for issue #593.
-      Move Dockapps with Ctrl+Button1. Honor order winoption for Dockapps.
-        Respect startClose winoption for Dockapps. Preserve Dockapps ordering
-        over restarts. Be resilient against a newly manage client exiting
-        immediately. Add support for Dockapps to icesh.
-      Only let icewm notify icewm-session at start and when not catchsegv.
-      Support forcedClose winoption on Dockapps.
-      Be pessimistic about the chances to locate a file icon on AntiX.
-      Prevent a compilerwarning.
-      Fix indentation and expand tabs.
-      Check parameter against null in createFromImage.
-      Reduce the bugs section to the essential and closes issue #592.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.4.0 release
-
-Agah Emir <agahemir986@gmail.com> (2):
-      Translated using Weblate (Turkish)
-      Translated using Weblate (Turkish)
-
-Gemineo <vistatec@gemineo.de> (2):
-      Translated using Weblate (German)
-      Translated using Weblate (German)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (2):
-      Translated using Weblate (Portuguese)
-      Translated using Weblate (Portuguese)
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Davide Aiello <davide.aiello@novilingulists.com> (1):
-      Translated using Weblate (Italian)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Lucie Charrier <c.chalu@free.fr> (1):
-      Translated using Weblate (French)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com> (1):
-      Translated using Weblate (Lithuanian)
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
