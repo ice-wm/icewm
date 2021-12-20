@@ -128,6 +128,7 @@ private:
     lazy<YTimer> errorTimer;
     lazy<YTimer> pathsTimer;
     lazy<YTimer> splashTimer;
+    lazy<YTimer> refreshTimer;
     lazy<YWindow> splashWindow;
     lazy<GuiSignaler> guiSignaler;
 
@@ -173,32 +174,34 @@ public:
 extern lazily<SharedWindowList> windowListMenu;
 #endif
 
-class LogoutMenu : public YMenu {
+class SharedMenu : public YMenu {
 public:
-    LogoutMenu() {
-        setShared(true);
-    }
+    SharedMenu() { setShared(true); }
+};
+
+class LogoutMenu : public SharedMenu {
+public:
     void updatePopup();
 };
 extern lazy<LogoutMenu> logoutMenu;
 
-class LayerMenu : public YMenu {
+class LayerMenu : public SharedMenu {
 public:
-    LayerMenu() {
-        setShared(true);
-    }
     void updatePopup();
 };
 extern lazy<LayerMenu> layerMenu;
 
-class MoveMenu : public YMenu {
+class MoveMenu : public SharedMenu {
 public:
-    MoveMenu() {
-        setShared(true);
-    }
     void updatePopup();
 };
 extern lazy<MoveMenu> moveMenu;
+
+class TileMenu : public SharedMenu {
+public:
+    void updatePopup();
+};
+extern lazy<TileMenu> tileMenu;
 
 class KProgram;
 typedef YObjectArray<KProgram> KProgramArrayType;

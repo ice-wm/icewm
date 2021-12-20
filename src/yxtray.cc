@@ -587,6 +587,7 @@ YXTray::YXTray(YXTrayNotifier *notifier,
     addStyle(wsNoExpose);
     setTitle("YXTray");
     setParentRelative();
+    setSize(1, trayIconMaxHeight + fDrawBevel);
     fTrayProxy = new YXTrayProxy(atom, this);
     regainTrayWindows();
 }
@@ -847,7 +848,8 @@ void YXTray::trayUpdateGeometry(unsigned w, unsigned h, bool visible) {
     }
     MSG(("relayout %d %d : %d %d", w, h, width(), height()));
     if (w != width() || h != height()) {
-        fGeometry.setRect(x() + int(width()) - int(w), y(), w, h);
+        int ypos = (h == height()) ? y() : 1;
+        fGeometry.setRect(x() + int(width()) - int(w), ypos, w, h);
         setGeometry(fGeometry);
         if (visible)
             show();
