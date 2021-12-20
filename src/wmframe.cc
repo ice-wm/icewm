@@ -863,27 +863,18 @@ void YFrameWindow::handleCrossing(const XCrossingEvent &crossing) {
 }
 
 void YFrameWindow::handleFocus(const XFocusChangeEvent &focus) {
-    if (manager->switchWindowVisible()) {
+    if (manager->switchWindowVisible() || client()->adopted() == false) {
         return ;
     }
-#if 1
     if (focus.type == FocusIn &&
         focus.mode != NotifyGrab &&
         focus.window == handle() &&
         focus.detail != NotifyInferior &&
         focus.detail != NotifyPointer &&
         focus.detail != NotifyPointerRoot)
-        manager->switchFocusTo(this);
-#endif
-#if 0
-    else if (focus.type == FocusOut &&
-               focus.mode == NotifyNormal &&
-               focus.detail != NotifyInferior &&
-               focus.detail != NotifyPointer &&
-               focus.detail != NotifyPointerRoot &&
-               focus.window == handle())
-        manager->switchFocusFrom(this);
-#endif
+    {
+        fFocusEventTimer->setTimer(None, this, true);
+    }
     layoutShape();
 }
 
@@ -894,6 +885,15 @@ bool YFrameWindow::handleTimer(YTimer *t) {
         }
         else if (t == fDelayFocusTimer) {
             focus(false);
+        }
+        else if (t == fFocusEventTimer) {
+            if (manager->getFocus() != this && client()->visible()) {
+                Window win = 0; int rev = 0;
+                XGetInputFocus(xapp->display(), &win, &rev);
+                if (win == client()->handle()) {
+                    manager->switchFocusTo(this);
+                }
+            }
         }
     }
     return false;
@@ -1099,6 +1099,17 @@ void YFrameWindow::actionPerformed(YAction action, unsigned int modifiers) {
     case actionToggleTray:
         wmToggleTray();
         break;
+    case actionTileLeft:
+    case actionTileRight:
+    case actionTileTop:
+    case actionTileBottom:
+    case actionTileTopLeft:
+    case actionTileTopRight:
+    case actionTileBottomLeft:
+    case actionTileBottomRight:
+    case actionTileCenter:
+        wmTile(action);
+        break;
     case actionLayerDesktop:
     case actionLayerOne:
     case actionLayerBelow:
@@ -1133,6 +1144,77 @@ void YFrameWindow::actionPerformed(YAction action, unsigned int modifiers) {
             }
         }
         wmActionListener->actionPerformed(action, modifiers);
+    }
+}
+
+void YFrameWindow::wmTile(YAction action) {
+    if (canMove() == false || visibleNow() == false) {
+        return;
+    }
+    if (hasState(WinStateMaximizedBoth | WinStateRollup)) {
+        if (notState(WinStateUnmapped | WinStateFullscreen)) {
+            setState(WinStateMaximizedBoth | WinStateRollup, None);
+        }
+    }
+    if (notState(WinStateUnmapped | WinStateFullscreen)) {
+        bool size = canSize();
+        int mx, my, Mx, My;
+        manager->getWorkArea(this, &mx, &my, &Mx, &My);
+        int x = this->x(), y = this->y();
+        int w = int(this->width()), h = int(this->height());
+        switch (action.ident()) {
+        case actionTileLeft:
+            if (size)
+                w = (Mx - mx) / 2, h = (My - my);
+            x = mx, y = my;
+            break;
+        case actionTileRight:
+            if (size)
+                w = (Mx - mx) / 2, h = (My - my);
+            x = (Mx - mx) / 2, y = my;
+            break;
+        case actionTileTop:
+            if (size)
+                w = (Mx - mx), h = (My - my) / 2;
+            x = mx, y = my;
+            break;
+        case actionTileBottom:
+            if (size)
+                w = (Mx - mx), h = (My - my) / 2;
+            x = mx, y = (My - my) / 2;
+            break;
+        case actionTileTopLeft:
+            if (size)
+                w = (Mx - mx) / 2, h = (My - my) / 2;
+            x = mx, y = my;
+            break;
+        case actionTileTopRight:
+            if (size)
+                w = (Mx - mx) / 2, h = (My - my) / 2;
+            x = (Mx - mx) / 2, y = my;
+            break;
+        case actionTileBottomLeft:
+            if (size)
+                w = (Mx - mx) / 2, h = (My - my) / 2;
+            x = mx, y = (My - my) / 2;
+            break;
+        case actionTileBottomRight:
+            if (size)
+                w = (Mx - mx) / 2, h = (My - my) / 2;
+            x = (Mx - mx) / 2, y = (My - my) / 2;
+            break;
+        case actionTileCenter:
+            if (size)
+                w = (Mx - mx) / 2, h = (My - my) / 2;
+            x = (mx + Mx - w) / 2, y = (my + My - h) / 2;
+            break;
+        default: return;
+        }
+        if (size) {
+            setNormalGeometryOuter(x, y, w, h);
+        } else {
+            setNormalPositionOuter(x, y);
+        }
     }
 }
 
@@ -1704,7 +1786,9 @@ void YFrameWindow::refresh() {
 }
 
 void YFrameWindow::repaint() {
-    paint(getGraphics(), geometry());
+    if (hasBorders()) {
+        paint(getGraphics(), geometry());
+    }
 }
 
 static Bool checkExpose(Display* display, XEvent* event, XPointer arg) {

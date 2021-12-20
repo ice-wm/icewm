@@ -20,9 +20,6 @@
 #include <wctype.h>
 #endif
 
-#define utf8ellipsis "\xe2\x80\xa6"
-const unsigned utf32ellipsis = 0x2026;
-
 static inline Display* display()  { return xapp->display(); }
 
 /******************************************************************************/
@@ -288,6 +285,12 @@ void Graphics::drawChars(const char *data, int offset, int len, int x, int y) {
 void Graphics::drawString(int x, int y, char const * str) {
     if (fFont != null)
         fFont->drawGlyphs(*this, x, y, str, int(strlen(str)));
+}
+
+void Graphics::drawChars(wchar_t* data, int offset, int len, int x, int y)
+{
+    if (fFont != null)
+        fFont->drawGlyphs(*this, x, y, data + offset, len);
 }
 
 /**

@@ -88,6 +88,7 @@ public:
     void wmOccupyWorkspace(int workspace);
     void wmSetLayer(int layer);
     void wmSetTrayOption(int option);
+    void wmTile(YAction action);
     void wmToggleTray();
 #if DO_NOT_COVER_OLD
     void wmToggleDoNotCover();
@@ -462,6 +463,7 @@ private:
     WindowListItem *fWinListItem;
     ref<YIcon> fFrameIcon;
     lazy<WindowOption> fHintOption;
+    lazy<YTimer> fFocusEventTimer;
 
     YMsgBox *fKillMsgBox;
     YFrameWindow *fOwner;

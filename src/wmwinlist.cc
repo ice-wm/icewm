@@ -71,12 +71,12 @@ void WindowListBox::activateItem(YListItem *item) {
     ClientData *f = i->getFrame();
     if (f) {
         f->activateWindow(true, false);
-        windowList->getFrame()->wmHide();
+        windowList->handleClose();
     } else {
         int w = i->getWorkspace();
         if (w >= 0) {
             manager->activateWorkspace(w);
-            windowList->getFrame()->wmHide();
+            windowList->handleClose();
         }
     }
 }
@@ -143,7 +143,7 @@ bool WindowListBox::handleKey(const XKeyEvent &key) {
 
         switch (k) {
         case XK_Escape:
-            windowList->getFrame()->wmHide();
+            windowList->handleClose();
             return true;
         case XK_F10:
         case XK_Menu:
@@ -324,11 +324,11 @@ void WindowListBox::enableCommands(YMenu *popup) {
         }
     }
     if (selected == false) {
-        moveMenu->disableCommand(actionNull);
         popup->disableCommand(actionNull);
     }
     else {
         moveMenu->setActionListener(this);
+        tileMenu->setActionListener(this);
         layerMenu->setActionListener(this);
     }
 }
@@ -384,6 +384,7 @@ WindowListPopup::WindowListPopup() {
     addItem(_("_Raise"), -2, KEY_NAME(gKeyWinRaise), actionRaise);
     addItem(_("_Lower"), -2, KEY_NAME(gKeyWinLower), actionLower);
     addSubmenu(_("La_yer"), -2, layerMenu);
+    addSubmenu(_("Tile"), -2, tileMenu);
     addSeparator();
     addSubmenu(_("Move _To"), -2, moveMenu);
     addItem(_("Occupy _All"), -2, KEY_NAME(gKeyWinOccupyAll), actionOccupyAllOrCurrent);
@@ -645,7 +646,19 @@ void WindowList::showFocused(int x, int y) {
         getFrame()->setAllWorkspaces();
         getFrame()->wmRaise();
         getFrame()->wmShow();
-        manager->setFocus(getFrame());
+        xapp->sync();
+        focusTimer.setTimer(None, this, true);
+    }
+}
+
+bool WindowList::handleTimer(YTimer* timer) {
+    if (timer == &focusTimer) {
+        if (visible()) {
+            manager->setFocus(getFrame());
+        }
+        return false;
+    } else {
+        return YFrameClient::handleTimer(timer);
     }
 }
 

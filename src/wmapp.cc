@@ -63,6 +63,7 @@ YCursor YWMApp::scrollUpPointer;
 YCursor YWMApp::scrollDownPointer;
 
 lazy<MoveMenu> moveMenu;
+lazy<TileMenu> tileMenu;
 lazy<LayerMenu> layerMenu;
 lazily<SharedWindowList> windowListMenu;
 lazy<LogoutMenu> logoutMenu;
@@ -554,6 +555,33 @@ void MoveMenu::updatePopup() {
     }
 }
 
+void TileMenu::updatePopup() {
+    if (itemCount()) {
+        enableCommand(actionNull);
+        return;
+    }
+
+    addItem(_("Left Half"),    -2, actionTileLeft, nullptr, "tileleft");
+    addItem(_("Right Half"),   -2, actionTileRight, nullptr, "tileright");
+    addItem(_("Top Half"),     -2, actionTileTop, nullptr, "tiletop");
+    addItem(_("Bottom Half"),  -2, actionTileBottom, nullptr, "tilebottom");
+    addSeparator();
+    addItem(_("Top Left"),     -2, actionTileTopLeft, nullptr,
+            "tiletopleft");
+    addItem(_("Top Right"),    -2, actionTileTopRight, nullptr,
+            "tiletopright");
+    addItem(_("Bottom Left"),  -2, actionTileBottomLeft, nullptr,
+            "tilebottomleft");
+    addItem(_("Bottom Right"), -2, actionTileBottomRight, nullptr,
+            "tilebottomright");
+    addItem(_("Center"),       -2, actionTileCenter, nullptr, "tilecenter");
+    addSeparator();
+    addItem(_("T_ile Horizontally"), -2,
+            KEY_NAME(gKeySysTileHorizontal), actionTileHorizontal);
+    addItem(_("Tile _Vertically"), -2,
+            KEY_NAME(gKeySysTileVertical), actionTileVertical);
+}
+
 YMenu* YWMApp::getWindowMenu() {
     if (windowMenu)
         return windowMenu;
@@ -592,6 +620,9 @@ YMenu* YWMApp::getWindowMenu() {
         windowMenu->addItem(_("_Lower"),    -2, KEY_NAME(gKeyWinLower), actionLower);
     if (strchr(winMenuItems, 'y'))
         windowMenu->addSubmenu(_("La_yer"), -2, layerMenu);
+
+    if (strchr(winMenuItems, 'y') && strchr(winMenuItems, 't'))
+        windowMenu->addSubmenu(_("Tile"), -2, tileMenu);
 
     if (strchr(winMenuItems, 't') && workspaceCount > 1) {
         windowMenu->addSeparator();
@@ -645,6 +676,14 @@ bool YWMApp::handleTimer(YTimer *timer) {
         themeOnlyPath.clear();
         pathsTimer = null;
     }
+    else if (timer == refreshTimer) {
+        YWindow w;
+        w.lower();
+        w.setGeometry(desktop->geometry());
+        w.show();
+        refreshTimer = null;
+    }
+
     return false;
 }
 
@@ -962,7 +1001,7 @@ void YWMApp::actionPerformed(YAction action, unsigned int /*modifiers*/) {
     }
     else if (action == actionWindowList) {
         if (windowList->visible())
-            windowList->getFrame()->wmHide();
+            windowList->handleClose();
         else
             windowList->showFocused(-1, -1);
     } else if (action == actionWinOptions) {
@@ -1360,6 +1399,7 @@ YWMApp::~YWMApp() {
     }
     layerMenu = null;
     moveMenu = null;
+    tileMenu = null;
 
     keyProgs.clear();
     workspaces.reset();
@@ -1389,6 +1429,7 @@ int YWMApp::mainLoop() {
             fail("notify parent");
         }
     }
+    refreshTimer->setTimer(20L, this, true);
 
     int rc = super::mainLoop();
     signalGuiEvent(geShutdown);
