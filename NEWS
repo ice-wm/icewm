@@ -1,11 +1,70 @@
-icewm -- history of user-visible changes.  2021-12-07
+icewm -- history of user-visible changes.  2021-12-21
+
+Release icewm-2.9.3 released 2021-12-21
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.9.2...2.9.3
+
+Bert Gijsbers <gijsbers@science.uva.nl> (23):
+      Fix vertical position of systray in taskbar to prevent background glitch
+        for issue #626.
+      Only repaint frame when it has borders.
+      Initialize the system tray with a valid height for issue #626.  When the
+        system tray changes height then start from a vertical position of 1 for
+        issue #626.
+      Revert commit 427547115d60d9b41860aa76b27cb8e805ed5d6a "Preferring DejaVu
+        fonts for all purposes".
+      Immediately create workspace buttons for more reliable taskbar relayouts.
+      Add font macros for Xft fonts.
+      Refresh task pane background on expose events.
+      Support Unicode and non-Latin text in input fields and the address bar.
+      Prevent compiler warnings.
+      Denote the language.
+      Initialize locale specific modifiers with XSetLocaleModifiers.
+      Fix compilation without CONFIG_I18N.
+      Fix for icesh maximize.
+      Add a Tile submenu to the title bar menu for issue ice-wm/icewm#74.
+      Update pot files.
+      Add global 'ignorable' to not report errors for this unmapped client
+        window.
+      Postpone requesting focus for icewm internal windows until all create and
+        map events have been processed.
+      Set fFocusWin to nullptr when a frame is about to lose focus.
+      Postpone granting focus to applications which use the Globally Active
+        Input model, like wine, until all its events have been processed.
+      Record when a client frame is unmapped, to not report further errors.
+      Force the desktop background to be refreshed for 'feh' background pixmaps
+        for issue #627.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+David Medina <medipas@gmail.com> (2):
+      Translated using Weblate (Catalan)
+      Translated using Weblate (Catalan)
+
+Eduard Bloch <blade@debian.org> (1):
+      Preferring DejaVu fonts for all purposes
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Taras Panchenko <top39@ukr.net> (1):
+      Translated using Weblate (Ukrainian)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-2.9.2 released 2021-12-07
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.9.1...2.9.2
 
-Bert Gijsbers <gijsbers@science.uva.nl> (18):
+Bert Gijsbers <gijsbers@science.uva.nl> (19):
       Fix for fullscreen wine programs for issue ice-wm/icewm#73.
       Fix against the flashing of title bar buttons when the window list is
         activated.
@@ -27,6 +86,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (18):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.9.2 release
 
 Taras Panchenko <top39@ukr.net> (2):
       Translated using Weblate (Russian)
@@ -437,66 +497,4 @@ Lucie Charrier <c.chalu@free.fr> (1):
 
 openSUSE Weblate <weblate-noreply@opensuse.org> (1):
       Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
-
-
-Release icewm-2.5.0 released 2021-06-26
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.4.0...2.5.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (23):
-      CMake builds html pages for ice-wm/icewm#50.
-      Replace paths with configured directories in generated manpages for CMake
-        build and also fix spaces and double quotes.
-      Surround variable expansion with double quotes.
-      Revert "Enforce that focus remains with IceTopWin for issue #593." This
-        reverts commit 8306aba186294074054c5a4067ccfe7ddfeda75b.
-      Transition testnetwmhints.cc from _WIN_ to _NET_ properties.
-      Give hints on setGeometry format.
-      Add full support for application modal dialogs.  Support WM_TRANSIENT_FOR
-        being set to the root window per the EWMH standard in section:
-        "Implementing enhanced support for application transient windows".
-        Change long to int in YFrameWindow structure.
-      make update-po
-      Add -unmapped and -viewable filters. Restore the window selection after an
-        "end" clause. Include the selection flags inside the test for
-        conditional evaluation.
-      Fix icesh example in manpage.
-      Use colored backgrounds when creating test windows in testnetwmhints.
-      Collect windows to arrange from layers OnTop, Normal and Below.
-      Add "eventName()" for event logging.
-      Add option parsing and event name logging to testmap.cc.
-      Remove 6 obsolete macros from base.h.
-      Add test for WM_HINTS XUrgencyHint.
-      Clear the UrgencyHint in the WM_HINTS structure to stop the flashing.
-      Change YTextProperty memory allocation type to malloc/free.
-      Guard against frames without a client when destructing frames with kill
-        message boxes.
-      Reread properties list for internal clients.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.5.0 release
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (2):
-      Translated using Weblate (Indonesian)
-      Translated using Weblate (Indonesian)
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 
