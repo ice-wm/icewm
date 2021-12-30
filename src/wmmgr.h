@@ -138,6 +138,7 @@ public:
     void setTop(long layer, YFrameWindow *top);
     YFrameWindow *bottom(long layer) const;
     void setBottom(long layer, YFrameWindow *bottom);
+    YWindow* bottomWindow() const { return fBottom; }
 
     YFrameWindow *topLayer(long layer = WinLayerCount - 1);
     YFrameWindow *bottomLayer(long layer = 0);
@@ -274,6 +275,14 @@ public:
     }
     void requestWorkAreaUpdate() { ++fWorkAreaUpdate; }
 
+    void lockRestack() { fRestackLock++; }
+    void unlockRestack() {
+        if (0 == --fRestackLock && fRestackUpdate) {
+            fRestackUpdate = 0;
+            restackWindows();
+        }
+    }
+
     enum WMState { wmSTARTUP, wmRUNNING, wmSHUTDOWN };
 
     WMState wmState() const { return fWmState; }
@@ -357,6 +366,7 @@ private:
     WindowPosState *fArrangeInfo;
     YProxyWindow *rootProxy;
     YWindow *fTopWin;
+    YWindow *fBottom;
     int fCascadeX;
     int fCascadeY;
     int fIconColumn;
@@ -364,6 +374,8 @@ private:
     int lockFocusCount;
     int fWorkAreaLock;
     int fWorkAreaUpdate;
+    int fRestackLock;
+    int fRestackUpdate;
     int fServerGrabCount;
     bool fFullscreenEnabled;
 
@@ -383,6 +395,12 @@ private:
 };
 
 extern YWindowManager *manager;
+
+class YRestackLock {
+public:
+    YRestackLock() { manager->lockRestack(); }
+    ~YRestackLock() { manager->unlockRestack(); }
+};
 
 void dumpZorder(const char *oper, YFrameWindow *w, YFrameWindow *a = nullptr);
 

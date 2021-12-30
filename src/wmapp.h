@@ -107,6 +107,7 @@ public:
     YMenu* getWindowMenu();
     void subdirs(const char* subdir, bool themeOnly, MStringArray& paths);
     void unregisterProtocols();
+    void refreshDesktop();
 
 private:
     char** mainArgv;
@@ -128,7 +129,6 @@ private:
     lazy<YTimer> errorTimer;
     lazy<YTimer> pathsTimer;
     lazy<YTimer> splashTimer;
-    lazy<YTimer> refreshTimer;
     lazy<YWindow> splashWindow;
     lazy<GuiSignaler> guiSignaler;
 

@@ -101,6 +101,7 @@ YFrameWindow::YFrameWindow(
     fWindowType(wtNormal)
 {
     setStyle(wsOverrideRedirect);
+    setBitGravity(NorthWestGravity);
     setPointer(YWMApp::leftPointer);
     setTitle("Frame");
     setBackground(inactiveBorderBg);
@@ -673,7 +674,7 @@ void YFrameWindow::netRestackWindow(Window window, int detail) {
     else {
         switch (detail) {
         case Above:
-            if (canRaise()) {
+            if (canRaise() && !isPassive()) {
                 wmRaise();
                 if (focusOnAppRaise) {
                     if ( !frameOption(foNoFocusOnAppRaise) &&
@@ -890,6 +891,19 @@ bool YFrameWindow::handleTimer(YTimer *t) {
             if (manager->getFocus() != this && client()->visible()) {
                 Window win = 0; int rev = 0;
                 XGetInputFocus(xapp->display(), &win, &rev);
+                while (win != client()->handle()) {
+                    YWindow* found = windowContext.find(win);
+                    if (found) {
+                        break;
+                    } else {
+                        Window par = xapp->parent(win);
+                        if (par == None || par == xapp->root()) {
+                            break;
+                        } else {
+                            win = par;
+                        }
+                    }
+                }
                 if (win == client()->handle()) {
                     manager->switchFocusTo(this);
                 }
@@ -3579,6 +3593,10 @@ void YFrameWindow::setWmUrgency(bool wmUrgency) {
 
 bool YFrameWindow::isUrgent() const {
     return hasState(WinStateUrgent) || client()->urgencyHint();
+}
+
+bool YFrameWindow::isPassive() const {
+    return isMinimized() && startMinimized() && ignoreActivation();
 }
 
 int YFrameWindow::getScreen() const {
