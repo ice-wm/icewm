@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.14\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-21 00:40+0100\n"
+"POT-Creation-Date: 2021-12-30 22:11+0100\n"
 "PO-Revision-Date: 2021-04-09 11:57+0000\n"
 "Last-Translator: Tommi Nieminen <software@legisign.org>\n"
 "Language-Team: Finnish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1352,81 +1352,81 @@ msgstr "Sama-peli"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Katso ohjeet man-sivulta icesh(1).\n"
 
-#: src/icesh.cc:1541
+#: src/icesh.cc:1547
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Alueen ”%s” nimetyt symbolit (lukualue: %ld–%ld):\n"
 
-#: src/icesh.cc:1599
+#: src/icesh.cc:1605
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Työtila arvoalueen ulkopuolella: %ld"
 
-#: src/icesh.cc:1620
+#: src/icesh.cc:1626
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Virheellinen työtilan nimi: ”%s”"
 
-#: src/icesh.cc:1922
+#: src/icesh.cc:1928
 msgid "GNOME window layer"
 msgstr "GNOME-ikkunataso"
 
-#: src/icesh.cc:1923
+#: src/icesh.cc:1929
 msgid "IceWM tray option"
 msgstr "IceWM-ilmoitusaluevalinta"
 
-#: src/icesh.cc:1924
+#: src/icesh.cc:1930
 msgid "Gravity symbols"
 msgstr "Gravity-symbolit"
 
-#: src/icesh.cc:1925
+#: src/icesh.cc:1931
 msgid "Motif functions"
 msgstr "Motif-funktiot"
 
-#: src/icesh.cc:1926
+#: src/icesh.cc:1932
 msgid "Motif decorations"
 msgstr "Motif-koristeet"
 
-#: src/icesh.cc:1927
+#: src/icesh.cc:1933
 msgid "EWMH window state"
 msgstr "EWMH-ikkunan tila"
 
-#: src/icesh.cc:2009 src/icesh.cc:2082
+#: src/icesh.cc:2015 src/icesh.cc:2088
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "työtila %d: ”%s”\n"
 
-#: src/icesh.cc:2317 src/icesh.cc:3749 src/icesh.cc:4222
+#: src/icesh.cc:2323 src/icesh.cc:3797 src/icesh.cc:4279
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Virheellinen tila: ”%s”."
 
-#: src/icesh.cc:3174
+#: src/icesh.cc:3180
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Ikkunan 0x%lx geometriaa ei saatu"
 
-#: src/icesh.cc:3199
+#: src/icesh.cc:3205
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Virheellinen Xinerama: \"%s”."
 
-#: src/icesh.cc:3331 src/icesh.cc:3381
+#: src/icesh.cc:3370 src/icesh.cc:3420
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Virheellinen parametri: ”%s”"
 
-#: src/icesh.cc:3347
+#: src/icesh.cc:3386
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Toiminto ”%s” vaatii ainakin %d parametria."
 
-#: src/icesh.cc:3356
+#: src/icesh.cc:3395
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Virheellinen lauseke: ”%s”"
 
-#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1216
+#: src/icesh.cc:3406 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
 #: src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1434,35 +1434,35 @@ msgstr ""
 "Ei voida avata näyttöä: %s. X-palvelimen on oltava käynnissä ja $DISPLAYn "
 "asetettu."
 
-#: src/icesh.cc:3483
+#: src/icesh.cc:3522
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "Odottamaton avainsana: %s"
 
-#: src/icesh.cc:3512
+#: src/icesh.cc:3551
 msgid "No windows found."
 msgstr "Ikkunoita ei löytynyt."
 
-#: src/icesh.cc:3528
+#: src/icesh.cc:3567
 msgid "No actions specified."
 msgstr "Toimenpiteitä ei ole määritetty."
 
-#: src/icesh.cc:3666
+#: src/icesh.cc:3714
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Virheellinen ikkunatunniste: ”%s”"
 
-#: src/icesh.cc:3683
+#: src/icesh.cc:3731
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Virheellinen PID: ”%s”"
 
-#: src/icesh.cc:3719
+#: src/icesh.cc:3767
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Virheellinen taso: ”%s”."
 
-#: src/icesh.cc:4530
+#: src/icesh.cc:4587
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Tuntematon toiminto: ”%s”"
@@ -1795,7 +1795,7 @@ msgstr "Katkaise rivit"
 msgid "Failed to load image '%s'."
 msgstr "Kuvan '%s' lataus epäonnistui."
 
-#: src/icewmbg.cc:862
+#: src/icewmbg.cc:870
 #, fuzzy
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
@@ -1857,12 +1857,12 @@ msgstr ""
 " DesktopTransparencyColor - väri jota läpikuultavat päätteet näyttävät\n"
 " DesktopTransparencyImage - kuva jota läpikuultavat päätteet näyttävät\n"
 
-#: src/icewmbg.cc:1050 src/wmapp.cc:1796
+#: src/icewmbg.cc:1058 src/wmapp.cc:1782
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Tuntematon optio '%s'."
 
-#: src/icewmbg.cc:1077
+#: src/icewmbg.cc:1085
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2146,11 +2146,11 @@ msgstr "_Tapa asiakasohjelma"
 msgid "_Window list"
 msgstr "_Ikkunaluettelo"
 
-#: src/wmapp.cc:696
+#: src/wmapp.cc:689
 msgid "Another window manager already running, exiting..."
 msgstr "Toinen ikkunamangeri on jo käynnissä, poistutaan..."
 
-#: src/wmapp.cc:771
+#: src/wmapp.cc:764
 #, c-format
 msgid ""
 "Could not restart: %s\n"
@@ -2159,33 +2159,33 @@ msgstr ""
 "Ei voitu uudelleenkäynnistää: %s\n"
 "Johtaako $PATH-määritys kohteeseen %s?"
 
-#: src/wmapp.cc:934
+#: src/wmapp.cc:927
 msgid "Confirm Restart as Terminal"
 msgstr ""
 
-#: src/wmapp.cc:935
+#: src/wmapp.cc:928
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1217 src/yxapp.cc:1036
+#: src/wmapp.cc:1204 src/yxapp.cc:1036
 msgid "<none>"
 msgstr "<tyhjä>"
 
-#: src/wmapp.cc:1540
+#: src/wmapp.cc:1526
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1546
+#: src/wmapp.cc:1532
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1540
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2197,7 +2197,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1550
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2256,21 +2256,21 @@ msgstr ""
 "Käy osoitteessa https://ice-wm.org/ kun haluat ilmoittaa virheestä, kaipaat\n"
 "apua tai jos haluat vain antaa kommenttisi.\n"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1616
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1712
+#: src/wmapp.cc:1698
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s määritetyt asetukset:%s\n"
 
-#: src/wmapp.cc:1843
+#: src/wmapp.cc:1829
 msgid "Confirm Logout"
 msgstr "Varmista uloskirjautuminen"
 
-#: src/wmapp.cc:1844
+#: src/wmapp.cc:1830
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2361,7 +2361,7 @@ msgstr "Uudelleenkäynnistä _IceWM"
 msgid "_About"
 msgstr "_Tietoja"
 
-#: src/wmframe.cc:1527
+#: src/wmframe.cc:1541
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2369,7 +2369,7 @@ msgstr ""
 "VAROITUS! Kaikki tallentamattomat muutokset tässä\n"
 "asiakkaassa menetetään kun se tapetaan. Haluatko jatkaa?"
 
-#: src/wmframe.cc:1534
+#: src/wmframe.cc:1548
 msgid "Kill Client: "
 msgstr "Tapa asiakasohjelma: "
 
@@ -2438,11 +2438,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3366
+#: src/wmmgr.cc:3387
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3367
+#: src/wmmgr.cc:3388
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

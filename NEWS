@@ -1,11 +1,46 @@
-icewm -- history of user-visible changes.  2021-12-21
+icewm -- history of user-visible changes.  2021-12-30
+
+Release icewm-2.9.4 released 2021-12-30
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.9.3...2.9.4
+
+Bert Gijsbers <gijsbers@science.uva.nl> (16):
+      Put the active window first in the list of switchable windows for issue
+        #631.
+      Show time of backtrace.
+      Minimize the number of window restackings for issue #630.
+      Support focus in subwindows of Globally Active Input applications, like
+        full widescreen games for issue ice-wm/icewm#73.
+      Minimized windows with startMinimized and ignoreActivationMessages require
+        user intervention to become shown.
+      Eliminate flicker when resizing frames which have a shape masked border,
+        like CoolSteel and Illuminate-ice by enabling bit gravity.
+      Improved workaround for 'feh' desktop backgrounds, where its pixmap has
+        been marked persistent, for issue #627.
+      Add children.
+      Add icesh options +class and +Pid to extend the selection by class or PID.
+      Set icewmbg background color as a pixmap to overcome limitations in picom
+        and compton for issue #632.  Also retain a single background pixmap as a
+        temporary resource in the X11 server when icewmbg exits.
+      Lower desktop icons on startup.
+      Fix miniicon stacking for when there is no other window.
+      Make desktop refresh synchronized to slow it down a bit.
+      Stack all desktop icons below a dedicated bottommost window.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
 
 Release icewm-2.9.3 released 2021-12-21
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.9.2...2.9.3
 
-Bert Gijsbers <gijsbers@science.uva.nl> (23):
+Bert Gijsbers <gijsbers@science.uva.nl> (24):
       Fix vertical position of systray in taskbar to prevent background glitch
         for issue #626.
       Only repaint frame when it has borders.
@@ -38,6 +73,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (23):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.9.3 release
 
 David Medina <medipas@gmail.com> (2):
       Translated using Weblate (Catalan)
@@ -456,45 +492,4 @@ Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com> (1):
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
-
-
-Release icewm-2.6.0 released 2021-07-08
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.5.0...2.6.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (22):
-      Release the passive button grab from a focused window when a button click
-        wouldn't raise it, for improved menu handling.
-      When a focused window can't raise, or there is no overlapping window, then
-        there shouldn't be a passive button grab by icewm, in order to improve
-        internal menu handling by the application.
-      Guard against buffer overflow when copying the degrees centigrade symbol.
-      Use the "override" keyword consistently to avoid warnings.
-      Prevent a warning on nullptr dereference.
-      Define string field widths when using sscanf.
-      Initialize all object fields.
-      Prevent a hypothetical memory leak.
-      Fix a type to boolean.
-      Fix a fscanf format string type mismatch.
-      Only do a passive grab on buttons which are defined by the
-        ButtonRaiseMask.
-      Use absolute paths for the Exec definition.
-      Eliminate memory leaks in icon handling.
-      Fix for browse menu's for root and home in start menu.
-      Free start menu and windowlist menu on exit.
-      Fix a memory leak for dynamic menu's.
-      Keep track of changes to modal flag. Optimize raising of modals.
-      Add a second modal dialog to testing.
-      Remove superfluous includes.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.6.0 release
-
-Lucie Charrier <c.chalu@free.fr> (1):
-      Translated using Weblate (French)
-
-openSUSE Weblate <weblate-noreply@opensuse.org> (1):
-      Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
 

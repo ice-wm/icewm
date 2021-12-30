@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-21 00:40+0100\n"
+"POT-Creation-Date: 2021-12-30 22:11+0100\n"
 "PO-Revision-Date: 2021-12-17 13:12+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1322,81 +1322,81 @@ msgstr "El mateix joc"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Per a l'ajuda, consulteu la pàgina del manual icesh(1).\n"
 
-#: src/icesh.cc:1541
+#: src/icesh.cc:1547
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Símbols anomenats del domini \"%s\" (gamma numèrica: %ld-%ld):\n"
 
-#: src/icesh.cc:1599
+#: src/icesh.cc:1605
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Escriptori fora de l'abast: %ld"
 
-#: src/icesh.cc:1620
+#: src/icesh.cc:1626
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Nom d'escriptori no vàlid: %s"
 
-#: src/icesh.cc:1922
+#: src/icesh.cc:1928
 msgid "GNOME window layer"
 msgstr "Capa de finestra del GNOME"
 
-#: src/icesh.cc:1923
+#: src/icesh.cc:1929
 msgid "IceWM tray option"
 msgstr "Opció de la safata de l'IceWM"
 
-#: src/icesh.cc:1924
+#: src/icesh.cc:1930
 msgid "Gravity symbols"
 msgstr "Símbols de gravetat"
 
-#: src/icesh.cc:1925
+#: src/icesh.cc:1931
 msgid "Motif functions"
 msgstr "Funcions del Motif"
 
-#: src/icesh.cc:1926
+#: src/icesh.cc:1932
 msgid "Motif decorations"
 msgstr "Decoracions del Motif"
 
-#: src/icesh.cc:1927
+#: src/icesh.cc:1933
 msgid "EWMH window state"
 msgstr "Estat de la finestra de l'EWMH"
 
-#: src/icesh.cc:2009 src/icesh.cc:2082
+#: src/icesh.cc:2015 src/icesh.cc:2088
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "Escriptori #%d: \"%s\"\n"
 
-#: src/icesh.cc:2317 src/icesh.cc:3749 src/icesh.cc:4222
+#: src/icesh.cc:2323 src/icesh.cc:3797 src/icesh.cc:4279
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Estat no vàlid: %s."
 
-#: src/icesh.cc:3174
+#: src/icesh.cc:3180
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "No es pot obtenir una geometria de finestra de 0x%lx."
 
-#: src/icesh.cc:3199
+#: src/icesh.cc:3205
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Xinerama no vàlid: %s."
 
-#: src/icesh.cc:3331 src/icesh.cc:3381
+#: src/icesh.cc:3370 src/icesh.cc:3420
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Argument no vàlid: %s"
 
-#: src/icesh.cc:3347
+#: src/icesh.cc:3386
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "L'acció \"%s\" necessita com a mínim %d arguments."
 
-#: src/icesh.cc:3356
+#: src/icesh.cc:3395
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Expressió no vàlida: %s"
 
-#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1216
+#: src/icesh.cc:3406 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
 #: src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1404,35 +1404,35 @@ msgstr ""
 "No es pot obrir la pantalla: %s. X ha d'estar funcionant i $DISPLAY "
 "configurat."
 
-#: src/icesh.cc:3483
+#: src/icesh.cc:3522
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "No esperat: %s."
 
-#: src/icesh.cc:3512
+#: src/icesh.cc:3551
 msgid "No windows found."
 msgstr "No s'ha trobat cap finestra."
 
-#: src/icesh.cc:3528
+#: src/icesh.cc:3567
 msgid "No actions specified."
 msgstr "No s'ha especificat cap acció."
 
-#: src/icesh.cc:3666
+#: src/icesh.cc:3714
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Identificador de finestra no vàlid: %s"
 
-#: src/icesh.cc:3683
+#: src/icesh.cc:3731
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "PID no vàlid: %s"
 
-#: src/icesh.cc:3719
+#: src/icesh.cc:3767
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Capa no vàlida: %s."
 
-#: src/icesh.cc:4530
+#: src/icesh.cc:4587
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Acció desconeguda: \"%s\""
@@ -1780,7 +1780,7 @@ msgstr "Ajusta les línies"
 msgid "Failed to load image '%s'."
 msgstr "Ha fallat carregar la imatge \"%s\"."
 
-#: src/icewmbg.cc:862
+#: src/icewmbg.cc:870
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1879,12 +1879,12 @@ msgstr ""
 " center:0 scaled:1 = omple ambdues dimensions i mantén la ràtio d'aspecte\n"
 "\n"
 
-#: src/icewmbg.cc:1050 src/wmapp.cc:1796
+#: src/icewmbg.cc:1058 src/wmapp.cc:1782
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opció no reconeguda: \"%s\"."
 
-#: src/icewmbg.cc:1077
+#: src/icewmbg.cc:1085
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "No es pot iniciar, perquè encara s'executa un altre icewmbg."
 
@@ -2175,11 +2175,11 @@ msgstr "_Mata el client"
 msgid "_Window list"
 msgstr "Llista de _finestres"
 
-#: src/wmapp.cc:696
+#: src/wmapp.cc:689
 msgid "Another window manager already running, exiting..."
 msgstr "Un altre gestor de finestres està en ús, sortint..."
 
-#: src/wmapp.cc:771
+#: src/wmapp.cc:764
 #, c-format
 msgid ""
 "Could not restart: %s\n"
@@ -2188,11 +2188,11 @@ msgstr ""
 "No s'a pogut reiniciar: %s\n"
 "Apunta $PATH a %s?"
 
-#: src/wmapp.cc:934
+#: src/wmapp.cc:927
 msgid "Confirm Restart as Terminal"
 msgstr "Confirmeu el reinici com a terminal"
 
-#: src/wmapp.cc:935
+#: src/wmapp.cc:928
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
@@ -2200,18 +2200,18 @@ msgstr ""
 "Deixa de gestionar totes les aplicacions\n"
 "i reinicia com a terminal. Endavant?"
 
-#: src/wmapp.cc:1217 src/yxapp.cc:1036
+#: src/wmapp.cc:1204 src/yxapp.cc:1036
 msgid "<none>"
 msgstr "<cap>"
 
-#: src/wmapp.cc:1540
+#: src/wmapp.cc:1526
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Id de client per usar quan es contacti amb el gestor "
 "de sessions.\n"
 
-#: src/wmapp.cc:1546
+#: src/wmapp.cc:1532
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2222,7 +2222,7 @@ msgstr ""
 "  --debug-z           Imprimeix els missatges de depuració sobre l'apilament "
 "de finestres.\n"
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1540
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2243,7 +2243,7 @@ msgstr ""
 "  --rewrite-preferences  Actualitza un fitxer de preferències existent.\n"
 "  --trace=conf,icon   Traça els camins usats per carregar la configuració.\n"
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1550
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2303,21 +2303,21 @@ msgstr ""
 "%s.\n"
 "\n"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1616
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s directoris de configuració:\n"
 
-#: src/wmapp.cc:1712
+#: src/wmapp.cc:1698
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s opcions configurades:%s\n"
 
-#: src/wmapp.cc:1843
+#: src/wmapp.cc:1829
 msgid "Confirm Logout"
 msgstr "Confirmació de la sortida"
 
-#: src/wmapp.cc:1844
+#: src/wmapp.cc:1830
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2410,7 +2410,7 @@ msgstr "_Reinicia l'icewm"
 msgid "_About"
 msgstr "_Quant a"
 
-#: src/wmframe.cc:1527
+#: src/wmframe.cc:1541
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2418,7 +2418,7 @@ msgstr ""
 "ATENCIÓ! Tots els canvis no desats es perdran en\n"
 "matar el client. Encara voleu continuar?"
 
-#: src/wmframe.cc:1534
+#: src/wmframe.cc:1548
 msgid "Kill Client: "
 msgstr "Mata el client: "
 
@@ -2489,11 +2489,11 @@ msgstr "%s ha assolit el temps d'espera!"
 msgid "'%s' produces no output"
 msgstr "\"%s\" no produeix cap sortida"
 
-#: src/wmmgr.cc:3366
+#: src/wmmgr.cc:3387
 msgid "Missing program setxkbmap"
 msgstr "Manca el programa setxkbmap."
 
-#: src/wmmgr.cc:3367
+#: src/wmmgr.cc:3388
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Per canviar el teclat, si us plau, instal·leu setxkbmap."
 

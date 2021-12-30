@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-21 00:40+0100\n"
+"POT-Creation-Date: 2021-12-30 22:11+0100\n"
 "PO-Revision-Date: 2016-06-06 12:13+0000\n"
 "Last-Translator: Stanislav Brabec <sbrabec@suse.com>\n"
 "Language-Team: Hebrew <https://l10n.opensuse.org/projects/icewm/icewm-1-3-"
@@ -1353,127 +1353,127 @@ msgstr "אותו משחק"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 
-#: src/icesh.cc:1541
+#: src/icesh.cc:1547
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr ""
 
-#: src/icesh.cc:1599
+#: src/icesh.cc:1605
 #, fuzzy, c-format
 msgid "Workspace out of range: %ld"
 msgstr "מרחב עבודה מחוץ לתווך: %d"
 
-#: src/icesh.cc:1620
+#: src/icesh.cc:1626
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "שם מרחב עבודה שגוי: `%s'"
 
-#: src/icesh.cc:1922
+#: src/icesh.cc:1928
 msgid "GNOME window layer"
 msgstr ""
 
-#: src/icesh.cc:1923
+#: src/icesh.cc:1929
 msgid "IceWM tray option"
 msgstr "אפשרויות מגש IceWM"
 
-#: src/icesh.cc:1924
+#: src/icesh.cc:1930
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:1925
+#: src/icesh.cc:1931
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif functions"
 msgstr "יישומים מועדפים"
 
-#: src/icesh.cc:1926
+#: src/icesh.cc:1932
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif decorations"
 msgstr "יישומים מועדפים"
 
-#: src/icesh.cc:1927
+#: src/icesh.cc:1933
 #, fuzzy
 #| msgid "Window list"
 msgid "EWMH window state"
 msgstr "רשימת חלון"
 
-#: src/icesh.cc:2009 src/icesh.cc:2082
+#: src/icesh.cc:2015 src/icesh.cc:2088
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "מרחב עבודה מספר %d: ‏`%s'\n"
 
-#: src/icesh.cc:2317 src/icesh.cc:3749 src/icesh.cc:4222
+#: src/icesh.cc:2323 src/icesh.cc:3797 src/icesh.cc:4279
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "ארגומנט שגוי: `%s'."
 
-#: src/icesh.cc:3174
+#: src/icesh.cc:3180
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3199
+#: src/icesh.cc:3205
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid Xinerama: `%s'."
 msgstr "ארגומנט שגוי: `%s'."
 
-#: src/icesh.cc:3331 src/icesh.cc:3381
+#: src/icesh.cc:3370 src/icesh.cc:3420
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
 msgstr "ארגומנט שגוי: `%s'."
 
-#: src/icesh.cc:3347
+#: src/icesh.cc:3386
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr ""
 
-#: src/icesh.cc:3356
+#: src/icesh.cc:3395
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "ביטוי שגוי: `%s'"
 
-#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1216
+#: src/icesh.cc:3406 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
 #: src/yxapp.cc:1035
 #, fuzzy, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "CLI"
 
-#: src/icesh.cc:3483
+#: src/icesh.cc:3522
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "מילת מפתח לא צפויה: %s"
 
-#: src/icesh.cc:3512
+#: src/icesh.cc:3551
 msgid "No windows found."
 msgstr ""
 
 # מצוינת
-#: src/icesh.cc:3528
+#: src/icesh.cc:3567
 msgid "No actions specified."
 msgstr "לא צוינו פעולות."
 
-#: src/icesh.cc:3666
+#: src/icesh.cc:3714
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "מזהה חלון לא תקין: `%s'"
 
-#: src/icesh.cc:3683
+#: src/icesh.cc:3731
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "ארגומנט שגוי: `%s'."
 
-#: src/icesh.cc:3719
+#: src/icesh.cc:3767
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "ארגומנט שגוי: `%s'."
 
-#: src/icesh.cc:4530
+#: src/icesh.cc:4587
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "פעולה לא מוכרת: `%s'"
@@ -1738,7 +1738,7 @@ msgstr "כרוך שורות"
 msgid "Failed to load image '%s'."
 msgstr "לא היה ניתן למצוא תמונה %s"
 
-#: src/icewmbg.cc:862
+#: src/icewmbg.cc:870
 #, fuzzy
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
@@ -1790,12 +1790,12 @@ msgid ""
 "\n"
 msgstr "CLI"
 
-#: src/icewmbg.cc:1050 src/wmapp.cc:1796
+#: src/icewmbg.cc:1058 src/wmapp.cc:1782
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "אפשרות לא מוכרת: %s\n"
 
-#: src/icewmbg.cc:1077
+#: src/icewmbg.cc:1085
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2089,12 +2089,12 @@ msgstr "_הרוג לקוח"
 msgid "_Window list"
 msgstr "רשימת _חלון"
 
-#: src/wmapp.cc:696
+#: src/wmapp.cc:689
 #, fuzzy
 msgid "Another window manager already running, exiting..."
 msgstr "CLI"
 
-#: src/wmapp.cc:771
+#: src/wmapp.cc:764
 #, c-format
 msgid ""
 "Could not restart: %s\n"
@@ -2103,33 +2103,33 @@ msgstr ""
 "לא היה ניתן לאתחל: %s\n"
 "האם PATH$ מוביל אל %s?"
 
-#: src/wmapp.cc:934
+#: src/wmapp.cc:927
 msgid "Confirm Restart as Terminal"
 msgstr ""
 
-#: src/wmapp.cc:935
+#: src/wmapp.cc:928
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1217 src/yxapp.cc:1036
+#: src/wmapp.cc:1204 src/yxapp.cc:1036
 msgid "<none>"
 msgstr ""
 
-#: src/wmapp.cc:1540
+#: src/wmapp.cc:1526
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1546
+#: src/wmapp.cc:1532
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1540
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2141,7 +2141,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1550
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2173,21 +2173,21 @@ msgid ""
 "\n"
 msgstr "CLI"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1616
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1712
+#: src/wmapp.cc:1698
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "אפשרות לא מוכרת: %s\n"
 
-#: src/wmapp.cc:1843
+#: src/wmapp.cc:1829
 msgid "Confirm Logout"
 msgstr "אימות התנתקות"
 
-#: src/wmapp.cc:1844
+#: src/wmapp.cc:1830
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2280,7 +2280,7 @@ msgid "_About"
 msgstr "_אודות"
 
 # הינו הרוג
-#: src/wmframe.cc:1527
+#: src/wmframe.cc:1541
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2288,7 +2288,7 @@ msgstr ""
 "אזהרה! כל השינויים שלא נשמרו יאבדו כאשר\n"
 "לקוח זה הרוג. האם ברצונך להמשיך?"
 
-#: src/wmframe.cc:1534
+#: src/wmframe.cc:1548
 msgid "Kill Client: "
 msgstr "הרוג לקוח: "
 
@@ -2357,11 +2357,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3366
+#: src/wmmgr.cc:3387
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3367
+#: src/wmmgr.cc:3388
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

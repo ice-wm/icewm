@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-21 00:40+0100\n"
+"POT-Creation-Date: 2021-12-30 22:11+0100\n"
 "PO-Revision-Date: 2021-12-18 21:14+0000\n"
 "Last-Translator: Taras Panchenko <top39@ukr.net>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1317,81 +1317,81 @@ msgstr "Гра SameGame"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Для довідки зверніться до сторінки посібника icesh(1).\n"
 
-#: src/icesh.cc:1541
+#: src/icesh.cc:1547
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Іменовані символи у домені \"%s\" (числовий діапазон: %ld-%ld):\n"
 
-#: src/icesh.cc:1599
+#: src/icesh.cc:1605
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Робочий простір за межами діапазону: %ld"
 
-#: src/icesh.cc:1620
+#: src/icesh.cc:1626
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Невірне ім'я робочого простору: `%s'"
 
-#: src/icesh.cc:1922
+#: src/icesh.cc:1928
 msgid "GNOME window layer"
 msgstr "Віконний пласт GNOME"
 
-#: src/icesh.cc:1923
+#: src/icesh.cc:1929
 msgid "IceWM tray option"
 msgstr "Параметр панелі IceWM"
 
-#: src/icesh.cc:1924
+#: src/icesh.cc:1930
 msgid "Gravity symbols"
 msgstr "Gravity-маркери"
 
-#: src/icesh.cc:1925
+#: src/icesh.cc:1931
 msgid "Motif functions"
 msgstr "Функції Motif"
 
-#: src/icesh.cc:1926
+#: src/icesh.cc:1932
 msgid "Motif decorations"
 msgstr "Прикраси Motif"
 
-#: src/icesh.cc:1927
+#: src/icesh.cc:1933
 msgid "EWMH window state"
 msgstr "Стан вікна EWMH"
 
-#: src/icesh.cc:2009 src/icesh.cc:2082
+#: src/icesh.cc:2015 src/icesh.cc:2088
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "робочий простір #%d: `%s'\n"
 
-#: src/icesh.cc:2317 src/icesh.cc:3749 src/icesh.cc:4222
+#: src/icesh.cc:2323 src/icesh.cc:3797 src/icesh.cc:4279
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Недійсний стан: `%s'."
 
-#: src/icesh.cc:3174
+#: src/icesh.cc:3180
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Не вдається отримати геометрію вікна 0x%lx"
 
-#: src/icesh.cc:3199
+#: src/icesh.cc:3205
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Неспроможність Xinerama: `%s'."
 
-#: src/icesh.cc:3331 src/icesh.cc:3381
+#: src/icesh.cc:3370 src/icesh.cc:3420
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Невірний аргумент: `%s'"
 
-#: src/icesh.cc:3347
+#: src/icesh.cc:3386
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Дія `%s' вимагає як мінімум %d аргументу(ів)."
 
-#: src/icesh.cc:3356
+#: src/icesh.cc:3395
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Невірний вираз: `%s'"
 
-#: src/icesh.cc:3367 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1216
+#: src/icesh.cc:3406 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
 #: src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1399,35 +1399,35 @@ msgstr ""
 "Не вдалося відкрити дисплей: %s. X-сервер повинен бути запущений і змінна "
 "$DISPLAY встановлена."
 
-#: src/icesh.cc:3483
+#: src/icesh.cc:3522
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Не передбачено: `%s'."
 
-#: src/icesh.cc:3512
+#: src/icesh.cc:3551
 msgid "No windows found."
 msgstr "Вікна не знайдені."
 
-#: src/icesh.cc:3528
+#: src/icesh.cc:3567
 msgid "No actions specified."
 msgstr "Не зазначено ніяких дій."
 
-#: src/icesh.cc:3666
+#: src/icesh.cc:3714
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Невірний ідентифікатор вікна: `%s'"
 
-#: src/icesh.cc:3683
+#: src/icesh.cc:3731
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Недійсний PID: `%s'"
 
-#: src/icesh.cc:3719
+#: src/icesh.cc:3767
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Недійсний пласт: `%s'."
 
-#: src/icesh.cc:4530
+#: src/icesh.cc:4587
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Невідома дія: `%s'"
@@ -1776,7 +1776,7 @@ msgstr "Вирівняти рядки"
 msgid "Failed to load image '%s'."
 msgstr "Помилка завантаження зображення %s."
 
-#: src/icewmbg.cc:862
+#: src/icewmbg.cc:870
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1876,12 +1876,12 @@ msgstr ""
 " center:0 scaled:1 = заповнити обидва розміри і зберігати співвідношення\n"
 "\n"
 
-#: src/icewmbg.cc:1050 src/wmapp.cc:1796
+#: src/icewmbg.cc:1058 src/wmapp.cc:1782
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Невідомий параметр '%s'."
 
-#: src/icewmbg.cc:1077
+#: src/icewmbg.cc:1085
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Помилка запуску, інший процес icewmbg вже запущений."
 
@@ -2173,11 +2173,11 @@ msgstr "Знищити _клієнта"
 msgid "_Window list"
 msgstr "_Список вікон"
 
-#: src/wmapp.cc:696
+#: src/wmapp.cc:689
 msgid "Another window manager already running, exiting..."
 msgstr "Інший менеджер вікон вже запущений, вихід..."
 
-#: src/wmapp.cc:771
+#: src/wmapp.cc:764
 #, c-format
 msgid ""
 "Could not restart: %s\n"
@@ -2186,11 +2186,11 @@ msgstr ""
 "Не можу перезапустити: %s\n"
 "Перевірте, чи $PATH веде до %s?"
 
-#: src/wmapp.cc:934
+#: src/wmapp.cc:927
 msgid "Confirm Restart as Terminal"
 msgstr "Підтвердження перезапуску як термінал"
 
-#: src/wmapp.cc:935
+#: src/wmapp.cc:928
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
@@ -2198,18 +2198,18 @@ msgstr ""
 "Не керувати застосунками та перезапустити\n"
 "як термінал. Продовжити?"
 
-#: src/wmapp.cc:1217 src/yxapp.cc:1036
+#: src/wmapp.cc:1204 src/yxapp.cc:1036
 msgid "<none>"
 msgstr "<немає>"
 
-#: src/wmapp.cc:1540
+#: src/wmapp.cc:1526
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Ідентифікатор клієнта для зв'язку із менеджером "
 "сеансів.\n"
 
-#: src/wmapp.cc:1546
+#: src/wmapp.cc:1532
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2220,7 +2220,7 @@ msgstr ""
 "  --debug-z           Друкує зневаджувальні повідомлення, які стосуються "
 "стеку вікон.\n"
 
-#: src/wmapp.cc:1554
+#: src/wmapp.cc:1540
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2241,7 +2241,7 @@ msgstr ""
 "  --trace=conf,icon   Відстеження шляхів, що використовуються для "
 "завантаження конфігурації.\n"
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1550
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2302,21 +2302,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1616
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s теки конфігурацій:\n"
 
-#: src/wmapp.cc:1712
+#: src/wmapp.cc:1698
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s налаштовані параметри:%s\n"
 
-#: src/wmapp.cc:1843
+#: src/wmapp.cc:1829
 msgid "Confirm Logout"
 msgstr "Підтвердження виходу"
 
-#: src/wmapp.cc:1844
+#: src/wmapp.cc:1830
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2409,7 +2409,7 @@ msgstr "_Перезапустити IceWM"
 msgid "_About"
 msgstr "_Про"
 
-#: src/wmframe.cc:1527
+#: src/wmframe.cc:1541
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2417,7 +2417,7 @@ msgstr ""
 "УВАГА! Всі незбережені дані будуть втрачені\n"
 "при знищенні цього клієнта. Бажаєте продовжити?"
 
-#: src/wmframe.cc:1534
+#: src/wmframe.cc:1548
 msgid "Kill Client: "
 msgstr "Знищити клієнта: "
 
@@ -2488,11 +2488,11 @@ msgstr "У '%s' вийшов час!"
 msgid "'%s' produces no output"
 msgstr "'%s' не створює виводу"
 
-#: src/wmmgr.cc:3366
+#: src/wmmgr.cc:3387
 msgid "Missing program setxkbmap"
 msgstr "Застосунок setxkbmap відсутній"
 
-#: src/wmmgr.cc:3367
+#: src/wmmgr.cc:3388
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Для перемикання клавіатури потрібно встановити setxkbmap."
 

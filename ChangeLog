@@ -1,5 +1,234 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 0ee1c35550c414fb37c2ce55f83c2cc36268a618
+Merge: 14b1f1cd 1cd9805d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 30 22:10:03 2021 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 1cd9805d06aed43c4bf61cd9be15f998a7874e4f
+Merge: fcad4ab6 88e708fd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 30 22:09:13 2021 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 88e708fd0c07529a9373748d13682de2e2803e30
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 30 00:39:03 2021 +0100
+
+    Stack all desktop icons below a dedicated bottommost window.
+
+ src/wmmgr.cc      | 18 ++++++++++++------
+ src/wmmgr.h       |  2 ++
+ src/wmminiicon.cc |  5 ++---
+ 3 files changed, 16 insertions(+), 9 deletions(-)
+
+commit 5350fe482d31dab8b943da3c12373c154caeeace
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 30 00:37:47 2021 +0100
+
+    Make desktop refresh synchronized to slow it down a bit.
+
+ src/wmapp.cc | 35 ++++++++++++++++++++++++++++-------
+ src/wmapp.h  |  1 +
+ 2 files changed, 29 insertions(+), 7 deletions(-)
+
+commit 2db09061d1c3eda0038309e702d33cf986763567
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Dec 28 22:37:17 2021 +0100
+
+    Fix miniicon stacking for when there is no other window.
+
+ src/wmminiicon.cc | 9 +++++++--
+ src/wmminiicon.h  | 1 +
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+commit b262ea3f1226ee2ce022f8f06b9a966ba20be54b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Dec 27 13:27:11 2021 +0100
+
+    Lower desktop icons on startup.
+
+ src/wmmgr.cc | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit b6ba094fab113fdde17c084f6253348e7cb075c9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 25 22:15:47 2021 +0100
+
+    Set icewmbg background color as a pixmap to overcome limitations in picom
+    and compton for issue #632.  Also retain a single background pixmap as
+    a temporary resource in the X11 server when icewmbg exits.
+
+ src/icewmbg.cc | 16 ++++++++++++----
+ 1 file changed, 12 insertions(+), 4 deletions(-)
+
+commit aa1fdaccf2f3ad7655693b7615640c87e76671a0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 25 20:00:20 2021 +0100
+
+    Add icesh options +class and +Pid to extend the selection by class or PID.
+
+ man/icesh.pod | 66 ++++++++++++++++++++++++-----------------
+ src/icesh.cc  | 87 +++++++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 112 insertions(+), 41 deletions(-)
+
+commit 61d4247b439f6fa2e54e2fc0fdf60f0af9bfa178
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 25 19:21:15 2021 +0100
+
+    Add children.
+
+ src/yxapp.cc | 6 ++++++
+ src/yxapp.h  | 1 +
+ 2 files changed, 7 insertions(+)
+
+commit 10c29c56f95198e08e63d60594b548321f9432cb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 25 19:14:15 2021 +0100
+
+    Improved workaround for 'feh' desktop backgrounds, where its pixmap has
+    been marked persistent, for issue #627.
+
+ src/wmapp.cc  |  8 --------
+ src/wmapp.h   |  1 -
+ src/wmdock.cc |  3 +--
+ src/wmmgr.cc  | 48 ++++++++++++++++++++++++++----------------------
+ 4 files changed, 27 insertions(+), 33 deletions(-)
+
+commit 68f790d55dc4beaa0d870026638d26cca4662bde
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Dec 25 17:42:00 2021 +0100
+
+    Eliminate flicker when resizing frames which have a shape masked border,
+    like CoolSteel and Illuminate-ice by enabling bit gravity.
+
+ src/wmframe.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4a82550d25bc4c7a8b6db8ab6469deff4350d358
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 23 21:26:44 2021 +0100
+
+    Minimized windows with startMinimized and ignoreActivationMessages
+    require user intervention to become shown.
+
+ src/wmclient.cc    | 2 +-
+ src/wmcontainer.cc | 4 +++-
+ src/wmframe.cc     | 6 +++++-
+ src/wmframe.h      | 2 ++
+ 4 files changed, 11 insertions(+), 3 deletions(-)
+
+commit a9f85efcb9d25ac89f61981a2ad209f2e600ac28
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 23 20:53:05 2021 +0100
+
+    Support focus in subwindows of Globally Active Input applications,
+    like full widescreen games for issue ice-wm/icewm#73.
+
+ src/wmframe.cc | 13 +++++++++++++
+ src/yxapp.cc   | 15 +++++++++++++++
+ src/yxapp.h    |  6 ++----
+ 3 files changed, 30 insertions(+), 4 deletions(-)
+
+commit 5d91c93d91a8699351af8d48d7979af902e16944
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Dec 22 20:00:37 2021 +0100
+
+    Minimize the number of window restackings for issue #630.
+
+ src/wmmgr.cc    | 10 ++++++++++
+ src/wmmgr.h     | 16 ++++++++++++++++
+ src/wmswitch.cc |  1 +
+ 3 files changed, 27 insertions(+)
+
+commit 41ccba2b059f761b4d0002841667ebd41d33a2c0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Dec 22 19:59:15 2021 +0100
+
+    Show time of backtrace.
+
+ src/misc.cc | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit 37633b7170d3559d3c6b9c5fe21bfcad5c75a8e5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Dec 22 17:34:42 2021 +0100
+
+    Put the active window first in the list of switchable windows for
+    issue #631.
+
+ src/wmswitch.cc | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit 832ddd23b821718b92cdaa539cfa5d41252f304d
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Tue Dec 21 16:36:18 2021 +0000
+
+    Translated using Weblate (Portuguese)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/pt.po | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit 14b1f1cd73ec63b63ca5663e3b4d66ba8e2efdd2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Dec 21 00:52:59 2021 +0100
+
+    Prepare 2.9.3 release
+
+ AUTHORS      |  10 +-
+ ChangeLog    | 804 ++++++++++++++++++++++++++++++-------------------------
+ NEWS         | 126 +++++----
+ README.md    |  36 +--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  42 +--
+ po/be.po     |  42 +--
+ po/bg.po     |  42 +--
+ po/ca.po     |  46 ++--
+ po/cs.po     |  42 +--
+ po/da.po     |  42 +--
+ po/de.po     |  42 +--
+ po/el.po     |  42 +--
+ po/en.po     |  42 +--
+ po/es.po     |  42 +--
+ po/fi.po     |  42 +--
+ po/fr.po     |  42 +--
+ po/he.po     |  42 +--
+ po/hr.po     |  42 +--
+ po/hu.po     |  42 +--
+ po/icewm.pot |  44 +--
+ po/id.po     |  42 +--
+ po/it.po     |  42 +--
+ po/ja.po     |  46 ++--
+ po/ko.po     |  42 +--
+ po/lt.po     |  42 +--
+ po/lv.po     |  42 +--
+ po/mk.po     |  42 +--
+ po/nb.po     |  42 +--
+ po/nl.po     |  42 +--
+ po/no.po     |  42 +--
+ po/pl.po     |  42 +--
+ po/pt.po     |  42 +--
+ po/pt_BR.po  |  42 +--
+ po/ro.po     |  42 +--
+ po/ru.po     |  42 +--
+ po/sk.po     |  46 ++--
+ po/sl.po     |  42 +--
+ po/sv.po     |  42 +--
+ po/tr.po     |  42 +--
+ po/uk.po     |  46 ++--
+ po/vi.po     |  42 +--
+ po/zh_CN.po  |  42 +--
+ po/zh_TW.po  |  42 +--
+ 46 files changed, 1352 insertions(+), 1294 deletions(-)
+
 commit 4001c8eba38bb6d1f54240b84e4500445e175aeb
 Merge: d91ddc72 fcad4ab6
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6088,244 +6317,3 @@ Date:   Tue Mar 30 02:36:08 2021 +0000
 
  po/zh_CN.po | 14 +++++++-------
  1 file changed, 7 insertions(+), 7 deletions(-)
-
-commit 9f1e58898f12504b2c99de262b55e5642b570dbd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 29 19:40:29 2021 +0200
-
-    Replace inefficient GetZList with efficient updateList in QuickSwitch.
-
- src/wmswitch.cc | 188 +++++++++++++++++++++++++++-------------------------
- 1 file changed, 97 insertions(+), 91 deletions(-)
-
-commit 114e6e338435c670b92baaf0b64c967366ab3e18
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 29 13:15:18 2021 +0200
-
-    Don't reorder focus when switching workspaces for issue #564. Cancel
-    QuickSwitch when clicking outside the window. Improve calculating hinted
-    item. Support rotating mouse wheel buttons when scrolling over windows.
-
- man/icewm.pod   | 15 +++++++++-----
- src/wmswitch.cc | 60 +++++++++++++++++++++++++++++++++--------------------
- 2 files changed, 47 insertions(+), 28 deletions(-)
-
-commit 5123739d4013e78ccef604439c0fa5c5afe73a82
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 29 13:15:18 2021 +0200
-
-    Add optional reorder flag to setFocus and dont reorder for QuickSwitch
-    for issue #564.
-
- src/wmmgr.cc | 6 +++---
- src/wmmgr.h  | 2 +-
- 2 files changed, 4 insertions(+), 4 deletions(-)
-
-commit 17f170b082ea77a4b1915fdef571909e60054fec
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 29 01:06:27 2021 +0200
-
-    Improve tracking of popup deactivation for SwitchWindow.
-    Avoid closing down SwitchWindow when a button release occurs outside of
-    the SwitchWindow.
-    Support keys '1' to '9' to index the SwitchWindow.
-
- src/wmswitch.cc | 17 ++++++++++++-----
- 1 file changed, 12 insertions(+), 5 deletions(-)
-
-commit ff60a59ebca7db27d3ae922d5262cca21a13c754
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Mar 29 00:18:27 2021 +0200
-
-    Reorder popup and displayFocus in QuickSwitch for immediate focus+raise
-    effect.
-
- src/wmswitch.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 2acc14612d6d2a75f790c7c1e5b0ee436727acc7
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Mar 28 23:27:20 2021 +0200
-
-    make update-po
-
- po/ar.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/be.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/bg.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/ca.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/cs.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/da.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/de.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/el.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/en.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/es.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/fi.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/fr.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/he.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/hr.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/hu.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/icewm.pot | 168 +++++++++++++++++++++++++++---------------------------
- po/id.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/it.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/ja.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/ko.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/lt.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/lv.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/mk.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/nb.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/nl.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/no.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/pl.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/pt.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/pt_BR.po  | 166 ++++++++++++++++++++++++++---------------------------
- po/ro.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/ru.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/sk.po     | 170 +++++++++++++++++++++++++++----------------------------
- po/sl.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/sv.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/tr.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/uk.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/vi.po     | 166 ++++++++++++++++++++++++++---------------------------
- po/zh_CN.po  | 166 ++++++++++++++++++++++++++---------------------------
- po/zh_TW.po  | 166 ++++++++++++++++++++++++++---------------------------
- 39 files changed, 3256 insertions(+), 3256 deletions(-)
-
-commit 869d42c9470f1a19d8fa29c01472ef93e9dcea31
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Mar 28 21:54:17 2021 +0200
-
-    Add support for operation by arrow keys and Home and End. Support Delete
-    key to close a window. Move SwitchWindow away from wmapp and frames
-    and into manager. Support highlighting the active quickswitch frame by
-    reordering the X stacking order. Use the more lightweight setFocus to
-    give input focus. Fix for quickswitch on fullscreen for issue #558. Fix
-    for quickswitch raise for issue #564.
-
- man/icewm.pod   |  24 +++++-----
- src/wmapp.cc    |  10 ----
- src/wmapp.h     |   4 --
- src/wmframe.cc  |   9 +---
- src/wmmgr.cc    |  62 +++++++++++++++++++++----
- src/wmmgr.h     |  15 +++++-
- src/wmprog.cc   |   3 --
- src/wmswitch.cc | 129 +++++++++++++++++++++++++++++++++-------------------
- src/wmswitch.h  |  76 +++++++++++++++----------------
- 9 files changed, 201 insertions(+), 131 deletions(-)
-
-commit 3de7f66851f96168d8ca8c3770022f4ec46622d8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Mar 28 21:54:17 2021 +0200
-
-    Add setPopDownListener.
-
- src/ypopup.cc | 65 +++++++++++++++++++++----------------------------------
- src/ypopup.h  |  1 +
- 2 files changed, 26 insertions(+), 40 deletions(-)
-
-commit a3ee06ecc395b81b4005306e6581be3e16162279
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Mar 28 21:54:17 2021 +0200
-
-    Add contains.
-
- src/yrect.h | 4 ++++
- 1 file changed, 4 insertions(+)
-
-commit 258d17a7905dbd205a1b2d9ee11060e9e6bf448d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Mar 26 17:38:42 2021 +0100
-
-    Enable immediate toggling ofTaskBarTaskGrouping without a restart.
-
- src/atasks.cc  | 18 ++++++++++++++++++
- src/atasks.h   |  3 ++-
- src/wmclient.h |  2 ++
- 3 files changed, 22 insertions(+), 1 deletion(-)
-
-commit cdd61f0bd7912c28adde665dd0c0b551882eac5f
-Author: Sophie Leroy <sophie@stoquart.com>
-Date:   Thu Mar 25 11:40:12 2021 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/fr.po | 26 ++++++++++----------------
- 1 file changed, 10 insertions(+), 16 deletions(-)
-
-commit a2cda6635a0492692ccb228240b5a850af2edbd1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 24 17:23:51 2021 +0100
-
-    Restart the QuickSwitch when changing workspace by key for issue #563.
-    Improve handling of modifier keys in QuickSwitch.
-
- src/wmprog.cc   |  3 +++
- src/wmswitch.cc | 64 +++++++++++++++++++++++++++++++++--------------------
- src/wmswitch.h  |  7 +++---
- src/ywindow.cc  |  8 +++----
- src/ywindow.h   |  4 ++--
- 5 files changed, 53 insertions(+), 33 deletions(-)
-
-commit 84dcf1588497a130324d6f8a40ba402ea108e550
-Author: Gemineo <vistatec@gemineo.de>
-Date:   Wed Mar 24 13:54:06 2021 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/de.po | 26 ++++++++++----------------
- 1 file changed, 10 insertions(+), 16 deletions(-)
-
-commit c579d6c877a57dd329afbb4d77c1c630c2819e85
-Author: Davide Aiello <davide.aiello@novilingulists.com>
-Date:   Wed Mar 24 10:53:55 2021 +0000
-
-    Translated using Weblate (Italian)
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/it.po | 12 +-----------
- 1 file changed, 1 insertion(+), 11 deletions(-)
-
-commit f12bd2cd8e3e3c63fe17aef0bcbcea37487c4ad2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 24 13:10:07 2021 +0100
-
-    Support buttons up to button number 9 for issue #333.
-
- src/icesh.cc   | 2 +-
- src/yconfig.cc | 7 +++++++
- 2 files changed, 8 insertions(+), 1 deletion(-)
-
-commit 81d8c029efc0cbd7303fd71ea25120ea3da1a0a0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 24 12:58:23 2021 +0100
-
-    Add missing modifiers declaration to fix compilation and closes #567
-
- src/wmswitch.h | 1 +
- 1 file changed, 1 insertion(+)
-
-commit e0070ecb75688eeef8a528a0e4fb7c5c0c52793e
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Tue Mar 23 22:23:55 2021 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/pt.po | 20 ++++++++------------
- 1 file changed, 8 insertions(+), 12 deletions(-)
-
-commit 112d9b7cbc9fc8c627382f83bcf29b40d382bf6e
-Author: Antonio Simón <antonio@trans-mission.com>
-Date:   Tue Mar 23 16:55:39 2021 +0000
-
-    Translated using Weblate (Spanish)
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/es.po | 26 ++++++++++----------------
- 1 file changed, 10 insertions(+), 16 deletions(-)
