@@ -92,6 +92,8 @@ YWindowManager::YWindowManager(
     fWorkAreaScreenCount = 0;
     fWorkAreaLock = 0;
     fWorkAreaUpdate = 0;
+    fRestackLock = 0;
+    fRestackUpdate = 0;
     fFullscreenEnabled = true;
     fCreatedUpdated = true;
     fLayeredUpdated = true;
@@ -121,6 +123,12 @@ YWindowManager::YWindowManager(
     fTopWin->setGeometry(YRect(-1, -1, 1, 1));
     fTopWin->setTitle("IceTopWin");
     fTopWin->show();
+
+    fBottom = new YWindow();
+    fBottom->setStyle(wsOverrideRedirect | wsInputOnly);
+    fBottom->setGeometry(YRect(-1, -1, 1, 1));
+    fBottom->setTitle("IceBottom");
+
     if (edgeHorzWorkspaceSwitching) {
         edges += new EdgeSwitch(this, -1, false);
         edges += new EdgeSwitch(this, +1, false);
@@ -139,6 +147,7 @@ YWindowManager::~YWindowManager() {
         delete [] fWorkArea;
     }
     delete fTopWin;
+    delete fBottom;
     delete rootProxy;
     delete fSwitchWindow;
     delete fDockApp;
@@ -909,15 +918,15 @@ Window YWindowManager::findWindow(const char *resource) {
         }
     }
 
-    Window match = None, root = desktop->handle(), parent;
+    Window match = None;
     xsmart<Window> clients;
     unsigned count = 0;
-    XQueryTree(xapp->display(), root, &root, &parent, &clients, &count);
-
-    for (unsigned i = 0; match == None && i < count; ++i) {
-        YWindow* ywin = windowContext.find(clients[i]);
-        if (nullptr == ywin) {
-            match = matchWindow(clients[i], resource);
+    if (xapp->children(handle(), &clients, &count)) {
+        for (unsigned i = 0; match == None && i < count; ++i) {
+            YWindow* ywin = windowContext.find(clients[i]);
+            if (nullptr == ywin) {
+                match = matchWindow(clients[i], resource);
+            }
         }
     }
 
@@ -929,15 +938,14 @@ Window YWindowManager::findWindow(Window win, char const* resource,
     if (isEmpty(resource))
         return None;
 
-    Window match = None, parent, root;
+    Window match = None;
     xsmart<Window> clients;
     unsigned count = 0;
-
-    XQueryTree(xapp->display(), win, &root, &parent, &clients, &count);
-
-    for (unsigned i = 0; match == None && i < count; ++i) {
-        if (matchWindow(clients[i], resource))
-            match = clients[i];
+    if (xapp->children(win, &clients, &count)) {
+        for (unsigned i = 0; match == None && i < count; ++i) {
+            if (matchWindow(clients[i], resource))
+                match = clients[i];
+        }
     }
     if (maxdepth) {
         for (unsigned i = 0; match == None && i < count; ++i) {
@@ -1108,22 +1116,27 @@ void YWindowManager::setColormapWindow(YFrameWindow *frame) {
 }
 
 void YWindowManager::manageClients() {
-    unsigned clientCount = 0;
-    Window winRoot, winParent;
-    xsmart<Window> winClients;
+    YWindow sheet(this);
+    sheet.lower();
+    sheet.setGeometry(geometry());
+    sheet.show();
+    xapp->sync();
 
     setWmState(wmSTARTUP);
     lockWorkArea();
+    lockRestack();
     grabServer();
     if (fDockApp == nullptr) {
         fDockApp = new DockApp;
     }
 
-    if (XQueryTree(xapp->display(), handle(), &winRoot, &winParent,
-                   &winClients, &clientCount)) {
-        for (unsigned i = 0; i < clientCount; i++) {
-            if (findClient(winClients[i]) == nullptr) {
-                YFrameClient* client = allocateClient(winClients[i], false);
+    unsigned count = 0;
+    xsmart<Window> clients;
+    if (xapp->children(handle(), &clients, &count)) {
+        Window ignore = sheet.handle();
+        for (unsigned i = 0; i < count; i++) {
+            if (clients[i] != ignore && findClient(clients[i]) == nullptr) {
+                YFrameClient* client = allocateClient(clients[i], false);
                 if (client) {
                     manageClient(client);
                     if (client->getFrame() == nullptr) {
@@ -1133,9 +1146,11 @@ void YWindowManager::manageClients() {
             }
         }
     }
+    sheet.hide();
 
     setWmState(wmRUNNING);
     ungrabServer();
+    unlockRestack();
     unlockWorkArea();
 
     YProperty prop(this, _XA_NET_ACTIVE_WINDOW, F32, 1, XA_WINDOW);
@@ -1150,9 +1165,10 @@ void YWindowManager::manageClients() {
     if (getFocus() == nullptr) {
         focusTopWindow();
     }
-    for (YFrameIter frame = fCreationOrder.iterator(); ++frame; ) {
-        if (frame->isIconic()) {
-            frame->getMiniIcon()->show();
+    for (MiniIcon* icon : MiniIcon::fIcons) {
+        if (icon->getFrame()->isIconic()) {
+            icon->lower();
+            icon->show();
         }
     }
 }
@@ -1601,6 +1617,7 @@ void YWindowManager::manageClient(YFrameClient* client, bool mapClient) {
     int ch = client->height();
     MSG(("initial geometry 1 (%d:%d %dx%d)", cx, cy, cw, ch));
 
+    YRestackLock restack;
     updateFullscreenLayerEnable(false);
 
     YFrameWindow* frame = allocateFrame(client);
@@ -2001,7 +2018,12 @@ void YWindowManager::updateFullscreenLayer() { /// HACK !!!
 }
 
 void YWindowManager::restackWindows() {
-    YArray<Window> w(10 + focusedCount());
+    if (fRestackLock) {
+        fRestackUpdate++;
+        return;
+    }
+
+    YArray<Window> w(12 + focusedCount());
 
     w.append(fTopWin->handle());
 
@@ -2044,12 +2066,11 @@ void YWindowManager::restackWindows() {
         }
     }
 
-    if (w.getCount() > 1) {
-        XRestackWindows(xapp->display(), &*w, w.getCount());
+    w.append(fBottom->handle());
+    XRestackWindows(xapp->display(), &*w, w.getCount());
 
-        if (taskBar)
-            taskBar->workspacesRepaint();
-    }
+    if (taskBar)
+        taskBar->workspacesRepaint();
 }
 
 void YWindowManager::getWorkArea(int *mx, int *my, int *Mx, int *My) {

@@ -149,10 +149,14 @@ void MiniIcon::updatePosition() {
     }
 }
 
+void MiniIcon::stack() {
+    beneath(manager->bottomWindow());
+}
+
 void MiniIcon::show() {
     updatePosition();
     if (x() != -1 || y() != -1) {
-        beneath(manager->bottomLayer());
+        stack();
         YWindow::show();
     }
 }
@@ -180,7 +184,7 @@ void MiniIcon::handleClick(const XButtonEvent &up, int /*count*/) {
     }
     else if (up.button == Button1) {
         if (up.state & xapp->AltMask) {
-            lower();
+            stack();
         } else {
             if (!(up.state & ControlMask))
                 getFrame()->wmRaise();
@@ -206,7 +210,7 @@ bool MiniIcon::handleBeginDrag(const XButtonEvent& d, const XMotionEvent& m) {
 }
 
 void MiniIcon::handleEndDrag(const XButtonEvent& d, const XButtonEvent& u) {
-    beneath(manager->bottomLayer());
+    stack();
 }
 
 void MiniIcon::handleDrag(const XButtonEvent &down, const XMotionEvent &motion) {
