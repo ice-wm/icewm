@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-30 22:11+0100\n"
+"POT-Creation-Date: 2022-01-20 02:33+0100\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -22,9 +22,9 @@ msgstr ""
 
 #: src/aapm.cc:66
 #, fuzzy, c-format
-#| msgid "Could not open OSS device %s"
+#| msgid "Could not open APM device %s"
 msgid "Can't open the APM device %s"
-msgstr "OSS 장치%s을(를) 열 수 없음"
+msgstr "APM 장치%s을(를) 열 수 없음"
 
 #: src/aapm.cc:74 src/aapm.cc:92
 #, c-format
@@ -159,12 +159,12 @@ msgstr "_Combine"
 msgid "_Separate"
 msgstr "_Separate"
 
-#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s이(가) 상태 %d(으)로 종료되었습니다."
 
-#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
+#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s이(가) 신호 %d에 의해 종료되었습니다."
@@ -1521,13 +1521,13 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "알 수 없는 옵션 '%s'"
 
-#: src/icesm.cc:462 src/icesm.cc:622
+#: src/icesm.cc:460 src/icesm.cc:620
 #, fuzzy, c-format
 #| msgid "Restart"
 msgid "restart %s."
 msgstr "다시 시작"
 
-#: src/icesm.cc:513
+#: src/icesm.cc:511
 #, fuzzy
 #| msgid ""
 #| " IceWM crashed for the second time in 10 seconds. \n"
@@ -1549,7 +1549,7 @@ msgstr ""
 "\t1: IceWM을 다시 시작하시겠습니까?\n"
 "\t2: 이 세션을 중단하시겠습니까?\n"
 
-#: src/icesm.cc:519
+#: src/icesm.cc:517
 msgid "IceWM crash response"
 msgstr "IceWM 충돌 응답"
 
@@ -2169,13 +2169,13 @@ msgid "Center"
 msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:579 src/wmtaskbar.cc:218 src/wmwinlist.cc:394
+#: src/wmapp.cc:579 src/wmtaskbar.cc:219 src/wmwinlist.cc:394
 #: src/wmwinlist.cc:427
 msgid "T_ile Horizontally"
 msgstr "수평 정렬(_I)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:581 src/wmtaskbar.cc:216 src/wmwinlist.cc:393
+#: src/wmapp.cc:581 src/wmtaskbar.cc:217 src/wmwinlist.cc:393
 #: src/wmwinlist.cc:426
 msgid "Tile _Vertically"
 msgstr "수직 정렬(_V)"
@@ -2479,8 +2479,8 @@ msgid "_Cancel"
 msgstr "취소(_C)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:244
-#: src/wmtaskbar.cc:246
+#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:245
+#: src/wmtaskbar.cc:247
 msgid "_Logout..."
 msgstr "로그아웃(_L)..."
 
@@ -2489,11 +2489,11 @@ msgid "_Restart icewm"
 msgstr "icewm 다시 시작(_R)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:239
+#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:240
 msgid "_About"
 msgstr "정보(_A)"
 
-#: src/wmframe.cc:1541
+#: src/wmframe.cc:1542
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2501,7 +2501,7 @@ msgstr ""
 "경고! 이 클라이언트를 죽이면 저장되지 않은\n"
 "변경 사항을 모두 잃어버립니다. 계속할까요?"
 
-#: src/wmframe.cc:1548
+#: src/wmframe.cc:1549
 msgid "Kill Client: "
 msgstr "클라이언트 죽이기: "
 
@@ -2575,11 +2575,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "'%s'은(는) 출력이 없습니다."
 
-#: src/wmmgr.cc:3387
+#: src/wmmgr.cc:3377
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3388
+#: src/wmmgr.cc:3378
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2651,7 +2651,7 @@ msgid "_Run..."
 msgstr "실행(_R)..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:418 src/wmtaskbar.cc:234
+#: src/wmprog.cc:418 src/wmtaskbar.cc:235
 msgid "_Windows"
 msgstr "창(_W)"
 
@@ -2681,57 +2681,57 @@ msgid "Session Manager: Unknown line %s"
 msgstr "세션 관리자: 알 수 없는 줄 %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:220 src/wmwinlist.cc:395 src/wmwinlist.cc:428
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:395 src/wmwinlist.cc:428
 msgid "Ca_scade"
 msgstr "계단식 정렬(_S)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:222 src/wmwinlist.cc:396 src/wmwinlist.cc:429
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:396 src/wmwinlist.cc:429
 msgid "_Arrange"
 msgstr "정렬(_A)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:224 src/wmwinlist.cc:398 src/wmwinlist.cc:430
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:398 src/wmwinlist.cc:430
 msgid "_Minimize All"
 msgstr "모두 최소화(_M)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:226 src/wmwinlist.cc:399 src/wmwinlist.cc:431
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:399 src/wmwinlist.cc:431
 msgid "_Hide All"
 msgstr "모두 숨기기(_H)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:228 src/wmwinlist.cc:400 src/wmwinlist.cc:432
+#: src/wmtaskbar.cc:229 src/wmwinlist.cc:400 src/wmwinlist.cc:432
 msgid "_Undo"
 msgstr "실행 취소(_U)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:231
+#: src/wmtaskbar.cc:232
 msgid "Arrange _Icons"
 msgstr "아이콘 정렬(_I)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:237
+#: src/wmtaskbar.cc:238
 msgid "_Refresh"
 msgstr "새롭게(_R)"
 
-#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:990
+#: src/wmtaskbar.cc:316 src/wmtaskbar.cc:999
 msgid "Hide Taskbar"
 msgstr "작업 표시줄 숨기기"
 
-#: src/wmtaskbar.cc:338
+#: src/wmtaskbar.cc:339
 msgid "Favorite Applications"
 msgstr "즐겨쓰는 응용 프로그램"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:364
 msgid "Window List Menu"
 msgstr "창 목록 메뉴"
 
-#: src/wmtaskbar.cc:372
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "바탕화면 보기"
 
-#: src/wmtaskbar.cc:990
+#: src/wmtaskbar.cc:999
 msgid "Show Taskbar"
 msgstr "작업 표시줄 표시"
 

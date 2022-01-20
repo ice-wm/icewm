@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.31\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-30 22:11+0100\n"
-"PO-Revision-Date: 2021-05-17 11:59+0000\n"
-"Last-Translator: Davide Aiello <davide.aiello@novilingulists.com>\n"
+"POT-Creation-Date: 2022-01-20 02:33+0100\n"
+"PO-Revision-Date: 2022-01-15 10:12+0000\n"
+"Last-Translator: Paolo Za <zapaolo@email.it>\n"
 "Language-Team: Italian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
 "branch/it/>\n"
 "Language: it\n"
@@ -20,13 +20,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.6.2\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/aapm.cc:66
 #, fuzzy, c-format
-#| msgid "Could not open OSS device %s"
+#| msgid "Could not open APM device %s"
 msgid "Can't open the APM device %s"
-msgstr "Impossibile aprire il dispositivo OSS %s"
+msgstr "Impossibile aprire il dispositivo APM %s"
 
 #: src/aapm.cc:74 src/aapm.cc:92
 #, c-format
@@ -36,7 +36,7 @@ msgstr ""
 #: src/aapm.cc:122
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
-msgstr ""
+msgstr "Formato sconosciuto usato dal dispositivo APM %s (%d)."
 
 #: src/aapm.cc:154 src/aapm.cc:426 src/aapm.cc:636 src/aapm.cc:762
 msgid " - Power"
@@ -161,37 +161,35 @@ msgstr "_Combina"
 msgid "_Separate"
 msgstr "_Separa"
 
-#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s è terminato con stato %d."
 
-#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
+#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s è stato terminato dal segnale %d."
 
 #: src/akeyboard.cc:98
 msgid "rules:"
-msgstr ""
+msgstr "regole:"
 
 #: src/akeyboard.cc:99
 msgid "model:"
-msgstr ""
+msgstr "modello:"
 
 #: src/akeyboard.cc:100
 msgid "layout:"
-msgstr ""
+msgstr "disposizione:"
 
 #: src/akeyboard.cc:101
-#, fuzzy
-#| msgid "Bad option: %s"
 msgid "options:"
-msgstr "Opzione errata: %s"
+msgstr "opzioni:"
 
 #: src/akeyboard.cc:151
 msgid "Keyboard"
-msgstr ""
+msgstr "Tastiera"
 
 #: src/amailbox.cc:64
 #, c-format
@@ -1073,21 +1071,19 @@ msgstr "Indice analitico"
 
 #: src/icehelp.cc:1337
 msgid "Find..."
-msgstr ""
+msgstr "Trova..."
 
 #: src/icehelp.cc:1337
-#, fuzzy
-#| msgid "Ctrl+B"
 msgid "Ctrl+F"
-msgstr "Ctrl+B"
+msgstr "Ctrl+F"
 
 #: src/icehelp.cc:1338
 msgid "Find next"
-msgstr ""
+msgstr "Trova successivo"
 
 #: src/icehelp.cc:1338
 msgid "F3"
-msgstr ""
+msgstr "F3"
 
 #: src/icehelp.cc:1340
 msgid "Open in Browser"
@@ -1507,12 +1503,12 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "Opzione sconosciuta '%s'"
 
-#: src/icesm.cc:462 src/icesm.cc:622
+#: src/icesm.cc:460 src/icesm.cc:620
 #, c-format
 msgid "restart %s."
 msgstr "riavvia %s."
 
-#: src/icesm.cc:513
+#: src/icesm.cc:511
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1528,7 +1524,7 @@ msgstr ""
 "\t2: interrompere questa sessione?\n"
 "\t3: eseguire un terminale?\n"
 
-#: src/icesm.cc:519
+#: src/icesm.cc:517
 msgid "IceWM crash response"
 msgstr "Riscontro sul crash di IceWM"
 
@@ -2081,32 +2077,32 @@ msgstr ""
 
 #: src/wmapp.cc:569
 msgid "Top Left"
-msgstr ""
+msgstr "In alto a sinistra"
 
 #: src/wmapp.cc:571
 msgid "Top Right"
-msgstr ""
+msgstr "In alto a destra"
 
 #: src/wmapp.cc:573
 msgid "Bottom Left"
-msgstr ""
+msgstr "In basso a sinistra"
 
 #: src/wmapp.cc:575
 msgid "Bottom Right"
-msgstr ""
+msgstr "In basso a destra"
 
 #: src/wmapp.cc:577
 msgid "Center"
-msgstr ""
+msgstr "In centro"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:579 src/wmtaskbar.cc:218 src/wmwinlist.cc:394
+#: src/wmapp.cc:579 src/wmtaskbar.cc:219 src/wmwinlist.cc:394
 #: src/wmwinlist.cc:427
 msgid "T_ile Horizontally"
 msgstr "Affianca or_izzontalmente"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:581 src/wmtaskbar.cc:216 src/wmwinlist.cc:393
+#: src/wmapp.cc:581 src/wmtaskbar.cc:217 src/wmwinlist.cc:393
 #: src/wmwinlist.cc:426
 msgid "Tile _Vertically"
 msgstr "Affianca _verticalmente"
@@ -2165,7 +2161,7 @@ msgstr "_Livello"
 
 #: src/wmapp.cc:625 src/wmwinlist.cc:387
 msgid "Tile"
-msgstr ""
+msgstr "Affianca"
 
 #: src/wmapp.cc:629 src/wmwinlist.cc:389
 msgid "Move _To"
@@ -2415,8 +2411,8 @@ msgid "_Cancel"
 msgstr "_Annulla"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:244
-#: src/wmtaskbar.cc:246
+#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:245
+#: src/wmtaskbar.cc:247
 msgid "_Logout..."
 msgstr "_Esci..."
 
@@ -2425,11 +2421,11 @@ msgid "_Restart icewm"
 msgstr "_Riavvia icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:239
+#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:240
 msgid "_About"
 msgstr "_Informazioni"
 
-#: src/wmframe.cc:1541
+#: src/wmframe.cc:1542
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2437,7 +2433,7 @@ msgstr ""
 "Attenzione: la terminazione del client comporta\n"
 "la perdita delle modifiche non salvate. Procedere?"
 
-#: src/wmframe.cc:1548
+#: src/wmframe.cc:1549
 msgid "Kill Client: "
 msgstr "Termina client: "
 
@@ -2472,20 +2468,18 @@ msgid "Error at menuprog '%s'"
 msgstr "Errore in menuprog '%s'"
 
 #: src/wmmenu.cc:320
-#, fuzzy, c-format
-#| msgid "Error at menuprog '%s'"
+#, c-format
 msgid "Error at menuprogreload: '%s'"
-msgstr "Errore in menuprog '%s'"
+msgstr "Errore in menuprogreload '%s'"
 
 #: src/wmmenu.cc:347
 msgid "Missing filename argument to include statement"
 msgstr "Argomento con nome di file mancante nell'istruzione di inclusione"
 
 #: src/wmmenu.cc:365
-#, fuzzy, c-format
-#| msgid "Error at menuprog '%s'"
+#, c-format
 msgid "Error at includeprog '%s'"
-msgstr "Errore in menuprog '%s'"
+msgstr "Errore in includeprog '%s'"
 
 #: src/wmmenu.cc:408
 #, c-format
@@ -2511,11 +2505,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "'%s' non produce alcun risultato"
 
-#: src/wmmgr.cc:3387
+#: src/wmmgr.cc:3377
 msgid "Missing program setxkbmap"
 msgstr "Programma mancante setxkbmap"
 
-#: src/wmmgr.cc:3388
+#: src/wmmgr.cc:3378
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Per cambiare tastiera, installare setxkbmap."
 
@@ -2536,7 +2530,7 @@ msgstr "Salvare le modifiche"
 #: src/wmpref.cc:178
 #, c-format
 msgid "Enter a new value for %s: "
-msgstr ""
+msgstr "Inserire un nuovo valore per %s: "
 
 #: src/wmprog.cc:331
 msgid "_Click to focus"
@@ -2587,7 +2581,7 @@ msgid "_Run..."
 msgstr "_Esegui..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:418 src/wmtaskbar.cc:234
+#: src/wmprog.cc:418 src/wmtaskbar.cc:235
 msgid "_Windows"
 msgstr "_Finestre"
 
@@ -2617,57 +2611,57 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Gestore delle sessioni: riga %s sconosciuta"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:220 src/wmwinlist.cc:395 src/wmwinlist.cc:428
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:395 src/wmwinlist.cc:428
 msgid "Ca_scade"
 msgstr "A ca_scata"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:222 src/wmwinlist.cc:396 src/wmwinlist.cc:429
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:396 src/wmwinlist.cc:429
 msgid "_Arrange"
 msgstr "Dis_poni"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:224 src/wmwinlist.cc:398 src/wmwinlist.cc:430
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:398 src/wmwinlist.cc:430
 msgid "_Minimize All"
 msgstr "_Minimizza tutto"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:226 src/wmwinlist.cc:399 src/wmwinlist.cc:431
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:399 src/wmwinlist.cc:431
 msgid "_Hide All"
 msgstr "_Nascondi tutto"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:228 src/wmwinlist.cc:400 src/wmwinlist.cc:432
+#: src/wmtaskbar.cc:229 src/wmwinlist.cc:400 src/wmwinlist.cc:432
 msgid "_Undo"
 msgstr "Ann_ulla"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:231
+#: src/wmtaskbar.cc:232
 msgid "Arrange _Icons"
 msgstr "Disponi le _icone"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:237
+#: src/wmtaskbar.cc:238
 msgid "_Refresh"
 msgstr "Aggio_rna"
 
-#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:990
+#: src/wmtaskbar.cc:316 src/wmtaskbar.cc:999
 msgid "Hide Taskbar"
 msgstr "Nascondi barra delle applicazioni"
 
-#: src/wmtaskbar.cc:338
+#: src/wmtaskbar.cc:339
 msgid "Favorite Applications"
 msgstr "Applicazioni preferite"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:364
 msgid "Window List Menu"
 msgstr "Menu elenco finestre"
 
-#: src/wmtaskbar.cc:372
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "Mostra desktop"
 
-#: src/wmtaskbar.cc:990
+#: src/wmtaskbar.cc:999
 msgid "Show Taskbar"
 msgstr "Mostra barra delle applicazioni"
 
@@ -2715,10 +2709,9 @@ msgid "%s: select failed"
 msgstr "%s: selezione non riuscita"
 
 #: src/ycolor.cc:229 src/ycolor.cc:240
-#, fuzzy, c-format
-#| msgid "Could not load font \"%s\"."
+#, c-format
 msgid "Could not parse color \"%s\""
-msgstr "Impossibile caricare il tipo di carattere \"%s\"."
+msgstr "Impossibile elaborare il colore \"%s\""
 
 #: src/yconfig.cc:113
 #, c-format
@@ -2866,26 +2859,22 @@ msgstr ""
 "  --sync              Sincronizza i comandi X11.\n"
 
 #: src/yximage.cc:157
-#, fuzzy
-#| msgid "Support for the %s interface not compiled."
 msgid "Support for PNG images was not enabled"
-msgstr "Il supporto per l'interfaccia %s non è stato compilato."
+msgstr "Il supporto per le immagini PNG non è stato abilitato"
 
 #: src/yximage.cc:165
 msgid "Support for JPEG images was not enabled"
-msgstr ""
+msgstr "Il supporto per le immagini JPEG non è stato abilitato"
 
 #: src/yximage.cc:171
-#, fuzzy, c-format
-#| msgid "Unsupported interface: %s."
+#, c-format
 msgid "Unsupported file format: %s"
-msgstr "Interfaccia non supportata: %s."
+msgstr "Formato di file non supportato: %s"
 
 #: src/yximage.cc:175 src/yximage.cc:198
-#, fuzzy, c-format
-#| msgid "Could not find image %s"
+#, c-format
 msgid "Could not load image \"%s\""
-msgstr "Impossibile trovare l'immagine %s"
+msgstr "Impossibile caricare l'immagine \"%s\""
 
 #~ msgid "Loading of fallback font \"%s\" failed."
 #~ msgstr "Caricamento del tipo di carattere di riserva \"%s\" non riuscito."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-30 22:11+0100\n"
+"POT-Creation-Date: 2022-01-20 02:33+0100\n"
 "PO-Revision-Date: 2021-03-20 11:56+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/icewm/"
@@ -22,9 +22,9 @@ msgstr ""
 
 #: src/aapm.cc:66
 #, fuzzy, c-format
-#| msgid "Could not open OSS device %s"
+#| msgid "Could not open APM device %s"
 msgid "Can't open the APM device %s"
-msgstr "無法開啟 OSS 裝置 %s"
+msgstr "無法開啟 APM 裝置 %s"
 
 #: src/aapm.cc:74 src/aapm.cc:92
 #, c-format
@@ -159,12 +159,12 @@ msgstr "合併(_C)"
 msgid "_Separate"
 msgstr "獨立(_S)"
 
-#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s 已離開，狀態為 %d。"
 
-#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
+#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s 被訊號 %d 強行中止。"
@@ -1499,12 +1499,12 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "未知選項「%s」"
 
-#: src/icesm.cc:462 src/icesm.cc:622
+#: src/icesm.cc:460 src/icesm.cc:620
 #, c-format
 msgid "restart %s."
 msgstr "重新啟動 %s。"
 
-#: src/icesm.cc:513
+#: src/icesm.cc:511
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1520,7 +1520,7 @@ msgstr ""
 "\t2: 中止此工作階段？\n"
 "\t3: 執行終端機?\n"
 
-#: src/icesm.cc:519
+#: src/icesm.cc:517
 msgid "IceWM crash response"
 msgstr "IceWM 當機回應"
 
@@ -2074,13 +2074,13 @@ msgid "Center"
 msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:579 src/wmtaskbar.cc:218 src/wmwinlist.cc:394
+#: src/wmapp.cc:579 src/wmtaskbar.cc:219 src/wmwinlist.cc:394
 #: src/wmwinlist.cc:427
 msgid "T_ile Horizontally"
 msgstr "水平並排(_I)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:581 src/wmtaskbar.cc:216 src/wmwinlist.cc:393
+#: src/wmapp.cc:581 src/wmtaskbar.cc:217 src/wmwinlist.cc:393
 #: src/wmwinlist.cc:426
 msgid "Tile _Vertically"
 msgstr "垂直並排(_V)"
@@ -2391,8 +2391,8 @@ msgid "_Cancel"
 msgstr "取消(_C)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:244
-#: src/wmtaskbar.cc:246
+#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:245
+#: src/wmtaskbar.cc:247
 msgid "_Logout..."
 msgstr "登出(_L)..."
 
@@ -2401,11 +2401,11 @@ msgid "_Restart icewm"
 msgstr "重新啟動 icewm(_R)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:239
+#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:240
 msgid "_About"
 msgstr "關於(_A)"
 
-#: src/wmframe.cc:1541
+#: src/wmframe.cc:1542
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2413,7 +2413,7 @@ msgstr ""
 "【警告】！當這個客戶端程式被砍掉時，將會失去所有未儲存的變更。\n"
 "您希望繼續進行嗎？"
 
-#: src/wmframe.cc:1548
+#: src/wmframe.cc:1549
 msgid "Kill Client: "
 msgstr "砍掉客戶端："
 
@@ -2487,11 +2487,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "「%s」未產生任何輸出"
 
-#: src/wmmgr.cc:3387
+#: src/wmmgr.cc:3377
 msgid "Missing program setxkbmap"
 msgstr "缺少程式 setxkbmap"
 
-#: src/wmmgr.cc:3388
+#: src/wmmgr.cc:3378
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "若要進行鍵盤切換，請安裝 setxkbmap。"
 
@@ -2563,7 +2563,7 @@ msgid "_Run..."
 msgstr "執行(_R)..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:418 src/wmtaskbar.cc:234
+#: src/wmprog.cc:418 src/wmtaskbar.cc:235
 msgid "_Windows"
 msgstr "視窗(_W)"
 
@@ -2593,57 +2593,57 @@ msgid "Session Manager: Unknown line %s"
 msgstr "作業階段管理程式：未知的列 %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:220 src/wmwinlist.cc:395 src/wmwinlist.cc:428
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:395 src/wmwinlist.cc:428
 msgid "Ca_scade"
 msgstr "階狀(_S)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:222 src/wmwinlist.cc:396 src/wmwinlist.cc:429
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:396 src/wmwinlist.cc:429
 msgid "_Arrange"
 msgstr "排列(_A)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:224 src/wmwinlist.cc:398 src/wmwinlist.cc:430
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:398 src/wmwinlist.cc:430
 msgid "_Minimize All"
 msgstr "全部縮到最小(_M)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:226 src/wmwinlist.cc:399 src/wmwinlist.cc:431
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:399 src/wmwinlist.cc:431
 msgid "_Hide All"
 msgstr "全部隱藏(_H)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:228 src/wmwinlist.cc:400 src/wmwinlist.cc:432
+#: src/wmtaskbar.cc:229 src/wmwinlist.cc:400 src/wmwinlist.cc:432
 msgid "_Undo"
 msgstr "復原(_U)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:231
+#: src/wmtaskbar.cc:232
 msgid "Arrange _Icons"
 msgstr "排列圖示(_I)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:237
+#: src/wmtaskbar.cc:238
 msgid "_Refresh"
 msgstr "重新整理(_R)"
 
-#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:990
+#: src/wmtaskbar.cc:316 src/wmtaskbar.cc:999
 msgid "Hide Taskbar"
 msgstr "隱藏工作列"
 
-#: src/wmtaskbar.cc:338
+#: src/wmtaskbar.cc:339
 msgid "Favorite Applications"
 msgstr "喜愛的應用程式"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:364
 msgid "Window List Menu"
 msgstr "視窗列表選單"
 
-#: src/wmtaskbar.cc:372
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "顯示桌面"
 
-#: src/wmtaskbar.cc:990
+#: src/wmtaskbar.cc:999
 msgid "Show Taskbar"
 msgstr "顯示工作列"
 

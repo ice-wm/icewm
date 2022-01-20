@@ -75,7 +75,7 @@ void EdgeTrigger::show(bool enable) {
         YWindow::show();
     } else {
         YWindow::hide();
-        if (enabled) {
+        if (enabled && !fTaskBar->isCollapsed()) {
             startTimer();
         }
     }
@@ -84,7 +84,8 @@ void EdgeTrigger::show(bool enable) {
 void EdgeTrigger::handleCrossing(const XCrossingEvent &crossing) {
     if (crossing.type == EnterNotify /* && crossing.mode != NotifyNormal */) {
         unsigned long last = YWindow::getLastEnterNotifySerial();
-        if (crossing.serial != last && crossing.serial != last + 1) {
+        if ((crossing.serial != last && crossing.serial != last + 1) ||
+            (crossing.mode == NotifyNormal && crossing.detail == NotifyAncestor)) {
             MSG(("enter notify %d %d", crossing.mode, crossing.detail));
             startTimer(Show);
         }
@@ -655,9 +656,14 @@ void TaskBar::relayoutNow() {
     }
 }
 
-void TaskBar::updateFullscreen(bool fullscreen) {
-    if (fFullscreen != fullscreen && getFrame()) {
+void TaskBar::updateFullscreen() {
+    bool fullscreen = manager->getFocus() &&
+                      manager->getFocus()->isFullscreen() &&
+                      manager->getFocus()->visible();
+    if (fFullscreen != fullscreen) {
         fFullscreen = fullscreen;
+        if (fFullscreen == false)
+            updateWinLayer();
         fEdgeTrigger->show((fFullscreen | fIsHidden) && !fIsCollapsed);
     }
 }
@@ -798,6 +804,9 @@ void TaskBar::handleCrossing(const XCrossingEvent &crossing) {
         } else {
             if (ahwm_hack) {
                 fEdgeTrigger->startTimer();
+                if (manager->getFocus() == getFrame()) {
+                    manager->focusLastWindow();
+                }
             }
         }
     }
@@ -930,21 +939,21 @@ void TaskBar::popupWindowListMenu() {
 }
 
 bool TaskBar::autoTimer(bool doShow) {
-    MSG(("hide taskbar"));
+    MSG(("taskbar timer show=%s full=%s hidden=%s",
+        boolstr(doShow), boolstr(fFullscreen), boolstr(fIsHidden)));
+    updateFullscreen();
     if (fFullscreen && doShow && taskBarFullscreenAutoShow) {
         fIsHidden = false;
-        getFrame()->focus();
-        manager->switchFocusTo(getFrame(), true);
-        manager->updateFullscreenLayer();
+        obtainFocus();
     }
     if (taskBarAutoHide) {
-        fIsHidden = !doShow && !hasPopup();
+        fIsHidden = !doShow && !hasPopup() && manager->getFocus() != getFrame();
         if (taskBarDoubleHeight == false && taskBarShowWindows) {
             fIsHidden &= !(addressBar() && addressBar()->visible());
         }
         updateLocation();
     }
-    return fIsHidden == doShow;
+    return fIsHidden == doShow && taskBarAutoHide && !fIsCollapsed;
 }
 
 void TaskBar::popOut() {
@@ -952,9 +961,10 @@ void TaskBar::popOut() {
         handleCollapseButton();
     }
     if (taskBarAutoHide) {
+        bool hidden = fIsHidden;
         fIsHidden = false;
         updateLocation();
-        fIsHidden = taskBarAutoHide;
+        fIsHidden = hidden;
         if (fEdgeTrigger) {
             MSG(("start hide 4"));
             fEdgeTrigger->startTimer();
@@ -966,11 +976,10 @@ void TaskBar::popOut() {
 void TaskBar::showBar() {
     if (getFrame() == nullptr) {
         manager->manageClient(this);
-        updateWinLayer();
         if (getFrame()) {
             getFrame()->setAllWorkspaces();
             if (enableAddressBar && ::showAddressBar && taskBarDoubleHeight)
-                getFrame()->activate(true);
+                obtainFocus();
             parent()->setTitle("TaskBarFrame");
             getFrame()->updateLayer();
         }
@@ -1062,8 +1071,15 @@ void TaskBar::relayoutTray() {
 
 void TaskBar::showAddressBar() {
     popOut();
-    if (fAddressBar != nullptr)
+    if (fAddressBar) {
+        obtainFocus();
         fAddressBar->showNow();
+    }
+}
+
+void TaskBar::obtainFocus() {
+    getFrame()->focus();
+    manager->switchFocusTo(getFrame(), true);
 }
 
 void TaskBar::setWorkspaceActive(long workspace, bool active) {

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icewm 1.2.0-beta1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2021-12-30 22:11+0100\n"
+"POT-Creation-Date: 2022-01-20 02:33+0100\n"
 "PO-Revision-Date: 2020-05-07 08:52+0000\n"
 "Last-Translator: ingemar karlsson <ingemar_bengt@hotmail.com>\n"
 "Language-Team: Swedish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -20,9 +20,9 @@ msgstr ""
 
 #: src/aapm.cc:66
 #, fuzzy, c-format
-#| msgid "Could not open OSS device %s"
+#| msgid "Could not open APM device %s"
 msgid "Can't open the APM device %s"
-msgstr "Kunde inte öppna OSS-enhet %s"
+msgstr "Kunde inte öppna APM-enhet %s"
 
 #: src/aapm.cc:74 src/aapm.cc:92
 #, c-format
@@ -158,12 +158,12 @@ msgstr "_Kombinera"
 msgid "_Separate"
 msgstr "_Separera"
 
-#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s avslutade med status %d."
 
-#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
+#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s dödades med signal %d."
@@ -1513,12 +1513,12 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "Okänt alternativ '%s'"
 
-#: src/icesm.cc:462 src/icesm.cc:622
+#: src/icesm.cc:460 src/icesm.cc:620
 #, c-format
 msgid "restart %s."
 msgstr "starta om %s."
 
-#: src/icesm.cc:513
+#: src/icesm.cc:511
 #, fuzzy
 #| msgid ""
 #| " IceWM crashed for the second time in 10 seconds. \n"
@@ -1539,7 +1539,7 @@ msgstr ""
 "\t1: Starta om IceWM?\n"
 "\t2. Avbryta den här sessionen?\n"
 
-#: src/icesm.cc:519
+#: src/icesm.cc:517
 msgid "IceWM crash response"
 msgstr "Kraschrespons för IceWM"
 
@@ -2095,13 +2095,13 @@ msgid "Center"
 msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:579 src/wmtaskbar.cc:218 src/wmwinlist.cc:394
+#: src/wmapp.cc:579 src/wmtaskbar.cc:219 src/wmwinlist.cc:394
 #: src/wmwinlist.cc:427
 msgid "T_ile Horizontally"
 msgstr "Rada upp _vågrätt"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:581 src/wmtaskbar.cc:216 src/wmwinlist.cc:393
+#: src/wmapp.cc:581 src/wmtaskbar.cc:217 src/wmwinlist.cc:393
 #: src/wmwinlist.cc:426
 msgid "Tile _Vertically"
 msgstr "Rada upp _lodrätt"
@@ -2412,8 +2412,8 @@ msgid "_Cancel"
 msgstr "_Avbryt"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:244
-#: src/wmtaskbar.cc:246
+#: src/wmdialog.cc:69 src/wmprog.cc:456 src/wmprog.cc:458 src/wmtaskbar.cc:245
+#: src/wmtaskbar.cc:247
 msgid "_Logout..."
 msgstr "Avsl_uta..."
 
@@ -2422,11 +2422,11 @@ msgid "_Restart icewm"
 msgstr "_Starta om icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:239
+#: src/wmdialog.cc:74 src/wmprog.cc:424 src/wmtaskbar.cc:240
 msgid "_About"
 msgstr "_Om"
 
-#: src/wmframe.cc:1541
+#: src/wmframe.cc:1542
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2435,7 +2435,7 @@ msgstr ""
 "att gå förlorade när den här klienten dödas.\n"
 "Vill du fortsätta?"
 
-#: src/wmframe.cc:1548
+#: src/wmframe.cc:1549
 msgid "Kill Client: "
 msgstr "Döda klient: "
 
@@ -2509,11 +2509,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "'%s' genererar inga utdata"
 
-#: src/wmmgr.cc:3387
+#: src/wmmgr.cc:3377
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3388
+#: src/wmmgr.cc:3378
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2585,7 +2585,7 @@ msgid "_Run..."
 msgstr "_Kör..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:418 src/wmtaskbar.cc:234
+#: src/wmprog.cc:418 src/wmtaskbar.cc:235
 msgid "_Windows"
 msgstr "_Fönster"
 
@@ -2615,57 +2615,57 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Sessionshanteraren: Okänd rad %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:220 src/wmwinlist.cc:395 src/wmwinlist.cc:428
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:395 src/wmwinlist.cc:428
 msgid "Ca_scade"
 msgstr "_Kaskad"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:222 src/wmwinlist.cc:396 src/wmwinlist.cc:429
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:396 src/wmwinlist.cc:429
 msgid "_Arrange"
 msgstr "O_rdna"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:224 src/wmwinlist.cc:398 src/wmwinlist.cc:430
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:398 src/wmwinlist.cc:430
 msgid "_Minimize All"
 msgstr "_Minimera alla"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:226 src/wmwinlist.cc:399 src/wmwinlist.cc:431
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:399 src/wmwinlist.cc:431
 msgid "_Hide All"
 msgstr "Göm _alla"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:228 src/wmwinlist.cc:400 src/wmwinlist.cc:432
+#: src/wmtaskbar.cc:229 src/wmwinlist.cc:400 src/wmwinlist.cc:432
 msgid "_Undo"
 msgstr "_Ångra"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:231
+#: src/wmtaskbar.cc:232
 msgid "Arrange _Icons"
 msgstr "Ordna _Ikoner"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:237
+#: src/wmtaskbar.cc:238
 msgid "_Refresh"
 msgstr "_Uppdatera"
 
-#: src/wmtaskbar.cc:315 src/wmtaskbar.cc:990
+#: src/wmtaskbar.cc:316 src/wmtaskbar.cc:999
 msgid "Hide Taskbar"
 msgstr "Dölj aktivitetsfält"
 
-#: src/wmtaskbar.cc:338
+#: src/wmtaskbar.cc:339
 msgid "Favorite Applications"
 msgstr "Favoritprogram"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:364
 msgid "Window List Menu"
 msgstr "Fönsterlistmeny"
 
-#: src/wmtaskbar.cc:372
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "Visa skrivbord"
 
-#: src/wmtaskbar.cc:990
+#: src/wmtaskbar.cc:999
 msgid "Show Taskbar"
 msgstr "Visa aktivitetsfält"
 
