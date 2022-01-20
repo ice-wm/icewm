@@ -248,7 +248,7 @@ void YFrameWindow::doManage(YFrameClient *clientw, bool &doActivate, bool &reque
     updateIcon();
     manage();
     manager->appendCreatedFrame(this);
-    bool isRunning = manager->wmState() == YWindowManager::wmRUNNING;
+    bool isRunning = manager->isRunning();
     insertFrame(!isRunning);
     manager->insertFocusFrame(this, !isRunning);
 
@@ -860,6 +860,11 @@ void YFrameWindow::handleCrossing(const XCrossingEvent &crossing) {
                 fAutoRaiseTimer->disableTimerListener(this);
             }
         }
+    } else if (crossing.type == LeaveNotify &&
+               crossing.mode == NotifyNormal &&
+               crossing.detail == NotifyNonlinearVirtual) {
+        if (fDelayFocusTimer)
+            fDelayFocusTimer->disableTimerListener(this);
     }
 }
 
@@ -1142,12 +1147,8 @@ void YFrameWindow::actionPerformed(YAction action, unsigned int modifiers) {
     case actionLayerAboveAll:
         {
             int layer = (action.ident() - actionLayerDesktop) / 2;
-            bool isFull = isFullscreen() && manager->fullscreenEnabled();
-            if (isFull)
-                manager->setFullscreenEnabled(false);
+            YFullscreenLock full;
             wmSetLayer(layer);
-            if (isFull)
-                manager->setFullscreenEnabled(true);
         }
         break;
     default:
@@ -1587,6 +1588,8 @@ void YFrameWindow::loseWinFocus() {
 
         if (hasState(WinStateFocused)) {
             setState(WinStateFocused | WinStateUrgent, 0);
+        } else {
+            updateLayer();
         }
         if (true || !clientMouseActions)
             if (focusOnClickClient || raiseOnClickClient)
@@ -1751,14 +1754,19 @@ void YFrameWindow::focus(bool canWarp) {
             newY = int(- borderY());
         setCurrentPositionOuter(newX, newY);
     }
-
     manager->setFocus(this, canWarp);
-    if (raiseOnFocus && manager->wmState() == YWindowManager::wmRUNNING) {
+    if (raiseOnFocus && manager->isRunning()) {
         wmRaise();
     }
 }
 
 void YFrameWindow::activate(bool canWarp, bool curWork) {
+    YFrameWindow* focused = manager->getFocus();
+    if (focused && focused != this && focused->isFullscreen()) {
+        YFullscreenLock full;
+        focused->updateLayer();
+    }
+
     manager->lockFocus();
     if ( ! visibleNow()) {
         if (focusCurrentWorkspace && curWork)
@@ -3253,11 +3261,6 @@ void YFrameWindow::setState(int mask, int state) {
     updateLayout();
     updateState();
     updateLayer();
-    if (hasbit(fOldState | fNewState, WinStateFullscreen) ||
-        manager->top(WinLayerFullscreen))
-    {
-        manager->updateFullscreenLayer();
-    }
     manager->unlockWorkArea();
 
     if (hasbit(deltaState, WinStateRollup | WinStateMinimized)) {
@@ -3276,7 +3279,8 @@ void YFrameWindow::setState(int mask, int state) {
     }
     if (deltaState & fNewState & WinStateFullscreen) {
         if (notbit(deltaState & fNewState, WinStateUnmapped)) {
-            activate();
+            if (manager->isRunning())
+                activate();
         }
     }
     if (deltaState & fNewState & WinStateFocused) {

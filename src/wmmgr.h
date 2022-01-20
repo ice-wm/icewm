@@ -60,6 +60,17 @@ private:
     int count;
 };
 
+class YTopWindow : public YWindow {
+public:
+    YTopWindow();
+    bool handleKey(const XKeyEvent& key) override;
+    void setFrame(YFrameWindow* frame);
+
+private:
+    YFrameWindow* fFrame;
+    Window fHandle;
+};
+
 class YWindowManager:
     private YDesktop,
     private YMsgBoxListener,
@@ -254,10 +265,6 @@ public:
     void reflectKeyboard(int configIndex, mstring keyboard);
     void kbLayout();
 
-    void updateFullscreenLayer();
-    void updateFullscreenLayerEnable(bool enable);
-    int getSwitchScreen();
-
     static void doWMAction(WMAction action, bool putback = false);
     void lockFocus() {
         //MSG(("lockFocus %d", lockFocusCount));
@@ -305,8 +312,10 @@ public:
     const DesktopLayout& layout() const { return fLayout; }
     bool handleSwitchWorkspaceKey(const XKeyEvent& key, KeySym k, unsigned vm);
 
+    int getSwitchScreen();
     bool switchWindowVisible() const;
     SwitchWindow* getSwitchWindow();
+    Window netActiveWindow() const { return fActiveWindow; }
 
 private:
     struct WindowPosState {
@@ -365,7 +374,7 @@ private:
     int fArrangeCount;
     WindowPosState *fArrangeInfo;
     YProxyWindow *rootProxy;
-    YWindow *fTopWin;
+    YTopWindow *fTopWin;
     YWindow *fBottom;
     int fCascadeX;
     int fCascadeY;
@@ -400,6 +409,12 @@ class YRestackLock {
 public:
     YRestackLock() { manager->lockRestack(); }
     ~YRestackLock() { manager->unlockRestack(); }
+};
+
+class YFullscreenLock {
+public:
+    YFullscreenLock() { manager->setFullscreenEnabled(false); }
+    ~YFullscreenLock() { manager->setFullscreenEnabled(true); }
 };
 
 void dumpZorder(const char *oper, YFrameWindow *w, YFrameWindow *a = nullptr);
