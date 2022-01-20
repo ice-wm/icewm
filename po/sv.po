@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icewm 1.2.0-beta1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-01-20 02:33+0100\n"
+"POT-Creation-Date: 2022-01-20 02:36+0100\n"
 "PO-Revision-Date: 2020-05-07 08:52+0000\n"
 "Last-Translator: ingemar karlsson <ingemar_bengt@hotmail.com>\n"
 "Language-Team: Swedish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -158,12 +158,12 @@ msgstr "_Kombinera"
 msgid "_Separate"
 msgstr "_Separera"
 
-#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s avslutade med status %d."
 
-#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
+#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s dödades med signal %d."
@@ -1513,12 +1513,12 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "Okänt alternativ '%s'"
 
-#: src/icesm.cc:460 src/icesm.cc:620
+#: src/icesm.cc:462 src/icesm.cc:622
 #, c-format
 msgid "restart %s."
 msgstr "starta om %s."
 
-#: src/icesm.cc:511
+#: src/icesm.cc:513
 #, fuzzy
 #| msgid ""
 #| " IceWM crashed for the second time in 10 seconds. \n"
@@ -1539,7 +1539,7 @@ msgstr ""
 "\t1: Starta om IceWM?\n"
 "\t2. Avbryta den här sessionen?\n"
 
-#: src/icesm.cc:517
+#: src/icesm.cc:519
 msgid "IceWM crash response"
 msgstr "Kraschrespons för IceWM"
 

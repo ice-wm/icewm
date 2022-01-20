@@ -1,5 +1,341 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 851261a0e106ae2eba8bc72803746a1ddb4d6094
+Merge: 9473665e c8ee5c87
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 20 02:35:29 2022 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit c8ee5c877883d9ad69694d047cd6b1ec6e2616ad
+Merge: f517af3d 6359670d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 20 02:34:25 2022 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 6359670db9693d051c96c051a09688a00f81ec37
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 20 02:33:49 2022 +0100
+
+    Update pot files.
+
+ po/ar.po     | 146 +++++++++++++++++++++++++++----------------------------
+ po/be.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/bg.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/ca.po     | 146 +++++++++++++++++++++++++++----------------------------
+ po/cs.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/da.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/de.po     | 146 +++++++++++++++++++++++++++----------------------------
+ po/el.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/en.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/es.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/fi.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/fr.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/he.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/hr.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/hu.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/icewm.pot | 144 +++++++++++++++++++++++++++---------------------------
+ po/id.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/it.po     | 146 +++++++++++++++++++++++++++----------------------------
+ po/ja.po     | 146 +++++++++++++++++++++++++++----------------------------
+ po/ko.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/lt.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/lv.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/mk.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/nb.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/nl.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/no.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/pl.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/pt.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/pt_BR.po  | 142 ++++++++++++++++++++++++++---------------------------
+ po/ro.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/ru.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/sk.po     | 146 +++++++++++++++++++++++++++----------------------------
+ po/sl.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/sv.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/tr.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/uk.po     | 146 +++++++++++++++++++++++++++----------------------------
+ po/vi.po     | 142 ++++++++++++++++++++++++++---------------------------
+ po/zh_CN.po  | 142 ++++++++++++++++++++++++++---------------------------
+ po/zh_TW.po  | 142 ++++++++++++++++++++++++++---------------------------
+ 39 files changed, 2784 insertions(+), 2784 deletions(-)
+
+commit f517af3d770904c16b19212fb6c753cddb27eeba
+Merge: 1cd9805d 4f985ce2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 20 02:16:50 2022 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 4f985ce2b566b37aaf85e5af7485b10c5f7069bf
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 18 20:03:26 2022 +0100
+
+    Put a focused fullscreen window back to its normal layer, before activating
+    another application.
+
+ src/wmframe.cc | 12 +++++++-----
+ src/wmmgr.cc   |  3 +--
+ src/wmmgr.h    |  6 ++++++
+ 3 files changed, 14 insertions(+), 7 deletions(-)
+
+commit d3682aac7f51fdd0c123de755d2478e666f69b13
+Author: Paolo Za <zapaolo@email.it>
+Date:   Sat Jan 15 07:23:52 2022 +0000
+
+    Translated using Weblate (Italian)
+
+    Currently translated at 98.4% (509 of 517 strings)
+
+ po/it.po | 79 ++++++++++++++++++++++++++----------------------------------
+ 1 file changed, 34 insertions(+), 45 deletions(-)
+
+commit 7fea3dfe67806f89a38636db146cb797d5f60679
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jan 12 22:36:39 2022 +0100
+
+    Set the window type of desktop icons and of the dockapps container.
+
+ src/wmdock.cc     | 1 +
+ src/wmminiicon.cc | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit f731a2484ad9be57cd9b37f801ecd79c527e3b2e
+Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
+Date:   Wed Jan 12 04:15:43 2022 +0000
+
+    Translated using Weblate (Indonesian)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/id.po | 36 +++++++++++++++++-------------------
+ 1 file changed, 17 insertions(+), 19 deletions(-)
+
+commit 79af5f9451f58f11b4a3b223bec3d9d981494507
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Tue Jan 11 12:16:21 2022 +0000
+
+    Translated using Weblate (Portuguese)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/pt.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit b8fa85534e41215e5da5bbc137a88f75b33700f0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 11 05:17:51 2022 +0100
+
+    Make taskbar unhide more reliable.
+
+ src/wmtaskbar.cc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 418ef48bddabe47236c0ea1cbebb4fd70b21a6e8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jan 10 01:19:49 2022 +0100
+
+    Fix OSS / APM confusion in some translations.
+
+ po/da.po    | 4 ++--
+ po/el.po    | 4 ++--
+ po/es.po    | 4 ++--
+ po/fi.po    | 4 ++--
+ po/hu.po    | 4 ++--
+ po/it.po    | 4 ++--
+ po/ko.po    | 4 ++--
+ po/sv.po    | 4 ++--
+ po/tr.po    | 4 ++--
+ po/zh_CN.po | 4 ++--
+ po/zh_TW.po | 4 ++--
+ 11 files changed, 22 insertions(+), 22 deletions(-)
+
+commit 82206a339e6eeaa221e1fe53faaaba9570bc2508
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jan 10 00:49:49 2022 +0100
+
+    Fix for taskbar on icewm restart when there is a fullscreen window.
+    Fix for TaskBarAutoHide. Fix for focusing address bar.
+
+ src/wmtaskbar.cc | 31 +++++++++++++++++++------------
+ src/wmtaskbar.h  |  3 ++-
+ 2 files changed, 21 insertions(+), 13 deletions(-)
+
+commit 618d63e2a1af34757f602bb2e4ab528ad20531f5
+Author: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>
+Date:   Sun Jan 9 15:07:42 2022 +0000
+
+    Translated using Weblate (Portuguese (Brazil))
+
+    Currently translated at 98.0% (507 of 517 strings)
+
+ po/pt_BR.po | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit a71b88bd1cffb529c7a1fb1c122f281a54bc992a
+Author: Sarah Kriesch <ada.lovelace@gmx.de>
+Date:   Sat Jan 8 21:03:42 2022 +0000
+
+    Translated using Weblate (German)
+
+    Currently translated at 94.0% (486 of 517 strings)
+
+ po/de.po | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
+
+commit b15db989cb7c84b2158d034f7c1cdd183d5844e9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 6 23:55:44 2022 +0100
+
+    Cancel the DelayPointerFocus timer when the mouse leaves the window.
+
+ src/wmframe.cc | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit b3d48996dad7590ffb10ce9a0a13b077a812277d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 6 19:05:43 2022 +0100
+
+    Remove inefficient management of fullscreen layer.
+    Make TaskBarFullscreenAutoShow option more reliable.
+
+ src/wmframe.cc   |  7 ++-----
+ src/wmmgr.cc     | 24 +++++-------------------
+ src/wmmgr.h      |  5 +----
+ src/wmtaskbar.cc | 10 ++++++++--
+ src/wmtaskbar.h  |  2 +-
+ 5 files changed, 17 insertions(+), 31 deletions(-)
+
+commit f0ae6385995128c111f4c59d710278e60b4156ff
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jan 5 19:24:09 2022 +0100
+
+    Fixes to prevent a lockup when activating a do-not-focus output-only
+    window on a workspace where no focusable window exists.
+
+ src/wmmgr.cc | 99 ++++++++++++++++++++++++++++++++++++++++++++++++++++----
+ src/wmmgr.h  | 14 +++++++-
+ 2 files changed, 105 insertions(+), 8 deletions(-)
+
+commit 1d600717e2ffb48c293e8cc48fb7e9c96f11f318
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jan 5 19:21:34 2022 +0100
+
+    When a fullscreen disappears, update the taskbar layer.
+
+ src/wmtaskbar.cc | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 1056ee136679c9f80e3c57271f73fa90d43c28cd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jan 5 19:18:39 2022 +0100
+
+    On startup don't switch workspace to activate a fullscreen window.
+
+ src/wmframe.cc | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 2bf5ab12ef937038d567e20aee61c86962d400fb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jan 5 19:17:11 2022 +0100
+
+    Fix Arabic translation.
+
+ po/ar.po | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+commit fb12064f7aa28d41329bb26aef802beba81c9f63
+Author: Eduard Bloch <blade@debian.org>
+Date:   Tue Jan 4 22:00:43 2022 +0100
+
+    Work around trailers to zero-terminated strings
+
+    At least one monitor vendor seems to hide additional strings in EDID
+    monitor description after zero terminator here, which makes the menu
+    parser reject such strings due to invalid characters.
+
+ contrib/icewm-menu-xrandr | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 40496c0f3ae2276c9b6d6778c8196bcf05a0d0e4
+Author: Ghassan <ghassan.alnajjar1984@gmail.com>
+Date:   Sat Jan 1 19:56:16 2022 +0000
+
+    Translated using Weblate (Arabic)
+
+    Currently translated at 99.6% (515 of 517 strings)
+
+ po/ar.po | 183 +++++++++++++++++++++++++----------------------------------
+ 1 file changed, 78 insertions(+), 105 deletions(-)
+
+commit 823319c69a5bf74b5eabcf2bdc31118d9f14731e
+Author: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>
+Date:   Thu Dec 30 19:56:41 2021 +0000
+
+    Translated using Weblate (Lithuanian)
+
+    Currently translated at 41.1% (213 of 517 strings)
+
+ po/lt.po | 16 +++++++---------
+ 1 file changed, 7 insertions(+), 9 deletions(-)
+
+commit 9473665e6292a9318636b9ff73f5436787bdd8da
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 30 22:21:06 2021 +0100
+
+    Prepare 2.9.4 release
+
+ AUTHORS      |   4 +-
+ ChangeLog    | 470 +++++++++++++++++++++++++++----------------------------
+ NEWS         |  81 +++++-----
+ README.md    |  36 ++---
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  90 +++++------
+ po/be.po     |  90 +++++------
+ po/bg.po     |  90 +++++------
+ po/ca.po     |  90 +++++------
+ po/cs.po     |  90 +++++------
+ po/da.po     |  90 +++++------
+ po/de.po     |  90 +++++------
+ po/el.po     |  90 +++++------
+ po/en.po     |  90 +++++------
+ po/es.po     |  90 +++++------
+ po/fi.po     |  90 +++++------
+ po/fr.po     |  90 +++++------
+ po/he.po     |  90 +++++------
+ po/hr.po     |  90 +++++------
+ po/hu.po     |  90 +++++------
+ po/icewm.pot |  92 +++++------
+ po/id.po     |  90 +++++------
+ po/it.po     |  90 +++++------
+ po/ja.po     |  90 +++++------
+ po/ko.po     |  90 +++++------
+ po/lt.po     |  90 +++++------
+ po/lv.po     |  90 +++++------
+ po/mk.po     |  90 +++++------
+ po/nb.po     |  90 +++++------
+ po/nl.po     |  90 +++++------
+ po/no.po     |  90 +++++------
+ po/pl.po     |  90 +++++------
+ po/pt.po     |  96 ++++++------
+ po/pt_BR.po  |  90 +++++------
+ po/ro.po     |  90 +++++------
+ po/ru.po     |  90 +++++------
+ po/sk.po     |  90 +++++------
+ po/sl.po     |  90 +++++------
+ po/sv.po     |  90 +++++------
+ po/tr.po     |  90 +++++------
+ po/uk.po     |  90 +++++------
+ po/vi.po     |  90 +++++------
+ po/zh_CN.po  |  90 +++++------
+ po/zh_TW.po  |  90 +++++------
+ 46 files changed, 2053 insertions(+), 2070 deletions(-)
+
 commit 0ee1c35550c414fb37c2ce55f83c2cc36268a618
 Merge: 14b1f1cd 1cd9805d
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6032,288 +6368,3 @@ Date:   Sat Apr 3 00:31:01 2021 +0200
  src/ypaths.cc      | 33 +++++++++++++--------------------
  src/ypaths.h       | 22 ++++++++--------------
  7 files changed, 58 insertions(+), 82 deletions(-)
-
-commit 0ae73a0ef344ff51035c00218d839c4cee443da3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 00:29:53 2021 +0200
-
-    Smaller simpler YCursor.
-
- src/ycursor.cc | 26 ++++++++------------------
- src/ycursor.h  |  2 +-
- 2 files changed, 9 insertions(+), 19 deletions(-)
-
-commit 8f55fc003b8bae0918ccce7a55a46539f98c258d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 00:26:04 2021 +0200
-
-    Test for large icon in YMsgBox to prevent accessing nil pointer.
-
- src/ymsgbox.cc | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-commit 58f6819e9c9dfb4c6424b3961146a8fb1198f1a6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 00:24:49 2021 +0200
-
-    Add begin+end to properly support for-each on MStringArrays.
-
- src/yarray.h | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit 43de75c4085aecacfc2b5613031062c8dcbdbbe3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 00:24:02 2021 +0200
-
-    Restore use of isKey in ISwitchItems to fix switchkey.
-
- src/wmprog.cc   |  3 +++
- src/wmswitch.cc | 10 +++++++++-
- src/wmswitch.h  |  2 ++
- 3 files changed, 14 insertions(+), 1 deletion(-)
-
-commit 37b13884b23724c0039fb7f0a250d2cfc7287cea
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 00:22:57 2021 +0200
-
-    Use override consistently.
-
- src/objmenu.h | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-commit 79616ed36e05b8ae56eb1acc0afca5d9df68affb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 00:22:36 2021 +0200
-
-    Prefer object icon over default icon.
-
- src/objmenu.cc | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-commit 04a1a96b03f903fb25df2ccc981f4841cd9623d8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 00:21:14 2021 +0200
-
-    Remove use of resource paths.
-
- src/icewmbg.cc | 23 ++++++-----------------
- 1 file changed, 6 insertions(+), 17 deletions(-)
-
-commit e2d41f6b82f5b87051558243df85a9d6f387d86b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 15:01:43 2021 +0200
-
-    Prepare 2.3.0 release
-
- AUTHORS      |   22 +-
- ChangeLog    | 9058 +++++++++++++++++++++++++++---------------------------
- NEWS         |  263 +-
- README.md    |   36 +-
- VERSION      |    2 +-
- configure.ac |   10 +-
- po/ar.po     |   50 +-
- po/be.po     |   50 +-
- po/bg.po     |   50 +-
- po/ca.po     |   50 +-
- po/cs.po     |   50 +-
- po/da.po     |   50 +-
- po/de.po     |   50 +-
- po/el.po     |   50 +-
- po/en.po     |   50 +-
- po/es.po     |   54 +-
- po/fi.po     |   50 +-
- po/fr.po     |   50 +-
- po/he.po     |   50 +-
- po/hr.po     |   50 +-
- po/hu.po     |   50 +-
- po/icewm.pot |   52 +-
- po/id.po     |   50 +-
- po/it.po     |   50 +-
- po/ja.po     |   50 +-
- po/ko.po     |   50 +-
- po/lt.po     |   50 +-
- po/lv.po     |   50 +-
- po/mk.po     |   50 +-
- po/nb.po     |   50 +-
- po/nl.po     |   50 +-
- po/no.po     |   50 +-
- po/pl.po     |   50 +-
- po/pt.po     |   50 +-
- po/pt_BR.po  |   50 +-
- po/ro.po     |   50 +-
- po/ru.po     |   50 +-
- po/sk.po     |   50 +-
- po/sl.po     |   50 +-
- po/sv.po     |   50 +-
- po/tr.po     |   50 +-
- po/uk.po     |   50 +-
- po/vi.po     |   50 +-
- po/zh_CN.po  |   50 +-
- po/zh_TW.po  |   50 +-
- 45 files changed, 5752 insertions(+), 5595 deletions(-)
-
-commit 4cbd349f588d79468922133d9e83bcbf262a62b4
-Merge: b37c55c0 21630b2c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 14:48:39 2021 +0200
-
-    Merge remote-tracking branch 'origin/icewm-1-4-BRANCH'
-
-commit 21630b2c0e7838403fa854d88c3ce01feada3292
-Merge: 6d9cfc9a ccaabb3c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 14:45:54 2021 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit ccaabb3ca8462ad9e682b5d10eb4d409fd45d816
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 12:47:24 2021 +0200
-
-    Also terminate with a dot when outputting in perl pod format.
-
- src/genpref.cc | 13 +++++++++++--
- 1 file changed, 11 insertions(+), 2 deletions(-)
-
-commit 539994330cd31cda6571cb1f2131ba6ce43ae65c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 12:44:03 2021 +0200
-
-    Ensure that descriptions are terminated with a dot.
-
- src/genpref.cc | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
-
-commit 2c8df5a829b6cd6a40962cdf0616e68a82c939ab
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 12:33:03 2021 +0200
-
-    Use wmOccupyWorkspace instead of identical wmOccupyOnlyWorkspace.
-
- src/atasks.cc    | 2 +-
- src/atray.cc     | 2 +-
- src/wmclient.h   | 1 -
- src/wmframe.cc   | 7 +------
- src/wmframe.h    | 1 -
- src/wmmgr.cc     | 2 +-
- src/wmwinmenu.cc | 2 +-
- 7 files changed, 5 insertions(+), 12 deletions(-)
-
-commit 940f4b7860a08c4dcf551f1250c087df5a5e5e01
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 12:30:07 2021 +0200
-
-    Update QuickSwitch preferences.
-
- man/icewm-preferences.pod | 18 +++++++++++-------
- 1 file changed, 11 insertions(+), 7 deletions(-)
-
-commit 9cebf626c8cf63663c456698ce43ae893a041389
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 12:22:35 2021 +0200
-
-    Complete QuickSwitch documentation.
-
- man/icewm.pod | 22 +++++++++++++---------
- 1 file changed, 13 insertions(+), 9 deletions(-)
-
-commit fd00dce9eea68113dc84c2c8eeedc13a2b31e57f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 01:55:50 2021 +0200
-
-    Improve changing workspace when quick switching for issue #564. Allow to
-    accept the current quick switch selection by hitting the Return key.
-    Restore reordering of quick switch items when not raising candidates for
-    issue #558. Get rid of IClosablePopup.
-
- src/wmprog.cc   |  18 ++++-----
- src/wmswitch.cc | 114 ++++++++++++++++++++++++++--------------------------
- src/wmswitch.h  |  19 +++------
- 3 files changed, 69 insertions(+), 82 deletions(-)
-
-commit a298b77370b4a17e1b9a6b4d5a94650d4b1e595d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 1 01:52:20 2021 +0200
-
-    When activating a frame on another workspace, ignore any focus events
-    on the root window, for more reliable quick switching.
-
- src/wmframe.cc | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
-
-commit ab36adc7630eea73029a5a01bdabe6a93c442e35
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 31 23:23:51 2021 +0200
-
-    Let canRaise also consider the future workspace.
-
- src/decorate.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit bf87d02fdf1d18cc8c3585fb1295bf6810707644
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 31 20:01:32 2021 +0200
-
-    Add preference QuickSwitchRaiseCandidate to raise a selected QuickSwitch
-    window for issue #558 and #564.
-
- src/default.h  | 32 +++++++++++++++++---------------
- src/wmframe.cc |  9 ++++++---
- src/wmmgr.cc   | 12 ++++--------
- 3 files changed, 27 insertions(+), 26 deletions(-)
-
-commit 28442857dd1778d75938bcd9c5db99cf20d14288
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Mar 31 19:39:31 2021 +0200
-
-    Support colorful colors when using libXpm for issue ice-wm/icewm#45.
-
- src/ycursor.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit c6e0cd2dca83a737d89331bd3fa92eef671de92d
-Author: Jorge Gallegos Carrasco <jcarrascochih@gmail.com>
-Date:   Wed Mar 31 12:32:38 2021 +0000
-
-    Translated using Weblate (Spanish)
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/es.po | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit 0ee4293553d1274fbb55bf67d054eb65c943b499
-Author: Antonio Simón <antonio@trans-mission.com>
-Date:   Wed Mar 31 12:31:49 2021 +0000
-
-    Translated using Weblate (Spanish)
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/es.po | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-commit 97be7f5e7385a855b7baa122cf7a895c597ef77e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Mar 30 09:48:52 2021 +0200
-
-    When QuickSwitch is up and a new window is created, then add the new
-    window to the existing QuickSwitch, if the conditions are met.
-
- src/wmmgr.cc    |   2 +
- src/wmprog.cc   |  23 +++----
- src/wmswitch.cc | 170 +++++++++++++++++++++++++++++-----------------------
- src/wmswitch.h  |  19 +++---
- 4 files changed, 112 insertions(+), 102 deletions(-)
-
-commit 1d2a5e468a1164910888dd4e27872d06a0cc33d1
-Author: Grace Yu <grace.yu@excel-gits.com>
-Date:   Tue Mar 30 02:36:08 2021 +0000
-
-    Translated using Weblate (Chinese (China))
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/zh_CN.po | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)

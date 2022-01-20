@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.15\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-01-20 02:33+0100\n"
+"POT-Creation-Date: 2022-01-20 02:36+0100\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Ewelina Michalowska <ewelina.michalowska@stgambit.com>\n"
 "Language-Team: Polish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -157,12 +157,12 @@ msgstr "Połą_cz"
 msgid "_Separate"
 msgstr "Rozłącz"
 
-#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "Program %s zakończył działanie ze stanem %d."
 
-#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
+#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "Działanie programu %s zostało przerwane przez sygnał %d."
@@ -1528,13 +1528,13 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "Nieznana opcja: %s"
 
-#: src/icesm.cc:460 src/icesm.cc:620
+#: src/icesm.cc:462 src/icesm.cc:622
 #, fuzzy, c-format
 #| msgid "Restart"
 msgid "restart %s."
 msgstr "Zrestartuj"
 
-#: src/icesm.cc:511
+#: src/icesm.cc:513
 #, fuzzy
 #| msgid ""
 #| " IceWM crashed for the second time in 10 seconds. \n"
@@ -1556,7 +1556,7 @@ msgstr ""
 "\t1: Ponownie uruchomić IceWM?\n"
 "\t2: Anulować tę sesję?\n"
 
-#: src/icesm.cc:517
+#: src/icesm.cc:519
 msgid "IceWM crash response"
 msgstr "Odpowiedź na awarię IceWM"
 

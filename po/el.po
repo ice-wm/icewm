@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-01-20 02:33+0100\n"
+"POT-Creation-Date: 2022-01-20 02:36+0100\n"
 "PO-Revision-Date: 2021-09-21 08:11+0000\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -159,12 +159,12 @@ msgstr "_Συνδυασμός"
 msgid "_Separate"
 msgstr "_Χωρισμός"
 
-#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "Το %s εξήχθη με αναφορά κατάστασης %d."
 
-#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
+#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "Το %s σκοτώθηκε από το σήμα %d."
@@ -1507,12 +1507,12 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "Άγνωστη επιλογή '%s'"
 
-#: src/icesm.cc:460 src/icesm.cc:620
+#: src/icesm.cc:462 src/icesm.cc:622
 #, c-format
 msgid "restart %s."
 msgstr "επανεκκίνηση %s."
 
-#: src/icesm.cc:511
+#: src/icesm.cc:513
 #, fuzzy
 #| msgid ""
 #| " IceWM crashed for the second time in 10 seconds. \n"
@@ -1534,7 +1534,7 @@ msgstr ""
 "\t1: Επενεκκινήσεις το IceWM;\n"
 "\t2: Εγκαταλείψεις αυτή τη συνεδρία;\n"
 
-#: src/icesm.cc:517
+#: src/icesm.cc:519
 msgid "IceWM crash response"
 msgstr "Απόκριση κατάρρευσης του IceWM"
 

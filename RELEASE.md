@@ -1,6 +1,6 @@
 [icewm -- release notes.  2021-07-08]: #
 
-Release 2.9.4
+Release 2.9.5
 =============
 
 Included in the release is an autoconf tarball for building the package
