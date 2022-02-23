@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-01-20 02:36+0100\n"
+"POT-Creation-Date: 2022-02-23 19:11+0100\n"
 "PO-Revision-Date: 2021-09-21 08:11+0000\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -73,7 +73,7 @@ msgstr "Ημερομηνία"
 msgid "Default"
 msgstr "Εξ ορισμού"
 
-#: src/aclock.cc:200 src/acpustatus.cc:687 src/amailbox.cc:964
+#: src/aclock.cc:200 src/acpustatus.cc:813 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Απενεργοποίηση"
@@ -82,12 +82,18 @@ msgstr "_Απενεργοποίηση"
 msgid "_UTC"
 msgstr "_UTC"
 
-#: src/acpustatus.cc:299
+#. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
+#. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
+#: src/acpustatus.cc:266
+msgid "°C"
+msgstr "°C"
+
+#: src/acpustatus.cc:448
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "CPU %s Φόρτωση: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:305
+#: src/acpustatus.cc:454
 #, c-format
 msgid ""
 "\n"
@@ -96,7 +102,7 @@ msgstr ""
 "\n"
 "Ram (ελεύθερη): %5.2f (%.2f) G"
 
-#: src/acpustatus.cc:310
+#: src/acpustatus.cc:459
 #, c-format
 msgid ""
 "\n"
@@ -105,7 +111,7 @@ msgstr ""
 "\n"
 "Swap (ελεύθερη): %.2f (%.2f) G"
 
-#: src/acpustatus.cc:316
+#: src/acpustatus.cc:467
 #, c-format
 msgid ""
 "\n"
@@ -114,7 +120,7 @@ msgstr ""
 "\n"
 "Θερμοκρασία ACPI: "
 
-#: src/acpustatus.cc:335 src/acpustatus.cc:373
+#: src/acpustatus.cc:488 src/acpustatus.cc:526
 #, c-format
 msgid ""
 "\n"
@@ -123,15 +129,15 @@ msgstr ""
 "\n"
 "Συχνότητα Επεξεργαστή: %.3fGHz"
 
-#: src/acpustatus.cc:350 src/acpustatus.cc:682
+#: src/acpustatus.cc:503 src/acpustatus.cc:808
 msgid "CPU"
 msgstr "CPU"
 
-#: src/acpustatus.cc:350
+#: src/acpustatus.cc:503
 msgid "Load: "
 msgstr "Φόρτωση: "
 
-#: src/acpustatus.cc:365
+#: src/acpustatus.cc:518
 #, c-format
 msgid ""
 "\n"
@@ -140,22 +146,16 @@ msgstr ""
 "\n"
 "Ram (χρήστης): %5.2f (%.2f) G"
 
-#. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
-#. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:453
-msgid "°C"
-msgstr "°C"
-
-#: src/acpustatus.cc:683
+#: src/acpustatus.cc:809
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:689
+#: src/acpustatus.cc:815
 msgid "_Combine"
 msgstr "_Συνδυασμός"
 
-#: src/acpustatus.cc:691
+#: src/acpustatus.cc:817
 msgid "_Separate"
 msgstr "_Χωρισμός"
 
@@ -1335,78 +1335,78 @@ msgstr "Για βοήθεια παρακαλούμε συμβουλευτείτ�
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Ονομασθέντα σύμβολα του domain `%s' (αριθμητικό εύρος: %ld-%ld):\n"
 
-#: src/icesh.cc:1605
+#: src/icesh.cc:1616
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Η επιφάνεια εργασίας είναι εκτός εμβέλειας: %ld"
 
-#: src/icesh.cc:1626
+#: src/icesh.cc:1637
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Μη έγκυρο όνομα επιφάνειας εργασίας: `%s'"
 
-#: src/icesh.cc:1928
+#: src/icesh.cc:1939
 msgid "GNOME window layer"
 msgstr "GNOME, επίπεδο παράθυρου"
 
-#: src/icesh.cc:1929
+#: src/icesh.cc:1940
 msgid "IceWM tray option"
 msgstr "Επιλογή του ραφιού του IceWM"
 
-#: src/icesh.cc:1930
+#: src/icesh.cc:1941
 msgid "Gravity symbols"
 msgstr "Σύμβολα βαρύτητας"
 
-#: src/icesh.cc:1931
+#: src/icesh.cc:1942
 msgid "Motif functions"
 msgstr "Λειτουργίες μοτίβου"
 
-#: src/icesh.cc:1932
+#: src/icesh.cc:1943
 msgid "Motif decorations"
 msgstr "Διακοσμήσεις μοτίβου"
 
-#: src/icesh.cc:1933
+#: src/icesh.cc:1944
 #, fuzzy
 #| msgid "GNOME window state"
 msgid "EWMH window state"
 msgstr "GNOME, κατάσταση παράθυρου"
 
-#: src/icesh.cc:2015 src/icesh.cc:2088
+#: src/icesh.cc:2026 src/icesh.cc:2099
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "επιφάνεια εργασίας #%d: `%s'\n"
 
-#: src/icesh.cc:2323 src/icesh.cc:3797 src/icesh.cc:4279
+#: src/icesh.cc:2334 src/icesh.cc:3808 src/icesh.cc:4290
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Μη έγκυρη κατάσταση: `%s' ."
 
-#: src/icesh.cc:3180
+#: src/icesh.cc:3191
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Αδυναμία λήψης γεωμετρίας παραθύρου 0x%lx"
 
-#: src/icesh.cc:3205
+#: src/icesh.cc:3216
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Μη έγκυρο Xinerama: `%s' ."
 
-#: src/icesh.cc:3370 src/icesh.cc:3420
+#: src/icesh.cc:3381 src/icesh.cc:3431
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Μη έγκυρο όρισμα: `%s' ."
 
-#: src/icesh.cc:3386
+#: src/icesh.cc:3397
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Η ενέργεια `%s' απαιτεί τουλάχιστον %d ορίσματα."
 
-#: src/icesh.cc:3395
+#: src/icesh.cc:3406
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Μη έγκυρη έκφραση: `%s'"
 
-#: src/icesh.cc:3406 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
 #: src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1414,35 +1414,35 @@ msgstr ""
 "Δεν μπορώ να ανοίξω την προβολή: %s . Ο X θα πρέπει να τρέχει, και η "
 "μεταβλητή $DISPLAY να έχει οριστεί."
 
-#: src/icesh.cc:3522
+#: src/icesh.cc:3533
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "Μη αναμενόμενη λέξη κλειδί: %s"
 
-#: src/icesh.cc:3551
+#: src/icesh.cc:3562
 msgid "No windows found."
 msgstr "Δεν βρέθηκαν παράθυρα."
 
-#: src/icesh.cc:3567
+#: src/icesh.cc:3578
 msgid "No actions specified."
 msgstr "Δεν υπάρχουν καθορισμένες ενέργειες."
 
-#: src/icesh.cc:3714
+#: src/icesh.cc:3725
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Μη έγκυρο αναγνωριστικό παράθυρου: `%s'"
 
-#: src/icesh.cc:3731
+#: src/icesh.cc:3742
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Μη έγκυρο PID: `%s' ."
 
-#: src/icesh.cc:3767
+#: src/icesh.cc:3778
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Μη έγκυρο στρώμα: `%s' ."
 
-#: src/icesh.cc:4587
+#: src/icesh.cc:4598
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Άγνωστη ενέργεια: `%s'"
@@ -2569,11 +2569,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3377
+#: src/wmmgr.cc:3384
 msgid "Missing program setxkbmap"
 msgstr "Λείπει το πρόγραμμα setxkbmap"
 
-#: src/wmmgr.cc:3378
+#: src/wmmgr.cc:3385
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

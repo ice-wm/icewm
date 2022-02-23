@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-01-20 02:36+0100\n"
+"POT-Creation-Date: 2022-02-23 19:11+0100\n"
 "PO-Revision-Date: 2021-12-06 01:27+0000\n"
 "Last-Translator: Taras Panchenko <top39@ukr.net>\n"
 "Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -81,7 +81,7 @@ msgstr "Дата"
 msgid "Default"
 msgstr "По умолчанию"
 
-#: src/aclock.cc:200 src/acpustatus.cc:687 src/amailbox.cc:964
+#: src/aclock.cc:200 src/acpustatus.cc:813 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Скрыть"
@@ -90,12 +90,18 @@ msgstr "_Скрыть"
 msgid "_UTC"
 msgstr "_UTC"
 
-#: src/acpustatus.cc:299
+#. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
+#. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
+#: src/acpustatus.cc:266
+msgid "°C"
+msgstr "°C"
+
+#: src/acpustatus.cc:448
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "Загрузка CPU%s: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:305
+#: src/acpustatus.cc:454
 #, c-format
 msgid ""
 "\n"
@@ -104,7 +110,7 @@ msgstr ""
 "\n"
 "ОЗУ (свободно): %5.3f (%.3f) ГБ"
 
-#: src/acpustatus.cc:310
+#: src/acpustatus.cc:459
 #, c-format
 msgid ""
 "\n"
@@ -113,7 +119,7 @@ msgstr ""
 "\n"
 "Swap (свободно): %.3f (%.3f) ГБ"
 
-#: src/acpustatus.cc:316
+#: src/acpustatus.cc:467
 #, c-format
 msgid ""
 "\n"
@@ -122,7 +128,7 @@ msgstr ""
 "\n"
 "Температура: "
 
-#: src/acpustatus.cc:335 src/acpustatus.cc:373
+#: src/acpustatus.cc:488 src/acpustatus.cc:526
 #, c-format
 msgid ""
 "\n"
@@ -131,15 +137,15 @@ msgstr ""
 "\n"
 "Частота CPU: %.3fГГц"
 
-#: src/acpustatus.cc:350 src/acpustatus.cc:682
+#: src/acpustatus.cc:503 src/acpustatus.cc:808
 msgid "CPU"
 msgstr "CPU"
 
-#: src/acpustatus.cc:350
+#: src/acpustatus.cc:503
 msgid "Load: "
 msgstr "Загрузка: "
 
-#: src/acpustatus.cc:365
+#: src/acpustatus.cc:518
 #, c-format
 msgid ""
 "\n"
@@ -148,22 +154,16 @@ msgstr ""
 "\n"
 "ОЗУ (пользователя): %5.3f (%.3f) ГБ"
 
-#. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
-#. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:453
-msgid "°C"
-msgstr "°C"
-
-#: src/acpustatus.cc:683
+#: src/acpustatus.cc:809
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:689
+#: src/acpustatus.cc:815
 msgid "_Combine"
 msgstr "_Скомбинировать"
 
-#: src/acpustatus.cc:691
+#: src/acpustatus.cc:817
 msgid "_Separate"
 msgstr "_Разделить"
 
@@ -1336,76 +1336,76 @@ msgstr "За справкой обратитесь к странице руко�
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Поименованные символы в домене `%s' (числовой диапазон: %ld-%ld):\n"
 
-#: src/icesh.cc:1605
+#: src/icesh.cc:1616
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Рабочее место за пределами: %ld"
 
-#: src/icesh.cc:1626
+#: src/icesh.cc:1637
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Неверное имя рабочего места: `%s'"
 
-#: src/icesh.cc:1928
+#: src/icesh.cc:1939
 msgid "GNOME window layer"
 msgstr "Уровень окна GNOME"
 
-#: src/icesh.cc:1929
+#: src/icesh.cc:1940
 msgid "IceWM tray option"
 msgstr "Опция системного лотка IceWM"
 
-#: src/icesh.cc:1930
+#: src/icesh.cc:1941
 msgid "Gravity symbols"
 msgstr "Gravity-маркеры"
 
-#: src/icesh.cc:1931
+#: src/icesh.cc:1942
 msgid "Motif functions"
 msgstr "Функции Motif"
 
-#: src/icesh.cc:1932
+#: src/icesh.cc:1943
 msgid "Motif decorations"
 msgstr "Украшения Motif"
 
-#: src/icesh.cc:1933
+#: src/icesh.cc:1944
 msgid "EWMH window state"
 msgstr "Состояние окна EWMH"
 
-#: src/icesh.cc:2015 src/icesh.cc:2088
+#: src/icesh.cc:2026 src/icesh.cc:2099
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "рабочее место #%d: `%s'\n"
 
-#: src/icesh.cc:2323 src/icesh.cc:3797 src/icesh.cc:4279
+#: src/icesh.cc:2334 src/icesh.cc:3808 src/icesh.cc:4290
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Неправильное состояние: `%s'."
 
-#: src/icesh.cc:3180
+#: src/icesh.cc:3191
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Невозможно получить геометрию окна 0x%lx"
 
-#: src/icesh.cc:3205
+#: src/icesh.cc:3216
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Невозможность Xinerama: `%s'."
 
-#: src/icesh.cc:3370 src/icesh.cc:3420
+#: src/icesh.cc:3381 src/icesh.cc:3431
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Неправильный аргумент: `%s'"
 
-#: src/icesh.cc:3386
+#: src/icesh.cc:3397
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Действие `%s' требует как минимум %d аргумента(ов)."
 
-#: src/icesh.cc:3395
+#: src/icesh.cc:3406
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Неправильное выражение: `%s'"
 
-#: src/icesh.cc:3406 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
 #: src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1413,35 +1413,35 @@ msgstr ""
 "Не могу открыть дисплей: %s. X-сервер должен быть загружен и переменная "
 "$DISPLAY установлена."
 
-#: src/icesh.cc:3522
+#: src/icesh.cc:3533
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Не предусмотрено: `%s'."
 
-#: src/icesh.cc:3551
+#: src/icesh.cc:3562
 msgid "No windows found."
 msgstr "Окна не найдены."
 
-#: src/icesh.cc:3567
+#: src/icesh.cc:3578
 msgid "No actions specified."
 msgstr "Не указано никаких действий."
 
-#: src/icesh.cc:3714
+#: src/icesh.cc:3725
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Неверный идентификатор окна: `%s'"
 
-#: src/icesh.cc:3731
+#: src/icesh.cc:3742
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Неверный PID: `%s'"
 
-#: src/icesh.cc:3767
+#: src/icesh.cc:3778
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Неправильный слой: `%s'."
 
-#: src/icesh.cc:4587
+#: src/icesh.cc:4598
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Неизвестное действие: `%s'"
@@ -2503,11 +2503,11 @@ msgstr "У '%s' вышло время!"
 msgid "'%s' produces no output"
 msgstr "%s не возвращает выходных данных"
 
-#: src/wmmgr.cc:3377
+#: src/wmmgr.cc:3384
 msgid "Missing program setxkbmap"
 msgstr "Отсутствует программа setxkbmap"
 
-#: src/wmmgr.cc:3378
+#: src/wmmgr.cc:3385
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Для переключения клавиатуры установите setxkbmap."
 

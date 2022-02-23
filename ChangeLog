@@ -1,5 +1,315 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 68f15fe2fe57dcc57847fe8b0984d07d9af5e9fe
+Merge: 842af4cd e63c67a6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Feb 23 19:09:30 2022 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit e63c67a69d567b9bfcf1ab56436e82bd1a73a677
+Merge: c8ee5c87 714b979d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Feb 23 19:08:03 2022 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 714b979de132369165830a4b6f0fd132a7eb4cd6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Feb 23 08:34:22 2022 +0100
+
+    Update keys.
+
+ man/icewm-keys.pod | 36 ++++++++++++++++++++++++++----------
+ 1 file changed, 26 insertions(+), 10 deletions(-)
+
+commit b17b5df2dccbadcaf038a99771446b87ed4b04e0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 22 22:18:00 2022 +0100
+
+    Support workspace names "next" and "prev" in icesh for issue #640.
+
+ man/icesh.pod |  6 ++++--
+ src/icesh.cc  | 15 +++++++++++++--
+ 2 files changed, 17 insertions(+), 4 deletions(-)
+
+commit 23b22a34be918d456e0d08f6610c89108b62afc1
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Feb 21 23:46:24 2022 +0100
+
+    Let CPUs share a single timer. Adjust to changes to taskBarCPUSamples.
+
+ src/acpustatus.cc | 22 ++++++++++++++++++----
+ src/acpustatus.h  |  5 ++++-
+ 2 files changed, 22 insertions(+), 5 deletions(-)
+
+commit c7fbd3ec3132ee5f916f85c72a581ff58e83b310
+Author: Antonio Simón <antonio@trans-mission.com>
+Date:   Mon Feb 21 19:41:05 2022 +0000
+
+    Translated using Weblate (Spanish)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/es.po | 133 ++++++++++++++++++++++++-----------------------------------
+ 1 file changed, 55 insertions(+), 78 deletions(-)
+
+commit 4b7916c6169fd7fbf765621f18ac5438de359c9f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Feb 21 22:44:17 2022 +0100
+
+    Share a single temperature object and free it on exit.
+
+ src/acpustatus.cc | 11 ++++++++++-
+ src/acpustatus.h  |  5 +++--
+ 2 files changed, 13 insertions(+), 3 deletions(-)
+
+commit c90772630a18dcd0e876e9b453d14ea5a61f7dbf
+Author: Gemineo <vistatec@gemineo.de>
+Date:   Mon Feb 21 16:12:00 2022 +0000
+
+    Translated using Weblate (German)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/de.po | 52 +++++++++++-----------------------------------------
+ 1 file changed, 11 insertions(+), 41 deletions(-)
+
+commit 4f1fb8da47a613181a6113cdea83055651d1d4b9
+Author: Davide Aiello <davide.aiello@novilingulists.com>
+Date:   Mon Feb 21 10:33:49 2022 +0000
+
+    Translated using Weblate (Italian)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/it.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 7a2d2c50b363f38cfd9a82fba938980d28f76985
+Author: Gemineo <vistatec@gemineo.de>
+Date:   Mon Feb 21 07:54:33 2022 +0000
+
+    Translated using Weblate (German)
+
+    Currently translated at 94.0% (486 of 517 strings)
+
+ po/de.po | 19 +++++++++----------
+ 1 file changed, 9 insertions(+), 10 deletions(-)
+
+commit 2a70667a9bd9905308bf834fb097df6ca5d44dae
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 20 19:46:38 2022 +0100
+
+    Prioritize the thermal zones when showing CPU temperature.
+
+ src/acpustatus.cc | 211 +++++++++++++++++++++++++++++++++++++-------------
+ src/acpustatus.h  |   3 +-
+ 2 files changed, 159 insertions(+), 55 deletions(-)
+
+commit d75643a3fb84dec2534402d07d401dbcbd9a1dc8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 18 19:23:43 2022 +0100
+
+    Fix format string in zh_TW to restore build.
+
+ po/zh_TW.po | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7113e67317fedcebe8926460805910da441890f4
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Feb 18 19:20:40 2022 +0100
+
+    Fix format string in zh_CN to restore build and closes #639.
+
+ po/zh_CN.po | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2e59759cdf65732a828ef0711e39dd10595f23ef
+Author: Grace Yu <grace.yu@excel-gits.com>
+Date:   Fri Feb 18 08:06:28 2022 +0000
+
+    Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/zh_TW.po | 154 ++++++++++++++++++++++++--------------------------------
+ 1 file changed, 66 insertions(+), 88 deletions(-)
+
+commit 373089cb582c0e3cfdbc7f45e20d7fb46ef16293
+Author: Davide Aiello <davide.aiello@novilingulists.com>
+Date:   Fri Feb 18 10:22:16 2022 +0000
+
+    Translated using Weblate (Italian)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/it.po | 37 +++++++++++++++++++------------------
+ 1 file changed, 19 insertions(+), 18 deletions(-)
+
+commit d5e46bd0996cc0c705b18a36ada24b69162b17da
+Author: Grace Yu <grace.yu@excel-gits.com>
+Date:   Fri Feb 18 03:27:54 2022 +0000
+
+    Translated using Weblate (Chinese (China) (zh_CN))
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/zh_CN.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit a47f37e82b4bc64cd57016c0a917198d0b88ed0d
+Author: Davide Aiello <davide.aiello@novilingulists.com>
+Date:   Thu Feb 17 13:42:39 2022 +0000
+
+    Translated using Weblate (Italian)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/it.po | 28 +++++++++++++---------------
+ 1 file changed, 13 insertions(+), 15 deletions(-)
+
+commit 3223cb333547d73684219ff5b0671e17be27834d
+Author: Gemineo <vistatec@gemineo.de>
+Date:   Wed Feb 16 09:28:58 2022 +0000
+
+    Translated using Weblate (German)
+
+    Currently translated at 94.0% (486 of 517 strings)
+
+ po/de.po | 96 ++++++++++++++++++++++++++++++++++++------------------------
+ 1 file changed, 57 insertions(+), 39 deletions(-)
+
+commit 6111dbc01cc2af4b84e79d437ac666994f07adec
+Author: Grace Yu <grace.yu@excel-gits.com>
+Date:   Wed Feb 16 05:41:04 2022 +0000
+
+    Translated using Weblate (Chinese (China) (zh_CN))
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/zh_CN.po | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5e4413e7ff0a0b35465c1ab7676e2a310b64a053
+Author: Grace Yu <grace.yu@excel-gits.com>
+Date:   Wed Feb 16 02:02:45 2022 +0000
+
+    Translated using Weblate (Chinese (China) (zh_CN))
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/zh_CN.po | 128 +++++++++++++++++++++++---------------------------------
+ 1 file changed, 52 insertions(+), 76 deletions(-)
+
+commit ccb29da7896e1b6fb5eb82c4685e10345e5b7c0f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 13 17:25:23 2022 +0100
+
+    Start a new fullscreen client in the fullscreen layer for issue
+    ice-wm/icewm#85.
+
+ src/wmmgr.cc | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 64502fa978e62a7547dc1d58f35332b184e48215
+Author: marcelo cripe <marcelocripe@gmail.com>
+Date:   Wed Feb 2 00:29:15 2022 +0000
+
+    Translated using Weblate (Portuguese (Brazil))
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/pt_BR.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 276b622a70e6165b7679b4d42d7cd79a53b35eb0
+Author: marcelo cripe <marcelocripe@gmail.com>
+Date:   Tue Feb 1 16:44:59 2022 +0000
+
+    Translated using Weblate (Portuguese (Brazil))
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/pt_BR.po | 50 +++++++++++++++++++++++++-------------------------
+ 1 file changed, 25 insertions(+), 25 deletions(-)
+
+commit 56363001922e9054bf8c0443c4bf342b937948e7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jan 31 22:36:11 2022 +0100
+
+    Lower a fullscreen window below the window which is to be activated.
+
+ src/wmframe.cc | 12 ++++++++++++
+ src/wmframe.h  |  1 +
+ 2 files changed, 13 insertions(+)
+
+commit 352cfb5407d870ff9568688aeb2a95f7f70f029c
+Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
+Date:   Wed Jan 26 12:39:12 2022 +0000
+
+    Translated using Weblate (Portuguese (Brazil))
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/pt_BR.po | 305 +++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 149 insertions(+), 156 deletions(-)
+
+commit 842af4cd556b4586747bb70002f87be670c5f467
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 20 02:41:10 2022 +0100
+
+    Prepare 2.9.5 release
+
+ AUTHORS      |  15 +-
+ ChangeLog    | 621 ++++++++++++++++++++++++++++++-------------------------
+ NEWS         | 151 +++++---------
+ README.md    |  36 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  12 +-
+ po/be.po     |  12 +-
+ po/bg.po     |  12 +-
+ po/ca.po     |  12 +-
+ po/cs.po     |  12 +-
+ po/da.po     |  12 +-
+ po/de.po     |  12 +-
+ po/el.po     |  12 +-
+ po/en.po     |  12 +-
+ po/es.po     |  12 +-
+ po/fi.po     |  12 +-
+ po/fr.po     |  12 +-
+ po/he.po     |  12 +-
+ po/hr.po     |  12 +-
+ po/hu.po     |  12 +-
+ po/icewm.pot |  14 +-
+ po/id.po     |  12 +-
+ po/it.po     |  12 +-
+ po/ja.po     |  12 +-
+ po/ko.po     |  12 +-
+ po/lt.po     |  12 +-
+ po/lv.po     |  12 +-
+ po/mk.po     |  12 +-
+ po/nb.po     |  12 +-
+ po/nl.po     |  12 +-
+ po/no.po     |  12 +-
+ po/pl.po     |  12 +-
+ po/pt.po     |  12 +-
+ po/pt_BR.po  |  12 +-
+ po/ro.po     |  12 +-
+ po/ru.po     |  12 +-
+ po/sk.po     |  12 +-
+ po/sl.po     |  12 +-
+ po/sv.po     |  12 +-
+ po/tr.po     |  12 +-
+ po/uk.po     |  12 +-
+ po/vi.po     |  12 +-
+ po/zh_CN.po  |  12 +-
+ po/zh_TW.po  |  12 +-
+ 46 files changed, 660 insertions(+), 647 deletions(-)
+
 commit 851261a0e106ae2eba8bc72803746a1ddb4d6094
 Merge: 9473665e c8ee5c87
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6043,328 +6353,3 @@ Date:   Mon Apr 12 03:09:16 2021 +0200
  src/aworkspaces.cc | 4 ++++
  src/aworkspaces.h  | 2 +-
  2 files changed, 5 insertions(+), 1 deletion(-)
-
-commit a494f37a8b59fdc748b450d6aa2cde80682f9971
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 12 02:49:16 2021 +0200
-
-    Allow button clicks where there is mouse motion between button press
-    and release for issue #575.
-
- src/atasks.cc      |  4 +++-
- src/atasks.h       |  2 +-
- src/aworkspaces.cc |  6 ++++--
- src/aworkspaces.h  |  4 +++-
- src/movesize.cc    |  5 ++++-
- src/wmbutton.cc    |  4 +++-
- src/wmbutton.h     |  2 +-
- src/wmframe.h      |  2 +-
- src/wmminiicon.cc  |  3 ++-
- src/wmminiicon.h   |  2 +-
- src/wmtitle.cc     |  6 ++++--
- src/wmtitle.h      |  2 +-
- src/ywindow.cc     | 31 +++++++++++++------------------
- src/ywindow.h      |  2 +-
- 14 files changed, 42 insertions(+), 33 deletions(-)
-
-commit 3410bc701629484b76002afe58af43fd2e92c71b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 11 14:06:45 2021 +0200
-
-    Pop down YInputMenu before deleting. Don't report focus lost when
-    popping YInputMenu.
-
- src/yinputline.cc | 19 +++++++++++++++----
- src/yinputline.h  | 13 ++++++++++---
- 2 files changed, 25 insertions(+), 7 deletions(-)
-
-commit 9d7a8d696f3f8745e44b550f559783311842263d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 11 14:06:45 2021 +0200
-
-    Repaint workspace button after editing the workspace name.
-
- src/aworkspaces.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit c6cbf56fe62efbfce58e232e398e4ca15405bcb2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 10 14:56:23 2021 +0200
-
-    Change the default value for ModSuperIsCtrlAlt from true to false to see
-    if anyone complains for issue #574.
-
- src/yprefs.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit adb82a54cb3c61a972790addaf2326072382f0c4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 10 14:53:24 2021 +0200
-
-    Support ModSuperIsCtrlAlt when testing the Super modifier in the quick
-    switch. This fixes issues #574.
-
- src/wmswitch.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 636403977060bfea0f55092c73da7c83edc591cd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:38:09 2021 +0200
-
-    Reduce the number of frame updates to only those frames visible on the
-    previous and the current workspace when changing workspace.
-
- src/WinMgr.h     |  4 ++++
- src/wmclient.cc  |  2 +-
- src/wmframe.h    |  7 ++++---
- src/wmmgr.cc     | 19 ++++++++++---------
- src/wmmgr.h      |  4 ++--
- src/wmsession.cc |  4 ++--
- 6 files changed, 23 insertions(+), 17 deletions(-)
-
-commit 965749e8ce1b7a7b6b7f5821e9d0777151b69aab
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:35:02 2021 +0200
-
-    Free the memory for the About dialog after it is closed.
-
- src/wmapp.cc | 33 ++++++++++++++++++---------------
- 1 file changed, 18 insertions(+), 15 deletions(-)
-
-commit 2a0955455096d3955fefc311b12e54d24adecd6e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:33:26 2021 +0200
-
-    Add declarations for center and become to YDialog.
-
- src/ydialog.h | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 81ff8e20dadf75a6c74a1d827578dc5b3e8f99fc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:31:54 2021 +0200
-
-    Refactor common code from dialogs to ydialog.cc. Improve layout design.
-
- src/wmabout.cc | 27 ++++++------------
- src/wmabout.h  |  4 ++-
- src/wmaction.h |  2 ++
- src/yaction.h  |  2 +-
- src/ydialog.cc | 26 ++++++++++++++++-
- src/ylayout.h  | 83 +++++++++++++++++++++++++++++++-----------------------
- src/ymsgbox.cc | 18 +++---------
- 7 files changed, 91 insertions(+), 71 deletions(-)
-
-commit b3952b79dadb8a0cd81fc3108b5cc151b72c2b10
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:27:29 2021 +0200
-
-    Add testarray as a test target to cmake test.
-
- src/CMakeLists.txt | 4 ++++
- 1 file changed, 4 insertions(+)
-
-commit 8ad5ae1c2a9c6d456fabaa0b0b85b3cd5a8a0531
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:26:55 2021 +0200
-
-    Make testarray.cc mostly silent by default.
-
- src/Makefile.am  |   6 +-
- src/testarray.cc | 180 +++++++++++++++++++++++++++++++++++----------------
- 2 files changed, 129 insertions(+), 57 deletions(-)
-
-commit 0d144609c4fb98b54a47d3ec38410cbe6202f20f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:17:20 2021 +0200
-
-    Improve removing the last element from an array. Add array pop and last.
-    Remove classes YStack and YStackSet.
-
- src/yarray.cc | 16 +++++++++++-----
- src/yarray.h  | 46 ++++++++++------------------------------------
- 2 files changed, 21 insertions(+), 41 deletions(-)
-
-commit 49a9c524306bb7dfb15425a2b45bf6d2c82edc8e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:15:56 2021 +0200
-
-    Optimize allocation of icon path strings.
-
- src/mstring.cc | 24 ++++++++++++++++++++++++
- src/mstring.h  |  3 +++
- src/yicon.cc   | 21 ++++++++++-----------
- 3 files changed, 37 insertions(+), 11 deletions(-)
-
-commit b1beaffcdb4056b33853573c2cfddae86cc91b5d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 9 21:06:14 2021 +0200
-
-    Remove unused variable textDrawn to prevent a compiler warning.
-
- src/atasks.cc | 2 --
- 1 file changed, 2 deletions(-)
-
-commit 0a54dc8864a42dadb69bc96ec09b85c2742dbb04
-Author: Tommi Nieminen <software@legisign.org>
-Date:   Fri Apr 9 09:04:53 2021 +0000
-
-    Translated using Weblate (Finnish)
-
-    Currently translated at 60.6% (286 of 472 strings)
-
- po/fi.po | 107 ++++++++++++++++++++++++++++++++++++-----------------------
- 1 file changed, 65 insertions(+), 42 deletions(-)
-
-commit 0ed7743bb8d8c41da9f0bb7571f591abd1febec4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 4 02:16:33 2021 +0200
-
-    Prepare 2.3.1 release
-
- AUTHORS      |   2 +-
- ChangeLog    | 459 ++++++++++++++++++++++++++-----------------------------
- NEWS         |  83 ++++------
- README.md    |  36 ++---
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  52 +++----
- po/be.po     |  52 +++----
- po/bg.po     |  52 +++----
- po/ca.po     |  52 +++----
- po/cs.po     |  52 +++----
- po/da.po     |  52 +++----
- po/de.po     |  52 +++----
- po/el.po     |  52 +++----
- po/en.po     |  52 +++----
- po/es.po     |  52 +++----
- po/fi.po     |  52 +++----
- po/fr.po     |  52 +++----
- po/he.po     |  52 +++----
- po/hr.po     |  52 +++----
- po/hu.po     |  52 +++----
- po/icewm.pot |  54 +++----
- po/id.po     |  52 +++----
- po/it.po     |  52 +++----
- po/ja.po     |  52 +++----
- po/ko.po     |  52 +++----
- po/lt.po     |  52 +++----
- po/lv.po     |  52 +++----
- po/mk.po     |  52 +++----
- po/nb.po     |  52 +++----
- po/nl.po     |  52 +++----
- po/no.po     |  52 +++----
- po/pl.po     |  52 +++----
- po/pt.po     |  52 +++----
- po/pt_BR.po  |  52 +++----
- po/ro.po     |  52 +++----
- po/ru.po     |  52 +++----
- po/sk.po     |  52 +++----
- po/sl.po     |  52 +++----
- po/sv.po     |  52 +++----
- po/tr.po     |  52 +++----
- po/uk.po     |  52 +++----
- po/vi.po     |  52 +++----
- po/zh_CN.po  |  52 +++----
- po/zh_TW.po  |  52 +++----
- 45 files changed, 1288 insertions(+), 1334 deletions(-)
-
-commit 7d3a58545e0a88d97e394a56ea6cf1893507d42e
-Merge: e2d41f6b 55257c59
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 4 02:10:45 2021 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 55257c595216538c0e47bf6d6b60ad5c338e2bef
-Merge: 21630b2c 0963792b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 4 02:10:13 2021 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 0963792bfd25120dfb1c39aa5c80c0a92a8f3976
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 19:46:45 2021 +0200
-
-    Support different ways to indicate TaskBarTaskGrouping and closes #565.
-
- man/icewm-preferences.pod |  2 +
- src/atasks.cc             | 92 +++++++++++++++++++++++++++++++------------
- src/atasks.h              |  8 ++--
- src/default.h             |  4 +-
- src/wmframe.cc            |  2 +-
- 5 files changed, 76 insertions(+), 32 deletions(-)
-
-commit aa1d6da2437d107be5780be4fd32d6dbaf25df94
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 19:46:45 2021 +0200
-
-    Support drawing rounded rectangles.
-
- src/ypaint.cc | 8 ++++----
- src/ypaint.h  | 2 +-
- 2 files changed, 5 insertions(+), 5 deletions(-)
-
-commit 8c4140b61f8516c52928b9733265962fbe354577
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 18:04:09 2021 +0200
-
-    Avoid iterating over an empty array in MStringArray::begin() for #571.
-
- src/yarray.h | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
-
-commit 0177b3463464ae2ee2fa7b5ef8e4dbb26486089b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 13:28:49 2021 +0200
-
-    Repaint the background when icewm restarts to evade bug in X server.
-
- src/icewmbg.cc | 5 +++++
- 1 file changed, 5 insertions(+)
-
-commit 2ebd2428b0cf29f6a06da4f10ea4952bb5c405f3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 12:34:23 2021 +0200
-
-    Drop wmMoveToWorkspace.
-
- src/wmframe.cc | 6 +-----
- src/wmframe.h  | 1 -
- 2 files changed, 1 insertion(+), 6 deletions(-)
-
-commit 931e69a493a455ca30601f1b562627fa3a5ef043
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 12:34:07 2021 +0200
-
-    Fix for submenus when switching themes for issue #571 and #572.
-
- src/objmenu.h | 2 +-
- src/ymenu.cc  | 4 ++--
- 2 files changed, 3 insertions(+), 3 deletions(-)
-
-commit 4606871aaa408f285170df1d81fde56c1d6e071c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 02:10:00 2021 +0200
-
-    Enable iteration over a switchkey menu.
-
- src/wmprog.cc | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
-
-commit 1dc3e781eb4d984f094a1e8f132d70ced01bdfb6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 3 00:31:01 2021 +0200
-
-    Prefer for-each loops when iterating over resource paths.
-
- src/aworkspaces.cc |  6 +++---
- src/browse.cc      |  9 +++------
- src/wmapp.cc       |  6 +++---
- src/wpixres.cc     | 42 ++++++++++++++++++++----------------------
- src/yicon.cc       | 22 ++++++++--------------
- src/ypaths.cc      | 33 +++++++++++++--------------------
- src/ypaths.h       | 22 ++++++++--------------
- 7 files changed, 58 insertions(+), 82 deletions(-)

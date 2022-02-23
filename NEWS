@@ -1,11 +1,58 @@
-icewm -- history of user-visible changes.  2022-01-20
+icewm -- history of user-visible changes.  2022-02-23
+
+Release icewm-2.9.6 released 2022-02-23
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.9.5...2.9.6
+
+Bert Gijsbers <gijsbers@science.uva.nl> (11):
+      Lower a fullscreen window below the window which is to be activated.
+      Start a new fullscreen client in the fullscreen layer for issue
+        ice-wm/icewm#85.
+      Fix format string in zh_CN to restore build and closes #639.
+      Fix format string in zh_TW to restore build.
+      Prioritize the thermal zones when showing CPU temperature.
+      Share a single temperature object and free it on exit.
+      Let CPUs share a single timer. Adjust to changes to taskBarCPUSamples.
+      Support workspace names "next" and "prev" in icesh for issue #640.
+      Update keys.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Grace Yu <grace.yu@excel-gits.com> (4):
+      Translated using Weblate (Chinese (China) (zh_CN))
+      Translated using Weblate (Chinese (China) (zh_CN))
+      Translated using Weblate (Chinese (China) (zh_CN))
+      Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+Davide Aiello <davide.aiello@novilingulists.com> (3):
+      Translated using Weblate (Italian)
+      Translated using Weblate (Italian)
+      Translated using Weblate (Italian)
+
+Gemineo <vistatec@gemineo.de> (3):
+      Translated using Weblate (German)
+      Translated using Weblate (German)
+      Translated using Weblate (German)
+
+marcelo cripe <marcelocripe@gmail.com> (2):
+      Translated using Weblate (Portuguese (Brazil))
+      Translated using Weblate (Portuguese (Brazil))
+
+Antonio Simón <antonio@trans-mission.com> (1):
+      Translated using Weblate (Spanish)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
 
 Release icewm-2.9.5 released 2022-01-20
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.9.4...2.9.5
 
-Bert Gijsbers <gijsbers@science.uva.nl> (15):
+Bert Gijsbers <gijsbers@science.uva.nl> (16):
       Fix Arabic translation.
       On startup don't switch workspace to activate a fullscreen window.
       When a fullscreen disappears, update the taskbar layer.
@@ -27,6 +74,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (15):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.9.5 release
 
 Eduard Bloch <blade@debian.org> (1):
       Work around trailers to zero-terminated strings
@@ -371,86 +419,4 @@ Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
 
 wallon <franckjl@hotmail.com> (1):
       Translated using Weblate (French)
-
-
-Release icewm-2.8.0 released 2021-10-04
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.7.0...2.8.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (28):
-      Fix overflows in battery calculations for issue #607. Change defines to
-        enums. Use longs for capacity numbers.
-      Prevent a pedantic warning for netDevice.
-      Fix typo in sizeby description.
-      Update date and version number to 2.7.0.
-      Fix potential trailing -I flag for issue ice-wm/icewm#57.
-      Move SVG loader in a dedicated source file.  Only support SVG for icons,
-        not for icewmbg backgrounds. Let icewmbg pixmaps free its associated
-        Image to reduce memory usage.
-      Include string.h in ysvg.cc to fix build for some.
-      Improve filtering on WM_CLASS property in icesh.
-      Update pot files.
-      Include yimage.h for gdk-pixbuf.
-      Add +group and +Class select options to icesh.
-      In the window list window group similar application windows together.
-      Improve performance and scalability of the window list menu.
-      Update to pt_BR.po by marcelocripe and closes ice-wm/icewm#60.
-      Add yimage2.h.
-      Remove obsolete Makefile.os2.
-      Remove obsolete preferences.xml.
-      Guard against a color name being set to the empty string for issue #614.
-      Explain how to spy on client messages.
-      Update winoptions example on DockApps.
-      Update potfiles.
-      Clarify some preferences.
-      Clarify MailBoxPath.
-      When rearranging windows with tile placement, cascade placement, correct
-        for the top side vertical offset, in those themes which have a masked
-        top border.
-      Improve the explanation on how to spy on client messages.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.8.0 release
-
-marcelo cripe <marcelocripe@gmail.com> (5):
-      Translated using Weblate (Portuguese (Brazil))
-      Translated using Weblate (Portuguese (Brazil))
-      Translated using Weblate (Portuguese (Brazil))
-      Translated using Weblate (Portuguese (Brazil))
-      Translated using Weblate (Portuguese (Brazil))
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (3):
-      Translated using Weblate (Portuguese)
-      Translated using Weblate (Portuguese)
-      Translated using Weblate (Portuguese)
-
-Henrik Tunedal <tunedal@gmail.com> (2):
-      Fix OSS/ALSA defaults in icesound man page (#608)
-      Fix OSS/ALSA defaults in icesound help message (#609)
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Efstathios Iosifidis <eiosifidis@gmail.com> (1):
-      Translated using Weblate (Greek)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 
