@@ -36,11 +36,12 @@ public:
     void updateStatus();
     void getStatus();
     void getStatusPlatform();
-    int getAcpiTemp(char* tempbuf, int buflen);
+    int getAcpiTemp(char* tempbuf, int buflen, bool best = true);
     float getCpuFreq(int cpu);
     int getCpuID() const { return fCpuID; }
     virtual void updateToolTip();
     static void freeFont() { tempFont = null; }
+    static void freeTemp();
 
 private:
     int fCpuID;
@@ -49,7 +50,6 @@ private:
     YMulti<cpubytes> cpu;
     cpubytes last_cpu[IWM_STATES];
     YColorName color[IWM_STATES];
-    lazy<YTimer> fUpdateTimer;
     CPUStatusHandler *fHandler;
     YColorName fTempColor;
 
@@ -59,16 +59,18 @@ private:
     void temperature(Graphics& g);
 
     static YFont tempFont;
+    static class YTemp* fTemp;
 };
 
 class CPUStatusControl : private CPUStatusHandler, public YActionListener
+                       , private YTimerListener
 {
 public:
     typedef YObjectArray<CPUStatus> ArrayType;
     typedef ArrayType::IterType IterType;
 
     CPUStatusControl(YSMListener *smActionListener, IAppletContainer *iapp, YWindow *aParent);
-    virtual ~CPUStatusControl() { CPUStatus::freeFont(); }
+    virtual ~CPUStatusControl() { CPUStatus::freeFont(); CPUStatus::freeTemp(); }
 
     IterType getIterator() { return fCPUStatus.iterator(); }
 
@@ -76,15 +78,18 @@ private:
     void GetCPUStatus(bool combine);
 
     virtual void actionPerformed(YAction action, unsigned int modifiers);
+    virtual bool handleTimer(YTimer* timer);
     virtual void handleClick(const XButtonEvent &up, int cpu);
     virtual void runCommandOnce(const char *resource, const char *cmdline);
 
     YSMListener *smActionListener;
     IAppletContainer *iapp;
     YWindow *aParent;
+    YTimer fUpdateTimer;
     ArrayType fCPUStatus;
     osmart<YMenu> fMenu;
     int fMenuCPU;
+    int fSamples;
     long fPid;
 };
 
