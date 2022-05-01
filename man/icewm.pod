@@ -1,14 +1,14 @@
 =pod
 
-=head1 NAME
+=head2 NAME
 
  icewm - lightweight X11 window manager
 
-=head1 SYNOPSIS
+=head2 SYNOPSIS
 
 B<icewm> [I<OPTIONS>]
 
-=head1 DESCRIPTION
+=head2 DESCRIPTION
 
 B<icewm> is a window manager for the X11 window system.
 It aims to be small, fast and familiar to new users.
@@ -96,7 +96,7 @@ Configures GNOME to start IceWM instead of its own WM.
 
 =back
 
-=head1 OPTIONS
+=head2 OPTIONS
 
 =head2 COMMON OPTIONS
 
@@ -115,9 +115,9 @@ which can be modified with the help of a text editor.
 Use I<NAME> as the name of the B<icewm> theme to use.  A theme defines
 the look and feel of B<icewm>, like colors, fonts and buttons.
 
-=item B<--display>=I<DISPLAY>
+=item B<-d>, B<--display>=I<DISPLAY>
 
-I<DISPLAY> specifies the connection to the X11 server.  By default
+Connect to the X11 server on I<DISPLAY>.  By default
 the environment variable C<DISPLAY> is used.
 
 =item B<--sync>
@@ -204,7 +204,7 @@ fonts, icons, executed programs, and/or system tray applets.
 
 =back
 
-=head1 USAGE
+=head2 USAGE
 
 =head2 TASKBAR
 
@@ -610,8 +610,9 @@ will be shown. Otherwise the first two letters of the name of the
 layout will be shown.
 
 Click on the current keyboard layout to cycle through all the
-available keyboard layouts. Click with the right mouse button
-to open a menu of all available keyboard layouts.
+available keyboard layouts, or use the B<KeySysKeyboardNext> key.
+Click with the right mouse button to open a menu of all available
+keyboard layouts.
 
 It is also possible to configure a default keyboard layout for
 each program individually in the L<icewm-winoptions(5)> file.
@@ -956,6 +957,10 @@ left.
 
 Shows the window list menu.
 
+=item B<KeySysKeyboardNext>=C<undefined>
+
+Switch to the next keyboard layout in the KeyboardLayouts list.
+
 =item B<KeySysSwitchNext>=C<Alt+Tab>
 
 Opens the C<QuickSwitch> popup (see L<INPUT FOCUS>)
@@ -1020,7 +1025,7 @@ window list (C<DesktopWinListButton=2>).  The right button shows the
 root menu (C<DesktopMenuButton=3>). If you press C<Ctrl+Alt> then
 the mouse wheel will focus all applications in turn.
 
-=head1 SIGNALS
+=head2 SIGNALS
 
 B<icewm> supports the following signals:
 
@@ -1045,7 +1050,7 @@ Toggle the logging of X11 events, if C<logevents> was configured.
 
 =back
 
-=head1 ENVIRONMENT VARIABLES
+=head2 ENVIRONMENT VARIABLES
 
 =over
 
@@ -1071,7 +1076,7 @@ precedence.
 
 =back
 
-=head1 FILES
+=head2 FILES
 
 =head2 CONFIGURATION DIRECTORIES
 
@@ -1322,18 +1327,18 @@ are I<DIALOG>, I<NOTIFICATION>, I<POPUP_MENU> and I<TOOLTIP>. The output
 of C<icesh windows> shows their WM_CLASS values. These can be helpful
 to configure compton.
 
-=head1 EXAMPLES
+=head2 EXAMPLES
 
 Examples of the above configuration files can be found in the default
 installation path or in the system-wide defaults.  See the output of
 C<icewm --directories> for their locations.
 
-=head1 CONFORMING TO
+=head2 CONFORMING TO
 
 ICCCM 2.0: partial.  NetWM/EWMH: extensive.
 See the file F<COMPLIANCE> in the distribution for full details.
 
-=head1 SEE ALSO
+=head2 SEE ALSO
 
 L<icehelp(1)>,
 L<icesh(1)>,
@@ -1364,17 +1369,17 @@ L<xprop(1)>,
 L<xwininfo(1)>,
 L<wmctrl(1)>.
 
-=head1 BUGS
+=head2 BUGS
 
 Please report bugs at L<https://github.com/bbidulock/icewm/issues>.
 
-=head1 AUTHOR
+=head2 AUTHOR
 
 Brian Bidulock L<mailto:bidulock@openss7.org>.
 
 See B<--copying> for full copyright notice and copying permissions.
 
-=head1 LICENSE
+=head2 LICENSE
 
 B<IceWM> is licensed under the GNU Library General Public License.
 See the F<COPYING> file in the distribution or use the B<--copying> flag
