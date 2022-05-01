@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.21pre1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
+"POT-Creation-Date: 2022-05-02 00:41+0200\n"
 "PO-Revision-Date: 2016-08-25 08:19+0000\n"
 "Last-Translator: Hoàng Phạm <pnhoang96@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.opensuse.org/projects/icewm/"
@@ -1445,8 +1445,8 @@ msgstr "Hành động `%s' yêu cầu ít nhất %d tham số."
 msgid "Invalid expression: `%s'"
 msgstr "Biểu thức không hợp lệ: `%s'."
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
-#: src/yxapp.cc:1035
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
+#: src/wmapp.cc:1203 src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Không mở được màn hình: %s. Cần chạy X và đặt biến $DISPLAY."
@@ -1849,12 +1849,12 @@ msgstr ""
 " center:0 scaled:0 = kiểu lát gạch\n"
 " center:1 scaled:1 = giữ tỉ lệ nền\n"
 
-#: src/icewmbg.cc:1058 src/wmapp.cc:1782
+#: src/icewmbg.cc:1106 src/wmapp.cc:1782
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Tuỳ chọn không xác định: %s\n"
 
-#: src/icewmbg.cc:1085
+#: src/icewmbg.cc:1136
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2324,12 +2324,12 @@ msgstr "Hành động không xác định: `%s'"
 msgid "Unable to create directory %s"
 msgstr "Lỗi khi tạo tiến trình con: %s"
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr ""
 
-#: src/wmconfig.cc:184 src/wmsave.cc:305
+#: src/wmconfig.cc:184 src/wmsave.cc:306
 #, fuzzy, c-format
 msgid "Unable to rename %s to %s"
 msgstr "Lỗi khi mở %s: %s"
@@ -2434,11 +2434,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3390
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3391
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

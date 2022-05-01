@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sl\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
+"POT-Creation-Date: 2022-05-02 00:41+0200\n"
 "PO-Revision-Date: 2004-10-03 21:56+0200\n"
 "Last-Translator: Jernej Kovacic <jkovacic AT email DOT si>\n"
 "Language-Team: Slovenian <translator-team-sl@lists.sourceforge.net>\n"
@@ -1419,8 +1419,8 @@ msgstr "Dejanje `%s' zahteva vsaj %d argumentov."
 msgid "Invalid expression: `%s'"
 msgstr "Neveljaven izraz: `%s'"
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
-#: src/yxapp.cc:1035
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
+#: src/wmapp.cc:1203 src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1823,12 +1823,12 @@ msgstr ""
 " DesktopTransparencyColor - Barva oznanitve polprosojnih oken\n"
 " DesktopTransparencyImage - Slika oznanitve polprosojnih oken\n"
 
-#: src/icewmbg.cc:1058 src/wmapp.cc:1782
+#: src/icewmbg.cc:1106 src/wmapp.cc:1782
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Neprepoznana izbira: %s\n"
 
-#: src/icewmbg.cc:1085
+#: src/icewmbg.cc:1136
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2299,12 +2299,12 @@ msgstr "Neznano dejanje: `%s'"
 msgid "Unable to create directory %s"
 msgstr "Neuspešna izdelava procesa potomca: %s"
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr ""
 
-#: src/wmconfig.cc:184 src/wmsave.cc:305
+#: src/wmconfig.cc:184 src/wmsave.cc:306
 #, fuzzy, c-format
 msgid "Unable to rename %s to %s"
 msgstr "Neuspešno odpiranje %s: %s"
@@ -2410,11 +2410,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3390
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3391
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

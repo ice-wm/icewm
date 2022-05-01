@@ -1,5 +1,337 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 5bd1082a493be203358ca5af7e2a687a85b9c245
+Merge: 3cb28f60 9dd5a5aa
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 2 00:40:29 2022 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 9dd5a5aae0eab5fc9bea5fb424b4d28d415e8a24
+Merge: e63c67a6 6db922b6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 2 00:38:47 2022 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 6db922b6a7582e4e06fd8568739fc0e638454ea3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 1 12:34:23 2022 +0200
+
+    Fix for saving keyboard layouts in --rewrite-preferences.
+
+ src/wmsave.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit afaa5192a49472e5c692c1c9cfa55952431f90b9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 1 00:49:51 2022 +0200
+
+    Faster and more reliable restart of icewmbg.
+
+ src/icewmbg.cc      | 73 +++++++++++++++++++++++++++++++++++++++++--------
+ src/icewmbg_prefs.h |  2 +-
+ 2 files changed, 63 insertions(+), 12 deletions(-)
+
+commit 7f02ed5a4da7a156edd2f6e4768eb0f655cec6dd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 1 00:48:46 2022 +0200
+
+    Add themable ColorKeyboardLayoutText.
+
+ man/icewm-preferences.pod | 6 +++++-
+ src/akeyboard.cc          | 2 +-
+ src/themable.h            | 4 +++-
+ 3 files changed, 9 insertions(+), 3 deletions(-)
+
+commit 54224aac565f48f94550827670ab69a6dd1dcf91
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Apr 22 23:39:57 2022 +0200
+
+    Add KeySysKeyboardNext to switch to next keyboard layout for issue
+    ice-wm/icewm#90.
+
+ man/icewm.pod | 9 +++++++--
+ src/bindkey.h | 2 ++
+ src/default.h | 1 +
+ src/wmmgr.cc  | 6 ++++++
+ 4 files changed, 16 insertions(+), 2 deletions(-)
+
+commit a5052c7f2273b23c5b34a1e28c985239545f075e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Apr 22 23:38:19 2022 +0200
+
+    Use the ColorClockText for keyboard status for issue ice-wm/icewm#90.
+
+ src/akeyboard.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d9b093e7172da49c86ad56e725deeeea585c0443
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Apr 19 18:25:42 2022 +0200
+
+    Document alternative keypad handling in icewm-keys(1).
+
+ man/icewm-keys.pod | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit a27a9db8eba708247cd904ee73b4d700a298a103
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Apr 19 18:24:38 2022 +0200
+
+    Handle right-to-left languages in icewm-menu-fdo.
+
+ src/fdomenu.cc | 34 ++++++++++++++++++++++++++++++----
+ 1 file changed, 30 insertions(+), 4 deletions(-)
+
+commit a1aa0dc479f89e07debafae7c8bd06017a130b2e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Apr 19 09:47:02 2022 +0200
+
+    Check if the case insensitive GenericName is not in the Name field,
+    for issue #646.
+
+ src/fdomenu.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c2cabaeb3829a813001e1f01ee01fd51c5b26e4d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 18 00:00:12 2022 +0200
+
+    Update help usage for icewm-menu-fdo.
+
+ src/fdomenu.cc | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+commit f15a1a0906869059942e95d4eea2393e1ddbac38
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 17 23:48:25 2022 +0200
+
+    Prefer head2 over head1 in pod files.
+
+ man/icehelp.pod            | 16 ++++++++--------
+ man/icesh.pod              | 26 +++++++++++++-------------
+ man/icesound.pod           | 18 +++++++++---------
+ man/icewm-env.pod          | 18 +++++++++---------
+ man/icewm-focus_mode.pod   | 18 +++++++++---------
+ man/icewm-keys.pod         | 18 +++++++++---------
+ man/icewm-menu-fdo.pod     | 28 ++++++++++++++--------------
+ man/icewm-menu-xrandr.pod  | 16 ++++++++--------
+ man/icewm-menu.pod         | 18 +++++++++---------
+ man/icewm-preferences.pod  | 18 +++++++++---------
+ man/icewm-prefoverride.pod | 14 +++++++-------
+ man/icewm-programs.pod     | 18 +++++++++---------
+ man/icewm-session.pod      | 20 ++++++++++----------
+ man/icewm-set-gnomewm.pod  | 14 +++++++-------
+ man/icewm-shutdown.pod     | 14 +++++++-------
+ man/icewm-startup.pod      | 16 ++++++++--------
+ man/icewm-theme.pod        | 18 +++++++++---------
+ man/icewm-toolbar.pod      | 18 +++++++++---------
+ man/icewm-winoptions.pod   | 20 ++++++++++----------
+ man/icewm.pod              | 28 ++++++++++++++--------------
+ man/icewmbg.pod            | 20 ++++++++++----------
+ man/icewmhint.pod          | 18 +++++++++---------
+ man/icewmtray.pod          | 18 +++++++++---------
+ 23 files changed, 215 insertions(+), 215 deletions(-)
+
+commit d188e71fe5766376760a1af4f9e7be4c8a078928
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 17 20:13:28 2022 +0200
+
+    Add -g,--generic and -o,--output options to icewm-menu-fdo for issue
+    #646. Document all icewm-menu-fdo options.
+
+ man/icewm-menu-fdo.pod |  65 ++++++++++++++++----
+ man/icewm-menu.pod     |   3 +-
+ man/icewm.pod          |   4 +-
+ src/fdomenu.cc         | 149 ++++++++++++++++++++++++++-------------------
+ 4 files changed, 142 insertions(+), 79 deletions(-)
+
+commit aee432cf32c3a67dd431202a73af50501270df68
+Author: Jan Papež <honyczek@centrum.cz>
+Date:   Wed Apr 6 20:37:34 2022 +0000
+
+    Translated using Weblate (Czech)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/cs.po | 42 ++++++++++++++++++++----------------------
+ 1 file changed, 20 insertions(+), 22 deletions(-)
+
+commit 311144a2d19c19d8024bb70ee741686276a7dc21
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 26 14:29:08 2022 +0100
+
+    Fix format string in da.po.
+
+ po/da.po | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7f545ab8b5412c8bae637a28501ee7e6dd68ad1b
+Author: Alexander Mortensen <Mortensen.alexander@gmail.com>
+Date:   Wed Mar 23 16:35:25 2022 +0000
+
+    Translated using Weblate (Danish)
+
+    Currently translated at 99.8% (516 of 517 strings)
+
+ po/da.po | 181 +++++++++++++++++++++++------------------------------------
+ 1 file changed, 71 insertions(+), 110 deletions(-)
+
+commit 21b4def2ffc7f83d4ccc724ab8b3d9774ed03792
+Author: Alexander Mortensen <Mortensen.alexander@gmail.com>
+Date:   Wed Mar 23 16:12:39 2022 +0000
+
+    Translated using Weblate (Danish)
+
+    Currently translated at 90.1% (466 of 517 strings)
+
+ po/da.po | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit a6aa10b27cfae56c12894c3d662966a950c93b09
+Author: Sergey Mashkov <cy6ergn0m@gmail.com>
+Date:   Tue Mar 15 23:20:16 2022 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/ru.po | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+commit a4a6ab11395242aeee6e13bbcfec824f53ff412d
+Author: Tommi Nieminen <software@legisign.org>
+Date:   Thu Mar 10 13:03:01 2022 +0000
+
+    Translated using Weblate (Finnish)
+
+    Currently translated at 86.0% (445 of 517 strings)
+
+ po/fi.po | 346 +++++++++++++++++++++++++++--------------------------------
+ 1 file changed, 158 insertions(+), 188 deletions(-)
+
+commit efab2afcd4509e1cb8af4fb60a5e2d7b3b5bcd50
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Sat Mar 5 13:41:32 2022 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/tr.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 271af0b874a6b96ffe69a8e7a350001ff827125a
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Sat Mar 5 08:06:17 2022 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/tr.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit ffc40dda8be478bc397d9fbc480fdfda62a999ab
+Author: Tommi Nieminen <software@legisign.org>
+Date:   Fri Mar 4 09:00:06 2022 +0000
+
+    Translated using Weblate (Finnish)
+
+    Currently translated at 55.5% (287 of 517 strings)
+
+ po/fi.po | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+commit c822e186f4785be738a816c8f4ce27a6ee9dbcf6
+Author: Gemineo <vistatec@gemineo.de>
+Date:   Fri Mar 4 11:11:33 2022 +0000
+
+    Translated using Weblate (German)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/de.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 5d26d18ebbfbf14914cb3f261ab91e590a1f9bf0
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Tue Mar 1 17:40:56 2022 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/tr.po | 118 ++++++++++++++++++++++++++++-------------------------------
+ 1 file changed, 55 insertions(+), 63 deletions(-)
+
+commit e021b213612edcdcf9244fc60881dff0e4eff80b
+Author: Sophie Leroy <sophie@stoquart.com>
+Date:   Wed Feb 23 16:53:53 2022 +0000
+
+    Translated using Weblate (French)
+
+    Currently translated at 100.0% (517 of 517 strings)
+
+ po/fr.po | 42 ++++++++++++++++++++----------------------
+ 1 file changed, 20 insertions(+), 22 deletions(-)
+
+commit 3cb28f607e2d817833c55ad891a1501432bcc82d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Feb 23 19:19:26 2022 +0100
+
+    Prepare 2.9.6 release
+
+ AUTHORS      |  14 +-
+ ChangeLog    | 635 +++++++++++++++++++++++++++----------------------------
+ NEWS         | 134 +++++-------
+ README.md    |  36 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  88 ++++----
+ po/be.po     |  88 ++++----
+ po/bg.po     |  88 ++++----
+ po/ca.po     |  88 ++++----
+ po/cs.po     |  88 ++++----
+ po/da.po     |  88 ++++----
+ po/de.po     | 102 ++++-----
+ po/el.po     |  88 ++++----
+ po/en.po     |  88 ++++----
+ po/es.po     | 106 +++++-----
+ po/fi.po     |  88 ++++----
+ po/fr.po     |  88 ++++----
+ po/he.po     |  88 ++++----
+ po/hr.po     |  88 ++++----
+ po/hu.po     |  88 ++++----
+ po/icewm.pot |  90 ++++----
+ po/id.po     |  88 ++++----
+ po/it.po     | 130 ++++++------
+ po/ja.po     |  88 ++++----
+ po/ko.po     |  88 ++++----
+ po/lt.po     |  88 ++++----
+ po/lv.po     |  88 ++++----
+ po/mk.po     |  88 ++++----
+ po/nb.po     |  88 ++++----
+ po/nl.po     |  88 ++++----
+ po/no.po     |  88 ++++----
+ po/pl.po     |  88 ++++----
+ po/pt.po     |  88 ++++----
+ po/pt_BR.po  | 118 +++++------
+ po/ro.po     |  88 ++++----
+ po/ru.po     |  88 ++++----
+ po/sk.po     |  88 ++++----
+ po/sl.po     |  88 ++++----
+ po/sv.po     |  88 ++++----
+ po/tr.po     |  88 ++++----
+ po/uk.po     |  88 ++++----
+ po/vi.po     |  88 ++++----
+ po/zh_CN.po  |  98 ++++-----
+ po/zh_TW.po  |  98 ++++-----
+ 46 files changed, 2171 insertions(+), 2220 deletions(-)
+
 commit 68f15fe2fe57dcc57847fe8b0984d07d9af5e9fe
 Merge: 842af4cd e63c67a6
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5999,357 +6331,3 @@ Date:   Mon Apr 26 22:08:27 2021 +0000
 
  po/ja.po | 23 +++++++----------------
  1 file changed, 7 insertions(+), 16 deletions(-)
-
-commit 250adff966effedb0024231de5fce382ef5e89a1
-Author: Guillaume GARDET <guillaume.gardet@opensuse.org>
-Date:   Mon Apr 26 18:38:49 2021 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (473 of 473 strings)
-
- po/fr.po | 43 +++++++++++++++++--------------------------
- 1 file changed, 17 insertions(+), 26 deletions(-)
-
-commit 64c5c51008c2a91836c916ce40d9b0b1becfa91c
-Author: David Medina <medipas@gmail.com>
-Date:   Mon Apr 26 18:14:13 2021 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (473 of 473 strings)
-
- po/ca.po | 67 ++++++++++++++++++++++++++----------------------------------
- 1 file changed, 29 insertions(+), 38 deletions(-)
-
-commit 3410d3b4b39d6c490f28d6f6b513c9a9781068af
-Merge: 154d649d c58040d8
-Author: openSUSE Weblate <weblate-noreply@opensuse.org>
-Date:   Mon Apr 26 17:30:54 2021 +0000
-
-    Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
-
-commit c58040d87234f7b63c3189ed43c5fa79c4362999
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Mon Apr 26 16:32:37 2021 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (472 of 472 strings)
-
- po/sk.po | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
-
-commit 154d649db266941052e2ed08fc379a2c4e361047
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 26 19:30:41 2021 +0200
-
-    make update-po
-
- po/ar.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/be.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/bg.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/ca.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/cs.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/da.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/de.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/el.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/en.po     | 168 ++++++++++++++++++++++++++------------------------
- po/es.po     | 185 +++++++++++++++++++++++++++++--------------------------
- po/fi.po     | 176 ++++++++++++++++++++++++++--------------------------
- po/fr.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/he.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/hr.po     | 168 ++++++++++++++++++++++++++------------------------
- po/hu.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/icewm.pot | 170 ++++++++++++++++++++++++++------------------------
- po/id.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/it.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/ja.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/ko.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/lt.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/lv.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/mk.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/nb.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/nl.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/no.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/pl.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/pt.po     | 177 ++++++++++++++++++++++++++++------------------------
- po/pt_BR.po  | 181 ++++++++++++++++++++++++++++-------------------------
- po/ro.po     | 168 ++++++++++++++++++++++++++------------------------
- po/ru.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/sk.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/sl.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/sv.po     | 181 ++++++++++++++++++++++++++++-------------------------
- po/tr.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/uk.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/vi.po     | 172 ++++++++++++++++++++++++++-------------------------
- po/zh_CN.po  | 181 ++++++++++++++++++++++++++++-------------------------
- po/zh_TW.po  | 181 ++++++++++++++++++++++++++++-------------------------
- 39 files changed, 3581 insertions(+), 3279 deletions(-)
-
-commit 23f0f10590b3f336def6285fe29dbca13be807bb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 26 19:28:53 2021 +0200
-
-    Add new icewm option --rewrite-preferences to update preferences.
-
- man/icewm.pod      |  12 +-
- src/CMakeLists.txt |   2 +-
- src/Makefile.am    |   2 +
- src/wmapp.cc       |  12 +-
- src/wmconfig.cc    | 136 +++++++++++++++++++++
- src/wmconfig.h     |   1 +
- src/wmpref.cc      | 249 +-------------------------------------
- src/wmpref.h       |  21 ----
- src/wmsave.cc      | 323 +++++++++++++++++++++++++++++++++++++++++++++++++
- src/wmsave.h       |  36 ++++++
- src/yaction.h      |   6 +-
- src/yconfig.cc     |  31 ++++-
- src/yconfig.h      |  23 ++--
- 13 files changed, 567 insertions(+), 287 deletions(-)
-
-commit 1d0fe7bc23ff7f38f5fe2bda34a417ac3e52b736
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 26 01:14:41 2021 +0200
-
-    Improve documentation for options for Super/Windows key modifiers.
-
- man/icewm-preferences.pod | 11 ++++++++---
- src/default.h             |  6 +++---
- 2 files changed, 11 insertions(+), 6 deletions(-)
-
-commit d04adb3166ae7b27b95d51c47af368ed8595c4bd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 25 23:35:53 2021 +0200
-
-    Make the modifiers dependent on the type of QuickSwitch: either from
-    the Alt+Tab
-    or from the "switchkey" keyword for issue #583.
-
- src/wmprog.cc   | 15 +++++++++++----
- src/wmswitch.cc | 10 +++++++---
- src/wmswitch.h  |  1 +
- 3 files changed, 19 insertions(+), 7 deletions(-)
-
-commit da8fedb33ae42ee8aca3545c77c13d875ccdda1b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 24 15:28:17 2021 +0200
-
-    Don't reorder focus when Alt+Tabbing for issue #579.
-
- src/wmswitch.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 2df4083bfb52051d3f00716ef821bd9b028cc827
-Author: Panwar <caspian7pena@gmail.com>
-Date:   Thu Apr 22 14:41:10 2021 +0000
-
-    Translated using Weblate (Hindi)
-
-    Currently translated at 25.1% (85 of 338 strings)
-
- po/hi.po | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit 46db04944f3afa03af72d787063fae7d9d2616d3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Apr 20 01:07:51 2021 +0200
-
-    Defer loading internationalized help text until required.
-
- src/base.h       |  5 +++--
- src/genpref.cc   | 10 ++++++++--
- src/icesh.cc     |  2 +-
- src/icewmhint.cc |  2 +-
- src/misc.cc      | 15 ++++++++++-----
- 5 files changed, 23 insertions(+), 11 deletions(-)
-
-commit ed1b3058ad1a0be3e22fe51440f716d5925645c4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Apr 20 00:50:18 2021 +0200
-
-    Add support for conditional expressions to icesh.
-
- man/icesh.pod |  39 ++++++++
- src/icesh.cc  | 266 +++++++++++++++++++++++++++++++++++-------------------
- 2 files changed, 213 insertions(+), 92 deletions(-)
-
-commit 7c38247ded0cc53922eba86cdd15e6ff192ae160
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 16 16:03:42 2021 +0200
-
-    Add a toggle option "^" to the "netState" command for issue #580.
-
- man/icesh.pod | 22 +++++++++++++++++++++-
- src/icesh.cc  | 23 +++++++++++++++++++++--
- 2 files changed, 42 insertions(+), 3 deletions(-)
-
-commit 9175263b5cc9845460c9ecb35f8012ce0db635a2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 15 01:35:37 2021 +0200
-
-    Prepare 2.3.2 release
-
- AUTHORS      |   4 +-
- ChangeLog    | 705 +++++++++++++++++++++++++++----------------------------
- NEWS         |  82 ++++---
- README.md    |  36 +--
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  62 ++---
- po/be.po     |  62 ++---
- po/bg.po     |  62 ++---
- po/ca.po     |  62 ++---
- po/cs.po     |  62 ++---
- po/da.po     |  62 ++---
- po/de.po     |  62 ++---
- po/el.po     |  62 ++---
- po/en.po     |  62 ++---
- po/es.po     |  62 ++---
- po/fi.po     |  66 +++---
- po/fr.po     |  62 ++---
- po/he.po     |  62 ++---
- po/hr.po     |  62 ++---
- po/hu.po     |  62 ++---
- po/icewm.pot |  64 ++---
- po/id.po     |  62 ++---
- po/it.po     |  62 ++---
- po/ja.po     |  62 ++---
- po/ko.po     |  62 ++---
- po/lt.po     |  62 ++---
- po/lv.po     |  62 ++---
- po/mk.po     |  62 ++---
- po/nb.po     |  62 ++---
- po/nl.po     |  62 ++---
- po/no.po     |  62 ++---
- po/pl.po     |  62 ++---
- po/pt.po     |  62 ++---
- po/pt_BR.po  |  62 ++---
- po/ro.po     |  62 ++---
- po/ru.po     |  62 ++---
- po/sk.po     |  62 ++---
- po/sl.po     |  62 ++---
- po/sv.po     |  62 ++---
- po/tr.po     |  62 ++---
- po/uk.po     |  62 ++---
- po/vi.po     |  62 ++---
- po/zh_CN.po  |  62 ++---
- po/zh_TW.po  |  62 ++---
- 45 files changed, 1633 insertions(+), 1630 deletions(-)
-
-commit ec46c648ae768fc6d058b92ebe2abf0058b7f253
-Merge: 0ed7743b 56df42b9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 15 01:23:35 2021 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 56df42b93451086a932a11c57e4d3f68c8cf0857
-Merge: 55257c59 7d3aad84
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 15 01:22:09 2021 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 7d3aad84210753328d68b387a08eea3f206c7269
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Apr 15 00:05:51 2021 +0200
-
-    Document more workspace button features.
-
- man/icewm.pod | 74 ++++++++++++++++++++++++++++++++-----------------------
- 1 file changed, 43 insertions(+), 31 deletions(-)
-
-commit 5b06cc206ea1ca4a7a68b9ffdb0f5bedbd168240
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Apr 14 22:19:56 2021 +0200
-
-    First synchronize with icewm, before updating background after icewm
-    restart.
-
- src/icewmbg.cc | 64 +++++++++++++++++++++++++++++++++++++++++++-----------
- 1 file changed, 51 insertions(+), 13 deletions(-)
-
-commit 6161be0fbb57f4ad1fc987635e3ef8fa11742946
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Apr 14 22:18:21 2021 +0200
-
-    Improve rounded rectangle corner painting detail.
-
- src/ypaint.cc | 14 ++++++++------
- 1 file changed, 8 insertions(+), 6 deletions(-)
-
-commit 09be9ed411c7f27d1a683967c89c09e4839006a4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Apr 14 22:13:17 2021 +0200
-
-    Enforce the completion of the deallocation of the single YWMApp object.
-
- src/wmapp.cc | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit c406fc804a585a1d96db7818bed7b119c69b940d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Apr 14 22:11:25 2021 +0200
-
-    Add append and replace to YProperty. Improve reporting detail when
-    XOpenDisplay fails.
-
- src/yxapp.cc | 20 +++++++++++++++++---
- src/yxapp.h  |  7 +++++--
- 2 files changed, 22 insertions(+), 5 deletions(-)
-
-commit da09cc77f2ffabf136bdb23f8a3b298e8e2ca66c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Apr 14 22:08:36 2021 +0200
-
-    Reduce reactiveness to mouse motion of task button by deselecting task
-    button when dragging ends.
-
- src/atasks.cc | 11 ++++++-----
- src/atasks.h  |  1 +
- 2 files changed, 7 insertions(+), 5 deletions(-)
-
-commit 474993356704e6c97e50073ea0d3b95f6723c1a1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Apr 13 05:03:58 2021 +0200
-
-    Use reversed active taskbar app text colors for drawing grouping number
-    for issue #565. Improve drawing rectangles with rounded corners.
-    Don't update grouping when shutting down.
-
- src/atasks.cc | 22 +++++++-------------
- src/wmmgr.h   |  1 +
- src/ypaint.cc | 61 ++++++++++++++++++++++++++++++++++++++++++++++++++++---
- src/ypaint.h  |  3 ++-
- 4 files changed, 68 insertions(+), 19 deletions(-)
-
-commit 00cf9ea224eaa219103338d8eb560f7184a727ac
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 12 21:07:28 2021 +0200
-
-    Dissolve the disparity between dragged and non-dragged task buttons for
-    issue #576.
-
- src/atasks.cc | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-commit 30782621ed6d4f0738c9b4070876d4e5f9b1f051
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 12 16:20:00 2021 +0200
-
-    Fix segv in verifyPaths and closes #577.
-
- src/ypaths.cc | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-commit e53c6e5e78f8e1cd9586a9c7982779d314534b9d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 12 03:09:16 2021 +0200
-
-    Permit negative button position in function limited.
-
- src/aworkspaces.cc | 4 ++++
- src/aworkspaces.h  | 2 +-
- 2 files changed, 5 insertions(+), 1 deletion(-)

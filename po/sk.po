@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm-1.2.22\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
+"POT-Creation-Date: 2022-05-02 00:41+0200\n"
 "PO-Revision-Date: 2021-12-18 15:14+0000\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1394,8 +1394,8 @@ msgstr "Akcia `%s' vyžaduje najmenej %d argumentov."
 msgid "Invalid expression: `%s'"
 msgstr "Neplatný výraz: `%s'"
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
-#: src/yxapp.cc:1035
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
+#: src/wmapp.cc:1203 src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1874,12 +1874,12 @@ msgstr ""
 " center:0 scaled:1 = vyplní oba rozmery a zachová pomer strán\n"
 "\n"
 
-#: src/icewmbg.cc:1058 src/wmapp.cc:1782
+#: src/icewmbg.cc:1106 src/wmapp.cc:1782
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nerozpoznaná voľba: '%s'."
 
-#: src/icewmbg.cc:1085
+#: src/icewmbg.cc:1136
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Nebolo možné spustiť, pretože iný icewmbg stále beží."
 
@@ -2371,12 +2371,12 @@ msgstr "Neznáma hodnota '%s' pre voľbu '%s'."
 msgid "Unable to create directory %s"
 msgstr "Nepodarilo sa vytvoriť adresár %s"
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Nie je možné zapísať do %s"
 
-#: src/wmconfig.cc:184 src/wmsave.cc:305
+#: src/wmconfig.cc:184 src/wmsave.cc:306
 #, c-format
 msgid "Unable to rename %s to %s"
 msgstr "Nepodarilo sa premenovať %s na %s"
@@ -2483,11 +2483,11 @@ msgstr "'%s' vypršal!"
 msgid "'%s' produces no output"
 msgstr "'%s' nevytára žiadny výstup"
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3390
 msgid "Missing program setxkbmap"
 msgstr "Chýba program setxkbmap"
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3391
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Pre prepínanie klávesníc nainštalujte setxkbmap."
 

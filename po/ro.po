@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
+"POT-Creation-Date: 2022-05-02 00:41+0200\n"
 "PO-Revision-Date: 2002-10-04 12:30+0200\n"
 "Last-Translator: Tiberiu Micu <tibimicu@gmx.net>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -1402,8 +1402,8 @@ msgstr ""
 msgid "Invalid expression: `%s'"
 msgstr "Argument invalid: `%s'."
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
-#: src/yxapp.cc:1035
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
+#: src/wmapp.cc:1203 src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Nu pot porni afişarea: %s. Trebuie să ruleze X şi setat $DISPLAY."
@@ -1793,12 +1793,12 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1058 src/wmapp.cc:1782
+#: src/icewmbg.cc:1106 src/wmapp.cc:1782
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opţiune nerecunoscută: %s\n"
 
-#: src/icewmbg.cc:1085
+#: src/icewmbg.cc:1136
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2243,12 +2243,12 @@ msgstr "Acţiune necunoscută: `%s'"
 msgid "Unable to create directory %s"
 msgstr ""
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr ""
 
-#: src/wmconfig.cc:184 src/wmsave.cc:305
+#: src/wmconfig.cc:184 src/wmsave.cc:306
 #, fuzzy, c-format
 msgid "Unable to rename %s to %s"
 msgstr "Numele tastei %s necunoscut în %s"
@@ -2354,11 +2354,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3390
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3391
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

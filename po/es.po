@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.26\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
+"POT-Creation-Date: 2022-05-02 00:41+0200\n"
 "PO-Revision-Date: 2022-02-21 22:12+0000\n"
 "Last-Translator: Antonio Simón <antonio@trans-mission.com>\n"
 "Language-Team: Spanish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1396,8 +1396,8 @@ msgstr "La acción «%s» requiere al menos %d argumentos."
 msgid "Invalid expression: `%s'"
 msgstr "Expresión no válida: «%s»"
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
-#: src/yxapp.cc:1035
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
+#: src/wmapp.cc:1203 src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1889,12 +1889,12 @@ msgstr ""
 "aspecto\n"
 "\n"
 
-#: src/icewmbg.cc:1058 src/wmapp.cc:1782
+#: src/icewmbg.cc:1106 src/wmapp.cc:1782
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opción no reconocida «%s»."
 
-#: src/icewmbg.cc:1085
+#: src/icewmbg.cc:1136
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "No se puede iniciar porque otro icewmbg está aún en ejecución."
 
@@ -2390,12 +2390,12 @@ msgstr "Valor desconocido «%s» para la opción «%s»."
 msgid "Unable to create directory %s"
 msgstr "No se puede crear el directorio %s"
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "No se puede escribir en %s"
 
-#: src/wmconfig.cc:184 src/wmsave.cc:305
+#: src/wmconfig.cc:184 src/wmsave.cc:306
 #, c-format
 msgid "Unable to rename %s to %s"
 msgstr "No se puede cambiar el nombre %s por %s"
@@ -2502,11 +2502,11 @@ msgstr "Se ha agotado el tiempo de %s."
 msgid "'%s' produces no output"
 msgstr "'%s' no produce ninguna salida"
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3390
 msgid "Missing program setxkbmap"
 msgstr "Falta el programa setxkbmap"
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3391
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Instale setxkbmap para cambiar de teclados."
 

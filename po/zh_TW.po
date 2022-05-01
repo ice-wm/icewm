@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
+"POT-Creation-Date: 2022-05-02 00:41+0200\n"
 "PO-Revision-Date: 2022-02-18 13:12+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/icewm/"
@@ -1395,8 +1395,8 @@ msgstr "動作「%s」需要至少 %d 個引數。"
 msgid "Invalid expression: `%s'"
 msgstr "表示式無效：「%s」"
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
-#: src/yxapp.cc:1035
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
+#: src/wmapp.cc:1203 src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "無法開啟顯示：%s。X 必須正在執行且需設定 $DISPLAY。"
@@ -1865,12 +1865,12 @@ msgstr ""
 " center:1 scaled:1 = 沿兩個方向填充並保持長寬比率\n"
 "\n"
 
-#: src/icewmbg.cc:1058 src/wmapp.cc:1782
+#: src/icewmbg.cc:1106 src/wmapp.cc:1782
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "無法識別選項「%s」。"
 
-#: src/icewmbg.cc:1085
+#: src/icewmbg.cc:1136
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "無法啟動，因為另一個 icewmbg 仍在執行中。"
 
@@ -2358,12 +2358,12 @@ msgstr "未知值「%s」(對於選項「%s」)。"
 msgid "Unable to create directory %s"
 msgstr "無法建立目錄 %s"
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "無法寫入 %s"
 
-#: src/wmconfig.cc:184 src/wmsave.cc:305
+#: src/wmconfig.cc:184 src/wmsave.cc:306
 #, c-format
 msgid "Unable to rename %s to %s"
 msgstr "無法將 %s 重新命名為 %s"
@@ -2470,11 +2470,11 @@ msgstr "\"%s\" 已逾時！"
 msgid "'%s' produces no output"
 msgstr "「%s」未產生任何輸出"
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3390
 msgid "Missing program setxkbmap"
 msgstr "缺少程式 setxkbmap"
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3391
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "若要進行鍵盤切換，請安裝 setxkbmap。"
 

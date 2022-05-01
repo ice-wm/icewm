@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
+"POT-Creation-Date: 2022-05-02 00:41+0200\n"
 "PO-Revision-Date: 2021-12-17 05:12+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1398,8 +1398,8 @@ msgstr "アクション `%s' には少なくとも %d 個のパラメータが�
 msgid "Invalid expression: `%s'"
 msgstr "表現が正しくありません: `%s'"
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
-#: src/yxapp.cc:1035
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
+#: src/wmapp.cc:1203 src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1888,12 +1888,12 @@ msgstr ""
 " center:0 scaled:1 = 縦横の両方を埋め、アスペクト比を維持\n"
 "\n"
 
-#: src/icewmbg.cc:1058 src/wmapp.cc:1782
+#: src/icewmbg.cc:1106 src/wmapp.cc:1782
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "認識できないオプション '%s' です。"
 
-#: src/icewmbg.cc:1085
+#: src/icewmbg.cc:1136
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "既に icewmbg が動作しているため、新しく起動することができません。"
 
@@ -2387,12 +2387,12 @@ msgstr "オプション '%2$s' に対する値 '%1$s' が不明です。"
 msgid "Unable to create directory %s"
 msgstr "ディレクトリ %s を作成できません"
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "%s に書き込めません"
 
-#: src/wmconfig.cc:184 src/wmsave.cc:305
+#: src/wmconfig.cc:184 src/wmsave.cc:306
 #, c-format
 msgid "Unable to rename %s to %s"
 msgstr "%s を %s に名前変更できません"
@@ -2499,11 +2499,11 @@ msgstr "'%s' が時間切れになりました！"
 msgid "'%s' produces no output"
 msgstr "'%s' は何も出力しませんでした"
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3390
 msgid "Missing program setxkbmap"
 msgstr "プログラム setxkbmap がありません"
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3391
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 "キーボードの切り替えを行なうため、 setxkbmap をインストールしてください。"

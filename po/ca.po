@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
+"POT-Creation-Date: 2022-05-02 00:41+0200\n"
 "PO-Revision-Date: 2021-12-17 13:12+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1396,8 +1396,8 @@ msgstr "L'acció \"%s\" necessita com a mínim %d arguments."
 msgid "Invalid expression: `%s'"
 msgstr "Expressió no vàlida: %s"
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
-#: src/yxapp.cc:1035
+#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
+#: src/wmapp.cc:1203 src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1879,12 +1879,12 @@ msgstr ""
 " center:0 scaled:1 = omple ambdues dimensions i mantén la ràtio d'aspecte\n"
 "\n"
 
-#: src/icewmbg.cc:1058 src/wmapp.cc:1782
+#: src/icewmbg.cc:1106 src/wmapp.cc:1782
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opció no reconeguda: \"%s\"."
 
-#: src/icewmbg.cc:1085
+#: src/icewmbg.cc:1136
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "No es pot iniciar, perquè encara s'executa un altre icewmbg."
 
@@ -2377,12 +2377,12 @@ msgstr "Valor desconegut, \"%s\", per a l'opció \"%s\"."
 msgid "Unable to create directory %s"
 msgstr "No es pot crear el directori %s"
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "No es pot escriure a %s"
 
-#: src/wmconfig.cc:184 src/wmsave.cc:305
+#: src/wmconfig.cc:184 src/wmsave.cc:306
 #, c-format
 msgid "Unable to rename %s to %s"
 msgstr "No es pot canviar el nom \"%s\" a \"%s\""
@@ -2489,11 +2489,11 @@ msgstr "%s ha assolit el temps d'espera!"
 msgid "'%s' produces no output"
 msgstr "\"%s\" no produeix cap sortida"
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3390
 msgid "Missing program setxkbmap"
 msgstr "Manca el programa setxkbmap."
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3391
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Per canviar el teclat, si us plau, instal·leu setxkbmap."
 
