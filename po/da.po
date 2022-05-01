@@ -7,33 +7,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.4.2.1038\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-02-23 19:11+0100\n"
-"PO-Revision-Date: 2020-03-13 16:55+0000\n"
-"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/da/>\n"
+"POT-Creation-Date: 2022-01-20 02:33+0100\n"
+"PO-Revision-Date: 2022-03-23 19:12+0000\n"
+"Last-Translator: Alexander Mortensen <Mortensen.alexander@gmail.com>\n"
+"Language-Team: Danish <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/aapm.cc:66
-#, fuzzy, c-format
-#| msgid "Could not open APM device %s"
+#, c-format
 msgid "Can't open the APM device %s"
-msgstr "Kunne ikke åbne APM-enhed %s"
+msgstr "Kunne ikke åbne APM-enheden %s"
 
 #: src/aapm.cc:74 src/aapm.cc:92
 #, c-format
 msgid "Can't ioctl the APM device %s"
-msgstr ""
+msgstr "Kan ikke ioctl APM-enheden%s"
 
 #: src/aapm.cc:122
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
-msgstr ""
+msgstr "Ukendt format brugt af APM-enheden %s (%d)."
 
 #: src/aapm.cc:154 src/aapm.cc:426 src/aapm.cc:636 src/aapm.cc:762
 msgid " - Power"
@@ -72,7 +71,7 @@ msgstr "Dato"
 msgid "Default"
 msgstr "Standard"
 
-#: src/aclock.cc:200 src/acpustatus.cc:813 src/amailbox.cc:964
+#: src/aclock.cc:200 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Deaktivér"
@@ -81,18 +80,12 @@ msgstr "_Deaktivér"
 msgid "_UTC"
 msgstr "_UTC"
 
-#. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
-#. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:266
-msgid "°C"
-msgstr "°C"
-
-#: src/acpustatus.cc:448
+#: src/acpustatus.cc:299
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "CPU %s-belastning: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:454
+#: src/acpustatus.cc:305
 #, c-format
 msgid ""
 "\n"
@@ -101,7 +94,7 @@ msgstr ""
 "\n"
 "Ram (ledig): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:459
+#: src/acpustatus.cc:310
 #, c-format
 msgid ""
 "\n"
@@ -110,7 +103,7 @@ msgstr ""
 "\n"
 "Swap (ledig): %.3f (%.3f) G"
 
-#: src/acpustatus.cc:467
+#: src/acpustatus.cc:316
 #, c-format
 msgid ""
 "\n"
@@ -119,7 +112,7 @@ msgstr ""
 "\n"
 "ACPI-temperatur: "
 
-#: src/acpustatus.cc:488 src/acpustatus.cc:526
+#: src/acpustatus.cc:335 src/acpustatus.cc:373
 #, c-format
 msgid ""
 "\n"
@@ -128,15 +121,15 @@ msgstr ""
 "\n"
 "CPU-frekvens: %.3fGHz"
 
-#: src/acpustatus.cc:503 src/acpustatus.cc:808
+#: src/acpustatus.cc:350 src/acpustatus.cc:682
 msgid "CPU"
 msgstr "CPU"
 
-#: src/acpustatus.cc:503
+#: src/acpustatus.cc:350
 msgid "Load: "
 msgstr "Belastning: "
 
-#: src/acpustatus.cc:518
+#: src/acpustatus.cc:365
 #, c-format
 msgid ""
 "\n"
@@ -145,50 +138,54 @@ msgstr ""
 "\n"
 "Ram (bruger): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:809
+#. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
+#. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
+#: src/acpustatus.cc:453
+msgid "°C"
+msgstr "°C"
+
+#: src/acpustatus.cc:683
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:815
+#: src/acpustatus.cc:689
 msgid "_Combine"
 msgstr "_Kombiner"
 
-#: src/acpustatus.cc:817
+#: src/acpustatus.cc:691
 msgid "_Separate"
 msgstr "_Separer"
 
-#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s afsluttede med status %d."
 
-#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
+#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s blev dræbt med signal %d."
 
 #: src/akeyboard.cc:98
 msgid "rules:"
-msgstr ""
+msgstr "Regler:"
 
 #: src/akeyboard.cc:99
 msgid "model:"
-msgstr ""
+msgstr "model:"
 
 #: src/akeyboard.cc:100
 msgid "layout:"
-msgstr ""
+msgstr "opsætning:"
 
 #: src/akeyboard.cc:101
-#, fuzzy
-#| msgid "Bad option: %s"
 msgid "options:"
-msgstr "Dårligt tilvalg: %s"
+msgstr "Dårligt tilvalg: %s:"
 
 #: src/akeyboard.cc:151
 msgid "Keyboard"
-msgstr ""
+msgstr "Tastatur"
 
 #: src/amailbox.cc:64
 #, c-format
@@ -332,7 +329,7 @@ msgstr ""
 
 #: src/apppstatus.cc:284
 msgid "disconnected"
-msgstr ""
+msgstr "afbrudt"
 
 #: src/apppstatus.cc:284
 #, fuzzy
@@ -1078,37 +1075,31 @@ msgstr "Indeks"
 
 #: src/icehelp.cc:1337
 msgid "Find..."
-msgstr ""
+msgstr "Find..."
 
 #: src/icehelp.cc:1337
-#, fuzzy
-#| msgid "Ctrl+Q"
 msgid "Ctrl+F"
-msgstr "Ctrl+Q"
+msgstr "Ctrl+QF"
 
 #: src/icehelp.cc:1338
 msgid "Find next"
-msgstr ""
+msgstr "Find næste"
 
 #: src/icehelp.cc:1338
 msgid "F3"
-msgstr ""
+msgstr "F3"
 
 #: src/icehelp.cc:1340
-#, fuzzy
-#| msgid "WebBrowser"
 msgid "Open in Browser"
-msgstr "Webbrowser"
+msgstr "Åben i Browser"
 
 #: src/icehelp.cc:1340
-#, fuzzy
-#| msgid "Ctrl+Q"
 msgid "Ctrl+B"
 msgstr "Ctrl+Q"
 
 #: src/icehelp.cc:1342
 msgid "Reload"
-msgstr ""
+msgstr "Genindlæs"
 
 #: src/icehelp.cc:1342 src/icesame.cc:60
 msgid "Ctrl+R"
@@ -1127,10 +1118,8 @@ msgid "Icewm(1)"
 msgstr "Icewm(1)"
 
 #: src/icehelp.cc:1348
-#, fuzzy
-#| msgid "Ctrl+Q"
 msgid "Ctrl+I"
-msgstr "Ctrl+Q"
+msgstr "Ctrl+l"
 
 #: src/icehelp.cc:1350
 msgid "Icewmbg(1)"
@@ -1149,10 +1138,8 @@ msgid "Manual"
 msgstr "Manuelt"
 
 #: src/icehelp.cc:1356
-#, fuzzy
-#| msgid "Ctrl+Q"
 msgid "Ctrl+M"
-msgstr "Ctrl+Q"
+msgstr "Ctrl+M"
 
 #: src/icehelp.cc:1358
 msgid "Support"
@@ -1346,113 +1333,110 @@ msgstr "Se man-siden for icesh(1), for at få hjælp.\n"
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Navngivne symboler af domænet \"%s\" (numerisk område: %ld-%ld):\n"
 
-#: src/icesh.cc:1616
+#: src/icesh.cc:1605
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Arbejdsområde udenfor område: %ld"
 
-#: src/icesh.cc:1637
+#: src/icesh.cc:1626
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Ugyldigt arbejdsområdenavn: \"%s\""
 
-#: src/icesh.cc:1939
+#: src/icesh.cc:1928
 msgid "GNOME window layer"
 msgstr "GNOME vindueslag"
 
-#: src/icesh.cc:1940
+#: src/icesh.cc:1929
 msgid "IceWM tray option"
 msgstr "IceWM-bakketilvalg"
 
-#: src/icesh.cc:1941
+#: src/icesh.cc:1930
 msgid "Gravity symbols"
 msgstr "Tyngdekraftsymboler"
 
-#: src/icesh.cc:1942
+#: src/icesh.cc:1931
 msgid "Motif functions"
 msgstr "Motif-funktioner"
 
-#: src/icesh.cc:1943
+#: src/icesh.cc:1932
 msgid "Motif decorations"
 msgstr "Motif-dekorationer"
 
-#: src/icesh.cc:1944
-#, fuzzy
-#| msgid "GNOME window state"
+#: src/icesh.cc:1933
 msgid "EWMH window state"
-msgstr "GNOME vinduestilstand"
+msgstr "EWMH vinduestilstand"
 
-#: src/icesh.cc:2026 src/icesh.cc:2099
+#: src/icesh.cc:2015 src/icesh.cc:2088
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "arbejdsområde nr. %d: \"%s\"\n"
 
-#: src/icesh.cc:2334 src/icesh.cc:3808 src/icesh.cc:4290
+#: src/icesh.cc:2323 src/icesh.cc:3797 src/icesh.cc:4279
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Ugyldig tilstand: \"%s\"."
 
-#: src/icesh.cc:3191
+#: src/icesh.cc:3180
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Kan ikke hente geometrien af vinduet 0x%lx"
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3205
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Ugyldigt Xinerama: \"%s\"."
 
-#: src/icesh.cc:3381 src/icesh.cc:3431
+#: src/icesh.cc:3370 src/icesh.cc:3420
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Ugyldigt argument: \"%s\""
 
-#: src/icesh.cc:3397
+#: src/icesh.cc:3386
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Handlingen \"%s\" kræver mindst %d argumenter."
 
-#: src/icesh.cc:3406
+#: src/icesh.cc:3395
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Ugyldigt udtryk: \"%s\""
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
+#: src/icesh.cc:3406 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
 #: src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Kan ikke åbne skærm: %s. X skal køre og $DISPLAY sat."
 
-#: src/icesh.cc:3533
-#, fuzzy, c-format
-#| msgid "Unexepected menu keyword: '%s'"
+#: src/icesh.cc:3522
+#, c-format
 msgid "Unexpected: `%s'."
-msgstr "Uventet menunøgleord: \"%s\""
+msgstr "Uventet menunøgleord: '%s'."
 
-#: src/icesh.cc:3562
+#: src/icesh.cc:3551
 msgid "No windows found."
 msgstr "Ingen vinduer fundet."
 
-#: src/icesh.cc:3578
+#: src/icesh.cc:3567
 msgid "No actions specified."
 msgstr "Ingen handlinger anført."
 
-#: src/icesh.cc:3725
+#: src/icesh.cc:3714
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Ugyldig vinduesidentifikator: \"%s\""
 
-#: src/icesh.cc:3742
+#: src/icesh.cc:3731
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Ugyldig PID: \"%s\""
 
-#: src/icesh.cc:3778
+#: src/icesh.cc:3767
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Ugyldigt lag: \"%s\"."
 
-#: src/icesh.cc:4598
+#: src/icesh.cc:4587
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Ukendt handling: \"%s\""
@@ -1463,19 +1447,6 @@ msgid "Socket error: %d"
 msgstr "Sokkelfejl: %d"
 
 #: src/icesm.cc:69
-#, fuzzy
-#| msgid ""
-#| "  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
-#| "  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
-#| "\n"
-#| "  -d, --display=NAME  Use NAME to connect to the X server.\n"
-#| "  -a, --alpha         Use a 32-bit visual for translucency.\n"
-#| "  --sync              Synchronize communication with X11 server.\n"
-#| "\n"
-#| "  -i, --icewm=FILE    Use FILE as the IceWM window manager.\n"
-#| "  -b, --nobg          Do not start icewmbg.\n"
-#| "  -n, --notray        Do not start icewmtray.\n"
-#| "  -s, --sound         Also start icesound.\n"
 msgid ""
 "  -c, --config=FILE   Let IceWM load preferences from FILE.\n"
 "  -t, --theme=FILE    Let IceWM load the theme from FILE.\n"
@@ -1499,6 +1470,8 @@ msgstr ""
 "  --sync              Synkroniser kommunikation med X11-server.\n"
 "\n"
 "  -i, --icewm=FIL     Brug FIL som IceWM-vindueshåndteringen.\n"
+"-o,--output=FILE Omdiriger alt output til FIL.\n"
+"\n"
 "  -b, --nobg          Start ikke icewmbg.\n"
 "  -n, --notray        Start ikke icewmtray.\n"
 "  -s, --sound         Start også icesound.\n"
@@ -1512,25 +1485,24 @@ msgid ""
 "  -g, --catchsegv     Let \"/usr/bin/catchsegv\" run icewm.\n"
 "                      Gives a backtrace if icewm segfaults.\n"
 msgstr ""
+"\n"
+"Debugging indstillinger:\n"
+"  -v, --valgrind      Lad \"/usr/bin/valgrind\" køre icewm.\n"
+"                      Grundig gennemgang af eksekvering af icewm.\n"
+"  -g, --catchsegv     Lad \"/usr/bin/catchsegv\" køre icewm.\n"
+"                      Giver tilbagesporing hvis icewm segfaults.\n"
 
 #: src/icesm.cc:188
 #, c-format
 msgid "Unknown option '%s'"
 msgstr "Ukendt tilvalg \"%s\""
 
-#: src/icesm.cc:462 src/icesm.cc:622
+#: src/icesm.cc:460 src/icesm.cc:620
 #, c-format
 msgid "restart %s."
 msgstr "genstart %s."
 
-#: src/icesm.cc:513
-#, fuzzy
-#| msgid ""
-#| " IceWM crashed for the second time in 10 seconds. \n"
-#| " Do you wish to:\n"
-#| "\n"
-#| "\t1: Restart IceWM?\n"
-#| "\t2: Abort this session?\n"
+#: src/icesm.cc:511
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1540,12 +1512,13 @@ msgid ""
 "\t3: Run a terminal?\n"
 msgstr ""
 " IceWM holdt op med at virke for anden gang indenfor 10 sekunder. \n"
-" Vil du:\n"
+" Ønsker du:\n"
 "\n"
-"\t1: Genstarte IceWM?\n"
+"\t1: Genstart IceWM?\n"
 "\t2: Afbryde sessionen?\n"
+"3: Køre en terminal?\n"
 
-#: src/icesm.cc:519
+#: src/icesm.cc:517
 msgid "IceWM crash response"
 msgstr "Svar til IceWM-nedbrud"
 
@@ -1976,15 +1949,15 @@ msgstr "Sprog:"
 
 #: src/wmabout.cc:56
 msgid "DoubleBuffer"
-msgstr ""
+msgstr "DoubleBuffer"
 
 #: src/wmabout.cc:57
 msgid "AlphaBlending"
-msgstr ""
+msgstr "AlphaBlending"
 
 #: src/wmabout.cc:58
 msgid "Renderer:"
-msgstr ""
+msgstr "Renderer:"
 
 #: src/wmabout.cc:66
 msgid "icewm - About"
@@ -2072,39 +2045,39 @@ msgstr "_Skrivebord"
 
 #: src/wmapp.cc:564
 msgid "Left Half"
-msgstr ""
+msgstr "Venstre Halvdel"
 
 #: src/wmapp.cc:565
 msgid "Right Half"
-msgstr ""
+msgstr "Højre Halvdel"
 
 #: src/wmapp.cc:566
 msgid "Top Half"
-msgstr ""
+msgstr "Øvre Halvdel"
 
 #: src/wmapp.cc:567
 msgid "Bottom Half"
-msgstr ""
+msgstr "Nedre Halvdel"
 
 #: src/wmapp.cc:569
 msgid "Top Left"
-msgstr ""
+msgstr "Øverst til Venstre"
 
 #: src/wmapp.cc:571
 msgid "Top Right"
-msgstr ""
+msgstr "Øverst til Højre"
 
 #: src/wmapp.cc:573
 msgid "Bottom Left"
-msgstr ""
+msgstr "Nederst til Venstre"
 
 #: src/wmapp.cc:575
 msgid "Bottom Right"
-msgstr ""
+msgstr "Nederst til Højre"
 
 #: src/wmapp.cc:577
 msgid "Center"
-msgstr ""
+msgstr "Midt"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmapp.cc:579 src/wmtaskbar.cc:219 src/wmwinlist.cc:394
@@ -2172,7 +2145,7 @@ msgstr "L_ag"
 
 #: src/wmapp.cc:625 src/wmwinlist.cc:387
 msgid "Tile"
-msgstr ""
+msgstr "Flise"
 
 #: src/wmapp.cc:629 src/wmwinlist.cc:389
 msgid "Move _To"
@@ -2217,13 +2190,15 @@ msgstr ""
 
 #: src/wmapp.cc:927
 msgid "Confirm Restart as Terminal"
-msgstr ""
+msgstr "Bekræft Genstart som Terminal"
 
 #: src/wmapp.cc:928
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
+"Afstyr alle applikationer og genstart\n"
+"som terminal. Forsæt?"
 
 #: src/wmapp.cc:1204 src/yxapp.cc:1036
 msgid "<none>"
@@ -2248,15 +2223,6 @@ msgstr ""
 "vinduesstakning.\n"
 
 #: src/wmapp.cc:1540
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "  -a, --alpha         Use a 32-bit visual for translucency.\n"
-#| "  -c, --config=FILE   Load preferences from FILE.\n"
-#| "  -t, --theme=FILE    Load theme from FILE.\n"
-#| "  -s, --splash=IMAGE  Briefly show IMAGE on startup.\n"
-#| "  -p, --postpreferences  Print preferences after all processing.\n"
-#| "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2273,8 +2239,9 @@ msgstr ""
 "  -t, --theme=FIL     Indlæs tema fra FIL.\n"
 "  -s, --splash=BILLEDE Vis kortvarigt BILLEDE under opstart.\n"
 "  -p, --postpreferences  Udskriv præferencer efter endt behandling.\n"
-"  --trace=konf,ikon   Spor stier som blev brugt til at indlæse "
-"konfiguration.\n"
+"--rewrite-preferences Opdater en eksisterende præference fil.\n"
+"  --trace=konf,ikon   Spor stier som blev brugt til at indlæse konfiguration."
+"\n"
 
 #: src/wmapp.cc:1550
 #, c-format
@@ -2393,6 +2360,8 @@ msgid ""
 "Client %s with PID %ld fails to respond.\n"
 "Do you wish to terminate this client?\n"
 msgstr ""
+"Klient %s med PID %ld kunne ikke svare\n"
+"Ønsker du at afbryde denne klient?\n"
 
 #: src/wmconfig.cc:35 src/wmconfig.cc:40 src/wmconfig.cc:46
 #, c-format
@@ -2474,10 +2443,9 @@ msgid "Error at %s '%s'"
 msgstr "Fejl ved %s \"%s\""
 
 #: src/wmmenu.cc:222
-#, fuzzy, c-format
-#| msgid "Unknown keyword '%s'"
+#, c-format
 msgid "Unexepected menu keyword: '%s'"
-msgstr "Ukendt nøgleord \"%s\""
+msgstr "Ukendt menu nøgleord: '%s'"
 
 #: src/wmmenu.cc:276
 #, c-format
@@ -2485,20 +2453,18 @@ msgid "Error at menuprog '%s'"
 msgstr "Fejl ved menuprog \"%s\""
 
 #: src/wmmenu.cc:320
-#, fuzzy, c-format
-#| msgid "Error at menuprog '%s'"
+#, c-format
 msgid "Error at menuprogreload: '%s'"
-msgstr "Fejl ved menuprog \"%s\""
+msgstr "Fejl ved menuprogreload: '%s'"
 
 #: src/wmmenu.cc:347
 msgid "Missing filename argument to include statement"
 msgstr "Manglende filnavn-argument til include-udsagn"
 
 #: src/wmmenu.cc:365
-#, fuzzy, c-format
-#| msgid "Error at menuprog '%s'"
+#, c-format
 msgid "Error at includeprog '%s'"
-msgstr "Fejl ved menuprog \"%s\""
+msgstr "Fejl ved includeprog '%s'"
 
 #: src/wmmenu.cc:408
 #, c-format
@@ -2517,20 +2483,20 @@ msgstr ""
 #: src/wmmenu.cc:498
 #, c-format
 msgid "'%s' timed out!"
-msgstr ""
+msgstr "'%s' udløb!"
 
 #: src/wmmenu.cc:509
 #, c-format
 msgid "'%s' produces no output"
 msgstr "\"%s\" producerer intet output"
 
-#: src/wmmgr.cc:3384
+#: src/wmmgr.cc:3377
 msgid "Missing program setxkbmap"
-msgstr ""
+msgstr "Manglende program setxkbmap"
 
-#: src/wmmgr.cc:3385
+#: src/wmmgr.cc:3378
 msgid "For keyboard switching, please install setxkbmap."
-msgstr ""
+msgstr "For tastatur skift, installer setxkbmap."
 
 #: src/wmoption.cc:259
 #, c-format
@@ -2549,7 +2515,7 @@ msgstr "Gem ændringer"
 #: src/wmpref.cc:178
 #, c-format
 msgid "Enter a new value for %s: "
-msgstr ""
+msgstr "Indtast en ny værdi for %s: "
 
 #: src/wmprog.cc:331
 msgid "_Click to focus"
@@ -2729,10 +2695,9 @@ msgid "%s: select failed"
 msgstr "%s: valg mislykkedes"
 
 #: src/ycolor.cc:229 src/ycolor.cc:240
-#, fuzzy, c-format
-#| msgid "Could not load font \"%s\"."
+#, c-format
 msgid "Could not parse color \"%s\""
-msgstr "Kunne ikke indlæse skrifttype \"%s\"."
+msgstr "Kunne ikke indlæse farve \"%s\""
 
 #: src/yconfig.cc:113
 #, c-format
@@ -2877,26 +2842,22 @@ msgstr ""
 "  --sync              Synkroniser X11-kommandoer.\n"
 
 #: src/yximage.cc:157
-#, fuzzy
-#| msgid "Support for the %s interface not compiled."
 msgid "Support for PNG images was not enabled"
-msgstr "Understøttelse for %s grænseflade ikke oversat."
+msgstr "Understøttelse af PNG billeder var ikke aktiveret"
 
 #: src/yximage.cc:165
 msgid "Support for JPEG images was not enabled"
-msgstr ""
+msgstr "Understøttelse af JPEG billeder var ikke aktiveret"
 
 #: src/yximage.cc:171
-#, fuzzy, c-format
-#| msgid "Unsupported interface: %s."
+#, c-format
 msgid "Unsupported file format: %s"
-msgstr "Ikke-understøttet grænseflade: %s."
+msgstr "Ikke-understøttet fil-format: %s"
 
 #: src/yximage.cc:175 src/yximage.cc:198
-#, fuzzy, c-format
-#| msgid "Could not find image %s"
+#, c-format
 msgid "Could not load image \"%s\""
-msgstr "Kunne ikke finde pixelkort %s"
+msgstr "Kunne ikke indlæse billede \"%s\""
 
 #~ msgid "Loading of fallback font \"%s\" failed."
 #~ msgstr "Indlæsning af standardskrifttype \"%s\" mislykkedes."
