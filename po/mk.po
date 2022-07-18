@@ -8,15 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-05-02 00:41+0200\n"
-"PO-Revision-Date: 2006-01-26 23:29+0100\n"
-"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
-"Language-Team: Macedonian <mk@li.org>\n"
+"POT-Creation-Date: 2022-01-20 02:33+0100\n"
+"PO-Revision-Date: 2022-05-26 05:12+0000\n"
+"Last-Translator: Kristijan Fremen Velkovski <me@krisfremen.com>\n"
+"Language-Team: Macedonian <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/mk/>\n"
 "Language: mk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=2; plural=n==1 || n%10==1 ? 0 : 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/aapm.cc:66
 #, fuzzy, c-format
@@ -70,7 +72,7 @@ msgstr ""
 msgid "Default"
 msgstr "Стандардно"
 
-#: src/aclock.cc:200 src/acpustatus.cc:813 src/amailbox.cc:964
+#: src/aclock.cc:200 src/acpustatus.cc:687 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr ""
@@ -79,80 +81,80 @@ msgstr ""
 msgid "_UTC"
 msgstr ""
 
-#. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
-#. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:266
-msgid "°C"
-msgstr ""
-
-#: src/acpustatus.cc:448
+#: src/acpustatus.cc:299
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr ""
 
-#: src/acpustatus.cc:454
+#: src/acpustatus.cc:305
 #, c-format
 msgid ""
 "\n"
 "Ram (free): %5.3f (%.3f) G"
 msgstr ""
 
-#: src/acpustatus.cc:459
+#: src/acpustatus.cc:310
 #, c-format
 msgid ""
 "\n"
 "Swap (free): %.3f (%.3f) G"
 msgstr ""
 
-#: src/acpustatus.cc:467
+#: src/acpustatus.cc:316
 #, c-format
 msgid ""
 "\n"
 "ACPI Temp: "
 msgstr ""
 
-#: src/acpustatus.cc:488 src/acpustatus.cc:526
+#: src/acpustatus.cc:335 src/acpustatus.cc:373
 #, c-format
 msgid ""
 "\n"
 "CPU Freq: %.3fGHz"
 msgstr ""
 
-#: src/acpustatus.cc:503 src/acpustatus.cc:808
+#: src/acpustatus.cc:350 src/acpustatus.cc:682
 msgid "CPU"
 msgstr ""
 
-#: src/acpustatus.cc:503
+#: src/acpustatus.cc:350
 #, fuzzy
 msgid "Load: "
 msgstr "Оптоварување на процесор: "
 
-#: src/acpustatus.cc:518
+#: src/acpustatus.cc:365
 #, c-format
 msgid ""
 "\n"
 "Ram (user): %5.3f (%.3f) G"
 msgstr ""
 
-#: src/acpustatus.cc:809
+#. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
+#. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
+#: src/acpustatus.cc:453
+msgid "°C"
+msgstr ""
+
+#: src/acpustatus.cc:683
 #, c-format
 msgid "CPU%d"
 msgstr ""
 
-#: src/acpustatus.cc:815
+#: src/acpustatus.cc:689
 msgid "_Combine"
 msgstr ""
 
-#: src/acpustatus.cc:817
+#: src/acpustatus.cc:691
 msgid "_Separate"
 msgstr ""
 
-#: src/akeyboard.cc:83 src/icesm.cc:468 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr ""
 
-#: src/akeyboard.cc:86 src/icesm.cc:474 src/icesm.cc:628
+#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr ""
@@ -200,19 +202,19 @@ msgid "Invalid mailbox port: \"%s\""
 msgstr "Невалидна патека за пошт. сандаче: \"%s\""
 
 #: src/amailbox.cc:314
-#, fuzzy, c-format
+#, c-format
 msgid "Could not connect to %s: %s"
-msgstr "Не можам да се поврзам со YIFF-серверот: %s"
+msgstr "Не може да се воспостави конекција со серверот %s: %s"
 
 #: src/amailbox.cc:334
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to find %s command"
-msgstr "Не успеав да извршам %s: %s"
+msgstr "Не успеа да се изврши командата %s"
 
 #: src/amailbox.cc:363 src/wmmenu.cc:471 src/wmmenu.cc:488 src/yapp.cc:433
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to execute %s"
-msgstr "Не успеав да отворам %s: %s"
+msgstr "Не успеа да се отвори %s"
 
 #: src/amailbox.cc:447
 #, c-format
@@ -238,9 +240,9 @@ msgid "%ld mail message, %ld unread."
 msgstr "%ld е-пошт. порака."
 
 #: src/amailbox.cc:813
-#, fuzzy, c-format
+#, c-format
 msgid "%ld mail messages, %ld unread."
-msgstr "%ld е-пошт. пораки."
+msgstr "%ld е-пошт. пораки, %ld непрочитани."
 
 #: src/amailbox.cc:819
 #, c-format
@@ -1227,9 +1229,9 @@ msgid "Failed to execute system(%s) (%d)"
 msgstr ""
 
 #: src/icehelp.cc:2435
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to decompress %s"
-msgstr "Не успеав да отворам %s: %s"
+msgstr "Не успеа да се декомпресира %s"
 
 #: src/icehelp.cc:2443
 msgid "Could not locate curl or wget in PATH"
@@ -1327,123 +1329,123 @@ msgstr ""
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Именувани симболи од доменот „%s“ (нумерички опсег: %ld-%ld):\n"
 
-#: src/icesh.cc:1616
-#, fuzzy, c-format
+#: src/icesh.cc:1605
+#, c-format
 msgid "Workspace out of range: %ld"
-msgstr "Работниот простор е надвор од опсегот: %d"
+msgstr "Работниот простор е надвор од опсегот: %ld"
 
-#: src/icesh.cc:1637
+#: src/icesh.cc:1626
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Невалидно име на работен простор: „%s“"
 
-#: src/icesh.cc:1939
+#: src/icesh.cc:1928
 msgid "GNOME window layer"
 msgstr "Слој на GNOME-прозорец"
 
-#: src/icesh.cc:1940
+#: src/icesh.cc:1929
 msgid "IceWM tray option"
 msgstr "Опција за сис. лента на IceWM"
 
-#: src/icesh.cc:1941
+#: src/icesh.cc:1930
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:1942
+#: src/icesh.cc:1931
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif functions"
 msgstr "Омилени апликации"
 
-#: src/icesh.cc:1943
+#: src/icesh.cc:1932
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif decorations"
 msgstr "Омилени апликации"
 
-#: src/icesh.cc:1944
+#: src/icesh.cc:1933
 #, fuzzy
 #| msgid "GNOME window state"
 msgid "EWMH window state"
 msgstr "Состојба на GNOME-прозорец"
 
-#: src/icesh.cc:2026 src/icesh.cc:2099
+#: src/icesh.cc:2015 src/icesh.cc:2088
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "работен простор бр. %d: „%s“\n"
 
-#: src/icesh.cc:2334 src/icesh.cc:3808 src/icesh.cc:4290
+#: src/icesh.cc:2323 src/icesh.cc:3797 src/icesh.cc:4279
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:3191
+#: src/icesh.cc:3180
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3216
+#: src/icesh.cc:3205
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid Xinerama: `%s'."
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:3381 src/icesh.cc:3431
+#: src/icesh.cc:3370 src/icesh.cc:3420
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:3397
+#: src/icesh.cc:3386
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Дејството „%s“ бара најмалку %d аргументи."
 
-#: src/icesh.cc:3406
+#: src/icesh.cc:3395
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Невалиден израз: „%s“"
 
-#: src/icesh.cc:3417 src/icesound.cc:794 src/icewmbg.cc:975 src/icewmhint.cc:37
-#: src/wmapp.cc:1203 src/yxapp.cc:1035
+#: src/icesh.cc:3406 src/icesound.cc:794 src/icewmhint.cc:37 src/wmapp.cc:1203
+#: src/yxapp.cc:1035
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Не можам да го отворам екранот: %s. X мора да работи и $DISPLAY мора да е "
 "поставено."
 
-#: src/icesh.cc:3533
+#: src/icesh.cc:3522
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "Неочекуван клучен збор: %s"
 
-#: src/icesh.cc:3562
+#: src/icesh.cc:3551
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:3578
+#: src/icesh.cc:3567
 msgid "No actions specified."
 msgstr "Нема зададени дејства."
 
-#: src/icesh.cc:3725
+#: src/icesh.cc:3714
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Невалиден ид. на прозорец: „%s“"
 
-#: src/icesh.cc:3742
+#: src/icesh.cc:3731
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:3778
+#: src/icesh.cc:3767
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Невалиден аргумент: „%s“."
 
-#: src/icesh.cc:4598
+#: src/icesh.cc:4587
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Непознато дејство: „%s“"
@@ -1485,13 +1487,12 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "Непознато дејство: „%s“"
 
-#: src/icesm.cc:462 src/icesm.cc:622
-#, fuzzy, c-format
-#| msgid "Restart"
+#: src/icesm.cc:460 src/icesm.cc:620
+#, c-format
 msgid "restart %s."
-msgstr "Рестартирај"
+msgstr "рестартирај %s."
 
-#: src/icesm.cc:513
+#: src/icesm.cc:511
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1501,7 +1502,7 @@ msgid ""
 "\t3: Run a terminal?\n"
 msgstr ""
 
-#: src/icesm.cc:519
+#: src/icesm.cc:517
 #, fuzzy
 #| msgid "IceWM tray option"
 msgid "IceWM crash response"
@@ -1674,7 +1675,7 @@ msgstr ""
 #: src/icesound.cc:779
 #, c-format
 msgid "No audio for %s"
-msgstr ""
+msgstr "Нема аудио за %s"
 
 #: src/icesound.cc:856
 msgid "Could not get GUI event property"
@@ -1683,17 +1684,17 @@ msgstr ""
 #: src/icesound.cc:860
 #, c-format
 msgid "Received invalid GUI event %d"
-msgstr ""
+msgstr "Добиен невалиден графички настан %d"
 
 #: src/icesound.cc:864
 #, c-format
 msgid "Received GUI event %s"
-msgstr ""
+msgstr "Добиен графички настан %s"
 
 #: src/icesound.cc:878
 #, c-format
 msgid "Too quick; ignoring %s."
-msgstr ""
+msgstr "Пребрзо; се игнорира %s."
 
 #: src/icesound.cc:882
 #, c-format
@@ -1711,14 +1712,14 @@ msgid "Using %s audio."
 msgstr ""
 
 #: src/icesound.cc:928
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to connect to audio interfaces %s."
-msgstr "Не успеав да отворам %s: %s"
+msgstr "Не успеа да се конектира до аудио интерфејс %s."
 
 #: src/icesound.cc:940
-#, fuzzy, c-format
+#, c-format
 msgid "Received signal %s: Terminating..."
-msgstr "Примив сигнал %d: Прекинувам..."
+msgstr "Примен сигнал %s: Прекинување..."
 
 #: src/icetray.cc:220
 msgid ""
@@ -1747,9 +1748,9 @@ msgid "Wrap Lines"
 msgstr "Пренесување линии"
 
 #: src/icewmbg.cc:34
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load image '%s'."
-msgstr "Не успеав да отворам %s: %s"
+msgstr "Не успеа да се отвори сликата '%s'."
 
 #: src/icewmbg.cc:870
 #, fuzzy
@@ -1813,12 +1814,12 @@ msgstr ""
 " DesktopTransparencyColor - боја за полупроѕирните прозорци\n"
 " DesktopTransparencyImage - слика за полупроѕирните прозорци\n"
 
-#: src/icewmbg.cc:1106 src/wmapp.cc:1782
+#: src/icewmbg.cc:1058 src/wmapp.cc:1782
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Непрепознаена опција: %s\n"
 
-#: src/icewmbg.cc:1136
+#: src/icewmbg.cc:1085
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2290,12 +2291,12 @@ msgstr "Непознато дејство: „%s“"
 msgid "Unable to create directory %s"
 msgstr "Не успеав да креирам процес-дете: %s"
 
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
+#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:297 src/wmsave.cc:300
 #, c-format
 msgid "Unable to write to %s"
 msgstr ""
 
-#: src/wmconfig.cc:184 src/wmsave.cc:306
+#: src/wmconfig.cc:184 src/wmsave.cc:305
 #, fuzzy, c-format
 msgid "Unable to rename %s to %s"
 msgstr "Не успеав да отворам %s: %s"
@@ -2401,11 +2402,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3390
+#: src/wmmgr.cc:3377
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3391
+#: src/wmmgr.cc:3378
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2460,15 +2461,15 @@ msgstr ""
 
 #: src/wmprog.cc:359
 msgid "_Icewm(1)"
-msgstr ""
+msgstr "_Icewm(1)"
 
 #: src/wmprog.cc:360
 msgid "Icewm_Bg(1)"
-msgstr ""
+msgstr "Icewm_Bg(1)"
 
 #: src/wmprog.cc:361
 msgid "Ice_Sound(1)"
-msgstr ""
+msgstr "Ice_Sound(1)"
 
 #: src/wmprog.cc:410
 msgid "Programs"

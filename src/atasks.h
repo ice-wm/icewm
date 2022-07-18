@@ -21,6 +21,7 @@ public:
     void activate() const;
     ClientData* getFrame() const { return fFrame; }
     TaskButton* button() const { return fButton; }
+    YAction action() const { return fAction; }
 
     void setShown(bool show);
     bool getShown() const;
@@ -36,6 +37,7 @@ public:
 private:
     ClientData* fFrame;
     TaskButton* fButton;
+    YAction fAction;
     bool fShown;
 };
 
@@ -65,9 +67,11 @@ public:
     virtual void handleExpose(const XExposeEvent& expose);
     virtual void configure(const YRect2& r);
     virtual void repaint();
+    virtual void repaintApp(TaskBarApp* app);
     virtual void actionPerformed(YAction action, unsigned modifiers);
     virtual void handlePopDown(YPopupWindow *popup);
 
+    void findActive();
     void popupGroup();
     void activate() const;
     void addApp(TaskBarApp* app);
@@ -98,6 +102,7 @@ private:
     int selected;
     lazy<YTimer> fFlashTimer;
     lazy<YTimer> fRaiseTimer;
+    lazy<YTimer> fPaintTimer;
 
     typedef YArray<TaskBarApp*> GroupType;
     typedef GroupType::IterType IterGroup;
