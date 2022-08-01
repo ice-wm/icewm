@@ -744,6 +744,42 @@ Moves the active window to the middle left of the screen.
 
 Moves the active window to the center of the screen.
 
+=item B<KeyWinTileLeft>=""
+
+Let the active window occupy the left half of the screen.
+
+=item B<KeyWinTileRight>=""
+
+Let the active window occupy the right half of the screen.
+
+=item B<KeyWinTileTop>=""
+
+Let the active window occupy the top half of the screen.
+
+=item B<KeyWinTileBottom>=""
+
+Let the active window occupy the bottom half of the screen.
+
+=item B<KeyWinTileTopLeft>=""
+
+Let the active window occupy the top left quarter of the screen.
+
+=item B<KeyWinTileTopRight>=""
+
+Let the active window occupy the top right quarter of the screen.
+
+=item B<KeyWinTileBottomLeft>=""
+
+Let the active window occupy the bottom left quarter of the screen.
+
+=item B<KeyWinTileBottomRight>=""
+
+Let the active window occupy the bottom right quarter of the screen.
+
+=item B<KeyWinTileCenter>=""
+
+Let the active window occupy the center quarter of the screen.
+
 =item B<KeyWinSmartPlace>=C<Ctrl+Alt+Shift+KP_5>
 
 Smart place the active window.
@@ -840,11 +876,11 @@ Goes to workspace 9.
 
 Goes to workspace 10.
 
-=item B<KeySysWorkspace11>=C<Alt+Ctrl+bracketleft>
+=item B<KeySysWorkspace11>=C<Alt+Ctrl+minus>
 
 Goes to workspace 11.
 
-=item B<KeySysWorkspace12>=C<Alt+Ctrl+bracketright>
+=item B<KeySysWorkspace12>=C<Alt+Ctrl+equal>
 
 Goes to workspace 12.
 
@@ -888,11 +924,11 @@ Takes the active window to workspace 9.
 
 Takes the active window to workspace 10.
 
-=item B<KeySysWorkspace11TakeWin>=C<Alt+Ctrl+Shift+bracketleft>
+=item B<KeySysWorkspace11TakeWin>=C<Alt+Ctrl+Shift+minus>
 
 Takes the active window to workspace 11.
 
-=item B<KeySysWorkspace12TakeWin>=C<Alt+Ctrl+Shift+bracketright>
+=item B<KeySysWorkspace12TakeWin>=C<Alt+Ctrl+Shift+equal>
 
 Takes the active window to workspace 12.
 

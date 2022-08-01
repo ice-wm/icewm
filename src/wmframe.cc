@@ -148,7 +148,6 @@ YFrameWindow::~YFrameWindow() {
         if (client()) {
             if (!client()->destroyed() && client()->adopted())
                 XRemoveFromSaveSet(xapp->display(), client()->handle());
-            frameContext.remove(client()->handle());
         }
         if (fUserTimeWindow != None) {
             windowContext.remove(fUserTimeWindow);
@@ -163,7 +162,7 @@ YFrameWindow::~YFrameWindow() {
     }
 
     if (taskBar) {
-        taskBar->workspacesRepaint();
+        taskBar->workspacesRepaint(getWorkspace());
     }
 }
 
@@ -394,33 +393,42 @@ void YFrameWindow::createPointerWindows() {
 void YFrameWindow::grabKeys() {
     XUngrabKey(xapp->display(), AnyKey, AnyModifier, handle());
 
-    GRAB_WMKEY(gKeyWinRaise);
-    GRAB_WMKEY(gKeyWinOccupyAll);
-    GRAB_WMKEY(gKeyWinLower);
-    GRAB_WMKEY(gKeyWinClose);
-    GRAB_WMKEY(gKeyWinRestore);
-    GRAB_WMKEY(gKeyWinNext);
-    GRAB_WMKEY(gKeyWinPrev);
-    GRAB_WMKEY(gKeyWinMove);
-    GRAB_WMKEY(gKeyWinSize);
-    GRAB_WMKEY(gKeyWinMinimize);
-    GRAB_WMKEY(gKeyWinMaximize);
-    GRAB_WMKEY(gKeyWinMaximizeVert);
-    GRAB_WMKEY(gKeyWinMaximizeHoriz);
-    GRAB_WMKEY(gKeyWinHide);
-    GRAB_WMKEY(gKeyWinRollup);
-    GRAB_WMKEY(gKeyWinFullscreen);
-    GRAB_WMKEY(gKeyWinMenu);
-    GRAB_WMKEY(gKeyWinArrangeN);
-    GRAB_WMKEY(gKeyWinArrangeNE);
-    GRAB_WMKEY(gKeyWinArrangeE);
-    GRAB_WMKEY(gKeyWinArrangeSE);
-    GRAB_WMKEY(gKeyWinArrangeS);
-    GRAB_WMKEY(gKeyWinArrangeSW);
-    GRAB_WMKEY(gKeyWinArrangeW);
-    GRAB_WMKEY(gKeyWinArrangeNW);
-    GRAB_WMKEY(gKeyWinArrangeC);
-    GRAB_WMKEY(gKeyWinSmartPlace);
+    grab(gKeyWinRaise);
+    grab(gKeyWinOccupyAll);
+    grab(gKeyWinLower);
+    grab(gKeyWinClose);
+    grab(gKeyWinRestore);
+    grab(gKeyWinNext);
+    grab(gKeyWinPrev);
+    grab(gKeyWinMove);
+    grab(gKeyWinSize);
+    grab(gKeyWinMinimize);
+    grab(gKeyWinMaximize);
+    grab(gKeyWinMaximizeVert);
+    grab(gKeyWinMaximizeHoriz);
+    grab(gKeyWinHide);
+    grab(gKeyWinRollup);
+    grab(gKeyWinFullscreen);
+    grab(gKeyWinMenu);
+    grab(gKeyWinArrangeN);
+    grab(gKeyWinArrangeNE);
+    grab(gKeyWinArrangeE);
+    grab(gKeyWinArrangeSE);
+    grab(gKeyWinArrangeS);
+    grab(gKeyWinArrangeSW);
+    grab(gKeyWinArrangeW);
+    grab(gKeyWinArrangeNW);
+    grab(gKeyWinArrangeC);
+    grab(gKeyWinTileLeft);
+    grab(gKeyWinTileRight);
+    grab(gKeyWinTileTop);
+    grab(gKeyWinTileBottom);
+    grab(gKeyWinTileTopLeft);
+    grab(gKeyWinTileTopRight);
+    grab(gKeyWinTileBottomLeft);
+    grab(gKeyWinTileBottomRight);
+    grab(gKeyWinTileCenter);
+    grab(gKeyWinSmartPlace);
 
     container()->regrabMouse();
 }
@@ -581,7 +589,7 @@ void YFrameWindow::getNewPos(const XConfigureRequestEvent& cr,
     // update pager when windows move/resize themselves (like xmms, gmplayer, ...),
     // because this does not call YFrameWindow::endMoveSize()
     if (taskBar) {
-        taskBar->workspacesRepaint();
+        taskBar->workspacesRepaint(getWorkspace());
     }
 }
 
@@ -1604,6 +1612,9 @@ void YFrameWindow::loseWinFocus() {
                 fTitleBar->deactivate();
         }
         updateTaskBar();
+        if (taskBar) {
+            taskBar->workspacesRepaint(getWorkspace());
+        }
     }
 }
 
@@ -1625,6 +1636,9 @@ void YFrameWindow::setWinFocus() {
         if (true || !clientMouseActions) {
             if (!raiseOnClickClient || !canRaise() || !overlaps(bool(Below)))
                 container()->releaseButtons();
+        }
+        if (taskBar) {
+            taskBar->workspacesRepaint(getWorkspace());
         }
     }
 }
@@ -2039,11 +2053,6 @@ void YFrameWindow::wmOccupyAllOrCurrent() {
     } else {
         setAllWorkspaces();
     }
-}
-
-void YFrameWindow::wmOccupyAll() {
-    if (!isAllWorkspaces())
-        setAllWorkspaces();
 }
 
 void YFrameWindow::wmOccupyWorkspace(int workspace) {
@@ -2518,6 +2527,8 @@ void YFrameWindow::updateIcon() {
         fTaskBarApp->repaint();
     if (windowList && fWinListItem && windowList->visible())
         windowList->repaintItem(fWinListItem);
+    if (taskBar)
+        taskBar->workspacesRepaint(getWorkspace());
 }
 
 YFrameWindow *YFrameWindow::nextLayer() {
@@ -2740,12 +2751,13 @@ bool YFrameWindow::getInputFocusHint() {
 
 
 void YFrameWindow::setWorkspace(int workspace) {
-    if ( ! inrange(workspace + 1, 0, int(workspaceCount)))
+    if ( ! inrange(workspace, -1, workspaceCount - 1))
         return ;
     if (workspace != fWinWorkspace) {
+        int previous = fWinWorkspace;
         int activeWS = int(manager->activeWorkspace());
         bool otherWS = (workspace != AllWorkspaces && workspace != activeWS);
-        bool refocus = (this == manager->getFocus() && otherWS);
+        bool refocus = (focused() && otherWS);
         if (otherWS) {
             int ws = (fWinWorkspace >= 0 ? fWinWorkspace : activeWS);
             if (workspaces[ws].focused == this) {
@@ -2753,22 +2765,28 @@ void YFrameWindow::setWorkspace(int workspace) {
             }
         }
         fWinWorkspace = workspace;
-        if (isAllWorkspaces())
-            fWinState |= WinStateSticky;
-        else
+        client()->setWorkspaceHint(workspace);
+        if (isAllWorkspaces()) {
+            if (notState(WinStateSticky)) {
+                fWinState |= WinStateSticky;
+                updateState();
+            }
+        } else if (hasState(WinStateSticky)) {
             fWinState &= ~WinStateSticky;
-        client()->setWorkspaceHint(fWinWorkspace);
-        updateState();
+            updateState();
+        }
         if (refocus)
             manager->focusLastWindow();
         updateTaskBar();
         if (windowList && fWinListItem)
             windowList->updateWindowListApp(fWinListItem);
         for (YFrameWindow *t = transient(); t; t = t->nextTransient()) {
-            t->setWorkspace(getWorkspace());
+            t->setWorkspace(workspace);
         }
-        if (taskBar)
-            taskBar->workspacesRepaint();
+        if (taskBar) {
+            taskBar->workspacesRepaint(previous);
+            taskBar->workspacesRepaint(workspace);
+        }
     }
 }
 
@@ -2892,7 +2910,7 @@ void YFrameWindow::updateLayer(bool restack) {
         if (restack)
             manager->restackWindows();
         if (taskBar)
-            taskBar->workspacesRepaint();
+            taskBar->workspacesRepaint(getWorkspace());
     }
 }
 
@@ -3347,7 +3365,7 @@ void YFrameWindow::setState(int mask, int state) {
     if (hasbit(deltaState, WinStateUnmapped)) {
         layoutResizeIndicators();
         if (taskBar)
-            taskBar->workspacesRepaint();
+            taskBar->workspacesRepaint(getWorkspace());
     }
 }
 

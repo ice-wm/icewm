@@ -19,16 +19,25 @@
 #define defgKeyWinFullscreen            XK_F11, kfAlt, "Alt+F11"
 #define defgKeyWinHide                  XK_F12, kfAlt+kfShift, "Alt+Shift+F12"
 #define defgKeyWinRollup                XK_F12, kfAlt, "Alt+F12"
-#define defgKeyWinArrangeN              XK_KP_Up, kfCtrl+kfAlt, "Ctrl+Alt+KP_8"
-#define defgKeyWinArrangeNE             XK_KP_Prior, kfCtrl+kfAlt, "Ctrl+Alt+KP_9"
-#define defgKeyWinArrangeE              XK_KP_Right, kfCtrl+kfAlt, "Ctrl+Alt+KP_6"
-#define defgKeyWinArrangeSE             XK_KP_Next, kfCtrl+kfAlt, "Ctrl+Alt+KP_3"
-#define defgKeyWinArrangeS              XK_KP_Down, kfCtrl+kfAlt, "Ctrl+Alt+KP_2"
-#define defgKeyWinArrangeSW             XK_KP_End, kfCtrl+kfAlt, "Ctrl+Alt+KP_1"
-#define defgKeyWinArrangeW              XK_KP_Left, kfCtrl+kfAlt, "Ctrl+Alt+KP_4"
-#define defgKeyWinArrangeNW             XK_KP_Home, kfCtrl+kfAlt, "Ctrl+Alt+KP_7"
-#define defgKeyWinArrangeC              XK_KP_Begin, kfCtrl+kfAlt, "Ctrl+Alt+KP_5"
-#define defgKeyWinSmartPlace            XK_KP_Begin, kfCtrl+kfAlt+kfShift, "Ctrl+Alt+Shift+KP_5"
+#define defgKeyWinArrangeN              XK_KP_Up, kfCtrl+kfAlt, "Ctrl+Alt+KP_Up"
+#define defgKeyWinArrangeNE             XK_KP_Prior, kfCtrl+kfAlt, "Ctrl+Alt+KP_Prior"
+#define defgKeyWinArrangeE              XK_KP_Right, kfCtrl+kfAlt, "Ctrl+Alt+KP_Right"
+#define defgKeyWinArrangeSE             XK_KP_Next, kfCtrl+kfAlt, "Ctrl+Alt+KP_Next"
+#define defgKeyWinArrangeS              XK_KP_Down, kfCtrl+kfAlt, "Ctrl+Alt+KP_Down"
+#define defgKeyWinArrangeSW             XK_KP_End, kfCtrl+kfAlt, "Ctrl+Alt+KP_End"
+#define defgKeyWinArrangeW              XK_KP_Left, kfCtrl+kfAlt, "Ctrl+Alt+KP_Left"
+#define defgKeyWinArrangeNW             XK_KP_Home, kfCtrl+kfAlt, "Ctrl+Alt+KP_Home"
+#define defgKeyWinArrangeC              XK_KP_Begin, kfCtrl+kfAlt, "Ctrl+Alt+KP_Begin"
+#define defgKeyWinTileLeft              0, 0, ""
+#define defgKeyWinTileRight             0, 0, ""
+#define defgKeyWinTileTop               0, 0, ""
+#define defgKeyWinTileBottom            0, 0, ""
+#define defgKeyWinTileTopLeft           0, 0, ""
+#define defgKeyWinTileTopRight          0, 0, ""
+#define defgKeyWinTileBottomLeft        0, 0, ""
+#define defgKeyWinTileBottomRight       0, 0, ""
+#define defgKeyWinTileCenter            0, 0, ""
+#define defgKeyWinSmartPlace            XK_KP_Begin, kfCtrl+kfAlt+kfShift, "Ctrl+Alt+Shift+KP_Begin"
 #define defgKeySysSwitchNext            XK_Tab, kfAlt, "Alt+Tab"
 #define defgKeySysSwitchLast            XK_Tab, kfAlt+kfShift, "Alt+Shift+Tab"
 #define defgKeySysSwitchClass           XK_grave, kfAlt, "Alt+grave"
@@ -62,8 +71,8 @@
 #define defgKeySysWorkspace8            '8', kfAlt+kfCtrl, "Alt+Ctrl+8"
 #define defgKeySysWorkspace9            '9', kfAlt+kfCtrl, "Alt+Ctrl+9"
 #define defgKeySysWorkspace10           '0', kfAlt+kfCtrl, "Alt+Ctrl+0"
-#define defgKeySysWorkspace11           '-', kfAlt+kfCtrl, "Alt+Ctrl+bracketleft"
-#define defgKeySysWorkspace12           '=', kfAlt+kfCtrl, "Alt+Ctrl+bracketright"
+#define defgKeySysWorkspace11           '-', kfAlt+kfCtrl, "Alt+Ctrl+minus"
+#define defgKeySysWorkspace12           '=', kfAlt+kfCtrl, "Alt+Ctrl+equal"
 #define defgKeySysWorkspace1TakeWin     '1', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+1"
 #define defgKeySysWorkspace2TakeWin     '2', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+2"
 #define defgKeySysWorkspace3TakeWin     '3', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+3"
@@ -74,8 +83,8 @@
 #define defgKeySysWorkspace8TakeWin     '8', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+8"
 #define defgKeySysWorkspace9TakeWin     '9', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+9"
 #define defgKeySysWorkspace10TakeWin    '0', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+0"
-#define defgKeySysWorkspace11TakeWin    '-', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketleft"
-#define defgKeySysWorkspace12TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
+#define defgKeySysWorkspace11TakeWin    '-', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+minus"
+#define defgKeySysWorkspace12TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+equal"
 #define defgKeySysTileVertical          XK_F2, kfAlt+kfShift, "Alt+Shift+F2"
 #define defgKeySysTileHorizontal        XK_F3, kfAlt+kfShift, "Alt+Shift+F3"
 #define defgKeySysCascade               XK_F4, kfAlt+kfShift, "Alt+Shift+F4"
@@ -93,7 +102,6 @@
 
 #define DEF_WMKEY(k) extern WMKey k
 #define IS_WMKEY(k,m,b) b.eq(k,m)
-#define GRAB_WMKEY(k)   grabVKey(k.key, k.mod)
 #define KEY_NAME(k)     k.name
 #endif
 
@@ -127,6 +135,15 @@ DEF_WMKEY(gKeyWinArrangeSW);
 DEF_WMKEY(gKeyWinArrangeW);
 DEF_WMKEY(gKeyWinArrangeNW);
 DEF_WMKEY(gKeyWinArrangeC);
+DEF_WMKEY(gKeyWinTileLeft);
+DEF_WMKEY(gKeyWinTileRight);
+DEF_WMKEY(gKeyWinTileTop);
+DEF_WMKEY(gKeyWinTileBottom);
+DEF_WMKEY(gKeyWinTileTopLeft);
+DEF_WMKEY(gKeyWinTileTopRight);
+DEF_WMKEY(gKeyWinTileBottomLeft);
+DEF_WMKEY(gKeyWinTileBottomRight);
+DEF_WMKEY(gKeyWinTileCenter);
 DEF_WMKEY(gKeyWinSmartPlace);
 DEF_WMKEY(gKeyWinMenu);
 DEF_WMKEY(gKeySysSwitchNext);
