@@ -1,11 +1,47 @@
-icewm -- history of user-visible changes.  2022-07-18
+icewm -- history of user-visible changes.  2022-08-01
+
+Release icewm-2.9.9 released 2022-08-01
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.9.8...2.9.9
+
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
+      Permit percentages to have comma's in icesh.
+      Keep accurate track of window changes in workspace buttons for
+        PagerShowPreview.  Only redraw affected workspace buttons, which reduces
+        the total number of workspace button redraws, especially for larges
+        number of workspace buttons.
+      Add key bindings for single window tiling operations for issues
+        bbidulock/icewm#335, ice-wm/icewm#74 and ice-wm/icewm#84.
+      Complete -e option.
+      WindowMaker dock apps are supported.
+      Support more HTML entities in icehelp.
+      Remove dependency on asciidoc and prefer markdown format for the manual.
+      Prevent warnings.
+      Also install markdown.
+      Try srcdir.
+      Cleanup test and prefer markdown manual.
+      Cleanup key grabs.
+      Drop obsolete wmOccupyAll().
+      Accept either markdown or asciidoc to generate manual html with CMake.
+      Add markdown and icesh.
+      Automatically detect and prevent race conditions in icesh relating to
+        moving and sizing windows for issue #335. Improve the accuracy of the
+        "sizeto" command in icesh for issue #335. Add "extents" command to
+        icesh. Add "workarea" command to icesh.
+      Get rid of the frameContext.
+      Prefer findClient in two cases: unmap notify and recv ping.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
 
 Release icewm-2.9.8 released 2022-07-18
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.9.7...2.9.8
 
-Bert Gijsbers <gijsbers@science.uva.nl> (21):
+Bert Gijsbers <gijsbers@science.uva.nl> (22):
       Omit trailing dot in CPU temperature and add centigrade symbol for issue
         #652.
       If there is no WM active, then a restart will start icewm.
@@ -32,6 +68,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (21):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.9.8 release
 
 Kristijan Fremen Velkovski <me@krisfremen.com> (2):
       Translated using Weblate (Macedonian)
@@ -289,46 +326,6 @@ Hugo Carvalho <hugokarvalho@hotmail.com> (1):
 
 Taras Panchenko <top39@ukr.net> (1):
       Translated using Weblate (Ukrainian)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
-
-
-Release icewm-2.9.2 released 2021-12-07
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.1...2.9.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
-      Fix for fullscreen wine programs for issue ice-wm/icewm#73.
-      Fix against the flashing of title bar buttons when the window list is
-        activated.
-      Add class tokens.
-      Include sys/wait.h for FreeBSD and internationalize the keyboard tooltip.
-      Use class tokens to hide use of strtok.
-      Internationalize the error messages for the dynamic menu.
-      Add class YPidWaiter for asynchronous waiting for process termination.
-      Prevent negative image positions in fillPixmap.
-      Fix the drawing of ledclock pixmaps for some themes like "unusualscars" by
-        means of clipping before calling fillPixmap.
-      Update pot files.
-      Raise the window list before mapping it.
-      Prefer PictOpOver over PictOpSrc in drawPixmap for 24-bit displays.
-      Delay font loading in APM until battery is detected.
-      Add support for multiple clocks in different time zones.
-      Improve explanation for TimeFormat and give an example.
-      Postpone XFreeFontSet until names are no longer needed.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.9.2 release
-
-Taras Panchenko <top39@ukr.net> (2):
-      Translated using Weblate (Russian)
-      Translated using Weblate (Ukrainian)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)

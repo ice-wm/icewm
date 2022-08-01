@@ -1,6 +1,7 @@
 
 EXTRA_DIST = \
 	$(html_documentation) \
+	icewm.adoc \
 	icewm.md
 
 doc_DATA = \

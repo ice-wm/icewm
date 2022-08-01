@@ -1,5 +1,279 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 97952377fb3838ca26a5a20a31c69eac4e1b73ab
+Merge: 9b23165b 751e987a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Aug 1 23:37:56 2022 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 751e987aaeff2a8b25491c00058a13eafffd1a76
+Merge: d876f65e 173c5737
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Aug 1 23:34:29 2022 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 173c5737fbc6bf6248c60f153b17dcf01be38937
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jul 30 20:43:25 2022 +0200
+
+    Prefer findClient in two cases: unmap notify and recv ping.
+
+ src/wmmgr.cc | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit dda71e87cdecb487a6b6ec9c106a10b9400f61f2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jul 30 13:01:01 2022 +0200
+
+    Get rid of the frameContext.
+
+ src/wmapp.cc    | 40 ++++++++++++------------
+ src/wmclient.cc | 33 ++------------------
+ src/wmframe.cc  |  1 -
+ src/wmmgr.cc    | 88 ++++++++++++++++++++++++++++++-----------------------
+ src/yxapp.cc    |  2 +-
+ src/yxcontext.h |  2 --
+ 6 files changed, 75 insertions(+), 91 deletions(-)
+
+commit d1feb93fb083a54b790af2f00492582ada12f7fe
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Jul 29 10:06:31 2022 +0200
+
+    Automatically detect and prevent race conditions in icesh relating to
+    moving and sizing windows for issue #335. Improve the accuracy of the
+    "sizeto" command in icesh for issue #335. Add "extents" command to
+    icesh. Add "workarea" command to icesh.
+
+ man/icesh.pod |  12 +++-
+ src/icesh.cc  | 209 ++++++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 183 insertions(+), 38 deletions(-)
+
+commit b9f05a2b6f38738e352f6efd8fc52963782f1ed3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 27 23:31:42 2022 +0200
+
+    Add markdown and icesh.
+
+ README.md    | 14 ++++++++++----
+ README.md.in | 10 ++++++++--
+ 2 files changed, 18 insertions(+), 6 deletions(-)
+
+commit 26e0de1e550a68e01267df6cffb9239d061de9a5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 27 15:10:27 2022 +0200
+
+    Accept either markdown or asciidoc to generate manual html with CMake.
+
+ doc/CMakeLists.txt | 58 +++++++++++++++++++++++++++++++++++---------------
+ 1 file changed, 41 insertions(+), 17 deletions(-)
+
+commit 04dd0086a8bbe13fcd5c01acb8668b49854c8892
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 27 06:09:31 2022 +0200
+
+    Drop obsolete wmOccupyAll().
+
+ src/wmframe.cc | 5 -----
+ src/wmframe.h  | 1 -
+ 2 files changed, 6 deletions(-)
+
+commit 59986924ace101f9b5e2ef8ad2c17e5876b8040f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 27 05:59:16 2022 +0200
+
+    Cleanup key grabs.
+
+ man/icewm-keys.pod |  12 -----
+ man/icewm.pod      |   8 ++--
+ src/bindkey.h      |  11 ++---
+ src/wmframe.cc     |  74 ++++++++++++++--------------
+ src/wmmgr.cc       | 128 ++++++++++++++++++++++++-------------------------
+ src/yconfig.h      |   4 +-
+ src/ywindow.cc     |  95 +++++++++++++++++++++---------------
+ src/ywindow.h      |   7 +--
+ 8 files changed, 173 insertions(+), 166 deletions(-)
+
+commit 6a9ea05b14bbb665d3b4efcee6e1ec24b6c97ac8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 21:12:43 2022 +0200
+
+    Cleanup test and prefer markdown manual.
+
+ doc/Makefile.am | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+commit 9a43fc02abc656e79ac4a62b4e0c82acc02c8b1a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 20:59:36 2022 +0200
+
+    Try srcdir.
+
+ doc/Makefile.am | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 44a4bcf82b9392f7a7556a4e58adb6fc46ae68ea
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 20:38:15 2022 +0200
+
+    Also install markdown.
+
+ .github/workflows/cmake.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 104db663eb58a797f1677e0fcbbe55203a934047
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 20:30:30 2022 +0200
+
+    Prevent warnings.
+
+ doc/Makefile.am   | 2 ++
+ src/acpustatus.cc | 8 ++++++--
+ src/fdomenu.cc    | 7 +++++--
+ 3 files changed, 13 insertions(+), 4 deletions(-)
+
+commit b706d6aad7936ed3213dcc15115a5141f563b92b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 20:03:14 2022 +0200
+
+    Remove dependency on asciidoc and prefer markdown format for the manual.
+
+ VERSION         |    2 +-
+ configure.ac    |   25 +-
+ doc/Makefile.am |    6 +-
+ doc/icewm.md    | 2558 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 2570 insertions(+), 21 deletions(-)
+
+commit fbb8c1b4371c521c993a10dff040ca8b2cb83056
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 19:03:14 2022 +0200
+
+    Support more HTML entities in icehelp.
+
+ src/icehelp.cc | 32 +++++++++++++++++++++++++++-----
+ 1 file changed, 27 insertions(+), 5 deletions(-)
+
+commit 72ecc8d87627f0a5b6c2cc4e25dc50db2e656e49
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 18:05:27 2022 +0200
+
+    WindowMaker dock apps are supported.
+
+ TODO | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 40cf52e4786a3f73d1908743ad9883496ee21f85
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 16:19:16 2022 +0200
+
+    Complete -e option.
+
+ src/genpref.cc | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 80a4a852ad6949756ab961329477c6f85049a1d9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 16:05:31 2022 +0200
+
+    Add key bindings for single window tiling operations for issues
+    bbidulock/icewm#335, ice-wm/icewm#74 and ice-wm/icewm#84.
+
+ man/icewm.pod   | 36 +++++++++++++++++++++++++
+ src/bindkey.h   | 36 ++++++++++++++++++-------
+ src/default.h   |  9 +++++++
+ src/genpref.cc  | 10 ++++++-
+ src/movesize.cc | 18 +++++++++++++
+ src/wmapp.cc    | 26 ++++++++----------
+ src/wmframe.cc  |  9 +++++++
+ src/ywindow.cc  | 78 ++++++++++++++++++++++++++++-------------------------
+ 8 files changed, 160 insertions(+), 62 deletions(-)
+
+commit 79ee5df4cf487558e1b6e6e1aef6f9141804aa03
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 13:16:58 2022 +0200
+
+    Keep accurate track of window changes in workspace buttons for
+    PagerShowPreview.  Only redraw affected workspace buttons, which reduces
+    the total number of workspace button redraws, especially for larges
+    number of workspace buttons.
+
+ src/aworkspaces.cc |  31 +++++++++----
+ src/aworkspaces.h  |   9 +++-
+ src/decorate.cc    |   2 +-
+ src/movesize.cc    |   2 +-
+ src/wmframe.cc     |  41 +++++++++++------
+ src/wmmgr.cc       | 116 ++++++++++++++++++++++++-------------------------
+ src/wmmgr.h        |  21 +++++----
+ src/wmtaskbar.cc   |   5 ++-
+ src/wmtaskbar.h    |   4 +-
+ src/wmwinlist.cc   |   2 +-
+ 10 files changed, 134 insertions(+), 99 deletions(-)
+
+commit 5a3f36f2e082fa4edfc3ab287d2eef514d77baa4
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 26 13:15:45 2022 +0200
+
+    Permit percentages to have comma's in icesh.
+
+ src/icesh.cc | 34 ++++++++++++++++++++++++++--------
+ 1 file changed, 26 insertions(+), 8 deletions(-)
+
+commit 9b23165b88e4104be210406130f13303f7fe3ecf
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 18 22:55:37 2022 +0200
+
+    Prepare 2.9.8 release
+
+ AUTHORS      |   5 +-
+ ChangeLog    | 625 ++++++++++++++++++++++++++++---------------------------
+ NEWS         |  90 ++++----
+ README.md    |  36 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     | 104 ++++-----
+ po/be.po     | 104 ++++-----
+ po/bg.po     | 104 ++++-----
+ po/ca.po     | 104 ++++-----
+ po/cs.po     | 104 ++++-----
+ po/da.po     | 104 ++++-----
+ po/de.po     | 104 ++++-----
+ po/el.po     | 104 ++++-----
+ po/en.po     | 104 ++++-----
+ po/es.po     | 104 ++++-----
+ po/fi.po     | 104 ++++-----
+ po/fr.po     | 104 ++++-----
+ po/he.po     | 104 ++++-----
+ po/hr.po     | 104 ++++-----
+ po/hu.po     | 104 ++++-----
+ po/icewm.pot | 106 +++++-----
+ po/id.po     | 104 ++++-----
+ po/it.po     | 104 ++++-----
+ po/ja.po     | 104 ++++-----
+ po/ko.po     | 104 ++++-----
+ po/lt.po     | 104 ++++-----
+ po/lv.po     | 104 ++++-----
+ po/mk.po     | 130 ++++++------
+ po/nb.po     | 104 ++++-----
+ po/nl.po     | 104 ++++-----
+ po/no.po     | 104 ++++-----
+ po/pl.po     | 104 ++++-----
+ po/pt.po     | 104 ++++-----
+ po/pt_BR.po  | 104 ++++-----
+ po/ro.po     | 104 ++++-----
+ po/ru.po     | 104 ++++-----
+ po/sk.po     | 104 ++++-----
+ po/sl.po     | 104 ++++-----
+ po/sv.po     | 134 ++++++------
+ po/tr.po     | 104 ++++-----
+ po/uk.po     | 104 ++++-----
+ po/vi.po     | 104 ++++-----
+ po/zh_CN.po  | 104 ++++-----
+ po/zh_TW.po  | 104 ++++-----
+ 46 files changed, 2454 insertions(+), 2430 deletions(-)
+
 commit 4427e35bc1f5cd99ee10866aa8c63aee4514d56a
 Merge: 8d8acc27 d876f65e
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6018,333 +6292,3 @@ Date:   Fri May 7 14:31:25 2021 +0000
 
  po/pt_BR.po | 38 +++++++++++++++++++-------------------
  1 file changed, 19 insertions(+), 19 deletions(-)
-
-commit 08c4cdeaef18bd676e40b1316f546997195433d3
-Author: Freek de Kruijf <freek@opensuse.org>
-Date:   Thu May 6 21:30:28 2021 +0000
-
-    Translated using Weblate (Dutch)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/nl.po | 18 +++++++-----------
- 1 file changed, 7 insertions(+), 11 deletions(-)
-
-commit 96779731d8ed74d30d6e62fb1f1c4b2be7711016
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Date:   Thu May 6 22:05:57 2021 +0000
-
-    Translated using Weblate (Japanese)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/ja.po | 18 +++++++-----------
- 1 file changed, 7 insertions(+), 11 deletions(-)
-
-commit cc4244183f7060cfe19a9752f301f0290cd86b8d
-Author: David Medina <medipas@gmail.com>
-Date:   Thu May 6 19:03:10 2021 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/ca.po | 18 +++++++-----------
- 1 file changed, 7 insertions(+), 11 deletions(-)
-
-commit 33497dea8067a6d9eeccb3ec8eec57dd16c4f1b9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri May 7 01:39:59 2021 +0200
-
-    Prepare 2.3.4 release
-
- AUTHORS      |   8 +-
- ChangeLog    | 815 ++++++++++++++++++++++++++++++-------------------------
- NEWS         | 102 ++++---
- README.md    |  36 +--
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  82 +++---
- po/be.po     |  82 +++---
- po/bg.po     |  82 +++---
- po/ca.po     |  82 +++---
- po/cs.po     |  82 +++---
- po/da.po     |  82 +++---
- po/de.po     |  82 +++---
- po/el.po     |  82 +++---
- po/en.po     |  82 +++---
- po/es.po     |  82 +++---
- po/fi.po     |  82 +++---
- po/fr.po     |  82 +++---
- po/he.po     |  82 +++---
- po/hr.po     |  82 +++---
- po/hu.po     |  82 +++---
- po/icewm.pot |  84 +++---
- po/id.po     |  82 +++---
- po/it.po     |  82 +++---
- po/ja.po     |  82 +++---
- po/ko.po     |  82 +++---
- po/lt.po     |  82 +++---
- po/lv.po     |  82 +++---
- po/mk.po     |  82 +++---
- po/nb.po     |  82 +++---
- po/nl.po     |  82 +++---
- po/no.po     |  82 +++---
- po/pl.po     |  82 +++---
- po/pt.po     |  82 +++---
- po/pt_BR.po  |  82 +++---
- po/ro.po     |  82 +++---
- po/ru.po     |  82 +++---
- po/sk.po     |  82 +++---
- po/sl.po     |  82 +++---
- po/sv.po     |  82 +++---
- po/tr.po     |  82 +++---
- po/uk.po     |  82 +++---
- po/vi.po     |  82 +++---
- po/zh_CN.po  |  82 +++---
- po/zh_TW.po  |  82 +++---
- 45 files changed, 2143 insertions(+), 2030 deletions(-)
-
-commit c6619282bf52afcb1b6900348f4fa0e1b7c91e2b
-Merge: fef8441f 20314f45
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri May 7 01:29:16 2021 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 20314f45588e6a5619e419beff62e549c6e48550
-Merge: 721a1b20 43ec0839
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri May 7 01:27:56 2021 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 43ec0839bf40ecd469f7ab3e65068777a6df76dd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri May 7 01:06:25 2021 +0200
-
-    Reduce freetype font size for icehelp. Improve reversed link color
-    for icehelp.
-
- src/icehelp.cc | 23 +++++++++++++----------
- 1 file changed, 13 insertions(+), 10 deletions(-)
-
-commit 9faf348bca2689e0227a1fba6404dd42c7e0eb4b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 6 19:26:26 2021 +0200
-
-    make update-po
-
- po/ar.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/be.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/bg.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/ca.po     | 128 ++++++++++++++++++++++++++++-----------------------
- po/cs.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/da.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/de.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/el.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/en.po     | 120 ++++++++++++++++++++++++++----------------------
- po/es.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/fi.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/fr.po     | 128 ++++++++++++++++++++++++++++-----------------------
- po/he.po     | 120 ++++++++++++++++++++++++++----------------------
- po/hr.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/hu.po     | 136 +++++++++++++++++++++++++++++++------------------------
- po/icewm.pot | 122 +++++++++++++++++++++++++++----------------------
- po/id.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/it.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/ja.po     | 128 ++++++++++++++++++++++++++++-----------------------
- po/ko.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/lt.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/lv.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/mk.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/nb.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/nl.po     | 128 ++++++++++++++++++++++++++++-----------------------
- po/no.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/pl.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/pt.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/pt_BR.po  | 124 ++++++++++++++++++++++++++++----------------------
- po/ro.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/ru.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/sk.po     | 128 ++++++++++++++++++++++++++++-----------------------
- po/sl.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/sv.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/tr.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/uk.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/vi.po     | 124 ++++++++++++++++++++++++++++----------------------
- po/zh_CN.po  | 124 ++++++++++++++++++++++++++++----------------------
- po/zh_TW.po  | 124 ++++++++++++++++++++++++++++----------------------
- 39 files changed, 2736 insertions(+), 2122 deletions(-)
-
-commit f1d41d292d4a069dcaba87f9ddc69cca1a23806d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 6 19:25:16 2021 +0200
-
-    Check input lengths.
-
- src/icehelp.cc | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
-
-commit 063e412b71fd4d2dfe878b04c681ac1e11b79617
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 6 19:12:00 2021 +0200
-
-    Add PingTimeout.
-
- man/icewm-preferences.pod | 4 ++++
- 1 file changed, 4 insertions(+)
-
-commit affe7d96d9cadb37841f0f8f3a2105694aecbab7
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 6 19:03:37 2021 +0200
-
-    Improve accuracy of clicking on links in icehelp. Support reverse video
-    in icehelp. Add more keyboard shortcuts to icehelp.
-
- src/icehelp.cc     | 133 +++++++++++++++++++++++++++++++++++++++----------
- src/yscrollbar.cc  |  15 ++++++
- src/yscrollbar.h   |   3 ++
- src/yscrollview.cc |  27 ++--------
- src/yscrollview.h  |  18 +++----
- 5 files changed, 139 insertions(+), 57 deletions(-)
-
-commit 918c05ab43f9c547545841b972bf4926b55afca2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 6 19:02:36 2021 +0200
-
-    Don't adjust workarea when snapping from outside the workarea.
-
- src/movesize.cc | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-commit 0a32a9a13b591e2e99f1b2e48fd88e11d889c924
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 6 19:01:31 2021 +0200
-
-    Add reverse color.
-
- src/ycolor.cc | 10 ++++++++++
- src/ycolor.h  |  2 ++
- 2 files changed, 12 insertions(+)
-
-commit 74aa52f91eb2adbd5ea863259777c1ed831ba1ed
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 6 19:00:22 2021 +0200
-
-    Add setNetName.
-
- src/ywindow.cc | 6 ++++++
- src/ywindow.h  | 1 +
- 2 files changed, 7 insertions(+)
-
-commit e9c0278f109c1322cda05154b330cb20906787d6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 6 18:59:22 2021 +0200
-
-    Add a --disable-rsvg option to configure for issue #587.
-
- configure.ac | 38 ++++++++++++++++++++++----------------
- 1 file changed, 22 insertions(+), 16 deletions(-)
-
-commit c8f7c5f44c7674d99f3c1610e8df2ed55744d66c
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Thu May 6 13:32:01 2021 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/sk.po | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-commit 87fff3d3b7a1f1301dfeb7be5b6c446ecc9e6444
-Author: Freek de Kruijf <freek@opensuse.org>
-Date:   Thu May 6 08:29:44 2021 +0000
-
-    Translated using Weblate (Dutch)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/nl.po | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-commit aa8d5ffe5bc64a94b9d58c4e0aa78cbd01bcc7f7
-Author: Guillaume GARDET <guillaume.gardet@opensuse.org>
-Date:   Thu May 6 06:41:28 2021 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/fr.po | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-commit aaad3bf3ddd038dae102560929b03e3bf67b4471
-Author: David Medina <medipas@gmail.com>
-Date:   Thu May 6 08:37:02 2021 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/ca.po | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-commit 6945bd20579f6510ce34ad1666a293e4804987c7
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Date:   Thu May 6 03:48:35 2021 +0000
-
-    Translated using Weblate (Japanese)
-
-    Currently translated at 100.0% (474 of 474 strings)
-
- po/ja.po | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-commit 74a762fd1041990755b891ea5e4f3d8d1b000367
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 5 23:46:55 2021 +0200
-
-    make update-po
-
- po/ar.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/be.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/bg.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/ca.po     | 93 ++++++++++++++++++++++++++++------------------------
- po/cs.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/da.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/de.po     | 91 +++++++++++++++++++++++++++------------------------
- po/el.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/en.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/es.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/fi.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/fr.po     | 95 ++++++++++++++++++++++++++++-------------------------
- po/he.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/hr.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/hu.po     | 93 ++++++++++++++++++++++++++++------------------------
- po/icewm.pot | 91 +++++++++++++++++++++++++++------------------------
- po/id.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/it.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/ja.po     | 93 ++++++++++++++++++++++++++++------------------------
- po/ko.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/lt.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/lv.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/mk.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/nb.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/nl.po     | 99 ++++++++++++++++++++++++++++++--------------------------
- po/no.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/pl.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/pt.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/pt_BR.po  | 89 +++++++++++++++++++++++++++-----------------------
- po/ro.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/ru.po     | 91 +++++++++++++++++++++++++++------------------------
- po/sk.po     | 93 ++++++++++++++++++++++++++++------------------------
- po/sl.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/sv.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/tr.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/uk.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/vi.po     | 89 +++++++++++++++++++++++++++-----------------------
- po/zh_CN.po  | 89 +++++++++++++++++++++++++++-----------------------
- po/zh_TW.po  | 89 +++++++++++++++++++++++++++-----------------------
- 39 files changed, 1891 insertions(+), 1618 deletions(-)
