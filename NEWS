@@ -1,11 +1,59 @@
-icewm -- history of user-visible changes.  2022-08-01
+icewm -- history of user-visible changes.  2022-10-03
+
+Release icewm-3.0.0 released 2022-10-03
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 2.9.9...3.0.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (16):
+      Clarify icewmbg one image per workspace.
+      Succinct.
+      Fix setWorkspace for issue #667.
+      Make layers int. Add validLayer macro.
+      Add override and focusmodel commands to icesh.
+      Start icewm before icesound and icewmbg.
+      Print a message if icewmbg encounters an image loading failure.
+      Destructor must be virtual.
+      Add actionUntab.
+      Show the property name when debugging XGetWindowProperty errors.
+      Add support for tabbed windows. Add "ignoreOverrideRedirect" winoption.
+        Allow taskbar to hide/unhide by icesh.
+      Change updateNormalSize to have zero rounding error when cycling over
+        different terminals as tabs in a single frame.
+      Update pot files.
+      Only generate manual if source is newer than output.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Eduard Bloch <blade@debian.org> (3):
+      Refactor and extend xrandr menu provider
+      Fix fdomenu copyright information
+      Section name bugfix and --activate implementation, etc.
+
+Luna  Jernberg <bittin@opensuse.org> (2):
+      Translated using Weblate (Swedish)
+      Translated using Weblate (Swedish)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Kristijan Fremen Velkovski <me@krisfremen.com> (1):
+      Translated using Weblate (Macedonian)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-2.9.9 released 2022-08-01
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.9.8...2.9.9
 
-Bert Gijsbers <gijsbers@science.uva.nl> (20):
+Bert Gijsbers <gijsbers@science.uva.nl> (21):
       Permit percentages to have comma's in icesh.
       Keep accurate track of window changes in workspace buttons for
         PagerShowPreview.  Only redraw affected workspace buttons, which reduces
@@ -34,6 +82,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (20):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 2.9.9 release
 
 
 Release icewm-2.9.8 released 2022-07-18
@@ -269,64 +318,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (17):
 
 Hugo Carvalho <hugokarvalho@hotmail.com> (1):
       Translated using Weblate (Portuguese)
-
-
-Release icewm-2.9.3 released 2021-12-21
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.2...2.9.3
-
-Bert Gijsbers <gijsbers@science.uva.nl> (24):
-      Fix vertical position of systray in taskbar to prevent background glitch
-        for issue #626.
-      Only repaint frame when it has borders.
-      Initialize the system tray with a valid height for issue #626.  When the
-        system tray changes height then start from a vertical position of 1 for
-        issue #626.
-      Revert commit 427547115d60d9b41860aa76b27cb8e805ed5d6a "Preferring DejaVu
-        fonts for all purposes".
-      Immediately create workspace buttons for more reliable taskbar relayouts.
-      Add font macros for Xft fonts.
-      Refresh task pane background on expose events.
-      Support Unicode and non-Latin text in input fields and the address bar.
-      Prevent compiler warnings.
-      Denote the language.
-      Initialize locale specific modifiers with XSetLocaleModifiers.
-      Fix compilation without CONFIG_I18N.
-      Fix for icesh maximize.
-      Add a Tile submenu to the title bar menu for issue ice-wm/icewm#74.
-      Update pot files.
-      Add global 'ignorable' to not report errors for this unmapped client
-        window.
-      Postpone requesting focus for icewm internal windows until all create and
-        map events have been processed.
-      Set fFocusWin to nullptr when a frame is about to lose focus.
-      Postpone granting focus to applications which use the Globally Active
-        Input model, like wine, until all its events have been processed.
-      Record when a client frame is unmapped, to not report further errors.
-      Force the desktop background to be refreshed for 'feh' background pixmaps
-        for issue #627.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.9.3 release
-
-David Medina <medipas@gmail.com> (2):
-      Translated using Weblate (Catalan)
-      Translated using Weblate (Catalan)
-
-Eduard Bloch <blade@debian.org> (1):
-      Preferring DejaVu fonts for all purposes
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Taras Panchenko <top39@ukr.net> (1):
-      Translated using Weblate (Ukrainian)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 

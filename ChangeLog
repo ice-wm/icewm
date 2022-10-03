@@ -1,5 +1,416 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 5b330f3ed6d4936380528d8b5126fc929fae2e83
+Merge: 31cfc736 7f38d19c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 16:28:21 2022 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 7f38d19c6aa975310c3df8980a0e2f633f42426b
+Merge: 751e987a 0992e083
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 16:26:38 2022 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 0992e08389dc2b74f834ed6c07c0c311eeb7da5b
+Author: Freek de Kruijf <freek@opensuse.org>
+Date:   Mon Oct 3 09:28:26 2022 +0000
+
+    Translated using Weblate (Dutch)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/nl.po | 44 +++++++++++++++++++++-----------------------
+ 1 file changed, 21 insertions(+), 23 deletions(-)
+
+commit 2b616712d8583eec47eec1dc4f44083e9976ebf6
+Author: David Medina <medipas@gmail.com>
+Date:   Mon Oct 3 09:07:11 2022 +0000
+
+    Translated using Weblate (Catalan)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/ca.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit e32c3ca4dbc944e54214772ad465bb1ac243abe9
+Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
+Date:   Mon Oct 3 04:07:29 2022 +0000
+
+    Translated using Weblate (Japanese)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/ja.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 480638581fafdbf68b87d2c78beb10774139db2e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 05:55:39 2022 +0200
+
+    Only generate manual if source is newer than output.
+
+ doc/Makefile.am | 28 ++++++++++++++++++++--------
+ 1 file changed, 20 insertions(+), 8 deletions(-)
+
+commit 8fc585ddd8db367fdbb69f9dc3b268ffd2a298a0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 05:53:53 2022 +0200
+
+    Update pot files.
+
+ po/ar.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/be.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/bg.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/ca.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/cs.po     | 414 ++++++++++++++++++++++++++-------------------------
+ po/da.po     | 418 ++++++++++++++++++++++++++--------------------------
+ po/de.po     | 414 ++++++++++++++++++++++++++-------------------------
+ po/el.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/en.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/es.po     | 418 ++++++++++++++++++++++++++--------------------------
+ po/fi.po     | 414 ++++++++++++++++++++++++++-------------------------
+ po/fr.po     | 414 ++++++++++++++++++++++++++-------------------------
+ po/he.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/hr.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/hu.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/icewm.pot | 412 ++++++++++++++++++++++++++-------------------------
+ po/id.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/it.po     | 442 ++++++++++++++++++++++++++++---------------------------
+ po/ja.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/ko.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/lt.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/lv.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/mk.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/nb.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/nl.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/no.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/pl.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/pt.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/pt_BR.po  | 430 +++++++++++++++++++++++++++--------------------------
+ po/ro.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/ru.po     | 414 ++++++++++++++++++++++++++-------------------------
+ po/sk.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/sl.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/sv.po     | 414 ++++++++++++++++++++++++++-------------------------
+ po/tr.po     | 414 ++++++++++++++++++++++++++-------------------------
+ po/uk.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/vi.po     | 410 ++++++++++++++++++++++++++-------------------------
+ po/zh_CN.po  | 410 ++++++++++++++++++++++++++-------------------------
+ po/zh_TW.po  | 410 ++++++++++++++++++++++++++-------------------------
+ 39 files changed, 8200 insertions(+), 7888 deletions(-)
+
+commit 620005e0416a65356d66fb7af80532ac22bcc1a1
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 05:52:18 2022 +0200
+
+    Change updateNormalSize to have zero rounding error when cycling over
+    different terminals as tabs in a single frame.
+
+ src/wmframe.cc | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 59fb5d2c195c8d23e893c346f10be2b0c3acf69d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 01:27:22 2022 +0200
+
+    Add support for tabbed windows. Add "ignoreOverrideRedirect" winoption.
+    Allow taskbar to hide/unhide by icesh.
+
+ man/icewm-winoptions.pod |   1 +
+ man/icewm.pod            |  11 +
+ src/atasks.cc            |  10 +-
+ src/atray.cc             |   9 +-
+ src/atray.h              |   4 +-
+ src/aworkspaces.cc       |   2 +-
+ src/decorate.cc          |  39 ++-
+ src/wmapp.cc             |  45 ++-
+ src/wmapp.h              |   6 +
+ src/wmbutton.cc          |   2 +-
+ src/wmclient.cc          | 319 +++++++++++++++---
+ src/wmclient.h           |  39 ++-
+ src/wmcontainer.cc       |  19 +-
+ src/wmcontainer.h        |  14 +-
+ src/wmframe.cc           | 757 ++++++++++++++++++++++---------------------
+ src/wmframe.h            |  46 +--
+ src/wmmgr.cc             | 160 +++++----
+ src/wmmgr.h              |  23 +-
+ src/wmminiicon.cc        |   4 +-
+ src/wmoption.cc          |  19 +-
+ src/wmoption.h           |   3 +
+ src/wmpref.cc            |   5 +-
+ src/wmprog.cc            |   3 +
+ src/wmswitch.cc          | 354 ++++++++++++--------
+ src/wmswitch.h           |   1 +
+ src/wmtaskbar.cc         |  19 +-
+ src/wmtaskbar.h          |   2 +-
+ src/wmtitle.cc           | 208 +++++++++---
+ src/wmtitle.h            |  24 +-
+ src/wmwinmenu.cc         |   5 +-
+ src/ydialog.cc           |   8 +
+ src/ydialog.h            |   1 +
+ src/ymenu.cc             |  29 ++
+ src/ymenu.h              |   3 +
+ src/ymsgbox.cc           |   6 +-
+ src/ymsgbox.h            |   1 -
+ src/yrect.h              |   2 +
+ src/ywindow.cc           | 121 ++++---
+ src/ywindow.h            |  16 +-
+ 39 files changed, 1515 insertions(+), 825 deletions(-)
+
+commit b68db7302800d825e72b8d20d13995f1e52d4c3a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 01:25:17 2022 +0200
+
+    Show the property name when debugging XGetWindowProperty errors.
+
+ src/yxapp.cc | 18 +++++++++++++-----
+ src/yxapp.h  |  2 ++
+ 2 files changed, 15 insertions(+), 5 deletions(-)
+
+commit 2d2a7f9c92b02703345423bbbd6cc84cdc9e78f0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 00:55:23 2022 +0200
+
+    Add actionUntab.
+
+ src/wmaction.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 8cdac6888e523a5c0808ab49d9bc9f91dc66d882
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 00:55:07 2022 +0200
+
+    Destructor must be virtual.
+
+ src/wmabout.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9a8ae1b7a284efc1e968fb6bc4afae98c4edef6d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 00:54:04 2022 +0200
+
+    Print a message if icewmbg encounters an image loading failure.
+
+ src/icewmbg.cc | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit c95ef1660186bfa266b757f400ebad7b25614bcc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 00:53:26 2022 +0200
+
+    Start icewm before icesound and icewmbg.
+
+ src/icesm.cc | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
+
+commit 74e0e1a75ac2943577e210e0badca8c1ffe1496b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 00:52:29 2022 +0200
+
+    Add override and focusmodel commands to icesh.
+
+ man/icesh.pod | 10 +++++++
+ src/icesh.cc  | 87 ++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 96 insertions(+), 1 deletion(-)
+
+commit 29ef34da682de675c1230e7bccf2f0ebc28e060c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 00:44:59 2022 +0200
+
+    Make layers int. Add validLayer macro.
+
+ src/WinMgr.h | 24 +++++++++++++-----------
+ 1 file changed, 13 insertions(+), 11 deletions(-)
+
+commit 73390bc7cea11735b53c4712b016c82446c011a2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Oct 1 11:54:27 2022 +0200
+
+    Fix setWorkspace for issue #667.
+
+ src/wmframe.cc | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 76ea607723edcf876537f8f91eaf31dafcc2232a
+Author: Eduard Bloch <blade@debian.org>
+Date:   Fri Sep 16 18:33:19 2022 +0200
+
+    Section name bugfix and --activate implementation, etc.
+
+    Fix the storage of the section name as the explicit "match-name" value.
+
+    Drop most remains of the the experimental callback code
+
+    Repurpose --apply code as --activate, thus allowing to run the xrandr
+    actiation
+    command directly from the command line.
+
+    Explaining the creation of the label from EDID.
+
+    Option to access auto-determined label in the INI file.
+
+    Add the %PRIMFLAG even to the auto-determined label strings.
+
+ contrib/icewm-menu-xrandr | 56 +++++++++++++------------------------------
+ contrib/xrandr_menu       | 12 ++++++----
+ man/icewm-menu-xrandr.pod | 34 ++++++++++++++++++++------
+ 3 files changed, 51 insertions(+), 51 deletions(-)
+
+commit 291026f9bcc9bd8b88126c7cfc91889b69603ab6
+Author: Eduard Bloch <blade@debian.org>
+Date:   Fri Sep 16 17:21:08 2022 +0200
+
+    Fix fdomenu copyright information
+
+    This tool is not from old icewm source nor has this been written by
+    Brian; this
+    is my original work plus some improvements from Bert.
+
+ man/icewm-menu-fdo.pod |  2 +-
+ src/fdomenu.cc         | 11 ++++++++---
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 28391035f73a0b5aea3674b4affb74347e8fc243
+Author: Eduard Bloch <blade@debian.org>
+Date:   Sat Aug 6 17:22:27 2022 +0200
+
+    Refactor and extend xrandr menu provider
+
+    Internal refactoring to format command strings more carefully.
+
+    Using Getopt module (icewm users should have full perl installed anyway)
+
+    Option add number prefixes for easier targeting in submenu.
+
+    Option to use an additional configuration file, which can be used to:
+    - rename the labels (including placeholders for interface output and
+      primary flag)
+    - run xrandr with custom resolution/refrate selection options. This
+      replaces the previous --max option.
+    - run additional commands after xrandr in selected output of screen
+      configuratioin contexts
+    - option to auto-restart icewm in certain conditions
+    - option to force the screen location and orientation with xrandr
+      options regardless of auto-suggested positioning
+
+ contrib/icewm-menu-xrandr | 689 +++++++++++++++++++++++++++---------------
+ contrib/xrandr_menu       |  70 +++++
+ man/icewm-menu-xrandr.pod |  30 +-
+ 3 files changed, 531 insertions(+), 258 deletions(-)
+
+commit a1b89f163db60256a83b626c1426e64135b46cda
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Sep 6 03:42:17 2022 +0200
+
+    Succinct.
+
+ man/icesound.pod |  2 +-
+ man/icewmbg.pod  | 46 +++++++++++++++++++++-------------------------
+ 2 files changed, 22 insertions(+), 26 deletions(-)
+
+commit e1d9c9cfe16ba35fd3d505bd79ceb37cc002f675
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Sep 2 05:06:47 2022 +0200
+
+    Clarify icewmbg one image per workspace.
+
+ man/icewm-preferences.pod |  8 ++++++++
+ man/icewmbg.pod           | 37 +++++++++++++++++++++++++++++++------
+ 2 files changed, 39 insertions(+), 6 deletions(-)
+
+commit 4497d2a6e054049daaf760f70a5270f7de9173cf
+Author: Kristijan Fremen Velkovski <me@krisfremen.com>
+Date:   Tue Aug 16 03:26:22 2022 +0000
+
+    Translated using Weblate (Macedonian)
+
+    Currently translated at 35.0% (181 of 517 strings)
+
+ po/mk.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 69e827ff89ac812d9f84df094cf0706b15e53ac6
+Author: Luna  Jernberg <bittin@opensuse.org>
+Date:   Fri Aug 12 07:07:51 2022 +0000
+
+    Translated using Weblate (Swedish)
+
+    Currently translated at 99.0% (512 of 517 strings)
+
+ po/sv.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit dbd74de583f5d6dee9317f070eb8c6d7f4e44b76
+Author: Luna  Jernberg <bittin@opensuse.org>
+Date:   Sun Aug 7 15:08:37 2022 +0000
+
+    Translated using Weblate (Swedish)
+
+    Currently translated at 99.0% (512 of 517 strings)
+
+ po/sv.po | 39 ++++++++-------------------------------
+ 1 file changed, 8 insertions(+), 31 deletions(-)
+
+commit 31cfc7368e0c9c35dbec181148912a4ad4b63943
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Aug 1 23:49:30 2022 +0200
+
+    Prepare 2.9.9 release
+
+ AUTHORS         |   2 +-
+ ChangeLog       | 604 ++++++++++++++++++++++++----------------------------
+ NEWS            |  81 ++++---
+ README.md       |  42 ++--
+ RELEASE.md      |   2 +-
+ VERSION         |   2 +-
+ configure.ac    |  10 +-
+ doc/Makefile.am |   1 +
+ po/ar.po        | 306 +++++++++++++-------------
+ po/be.po        | 306 +++++++++++++-------------
+ po/bg.po        | 306 +++++++++++++-------------
+ po/ca.po        | 306 +++++++++++++-------------
+ po/cs.po        | 306 +++++++++++++-------------
+ po/da.po        | 306 +++++++++++++-------------
+ po/de.po        | 306 +++++++++++++-------------
+ po/el.po        | 306 +++++++++++++-------------
+ po/en.po        | 306 +++++++++++++-------------
+ po/es.po        | 306 +++++++++++++-------------
+ po/fi.po        | 306 +++++++++++++-------------
+ po/fr.po        | 306 +++++++++++++-------------
+ po/he.po        | 306 +++++++++++++-------------
+ po/hr.po        | 306 +++++++++++++-------------
+ po/hu.po        | 306 +++++++++++++-------------
+ po/icewm.pot    | 308 +++++++++++++--------------
+ po/id.po        | 306 +++++++++++++-------------
+ po/it.po        | 306 +++++++++++++-------------
+ po/ja.po        | 306 +++++++++++++-------------
+ po/ko.po        | 306 +++++++++++++-------------
+ po/lt.po        | 306 +++++++++++++-------------
+ po/lv.po        | 306 +++++++++++++-------------
+ po/mk.po        | 306 +++++++++++++-------------
+ po/nb.po        | 306 +++++++++++++-------------
+ po/nl.po        | 306 +++++++++++++-------------
+ po/no.po        | 306 +++++++++++++-------------
+ po/pl.po        | 306 +++++++++++++-------------
+ po/pt.po        | 306 +++++++++++++-------------
+ po/pt_BR.po     | 306 +++++++++++++-------------
+ po/ro.po        | 306 +++++++++++++-------------
+ po/ru.po        | 306 +++++++++++++-------------
+ po/sk.po        | 306 +++++++++++++-------------
+ po/sl.po        | 306 +++++++++++++-------------
+ po/sv.po        | 306 +++++++++++++-------------
+ po/tr.po        | 306 +++++++++++++-------------
+ po/uk.po        | 306 +++++++++++++-------------
+ po/vi.po        | 306 +++++++++++++-------------
+ po/zh_CN.po     | 306 +++++++++++++-------------
+ po/zh_TW.po     | 306 +++++++++++++-------------
+ 47 files changed, 6311 insertions(+), 6369 deletions(-)
+
 commit 97952377fb3838ca26a5a20a31c69eac4e1b73ab
 Merge: 9b23165b 751e987a
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5995,300 +6406,3 @@ Date:   Sat May 29 14:35:30 2021 +0000
 
  po/pt.po | 10 +++++-----
  1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit 777fd2da30a0b29b865bed62b6c8e1a6205a684a
-Author: Agah Emir <agahemir986@gmail.com>
-Date:   Sat May 29 12:16:48 2021 +0000
-
-    Translated using Weblate (Turkish)
-
-    Currently translated at 82.3% (393 of 477 strings)
-
- po/tr.po | 121 +++++++++++++++++++++++++++++------------------------------
- 1 file changed, 60 insertions(+), 61 deletions(-)
-
-commit d02b4a4cea969a60c51e352b60411d47245476e0
-Author: Agah Emir <agahemir986@gmail.com>
-Date:   Fri May 28 21:03:03 2021 +0000
-
-    Translated using Weblate (Turkish)
-
-    Currently translated at 78.8% (376 of 477 strings)
-
- po/tr.po | 733 ++++++++++++++++++++++++++++++++++-------------------------
- 1 file changed, 419 insertions(+), 314 deletions(-)
-
-commit 8cbaedc7877334925ddbb74bc1825cb29e074e04
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 25 00:36:35 2021 +0200
-
-    Support forcedClose winoption on Dockapps.
-
- src/wmdock.cc | 10 ++++++----
- src/wmdock.h  |  2 +-
- 2 files changed, 7 insertions(+), 5 deletions(-)
-
-commit d6e302bf5198c35438d394163289e7a9a2c6143a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 25 00:35:26 2021 +0200
-
-    Only let icewm notify icewm-session at start and when not catchsegv.
-
- src/icesm.cc | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
-
-commit 664a9b7309f8876eb224f8978ff7aa3d7b3c656b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 23 22:04:04 2021 +0200
-
-    Move Dockapps with Ctrl+Button1. Honor order winoption for Dockapps.
-    Respect startClose winoption for Dockapps. Preserve Dockapps ordering
-    over restarts. Be resilient against a newly manage client exiting
-    immediately. Add support for Dockapps to icesh.
-
- man/icesh.pod         |   4 ++
- man/icewm-session.pod |  16 +++++
- src/icesh.cc          |  17 +++++
- src/wmclient.cc       |  12 ++++
- src/wmdock.cc         | 177 +++++++++++++++++++++++++++++++++++++++++++---
- src/wmdock.h          |  17 ++++-
- src/wmframe.cc        |  38 +++++-----
- src/wmmgr.cc          |   7 +-
- src/wmtaskbar.cc      |   2 +-
- 9 files changed, 257 insertions(+), 33 deletions(-)
-
-commit 8306aba186294074054c5a4067ccfe7ddfeda75b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 23 22:01:53 2021 +0200
-
-    Enforce that focus remains with IceTopWin for issue #593.
-
- src/wmmgr.cc | 4 ++++
- 1 file changed, 4 insertions(+)
-
-commit f49362802c3a0973522d92febd44fbf196f58086
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 19 23:35:01 2021 +0200
-
-    Support Ctrl+Mouse buttons to control dockapps.
-
- man/icewm-preferences.pod |   5 +-
- src/default.h             |   4 +-
- src/wmclient.cc           |   9 +-
- src/wmdock.cc             | 306 ++++++++++++++++++++++++++++++++++--------
- src/wmdock.h              |  41 +++++-
- src/wmmgr.cc              |  24 ++--
- src/ymenu.h               |   2 +-
- 7 files changed, 307 insertions(+), 84 deletions(-)
-
-commit 07da3a198ab9a72123d93d8c86454fbcbe905c56
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 19 21:50:13 2021 +0200
-
-    Consider AllWorkspaces to be equal to the active workspace, when
-    QuickSwitchGroupWorkspaces is enabled, for issue #589.
-
- src/wmswitch.cc | 4 ++++
- 1 file changed, 4 insertions(+)
-
-commit 047214528fd4db2e08961641fee06539927fd5ed
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 18 03:39:00 2021 +0200
-
-    Add support for DockApps.
-
- man/icewm-preferences.pod |   4 +
- src/CMakeLists.txt        |   2 +-
- src/Makefile.am           |   2 +
- src/default.h             |   2 +
- src/wmclient.cc           |  54 +++++++++-
- src/wmclient.h            |   6 ++
- src/wmdock.cc             | 225 ++++++++++++++++++++++++++++++++++++++++++
- src/wmdock.h              |  36 +++++++
- src/wmframe.cc            |  10 +-
- src/wmmgr.cc              |  49 ++++++++-
- src/wmmgr.h               |   3 +
- src/wmminiicon.cc         |   3 +-
- 12 files changed, 380 insertions(+), 16 deletions(-)
-
-commit 91ad1031a302dce0f2c149537b036c7d093bb90e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 18 03:37:57 2021 +0200
-
-    Improve recovery from restart failures.
-
- src/wmapp.cc | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
-
-commit a7dda5411a53968eb83fcfd2437932869665d8ca
-Author: Gemineo <vistatec@gemineo.de>
-Date:   Mon May 17 12:50:18 2021 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/de.po | 38 +++++++++++---------------------------
- 1 file changed, 11 insertions(+), 27 deletions(-)
-
-commit 0fcb7df54ea383d9a1bae4e6e62e5b4f0c908e30
-Author: Davide Aiello <davide.aiello@novilingulists.com>
-Date:   Mon May 17 09:51:53 2021 +0000
-
-    Translated using Weblate (Italian)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/it.po | 37 +++++++++++++------------------------
- 1 file changed, 13 insertions(+), 24 deletions(-)
-
-commit e61fc067776fc3bfc0d30392970e571593ee1c25
-Author: Gemineo <vistatec@gemineo.de>
-Date:   Mon May 17 08:13:29 2021 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 98.7% (471 of 477 strings)
-
- po/de.po | 24 ++++++++++++++----------
- 1 file changed, 14 insertions(+), 10 deletions(-)
-
-commit dd08ba118bf0ba9070818b0adf761bb7608f67b9
-Author: Lucie Charrier <c.chalu@free.fr>
-Date:   Sun May 16 20:23:44 2021 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/fr.po | 20 ++++++++------------
- 1 file changed, 8 insertions(+), 12 deletions(-)
-
-commit 82e9f236dfc5e5027a9975ed48332204d8bba310
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 16 01:04:19 2021 +0200
-
-    Cleanup manageClient and split it up in smaller functions.
-
- src/wmmgr.cc     | 180 ++++++++++++++++++++++-----------------------------
- src/wmmgr.h      |   6 +-
- src/wmtaskbar.cc |   2 +-
- src/wmwinlist.cc |   2 +-
- src/ydialog.cc   |   2 +-
- 5 files changed, 85 insertions(+), 107 deletions(-)
-
-commit cf8888097f142fd038d05d5565827aaaab259d2c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat May 15 23:34:09 2021 +0200
-
-    Improve icehelp colors and search in icehelp document with Ctrl+F and F3.
-
- man/icehelp.pod    |  16 +++--
- src/icehelp.cc     | 175 ++++++++++++++++++++++++++++++++++++-------------
- src/yscrollview.cc |   2 +-
- 3 files changed, 141 insertions(+), 52 deletions(-)
-
-commit cd928215376c3975609d8aee831ecbaa38d66b53
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat May 15 23:31:54 2021 +0200
-
-    Support scrolling the pixmap of a GraphicsBuffer.
-
- src/ypaint.cc | 53 +++++++++++++++++++++++++++++++++++++++++++++++++++--
- src/ypaint.h  |  1 +
- 2 files changed, 52 insertions(+), 2 deletions(-)
-
-commit 443e714ed4e1471d0a4e3542dde75f4028b02b19
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat May 15 23:29:26 2021 +0200
-
-    Add constructor with integer dimensions to YRect.
-
- src/atasks.cc    | 2 +-
- src/wmtaskbar.cc | 8 ++++----
- src/ylistbox.cc  | 2 +-
- src/yrect.h      | 9 +++++++++
- 4 files changed, 15 insertions(+), 6 deletions(-)
-
-commit 0c29f143550ea954de6b1c8bb18b96bbe164b36f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat May 15 23:25:13 2021 +0200
-
-    Support WM_TAKE_FOCUS by setting wsTakeFocus flag.
-
- src/ywindow.cc | 28 +++++++---------------------
- src/ywindow.h  |  5 +++--
- 2 files changed, 10 insertions(+), 23 deletions(-)
-
-commit bf6ed4ff5be4c526f3fbf3e74f4023751a90a0e5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri May 14 22:20:00 2021 +0200
-
-    Improve centrally placing transient windows over their leader window
-    when CenterTransientsOnOwner is enabled. Fix for when CenterLarge is true.
-
- src/wmmgr.cc | 33 ++++++++++++++++++++-------------
- 1 file changed, 20 insertions(+), 13 deletions(-)
-
-commit 0eb590efdbfae7d11d34ff186dcbc74dac14d3e6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri May 14 20:08:27 2021 +0200
-
-    Don't reverse the alpha value, only the RGB color components.
-
- src/ycolor.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 16e4a04b0c0ff02aeba2ad25d568cdd56dc86d5b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri May 14 20:08:05 2021 +0200
-
-    Prevent compiler warnings.
-
- src/wmpref.cc    | 2 +-
- src/yfontcore.cc | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-commit f3e31d54a64132e70c8ca924c514c7851388af52
-Author: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>
-Date:   Fri May 14 05:31:21 2021 +0000
-
-    Translated using Weblate (Lithuanian)
-
-    Currently translated at 43.8% (209 of 477 strings)
-
- po/lt.po | 38 +++++++++++++++-----------------------
- 1 file changed, 15 insertions(+), 23 deletions(-)
-
-commit 8cb4c80e20ee900fb84d921541b7d17cb02d4f34
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Sat May 8 21:29:33 2021 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/pt.po | 69 +++++++++++++++++++++++++++---------------------------------
- 1 file changed, 31 insertions(+), 38 deletions(-)
-
-commit 1bf5b2a08bfb1744ea695301407dead9c91f6c75
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Fri May 7 15:39:48 2021 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/sk.po | 18 +++++++-----------
- 1 file changed, 7 insertions(+), 11 deletions(-)
-
-commit 0023bb3064b94dbb8a6e7117d20e7e84b5d9e356
-Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
-Date:   Fri May 7 14:31:25 2021 +0000
-
-    Translated using Weblate (Portuguese (Brazil))
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/pt_BR.po | 38 +++++++++++++++++++-------------------
- 1 file changed, 19 insertions(+), 19 deletions(-)
