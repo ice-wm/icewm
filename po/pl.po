@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.15\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-03 05:53+0200\n"
+"POT-Creation-Date: 2022-10-06 08:31+0200\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Ewelina Michalowska <ewelina.michalowska@stgambit.com>\n"
 "Language-Team: Polish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -2609,11 +2609,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "%s nie generuje wyniku"
 
-#: src/wmmgr.cc:3463
+#: src/wmmgr.cc:3528
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3464
+#: src/wmmgr.cc:3529
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

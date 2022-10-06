@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.23\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-03 05:53+0200\n"
+"POT-Creation-Date: 2022-10-06 08:31+0200\n"
 "PO-Revision-Date: 2022-10-03 12:13+0000\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
-"Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/nl/>\n"
+"Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2504,11 +2504,11 @@ msgstr "Tijdoverschrijding met '%s'!"
 msgid "'%s' produces no output"
 msgstr "'%s' produceert geen uitvoer"
 
-#: src/wmmgr.cc:3463
+#: src/wmmgr.cc:3528
 msgid "Missing program setxkbmap"
 msgstr "Programma setxkbmap ontbreekt"
 
-#: src/wmmgr.cc:3464
+#: src/wmmgr.cc:3529
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Om van toetsenbord te wisselen, installeer setxkbmap."
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-03 05:53+0200\n"
+"POT-Creation-Date: 2022-10-06 08:31+0200\n"
 "PO-Revision-Date: 2021-12-18 21:14+0000\n"
 "Last-Translator: Taras Panchenko <top39@ukr.net>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -2496,11 +2496,11 @@ msgstr "У '%s' вийшов час!"
 msgid "'%s' produces no output"
 msgstr "'%s' не створює виводу"
 
-#: src/wmmgr.cc:3463
+#: src/wmmgr.cc:3528
 msgid "Missing program setxkbmap"
 msgstr "Застосунок setxkbmap відсутній"
 
-#: src/wmmgr.cc:3464
+#: src/wmmgr.cc:3529
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Для перемикання клавіатури потрібно встановити setxkbmap."
 

@@ -1,11 +1,36 @@
-icewm -- history of user-visible changes.  2022-10-03
+icewm -- history of user-visible changes.  2022-10-06
+
+Release icewm-3.0.1 released 2022-10-06
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.0.0...3.0.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (7):
+      Fix typo for KeyWinPrev.
+      Fix _NET_REQUEST_FRAME_EXTENTS for issue ice-wm/icewm#93.
+      Remove PHONY to fix distclean.
+      More elaborate implementation of _NET_REQUEST_FRAME_EXTENTS.
+      Fix typo.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Alexey Yaryshev <clarkez344@gmail.com> (1):
+      Translated using Weblate (Russian)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
 
 Release icewm-3.0.0 released 2022-10-03
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 2.9.9...3.0.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (16):
+Bert Gijsbers <gijsbers@science.uva.nl> (18):
       Clarify icewmbg one image per workspace.
       Succinct.
       Fix setWorkspace for issue #667.
@@ -25,6 +50,8 @@ Bert Gijsbers <gijsbers@science.uva.nl> (16):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Drop phony.
+      Prepare 3.0.0 release
 
 Eduard Bloch <blade@debian.org> (3):
       Refactor and extend xrandr menu provider
@@ -282,40 +309,4 @@ Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com> (1):
 
 Sarah Kriesch <ada.lovelace@gmx.de> (1):
       Translated using Weblate (German)
-
-
-Release icewm-2.9.4 released 2021-12-30
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.3...2.9.4
-
-Bert Gijsbers <gijsbers@science.uva.nl> (17):
-      Put the active window first in the list of switchable windows for issue
-        #631.
-      Show time of backtrace.
-      Minimize the number of window restackings for issue #630.
-      Support focus in subwindows of Globally Active Input applications, like
-        full widescreen games for issue ice-wm/icewm#73.
-      Minimized windows with startMinimized and ignoreActivationMessages require
-        user intervention to become shown.
-      Eliminate flicker when resizing frames which have a shape masked border,
-        like CoolSteel and Illuminate-ice by enabling bit gravity.
-      Improved workaround for 'feh' desktop backgrounds, where its pixmap has
-        been marked persistent, for issue #627.
-      Add children.
-      Add icesh options +class and +Pid to extend the selection by class or PID.
-      Set icewmbg background color as a pixmap to overcome limitations in picom
-        and compton for issue #632.  Also retain a single background pixmap as a
-        temporary resource in the X11 server when icewmbg exits.
-      Lower desktop icons on startup.
-      Fix miniicon stacking for when there is no other window.
-      Make desktop refresh synchronized to slow it down a bit.
-      Stack all desktop icons below a dedicated bottommost window.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.9.4 release
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.4.2.1038\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-03 05:53+0200\n"
+"POT-Creation-Date: 2022-10-06 08:31+0200\n"
 "PO-Revision-Date: 2022-03-23 19:12+0000\n"
 "Last-Translator: Alexander Mortensen <Mortensen.alexander@gmail.com>\n"
 "Language-Team: Danish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -2498,11 +2498,11 @@ msgstr "'%s' udløb!"
 msgid "'%s' produces no output"
 msgstr "\"%s\" producerer intet output"
 
-#: src/wmmgr.cc:3463
+#: src/wmmgr.cc:3528
 msgid "Missing program setxkbmap"
 msgstr "Manglende program setxkbmap"
 
-#: src/wmmgr.cc:3464
+#: src/wmmgr.cc:3529
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "For tastatur skift, installer setxkbmap."
 

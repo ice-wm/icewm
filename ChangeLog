@@ -1,5 +1,161 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 397a7834460742e5d9a2133f1bda76f7be9186e2
+Merge: f722c68e cc8d3180
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Oct 6 08:30:31 2022 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit cc8d3180465d7e3c5cc86c5ec6a301e8c26fee73
+Merge: 7f38d19c 7f83078a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Oct 6 08:24:37 2022 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 7f83078a52dc9d8d75451892bd2ea5316122b500
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Oct 6 08:20:06 2022 +0200
+
+    Fix typo.
+
+ src/wmmgr.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2e8ad584d0cac1dd580d49f2c02534c9932d91cf
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Oct 6 01:26:45 2022 +0200
+
+    More elaborate implementation of _NET_REQUEST_FRAME_EXTENTS.
+
+ src/wmmgr.cc | 104 +++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 102 insertions(+), 2 deletions(-)
+
+commit 9f391061cfabad44eef19b95c386a54a85a5e793
+Author: Alexey Yaryshev <clarkez344@gmail.com>
+Date:   Wed Oct 5 14:36:57 2022 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/ru.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 3e2bc3d87dc60ca3ef8dbda304752c89ca951e06
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Oct 5 01:49:01 2022 +0200
+
+    Remove PHONY to fix distclean.
+
+ doc/Makefile.am | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 8cbb0ebb828e2fea3772bc192cef9f760e2c956f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Oct 5 01:16:03 2022 +0200
+
+    Fix _NET_REQUEST_FRAME_EXTENTS for issue ice-wm/icewm#93.
+
+ src/wmmgr.cc | 43 ++++---------------------------------------
+ 1 file changed, 4 insertions(+), 39 deletions(-)
+
+commit b76be51c36ab56110b440d4a5ce3d9aecb8dfc15
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Oct 5 00:14:47 2022 +0200
+
+    Fix typo for KeyWinPrev.
+
+ man/icewm.pod | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e97a1e0e8af65bb588b9b868a4b840b23109542c
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Mon Oct 3 20:59:37 2022 +0000
+
+    Translated using Weblate (Portuguese)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/pt.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 3e62b2d8e4b1a9fbe64ddecac14449ede671b2b9
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Date:   Mon Oct 3 14:25:03 2022 +0000
+
+    Translated using Weblate (Slovak)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/sk.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit f722c68ec5f4e20e32746583d2393d515dc3e11f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 16:48:15 2022 +0200
+
+    Prepare 3.0.0 release
+
+ AUTHORS      |  12 +-
+ ChangeLog    | 708 ++++++++++++++++++++++++++++++++-----------------------
+ NEWS         | 113 ++++-----
+ README.md    |  40 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |   2 +-
+ po/be.po     |   2 +-
+ po/bg.po     |   2 +-
+ po/ca.po     |   2 +-
+ po/cs.po     |   2 +-
+ po/da.po     |   2 +-
+ po/de.po     |   2 +-
+ po/el.po     |   2 +-
+ po/en.po     |   2 +-
+ po/es.po     |   2 +-
+ po/fi.po     |   2 +-
+ po/fr.po     |   2 +-
+ po/he.po     |   2 +-
+ po/hr.po     |   2 +-
+ po/hu.po     |   2 +-
+ po/icewm.pot |   4 +-
+ po/id.po     |   2 +-
+ po/it.po     |   2 +-
+ po/ja.po     |   2 +-
+ po/ko.po     |   2 +-
+ po/lt.po     |   2 +-
+ po/lv.po     |   2 +-
+ po/mk.po     |   2 +-
+ po/nb.po     |   2 +-
+ po/nl.po     |   2 +-
+ po/no.po     |   2 +-
+ po/pl.po     |   2 +-
+ po/pt.po     |   2 +-
+ po/pt_BR.po  |   2 +-
+ po/ro.po     |   2 +-
+ po/ru.po     |   2 +-
+ po/sk.po     |   2 +-
+ po/sl.po     |   2 +-
+ po/sv.po     |   2 +-
+ po/tr.po     |   2 +-
+ po/uk.po     |   2 +-
+ po/vi.po     |   2 +-
+ po/zh_CN.po  |   2 +-
+ po/zh_TW.po  |   2 +-
+ 46 files changed, 535 insertions(+), 432 deletions(-)
+
+commit 68197ee0c5b81ce86f83c9381d1e73317486d0e9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 3 16:39:40 2022 +0200
+
+    Drop phony.
+
+ doc/Makefile.am | 1 -
+ 1 file changed, 1 deletion(-)
+
 commit 5b330f3ed6d4936380528d8b5126fc929fae2e83
 Merge: 31cfc736 7f38d19c
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6239,170 +6395,4 @@ Date:   Tue Jun 8 21:42:43 2021 +0200
     Surround variable expansion with double quotes.
 
  rebuild.sh | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit c4dcffb858129cdadabb706425fef808e0b82f29
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jun 8 21:40:48 2021 +0200
-
-    Replace paths with configured directories in generated manpages for
-    CMake build and also fix spaces and double quotes.
-
- man/CMakeLists.txt | 176 ++++++++++++++++++++++++++-----------------------
- 1 file changed, 93 insertions(+), 83 deletions(-)
-
-commit 1683cc5554a1afd7c0cb493a5011bd15eba7e07c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jun 7 23:15:51 2021 +0200
-
-    CMake builds html pages for ice-wm/icewm#50.
-
- man/CMakeLists.txt | 63 +++++++++++++++++++++++++++++++++++++++++++++++---
- 1 file changed, 60 insertions(+), 3 deletions(-)
-
-commit eeb99421b910fa26b4bdc35932f9c7b7db383459
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jun 7 01:20:44 2021 +0200
-
-    Prepare 2.4.0 release
-
- AUTHORS      |  20 +-
- ChangeLog    | 972 +++++++++++++++++++++++++++----------------------------
- NEWS         | 125 ++++---
- README.md    |  36 +--
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     | 194 ++++++-----
- po/be.po     | 194 ++++++-----
- po/bg.po     | 194 ++++++-----
- po/ca.po     | 198 ++++++------
- po/cs.po     | 198 ++++++------
- po/da.po     | 194 ++++++-----
- po/de.po     | 202 ++++++------
- po/el.po     | 194 ++++++-----
- po/en.po     | 192 ++++++-----
- po/es.po     | 194 ++++++-----
- po/fi.po     | 194 ++++++-----
- po/fr.po     | 198 ++++++------
- po/he.po     | 192 ++++++-----
- po/hr.po     | 194 ++++++-----
- po/hu.po     | 195 ++++++-----
- po/icewm.pot | 194 ++++++-----
- po/id.po     | 194 ++++++-----
- po/it.po     | 198 ++++++------
- po/ja.po     | 198 ++++++------
- po/ko.po     | 194 ++++++-----
- po/lt.po     | 194 ++++++-----
- po/lv.po     | 194 ++++++-----
- po/mk.po     | 194 ++++++-----
- po/nb.po     | 194 ++++++-----
- po/nl.po     | 198 ++++++------
- po/no.po     | 194 ++++++-----
- po/pl.po     | 194 ++++++-----
- po/pt.po     | 198 ++++++------
- po/pt_BR.po  | 198 ++++++------
- po/ro.po     | 194 ++++++-----
- po/ru.po     | 194 ++++++-----
- po/sk.po     | 198 ++++++------
- po/sl.po     | 194 ++++++-----
- po/sv.po     | 194 ++++++-----
- po/tr.po     | 221 +++++++------
- po/uk.po     | 194 ++++++-----
- po/vi.po     | 194 ++++++-----
- po/zh_CN.po  | 194 ++++++-----
- po/zh_TW.po  | 194 ++++++-----
- 45 files changed, 4757 insertions(+), 4042 deletions(-)
-
-commit 651350f25b4f7c580d3cdf9982d7ac4495e0ede1
-Merge: 33497dea fa3ebaa3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jun 7 01:14:35 2021 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit fa3ebaa3e29c02e5de9b242c384c79bb562cca0f
-Merge: 20314f45 4bc34ed9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jun 7 01:12:16 2021 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 4bc34ed94f33f222cab32740a2762429991d1c32
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jun 6 19:29:55 2021 +0200
-
-    Reduce the bugs section to the essential and closes issue #592.
-
- man/icehelp.pod           | 4 +---
- man/icesh.pod             | 4 +---
- man/icesound.pod          | 4 +---
- man/icewm-menu-fdo.pod    | 4 +---
- man/icewm-menu-xrandr.pod | 4 +---
- man/icewm-session.pod     | 4 +---
- man/icewm-set-gnomewm.pod | 4 +---
- man/icewm.pod             | 4 +---
- man/icewmbg.pod           | 4 +---
- man/icewmhint.pod         | 4 +---
- man/icewmtray.pod         | 4 +---
- 11 files changed, 11 insertions(+), 33 deletions(-)
-
-commit acef8ffbcf5ea50346ed08e4fb9d11b8eb192294
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jun 6 00:53:38 2021 +0200
-
-    Check parameter against null in createFromImage.
-
- src/ypixmap.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 3a0a41311e02cba083b53f76eadf9c33c483ed50
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jun 6 00:53:22 2021 +0200
-
-    Fix indentation and expand tabs.
-
- src/icehelp.cc | 8 ++++----
- src/strtest.cc | 2 +-
- src/ycolor.cc  | 4 ++--
- 3 files changed, 7 insertions(+), 7 deletions(-)
-
-commit 4a51e2799a8096c2a7623c030cf6fbc9b5f5ab42
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jun 6 00:50:57 2021 +0200
-
-    Prevent a compilerwarning.
-
- src/atasks.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 2e1557288d7fac9b10c0ba070ffac3359f299913
-Author: Aleš Kastner <alkas@volny.cz>
-Date:   Mon May 31 19:18:54 2021 +0000
-
-    Translated using Weblate (Czech)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/cs.po | 41 +++++++++++++++--------------------------
- 1 file changed, 15 insertions(+), 26 deletions(-)
-
-commit f0fcc33bb12acfcf0d4c2133597f210f85c84f27
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 30 00:27:29 2021 +0200
-
-    Be pessimistic about the chances to locate a file icon on AntiX.
-
- src/icehelp.cc | 41 ++++++++++++++++++++++++++++-------------
- 1 file changed, 28 insertions(+), 13 deletions(-)
-
-commit 13aff1a25f2412221a09c68f40854c1d304fdc55
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Sat May 29 14:35:30 2021 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (477 of 477 strings)
-
- po/pt.po | 10 +++++-----
  1 file changed, 5 insertions(+), 5 deletions(-)

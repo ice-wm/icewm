@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-03 05:53+0200\n"
+"POT-Creation-Date: 2022-10-06 08:31+0200\n"
 "PO-Revision-Date: 2022-10-05 17:13+0000\n"
 "Last-Translator: Alexey Yaryshev <clarkez344@gmail.com>\n"
-"Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/ru/>\n"
+"Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2511,11 +2511,11 @@ msgstr "У '%s' вышло время!"
 msgid "'%s' produces no output"
 msgstr "%s не возвращает выходных данных"
 
-#: src/wmmgr.cc:3463
+#: src/wmmgr.cc:3528
 msgid "Missing program setxkbmap"
 msgstr "Отсутствует программа setxkbmap"
 
-#: src/wmmgr.cc:3464
+#: src/wmmgr.cc:3529
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Для переключения клавиатуры установите setxkbmap."
 
