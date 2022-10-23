@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-06 08:31+0200\n"
+"POT-Creation-Date: 2022-10-24 01:39+0200\n"
 "PO-Revision-Date: 2022-01-12 07:11+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/icewm/"
@@ -1402,7 +1402,7 @@ msgid "Invalid expression: `%s'"
 msgstr "Ekspresi tidak valid: '%s'"
 
 #: src/icesh.cc:3576 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1231 src/yxapp.cc:1037
+#: src/wmapp.cc:1231 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Tidak dapat membuka tampilan: %s. X harus berjalan dan atur $DISPLAY."
@@ -2086,18 +2086,18 @@ msgid "Center"
 msgstr "Tengah"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:599 src/wmtaskbar.cc:217 src/wmwinlist.cc:394
-#: src/wmwinlist.cc:427
+#: src/wmapp.cc:599 src/wmtaskbar.cc:217 src/wmwinlist.cc:431
+#: src/wmwinlist.cc:464
 msgid "T_ile Horizontally"
 msgstr "Ub_in Secara Horizontal"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:601 src/wmtaskbar.cc:215 src/wmwinlist.cc:393
-#: src/wmwinlist.cc:426
+#: src/wmapp.cc:601 src/wmtaskbar.cc:215 src/wmwinlist.cc:430
+#: src/wmwinlist.cc:463
 msgid "Tile _Vertically"
 msgstr "Ubin Secara _Vertikal"
 
-#: src/wmapp.cc:613 src/wmwinlist.cc:375
+#: src/wmapp.cc:613 src/wmwinlist.cc:412
 msgid "_Restore"
 msgstr "P_ulihkan"
 
@@ -2109,31 +2109,31 @@ msgstr "_Pindahkan"
 msgid "_Size"
 msgstr "U_kuran"
 
-#: src/wmapp.cc:619 src/wmwinlist.cc:376
+#: src/wmapp.cc:619 src/wmwinlist.cc:413
 msgid "Mi_nimize"
 msgstr "Mi_nimalkan"
 
-#: src/wmapp.cc:621 src/wmwinlist.cc:377
+#: src/wmapp.cc:621 src/wmwinlist.cc:414
 msgid "Ma_ximize"
 msgstr "Maksima_lkan"
 
-#: src/wmapp.cc:622 src/wmwinlist.cc:378
+#: src/wmapp.cc:622 src/wmwinlist.cc:415
 msgid "Maximize_Vert"
 msgstr "Maksimalkan_Vertikal"
 
-#: src/wmapp.cc:623 src/wmwinlist.cc:379
+#: src/wmapp.cc:623 src/wmwinlist.cc:416
 msgid "MaximizeHori_z"
 msgstr "MaksimalkanHori_zontal"
 
-#: src/wmapp.cc:626 src/wmwinlist.cc:380
+#: src/wmapp.cc:626 src/wmwinlist.cc:417
 msgid "_Fullscreen"
 msgstr "Layar Penu_h"
 
-#: src/wmapp.cc:629 src/wmwinlist.cc:382
+#: src/wmapp.cc:629 src/wmwinlist.cc:419
 msgid "_Hide"
 msgstr "Sembun_yikan"
 
-#: src/wmapp.cc:631 src/wmwinlist.cc:383
+#: src/wmapp.cc:631 src/wmwinlist.cc:420
 msgid "Roll_up"
 msgstr "G_ulung"
 
@@ -2141,23 +2141,23 @@ msgstr "G_ulung"
 msgid "R_aise"
 msgstr "N_aik"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:385
+#: src/wmapp.cc:640 src/wmwinlist.cc:422
 msgid "_Lower"
 msgstr "Tur_un"
 
-#: src/wmapp.cc:642 src/wmwinlist.cc:386
+#: src/wmapp.cc:642 src/wmwinlist.cc:423
 msgid "La_yer"
 msgstr "La_pisan"
 
-#: src/wmapp.cc:645 src/wmwinlist.cc:387
+#: src/wmapp.cc:645 src/wmwinlist.cc:424
 msgid "Tile"
 msgstr "Jejeran"
 
-#: src/wmapp.cc:649 src/wmwinlist.cc:389
+#: src/wmapp.cc:649 src/wmwinlist.cc:426
 msgid "Move _To"
 msgstr "Pindah _Ke"
 
-#: src/wmapp.cc:650 src/wmwinlist.cc:390
+#: src/wmapp.cc:650 src/wmwinlist.cc:427
 msgid "Occupy _All"
 msgstr "Tempati Semu_a"
 
@@ -2165,15 +2165,15 @@ msgstr "Tempati Semu_a"
 msgid "Limit _Workarea"
 msgstr "Batasi Area Ker_ja"
 
-#: src/wmapp.cc:660 src/wmwinlist.cc:391
+#: src/wmapp.cc:660 src/wmwinlist.cc:428
 msgid "Tray _icon"
 msgstr "_Ikon baki"
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:406 src/wmwinlist.cc:414
+#: src/wmapp.cc:665 src/wmwinlist.cc:443 src/wmwinlist.cc:451
 msgid "_Close"
 msgstr "_Tutup"
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:408
+#: src/wmapp.cc:667 src/wmwinlist.cc:445
 msgid "_Kill Client"
 msgstr "Bunuh _Klien"
 
@@ -2206,7 +2206,7 @@ msgstr ""
 "Lepaskan semua aplikasi dan mulai ulang\n"
 "sebagai terminal. Melanjutkan?"
 
-#: src/wmapp.cc:1232 src/yxapp.cc:1038
+#: src/wmapp.cc:1232 src/yxapp.cc:1040
 msgid "<none>"
 msgstr "<NIHIL>"
 
@@ -2357,7 +2357,7 @@ msgstr "Gulung bawah"
 msgid "Rollup"
 msgstr "Gulung atas"
 
-#: src/wmclient.cc:451
+#: src/wmclient.cc:457
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2414,7 +2414,7 @@ msgstr "Mu_lai ulang icewm"
 msgid "_About"
 msgstr "Tent_ang"
 
-#: src/wmframe.cc:1705
+#: src/wmframe.cc:1739
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2422,7 +2422,7 @@ msgstr ""
 "PERINGATAN! Semua perubahan yang belum disimpan akan hilang saat\n"
 "klien ini terbunuh. Apakah Anda ingin melanjutkan?"
 
-#: src/wmframe.cc:1710
+#: src/wmframe.cc:1744
 msgid "Kill Client: "
 msgstr "Bunuh Klien: "
 
@@ -2493,20 +2493,20 @@ msgstr "'%s' waktunya habis!"
 msgid "'%s' produces no output"
 msgstr "'%s' tidak menghasilkan keluaran"
 
-#: src/wmmgr.cc:3528
+#: src/wmmgr.cc:3621
 msgid "Missing program setxkbmap"
 msgstr "Tak ada program setxkbmap"
 
-#: src/wmmgr.cc:3529
+#: src/wmmgr.cc:3622
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Untuk mengubah papan tik, silakan instal setxkbmap."
 
-#: src/wmoption.cc:259
+#: src/wmoption.cc:284
 #, c-format
 msgid "Unknown window option: %s"
 msgstr "Opsi jendela tidak dikenal: %s"
 
-#: src/wmoption.cc:331
+#: src/wmoption.cc:356
 #, c-format
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Kesalahan sintaks dalam opsi jendela pada baris %d dari %s"
@@ -2599,27 +2599,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Pengelola Sesi: Baris tidak diketahui %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:395 src/wmwinlist.cc:428
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:432 src/wmwinlist.cc:465
 msgid "Ca_scade"
 msgstr "Bertin_gkat"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:396 src/wmwinlist.cc:429
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:433 src/wmwinlist.cc:466
 msgid "_Arrange"
 msgstr "_Atur"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:398 src/wmwinlist.cc:430
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:435 src/wmwinlist.cc:467
 msgid "_Minimize All"
 msgstr "_Minimalkan Semua"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:399 src/wmwinlist.cc:431
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:436 src/wmwinlist.cc:468
 msgid "_Hide All"
 msgstr "_Sembunyikan Semua"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:400 src/wmwinlist.cc:432
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:437 src/wmwinlist.cc:469
 msgid "_Undo"
 msgstr "Ta_k Jadi"
 
@@ -2653,31 +2653,31 @@ msgstr "Tampilkan Destop"
 msgid "Show Taskbar"
 msgstr "Tampilkan bilah tugas"
 
-#: src/wmwinlist.cc:47
+#: src/wmwinlist.cc:78
 msgid "All Workspaces"
 msgstr "Semua Ruang kerja"
 
-#: src/wmwinlist.cc:381
+#: src/wmwinlist.cc:418
 msgid "_Show"
 msgstr "_Tampilkan"
 
-#: src/wmwinlist.cc:384
+#: src/wmwinlist.cc:421
 msgid "_Raise"
 msgstr "_Naikkan"
 
-#: src/wmwinlist.cc:406
+#: src/wmwinlist.cc:443
 msgid "Del"
 msgstr "Hapus"
 
-#: src/wmwinlist.cc:410
+#: src/wmwinlist.cc:447
 msgid "_Terminate Process"
 msgstr "Hen_tikan Proses"
 
-#: src/wmwinlist.cc:411
+#: src/wmwinlist.cc:448
 msgid "Kill _Process"
 msgstr "Bunuh _Process"
 
-#: src/wmwinlist.cc:446 src/wmwinlist.cc:447
+#: src/wmwinlist.cc:483 src/wmwinlist.cc:484
 msgid "Window list"
 msgstr "Daftar jendela"
 
@@ -2833,7 +2833,7 @@ msgstr "Pelarian hex tidak lengkap di URL pada posisi %d."
 msgid "Invalid hex escape in URL at position %d."
 msgstr "Pelarian hex tidak valid di URL pada posisi %d."
 
-#: src/yxapp.cc:996
+#: src/yxapp.cc:998
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"
 "  --sync              Synchronize X11 commands.\n"

@@ -1,11 +1,53 @@
-icewm -- history of user-visible changes.  2022-10-06
+icewm -- history of user-visible changes.  2022-10-24
+
+Release icewm-3.1.0 released 2022-10-24
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.0.1...3.1.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (17):
+      Let the window list support tabs.
+      Add MouseWinTabbing button preference for merging frame tabs for issue
+        ice-wm/icewm#95.
+      Replace last Button2 with isTabbingButton for issue ice-wm/icewm#95.
+      When switching tabs, ensure focus is preserved.
+      Improve Alt+Tab for tabbed frames for issue #673.
+      Check owner pointer for transient windows which have an unmapped owner for
+        issue #675.
+      Preserve tabs across restarts.
+      Fix merging a transient as a tab to its owner.  Preserve tray hint across
+        restarts.  Smaller WindowOption.
+      Move WindowOption from frame to client and cache it.
+      Also context save the internal clients.
+      Show tabs on the title bar. Click on title bar to change tabs.
+      Detail how to use tabbed windows.
+      Revert "Revisiting header files and making them self-sufficient"
+      Add winoption "frame" to group new clients as tabs in a single frame.
+      Fix warning on delete.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Eduard Bloch <blade@debian.org> (2):
+      Revisiting header files and making them self-sufficient
+      [cmake] Various improvements
+
+Stéphane LASSALVY <stephane.lassalvy@laposte.net> (1):
+      Translated using Weblate (French)
+
+Wallon <franckjl@hotmail.com> (1):
+      Translated using Weblate (French)
+
+marcelo cripe <marcelocripe@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
 
 Release icewm-3.0.1 released 2022-10-06
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.0.0...3.0.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (7):
+Bert Gijsbers <gijsbers@science.uva.nl> (8):
       Fix typo for KeyWinPrev.
       Fix _NET_REQUEST_FRAME_EXTENTS for issue ice-wm/icewm#93.
       Remove PHONY to fix distclean.
@@ -14,6 +56,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (7):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.0.1 release
 
 Alexey Yaryshev <clarkez344@gmail.com> (1):
       Translated using Weblate (Russian)
@@ -255,58 +298,4 @@ Antonio Simón <antonio@trans-mission.com> (1):
 
 Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
       Translated using Weblate (Portuguese (Brazil))
-
-
-Release icewm-2.9.5 released 2022-01-20
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.4...2.9.5
-
-Bert Gijsbers <gijsbers@science.uva.nl> (16):
-      Fix Arabic translation.
-      On startup don't switch workspace to activate a fullscreen window.
-      When a fullscreen disappears, update the taskbar layer.
-      Fixes to prevent a lockup when activating a do-not-focus output-only
-        window on a workspace where no focusable window exists.
-      Remove inefficient management of fullscreen layer. Make
-        TaskBarFullscreenAutoShow option more reliable.
-      Cancel the DelayPointerFocus timer when the mouse leaves the window.
-      Fix for taskbar on icewm restart when there is a fullscreen window. Fix
-        for TaskBarAutoHide. Fix for focusing address bar.
-      Fix OSS / APM confusion in some translations.
-      Make taskbar unhide more reliable.
-      Set the window type of desktop icons and of the dockapps container.
-      Put a focused fullscreen window back to its normal layer, before
-        activating another application.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Update pot files.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.9.5 release
-
-Eduard Bloch <blade@debian.org> (1):
-      Work around trailers to zero-terminated strings
-
-Ghassan <ghassan.alnajjar1984@gmail.com> (1):
-      Translated using Weblate (Arabic)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com> (1):
-      Translated using Weblate (Lithuanian)
-
-Paolo Za <zapaolo@email.it> (1):
-      Translated using Weblate (Italian)
-
-Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Sarah Kriesch <ada.lovelace@gmx.de> (1):
-      Translated using Weblate (German)
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-06 08:31+0200\n"
+"POT-Creation-Date: 2022-10-24 01:39+0200\n"
 "PO-Revision-Date: 2002-09-22 22:00+0200\n"
 "Last-Translator: Petter Johan Olsen <petter.olsen@cc.uit.no>\n"
 "Language-Team: Norwegian\n"
@@ -1411,7 +1411,7 @@ msgid "Invalid expression: `%s'"
 msgstr "Ugyldig uttrykk: `%s'"
 
 #: src/icesh.cc:3576 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1231 src/yxapp.cc:1037
+#: src/wmapp.cc:1231 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -2005,18 +2005,18 @@ msgid "Center"
 msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:599 src/wmtaskbar.cc:217 src/wmwinlist.cc:394
-#: src/wmwinlist.cc:427
+#: src/wmapp.cc:599 src/wmtaskbar.cc:217 src/wmwinlist.cc:431
+#: src/wmwinlist.cc:464
 msgid "T_ile Horizontally"
 msgstr "Flislegg _horisontalt"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:601 src/wmtaskbar.cc:215 src/wmwinlist.cc:393
-#: src/wmwinlist.cc:426
+#: src/wmapp.cc:601 src/wmtaskbar.cc:215 src/wmwinlist.cc:430
+#: src/wmwinlist.cc:463
 msgid "Tile _Vertically"
 msgstr "Flislegg _vertikalt"
 
-#: src/wmapp.cc:613 src/wmwinlist.cc:375
+#: src/wmapp.cc:613 src/wmwinlist.cc:412
 msgid "_Restore"
 msgstr "_Gjenopprett"
 
@@ -2028,35 +2028,35 @@ msgstr "_Flytt"
 msgid "_Size"
 msgstr "_Endre størrelse"
 
-#: src/wmapp.cc:619 src/wmwinlist.cc:376
+#: src/wmapp.cc:619 src/wmwinlist.cc:413
 msgid "Mi_nimize"
 msgstr "Mi_nimer"
 
-#: src/wmapp.cc:621 src/wmwinlist.cc:377
+#: src/wmapp.cc:621 src/wmwinlist.cc:414
 msgid "Ma_ximize"
 msgstr "Ma_ksimer"
 
-#: src/wmapp.cc:622 src/wmwinlist.cc:378
+#: src/wmapp.cc:622 src/wmwinlist.cc:415
 #, fuzzy
 #| msgid "Maximize"
 msgid "Maximize_Vert"
 msgstr "Maksimer"
 
-#: src/wmapp.cc:623 src/wmwinlist.cc:379
+#: src/wmapp.cc:623 src/wmwinlist.cc:416
 #, fuzzy
 #| msgid "Maximize"
 msgid "MaximizeHori_z"
 msgstr "Maksimer"
 
-#: src/wmapp.cc:626 src/wmwinlist.cc:380
+#: src/wmapp.cc:626 src/wmwinlist.cc:417
 msgid "_Fullscreen"
 msgstr "_Fullskjerm"
 
-#: src/wmapp.cc:629 src/wmwinlist.cc:382
+#: src/wmapp.cc:629 src/wmwinlist.cc:419
 msgid "_Hide"
 msgstr "G_jem"
 
-#: src/wmapp.cc:631 src/wmwinlist.cc:383
+#: src/wmapp.cc:631 src/wmwinlist.cc:420
 msgid "Roll_up"
 msgstr "_Rull opp"
 
@@ -2064,23 +2064,23 @@ msgstr "_Rull opp"
 msgid "R_aise"
 msgstr "_Hev"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:385
+#: src/wmapp.cc:640 src/wmwinlist.cc:422
 msgid "_Lower"
 msgstr "_Senk"
 
-#: src/wmapp.cc:642 src/wmwinlist.cc:386
+#: src/wmapp.cc:642 src/wmwinlist.cc:423
 msgid "La_yer"
 msgstr "_Lag"
 
-#: src/wmapp.cc:645 src/wmwinlist.cc:387
+#: src/wmapp.cc:645 src/wmwinlist.cc:424
 msgid "Tile"
 msgstr ""
 
-#: src/wmapp.cc:649 src/wmwinlist.cc:389
+#: src/wmapp.cc:649 src/wmwinlist.cc:426
 msgid "Move _To"
 msgstr "Fl_ytt til"
 
-#: src/wmapp.cc:650 src/wmwinlist.cc:390
+#: src/wmapp.cc:650 src/wmwinlist.cc:427
 msgid "Occupy _All"
 msgstr "Finnes på _alle"
 
@@ -2088,15 +2088,15 @@ msgstr "Finnes på _alle"
 msgid "Limit _Workarea"
 msgstr "_Begrens område"
 
-#: src/wmapp.cc:660 src/wmwinlist.cc:391
+#: src/wmapp.cc:660 src/wmwinlist.cc:428
 msgid "Tray _icon"
 msgstr "_Trayikon"
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:406 src/wmwinlist.cc:414
+#: src/wmapp.cc:665 src/wmwinlist.cc:443 src/wmwinlist.cc:451
 msgid "_Close"
 msgstr "L_ukk"
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:408
+#: src/wmapp.cc:667 src/wmwinlist.cc:445
 msgid "_Kill Client"
 msgstr "_Drep klient"
 
@@ -2127,7 +2127,7 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1232 src/yxapp.cc:1038
+#: src/wmapp.cc:1232 src/yxapp.cc:1040
 msgid "<none>"
 msgstr "<ingen>"
 
@@ -2264,7 +2264,7 @@ msgstr "Rull ned"
 msgid "Rollup"
 msgstr "Rull opp"
 
-#: src/wmclient.cc:451
+#: src/wmclient.cc:457
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2320,7 +2320,7 @@ msgstr "_Start Icewm på nytt"
 msgid "_About"
 msgstr "_Om"
 
-#: src/wmframe.cc:1705
+#: src/wmframe.cc:1739
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2328,7 +2328,7 @@ msgstr ""
 "ADVARSEL! Alle ulagrede data vil gå tapt hvis\n"
 "denne klienten blir drept. Vil du fortsette?"
 
-#: src/wmframe.cc:1710
+#: src/wmframe.cc:1744
 msgid "Kill Client: "
 msgstr "Drep klient: "
 
@@ -2397,20 +2397,20 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3528
+#: src/wmmgr.cc:3621
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3529
+#: src/wmmgr.cc:3622
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
-#: src/wmoption.cc:259
+#: src/wmoption.cc:284
 #, c-format
 msgid "Unknown window option: %s"
 msgstr "Ukjent vindusopsjon: `%s'"
 
-#: src/wmoption.cc:331
+#: src/wmoption.cc:356
 #, fuzzy, c-format
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Syntaksfeil i vindusopsjonene"
@@ -2505,27 +2505,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Sesjonshåndterer: ukjent linje `%s'"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:395 src/wmwinlist.cc:428
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:432 src/wmwinlist.cc:465
 msgid "Ca_scade"
 msgstr "_Overlapp"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:396 src/wmwinlist.cc:429
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:433 src/wmwinlist.cc:466
 msgid "_Arrange"
 msgstr "_Arranger"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:398 src/wmwinlist.cc:430
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:435 src/wmwinlist.cc:467
 msgid "_Minimize All"
 msgstr "_Minimer alle"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:399 src/wmwinlist.cc:431
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:436 src/wmwinlist.cc:468
 msgid "_Hide All"
 msgstr "_Gjem alle"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:400 src/wmwinlist.cc:432
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:437 src/wmwinlist.cc:469
 msgid "_Undo"
 msgstr "A_ngre"
 
@@ -2568,35 +2568,35 @@ msgstr "_Skrivebord"
 msgid "Show Taskbar"
 msgstr "Oppgavelinje"
 
-#: src/wmwinlist.cc:47
+#: src/wmwinlist.cc:78
 #, fuzzy
 msgid "All Workspaces"
 msgstr "Skrivebordsområde: "
 
-#: src/wmwinlist.cc:381
+#: src/wmwinlist.cc:418
 msgid "_Show"
 msgstr "_Vis"
 
-#: src/wmwinlist.cc:384
+#: src/wmwinlist.cc:421
 #, fuzzy
 #| msgid "R_aise"
 msgid "_Raise"
 msgstr "_Hev"
 
-#: src/wmwinlist.cc:406
+#: src/wmwinlist.cc:443
 #, fuzzy
 msgid "Del"
 msgstr "Delete"
 
-#: src/wmwinlist.cc:410
+#: src/wmwinlist.cc:447
 msgid "_Terminate Process"
 msgstr "_Terminer prosess"
 
-#: src/wmwinlist.cc:411
+#: src/wmwinlist.cc:448
 msgid "Kill _Process"
 msgstr "Drep _prosess"
 
-#: src/wmwinlist.cc:446 src/wmwinlist.cc:447
+#: src/wmwinlist.cc:483 src/wmwinlist.cc:484
 msgid "Window list"
 msgstr "Vindusliste"
 
@@ -2756,7 +2756,7 @@ msgstr ""
 msgid "Invalid hex escape in URL at position %d."
 msgstr ""
 
-#: src/yxapp.cc:996
+#: src/yxapp.cc:998
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"
 "  --sync              Synchronize X11 commands.\n"
