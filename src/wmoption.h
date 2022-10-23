@@ -7,12 +7,14 @@
 
 struct WindowOption {
     WindowOption(mstring n_class_instance = null);
+    ~WindowOption();
     void combine(const WindowOption& n);
     bool hasOption(unsigned bit) const { return bit & options & option_mask; }
+    bool outdated() const;
 
     mstring w_class_instance;
-    mstring keyboard;
-    mstring icon;
+    char* keyboard;
+    char* icon;
     unsigned functions, function_mask;
     unsigned decors, decor_mask;
     unsigned options, option_mask;
@@ -24,6 +26,11 @@ struct WindowOption {
     int gflags;
     int gx, gy;
     unsigned gw, gh;
+    unsigned frame;
+    unsigned serial;
+
+private:
+    WindowOption(const WindowOption&) = delete;
 };
 
 class WindowOptions {
@@ -39,6 +46,7 @@ public:
     bool nonempty() const { return fWinOptions.nonempty(); }
     bool isEmpty() const { return fWinOptions.isEmpty(); }
     static bool anyOption(unsigned bit) { return hasbit(allOptions, bit); }
+    static unsigned serial;
 
 private:
     YObjectArray<WindowOption> fWinOptions;

@@ -1123,9 +1123,9 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
     }
 
     if (f) {
-        WindowOption wo(f->getWindowOption());
-        if (wo.keyboard != null) {
-            setKeyboard(wo.keyboard);
+        const WindowOption* wo = f->client()->getWindowOption();
+        if (wo && nonempty(wo->keyboard)) {
+            setKeyboard(wo->keyboard);
         } else {
             setKeyboard(fDefaultKeyboard);
         }
@@ -1207,6 +1207,44 @@ void YWindowManager::manageClients() {
         fDockApp = new DockApp;
     }
 
+    struct restore {
+        unsigned name;
+        YFrameWindow* frame;
+        int count;
+        long* tabs;
+        restore(unsigned n, int k) :
+            name(n), frame(nullptr), count(k), tabs(new long[k])
+        { }
+        ~restore() { delete[] tabs; }
+        int find(Window window) {
+            for (int i = 0; i < count; ++i)
+                if (Window(tabs[i]) == window)
+                    return i;
+            return -1;
+        }
+    };
+    YObjectArray<restore> restoreTabs;
+    YContext<restore> tabbing;
+    YProperty tabs(this, _XA_ICEWM_TABS, F32, 8192, XA_CARDINAL, True);
+    if (tabs) {
+        for (int i = 0; i + 3 < int(tabs.size()); ) {
+            unsigned name = unsigned(tabs[i]);
+            int count = int(tabs[i + 1]);
+            if (2 <= count && count <= int(tabs.size()) - i - 2) {
+                restore* res = new restore(name, count);
+                for (int k = 0; k < count; ++k) {
+                    long cli = tabs[i + 2 + k];
+                    res->tabs[k] = cli;
+                    tabbing.save(cli, res);
+                }
+                restoreTabs += res;
+                i += 2 + count;
+            } else {
+                break;
+            }
+        }
+    }
+
     unsigned count = 0;
     xsmart<Window> clients;
     if (xapp->children(handle(), &clients, &count)) {
@@ -1226,9 +1264,29 @@ void YWindowManager::manageClients() {
             if (k == igsize && findClient(win) == nullptr) {
                 YFrameClient* client = allocateClient(win, false);
                 if (client) {
-                    manageClient(client);
-                    if (client->getFrame() == nullptr) {
-                        delete client;
+                    restore* res = tabbing.find(client->handle());
+                    if (res && res->frame) {
+                        int orig = res->find(client->handle());
+                        int pos = 0;
+                        int num = 0;
+                        for (YFrameClient* cli : res->frame->clients()) {
+                            Window w = cli->handle();
+                            int fd = res->find(w);
+                            if (0 <= fd && fd < orig)
+                                pos = num + 1;
+                            ++num;
+                        }
+                        res->frame->createTab(client, pos);
+                    } else {
+                        manageClient(client);
+                        if (client->getFrame() == nullptr) {
+                            delete client;
+                        }
+                        else if (res) {
+                            res->frame = client->getFrame();
+                            if (res->name && !res->frame->getFrameName())
+                                res->frame->setFrameName(res->name);
+                        }
                     }
                 }
             }
@@ -1259,6 +1317,12 @@ void YWindowManager::manageClients() {
             icon->show();
         }
     }
+
+    for (restore* res : restoreTabs) {
+        for (int i = 0; i < res->count; ++i) {
+            tabbing.remove(res->tabs[i]);
+        }
+    }
 }
 
 void YWindowManager::unmanageClients() {
@@ -1267,6 +1331,19 @@ void YWindowManager::unmanageClients() {
     if (taskBar)
         taskBar->detachDesktopTray();
     setFocus(nullptr);
+
+    YArray<Atom> tabbed;
+    for (YFrameWindow* frame : YFrameWindow::tabbing()) {
+        tabbed += frame->getFrameName();
+        tabbed += frame->tabCount();
+        for (YFrameClient* client : frame->clients()) {
+            tabbed += client->handle();
+        }
+    }
+    if (tabbed.nonempty()) {
+        setProperty(_XA_ICEWM_TABS, XA_CARDINAL, &*tabbed, tabbed.getCount());
+    }
+
     grabServer();
 
     for (int l = 0; l < WinLayerCount; l++) {
@@ -1594,34 +1671,33 @@ void YWindowManager::placeWindow(YFrameWindow *frame,
     else
 #endif
     if (newClient) {
-        WindowOption wo(frame->getWindowOption());
-
         if (frame->frameOption(YFrameWindow::foClose)) {
             frame->wmClose();
             doActivate = false;
         }
 
-        if (wo.opacity && inrange(wo.opacity, 1, 100)) {
-            Atom omax = 0xFFFFFFFF;
-            Atom oper = omax / 100;
-            Atom orem = omax - oper * 100;
-            Atom opaq = wo.opacity * oper + wo.opacity * orem / 100;
-            frame->setNetOpacity(opaq);
-        }
-
-        if (hasbits(wo.gflags, WidthValue | HeightValue) && wo.gh && wo.gw) {
-            posWidth = wo.gw + frameWidth;
-            posHeight = wo.gh + frameHeight;
-        }
-
-        if (hasbits(wo.gflags, XValue | YValue)) {
-            posX = wo.gx;
-            posY = wo.gy;
-            if (wo.gflags & XNegative)
-                posX += desktop->width() - posWidth;
-            if (wo.gflags & YNegative)
-                posY += desktop->height() - posHeight;
-            goto setGeo; /// FIX
+        const WindowOption* wo = client->getWindowOption();
+        if (wo) {
+            if (wo->opacity && inrange(wo->opacity, 1, 100)) {
+                Atom omax = 0xFFFFFFFF;
+                Atom oper = omax / 100;
+                Atom orem = omax - oper * 100;
+                Atom opaq = wo->opacity * oper + wo->opacity * orem / 100;
+                frame->setNetOpacity(opaq);
+            }
+            if (hasbits(wo->gflags, WidthValue | HeightValue) && wo->gh && wo->gw) {
+                posWidth = wo->gw + frameWidth;
+                posHeight = wo->gh + frameHeight;
+            }
+            if (hasbits(wo->gflags, XValue | YValue)) {
+                posX = wo->gx;
+                posY = wo->gy;
+                if (wo->gflags & XNegative)
+                    posX += desktop->width() - posWidth;
+                if (wo->gflags & YNegative)
+                    posY += desktop->height() - posHeight;
+                goto setGeo; /// FIX
+            }
         }
     }
 
@@ -1880,6 +1956,21 @@ void YWindowManager::mapClient(Window win) {
             client = allocateClient(win, true);
         }
         if (client) {
+            const WindowOption* wo = client->getWindowOption();
+            if (wo && wo->frame) {
+                for (YFrameWindow* frame : YFrameWindow::fnaming()) {
+                    if (frame->getFrameName() == wo->frame) {
+                        int place = frame->tabCount();
+                        frame->createTab(client, place);
+                        if (client->activateOnMap())
+                            frame->selectTab(client);
+                        client = nullptr;
+                        break;
+                    }
+                }
+            }
+        }
+        if (client) {
             manageClient(client, true);
             if (client->getFrame() == nullptr) {
                 delete client;
@@ -1914,6 +2005,8 @@ void YWindowManager::unmanageClient(YFrameClient* client) {
         if (conter) {
             frame = conter->getFrame();
             frame->removeTab(client);
+            if (switchWindowVisible())
+                fSwitchWindow->destroyedClient(client);
         }
     }
     delete client;

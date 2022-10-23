@@ -53,8 +53,9 @@ YFrameClient::YFrameClient(YWindow *parent, YFrameWindow *frame, Window win,
     fWindowRole()
 {
     fFrame = frame;
-    fBorder = 0;
+    fClientItem = nullptr;
     fProtocols = 0;
+    fBorder = 0;
     fColormap = colormap;
     fDocked = false;
     fShaped = false;
@@ -96,8 +97,12 @@ YFrameClient::YFrameClient(YWindow *parent, YFrameWindow *frame, Window win,
             queryShape();
         }
 #endif
+        if (fClassHint.nonempty()) {
+            if (hintOptions && hintOptions->nonempty())
+                loadWindowOptions(hintOptions, true);
+            loadWindowOptions(defOptions, false);
+        }
     }
-
     clientContext.save(handle(), this);
 }
 
@@ -106,6 +111,7 @@ YFrameClient::~YFrameClient() {
     if (fTransientFor) setTransient(None);
     if (fSizeHints) { XFree(fSizeHints); fSizeHints = nullptr; }
     if (fHints) { XFree(fHints); fHints = nullptr; }
+    if (fClientItem) { fClientItem->goodbye(); fClientItem = nullptr; }
 }
 
 void YFrameClient::getProtocols(bool force) {
@@ -519,6 +525,10 @@ void YFrameClient::setFrame(YFrameWindow *newFrame) {
     fFrame = newFrame;
 }
 
+YFrameWindow* YFrameClient::obtainFrame() const {
+    return fFrame ? fFrame : dynamic_cast<YFrameWindow*>(parent()->parent());
+}
+
 void YFrameClient::setFrameState(FrameState state) {
     if (state == WithdrawnState) {
         if (manager->notShutting()) {
@@ -911,15 +921,9 @@ void YFrameClient::handleClientMessage(const XClientMessageEvent &message) {
             }
         }
     } else if (message.message_type == _XA_NET_ACTIVE_WINDOW) {
-        YFrameWindow* f = getFrame();
-        if (f == nullptr) {
-            YWindow* up = parent();
-            if (up) {
-                f = dynamic_cast<YFrameWindow*>(up->parent());
-                if (f && f->client() != this)
-                    f->selectTab(this);
-            }
-        }
+        YFrameWindow* f = obtainFrame();
+        if (f && f->client() != this)
+            f->selectTab(this);
         if (f && !f->ignoreActivation()) {
             f->activate();
             f->wmRaise();
@@ -1135,6 +1139,49 @@ void YFrameClient::actionPerformed(YAction action) {
     }
 }
 
+bool YFrameClient::activateOnMap() {
+    bool yes = true;
+    if (getFrame())
+        yes &= getFrame()->isMapped() && getFrame()->visibleNow();
+    const WindowOption* wo = getWindowOption();
+    if (wo && yes) {
+        if (wo->hasOption(YFrameWindow::foDoNotFocus))
+            yes = false;
+        if ( !wo->hasOption(YFrameWindow::foIgnoreNoFocusHint)
+            && wmHint(InputHint) && !(fHints->input & True))
+            yes = false;
+        if (wo->hasOption(YFrameWindow::foDoNotFocus))
+            yes = false;
+        if (wo->hasOption(YFrameWindow::foNoFocusOnMap))
+            yes = false;
+    }
+    if (yes && getOwner()) {
+        YFrameClient* owner = getOwner();
+        while (owner && !owner->getFrame() && !owner->getFrame()->focused())
+            owner = owner->getOwner();
+        bool focus = (owner != nullptr);
+        if (focus == false) {
+            for (int i = 0; i < fTransients.getCount(); ++i) {
+                if (fTransients[i].owner == fTransientFor) {
+                    Window window = fTransients[i].trans;
+                    YFrameClient* trans = clientContext.find(window);
+                    if (trans && trans->getFrame() &&
+                        trans->getFrame()->focused()) {
+                        focus = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (focus ? !focusOnMapTransientActive : !focusOnMapTransient)
+            yes = false;
+    }
+    else if (yes) {
+        yes = focusOnMap;
+    }
+    return yes;
+}
+
 void YFrameClient::getNameHint() {
     if (!prop.wm_name)
         return;
@@ -1343,8 +1390,17 @@ void YFrameClient::refreshIcon() {
 
 ref<YIcon> YFrameClient::getIcon() {
     if (fIconize) {
-        fIconize = false;
-        obtainIcon();
+        const WindowOption* wo = getWindowOption();
+        if (wo && nonempty(wo->icon)) {
+            if (fIcon == null)
+                fIcon = YIcon::getIcon(wo->icon);
+            if (fIcon != null)
+                fIconize = false;
+        }
+        if (fIconize) {
+            fIconize = false;
+            obtainIcon();
+        }
     }
     return fIcon;
 }
@@ -1449,12 +1505,6 @@ void YFrameClient::obtainIcon() {
     }
     if (fIcon == null && adopted() == false) {
         fIcon = YIcon::getIcon("icewm");
-    }
-    if (fIcon == null && fFrame) {
-        WindowOption wo(fFrame->getWindowOption());
-        if (wo.icon.nonempty()) {
-            fIcon = YIcon::getIcon(wo.icon);
-        }
     }
 
     if (fIcon != null) {
@@ -1873,6 +1923,41 @@ void YFrameClient::handleGravityNotify(const XGravityEvent &gravity) {
                     ox, oy, gravity.x, gravity.y, nx, ny));
         XMoveWindow(xapp->display(), handle(), nx, ny);
     }
+}
+
+const WindowOption* YFrameClient::getWindowOption() {
+    if (fWindowOption && fWindowOption->outdated()) {
+        fWindowOption = null;
+        loadWindowOptions(defOptions, false);
+    }
+    return fWindowOption._ptr();
+}
+
+void YFrameClient::loadWindowOptions(WindowOptions* list, bool remove) {
+    const char* klass = fClassHint.res_class;
+    const char* cname = fClassHint.res_name;
+    WindowOption& wo = *fWindowOption;
+
+    if (nonempty(klass)) {
+        if (nonempty(cname)) {
+            mstring klass_instance(klass, ".", cname);
+            list->mergeWindowOption(wo, klass_instance, remove);
+
+            mstring name_klass(cname, ".", klass);
+            list->mergeWindowOption(wo, name_klass, remove);
+        }
+        list->mergeWindowOption(wo, klass, remove);
+    }
+    if (nonempty(cname)) {
+        if (fWindowRole != null) {
+            mstring name_role(cname, ".", fWindowRole);
+            list->mergeWindowOption(wo, name_role, remove);
+        }
+        list->mergeWindowOption(wo, cname, remove);
+    }
+    if (fWindowRole != null)
+        list->mergeWindowOption(wo, fWindowRole, remove);
+    list->mergeWindowOption(wo, null, remove);
 }
 
 bool ClassHint::match(const char* resource) const {
