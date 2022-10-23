@@ -13,9 +13,11 @@
 lazy<WindowOptions> defOptions;
 lazy<WindowOptions> hintOptions;
 unsigned WindowOptions::allOptions;
+unsigned WindowOptions::serial;
 
 WindowOption::WindowOption(mstring n_class_instance):
     w_class_instance(n_class_instance),
+    keyboard(nullptr), icon(nullptr),
     functions(0), function_mask(0),
     decors(0), decor_mask(0),
     options(0), option_mask(0),
@@ -23,15 +25,24 @@ WindowOption::WindowOption(mstring n_class_instance):
     layer(WinLayerInvalid),
     tray(WinTrayInvalid),
     order(0), opacity(0),
-    gflags(0), gx(0), gy(0), gw(0), gh(0)
+    gflags(0), gx(0), gy(0), gw(0), gh(0),
+    frame(0), serial(WindowOptions::serial)
 {
 }
 
+WindowOption::~WindowOption()
+{
+    if (keyboard)
+        free(keyboard);
+    if (icon)
+        free(icon);
+}
+
 void WindowOption::combine(const WindowOption& n) {
-    if (n.icon.nonempty() && icon.isEmpty())
-        icon = n.icon;
-    if (n.keyboard.nonempty() && keyboard.isEmpty())
-        keyboard = n.keyboard;
+    if (nonempty(n.icon) && isEmpty(icon))
+        icon = strdup(n.icon);
+    if (nonempty(n.keyboard) && isEmpty(keyboard))
+        keyboard = strdup(n.keyboard);
     if (n.function_mask) {
         functions |= n.functions & ~function_mask;
         function_mask |= n.function_mask;
@@ -78,6 +89,14 @@ void WindowOption::combine(const WindowOption& n) {
         gh = n.gh;
         gflags |= HeightValue;
     }
+    if (frame == 0 && n.frame)
+        frame = n.frame;
+    if (serial < n.serial)
+        serial = n.serial;
+}
+
+bool WindowOption::outdated() const {
+    return serial < WindowOptions::serial;
 }
 
 bool WindowOptions::findOption(mstring a_class_instance, int *index) {
@@ -116,9 +135,13 @@ void WindowOptions::setWinOption(mstring n_class_instance,
     WindowOption *op = getOption(n_class_instance);
 
     if (strcmp(opt, "icon") == 0) {
-        op->icon = arg;
+        if (op->icon)
+            free(op->icon);
+        op->icon = strdup(arg);
     } else if (strcmp(opt, "keyboard") == 0) {
-        op->keyboard = arg;
+        if (op->keyboard)
+            free(op->keyboard);
+        op->keyboard = strdup(arg);
     } else if (strcmp(opt, "workspace") == 0) {
         int workspace = atoi(arg);
         op->workspace = max(workspace, int(WinWorkspaceInvalid));
@@ -128,6 +151,8 @@ void WindowOptions::setWinOption(mstring n_class_instance,
         int opaq = atoi(arg);
         if (inrange(opaq, 0, 100))
             op->opacity = opaq;
+    } else if (strcmp(opt, "frame") == 0) {
+        op->frame = unsigned(strhash(arg));
     } else if (strcmp(opt, "geometry") == 0) {
         op->gx = 0;
         op->gy = 0;
@@ -345,6 +370,7 @@ static char *parseWinOptions(char *data, const char* filename) {
                 ++scan;
             *dest++ = *scan;
         }
+        *dest = '\0';
 
         mstring class_instance(word, dest - word);
 
@@ -379,6 +405,7 @@ void loadWinOptions(upath optFile) {
         auto buf(optFile.loadText());
         if (buf) {
             defOptions = null;
+            WindowOptions::serial += 1;
             parseWinOptions(buf, optFile.string());
         }
     }

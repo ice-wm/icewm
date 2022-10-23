@@ -4,15 +4,13 @@
 #include "ywindow.h"
 #include "ymenu.h"
 #include "MwmUtil.h"
+#include "wmoption.h"
 #ifndef InputHint
 #include <X11/Xutil.h>
 #endif
 
-#define InvalidFrameState   (-1)
-
 class YFrameWindow;
 class YClientContainer;
-class WindowListItem;
 class YIcon;
 
 typedef int FrameState;
@@ -115,7 +113,6 @@ public:
 
 class ClientData {
 public:
-    virtual void setWinListItem(WindowListItem *i) = 0;
     virtual YFrameWindow *owner() const = 0;
     virtual ref<YIcon> getIcon() const = 0;
     virtual mstring getTitle() const = 0;
@@ -168,12 +165,19 @@ protected:
     virtual ~ClientData() {}
 };
 
+class YClientItem {
+public:
+    virtual void goodbye() = 0;
+    virtual void update() = 0;
+    virtual void repaint() = 0;
+};
+
 class YFrameClient: public YDndWindow
                   , public YTimerListener
 {
     typedef YDndWindow super;
 public:
-    YFrameClient(YWindow *parent, YFrameWindow *frame, Window win = 0,
+    YFrameClient(YWindow *parent, YFrameWindow *frame, Window win,
                  int depth = 0, Visual *visual = nullptr, Colormap cmap = 0);
     virtual ~YFrameClient();
 
@@ -191,13 +195,17 @@ public:
     void setBorder(unsigned int border) { fBorder = border; }
     void setFrame(YFrameWindow *newFrame);
     YFrameWindow *getFrame() const { return fFrame; };
+    YFrameWindow* obtainFrame() const;
     YClientContainer* getContainer() const;
+    void setClientItem(YClientItem* item) { fClientItem = item; }
+    YClientItem* getClientItem() const { return fClientItem; }
 
     enum WindowProtocols {
         wpDeleteWindow = 1 << 0,
         wpTakeFocus    = 1 << 1,
         wpPing         = 1 << 2,
     };
+    enum { InvalidFrameState = -1 };
 
     bool protocol(WindowProtocols wp) const { return bool(fProtocols & wp); }
     void sendMessage(Atom msg, Time ts, long p2 = 0L, long p3 = 0L, long p4 = 0L);
@@ -272,7 +280,6 @@ public:
     ref<YIcon> getIcon();
 
     void setWorkspaceHint(int workspace);
-    bool getWinWorkspaceHint(int* workspace);
 
     void setLayerHint(int layer);
     bool getLayerHint(int* layer);
@@ -333,8 +340,12 @@ public:
 
     bool isEmbed() const { return prop.xembed_info; }
 
+    const WindowOption* getWindowOption();
+    bool activateOnMap();
+
 private:
     YFrameWindow *fFrame;
+    YClientItem* fClientItem;
     int fProtocols;
     unsigned fBorder;
     FrameState fSavedFrameState;
@@ -362,6 +373,8 @@ private:
     mstring fWindowRole;
 
     lazy<MwmHints> fMwmHints;
+    lazy<WindowOption> fWindowOption;
+    void loadWindowOptions(WindowOptions* list, bool remove);
 
     struct transience {
         Window trans, owner;
