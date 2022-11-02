@@ -40,12 +40,14 @@ public:
 
     void untab(YFrameClient* dest);
     bool hasTab(YFrameClient* dest);
+    bool lessTabs();
+    bool moreTabs();
     void closeTab(YFrameClient* client);
     void removeTab(YFrameClient* client);
     void selectTab(YFrameClient* client);
     void changeTab(int delta);
     void createTab(YFrameClient* client, int place = -1);
-    void mergeTabs(YFrameWindow* source);
+    void mergeTabs(YFrameWindow* frame);
     void independer(YFrameClient* client);
 
     Window createPointerWindow(Cursor cursor, int gravity);
@@ -142,7 +144,7 @@ public:
     void handleMoveMouse(const XMotionEvent &motion, int &newX, int &newY);
     void handleResizeMouse(const XMotionEvent &motion,
                            int &newX, int &newY, int &newWidth, int &newHeight);
-
+    void checkEdgeSwitch(int mouseX, int mouseY);
     void outlineMove();
     void outlineResize();
 
@@ -327,7 +329,7 @@ public:
     void performLayout();
 
     void updateMwmHints(XSizeHints* sh);
-    void updateProperties();
+    void updateProperties(YFrameClient* client = nullptr);
     void updateTaskBar();
     void updateAppStatus();
     void removeAppStatus();
@@ -472,6 +474,7 @@ private:
 
     static lazy<YTimer> fAutoRaiseTimer;
     static lazy<YTimer> fDelayFocusTimer;
+    static lazy<YTimer> fEdgeSwitchTimer;
 
     int fWinWorkspace;
     int fWinRequestedLayer;
@@ -506,6 +509,8 @@ private:
     int fShapeTabCount;
     unsigned fShapeDecors;
     mstring fShapeTitle;
+    bool fShapeLessTabs;
+    bool fShapeMoreTabs;
 
     bool fHaveStruts;
     bool indicatorsCreated;

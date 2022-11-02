@@ -591,6 +591,15 @@ This is either Locally, Passive, Globally or NoInput.
 Print the override redirect status for the window, or if either 0 or 1
 is given, then disable or enable the override redirect status.
 
+=item B<tabto> I<label>
+
+Move the windows as tabs to a frame which has C<frame> label I<label>.
+Such a frame is created if needed.
+
+=item B<untab>
+
+Move each window to its own frame, if it is currently tabbed.
+
 =item B<click> I<window-x> I<window-y> I<button>
 
 Send a button press and release event at position (I<window-x>,
@@ -609,6 +618,14 @@ Observe the selected windows and report any changes. This includes
 focus, visibility, position, size and all window properties.
 To monitor all of the protocol request messages that client applications
 may send to icewm, also spy on the root window.
+
+=item B<stacking>
+
+Sort the list of windows from topmost to bottom-most.
+
+=item B<reverse>
+
+Reverse the order of the list of windows.
 
 =back
 
@@ -936,6 +953,11 @@ which has a WM_ROLE value of C<special>, or start it with B<runonce>.
         if -v then hide \
         elif -u then setWorkspace this sync activate end \
         else runonce roxterm --role=special
+
+Collect all urxvt terminals from the fourth workspace in a single frame
+on the current workspace.
+
+    icesh -W 3 -c urxvt tabto myfunnyname
 
 =head2 ENVIRONMENT
 
