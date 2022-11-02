@@ -1,11 +1,65 @@
-icewm -- history of user-visible changes.  2022-10-24
+icewm -- history of user-visible changes.  2022-11-02
+
+Release icewm-3.2.0 released 2022-11-02
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.1.0...3.2.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (25):
+      Update _NET_CLIENT_LIST when adding more tabs.
+      Show the time of day when reporting an unknown window option.
+      Update the title bar shape when switching to a different tab and when
+        removing a tab. Set the desktop, the layer and the state window
+        properties when creating a tab. Always add a new tab to the window list.
+      Add the icesh command "tabto" to move a number of windows as tabs to a new
+        frame.
+      Update a visible quick switch when a frame removes one of its tabs.
+      Only popup the grouping menu on a task button on the first button click
+        without key modifiers. This makes it easier to immediately select or
+        minimize the active application by using the shift or control modifier.
+      Fix maximize and fullscreen for tabs with different normal sizes.
+      When switching to a tab with size limitations, adapt the frame geometry.
+        Prevent the flashing when switching tabs.
+      Support edge switching when dragging a window for issue #681.
+      Add "stacking" and "reverse" commands to icesh for issue ice-wm/icewm#98.
+      Add "stacking" and "reverse" commands to icesh for issue ice-wm/icewm#98.
+      Explain cursors.
+      Let icesh check all atoms in the -Property filter. Improve the window
+        synchronization in icesh.
+      Let the Alt+Tab preserve a history for 30 seconds for issue #673. The next
+        Alt+Tab will then continue where the previous one left off.
+      Fix Alt+Tab prioritization for issue #673.
+      Add "untab" command to icesh to give each client its own frame.
+      Mention Alt+Tab raise candidate in the icewm manpage.
+      Permit a rolled up frame to take focus even if its client has a globally
+        active focus model for issue ice-wm/icewm#98.
+      When activating a rolled up window, set focus to IceTopWin, for issue
+        ice-wm/icewm#98.
+      Ensure KeySysWinNext and KeySysWinPrev work for rolled up windows for
+        issue ice-wm/icewm#98.
+      Force fullscreen windows as focused, even if their input hint is False,
+        for TaskBarFullscreenAutoShow in issue ice-wm/icewm#73.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Add missing override.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Eduard Bloch <blade@debian.org> (2):
+      DRY, simplify, some flags/folders separation
+      feature: special filtered view and flat rendering
+
+Kristijan Fremen Velkovski <me@krisfremen.com> (1):
+      Translated using Weblate (Macedonian)
+
 
 Release icewm-3.1.0 released 2022-10-24
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.0.1...3.1.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (17):
+Bert Gijsbers <gijsbers@science.uva.nl> (18):
       Let the window list support tabs.
       Add MouseWinTabbing button preference for merging frame tabs for issue
         ice-wm/icewm#95.
@@ -27,6 +81,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (17):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.1.0 release
 
 Eduard Bloch <blade@debian.org> (2):
       Revisiting header files and making them self-sufficient
@@ -250,52 +305,4 @@ Sergey Mashkov <cy6ergn0m@gmail.com> (1):
 
 Sophie Leroy <sophie@stoquart.com> (1):
       Translated using Weblate (French)
-
-
-Release icewm-2.9.6 released 2022-02-23
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.5...2.9.6
-
-Bert Gijsbers <gijsbers@science.uva.nl> (12):
-      Lower a fullscreen window below the window which is to be activated.
-      Start a new fullscreen client in the fullscreen layer for issue
-        ice-wm/icewm#85.
-      Fix format string in zh_CN to restore build and closes #639.
-      Fix format string in zh_TW to restore build.
-      Prioritize the thermal zones when showing CPU temperature.
-      Share a single temperature object and free it on exit.
-      Let CPUs share a single timer. Adjust to changes to taskBarCPUSamples.
-      Support workspace names "next" and "prev" in icesh for issue #640.
-      Update keys.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.9.6 release
-
-Grace Yu <grace.yu@excel-gits.com> (4):
-      Translated using Weblate (Chinese (China) (zh_CN))
-      Translated using Weblate (Chinese (China) (zh_CN))
-      Translated using Weblate (Chinese (China) (zh_CN))
-      Translated using Weblate (Chinese (Taiwan) (zh_TW))
-
-Davide Aiello <davide.aiello@novilingulists.com> (3):
-      Translated using Weblate (Italian)
-      Translated using Weblate (Italian)
-      Translated using Weblate (Italian)
-
-Gemineo <vistatec@gemineo.de> (3):
-      Translated using Weblate (German)
-      Translated using Weblate (German)
-      Translated using Weblate (German)
-
-marcelo cripe <marcelocripe@gmail.com> (2):
-      Translated using Weblate (Portuguese (Brazil))
-      Translated using Weblate (Portuguese (Brazil))
-
-Antonio Simón <antonio@trans-mission.com> (1):
-      Translated using Weblate (Spanish)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
 

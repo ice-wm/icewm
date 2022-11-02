@@ -1,5 +1,348 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 2d82a1ff7bd7a5c9c2b962cec534c54c222d32c0
+Merge: 8aa693a5 9823b86f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 22:19:33 2022 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 9823b86f88f26c1566b1d44d9a2721fbcfbc9884
+Merge: da90a4d8 231b87c7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 22:04:38 2022 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 231b87c75df5ed14b259c919df02b6dca12a49af
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 22:02:43 2022 +0100
+
+    Add missing override.
+
+ src/wmswitch.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit da90a4d8d7132abd7ba4e0c652039af84ea27ee2
+Merge: dd144756 4f06285d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 21:54:23 2022 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 4f06285d64d4bcbfbf831993d761b42fdc8b2a62
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 13:04:32 2022 +0100
+
+    Force fullscreen windows as focused, even if their input hint is False,
+    for TaskBarFullscreenAutoShow in issue ice-wm/icewm#73.
+
+ src/wmmgr.cc | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit a3aef47487ada21c8b91a4867284c61bb55a94f7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 00:23:22 2022 +0100
+
+    Ensure KeySysWinNext and KeySysWinPrev work for rolled up windows for
+    issue ice-wm/icewm#98.
+
+ src/wmframe.cc | 24 ++++++++++++++++++------
+ 1 file changed, 18 insertions(+), 6 deletions(-)
+
+commit 0324816929b6c1ae711367ee85fd37f661add203
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 00:21:30 2022 +0100
+
+    When activating a rolled up window, set focus to IceTopWin, for issue
+    ice-wm/icewm#98.
+
+ src/wmmgr.cc | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 2affac139b1a8905c4b9894ff66cf8a0d19bae5a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 00:11:42 2022 +0100
+
+    Permit a rolled up frame to take focus even if its client has a globally
+    active focus model for issue ice-wm/icewm#98.
+
+ src/wmmgr.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e874cbcbb955a65b194d5613deeeb3f236153dd4
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 1 17:47:20 2022 +0100
+
+    Mention Alt+Tab raise candidate in the icewm manpage.
+
+ man/icewm.pod | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit b169106566497adb10f00d2fb74af41df3b3a185
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 1 17:46:29 2022 +0100
+
+    Add "untab" command to icesh to give each client its own frame.
+
+ man/icesh.pod |  9 +++++++++
+ src/icesh.cc  | 50 ++++++++++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 57 insertions(+), 2 deletions(-)
+
+commit ff0a37b19e65afc3e1eed78b803513179dd9a8c4
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 1 12:21:30 2022 +0100
+
+    Fix Alt+Tab prioritization for issue #673.
+
+ src/wmswitch.cc | 28 +++++++++++++---------------
+ 1 file changed, 13 insertions(+), 15 deletions(-)
+
+commit 6502c0aa5e06dfc46eb121d027cdd1d128855621
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 31 23:36:05 2022 +0100
+
+    Let the Alt+Tab preserve a history for 30 seconds for issue #673.
+    The next Alt+Tab will then continue where the previous one left off.
+
+ src/wmframe.cc  | 23 +++++++--------
+ src/wmframe.h   |  2 +-
+ src/wmmgr.cc    | 20 +++++++++----
+ src/wmmgr.h     |  1 +
+ src/wmswitch.cc | 81 +++++++++++++++++++++++++++++++++--------------------
+ src/wmswitch.h  | 10 +++++--
+ src/yxapp.cc    |  6 ++++
+ src/yxapp.h     |  1 +
+ 8 files changed, 94 insertions(+), 50 deletions(-)
+
+commit 9886e39b3f7288a584edacab897d57dc8d5819be
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Oct 30 23:38:39 2022 +0100
+
+    Let icesh check all atoms in the -Property filter.
+    Improve the window synchronization in icesh.
+
+ src/icesh.cc | 62 ++++++++++++++++++++++++++++++++++----------------------
+ 1 file changed, 38 insertions(+), 24 deletions(-)
+
+commit 9b83a7b5e3ce840c5f3a4822d40b03831238ed5f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Oct 30 23:36:45 2022 +0100
+
+    Explain cursors.
+
+ man/icewm.pod | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 55f73ea750ab900d3060be68c07e3fc2742326f2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Oct 30 14:28:12 2022 +0100
+
+    Add "stacking" and "reverse" commands to icesh for issue ice-wm/icewm#98.
+
+ src/icesh.cc | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+commit 2e71cd0f88f518b91360d4d4fd1c2db3fa5f5a63
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Oct 30 13:27:09 2022 +0100
+
+    Add "stacking" and "reverse" commands to icesh for issue ice-wm/icewm#98.
+
+ man/icesh.pod | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit cf34227e089fa676550994ca22454dd50e9bf486
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Oct 30 12:46:44 2022 +0100
+
+    Support edge switching when dragging a window for issue #681.
+
+ src/movesize.cc | 18 ++++++++++++++----
+ src/wmframe.cc  | 20 ++++++++++++++++++++
+ src/wmframe.h   |  3 ++-
+ src/wmmgr.cc    | 44 ++++++++++++++++++++++++++------------------
+ src/wmmgr.h     |  2 ++
+ src/wmtitle.cc  |  1 +
+ src/yxapp.cc    |  9 +++++++++
+ src/yxapp.h     |  1 +
+ 8 files changed, 75 insertions(+), 23 deletions(-)
+
+commit 686d567849d7e780bf17eb36b8fc96fc486b9040
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Oct 30 12:00:56 2022 +0100
+
+    When switching to a tab with size limitations, adapt the frame geometry.
+    Prevent the flashing when switching tabs.
+
+ src/wmframe.cc | 53 ++++++++++++++++++++++++++++++++---------------------
+ 1 file changed, 32 insertions(+), 21 deletions(-)
+
+commit cadace9baf452f551c081dd90a44630acfd86bbd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Oct 29 12:28:18 2022 +0200
+
+    Fix maximize and fullscreen for tabs with different normal sizes.
+
+ src/wmframe.cc | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+commit 3af6071427408946dac7c25d5376f689f8866f3a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Oct 28 19:01:29 2022 +0200
+
+    Only popup the grouping menu on a task button on the first button click
+    without key modifiers. This makes it easier to immediately select or
+    minimize the active application by using the shift or control modifier.
+
+ src/atasks.cc | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+commit 88601d97795f3e0ca6379b905e7baa2ab99bb724
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Oct 27 18:17:19 2022 +0200
+
+    Update a visible quick switch when a frame removes one of its tabs.
+
+ src/wmframe.cc  |  3 +--
+ src/wmmgr.cc    | 11 ++++++++---
+ src/wmmgr.h     |  1 +
+ src/wmswitch.cc |  8 +++++---
+ 4 files changed, 15 insertions(+), 8 deletions(-)
+
+commit 00d36ffa31c4088f1525d87e76f98329be7b0a06
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Oct 26 20:01:18 2022 +0200
+
+    Add the icesh command "tabto" to move a number of windows as tabs to a
+    new frame.
+
+ man/icesh.pod |  5 +++
+ src/icesh.cc  | 93 ++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 93 insertions(+), 5 deletions(-)
+
+commit 7e725639028f62122ed4839ca3b397e41999dfc3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Oct 26 19:55:28 2022 +0200
+
+    Update the title bar shape when switching to a different tab and when
+    removing a tab.
+    Set the desktop, the layer and the state window properties when creating
+    a tab.
+    Always add a new tab to the window list.
+
+ src/decorate.cc |  6 +++++-
+ src/wmclient.cc |  6 +++---
+ src/wmclient.h  |  2 +-
+ src/wmframe.cc  | 49 ++++++++++++++++++++++++++++++++++++++-----------
+ src/wmframe.h   |  6 +++++-
+ src/wmtitle.cc  | 12 ++++--------
+ 6 files changed, 56 insertions(+), 25 deletions(-)
+
+commit f1d50770254bc44ec027257cce8d677dc980794f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Oct 26 19:54:26 2022 +0200
+
+    Show the time of day when reporting an unknown window option.
+
+ src/wmoption.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 992bb0cb0dcb85d8473ec60f662c67302427d91d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Oct 26 19:52:45 2022 +0200
+
+    Update _NET_CLIENT_LIST when adding more tabs.
+
+ src/wmmgr.cc | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit ff39e0b3305eac16db6e09bb32f656c9a0fc8b09
+Author: Eduard Bloch <blade@debian.org>
+Date:   Tue Oct 25 16:52:04 2022 +0200
+
+    feature: special filtered view and flat rendering
+
+ man/icewm-menu-fdo.pod |  30 +++++++++++-
+ src/fdomenu.cc         | 117 ++++++++++++++++++++++++++++++++++++++++-----
+ 2 files changed, 134 insertions(+), 13 deletions(-)
+
+commit f806e829bb24a5735e46819e6a4caf591b5bf630
+Author: Eduard Bloch <blade@debian.org>
+Date:   Mon Oct 24 18:59:45 2022 +0200
+
+    DRY, simplify, some flags/folders separation
+
+ src/CMakeLists.txt | 93 +++++++++++++++++++++-----------------------------
+ 1 file changed, 39 insertions(+), 54 deletions(-)
+
+commit 731fdda3be247b4234c137e20748d751d63b1078
+Author: Kristijan Fremen Velkovski <me@krisfremen.com>
+Date:   Mon Oct 24 07:36:34 2022 +0000
+
+    Translated using Weblate (Macedonian)
+
+    Currently translated at 36.2% (188 of 519 strings)
+
+ po/mk.po | 29 ++++++++++++-----------------
+ 1 file changed, 12 insertions(+), 17 deletions(-)
+
+commit 8aa693a54ba9aa810e16741abf3c9cbcf11e9d61
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 24 01:42:17 2022 +0200
+
+    Prepare 3.1.0 release
+
+ AUTHORS      |   8 +-
+ ChangeLog    | 657 +++++++++++++++++++++++++++++++------------------------
+ NEWS         | 101 ++++-----
+ README.md    |  38 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  86 ++++----
+ po/be.po     |  86 ++++----
+ po/bg.po     |  86 ++++----
+ po/ca.po     |  86 ++++----
+ po/cs.po     |  86 ++++----
+ po/da.po     |  86 ++++----
+ po/de.po     |  86 ++++----
+ po/el.po     |  86 ++++----
+ po/en.po     |  86 ++++----
+ po/es.po     |  86 ++++----
+ po/fi.po     |  86 ++++----
+ po/fr.po     |  90 ++++----
+ po/he.po     |  86 ++++----
+ po/hr.po     |  86 ++++----
+ po/hu.po     |  86 ++++----
+ po/icewm.pot |  88 ++++----
+ po/id.po     |  86 ++++----
+ po/it.po     |  86 ++++----
+ po/ja.po     |  86 ++++----
+ po/ko.po     |  86 ++++----
+ po/lt.po     |  86 ++++----
+ po/lv.po     |  86 ++++----
+ po/mk.po     |  86 ++++----
+ po/nb.po     |  86 ++++----
+ po/nl.po     |  86 ++++----
+ po/no.po     |  86 ++++----
+ po/pl.po     |  86 ++++----
+ po/pt.po     |  86 ++++----
+ po/pt_BR.po  |  89 ++++----
+ po/ro.po     |  86 ++++----
+ po/ru.po     |  86 ++++----
+ po/sk.po     |  86 ++++----
+ po/sl.po     |  86 ++++----
+ po/sv.po     |  86 ++++----
+ po/tr.po     |  86 ++++----
+ po/uk.po     |  86 ++++----
+ po/vi.po     |  86 ++++----
+ po/zh_CN.po  |  86 ++++----
+ po/zh_TW.po  |  86 ++++----
+ 46 files changed, 2125 insertions(+), 2056 deletions(-)
+
 commit 27708152b38933f5ea5f43227ad07d40f26b0bf7
 Merge: f20ff627 dd144756
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6164,314 +6507,3 @@ Date:   Thu Jul 8 08:15:51 2021 +0200
  po/zh_CN.po  |  70 +++----
  po/zh_TW.po  |  70 +++----
  46 files changed, 1734 insertions(+), 1918 deletions(-)
-
-commit b671b365391539f67545fcf9d4bfd468b39214d1
-Merge: 6c377bf4 3685e59b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 8 08:12:04 2021 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 3685e59b6b3e1bb392a0efae7def1ddf4ad1f779
-Merge: d6eb4680 e7ab2a49
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 8 08:10:56 2021 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit e7ab2a49a9b9e6f3d2b279250b093bbb59136864
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 7 22:04:17 2021 +0200
-
-    Remove superfluous includes.
-
- src/wmcontainer.cc | 4 ----
- 1 file changed, 4 deletions(-)
-
-commit aa89c73209bb134b61ec04e04cfd21313d010c23
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 7 22:03:23 2021 +0200
-
-    Add a second modal dialog to testing.
-
- src/testnetwmhints.cc | 34 +++++++++++++++++++++++++++++++---
- 1 file changed, 31 insertions(+), 3 deletions(-)
-
-commit c6a2c4ae9db854456562a3892ac0cef17835f1bf
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 7 22:02:23 2021 +0200
-
-    Keep track of changes to modal flag. Optimize raising of modals.
-
- src/wmframe.cc | 25 +++++++++++++++++--------
- 1 file changed, 17 insertions(+), 8 deletions(-)
-
-commit 5b9287d6308647baafc4e7ee33bf9517f341c095
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 7 21:22:26 2021 +0200
-
-    Fix a memory leak for dynamic menu's.
-
- src/objmenu.cc | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit ca48077067c63b6ae338bc9ca18bc45fcff9aea9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 7 01:21:41 2021 +0200
-
-    Free start menu and windowlist menu on exit.
-
- src/wmapp.cc | 10 ++++++++--
- 1 file changed, 8 insertions(+), 2 deletions(-)
-
-commit 2ad29f1afa7aa05b871d0d5ce601d093811c7600
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 7 01:20:18 2021 +0200
-
-    Fix for browse menu's for root and home in start menu.
-
- src/objmenu.cc | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit a3c1ef594ea424ddd7a5c25995f275ca8c950295
-Merge: adcfa78f 5a317837
-Author: openSUSE Weblate <weblate-noreply@opensuse.org>
-Date:   Mon Jul 5 17:31:40 2021 +0000
-
-    Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
-
-commit adcfa78fcdbc6e7d47b7c1b8db53243f75a3ff6a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 5 02:20:00 2021 +0200
-
-    Eliminate memory leaks in icon handling.
-
- src/yicon.cc | 340 +++++++++++++++++++++++++++----------------------------
- 1 file changed, 167 insertions(+), 173 deletions(-)
-
-commit 99380ce8a5d4e05d757905767fbfebb5edb4c48c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 03:03:37 2021 +0200
-
-    Use absolute paths for the Exec definition.
-
- lib/icewm-session.desktop | 2 +-
- lib/icewm.desktop         | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-commit 3917f16c6851b5fb304c167ca4d3d892fcd91f81
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 03:02:12 2021 +0200
-
-    Only do a passive grab on buttons which are defined by the ButtonRaiseMask.
-
- src/wmcontainer.cc | 129 +++++++++++++++++++++----------------------------
- 1 file changed, 55 insertions(+), 74 deletions(-)
-
-commit eb61de9bd9494904d8bd54b650c5aa3d0a4d2051
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 03:00:08 2021 +0200
-
-    Fix a fscanf format string type mismatch.
-
- src/ycursor.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 007bbeb30e78521ad91e487cc0653b1d2c2cb110
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 02:59:37 2021 +0200
-
-    Fix a type to boolean.
-
- src/wmtaskbar.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 6f3d9ccba252c8ab2a45c8735d5add4398130dcb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 02:59:18 2021 +0200
-
-    Prevent a hypothetical memory leak.
-
- src/wmmgr.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit eb97aab4470f748dc5e2ef7240d0f418d630849e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 02:58:45 2021 +0200
-
-    Initialize all object fields.
-
- src/amailbox.cc    | 1 +
- src/aworkspaces.cc | 3 ++-
- src/themes.cc      | 1 +
- src/udir.cc        | 1 +
- src/ymenu.cc       | 1 +
- 5 files changed, 6 insertions(+), 1 deletion(-)
-
-commit f3aae1b134b02029f95297f42f68557c1ca770a7
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 02:57:42 2021 +0200
-
-    Define string field widths when using sscanf.
-
- src/aapm.cc      | 29 ++++++++++++++---------------
- src/wmsession.cc |  6 +++---
- 2 files changed, 17 insertions(+), 18 deletions(-)
-
-commit a14f12e43ba26fc2cad33758632095f3e6987074
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 02:56:21 2021 +0200
-
-    Prevent a warning on nullptr dereference.
-
- src/mstring.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 8e4591e96820c63ff4f22c6623759d73ede12332
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 02:55:26 2021 +0200
-
-    Use the "override" keyword consistently to avoid warnings.
-
- src/icehelp.cc | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-commit 96b6335707aac0ae7d4250185b9e639527c75317
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 02:54:09 2021 +0200
-
-    Guard against buffer overflow when copying the degrees centigrade symbol.
-
- src/acpustatus.cc | 13 ++++++++-----
- src/acpustatus.h  |  2 +-
- 2 files changed, 9 insertions(+), 6 deletions(-)
-
-commit 0bfea6749667edb75d6faf1067500ef4ce83af0a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 3 02:50:45 2021 +0200
-
-    When a focused window can't raise, or there is no overlapping window,
-    then there shouldn't be a passive button grab by icewm, in order to
-    improve internal menu handling by the application.
-
- src/wmframe.cc | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
-commit cc14871727c50fd3953ead35952d1ad09c4a236d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 2 01:13:53 2021 +0200
-
-    Release the passive button grab from a focused window when a button
-    click wouldn't raise it, for improved menu handling.
-
- src/wmframe.cc | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-commit 5a31783783262106d1fb560ae364db34a71a2c79
-Author: Lucie Charrier <c.chalu@free.fr>
-Date:   Fri Jun 25 05:52:38 2021 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (481 of 481 strings)
-
- po/fr.po | 16 +++++++---------
- 1 file changed, 7 insertions(+), 9 deletions(-)
-
-commit 6c377bf499af4640186c9fb1869affd52fcd2e24
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jun 26 11:45:49 2021 +0200
-
-    Prepare 2.5.0 release
-
- AUTHORS      |  14 +-
- ChangeLog    | 787 ++++++++++++++++++++++++++++---------------------------
- NEWS         |  91 +++++--
- README.md    |  36 +--
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  78 +++---
- po/be.po     |  78 +++---
- po/bg.po     |  78 +++---
- po/ca.po     |  82 +++---
- po/cs.po     |  82 +++---
- po/da.po     |  78 +++---
- po/de.po     |  78 +++---
- po/el.po     |  78 +++---
- po/en.po     |  78 +++---
- po/es.po     |  78 +++---
- po/fi.po     |  78 +++---
- po/fr.po     |  78 +++---
- po/he.po     |  78 +++---
- po/hr.po     |  78 +++---
- po/hu.po     |  78 +++---
- po/icewm.pot |  80 +++---
- po/id.po     |  78 +++---
- po/it.po     |  78 +++---
- po/ja.po     |  82 +++---
- po/ko.po     |  78 +++---
- po/lt.po     |  78 +++---
- po/lv.po     |  78 +++---
- po/mk.po     |  78 +++---
- po/nb.po     |  78 +++---
- po/nl.po     |  82 +++---
- po/no.po     |  78 +++---
- po/pl.po     |  78 +++---
- po/pt.po     |  78 +++---
- po/pt_BR.po  |  78 +++---
- po/ro.po     |  78 +++---
- po/ru.po     |  78 +++---
- po/sk.po     |  82 +++---
- po/sl.po     |  78 +++---
- po/sv.po     |  78 +++---
- po/tr.po     |  78 +++---
- po/uk.po     |  78 +++---
- po/vi.po     |  78 +++---
- po/zh_CN.po  |  78 +++---
- po/zh_TW.po  |  78 +++---
- 45 files changed, 2032 insertions(+), 1972 deletions(-)
-
-commit 2c679a117e030d3eb18912da2ffd15aee8ded6ee
-Merge: eeb99421 d6eb4680
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jun 26 11:39:56 2021 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit d6eb4680315a7781c2ee38f7958d78b85297841a
-Merge: fa3ebaa3 4f52f80a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jun 26 11:39:07 2021 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 4f52f80ae8e6df54e6ccf5516e09295dfcb40afd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jun 26 00:36:22 2021 +0200
-
-    Reread properties list for internal clients.
-
- src/wmframe.cc | 2 ++
- src/ymsgbox.cc | 1 +
- 2 files changed, 3 insertions(+)
-
-commit eb096743895e5280ff96638669cb002074bc1a20
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jun 25 22:28:59 2021 +0200
-
-    Guard against frames without a client when destructing frames with kill
-    message boxes.
-
- src/wmmgr.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 4554bd173a72beb6f27419c36d90e2c2dfd89565
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jun 25 22:28:22 2021 +0200
-
-    Change YTextProperty memory allocation type to malloc/free.
-
- src/yxapp.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)

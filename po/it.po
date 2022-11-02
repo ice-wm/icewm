@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.31\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-24 01:39+0200\n"
+"POT-Creation-Date: 2022-11-02 22:24+0100\n"
 "PO-Revision-Date: 2022-02-21 13:12+0000\n"
 "Last-Translator: Davide Aiello <davide.aiello@novilingulists.com>\n"
 "Language-Team: Italian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1335,81 +1335,81 @@ msgstr "Stesso gioco"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Per assistenza consultare la manpage icesh(1).\n"
 
-#: src/icesh.cc:1588
+#: src/icesh.cc:1622
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Simboli con nome del dominio '%s' (intervallo numerico: %ld-%ld):\n"
 
-#: src/icesh.cc:1657
+#: src/icesh.cc:1691
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Spazio di lavoro fuori intervallo: %ld"
 
-#: src/icesh.cc:1678
+#: src/icesh.cc:1712
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Nome spazio di lavoro non valido: '%s'"
 
-#: src/icesh.cc:2077
+#: src/icesh.cc:2125
 msgid "GNOME window layer"
 msgstr "Livello della finestra di GNOME"
 
-#: src/icesh.cc:2078
+#: src/icesh.cc:2126
 msgid "IceWM tray option"
 msgstr "Opzione vassoio di IceWM"
 
-#: src/icesh.cc:2079
+#: src/icesh.cc:2127
 msgid "Gravity symbols"
 msgstr "Simboli di gravità"
 
-#: src/icesh.cc:2080
+#: src/icesh.cc:2128
 msgid "Motif functions"
 msgstr "Funzioni Motif"
 
-#: src/icesh.cc:2081
+#: src/icesh.cc:2129
 msgid "Motif decorations"
 msgstr "Decorazioni Motif"
 
-#: src/icesh.cc:2082
+#: src/icesh.cc:2130
 msgid "EWMH window state"
 msgstr "Stato della finestra di EWMH"
 
-#: src/icesh.cc:2164 src/icesh.cc:2237
+#: src/icesh.cc:2212 src/icesh.cc:2285
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "spazio di lavoro #%d: '%s'\n"
 
-#: src/icesh.cc:2488 src/icesh.cc:3967 src/icesh.cc:4463
+#: src/icesh.cc:2536 src/icesh.cc:4119 src/icesh.cc:4617
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Stato non valido: '%s'."
 
-#: src/icesh.cc:3350
+#: src/icesh.cc:3404
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Impossibile ottenere geometria della finestra 0x%lx"
 
-#: src/icesh.cc:3375
+#: src/icesh.cc:3429
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Xinerama non valida: '%s'."
 
-#: src/icesh.cc:3540 src/icesh.cc:3590 src/icesh.cc:4774
+#: src/icesh.cc:3692 src/icesh.cc:3742 src/icesh.cc:4931
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Argomento non valido: '%s'"
 
-#: src/icesh.cc:3556
+#: src/icesh.cc:3708
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "L'azione '%s' richiede almeno %d argomenti."
 
-#: src/icesh.cc:3565
+#: src/icesh.cc:3717
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Espressione non valida: '%s'"
 
-#: src/icesh.cc:3576 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
+#: src/icesh.cc:3728 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
 #: src/wmapp.cc:1231 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1417,35 +1417,35 @@ msgstr ""
 "Impossibile aprire il display: %s. X deve essere in esecuzione e la "
 "variabile $DISPLAY deve essere impostata."
 
-#: src/icesh.cc:3692
+#: src/icesh.cc:3844
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Imprevisto: `%s'."
 
-#: src/icesh.cc:3721
+#: src/icesh.cc:3873
 msgid "No windows found."
 msgstr "Nessuna finestra trovata."
 
-#: src/icesh.cc:3737
+#: src/icesh.cc:3889
 msgid "No actions specified."
 msgstr "Nessuna azione specificata."
 
-#: src/icesh.cc:3884
+#: src/icesh.cc:4036
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Identificatore della finestra non valido: '%s'"
 
-#: src/icesh.cc:3901
+#: src/icesh.cc:4053
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "PID non valido: '%s'"
 
-#: src/icesh.cc:3937
+#: src/icesh.cc:4089
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Strato non valido: '%s'."
 
-#: src/icesh.cc:4880
+#: src/icesh.cc:5049
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Azione sconosciuta: '%s'"
@@ -1938,7 +1938,7 @@ msgstr ""
 "  -h, --help          Stampa questa schermata d'uso ed esce.\n"
 "\n"
 
-#: src/movesize.cc:890
+#: src/movesize.cc:904
 #, c-format
 msgid "Unknown direction in move/resize request: %d"
 msgstr ""
@@ -2433,7 +2433,7 @@ msgstr "_Riavvia icewm"
 msgid "_About"
 msgstr "_Informazioni"
 
-#: src/wmframe.cc:1739
+#: src/wmframe.cc:1813
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2441,7 +2441,7 @@ msgstr ""
 "Attenzione: la terminazione del client comporta\n"
 "la perdita delle modifiche non salvate. Procedere?"
 
-#: src/wmframe.cc:1744
+#: src/wmframe.cc:1818
 msgid "Kill Client: "
 msgstr "Termina client: "
 
@@ -2512,11 +2512,11 @@ msgstr "Time out di '%s'."
 msgid "'%s' produces no output"
 msgstr "'%s' non produce alcun risultato"
 
-#: src/wmmgr.cc:3621
+#: src/wmmgr.cc:3644
 msgid "Missing program setxkbmap"
 msgstr "Programma mancante setxkbmap"
 
-#: src/wmmgr.cc:3622
+#: src/wmmgr.cc:3645
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Per cambiare tastiera, installare setxkbmap."
 

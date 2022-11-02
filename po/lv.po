@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-10-24 01:39+0200\n"
+"POT-Creation-Date: 2022-11-02 22:24+0100\n"
 "PO-Revision-Date: 2005-06-12 12:59+0300\n"
 "Last-Translator: Kristaps Kaupe <kristaps.kaupe@inbox.lv>\n"
 "Language-Team: Latvian\n"
@@ -1327,127 +1327,127 @@ msgstr "Tā pati spēle"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 
-#: src/icesh.cc:1588
+#: src/icesh.cc:1622
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Nosauktie simboli domēnam `%s' (numuru apgabals: %ld-%ld):\n"
 
-#: src/icesh.cc:1657
+#: src/icesh.cc:1691
 #, fuzzy, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Darba vide ārpus ranga: %d"
 
-#: src/icesh.cc:1678
+#: src/icesh.cc:1712
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Kļūdains darba vides nosaukums: `%s'"
 
-#: src/icesh.cc:2077
+#: src/icesh.cc:2125
 msgid "GNOME window layer"
 msgstr "GNOMEs loga slānis"
 
-#: src/icesh.cc:2078
+#: src/icesh.cc:2126
 msgid "IceWM tray option"
 msgstr "IceWM paplātes opcija"
 
-#: src/icesh.cc:2079
+#: src/icesh.cc:2127
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:2080
+#: src/icesh.cc:2128
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif functions"
 msgstr "Iemīļotākās lietojumprogrammas"
 
-#: src/icesh.cc:2081
+#: src/icesh.cc:2129
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif decorations"
 msgstr "Iemīļotākās lietojumprogrammas"
 
-#: src/icesh.cc:2082
+#: src/icesh.cc:2130
 #, fuzzy
 #| msgid "GNOME window state"
 msgid "EWMH window state"
 msgstr "GNOMEs loga stāvoklis"
 
-#: src/icesh.cc:2164 src/icesh.cc:2237
+#: src/icesh.cc:2212 src/icesh.cc:2285
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "darba vide #%d: `%s'\n"
 
-#: src/icesh.cc:2488 src/icesh.cc:3967 src/icesh.cc:4463
+#: src/icesh.cc:2536 src/icesh.cc:4119 src/icesh.cc:4617
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Kļūdains arguments: `%s'."
 
-#: src/icesh.cc:3350
+#: src/icesh.cc:3404
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3375
+#: src/icesh.cc:3429
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid Xinerama: `%s'."
 msgstr "Kļūdains arguments: `%s'."
 
-#: src/icesh.cc:3540 src/icesh.cc:3590 src/icesh.cc:4774
+#: src/icesh.cc:3692 src/icesh.cc:3742 src/icesh.cc:4931
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
 msgstr "Kļūdains arguments: `%s'."
 
-#: src/icesh.cc:3556
+#: src/icesh.cc:3708
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Darbībai `%s' vajag vismaz %d argumentus."
 
-#: src/icesh.cc:3565
+#: src/icesh.cc:3717
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Kļūdaina izteiksme: `%s'"
 
-#: src/icesh.cc:3576 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
+#: src/icesh.cc:3728 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
 #: src/wmapp.cc:1231 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Nevaru atvērt displeju: %s. X ir jābūt palaistam un $DISPLEY uzstādītam."
 
-#: src/icesh.cc:3692
+#: src/icesh.cc:3844
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "Negaidīts atslēgvārds: %s"
 
-#: src/icesh.cc:3721
+#: src/icesh.cc:3873
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:3737
+#: src/icesh.cc:3889
 msgid "No actions specified."
 msgstr "Nav norādītu darbību."
 
-#: src/icesh.cc:3884
+#: src/icesh.cc:4036
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Kļūdains loga identifikators: `%s'"
 
-#: src/icesh.cc:3901
+#: src/icesh.cc:4053
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "Kļūdains arguments: `%s'."
 
-#: src/icesh.cc:3937
+#: src/icesh.cc:4089
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Kļūdains arguments: `%s'."
 
-#: src/icesh.cc:4880
+#: src/icesh.cc:5049
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Nezināma darbība: `%s'"
@@ -1845,7 +1845,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/movesize.cc:890
+#: src/movesize.cc:904
 #, c-format
 msgid "Unknown direction in move/resize request: %d"
 msgstr "Nezināms virziens kustināšanas/izmēra maiņas pieprasījumam: %d"
@@ -2324,7 +2324,7 @@ msgstr "Pā_rstartēt icewm"
 msgid "_About"
 msgstr "P_ar"
 
-#: src/wmframe.cc:1739
+#: src/wmframe.cc:1813
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2332,7 +2332,7 @@ msgstr ""
 "UZMANĪBU! Visas nesaglabātās izmaiņas tiks zaudētas, kad\n"
 "šis klients tiks nogalināts. Vai jūs vēlaties turpināt?"
 
-#: src/wmframe.cc:1744
+#: src/wmframe.cc:1818
 msgid "Kill Client: "
 msgstr "Nogalināt klientu:"
 
@@ -2401,11 +2401,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3621
+#: src/wmmgr.cc:3644
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3622
+#: src/wmmgr.cc:3645
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
