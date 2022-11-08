@@ -1,4 +1,4 @@
-[icewm -- read me first file.  2022-10-03]: #
+[icewm -- read me first file.  2022-11-02]: #
 
 Ice Window Manager (IceWM)
 ==========================

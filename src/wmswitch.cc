@@ -28,6 +28,8 @@ struct ZItem {
     operator bool() const { return frame && client; }
     bool operator==(YFrameWindow* f) const { return f == frame && f; }
     bool operator==(YFrameClient* c) const { return c == client && c; }
+    bool operator==(bool b) const { return bool(*this) == b; }
+    bool operator!() const { return bool(*this) == false; }
 
     static int compare(const void* p1, const void* p2) {
         const ZItem* z1 = static_cast<const ZItem*>(p1);
@@ -51,8 +53,36 @@ struct ZItem {
         }
         if (z1->prio != z2->prio)
             return z1->prio - z2->prio;
-        else
-            return z1->index - z2->index;
+
+        const char* c1 = z1->client->classHint()->res_class;
+        const char* c2 = z2->client->classHint()->res_class;
+        if (nonempty(c1)) {
+            if (nonempty(c2)) {
+                int sc = strcmp(c1, c2);
+                if (sc)
+                    return sc;
+            } else {
+                return -1;
+            }
+        } else if (nonempty(c2)) {
+            return +1;
+        }
+
+        const char* n1 = z1->client->classHint()->res_name;
+        const char* n2 = z2->client->classHint()->res_name;
+        if (nonempty(n1)) {
+            if (nonempty(n2)) {
+                int sc = strcmp(n1, n2);
+                if (sc)
+                    return sc;
+            } else {
+                return -1;
+            }
+        } else if (nonempty(n2)) {
+            return +1;
+        }
+
+        return z1->index - z2->index;
     }
 };
 
@@ -149,10 +179,23 @@ public:
         return null;
     }
 
-    void setWMClass(char* wmclass) override {
+    int getWorkspace(int idx) override {
+        int ws = 0;
+        if (inrange(idx, 0, getCount() - 1)) {
+            ws = zList[idx].frame->getWorkspace();
+            if (ws == AllWorkspaces)
+                ws = manager->activeWorkspace();
+        }
+        return ws;
+    }
+
+    bool setWMClass(char* wmclass) override {
+        char nil[] = { '\0' };
+        bool change = strcmp(Elvis(wmclass, nil), Elvis(fWMClass, nil));
         if (fWMClass)
             free(fWMClass);
         fWMClass = wmclass;
+        return change;
     }
 
     char* getWMClass() override {
@@ -233,7 +276,7 @@ public:
             fActiveItem.reset();
 
         setTarget(zTarget);
-        if (fLastItem == false)
+        if ( !fLastItem)
             fLastItem = fActiveItem;
         if (fActiveItem && fActiveItem != previous)
             changeFocusTo(fActiveItem);
@@ -355,17 +398,24 @@ void WindowItemsCtrlr::updateList() {
 }
 
 void WindowItemsCtrlr::sort() {
-    qsort(&*zList, size_t(zList.getCount()), sizeof(ZItem), ZItem::compare);
+    if (1 < zList.getCount())
+        qsort(&*zList, size_t(zList.getCount()), sizeof(ZItem), ZItem::compare);
 
     zTarget = 0;
     if (fActiveItem) {
-        int act = lookupClient(fActiveItem.client);
+        int act = fActiveItem.frame->visible()
+                ? lookupClient(fActiveItem.client) : -1;
         if (act < 0) {
             fActiveItem.reset();
         }
         else if (act) {
             fActiveItem = zList[act];
-            zTarget = act;
+            if (quickSwitchPersistence)
+                zTarget = act;
+            else if (act == 1)
+                zList.swap(0, 1);
+            else
+                zList.moveto(act, 0);
         }
     }
     if (fLastItem && lookupClient(fLastItem.client) < 0)
@@ -462,7 +512,7 @@ void SwitchWindow::resize(int xiscreen, bool reposition) {
     int w = aWidth;
     int h = switchFont ? switchFont->height() : 1;
     int const mWidth(dw * 6/7);
-    const int vMargins = quickSwitchVMargin*2;
+    const int vMargins = 2 * max(quickSwitchVMargin, quickSwitchIMargin);
 
     if (m_verticalStyle) {
         w = aWidth;
@@ -576,9 +626,9 @@ void SwitchWindow::paintHorizontal(Graphics &g) {
                 const int x(quickSwitchTextFirst ? width() - ip : ip);
 
                 g.setColor(switchBg->darker());
-                g.drawLine(x + 0, 1, x + 0, width() - 2);
+                g.drawLine(x + 0, 1, x + 0, height() - 2);
                 g.setColor(switchBg->brighter());
-                g.drawLine(x + 1, 1, x + 1, width() - 2);
+                g.drawLine(x + 1, 1, x + 1, height() - 2);
             }
         }
 
@@ -720,15 +770,21 @@ void SwitchWindow::paintVertical(Graphics &g) {
                 ? maxWid - iconSize - quickSwitchSepSize/2 - 1
                         :  contentX + iconSize + quickSwitchSepSize/2 - 1;
 
-        int contentY = quickSwitchVMargin;
+        int contentY = quickSwitchVMargin + quickSwitchIBorder;
 
         if (switchFont) {
             g.setFont(switchFont);
         }
         g.setColor(switchFg);
         for (int i = 0, zCount = zItems->getCount(); i < zCount; i++) {
-            if (contentY + frameHght > (int) height())
+            if (contentY + frameHght > int(quickSwitchIBorder + height()))
                 break;
+            if (i > 0 && zItems->getWorkspace(i) != zItems->getWorkspace(i-1)) {
+                g.setColor(switchBg->darker());
+                g.drawLine(1, contentY - 4, width() - 2, contentY - 4);
+                g.setColor(switchBg->brighter());
+                g.drawLine(1, contentY - 3, width() - 2, contentY - 3);
+            }
             if (i == zItems->getActiveItem()) {
                 g.setColor(switchMbg);
                 g.fillRect(frameX, contentY-quickSwitchIBorder, frameWid, frameHght);
@@ -768,13 +824,12 @@ void SwitchWindow::paintVertical(Graphics &g) {
 }
 
 void SwitchWindow::begin(bool zdown, unsigned mods, char* wmclass) {
+    bool change = zItems->setWMClass(wmclass);
     modsDown = KEY_MODMASK(mods);
-    zItems->setWMClass(wmclass);
-
     m_oldMenuMouseTracking = menuMouseTracking;
     menuMouseTracking = true;
 
-    if (zItems->getCount() == 0 ||
+    if (zItems->isEmpty() || change || !quickSwitchPersistence ||
         (fWorkspace != manager->activeWorkspace() &&
          !quickSwitchToAllWorkspaces)) {
         zItems->begin(zdown);
@@ -888,7 +943,14 @@ bool SwitchWindow::handleKey(const XKeyEvent &key) {
             accept();
         }
         else if (manager->handleSwitchWorkspaceKey(key, k, vm)) {
-            zItems->sort();
+            bool change = (fWorkspace != manager->activeWorkspace());
+            fWorkspace = manager->activeWorkspace();
+            if ((change && !quickSwitchToAllWorkspaces) ||
+                !quickSwitchPersistence) {
+                zItems->updateList();
+            } else {
+                zItems->sort();
+            }
             if (zItems->getCount()) {
                 resize(getScreen(), true);
                 repaint();
