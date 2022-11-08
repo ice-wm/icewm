@@ -368,7 +368,7 @@ void YFrameWindow::untab(YFrameClient* client) {
             YClientContainer* conter = client->getContainer();
             independer(client);
             delete conter;
-            manager->manageClient(client);
+            manager->manageClient(client, true);
             if (tabCount() < 2)
                 findRemove(tabbedFrames, this);
             if (fTitleBar) {
@@ -1800,9 +1800,14 @@ void YFrameWindow::wmClose() {
 
     manager->grabServer();
     bool confirm = false;
-    for (IterType client = fTabs.reverseIterator(); ++client; ) {
-        wmCloseClient(*client, &confirm);
+    if (1 < tabCount()) {
+        for (IterType client = fTabs.reverseIterator(); ++client; ) {
+            if (*client != fClient)
+                wmCloseClient(*client, &confirm);
+        }
+        xapp->sync();
     }
+    wmCloseClient(fClient, &confirm);
     if (confirm)
         wmConfirmKill();
     manager->ungrabServer();
@@ -2787,14 +2792,11 @@ bool YFrameWindow::hasModal() {
 }
 
 bool YFrameWindow::canFocus() {
-    if (hasModal())
-        return false;
-
-    return true;
+    return !hasModal() && !avoidFocus();
 }
 
 bool YFrameWindow::canFocusByMouse() {
-    return canFocus() && !avoidFocus();
+    return canFocus();
 }
 
 bool YFrameWindow::avoidFocus() {
