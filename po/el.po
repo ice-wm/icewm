@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-11-02 22:24+0100\n"
+"POT-Creation-Date: 2022-11-08 17:32+0100\n"
 "PO-Revision-Date: 2021-09-21 08:11+0000\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -2484,7 +2484,7 @@ msgid "_Cancel"
 msgstr "_Ακύρωση"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:69 src/wmprog.cc:459 src/wmprog.cc:461 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:69 src/wmprog.cc:460 src/wmprog.cc:462 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Αποσύνδεση..."
@@ -2494,11 +2494,11 @@ msgid "_Restart icewm"
 msgstr "_Επανεκκίνηση του icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:74 src/wmprog.cc:427 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:74 src/wmprog.cc:428 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Περί"
 
-#: src/wmframe.cc:1813
+#: src/wmframe.cc:1818
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2508,7 +2508,7 @@ msgstr ""
 "\n"
 "Επιθυμείς να συνεχίσεις;"
 
-#: src/wmframe.cc:1818
+#: src/wmframe.cc:1823
 msgid "Kill Client: "
 msgstr "Σκότωμα του Πελάτη: "
 
@@ -2577,11 +2577,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3644
+#: src/wmmgr.cc:3645
 msgid "Missing program setxkbmap"
 msgstr "Λείπει το πρόγραμμα setxkbmap"
 
-#: src/wmmgr.cc:3645
+#: src/wmmgr.cc:3646
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2604,76 +2604,76 @@ msgstr "Αποθήκευση των μετατροπών"
 msgid "Enter a new value for %s: "
 msgstr "Εισαγωγή νέας τιμής για %s: "
 
-#: src/wmprog.cc:334
+#: src/wmprog.cc:335
 msgid "_Click to focus"
 msgstr "_Κάντε κλικ για εστίαση"
 
-#: src/wmprog.cc:335
+#: src/wmprog.cc:336
 msgid "_Explicit focus"
 msgstr "_Ρητή εστίαση"
 
-#: src/wmprog.cc:336
+#: src/wmprog.cc:337
 msgid "_Sloppy mouse focus"
 msgstr "_Γλιστερή εστίαση ποντικιού"
 
-#: src/wmprog.cc:337
+#: src/wmprog.cc:338
 msgid "S_trict mouse focus"
 msgstr "_Αυστηρή εστίαση ποντικιού"
 
-#: src/wmprog.cc:338
+#: src/wmprog.cc:339
 msgid "_Quiet sloppy focus"
 msgstr "Ή_συχη γλιστερή εστίαση"
 
-#: src/wmprog.cc:339
+#: src/wmprog.cc:340
 msgid "Custo_m"
 msgstr "Προσαρμοσ_μένο"
 
-#: src/wmprog.cc:361
+#: src/wmprog.cc:362
 msgid "_Manual"
 msgstr "_Εγχειρίδιο Χρήσης"
 
-#: src/wmprog.cc:362
+#: src/wmprog.cc:363
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:363
+#: src/wmprog.cc:364
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:364
+#: src/wmprog.cc:365
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:413
+#: src/wmprog.cc:414
 msgid "Programs"
 msgstr "Προγράμματα"
 
-#: src/wmprog.cc:417
+#: src/wmprog.cc:418
 msgid "_Run..."
 msgstr "_Εκτέλεση..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:421 src/wmtaskbar.cc:233
+#: src/wmprog.cc:422 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Παράθυρα"
 
-#: src/wmprog.cc:432
+#: src/wmprog.cc:433
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: src/wmprog.cc:437
+#: src/wmprog.cc:438
 msgid "_Focus"
 msgstr "_Εστίαση"
 
-#: src/wmprog.cc:442
+#: src/wmprog.cc:443
 msgid "_Preferences"
 msgstr "_Προτιμήσεις"
 
-#: src/wmprog.cc:447
+#: src/wmprog.cc:448
 msgid "_Themes"
 msgstr "_Θέματα"
 
-#: src/wmprog.cc:451
+#: src/wmprog.cc:452
 msgid "Se_ttings"
 msgstr "Ρυ_θμίσεις"
 

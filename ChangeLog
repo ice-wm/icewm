@@ -1,5 +1,234 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 6599d8b1a6ea3df9c591f008bff54d42d707b65c
+Merge: c3685c6a cd85845a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 8 17:31:01 2022 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit cd85845a3be57f7a5e36cb2e66584b84e5393b1e
+Merge: 9823b86f d3e9d274
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 8 17:27:43 2022 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit d3e9d274450070ca8fed2b062dda76ddbe26e7dc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Nov 8 05:23:26 2022 +0100
+
+    Add array moveto to reduce copying.
+
+ src/testarray.cc | 17 +++++++++++++++++
+ src/wmdock.cc    |  4 +---
+ src/wmswitch.cc  |  6 ++----
+ src/yarray.cc    | 16 ++++++++++++++++
+ src/yarray.h     |  1 +
+ 5 files changed, 37 insertions(+), 7 deletions(-)
+
+commit 1a3688a76ffc8edb957b2462fee79fb8dc843143
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Nov 7 23:09:45 2022 +0100
+
+    When moving a tab to a new frame, activate it.
+
+ src/wmframe.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 664e47251dd62c95d774bb00abfdd0a73e181fe3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Nov 7 18:34:28 2022 +0100
+
+    Check that active Alt+Tab item is visible. Also sort Alt+Tab items on
+    WM_CLASS. Fix GCC 4.8.5 compile error and closes ice-wm/icewm#99.
+
+ src/wmswitch.cc | 48 +++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 43 insertions(+), 5 deletions(-)
+
+commit cc2ae1024b6f9e4bcf3a1677c0db48e1761c7d70
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Nov 7 18:33:35 2022 +0100
+
+    Don't attempt to focus NoInput windows.
+
+ src/wmframe.cc | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+commit 9899fa287467abf3a6e1467bda8e3fd2c509fe1a
+Author: Stéphane LASSALVY <stephane.lassalvy@laposte.net>
+Date:   Sun Nov 6 18:38:06 2022 +0000
+
+    Translated using Weblate (French)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/fr.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 9fdd494808c4357d7bb8e13d1f377a3c9b92bb7c
+Author: Wallon <franckjl@hotmail.com>
+Date:   Sun Nov 6 17:12:52 2022 +0000
+
+    Translated using Weblate (French)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/fr.po | 65 ++++++++++++++++++++++++++++++------------------------------
+ 1 file changed, 33 insertions(+), 32 deletions(-)
+
+commit 7ea7636be4cd658152b99371970faa158e5fb771
+Author: Stéphane LASSALVY <stephane.lassalvy@laposte.net>
+Date:   Sun Nov 6 17:08:41 2022 +0000
+
+    Translated using Weblate (French)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/fr.po | 90 ++++++++++++++++++++++++++++++------------------------------
+ 1 file changed, 45 insertions(+), 45 deletions(-)
+
+commit 33666e7522d771297c94fda4e11cf5afa4f0a02d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Nov 6 16:50:23 2022 +0100
+
+    Add QuickSwitchPersistence pref to enable stateful Alt+Tab for issue #683.
+
+ man/icewm-preferences.pod | 4 ++++
+ src/default.h             | 2 ++
+ src/wmmgr.cc              | 3 ++-
+ src/wmswitch.cc           | 5 +++--
+ 4 files changed, 11 insertions(+), 3 deletions(-)
+
+commit ab1dd61636093c075b27ad30a5faf51d0738da99
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Nov 5 16:16:18 2022 +0100
+
+    Demarcate workspaces in Alt+Tab for QuickSwitchToAllWorkspaces.
+    Fix the quick switch vertical size calculations.
+
+ src/wmswitch.cc | 26 +++++++++++++++++++++-----
+ src/wmswitch.h  |  1 +
+ 2 files changed, 22 insertions(+), 5 deletions(-)
+
+commit 9ca15cbc50b70f89a1183fda20ab18dbe359b0e5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Nov 5 12:26:04 2022 +0100
+
+    Update the quick switch list after changing workspace when
+    QuickSwitchToAllWorkspaces=0 for issue #683.
+
+ src/wmswitch.cc | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit ba613461c78029230e3b7113251447379305ecdc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Nov 4 19:57:00 2022 +0100
+
+    Fix KeySysSwitchClass history for issue #673.
+
+ src/wmprog.cc   |  3 ++-
+ src/wmswitch.cc | 10 ++++++----
+ src/wmswitch.h  |  2 +-
+ 3 files changed, 9 insertions(+), 6 deletions(-)
+
+commit b2c1dc9aa0d89afe30c6c09befb22c6143feb2d7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Nov 4 19:55:33 2022 +0100
+
+    Close other tabs first.
+
+ src/wmframe.cc | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+commit f975b81505700dea0dd4bc46e5bf27d9cceee6c5
+Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
+Date:   Fri Nov 4 03:17:10 2022 +0000
+
+    Translated using Weblate (Indonesian)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/id.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 2e50443b46d7418eb10a708ea5e369d5677484dc
+Author: Victor hck <correohck@gmail.com>
+Date:   Thu Nov 3 17:05:01 2022 +0000
+
+    Translated using Weblate (Spanish)
+
+    Currently translated at 100.0% (519 of 519 strings)
+
+ po/es.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 4dea3ca3e91112b02e01cabb208891036c52aee5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Nov 3 18:53:04 2022 +0100
+
+    Update version to 3.2.0.
+
+ README.md    | 4 ++--
+ VERSION      | 2 +-
+ configure.ac | 8 ++++----
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+
+commit c3685c6ab21fa177ac7bdcc222250f8b68c90c40
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Nov 2 22:31:11 2022 +0100
+
+    Prepare 3.2.0 release
+
+ AUTHORS      |   4 +-
+ ChangeLog    | 654 +++++++++++++++++++++++++++++--------------------------
+ NEWS         | 107 ++++-----
+ README.md    |  38 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  60 ++---
+ po/be.po     |  60 ++---
+ po/bg.po     |  60 ++---
+ po/ca.po     |  60 ++---
+ po/cs.po     |  60 ++---
+ po/da.po     |  60 ++---
+ po/de.po     |  60 ++---
+ po/el.po     |  60 ++---
+ po/en.po     |  60 ++---
+ po/es.po     |  60 ++---
+ po/fi.po     |  60 ++---
+ po/fr.po     |  60 ++---
+ po/he.po     |  60 ++---
+ po/hr.po     |  60 ++---
+ po/hu.po     |  60 ++---
+ po/icewm.pot |  62 +++---
+ po/id.po     |  60 ++---
+ po/it.po     |  60 ++---
+ po/ja.po     |  60 ++---
+ po/ko.po     |  60 ++---
+ po/lt.po     |  60 ++---
+ po/lv.po     |  60 ++---
+ po/mk.po     | 136 ++++++------
+ po/nb.po     |  60 ++---
+ po/nl.po     |  60 ++---
+ po/no.po     |  60 ++---
+ po/pl.po     |  60 ++---
+ po/pt.po     |  60 ++---
+ po/pt_BR.po  |  60 ++---
+ po/ro.po     |  60 ++---
+ po/ru.po     |  60 ++---
+ po/sk.po     |  60 ++---
+ po/sl.po     |  60 ++---
+ po/sv.po     |  60 ++---
+ po/tr.po     |  60 ++---
+ po/uk.po     |  60 ++---
+ po/vi.po     |  60 ++---
+ po/zh_CN.po  |  60 ++---
+ po/zh_TW.po  |  60 ++---
+ 46 files changed, 1637 insertions(+), 1598 deletions(-)
+
 commit 2d82a1ff7bd7a5c9c2b962cec534c54c222d32c0
 Merge: 8aa693a5 9823b86f
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6240,270 +6469,3 @@ Date:   Mon Jul 19 01:16:49 2021 +0200
 
  src/testarray.cc | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
-
-commit 5a22443bd777552c2b1f1d8d169cd43d3b9f019b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 19 01:16:17 2021 +0200
-
-    Ensure that PATH_MAX is defined.
-
- src/misc.cc  | 7 ++++---
- src/sysdep.h | 3 +++
- 2 files changed, 7 insertions(+), 3 deletions(-)
-
-commit 11b2f98379344275f55f3b02a0a96d1b4ae9b9b6
-Author: Mehmet Akif 9oglu <madanadam@gmail.com>
-Date:   Sun Jul 18 19:14:09 2021 +0000
-
-    Translated using Weblate (Turkish)
-
-    Currently translated at 100.0% (481 of 481 strings)
-
- po/tr.po | 20 ++++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
-
-commit db306f7b1c9ea12cb9edd56e6242543602a713e6
-Author: Mehmet Akif 9oglu <madanadam@gmail.com>
-Date:   Sun Jul 18 19:10:59 2021 +0000
-
-    Translated using Weblate (Turkish)
-
-    Currently translated at 100.0% (481 of 481 strings)
-
- po/tr.po | 15 ++++++++-------
- 1 file changed, 8 insertions(+), 7 deletions(-)
-
-commit c16c44e936856bcebf11c8fd36028119c021e0cc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 21:36:20 2021 +0200
-
-    Rewrite task successor and task predecessor to properly take into
-    account the
-    separation of TaskBarApp and TaskButton as well as task grouping.
-    Resolves #602, resolves #604.
-
- src/atasks.cc | 82 ++++++++++++++++++++++++++++++++++++++++++++-----------
- src/atasks.h  |  2 ++
- 2 files changed, 68 insertions(+), 16 deletions(-)
-
-commit 784236b33075cf783ddef398b01ff2fe5ce8f790
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 21:11:01 2021 +0200
-
-    Avoid one level of indirection to speedup debugging.
-
- src/yarray.h | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
-
-commit fbc00000b224277a388604370bc60452b8ac9a74
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 21:07:54 2021 +0200
-
-    Cache the looked up value for the openssl path.
-
- src/amailbox.cc | 24 +++++++++++++++++-------
- src/amailbox.h  |  2 ++
- 2 files changed, 19 insertions(+), 7 deletions(-)
-
-commit 96ff0e650a904041b79a88e2809f1c400bb4cbfe
-Author: Alexander Richardson <Alexander.Richardson@cl.cam.ac.uk>
-Date:   Thu Jul 15 19:59:22 2021 +0100
-
-    Allow using cmake -GNinja (#603)
-
-    The CMake Ninja generator complains about duplicate targets otherwise since
-    the `ADD_CUSTOM_COMMAND(OUTPUT ${_tempPO}` already creates a target with
-    the name ${_lang}.po: ninja: error: build.ninja:2446: multiple rules
-    generate po/pl.po [-wdupbuild=err].
-    Rename the custom target to work around this.
-
- po/CMakeLists.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit da2db635bff853900041017ddf6f9fd99dbd6a02
-Author: Alexander Richardson <Alexander.Richardson@cl.cam.ac.uk>
-Date:   Thu Jul 15 19:53:21 2021 +0100
-
-    Fix building on a case-insensitive file system (#601)
-
-    When compiling on a case-insensitive file system, adding the root
-    directory to the means that C++ headers including the stanard library
-    header <version> end up including the VERSION file in the root directory
-    instead. This include path does not appear to be not needed so we can
-    just drop it.
-
- CMakeLists.txt | 1 -
- 1 file changed, 1 deletion(-)
-
-commit 34c91428643452b82ff78993388f8d3af1eab92a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 12:43:57 2021 +0200
-
-    Remove obsolete files ypaths.cc and ypaths.h.
-
- src/ypaths.cc | 127 ------------------------------------------------------
- src/ypaths.h  |  44 -------------------
- 2 files changed, 171 deletions(-)
-
-commit 5a3d89ef0c46140adf51b98a477081265b4bba0c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 12:12:57 2021 +0200
-
-    Refresh icewmbg manpage.
-
- man/icewmbg.pod | 68 ++++++++++++++++++++++++++---------------------------
- 1 file changed, 33 insertions(+), 35 deletions(-)
-
-commit 7d2844e01aa7a74a0af27e4d9caf775cdf0fb3e2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 12:12:44 2021 +0200
-
-    Make it compile.
-
- src/iceicon.cc | 2 +-
- src/icelist.cc | 6 +++---
- src/iceskt.cc  | 1 -
- 3 files changed, 4 insertions(+), 5 deletions(-)
-
-commit 58af5b60cc8d5b42cb28462516648ce1af52cc59
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 12:12:33 2021 +0200
-
-    Print active window.
-
- src/testnetwmhints.cc | 7 +++++++
- 1 file changed, 7 insertions(+)
-
-commit d70e47e0bba7675a72afd6aac62ed373c97f5229
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 12:11:54 2021 +0200
-
-    Update icewmbg.
-
- src/icewmbg.cc | 19 ++++++-------------
- 1 file changed, 6 insertions(+), 13 deletions(-)
-
-commit f554478c89d72235dab4a9348c45cb438f8f74b7
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 12:10:30 2021 +0200
-
-    When changing themeName, allocate it dynamically.
-
- src/wmconfig.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit b7a27edb98f5d7f06e83fd473e36d2025ec7d703
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 15 12:08:04 2021 +0200
-
-    Get rid of unneeded classes YCursor and YResourcePaths.
-    This also reduces the number of stat(2) system calls on startup.
-
- src/CMakeLists.txt |   2 +-
- src/Makefile.am    |   7 --
- src/atasks.cc      |   4 +-
- src/aworkspaces.cc |   7 +-
- src/genpref.cc     |   2 +
- src/movesize.cc    |   6 +-
- src/wmapp.cc       | 192 ++++++++++++++++++++++++++++++++++++++++---------
- src/wmapp.h        |  40 +++++++----
- src/wmcontainer.cc |   4 +-
- src/wmdialog.cc    |   2 +-
- src/wmframe.cc     |   2 +-
- src/wmmgr.cc       |   8 +--
- src/wmmgr.h        |   2 +-
- src/wmprog.h       |   4 +-
- src/wmtaskbar.cc   |   6 +-
- src/wmwinmenu.h    |   4 +-
- src/wpixres.cc     |  50 +++++++------
- src/wpixres.h      |   6 +-
- src/yapp.cc        |  16 +++++
- src/yapp.h         |   8 ++-
- src/yconfig.cc     |   1 -
- src/ycursor.cc     |  79 ++++----------------
- src/ycursor.h      |  51 +------------
- src/yicon.cc       |  26 +++++--
- src/yicon.h        |   1 +
- src/ypopup.cc      |   2 +-
- src/yprefs.h       |   2 +-
- src/ywindow.cc     |  38 ++++------
- src/ywindow.h      |  11 ++-
- src/yxapp.cc       |  15 +---
- src/yxapp.h        |   6 +-
- 31 files changed, 332 insertions(+), 272 deletions(-)
-
-commit 39a36e9d4ed78f1780843a4a5db77ed502ddad0e
-Author: Mehmet Akif <madanadam@gmail.com>
-Date:   Thu Jul 15 12:58:03 2021 +0300
-
-    Minor Changes and Additions (#600)
-
-    Thank you for your contribution!
-
- po/tr.po | 692 ++++++++++++++++++++++++++++++-----------------------------
- 1 file changed, 348 insertions(+), 344 deletions(-)
-
-commit df787c550cfda092075123ab0fae379855093ae7
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Thu Jul 8 14:01:46 2021 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (481 of 481 strings)
-
- po/pt.po | 12 +++++-------
- 1 file changed, 5 insertions(+), 7 deletions(-)
-
-commit e73b5cd3bc4338ae6d53f04a752dbed2e1156d01
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 8 08:15:51 2021 +0200
-
-    Prepare 2.6.0 release
-
- AUTHORS      |   6 +-
- ChangeLog    | 585 +++++++++++++++++++++++++------------------------------
- NEWS         | 219 ++++-----------------
- README.md    |  36 ++--
- RELEASE.md   |   4 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  70 +++----
- po/be.po     |  70 +++----
- po/bg.po     |  70 +++----
- po/ca.po     |  70 +++----
- po/cs.po     |  70 +++----
- po/da.po     |  70 +++----
- po/de.po     |  70 +++----
- po/el.po     |  70 +++----
- po/en.po     |  70 +++----
- po/es.po     |  70 +++----
- po/fi.po     |  70 +++----
- po/fr.po     | 128 ++++++------
- po/he.po     |  70 +++----
- po/hr.po     |  70 +++----
- po/hu.po     |  70 +++----
- po/icewm.pot |  72 +++----
- po/id.po     |  70 +++----
- po/it.po     |  70 +++----
- po/ja.po     |  70 +++----
- po/ko.po     |  70 +++----
- po/lt.po     |  70 +++----
- po/lv.po     |  70 +++----
- po/mk.po     |  70 +++----
- po/nb.po     |  70 +++----
- po/nl.po     |  70 +++----
- po/no.po     |  70 +++----
- po/pl.po     |  70 +++----
- po/pt.po     |  70 +++----
- po/pt_BR.po  |  70 +++----
- po/ro.po     |  70 +++----
- po/ru.po     |  70 +++----
- po/sk.po     |  70 +++----
- po/sl.po     |  70 +++----
- po/sv.po     |  70 +++----
- po/tr.po     |  70 +++----
- po/uk.po     |  70 +++----
- po/vi.po     |  70 +++----
- po/zh_CN.po  |  70 +++----
- po/zh_TW.po  |  70 +++----
- 46 files changed, 1734 insertions(+), 1918 deletions(-)

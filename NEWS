@@ -1,11 +1,48 @@
-icewm -- history of user-visible changes.  2022-11-02
+icewm -- history of user-visible changes.  2022-11-08
+
+Release icewm-3.2.1 released 2022-11-08
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.2.0...3.2.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (12):
+      Update version to 3.2.0.
+      Close other tabs first.
+      Fix KeySysSwitchClass history for issue #673.
+      Update the quick switch list after changing workspace when
+        QuickSwitchToAllWorkspaces=0 for issue #683.
+      Demarcate workspaces in Alt+Tab for QuickSwitchToAllWorkspaces. Fix the
+        quick switch vertical size calculations.
+      Add QuickSwitchPersistence pref to enable stateful Alt+Tab for issue #683.
+      Don't attempt to focus NoInput windows.
+      Check that active Alt+Tab item is visible. Also sort Alt+Tab items on
+        WM_CLASS. Fix GCC 4.8.5 compile error and closes ice-wm/icewm#99.
+      When moving a tab to a new frame, activate it.
+      Add array moveto to reduce copying.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Stéphane LASSALVY <stephane.lassalvy@laposte.net> (2):
+      Translated using Weblate (French)
+      Translated using Weblate (French)
+
+Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
+      Translated using Weblate (Indonesian)
+
+Victor hck <correohck@gmail.com> (1):
+      Translated using Weblate (Spanish)
+
+Wallon <franckjl@hotmail.com> (1):
+      Translated using Weblate (French)
+
 
 Release icewm-3.2.0 released 2022-11-02
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.1.0...3.2.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (25):
+Bert Gijsbers <gijsbers@science.uva.nl> (26):
       Update _NET_CLIENT_LIST when adding more tabs.
       Show the time of day when reporting an unknown window option.
       Update the title bar shape when switching to a different tab and when
@@ -45,6 +82,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (25):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.2.0 release
 
 Eduard Bloch <blade@debian.org> (2):
       DRY, simplify, some flags/folders separation
@@ -253,56 +291,4 @@ Luna  Jernberg <bittin@opensuse.org> (1):
 
 nathannaveen <42319948+nathannaveen@users.noreply.github.com> (1):
       chore: Set permissions for GitHub actions (#654)
-
-
-Release icewm-2.9.7 released 2022-05-02
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.6...2.9.7
-
-Bert Gijsbers <gijsbers@science.uva.nl> (15):
-      Fix format string in da.po.
-      Add -g,--generic and -o,--output options to icewm-menu-fdo for issue #646.
-        Document all icewm-menu-fdo options.
-      Prefer head2 over head1 in pod files.
-      Update help usage for icewm-menu-fdo.
-      Check if the case insensitive GenericName is not in the Name field, for
-        issue #646.
-      Handle right-to-left languages in icewm-menu-fdo.
-      Document alternative keypad handling in icewm-keys(1).
-      Use the ColorClockText for keyboard status for issue ice-wm/icewm#90.
-      Add KeySysKeyboardNext to switch to next keyboard layout for issue
-        ice-wm/icewm#90.
-      Add themable ColorKeyboardLayoutText.
-      Faster and more reliable restart of icewmbg.
-      Fix for saving keyboard layouts in --rewrite-preferences.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.9.7 release
-
-Mehmet Akif 9oglu <madanadam@gmail.com> (3):
-      Translated using Weblate (Turkish)
-      Translated using Weblate (Turkish)
-      Translated using Weblate (Turkish)
-
-Alexander Mortensen <Mortensen.alexander@gmail.com> (2):
-      Translated using Weblate (Danish)
-      Translated using Weblate (Danish)
-
-Tommi Nieminen <software@legisign.org> (2):
-      Translated using Weblate (Finnish)
-      Translated using Weblate (Finnish)
-
-Gemineo <vistatec@gemineo.de> (1):
-      Translated using Weblate (German)
-
-Jan Papež <honyczek@centrum.cz> (1):
-      Translated using Weblate (Czech)
-
-Sergey Mashkov <cy6ergn0m@gmail.com> (1):
-      Translated using Weblate (Russian)
-
-Sophie Leroy <sophie@stoquart.com> (1):
-      Translated using Weblate (French)
 
