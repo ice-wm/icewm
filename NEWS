@@ -1,11 +1,49 @@
-icewm -- history of user-visible changes.  2022-11-08
+icewm -- history of user-visible changes.  2022-11-14
+
+Release icewm-3.2.2 released 2022-11-14
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.2.1...3.2.2
+
+Bert Gijsbers <gijsbers@science.uva.nl> (21):
+      Freeze the task pane layout while Alt is pressed for #549.
+      Also sort Alt+Tab on 'order' winoption.
+      Faster find.
+      Find item within bounds.
+      Menu add after, haveCommand and removeCommand.
+      Add client actions close, kill and untab.
+      Update window list after an untab. Preserve non-fullscreen geometry across
+        restarts. Try harder to avoid a non-focused situation.
+      Restore winoption named frame tabs when recovering from a crash.
+      Much improved sorting in the window list window. Make the window list more
+        tab-savvy.
+      Adapt absolute paths in .desktop files to install prefix for #684.
+      Only sort Alt+Tab on WM_CLASS when persistent for #685.
+      Move all calls to XKillClient in one place.
+      Adapt absolute paths in .desktop files for CMake build.
+      Add menu entry to rename the window title manually for #644.
+      Let Escape cancel the entire menu chain and closes #677.
+      Fix for GCC 4.8.5.
+      One suffices.
+      Update pot files.
+      Use AM_V_GEN before the sed desktop files.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Naveen <172697+naveensrinivasan@users.noreply.github.com> (1):
+      Include githubactions in the dependabot config (#655)
+
+Pino Toscano <toscano.pino@tiscali.it> (1):
+      Drop LSM file (#660)
+
 
 Release icewm-3.2.1 released 2022-11-08
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.2.0...3.2.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (12):
+Bert Gijsbers <gijsbers@science.uva.nl> (13):
       Update version to 3.2.0.
       Close other tabs first.
       Fix KeySysSwitchClass history for issue #673.
@@ -22,6 +60,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (12):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.2.1 release
 
 Stéphane LASSALVY <stephane.lassalvy@laposte.net> (2):
       Translated using Weblate (French)
@@ -246,49 +285,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (21):
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
       Prepare 2.9.9 release
-
-
-Release icewm-2.9.8 released 2022-07-18
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.7...2.9.8
-
-Bert Gijsbers <gijsbers@science.uva.nl> (22):
-      Omit trailing dot in CPU temperature and add centigrade symbol for issue
-        #652.
-      If there is no WM active, then a restart will start icewm.
-      Don't create ~/.icewm, unless required to save a file.
-      When showing the desktop, also minimize a focused fullscreen window.
-      Remove unused setTitle from YMsgBox.
-      Add support for COMPOUND_TEXT title names and for non-ascii characters in
-        WM_NAME strings for issue #26.
-      Support COMPOUND_TEXT title names and non-ascii characters in WM_NAME
-        strings in icesh. Limit window dimensions to 32732 in icesh.
-      Prevent warnings.
-      Let TaskBarShowAllWindows influence TaskBarTaskGrouping for issue #560.
-        Improve truncation of titles for TaskBarTaskGrouping in issue #658.
-      Do without pair array.
-      Update the grouping menu when tasks are added or removed.
-      Don't convert XA_STRING names to current locale for issue #26.
-      Update grouping menu when removing a task.
-      Restore 2.5.0 container handling of button presses for issue #649.
-      Don't convert XA_STRING in icesh.
-      Make TaskBarGraphHeight themable for issue #659.
-      Restore prettyClock as false.
-      Preserve errno in testOnce.
-      Clarify which preferences are themable in icewm-preferences(5).
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.9.8 release
-
-Kristijan Fremen Velkovski <me@krisfremen.com> (2):
-      Translated using Weblate (Macedonian)
-      Translated using Weblate (Macedonian)
-
-Luna  Jernberg <bittin@opensuse.org> (1):
-      Translated using Weblate (Swedish)
-
-nathannaveen <42319948+nathannaveen@users.noreply.github.com> (1):
-      chore: Set permissions for GitHub actions (#654)
 
