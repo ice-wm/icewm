@@ -72,6 +72,7 @@ YFrameWindow::YFrameWindow(
     fFrameIcon(null),
     fTabs(1),
     fKillMsgBox(nullptr),
+    fNameMsgBox(nullptr),
     wmActionListener(wmActionListener),
     fWinWorkspace(manager->activeWorkspace()),
     fWinRequestedLayer(WinLayerNormal),
@@ -119,6 +120,10 @@ YFrameWindow::~YFrameWindow() {
     if (fKillMsgBox) {
         delete fKillMsgBox;
         fKillMsgBox = nullptr;
+    }
+    if (fNameMsgBox) {
+        delete fNameMsgBox;
+        fNameMsgBox = nullptr;
     }
     if (fWindowType == wtDialog)
         wmapp->signalGuiEvent(geDialogClosed);
@@ -375,6 +380,8 @@ void YFrameWindow::untab(YFrameClient* client) {
                 layoutShape();
                 fTitleBar->repaint();
             }
+            if (client->getClientItem())
+                client->getClientItem()->update();
         }
     }
 }
@@ -674,6 +681,13 @@ void YFrameWindow::independer(YFrameClient* client) {
     if (client->destroyed())
         client->unmanageWindow();
     else {
+        if (client == fClient && (isMaximized() || isFullscreen())) {
+            int x, y, w, h;
+            getNormalGeometryInner(&x, &y, &w, &h);
+            if (w < int(client->width()) || h < int(client->height()))
+                client->setSize(w, h);
+        }
+
         int gx, gy;
         client->gravityOffsets(gx, gy);
         client->setBorderWidth(client->getBorder());
@@ -1107,33 +1121,34 @@ bool YFrameWindow::handleTimer(YTimer *t) {
             focus(false);
         }
         else if (t == fFocusEventTimer) {
-            if (manager->getFocus() != this && client()->visible()) {
+            if (focused() == false && client()->visible()) {
                 Window win = 0; int rev = 0;
-                XGetInputFocus(xapp->display(), &win, &rev);
-                while (win != client()->handle()) {
-                    YWindow* found = windowContext.find(win);
-                    if (found) {
-                        break;
-                    } else {
-                        Window par = xapp->parent(win);
-                        if (par == None || par == xapp->root()) {
-                            break;
-                        } else {
-                            win = par;
-                        }
-                    }
-                }
-                if (win == client()->handle()) {
-                    manager->switchFocusTo(this);
+                if (XGetInputFocus(xapp->display(), &win, &rev) && 1 < win) {
+                    Window ch = client()->handle();
+                    while (ch != win && 1 < win && win != xapp->root())
+                        win = xapp->parent(win);
+                    if (win == ch)
+                        manager->switchFocusTo(this);
                 }
             }
+            else if (focused() && client()->visible()) {
+                Window win = None; int rev = 0;
+                if (XGetInputFocus(xapp->display(), &win, &rev) && !win) {
+                    if (getInputFocusHint()) {
+                        XSetInputFocus(xapp->display(), client()->handle(),
+                                       RevertToNone,
+                                       xapp->getEventTime("setFocus"));
+                    }
+                }
+            }
+            fFocusEventTimer = null;
         }
         else if (t == fEdgeSwitchTimer) {
             int rx, ry;
             xapp->queryMouse(&rx, &ry);
             int ws = manager->edgeWorkspace(rx, ry);
             if (0 <= ws) {
-                if (this == manager->getFocus())
+                if (focused())
                     manager->switchToWorkspace(ws, true);
                 else if (isAllWorkspaces())
                     manager->switchToWorkspace(ws, false);
@@ -1354,6 +1369,14 @@ void YFrameWindow::actionPerformed(YAction action, unsigned int modifiers) {
         break;
     case actionToggleTray:
         wmToggleTray();
+        break;
+    case actionRename:
+        delete fNameMsgBox;
+        fNameMsgBox = new YMsgBox(YMsgBox::mbAll,
+                                  _("Rename"),
+                                  _("Rename the window title"),
+                                  this,
+                                  "rename");
         break;
     case actionUntab:
         untab(fClient);
@@ -1789,8 +1812,8 @@ void YFrameWindow::wmCloseClient(YFrameClient* client, bool* confirm) {
     if (client->protocol(YFrameClient::wpDeleteWindow))
         client->sendDelete();
     else if (frameOption(foForcedClose))
-        XKillClient(xapp->display(), client->handle());
-    else
+        client->forceClose();
+    else if (client->adopted())
         *confirm = true;
 }
 
@@ -1833,8 +1856,7 @@ void YFrameWindow::wmKill() {
         msg("No WM_DELETE_WINDOW protocol");
 #endif
     for (YFrameClient* cli : fTabs)
-        if (cli->adopted())
-            XKillClient(xapp->display(), cli->handle());
+        cli->forceClose();
 }
 
 void YFrameWindow::wmPrevWindow() {
@@ -3415,7 +3437,7 @@ void YFrameWindow::setState(int mask, int state) {
     }
     if ((deltaState & WinStateRollup) &&
         (clickFocus || !strongPointerFocus) &&
-        this == manager->getFocus()) {
+        focused()) {
         manager->setFocus(this);
     }
     if (deltaState & fNewState & WinStateFullscreen) {
@@ -3425,7 +3447,7 @@ void YFrameWindow::setState(int mask, int state) {
         }
     }
     if (deltaState & fNewState & WinStateFocused) {
-        if (this != manager->getFocus())
+        if (focused() == false)
             manager->setFocus(this);
     }
 
@@ -3616,10 +3638,22 @@ void YFrameWindow::handleMsgBox(YMsgBox* msgbox, int operation) {
         delete fKillMsgBox;
         fKillMsgBox = nullptr;
         if (operation == YMsgBox::mbOK && !client()->destroyed()) {
-            if ( !client()->timedOut() || !client()->killPid()) {
+            if ( !client()->timedOut()) {
                 wmKill();
             }
         }
+    }
+    else if (msgbox == fNameMsgBox) {
+        mstring input;
+        if (operation == YMsgBox::mbOK && msgbox->input())
+            input = msgbox->input()->getText();
+        if (input.nonempty()) {
+            client()->fixWindowTitle(false);
+            client()->setWindowTitle(input);
+            client()->setIconTitle(input);
+            client()->fixWindowTitle(true);
+        }
+        delete fNameMsgBox; fNameMsgBox = nullptr;
     }
 }
 

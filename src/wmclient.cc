@@ -60,6 +60,7 @@ YFrameClient::YFrameClient(YWindow *parent, YFrameWindow *frame, Window win,
     fDocked = false;
     fShaped = false;
     fTimedOut = false;
+    fFixedTitle = false;
     fIconize = true;
     fPinging = false;
     fPingTime = 0;
@@ -226,13 +227,16 @@ int YFrameClient::findTransient(Window handle) {
 }
 
 YFrameClient* YFrameClient::firstTransient() {
-    YFrameClient* trans = nullptr;
-    const Window h = handle();
-    for (int i = 0; i < fTransients.getCount(); ++i)
-        if (h == fTransients[i].owner &&
-            (trans = clientContext.find(fTransients[i].trans)) != nullptr)
-            break;
-    return trans;
+    return firstTransient(handle());
+}
+
+YFrameClient* YFrameClient::firstTransient(Window handle) {
+    YFrameClient* client = nullptr;
+    for (const transience& trans : fTransients)
+        if (trans.owner == handle)
+            if ((client = clientContext.find(trans.trans)) != nullptr)
+                break;
+    return client;
 }
 
 bool YFrameClient::hasTransient() {
@@ -441,14 +445,10 @@ bool YFrameClient::handleTimer(YTimer* timer) {
         }
         if ( !destroyed()) {
             if (fFrame == nullptr) {
-                if (isDocked() && killPid() == false) {
-                    XKillClient(xapp->display(), handle());
-                }
+                forceClose();
             }
             else if (fFrame->frameOption(YFrameWindow::foForcedClose)) {
-                if (killPid() == false) {
-                    XKillClient(xapp->display(), handle());
-                }
+                forceClose();
             }
             else if (fPid > 0) {
                 char* res = classHint()->resource();
@@ -468,6 +468,11 @@ bool YFrameClient::handleTimer(YTimer* timer) {
 
     return false;
 }
+
+bool YFrameClient::forceClose() {
+    return adopted() && (killPid() || XKillClient(xapp->display(), handle()));
+}
+
 
 bool YFrameClient::killPid() {
     return fPid > 0 && 0 == kill(fPid, SIGTERM);
@@ -810,14 +815,10 @@ void YFrameClient::handleShapeNotify(const XShapeEvent &shape) {
 #endif
 
 void YFrameClient::setWindowTitle(const char *title) {
-    if (fWindowTitle != title) {
+    if (fWindowTitle != title && fFixedTitle == false) {
         fWindowTitle = title;
         if (title) {
-            XChangeProperty(xapp->display(), handle(),
-                    _XA_NET_WM_VISIBLE_NAME, _XA_UTF8_STRING,
-                    8, PropModeReplace,
-                    (const unsigned char *) title,
-                    strlen(title));
+            setProperty(_XA_NET_WM_VISIBLE_NAME, _XA_UTF8_STRING, title);
         } else {
             deleteProperty(_XA_NET_WM_VISIBLE_NAME);
         }
@@ -827,7 +828,7 @@ void YFrameClient::setWindowTitle(const char *title) {
 }
 
 void YFrameClient::setIconTitle(const char *title) {
-    if (fIconTitle != title) {
+    if (fIconTitle != title && fFixedTitle == false) {
         fIconTitle = title;
         if (title) {
             setProperty(_XA_NET_WM_VISIBLE_ICON_NAME, _XA_UTF8_STRING, title);
@@ -1123,10 +1124,7 @@ void YFrameClient::netStateRequest(int action, int mask) {
 }
 
 void YFrameClient::actionPerformed(YAction action) {
-    if (getFrame()) {
-        getFrame()->actionPerformed(action, 0U);
-    }
-    else if (isDocked()) {
+    if (isDocked()) {
         if (action == actionClose) {
             Window icon = iconWindowHint();
             sendDelete();
@@ -1137,6 +1135,23 @@ void YFrameClient::actionPerformed(YAction action) {
             setDestroyed();
             xapp->sync();
         }
+    }
+    else if (action == actionClose) {
+        bool confirm = false;
+        YFrameWindow* frame = obtainFrame();
+        if (frame)
+            frame->wmCloseClient(this, &confirm);
+    }
+    else if (action == actionKill) {
+        forceClose();
+    }
+    else if (action == actionUntab) {
+        YFrameWindow* frame = obtainFrame();
+        if (frame)
+            frame->untab(this);
+    }
+    else if (getFrame()) {
+        getFrame()->actionPerformed(action, 0U);
     }
 }
 

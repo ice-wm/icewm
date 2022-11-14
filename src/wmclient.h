@@ -213,6 +213,7 @@ public:
     void sendDelete();
     void sendPing();
     void recvPing(const XClientMessageEvent &message);
+    bool forceClose();
     bool killPid();
     bool timedOut() const { return fTimedOut; }
 
@@ -263,6 +264,7 @@ public:
     YFrameClient* getOwner() const;
     YFrameClient* nextTransient();
     YFrameClient* firstTransient();
+    static YFrameClient* firstTransient(Window handle);
 
     void getClassHint();
     ClassHint* classHint() { return &fClassHint; }
@@ -271,6 +273,7 @@ public:
     void getNetWmName();
     void getIconNameHint();
     void getNetWmIconName();
+    void fixWindowTitle(bool fixed) { fFixedTitle = fixed; }
     void setWindowTitle(const char *title);
     void setIconTitle(const char *title);
     mstring windowTitle() const { return fWindowTitle; }
@@ -358,6 +361,7 @@ private:
     bool fDocked;
     bool fShaped;
     bool fTimedOut;
+    bool fFixedTitle;
     bool fIconize;
     bool fPinging;
     long fPingTime;
