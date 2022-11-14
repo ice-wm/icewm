@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-11-08 17:32+0100\n"
+"POT-Creation-Date: 2022-11-14 13:32+0100\n"
 "PO-Revision-Date: 2022-10-05 17:13+0000\n"
 "Last-Translator: Alexey Yaryshev <clarkez344@gmail.com>\n"
 "Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1410,7 +1410,7 @@ msgid "Invalid expression: `%s'"
 msgstr "Неправильное выражение: `%s'"
 
 #: src/icesh.cc:3728 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1231 src/yxapp.cc:1039
+#: src/wmapp.cc:1233 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1891,7 +1891,7 @@ msgstr ""
 " center:0 scaled:1 = заполнить с сохранением пропорций\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1811
+#: src/icewmbg.cc:1109 src/wmapp.cc:1813
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Неизвестная опция '%s'."
@@ -2058,7 +2058,7 @@ msgstr "_Ниже"
 msgid "D_esktop"
 msgstr "Д_есктоп"
 
-#: src/wmapp.cc:578
+#: src/wmapp.cc:578 src/wmwinlist.cc:374
 msgid "Move to New _Window"
 msgstr "Перейти к новому_окну"
 
@@ -2099,18 +2099,18 @@ msgid "Center"
 msgstr "По центру"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:599 src/wmtaskbar.cc:217 src/wmwinlist.cc:431
-#: src/wmwinlist.cc:464
+#: src/wmapp.cc:599 src/wmtaskbar.cc:217 src/wmwinlist.cc:461
+#: src/wmwinlist.cc:494
 msgid "T_ile Horizontally"
 msgstr "Р_азделить Горизонтально"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:601 src/wmtaskbar.cc:215 src/wmwinlist.cc:430
-#: src/wmwinlist.cc:463
+#: src/wmapp.cc:601 src/wmtaskbar.cc:215 src/wmwinlist.cc:460
+#: src/wmwinlist.cc:493
 msgid "Tile _Vertically"
 msgstr "Разделить _Вертикально"
 
-#: src/wmapp.cc:613 src/wmwinlist.cc:412
+#: src/wmapp.cc:613 src/wmwinlist.cc:441
 msgid "_Restore"
 msgstr "_Восстановить"
 
@@ -2122,31 +2122,31 @@ msgstr "_Переместить"
 msgid "_Size"
 msgstr "_Размер"
 
-#: src/wmapp.cc:619 src/wmwinlist.cc:413
+#: src/wmapp.cc:619 src/wmwinlist.cc:442
 msgid "Mi_nimize"
 msgstr "Св_ернуть"
 
-#: src/wmapp.cc:621 src/wmwinlist.cc:414
+#: src/wmapp.cc:621 src/wmwinlist.cc:443
 msgid "Ma_ximize"
 msgstr "Ра_звернуть"
 
-#: src/wmapp.cc:622 src/wmwinlist.cc:415
+#: src/wmapp.cc:622 src/wmwinlist.cc:444
 msgid "Maximize_Vert"
 msgstr "Развернуть_Верт"
 
-#: src/wmapp.cc:623 src/wmwinlist.cc:416
+#: src/wmapp.cc:623 src/wmwinlist.cc:445
 msgid "MaximizeHori_z"
 msgstr "РазвернутьГори_з"
 
-#: src/wmapp.cc:626 src/wmwinlist.cc:417
+#: src/wmapp.cc:626 src/wmwinlist.cc:446
 msgid "_Fullscreen"
 msgstr "_Полноэкранный"
 
-#: src/wmapp.cc:629 src/wmwinlist.cc:419
+#: src/wmapp.cc:629 src/wmwinlist.cc:448
 msgid "_Hide"
 msgstr "_Скрыть"
 
-#: src/wmapp.cc:631 src/wmwinlist.cc:420
+#: src/wmapp.cc:631 src/wmwinlist.cc:449
 msgid "Roll_up"
 msgstr "Скру_тить"
 
@@ -2154,23 +2154,23 @@ msgstr "Скру_тить"
 msgid "R_aise"
 msgstr "П_однять"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:422
+#: src/wmapp.cc:640 src/wmwinlist.cc:451
 msgid "_Lower"
 msgstr "_Опустить"
 
-#: src/wmapp.cc:642 src/wmwinlist.cc:423
+#: src/wmapp.cc:642 src/wmwinlist.cc:452
 msgid "La_yer"
 msgstr "Сл_ой"
 
-#: src/wmapp.cc:645 src/wmwinlist.cc:424
+#: src/wmapp.cc:645 src/wmwinlist.cc:453
 msgid "Tile"
 msgstr "Замостить"
 
-#: src/wmapp.cc:649 src/wmwinlist.cc:426
+#: src/wmapp.cc:649 src/wmwinlist.cc:455
 msgid "Move _To"
 msgstr "Переместить _на"
 
-#: src/wmapp.cc:650 src/wmwinlist.cc:427
+#: src/wmapp.cc:650 src/wmwinlist.cc:456
 msgid "Occupy _All"
 msgstr "Видно _на всех"
 
@@ -2178,28 +2178,32 @@ msgstr "Видно _на всех"
 msgid "Limit _Workarea"
 msgstr "Ограничить _рабочее место"
 
-#: src/wmapp.cc:660 src/wmwinlist.cc:428
+#: src/wmapp.cc:660 src/wmwinlist.cc:457
 msgid "Tray _icon"
 msgstr "Пиктограмма _системного лотка"
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:443 src/wmwinlist.cc:451
+#: src/wmapp.cc:662 src/wmwinlist.cc:458
+msgid "R_ename title"
+msgstr ""
+
+#: src/wmapp.cc:667 src/wmwinlist.cc:473 src/wmwinlist.cc:481
 msgid "_Close"
 msgstr "_Закрыть"
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:445
+#: src/wmapp.cc:669 src/wmwinlist.cc:475
 msgid "_Kill Client"
 msgstr "_Убить"
 
-#: src/wmapp.cc:670 src/wmdialog.cc:72 src/wmwinmenu.cc:134
+#: src/wmapp.cc:672 src/wmdialog.cc:72 src/wmwinmenu.cc:134
 msgid "_Window list"
 msgstr "_Список Окон"
 
 #
-#: src/wmapp.cc:709
+#: src/wmapp.cc:711
 msgid "Another window manager already running, exiting..."
 msgstr "Оконный менеджер уже запущен. Выхожу..."
 
-#: src/wmapp.cc:784
+#: src/wmapp.cc:786
 #, c-format
 msgid ""
 "Could not restart: %s\n"
@@ -2208,11 +2212,11 @@ msgstr ""
 "Не могу перезапустить: %s\n"
 "Содержится ли %s в $PATH?"
 
-#: src/wmapp.cc:945
+#: src/wmapp.cc:947
 msgid "Confirm Restart as Terminal"
 msgstr "Подтвердите перезагрузку как терминал"
 
-#: src/wmapp.cc:946
+#: src/wmapp.cc:948
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
@@ -2220,17 +2224,17 @@ msgstr ""
 "Отменить управление всеми приложениями\n"
 "и перезапустить как терминал. Продолжить?"
 
-#: src/wmapp.cc:1232 src/yxapp.cc:1040
+#: src/wmapp.cc:1234 src/yxapp.cc:1040
 msgid "<none>"
 msgstr "<пусто>"
 
-#: src/wmapp.cc:1555
+#: src/wmapp.cc:1557
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Идентификатор клиента для связи с менеджером сеансов.\n"
 
-#: src/wmapp.cc:1561
+#: src/wmapp.cc:1563
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2241,7 +2245,7 @@ msgstr ""
 "  --debug-z           Печатать отладочные сообщения, относящиеся к стеку "
 "окон.\n"
 
-#: src/wmapp.cc:1569
+#: src/wmapp.cc:1571
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2262,7 +2266,7 @@ msgstr ""
 "  --trace=conf,icon   Отслеживание путей, используемых для загрузки "
 "конфигурации.\n"
 
-#: src/wmapp.cc:1579
+#: src/wmapp.cc:1581
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2323,21 +2327,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1645
+#: src/wmapp.cc:1647
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "Каталоги конфигурации %s:\n"
 
-#: src/wmapp.cc:1727
+#: src/wmapp.cc:1729
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "Настроенные параметры %s: %s\n"
 
-#: src/wmapp.cc:1861
+#: src/wmapp.cc:1863
 msgid "Confirm Logout"
 msgstr "Подтверждение выхода"
 
-#: src/wmapp.cc:1862
+#: src/wmapp.cc:1864
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2431,7 +2435,15 @@ msgstr "_Перезапуск IceWM"
 msgid "_About"
 msgstr "_О программе"
 
-#: src/wmframe.cc:1818
+#: src/wmframe.cc:1376
+msgid "Rename"
+msgstr ""
+
+#: src/wmframe.cc:1377
+msgid "Rename the window title"
+msgstr ""
+
+#: src/wmframe.cc:1841
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2440,7 +2452,7 @@ msgstr ""
 "при закрытии этого окна. Вы согласны его закрыть?"
 
 #
-#: src/wmframe.cc:1823
+#: src/wmframe.cc:1846
 msgid "Kill Client: "
 msgstr "Убить Окно: "
 
@@ -2511,11 +2523,11 @@ msgstr "У '%s' вышло время!"
 msgid "'%s' produces no output"
 msgstr "%s не возвращает выходных данных"
 
-#: src/wmmgr.cc:3645
+#: src/wmmgr.cc:3653
 msgid "Missing program setxkbmap"
 msgstr "Отсутствует программа setxkbmap"
 
-#: src/wmmgr.cc:3646
+#: src/wmmgr.cc:3654
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Для переключения клавиатуры установите setxkbmap."
 
@@ -2617,27 +2629,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Session Manager: Неизвестная линия %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:432 src/wmwinlist.cc:465
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:462 src/wmwinlist.cc:495
 msgid "Ca_scade"
 msgstr "Ка_скадом"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:433 src/wmwinlist.cc:466
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:463 src/wmwinlist.cc:496
 msgid "_Arrange"
 msgstr "_Упорядочить"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:435 src/wmwinlist.cc:467
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:465 src/wmwinlist.cc:497
 msgid "_Minimize All"
 msgstr "_Свернуть все"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:436 src/wmwinlist.cc:468
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:466 src/wmwinlist.cc:498
 msgid "_Hide All"
 msgstr "_Скрыть все"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:437 src/wmwinlist.cc:469
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:467 src/wmwinlist.cc:499
 msgid "_Undo"
 msgstr "_Отмена"
 
@@ -2671,31 +2683,31 @@ msgstr "Показать Десктоп"
 msgid "Show Taskbar"
 msgstr "Показать Панель задач"
 
-#: src/wmwinlist.cc:78
+#: src/wmwinlist.cc:83
 msgid "All Workspaces"
 msgstr "Все рабочие места"
 
-#: src/wmwinlist.cc:418
+#: src/wmwinlist.cc:447
 msgid "_Show"
 msgstr "_Показать"
 
-#: src/wmwinlist.cc:421
+#: src/wmwinlist.cc:450
 msgid "_Raise"
 msgstr "_Поднять"
 
-#: src/wmwinlist.cc:443
+#: src/wmwinlist.cc:473
 msgid "Del"
 msgstr "Удалить"
 
-#: src/wmwinlist.cc:447
+#: src/wmwinlist.cc:477
 msgid "_Terminate Process"
 msgstr "_Остановить процесс"
 
-#: src/wmwinlist.cc:448
+#: src/wmwinlist.cc:478
 msgid "Kill _Process"
 msgstr "Убить _процесс"
 
-#: src/wmwinlist.cc:483 src/wmwinlist.cc:484
+#: src/wmwinlist.cc:513 src/wmwinlist.cc:514
 msgid "Window list"
 msgstr "Список окон"
 

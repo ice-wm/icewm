@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-11-08 17:32+0100\n"
+"POT-Creation-Date: 2022-11-14 13:32+0100\n"
 "PO-Revision-Date: 2022-10-03 12:13+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1401,7 +1401,7 @@ msgid "Invalid expression: `%s'"
 msgstr "Expressió no vàlida: %s"
 
 #: src/icesh.cc:3728 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1231 src/yxapp.cc:1039
+#: src/wmapp.cc:1233 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1883,7 +1883,7 @@ msgstr ""
 " center:0 scaled:1 = omple ambdues dimensions i mantén la ràtio d'aspecte\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1811
+#: src/icewmbg.cc:1109 src/wmapp.cc:1813
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opció no reconeguda: \"%s\"."
@@ -2047,7 +2047,7 @@ msgstr "A bai_x"
 msgid "D_esktop"
 msgstr "_Escriptori"
 
-#: src/wmapp.cc:578
+#: src/wmapp.cc:578 src/wmwinlist.cc:374
 msgid "Move to New _Window"
 msgstr "Mou a la finestra no_va"
 
@@ -2088,18 +2088,18 @@ msgid "Center"
 msgstr "Al mig"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:599 src/wmtaskbar.cc:217 src/wmwinlist.cc:431
-#: src/wmwinlist.cc:464
+#: src/wmapp.cc:599 src/wmtaskbar.cc:217 src/wmwinlist.cc:461
+#: src/wmwinlist.cc:494
 msgid "T_ile Horizontally"
 msgstr "Mosaic _horitzontal"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:601 src/wmtaskbar.cc:215 src/wmwinlist.cc:430
-#: src/wmwinlist.cc:463
+#: src/wmapp.cc:601 src/wmtaskbar.cc:215 src/wmwinlist.cc:460
+#: src/wmwinlist.cc:493
 msgid "Tile _Vertically"
 msgstr "Mosaic _vertical"
 
-#: src/wmapp.cc:613 src/wmwinlist.cc:412
+#: src/wmapp.cc:613 src/wmwinlist.cc:441
 msgid "_Restore"
 msgstr "_Restaura"
 
@@ -2111,31 +2111,31 @@ msgstr "_Mou"
 msgid "_Size"
 msgstr "M_ida"
 
-#: src/wmapp.cc:619 src/wmwinlist.cc:413
+#: src/wmapp.cc:619 src/wmwinlist.cc:442
 msgid "Mi_nimize"
 msgstr "Mi_nimitza"
 
-#: src/wmapp.cc:621 src/wmwinlist.cc:414
+#: src/wmapp.cc:621 src/wmwinlist.cc:443
 msgid "Ma_ximize"
 msgstr "Ma_ximitza"
 
-#: src/wmapp.cc:622 src/wmwinlist.cc:415
+#: src/wmapp.cc:622 src/wmwinlist.cc:444
 msgid "Maximize_Vert"
 msgstr "Maximització _vertical"
 
-#: src/wmapp.cc:623 src/wmwinlist.cc:416
+#: src/wmapp.cc:623 src/wmwinlist.cc:445
 msgid "MaximizeHori_z"
 msgstr "Maximització horit_zontal"
 
-#: src/wmapp.cc:626 src/wmwinlist.cc:417
+#: src/wmapp.cc:626 src/wmwinlist.cc:446
 msgid "_Fullscreen"
 msgstr "_Pantalla completa"
 
-#: src/wmapp.cc:629 src/wmwinlist.cc:419
+#: src/wmapp.cc:629 src/wmwinlist.cc:448
 msgid "_Hide"
 msgstr "Ama_ga"
 
-#: src/wmapp.cc:631 src/wmwinlist.cc:420
+#: src/wmapp.cc:631 src/wmwinlist.cc:449
 msgid "Roll_up"
 msgstr "Enr_otlla"
 
@@ -2143,23 +2143,23 @@ msgstr "Enr_otlla"
 msgid "R_aise"
 msgstr "_Apuja"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:422
+#: src/wmapp.cc:640 src/wmwinlist.cc:451
 msgid "_Lower"
 msgstr "Més _baix"
 
-#: src/wmapp.cc:642 src/wmwinlist.cc:423
+#: src/wmapp.cc:642 src/wmwinlist.cc:452
 msgid "La_yer"
 msgstr "_Capa"
 
-#: src/wmapp.cc:645 src/wmwinlist.cc:424
+#: src/wmapp.cc:645 src/wmwinlist.cc:453
 msgid "Tile"
 msgstr "Mosaic"
 
-#: src/wmapp.cc:649 src/wmwinlist.cc:426
+#: src/wmapp.cc:649 src/wmwinlist.cc:455
 msgid "Move _To"
 msgstr "Mo_u a"
 
-#: src/wmapp.cc:650 src/wmwinlist.cc:427
+#: src/wmapp.cc:650 src/wmwinlist.cc:456
 msgid "Occupy _All"
 msgstr "Ocupa-ho _tot"
 
@@ -2167,27 +2167,31 @@ msgstr "Ocupa-ho _tot"
 msgid "Limit _Workarea"
 msgstr "Límit de l'àrea de tre_ball"
 
-#: src/wmapp.cc:660 src/wmwinlist.cc:428
+#: src/wmapp.cc:660 src/wmwinlist.cc:457
 msgid "Tray _icon"
 msgstr "_Icona de la safata"
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:443 src/wmwinlist.cc:451
+#: src/wmapp.cc:662 src/wmwinlist.cc:458
+msgid "R_ename title"
+msgstr ""
+
+#: src/wmapp.cc:667 src/wmwinlist.cc:473 src/wmwinlist.cc:481
 msgid "_Close"
 msgstr "_Tanca"
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:445
+#: src/wmapp.cc:669 src/wmwinlist.cc:475
 msgid "_Kill Client"
 msgstr "_Mata el client"
 
-#: src/wmapp.cc:670 src/wmdialog.cc:72 src/wmwinmenu.cc:134
+#: src/wmapp.cc:672 src/wmdialog.cc:72 src/wmwinmenu.cc:134
 msgid "_Window list"
 msgstr "Llista de _finestres"
 
-#: src/wmapp.cc:709
+#: src/wmapp.cc:711
 msgid "Another window manager already running, exiting..."
 msgstr "Un altre gestor de finestres està en ús, sortint..."
 
-#: src/wmapp.cc:784
+#: src/wmapp.cc:786
 #, c-format
 msgid ""
 "Could not restart: %s\n"
@@ -2196,11 +2200,11 @@ msgstr ""
 "No s'a pogut reiniciar: %s\n"
 "Apunta $PATH a %s?"
 
-#: src/wmapp.cc:945
+#: src/wmapp.cc:947
 msgid "Confirm Restart as Terminal"
 msgstr "Confirmeu el reinici com a terminal"
 
-#: src/wmapp.cc:946
+#: src/wmapp.cc:948
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
@@ -2208,18 +2212,18 @@ msgstr ""
 "Deixa de gestionar totes les aplicacions\n"
 "i reinicia com a terminal. Endavant?"
 
-#: src/wmapp.cc:1232 src/yxapp.cc:1040
+#: src/wmapp.cc:1234 src/yxapp.cc:1040
 msgid "<none>"
 msgstr "<cap>"
 
-#: src/wmapp.cc:1555
+#: src/wmapp.cc:1557
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Id de client per usar quan es contacti amb el gestor "
 "de sessions.\n"
 
-#: src/wmapp.cc:1561
+#: src/wmapp.cc:1563
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2230,7 +2234,7 @@ msgstr ""
 "  --debug-z           Imprimeix els missatges de depuració sobre l'apilament "
 "de finestres.\n"
 
-#: src/wmapp.cc:1569
+#: src/wmapp.cc:1571
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2251,7 +2255,7 @@ msgstr ""
 "  --rewrite-preferences  Actualitza un fitxer de preferències existent.\n"
 "  --trace=conf,icon   Traça els camins usats per carregar la configuració.\n"
 
-#: src/wmapp.cc:1579
+#: src/wmapp.cc:1581
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2311,21 +2315,21 @@ msgstr ""
 "%s.\n"
 "\n"
 
-#: src/wmapp.cc:1645
+#: src/wmapp.cc:1647
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s directoris de configuració:\n"
 
-#: src/wmapp.cc:1727
+#: src/wmapp.cc:1729
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s opcions configurades:%s\n"
 
-#: src/wmapp.cc:1861
+#: src/wmapp.cc:1863
 msgid "Confirm Logout"
 msgstr "Confirmació de la sortida"
 
-#: src/wmapp.cc:1862
+#: src/wmapp.cc:1864
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2418,7 +2422,15 @@ msgstr "_Reinicia l'icewm"
 msgid "_About"
 msgstr "_Quant a"
 
-#: src/wmframe.cc:1818
+#: src/wmframe.cc:1376
+msgid "Rename"
+msgstr ""
+
+#: src/wmframe.cc:1377
+msgid "Rename the window title"
+msgstr ""
+
+#: src/wmframe.cc:1841
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2426,7 +2438,7 @@ msgstr ""
 "ATENCIÓ! Tots els canvis no desats es perdran en\n"
 "matar el client. Encara voleu continuar?"
 
-#: src/wmframe.cc:1823
+#: src/wmframe.cc:1846
 msgid "Kill Client: "
 msgstr "Mata el client: "
 
@@ -2497,11 +2509,11 @@ msgstr "%s ha assolit el temps d'espera!"
 msgid "'%s' produces no output"
 msgstr "\"%s\" no produeix cap sortida"
 
-#: src/wmmgr.cc:3645
+#: src/wmmgr.cc:3653
 msgid "Missing program setxkbmap"
 msgstr "Manca el programa setxkbmap."
 
-#: src/wmmgr.cc:3646
+#: src/wmmgr.cc:3654
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Per canviar el teclat, si us plau, instal·leu setxkbmap."
 
@@ -2603,27 +2615,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Gestor de sessions: línia desconeguda: %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:432 src/wmwinlist.cc:465
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:462 src/wmwinlist.cc:495
 msgid "Ca_scade"
 msgstr "Ca_scada"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:433 src/wmwinlist.cc:466
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:463 src/wmwinlist.cc:496
 msgid "_Arrange"
 msgstr "_Organitza"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:435 src/wmwinlist.cc:467
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:465 src/wmwinlist.cc:497
 msgid "_Minimize All"
 msgstr "_Minimitza-ho tot"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:436 src/wmwinlist.cc:468
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:466 src/wmwinlist.cc:498
 msgid "_Hide All"
 msgstr "_Amaga-ho tot"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:437 src/wmwinlist.cc:469
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:467 src/wmwinlist.cc:499
 msgid "_Undo"
 msgstr "_Desfés"
 
@@ -2657,31 +2669,31 @@ msgstr "Mostra l'escriptori"
 msgid "Show Taskbar"
 msgstr "Mostra la barra de tasques"
 
-#: src/wmwinlist.cc:78
+#: src/wmwinlist.cc:83
 msgid "All Workspaces"
 msgstr "Tots els espais de treball"
 
-#: src/wmwinlist.cc:418
+#: src/wmwinlist.cc:447
 msgid "_Show"
 msgstr "_Mostra"
 
-#: src/wmwinlist.cc:421
+#: src/wmwinlist.cc:450
 msgid "_Raise"
 msgstr "Apu_ja"
 
-#: src/wmwinlist.cc:443
+#: src/wmwinlist.cc:473
 msgid "Del"
 msgstr "Supr"
 
-#: src/wmwinlist.cc:447
+#: src/wmwinlist.cc:477
 msgid "_Terminate Process"
 msgstr "_Acaba el procés"
 
-#: src/wmwinlist.cc:448
+#: src/wmwinlist.cc:478
 msgid "Kill _Process"
 msgstr "_Mata el procés"
 
-#: src/wmwinlist.cc:483 src/wmwinlist.cc:484
+#: src/wmwinlist.cc:513 src/wmwinlist.cc:514
 msgid "Window list"
 msgstr "Llista de finestres"
 
