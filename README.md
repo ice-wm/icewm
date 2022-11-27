@@ -160,7 +160,7 @@ Translations
 
 You can provide translations by patching `.po` files and issuing pull requests,
 or you can use the [openSUSE weblate tool][11].  There are two XDG files,
-[icewm.desktop][17] and [icewm-session.desktop][18] than may need manual
+[icewm.desktop][17] and [icewm-session.desktop][18] which may need manual
 translations.  If you have difficulties using the tools, just send me the updated
 `.po` file or a patch to apply.
 
