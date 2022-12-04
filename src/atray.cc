@@ -90,12 +90,12 @@ void TrayApp::repaint() {
 
 void TrayApp::setToolTip(const mstring& tip) {
     if (toolTipVisible()) {
-        YWindow::setToolTip(tip);
+        YWindow::setToolTip(tip, getFrame()->getIcon());
     }
 }
 
 void TrayApp::updateToolTip() {
-    YWindow::setToolTip(fFrame->getTitle());
+    YWindow::setToolTip(fFrame->getTitle(), getFrame()->getIcon());
 }
 
 void TrayApp::handleExpose(const XExposeEvent& expose) {
@@ -188,7 +188,7 @@ void TrayApp::handleButton(const XButtonEvent &button) {
                         getFrame()->wmMinimize();
                     else {
                         if (button.state & ShiftMask)
-                            getFrame()->wmOccupyWorkspace(manager->activeWorkspace());
+                            getFrame()->wmOccupyCurrent();
                         activate();
                     }
                 } else if (button.button == 2) {
@@ -197,7 +197,7 @@ void TrayApp::handleButton(const XButtonEvent &button) {
                         getFrame()->wmLower();
                     else {
                         if (button.state & ShiftMask)
-                            getFrame()->wmOccupyWorkspace(manager->activeWorkspace());
+                            getFrame()->wmOccupyCurrent();
                         activate();
                     }
                 }

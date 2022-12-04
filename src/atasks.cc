@@ -336,6 +336,8 @@ void TaskButton::configure(const YRect2& r) {
 void TaskButton::repaintApp(TaskBarApp* app) {
     if (app == fActive && visible()) {
         repaint();
+    } else {
+        fRepainted = false;
     }
     if (fMenu) {
         YMenuItem* item = fMenu->findAction(app->action());
@@ -731,7 +733,7 @@ void TaskButton::handleButton(const XButtonEvent& button) {
             }
             else {
                 if (button.state & ShiftMask)
-                    getFrame()->wmOccupyWorkspace(manager->activeWorkspace());
+                    getFrame()->wmOccupyCurrent();
                 activate();
             }
         }
@@ -752,7 +754,7 @@ void TaskButton::handleButton(const XButtonEvent& button) {
             }
             else {
                 if (button.state & ShiftMask)
-                    getFrame()->wmOccupyWorkspace(manager->activeWorkspace());
+                    getFrame()->wmOccupyCurrent();
                 activate();
             }
         }
@@ -885,6 +887,7 @@ TaskPane::TaskPane(IAppletContainer* taskBar, YWindow* parent):
     fDragY(0),
     fNeedRelayout(true),
     fForceImmediate(false),
+    fRemoveAtWorkspace(-1),
     fTaskGrouping(taskBarTaskGrouping)
 {
     if (getGradient() == null && taskbackPixmap == null) {
@@ -905,6 +908,7 @@ void TaskPane::insert(TaskBarApp* tapp) {
     IterApps it = fApps.reverseIterator();
     while (++it && it->getOrder() > tapp->getOrder());
     (--it).insert(tapp);
+    fRemoveAtWorkspace = -1;
 }
 
 TaskBarApp* TaskPane::predecessor(TaskBarApp* tapp) {
@@ -1023,10 +1027,12 @@ void TaskPane::insert(TaskButton* task) {
     IterTask it = fTasks.reverseIterator();
     while (++it && it->getOrder() > task->getOrder());
     (--it).insert(task);
+    fRemoveAtWorkspace = -1;
 }
 
 void TaskPane::remove(TaskButton* button) {
     if (findRemove(fTasks, button)) {
+        fRemoveAtWorkspace = manager->activeWorkspace();
         relayout();
     }
 }
@@ -1041,15 +1047,19 @@ void TaskPane::relayout(bool force) {
 }
 
 bool TaskPane::handleTimer(YTimer* t) {
+    bool repeat = false;
     if (t == fRelayoutTimer) {
         unsigned mask = 0;
-        if (xapp->queryMask(handle(), &mask) && hasbit(mask, xapp->AltMask))
-            return true;
-
-        fRelayoutTimer = null;
-        relayoutNow();
+        if (fRemoveAtWorkspace == manager->activeWorkspace() &&
+            xapp->queryMask(handle(), &mask) && hasbit(mask, xapp->AltMask)) {
+            repeat = true;
+        } else {
+            fRemoveAtWorkspace = -1;
+            fRelayoutTimer = null;
+            relayoutNow();
+        }
     }
-    return false;
+    return repeat;
 }
 
 void TaskPane::regroup() {
@@ -1164,6 +1174,7 @@ void TaskPane::handleButton(const XButtonEvent& button) {
 
 void TaskPane::configure(const YRect2& r) {
     if (fNeedRelayout || r.resized()) {
+        fRemoveAtWorkspace = -1;
         clearWindow();
     }
 }
