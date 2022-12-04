@@ -1,11 +1,63 @@
-icewm -- history of user-visible changes.  2022-11-14
+icewm -- history of user-visible changes.  2022-12-04
+
+Release icewm-3.2.3 released 2022-12-04
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.2.2...3.2.3
+
+Bert Gijsbers <gijsbers@science.uva.nl> (18):
+      Only freeze task pane layout when a button was removed.
+      Get rid of destroyedClient and simplify handleUnmap.
+      Minimalize ClientData.
+      Tabbing tips.
+      Make winoption forceClose tab dependent.
+      Mention named tabs.
+      Drop windowCount.
+      Let tabs check for winoption settings.
+      Accept pull request by olf and closes ice-wm/icewm#104.
+      Show an icon in the tooltip of a toolbar button for issue #637.
+      Ensure that a task button is updated once it is mapped.
+      Document "workspace" subdirectory.
+      Only link icewm to tooltips and icons, not icewmbg.
+      Add icon to tray tooltip.
+      Delay the creation of frame button tooltips.
+      Add loadicon and saveicon to icesh.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (2):
+      Translated using Weblate (Japanese)
+      Translated using Weblate (Japanese)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Dmitriy Khanzhin <jinn@altlinux.org> (1):
+      Translated using Weblate (Russian)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Kristijan Fremen Velkovski <me@krisfremen.com> (1):
+      Translated using Weblate (Macedonian)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
 
 Release icewm-3.2.2 released 2022-11-14
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.2.1...3.2.2
 
-Bert Gijsbers <gijsbers@science.uva.nl> (21):
+Bert Gijsbers <gijsbers@science.uva.nl> (22):
       Freeze the task pane layout while Alt is pressed for #549.
       Also sort Alt+Tab on 'order' winoption.
       Faster find.
@@ -30,6 +82,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (21):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.2.2 release
 
 Naveen <172697+naveensrinivasan@users.noreply.github.com> (1):
       Include githubactions in the dependabot config (#655)
@@ -248,41 +301,4 @@ Kristijan Fremen Velkovski <me@krisfremen.com> (1):
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
-
-
-Release icewm-2.9.9 released 2022-08-01
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.8...2.9.9
-
-Bert Gijsbers <gijsbers@science.uva.nl> (21):
-      Permit percentages to have comma's in icesh.
-      Keep accurate track of window changes in workspace buttons for
-        PagerShowPreview.  Only redraw affected workspace buttons, which reduces
-        the total number of workspace button redraws, especially for larges
-        number of workspace buttons.
-      Add key bindings for single window tiling operations for issues
-        bbidulock/icewm#335, ice-wm/icewm#74 and ice-wm/icewm#84.
-      Complete -e option.
-      WindowMaker dock apps are supported.
-      Support more HTML entities in icehelp.
-      Remove dependency on asciidoc and prefer markdown format for the manual.
-      Prevent warnings.
-      Also install markdown.
-      Try srcdir.
-      Cleanup test and prefer markdown manual.
-      Cleanup key grabs.
-      Drop obsolete wmOccupyAll().
-      Accept either markdown or asciidoc to generate manual html with CMake.
-      Add markdown and icesh.
-      Automatically detect and prevent race conditions in icesh relating to
-        moving and sizing windows for issue #335. Improve the accuracy of the
-        "sizeto" command in icesh for issue #335. Add "extents" command to
-        icesh. Add "workarea" command to icesh.
-      Get rid of the frameContext.
-      Prefer findClient in two cases: unmap notify and recv ping.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.9.9 release
 

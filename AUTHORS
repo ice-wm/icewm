@@ -1,6 +1,14 @@
-icewm -- authors file.  2022-11-14
+icewm -- authors file.  2022-12-04
 
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Author: Kristijan Fremen Velkovski <me@krisfremen.com>
+Author: Dmitriy Khanzhin <jinn@altlinux.org>
+Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Author: Freek de Kruijf <freek@opensuse.org>
+Author: David Medina <medipas@gmail.com>
 Author: Naveen <172697+naveensrinivasan@users.noreply.github.com>
 Author: Pino Toscano <toscano.pino@tiscali.it>
 Author: Stéphane LASSALVY <stephane.lassalvy@laposte.net>
@@ -8,14 +16,8 @@ Author: Wallon <franckjl@hotmail.com>
 Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
 Author: Victor hck <correohck@gmail.com>
 Author: Eduard Bloch <blade@debian.org>
-Author: Kristijan Fremen Velkovski <me@krisfremen.com>
 Author: marcelo cripe <marcelocripe@gmail.com>
 Author: Alexey Yaryshev <clarkez344@gmail.com>
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Author: Freek de Kruijf <freek@opensuse.org>
-Author: David Medina <medipas@gmail.com>
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
 Author: Luna  Jernberg <bittin@opensuse.org>
 Author: nathannaveen <42319948+nathannaveen@users.noreply.github.com>
 Author: Jan Papež <honyczek@centrum.cz>
@@ -28,7 +30,6 @@ Author: Sophie Leroy <sophie@stoquart.com>
 Author: Antonio Simón <antonio@trans-mission.com>
 Author: Davide Aiello <davide.aiello@novilingulists.com>
 Author: Grace Yu <grace.yu@excel-gits.com>
-Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
 Author: Paolo Za <zapaolo@email.it>
 Author: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>
 Author: Sarah Kriesch <ada.lovelace@gmx.de>
@@ -136,7 +137,6 @@ Author: Bernhard Wiedemann <bwiedemann@suse.com>
 Author: Mario <kdesi@kdesi.sk>
 Author: Ivan Borzenkov <ivan.borzenkov@gmail.com>
 Author: Tetralet <tetralet@gmail.com>
-Author: Dmitriy Khanzhin <jinn@altlinux.org>
 Author: Дмитрий Ханжин <dmitriy.khanzhin@gmail.com>
 Author: Shyukri Shyukriev <shshyukriev@suse.com>
 Author: Oliver Kurz <okurz@suse.de>
