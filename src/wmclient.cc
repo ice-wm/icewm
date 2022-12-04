@@ -447,7 +447,7 @@ bool YFrameClient::handleTimer(YTimer* timer) {
             if (fFrame == nullptr) {
                 forceClose();
             }
-            else if (fFrame->frameOption(YFrameWindow::foForcedClose)) {
+            else if (isCloseForced()) {
                 forceClose();
             }
             else if (fPid > 0) {
@@ -467,6 +467,15 @@ bool YFrameClient::handleTimer(YTimer* timer) {
     }
 
     return false;
+}
+
+bool YFrameClient::isCloseForced() {
+    return frameOption(YFrameWindow::foForcedClose);
+}
+
+bool YFrameClient::frameOption(int option) {
+    const WindowOption* wo = getWindowOption();
+    return wo && wo->hasOption(option);
 }
 
 bool YFrameClient::forceClose() {
@@ -585,23 +594,16 @@ void YFrameClient::handleUnmap(const XUnmapEvent &unmap) {
     MSG(("UnmapWindow"));
     xapp->ignorable = handle();
 
-    bool unmanage = true;
-    bool destroy = false;
-    do {
-        XEvent ev;
-        if (XCheckTypedWindowEvent(xapp->display(), unmap.window,
-                                   DestroyNotify, &ev)) {
-            YWindow::handleDestroyWindow(ev.xdestroywindow);
-            manager->destroyedClient(unmap.window);
-            unmanage = false;
-        }
-        else {
-            destroy = (adopted() && destroyed() == false && testDestroyed());
-        }
-    } while (unmanage && destroy);
-    if (unmanage && isDocked() == false) {
-        manager->unmanageClient(this);
+    XEvent event;
+    event.type = 0;
+    while (XCheckTypedWindowEvent(xapp->display(), unmap.window,
+                                  DestroyNotify, &event) == False
+        && adopted() && destroyed() == false && testDestroyed()) {
     }
+    if (event.type == DestroyNotify)
+        YWindow::handleDestroyWindow(event.xdestroywindow);
+    if (event.type == DestroyNotify || isDocked() == false)
+        manager->unmanageClient(this);
 }
 
 void YFrameClient::handleProperty(const XPropertyEvent &property) {
@@ -789,7 +791,7 @@ void YFrameClient::handleDestroyWindow(const XDestroyWindowEvent &destroyWindow)
     YWindow::handleDestroyWindow(destroyWindow);
 
     if (destroyed())
-        manager->destroyedClient(destroyWindow.window);
+        manager->unmanageClient(this);
 }
 
 #ifdef CONFIG_SHAPE
@@ -924,9 +926,8 @@ void YFrameClient::handleClientMessage(const XClientMessageEvent &message) {
         }
     } else if (message.message_type == _XA_NET_ACTIVE_WINDOW) {
         YFrameWindow* f = obtainFrame();
-        if (f && f->client() != this)
+        if (f && !frameOption(YFrameWindow::foIgnoreActivationMessages)) {
             f->selectTab(this);
-        if (f && !f->ignoreActivation()) {
             f->activate();
             f->wmRaise();
         }

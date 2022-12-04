@@ -390,7 +390,8 @@ void YFrameWindow::addToWindowList() {
     if (windowList && notbit(frameOptions(), foIgnoreWinList)) {
         for (YFrameClient* cli : fTabs) {
             if (cli->adopted() && !cli->getClientItem()) {
-                windowList->addWindowListApp(cli);
+                if ( !cli->frameOption(foIgnoreWinList))
+                    windowList->addWindowListApp(cli);
             }
         }
     }
@@ -1811,7 +1812,7 @@ void YFrameWindow::wmCloseClient(YFrameClient* client, bool* confirm) {
     client->sendPing();
     if (client->protocol(YFrameClient::wpDeleteWindow))
         client->sendDelete();
-    else if (frameOption(foForcedClose))
+    else if (client->isCloseForced())
         client->forceClose();
     else if (client->adopted())
         *confirm = true;
@@ -2363,6 +2364,10 @@ void YFrameWindow::updateIconTitle() {
         fTaskBarApp->repaint();
     if (isIconic())
         fMiniIcon->repaint();
+}
+
+void YFrameWindow::wmOccupyCurrent() {
+    wmOccupyWorkspace(manager->activeWorkspace());
 }
 
 void YFrameWindow::wmOccupyAllOrCurrent() {

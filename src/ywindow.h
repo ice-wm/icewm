@@ -13,6 +13,7 @@ class YTimer;
 class YAutoScroll;
 class YRect;
 class YRect2;
+class YIcon;
 
 struct DesktopScreenInfo {
     int screen_number;
@@ -43,6 +44,17 @@ struct DesktopScreenInfo {
         return (1L + horizontalCoverage(x, w))
              * (1L + verticalCoverage(y, h));
     }
+};
+
+class AToolTip {
+public:
+    virtual ~AToolTip() { }
+
+    virtual void setText(mstring tip, ref<YIcon> icon) { }
+    virtual void enter(YWindow* w) { }
+    virtual void leave() { }
+    virtual bool visible() const { return false; }
+    virtual bool nonempty() const { return false; }
 };
 
 class YWindow : protected YWindowList, private YWindowNode {
@@ -216,8 +228,9 @@ public:
     void installAccelerator(unsigned key, unsigned mod, YWindow *win);
     void removeAccelerator(unsigned key, unsigned mod, YWindow *win);
 
-    mstring getToolTip();
-    void setToolTip(const mstring &tip);
+    bool hasToolTip() const;
+    void setToolTip(mstring tip);
+    void setToolTip(mstring tip, ref<YIcon> icon);
 
     void mapToGlobal(int &x, int &y);
     void mapToLocal(int &x, int &y);
@@ -314,7 +327,7 @@ private:
     };
 
     YAccelerator *accel;
-    lazy<YToolTip> fToolTip;
+    AToolTip* fToolTip;
 
     static XButtonEvent fClickEvent;
     static YWindow *fClickWindow;

@@ -2043,15 +2043,6 @@ void YWindowManager::clientTransfered(YFrameClient* client, YFrameWindow* frame)
         fSwitchWindow->transfer(client, frame);
 }
 
-void YWindowManager::destroyedClient(Window win) {
-    YFrameClient* client = findClient(win);
-    if (client) {
-        unmanageClient(client);
-    } else {
-        MSG(("destroyed: unknown window: 0x%lX", win));
-    }
-}
-
 void YWindowManager::focusTopWindow() {
     if (notRunning() || focusLocked())
         return ;
@@ -3138,24 +3129,6 @@ void YWindowManager::getIconPosition(MiniIcon* iw, int *iconX, int *iconY) {
         if (fIconRow >= Mrow - h2 || fIconRow < mrow - h2)
             fIconColumn = fIconRow = 0;
     }
-}
-
-int YWindowManager::windowCount(int workspace) {
-    int count = 0;
-
-    for (int layer = 0 ; layer < WinLayerCount; layer++) {
-        for (YFrameWindow *frame = top(layer); frame; frame = frame->next()) {
-            if (!frame->visibleOn(workspace))
-                continue;
-            if (frame->frameOption(YFrameWindow::foIgnoreWinList))
-                continue;
-            if (workspace != activeWorkspace() &&
-                frame->visibleNow())
-                continue;
-            count++;
-        }
-    }
-    return count;
 }
 
 void YWindowManager::resetColormap(bool active) {

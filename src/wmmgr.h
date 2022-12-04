@@ -125,7 +125,6 @@ public:
     void unmanageClient(YFrameClient *client);
     void clientDestroyed(YFrameClient* client);
     void clientTransfered(YFrameClient* client, YFrameWindow* frame);
-    void destroyedClient(Window win);
     void mapClient(Window win);
 
     void setFocus(YFrameWindow *f, bool canWarp = false, bool reorder = true);
@@ -182,8 +181,6 @@ public:
     bool focusTop(YFrameWindow *f);
     void updateClientList();
     void updateUserTime(const UserTime& userTime);
-
-    int windowCount(int workspace);
     void popupWindowListMenu(YWindow *owner, int x, int y);
 
     void initWorkspaces();
