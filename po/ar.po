@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.3.12.52\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-12-04 23:58+0100\n"
+"POT-Creation-Date: 2022-12-20 20:11+0100\n"
 "PO-Revision-Date: 2022-01-01 23:12+0000\n"
 "Last-Translator: Ghassan <ghassan.alnajjar1984@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -68,7 +68,7 @@ msgstr "الساعة"
 msgid "Date"
 msgstr "التاريخ"
 
-#: src/aclock.cc:199 src/themes.cc:80
+#: src/aclock.cc:199 src/themes.cc:82
 msgid "Default"
 msgstr "إفتراضي"
 
@@ -1322,119 +1322,119 @@ msgstr "إعادة التشغيل"
 msgid "Same Game"
 msgstr "نفس اللعبة"
 
-#: src/icesh.cc:76
+#: src/icesh.cc:75
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "للمساعدة برجاء الرجوع إلى صفحة الدليل(1).\n"
 
-#: src/icesh.cc:1634
+#: src/icesh.cc:1637
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "رمز اسم المجال `%s' (نظاق رقمي: %ld-%ld):\n"
 
-#: src/icesh.cc:1703
+#: src/icesh.cc:1706
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "مساحة العمل خارج النطاق: %ld"
 
-#: src/icesh.cc:1724
+#: src/icesh.cc:1727
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "اسم مساحة العمل غير صالح: `%s'"
 
-#: src/icesh.cc:2137
+#: src/icesh.cc:2140
 msgid "GNOME window layer"
 msgstr "طبقة نوافذ جنوم"
 
-#: src/icesh.cc:2138
+#: src/icesh.cc:2141
 msgid "IceWM tray option"
 msgstr "صينية خيارات IceWM"
 
-#: src/icesh.cc:2139
+#: src/icesh.cc:2142
 msgid "Gravity symbols"
 msgstr "رموز الخطورة"
 
-#: src/icesh.cc:2140
+#: src/icesh.cc:2143
 msgid "Motif functions"
 msgstr "وظائف تحرير"
 
-#: src/icesh.cc:2141
+#: src/icesh.cc:2144
 msgid "Motif decorations"
 msgstr "علامات التحرير"
 
-#: src/icesh.cc:2142
+#: src/icesh.cc:2145
 msgid "EWMH window state"
 msgstr "حالة نافذة EWMH"
 
-#: src/icesh.cc:2224 src/icesh.cc:2297
+#: src/icesh.cc:2227 src/icesh.cc:2300
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "مساحة العمل#%d: `%s'\n"
 
-#: src/icesh.cc:2548 src/icesh.cc:4231 src/icesh.cc:4729
+#: src/icesh.cc:2551 src/icesh.cc:4249 src/icesh.cc:4752
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "حالة غير صالحة: `%s'."
 
-#: src/icesh.cc:3416
+#: src/icesh.cc:3472
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "لا يمكن الحصول على هندسة النافذة 0x%lx"
 
-#: src/icesh.cc:3441
+#: src/icesh.cc:3497
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Xinerama غيرصالح: `%s'."
 
-#: src/icesh.cc:3804 src/icesh.cc:3854 src/icesh.cc:5043
+#: src/icesh.cc:3835 src/icesh.cc:3885 src/icesh.cc:5066
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "حجج غير صالحة: `%s'"
 
-#: src/icesh.cc:3820
+#: src/icesh.cc:3851
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "الحدث`%sيتطلب على الأقل %d حجه."
 
-#: src/icesh.cc:3829
+#: src/icesh.cc:3860
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "تعبير غير صالح: `%s'"
 
-#: src/icesh.cc:3840 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
+#: src/icesh.cc:3871 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
 #: src/wmapp.cc:1238 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "لا يمكن فتح العرض: %s. يجب تشغيل X وتعيين $DISPLAY."
 
-#: src/icesh.cc:3956
+#: src/icesh.cc:3987
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "غير متوقع: `%s'."
 
-#: src/icesh.cc:3985
+#: src/icesh.cc:4016
 msgid "No windows found."
 msgstr "لم يتم العثور على نوافذ."
 
-#: src/icesh.cc:4001
+#: src/icesh.cc:4032
 msgid "No actions specified."
 msgstr "لم تحدد أي إجراءات."
 
-#: src/icesh.cc:4148
+#: src/icesh.cc:4173
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "مُعرف نافذة خاطئ: `%s'"
 
-#: src/icesh.cc:4165
+#: src/icesh.cc:4189
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "PID غير صالحة: `%s'"
 
-#: src/icesh.cc:4201
+#: src/icesh.cc:4222
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "layer غير صالحة: `%s'."
 
-#: src/icesh.cc:5171
+#: src/icesh.cc:5194
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "إجراء غير معروف: `%s'"
@@ -1893,7 +1893,7 @@ msgstr ""
 " الوسط:0 متدرج:1 = ملء بُعدين والاحتفاظ بنسبة العرض إلى الارتفاع\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1818
+#: src/icewmbg.cc:1109 src/wmapp.cc:1821
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "خيار غير معروف '%s'."
@@ -2325,16 +2325,16 @@ msgstr ""
 msgid "%s configuration directories:\n"
 msgstr "دلائل إعداد %s:\n"
 
-#: src/wmapp.cc:1734
+#: src/wmapp.cc:1737
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s خيارات تمت إعدادها:%s\n"
 
-#: src/wmapp.cc:1868
+#: src/wmapp.cc:1871
 msgid "Confirm Logout"
 msgstr "تأكيد تسجيل الخروج"
 
-#: src/wmapp.cc:1869
+#: src/wmapp.cc:1872
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2370,7 +2370,7 @@ msgstr "لف للأسفل"
 msgid "Rollup"
 msgstr "لف للأعلى"
 
-#: src/wmclient.cc:457
+#: src/wmclient.cc:461
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2427,15 +2427,15 @@ msgstr "_إعادة تشغيل icewm"
 msgid "_About"
 msgstr "حول"
 
-#: src/wmframe.cc:1377
+#: src/wmframe.cc:1375
 msgid "Rename"
 msgstr ""
 
-#: src/wmframe.cc:1378
+#: src/wmframe.cc:1376
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1842
+#: src/wmframe.cc:1844
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2443,7 +2443,7 @@ msgstr ""
 "تحذير! سيتم فقدان جميع التغييرات غير المحفوظة عند\n"
 "قتل هذا العميل. هل ترغب في المتابعة؟"
 
-#: src/wmframe.cc:1847
+#: src/wmframe.cc:1849
 msgid "Kill Client: "
 msgstr "إنهاء العميل: "
 
@@ -2514,11 +2514,11 @@ msgstr "نفد وقته : '%s'"
 msgid "'%s' produces no output"
 msgstr "لم يصدر عن '%s' أية مخرجات"
 
-#: src/wmmgr.cc:3626
+#: src/wmmgr.cc:3624
 msgid "Missing program setxkbmap"
 msgstr "البرنامج مفقود"
 
-#: src/wmmgr.cc:3627
+#: src/wmmgr.cc:3625
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "لتبديل لوحة المفاتيح ، يرجى تثبيتsetxkbmap"
 

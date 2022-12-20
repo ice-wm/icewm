@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-12-04 23:58+0100\n"
+"POT-Creation-Date: 2022-12-20 20:11+0100\n"
 "PO-Revision-Date: 2002-10-04 12:30+0200\n"
 "Last-Translator: Tiberiu Micu <tibimicu@gmx.net>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -63,7 +63,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: src/aclock.cc:199 src/themes.cc:80
+#: src/aclock.cc:199 src/themes.cc:82
 #, fuzzy
 msgid "Default"
 msgstr "Şterge"
@@ -1319,130 +1319,130 @@ msgstr "Repornire"
 msgid "Same Game"
 msgstr "Acelaşi joc"
 
-#: src/icesh.cc:76
+#: src/icesh.cc:75
 msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 
-#: src/icesh.cc:1634
+#: src/icesh.cc:1637
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Denumiri simbolice ale domeniului `%s' (interval numeric: %ld-%ld):\n"
 
-#: src/icesh.cc:1703
+#: src/icesh.cc:1706
 #, fuzzy, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Spaţiu de lucru în afara domeniului: %d"
 
-#: src/icesh.cc:1724
+#: src/icesh.cc:1727
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Spaţiu de lucru invalid: `%s'"
 
-#: src/icesh.cc:2137
+#: src/icesh.cc:2140
 msgid "GNOME window layer"
 msgstr "Fereastra strat GNOME"
 
-#: src/icesh.cc:2138
+#: src/icesh.cc:2141
 msgid "IceWM tray option"
 msgstr "Opţiune Icewm tray"
 
-#: src/icesh.cc:2139
+#: src/icesh.cc:2142
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:2140
+#: src/icesh.cc:2143
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif functions"
 msgstr "Aplicaţii favorite"
 
-#: src/icesh.cc:2141
+#: src/icesh.cc:2144
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif decorations"
 msgstr "Aplicaţii favorite"
 
-#: src/icesh.cc:2142
+#: src/icesh.cc:2145
 #, fuzzy
 #| msgid "GNOME window state"
 msgid "EWMH window state"
 msgstr "Fereastra de stare GNOME"
 
-#: src/icesh.cc:2224 src/icesh.cc:2297
+#: src/icesh.cc:2227 src/icesh.cc:2300
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "spaţiu de lucru #%d: `%s'\n"
 
-#: src/icesh.cc:2548 src/icesh.cc:4231 src/icesh.cc:4729
+#: src/icesh.cc:2551 src/icesh.cc:4249 src/icesh.cc:4752
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Argument invalid: `%s'."
 
-#: src/icesh.cc:3416
+#: src/icesh.cc:3472
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3441
+#: src/icesh.cc:3497
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid Xinerama: `%s'."
 msgstr "Argument invalid: `%s'."
 
-#: src/icesh.cc:3804 src/icesh.cc:3854 src/icesh.cc:5043
+#: src/icesh.cc:3835 src/icesh.cc:3885 src/icesh.cc:5066
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
 msgstr "Argument invalid: `%s'."
 
-#: src/icesh.cc:3820
+#: src/icesh.cc:3851
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr ""
 
-#: src/icesh.cc:3829
+#: src/icesh.cc:3860
 #, fuzzy, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Argument invalid: `%s'."
 
-#: src/icesh.cc:3840 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
+#: src/icesh.cc:3871 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
 #: src/wmapp.cc:1238 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Nu pot porni afişarea: %s. Trebuie să ruleze X şi setat $DISPLAY."
 
-#: src/icesh.cc:3956
+#: src/icesh.cc:3987
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr ""
 
-#: src/icesh.cc:3985
+#: src/icesh.cc:4016
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:4001
+#: src/icesh.cc:4032
 msgid "No actions specified."
 msgstr "Nici o acţiune specificată"
 
-#: src/icesh.cc:4148
+#: src/icesh.cc:4173
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Identificator de ferestră invalid: `%s'"
 
-#: src/icesh.cc:4165
+#: src/icesh.cc:4189
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "Argument invalid: `%s'."
 
-#: src/icesh.cc:4201
+#: src/icesh.cc:4222
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Argument invalid: `%s'."
 
-#: src/icesh.cc:5171
+#: src/icesh.cc:5194
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Acţiune necunoscută: `%s'"
@@ -1797,7 +1797,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1818
+#: src/icewmbg.cc:1109 src/wmapp.cc:1821
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opţiune nerecunoscută: %s\n"
@@ -2188,16 +2188,16 @@ msgstr ""
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1734
+#: src/wmapp.cc:1737
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Opţiune nerecunoscută: %s\n"
 
-#: src/wmapp.cc:1868
+#: src/wmapp.cc:1871
 msgid "Confirm Logout"
 msgstr "Confirmă ieşirea"
 
-#: src/wmapp.cc:1869
+#: src/wmapp.cc:1872
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2233,7 +2233,7 @@ msgstr "Rulează în jos"
 msgid "Rollup"
 msgstr "Rulează în sus"
 
-#: src/wmclient.cc:457
+#: src/wmclient.cc:461
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2289,15 +2289,15 @@ msgstr "_Reporneşte icewm"
 msgid "_About"
 msgstr "Despre"
 
-#: src/wmframe.cc:1377
+#: src/wmframe.cc:1375
 msgid "Rename"
 msgstr ""
 
-#: src/wmframe.cc:1378
+#: src/wmframe.cc:1376
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1842
+#: src/wmframe.cc:1844
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2305,7 +2305,7 @@ msgstr ""
 "AVERTISMENT! Toate schimbările nesalvate vor fi pierdute\n"
 "când acest client este închis. Doriţi sa continuaţi?"
 
-#: src/wmframe.cc:1847
+#: src/wmframe.cc:1849
 msgid "Kill Client: "
 msgstr "Închide client: "
 
@@ -2374,11 +2374,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3626
+#: src/wmmgr.cc:3624
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3627
+#: src/wmmgr.cc:3625
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 

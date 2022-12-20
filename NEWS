@@ -1,11 +1,44 @@
-icewm -- history of user-visible changes.  2022-12-04
+icewm -- history of user-visible changes.  2022-12-20
 
-Release icewm-3.2.3 released 2022-12-04
+Release icewm-3.3.0 released 2022-12-20
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.2.3...3.3.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
+      Prevent a derefence of a null-Pixel in xftColor.
+      Add "getClass" and "setClass" commands to icesh.
+      Support tabs in task grouping.
+      Use spaces instead of dots when printing WM_COMMAND.
+      When a focused window hides or rolls up, focus some other window.
+      When looking for a focusable window, avoid rolled up windows.
+      Fix for setting focus on passive motif dialogs for issue #400 and
+        ice-wm/icewm#110.
+      Fallback to rolled up windows in the second pass of getLastFocus.
+      Use CurrentTime when setting focus to a passive client in the timeout.
+      On icon not found, report dimensions.
+      Don't refocus a focused window in focusLastWindow.
+      Don't activate an active window when receiving an activation message.
+      Ignore duplicate map requests.
+      Let icesh implicitly select windows at most once.
+      Add support for nanosvg for issue #695.
+      Add preference ToolTipIcon=1 for issue #637.
+      Add nanosvg to .gitignore.
+      Remove unneeded logevent from icesh.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Mehmet Akif 9oglu <madanadam@gmail.com> (1):
+      Translated using Weblate (Turkish)
+
+
+Release icewm-3.2.3 released 2022-12-05
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.2.2...3.2.3
 
-Bert Gijsbers <gijsbers@science.uva.nl> (18):
+Bert Gijsbers <gijsbers@science.uva.nl> (19):
       Only freeze task pane layout when a button was removed.
       Get rid of destroyedClient and simplify handleUnmap.
       Minimalize ClientData.
@@ -25,6 +58,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (18):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.2.3 release
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (2):
       Translated using Weblate (Japanese)
@@ -251,54 +285,4 @@ Ferdinand Galko <galko.ferdinand@gmail.com> (1):
 
 Hugo Carvalho <hugokarvalho@hotmail.com> (1):
       Translated using Weblate (Portuguese)
-
-
-Release icewm-3.0.0 released 2022-10-03
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.9.9...3.0.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (18):
-      Clarify icewmbg one image per workspace.
-      Succinct.
-      Fix setWorkspace for issue #667.
-      Make layers int. Add validLayer macro.
-      Add override and focusmodel commands to icesh.
-      Start icewm before icesound and icewmbg.
-      Print a message if icewmbg encounters an image loading failure.
-      Destructor must be virtual.
-      Add actionUntab.
-      Show the property name when debugging XGetWindowProperty errors.
-      Add support for tabbed windows. Add "ignoreOverrideRedirect" winoption.
-        Allow taskbar to hide/unhide by icesh.
-      Change updateNormalSize to have zero rounding error when cycling over
-        different terminals as tabs in a single frame.
-      Update pot files.
-      Only generate manual if source is newer than output.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Drop phony.
-      Prepare 3.0.0 release
-
-Eduard Bloch <blade@debian.org> (3):
-      Refactor and extend xrandr menu provider
-      Fix fdomenu copyright information
-      Section name bugfix and --activate implementation, etc.
-
-Luna  Jernberg <bittin@opensuse.org> (2):
-      Translated using Weblate (Swedish)
-      Translated using Weblate (Swedish)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Kristijan Fremen Velkovski <me@krisfremen.com> (1):
-      Translated using Weblate (Macedonian)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 
