@@ -22,13 +22,13 @@ AC_CONFIG_AUX_DIR([scripts])
 AC_USE_SYSTEM_EXTENSIONS
 AC_CANONICAL_TARGET
 
-DATE='2022-12-04'
+DATE='2022-12-05'
 AC_SUBST([DATE])
 
-MDOCDATE='December 4, 2022'
+MDOCDATE='December 05, 2022'
 AC_SUBST([MDOCDATE])
 
-BRANCH='3.2.3'
+BRANCH='icewm-1-4-BRANCH'
 AC_SUBST([BRANCH])
 
 APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icehelp'
@@ -87,7 +87,7 @@ LT_INIT([dlopen])
 LT_LANG([C++])
 AC_SUBST([LIBTOOL_DEPS])
 
-AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT_VERSION([0.19.2])
 AM_GNU_GETTEXT([external])
 
 AC_ARG_ENABLE([i18n],
@@ -350,6 +350,8 @@ AC_ARG_ENABLE([rsvg],
 AC_ARG_ENABLE([imlib2],
     AS_HELP_STRING([--disable-imlib2],[Disable imlib2 rendering.
         @<:@default=enabled@:>@]))
+AC_ARG_ENABLE([nanosvg],
+    AS_HELP_STRING([--enable-nanosvg],[Enable imlib2 SVG using nanosvg.]))
 AC_ARG_ENABLE([gdk-pixbuf],
     AS_HELP_STRING([--enable-gdk-pixbuf],[Enable gdk-pixbuf rendering.
 	@<:@default=disabled@:>@]))
@@ -396,6 +398,35 @@ then
             AC_DEFINE([CONFIG_LIBRSVG],[1],[Define to enable librsvg rendering.])
             image_library="$image_library librsvg-2.0"],
             [AC_MSG_WARN([Package librsvg is missing. SVG is not supported.])])
+    fi
+    if test "x$enable_rsvg" = xno &&
+       test "x$enable_nanosvg" = xyes
+    then
+        if ! test -f src/nanosvg.h ||
+           ! test -s src/nanosvg.h ||
+           ! test -f src/nanosvgrast.h ||
+           ! test -s src/nanosvgrast.h
+        then
+            hub=https://raw.githubusercontent.com/memononen/nanosvg/master/src/
+            if command -v wget >/dev/null
+            then
+                AC_MSG_NOTICE([downloading nanosvg using wget])
+                if ! wget -q --timeout=3 -e robots=off -P src \
+                    $hub/nanosvg.h $hub/nanosvgrast.h
+                then
+                    AC_MSG_WARN([download of nanosvg failed])
+                fi
+            fi
+        fi
+        if test -f src/nanosvg.h &&
+           test -s src/nanosvg.h &&
+           test -f src/nanosvgrast.h &&
+           test -s src/nanosvgrast.h
+        then
+            AC_DEFINE([CONFIG_NANOSVG],[1],[Define to enable nanosvg rendering.])
+        else
+            AC_MSG_WARN([Nanosvg includes are missing. SVG is not supported.])
+        fi
     fi
 fi
 if test "x$enable_gdk_pixbuf" != xyes &&
