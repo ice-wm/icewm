@@ -1015,10 +1015,12 @@ void YFrameWindow::configureClient(int cx, int cy, int cwidth, int cheight) {
         int posX, posY, posW, posH;
         getNormalGeometryInner(&posX, &posY, &posW, &posH);
 
-        if (isMaximizedVert() || isRollup()) {
+        if (isMaximizedVert()) {
             cy = posY;
             cheight = posH;
         }
+        if (isRollup())
+            cheight = posH;
         if (isMaximizedHoriz()) {
             cx = posX;
             cwidth = posW;
@@ -3540,6 +3542,33 @@ void YFrameWindow::setDoNotCover(bool doNotCover) {
 #endif
 
 void YFrameWindow::updateMwmHints(XSizeHints* sh) {
+    // when client adjusts normal hints base and increment:
+    XSizeHints* xs = client()->sizeHints();
+    if (xs != sh && xs && sh && xs->flags == sh->flags) {
+        int w = int(client()->width());
+        int h = int(client()->height());
+        if (xs->min_width < w && w < xs->max_width &&
+            sh->min_width < w && w < sh->max_width &&
+            xs->min_height < h && h < xs->max_height &&
+            sh->min_height < h && h < sh->max_height &&
+            ((xs->flags & PAspect) == 0 ||
+             (xs->min_aspect.x * h <= xs->min_aspect.y * w &&
+              xs->max_aspect.x * h >= xs->max_aspect.y * w)))
+        {
+            if (xs->width_inc != sh->width_inc ||
+                xs->height_inc != sh->height_inc ||
+                xs->base_width != sh->base_width ||
+                xs->base_height != sh->base_height)
+            {
+                int onw = posW - 2 * borderXN();
+                int onh = posH - (2 * borderYN() + titleYN());
+                normalW = (onw - xs->base_width) / max(1, xs->width_inc);
+                normalH = (onh - xs->base_height) / max(1, xs->height_inc);
+            }
+            return;
+        }
+    }
+
     YDimension old(dimension());
     getFrameHints();
     int nwidth = sh ? normalW * max(1, sh->width_inc) + sh->base_width
