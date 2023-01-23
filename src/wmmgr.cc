@@ -150,6 +150,8 @@ YWindowManager::~YWindowManager() {
     delete rootProxy;
     delete fSwitchWindow;
     delete fDockApp;
+    if (manager == this)
+        manager = nullptr;
 }
 
 void YWindowManager::setWmState(WMState newWmState) {
@@ -1709,10 +1711,8 @@ void YWindowManager::placeWindow(YFrameWindow *frame,
     }
 
     if (newClient && client->adopted() && client->sizeHints() &&
-        (!(client->sizeHints()->flags & (USPosition | PPosition)) ||
-         ((client->sizeHints()->flags & PPosition)
-          && frame->frameOption(YFrameWindow::foIgnorePosition)
-         )))
+        (notbit(client->sizeHints()->flags, USPosition | PPosition) ||
+         frame->frameOption(YFrameWindow::foIgnorePosition)))
     {
         int xiscreen = (fFocusWin ? fFocusWin->getScreen() :
                         frame->owner() ? frame->owner()->getScreen() :
@@ -1810,6 +1810,12 @@ YFrameClient* YWindowManager::allocateClient(Window win, bool mapClient) {
             client = nullptr;
         if (client && attributes.override_redirect && validLayer(layer))
             client->setLayerHint(layer);
+        if (client && attributes.override_redirect) {
+            unsigned long mask = CWOverrideRedirect;
+            XSetWindowAttributes attr;
+            attr.override_redirect = False;
+            XChangeWindowAttributes(xapp->display(), win, mask, &attr);
+        }
     }
     return client;
 }
@@ -3605,14 +3611,15 @@ void YWindowManager::setKeyboard(int configIndex) {
 void YWindowManager::setKeyboard(mstring keyboard) {
     if (keyboard != null && keyboard != fCurrentKeyboard) {
         fCurrentKeyboard = keyboard;
-        auto program = "setxkbmap";
+        char program[] = "setxkbmap";
         csmart path(path_lookup(program));
         if (path) {
             wordexp_t exp = {};
             exp.we_offs = 1;
             if (wordexp(keyboard, &exp, WRDE_NOCMD | WRDE_DOOFFS) == 0) {
-                exp.we_wordv[0] = strdup(program);
+                exp.we_wordv[0] = program;
                 wmapp->runProgram(program, exp.we_wordv);
+                exp.we_wordv[0] = nullptr;
                 wordfree(&exp);
             }
             if (taskBar) {
@@ -3819,12 +3826,16 @@ void YWindowManager::updateScreenSize(XEvent *event) {
         Atom data[2] = { nw, nh };
         setProperty(_XA_NET_DESKTOP_GEOMETRY, XA_CARDINAL, data, 2);
         setSize(nw, nh);
+
+        if (taskBar) {
+            taskBar->updateLocation();
+        }
         updateWorkArea();
+
         if (taskBar && pagerShowPreview) {
             taskBar->workspacesUpdateButtons();
         }
         if (taskBar) {
-            taskBar->relayout();
             taskBar->relayoutNow();
         }
         for (int i = 0; i < edges.getCount(); ++i)
