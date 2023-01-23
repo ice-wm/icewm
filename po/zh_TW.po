@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-12-20 20:11+0100\n"
+"POT-Creation-Date: 2023-01-23 22:04+0100\n"
 "PO-Revision-Date: 2022-02-18 13:12+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/icewm/"
@@ -158,12 +158,12 @@ msgstr "合併(_C)"
 msgid "_Separate"
 msgstr "獨立(_S)"
 
-#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:467 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s 已離開，狀態為 %d。"
 
-#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
+#: src/akeyboard.cc:86 src/icesm.cc:473 src/icesm.cc:627
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s 被訊號 %d 強行中止。"
@@ -184,7 +184,7 @@ msgstr "配置："
 msgid "options:"
 msgstr "選項："
 
-#: src/akeyboard.cc:151
+#: src/akeyboard.cc:157
 msgid "Keyboard"
 msgstr "鍵盤"
 
@@ -1325,115 +1325,121 @@ msgstr "Same 遊戲"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "若要取得說明，請參考 man 頁面 icesh(1)。\n"
 
-#: src/icesh.cc:1637
+#: src/icesh.cc:1642
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "網域「%s」的命名符號（數值範圍：%ld-%ld）：\n"
 
-#: src/icesh.cc:1706
+#: src/icesh.cc:1711
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "工作區超出範圍︰%ld"
 
-#: src/icesh.cc:1727
+#: src/icesh.cc:1732
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "無效的工作區名稱：「%s」"
 
-#: src/icesh.cc:2140
+#: src/icesh.cc:2145
 msgid "GNOME window layer"
 msgstr "GNOME 視窗層次"
 
-#: src/icesh.cc:2141
+#: src/icesh.cc:2146
 msgid "IceWM tray option"
 msgstr "IceWM 系統列選項"
 
-#: src/icesh.cc:2142
+#: src/icesh.cc:2147
 msgid "Gravity symbols"
 msgstr "Gravity 符號"
 
-#: src/icesh.cc:2143
+#: src/icesh.cc:2148
 msgid "Motif functions"
 msgstr "Motif 功能"
 
-#: src/icesh.cc:2144
+#: src/icesh.cc:2149
 msgid "Motif decorations"
 msgstr "Motif 修飾"
 
-#: src/icesh.cc:2145
+#: src/icesh.cc:2150
 msgid "EWMH window state"
 msgstr "EWMH 視窗狀態"
 
-#: src/icesh.cc:2227 src/icesh.cc:2300
+#: src/icesh.cc:2232 src/icesh.cc:2305
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "工作區 #%d：「%s」\n"
 
-#: src/icesh.cc:2551 src/icesh.cc:4249 src/icesh.cc:4752
+#: src/icesh.cc:2556 src/icesh.cc:4261 src/icesh.cc:4873
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "無效狀態：`%s'。"
 
-#: src/icesh.cc:3472
+#: src/icesh.cc:3477
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "無法獲取視窗 0x%lx 的記憶體"
 
-#: src/icesh.cc:3497
+#: src/icesh.cc:3502
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "無效 Xinerama：`%s'。"
 
-#: src/icesh.cc:3835 src/icesh.cc:3885 src/icesh.cc:5066
+#: src/icesh.cc:3624 src/icesh.cc:3632 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/wmsave.cc:298 src/wmsave.cc:301
+#, c-format
+msgid "Unable to write to %s"
+msgstr "無法寫入 %s"
+
+#: src/icesh.cc:3847 src/icesh.cc:3897 src/icesh.cc:5187
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "引數無效：「%s」"
 
-#: src/icesh.cc:3851
+#: src/icesh.cc:3863
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "動作「%s」需要至少 %d 個引數。"
 
-#: src/icesh.cc:3860
+#: src/icesh.cc:3872
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "表示式無效：「%s」"
 
-#: src/icesh.cc:3871 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
+#: src/icesh.cc:3883 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
 #: src/wmapp.cc:1238 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "無法開啟顯示：%s。X 必須正在執行且需設定 $DISPLAY。"
 
-#: src/icesh.cc:3987
+#: src/icesh.cc:3999
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "非預期：`%s'。"
 
-#: src/icesh.cc:4016
+#: src/icesh.cc:4028
 msgid "No windows found."
 msgstr "找不到視窗。"
 
-#: src/icesh.cc:4032
+#: src/icesh.cc:4044
 msgid "No actions specified."
 msgstr "未指定動作。"
 
-#: src/icesh.cc:4173
+#: src/icesh.cc:4185
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "無效的視窗識別碼：「%s」"
 
-#: src/icesh.cc:4189
+#: src/icesh.cc:4201
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "無效 PID：`%s'"
 
-#: src/icesh.cc:4222
+#: src/icesh.cc:4234
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "無效層：`%s'。"
 
-#: src/icesh.cc:5194
+#: src/icesh.cc:5315
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "未知動作：「%s」"
@@ -1494,12 +1500,12 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "未知選項「%s」"
 
-#: src/icesm.cc:460 src/icesm.cc:620
+#: src/icesm.cc:461 src/icesm.cc:621
 #, c-format
 msgid "restart %s."
 msgstr "重新啟動 %s。"
 
-#: src/icesm.cc:511
+#: src/icesm.cc:512
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1515,7 +1521,7 @@ msgstr ""
 "\t2: 中止此工作階段？\n"
 "\t3: 執行終端機?\n"
 
-#: src/icesm.cc:517
+#: src/icesm.cc:518
 msgid "IceWM crash response"
 msgstr "IceWM 當機回應"
 
@@ -1869,7 +1875,7 @@ msgstr ""
 " center:1 scaled:1 = 沿兩個方向填充並保持長寬比率\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1821
+#: src/icewmbg.cc:1109 src/wmapp.cc:1823
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "無法識別選項「%s」。"
@@ -2202,12 +2208,12 @@ msgstr ""
 msgid "<none>"
 msgstr "<無>"
 
-#: src/wmapp.cc:1562
+#: src/wmapp.cc:1564
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr "  --client-id=ID      聯絡工作階段管理程式時要使用的用戶端 ID。\n"
 
-#: src/wmapp.cc:1568
+#: src/wmapp.cc:1570
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2217,7 +2223,7 @@ msgstr ""
 "  --debug             列印一般除錯訊息。\n"
 "  --debug-z           列印有關視窗堆疊的除錯訊息。\n"
 
-#: src/wmapp.cc:1576
+#: src/wmapp.cc:1578
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2237,7 +2243,7 @@ msgstr ""
 "  --rewrite-preferences  更新現有優先設定檔案。\n"
 "  --trace=conf,icon   追蹤用於載入組態的路徑。\n"
 
-#: src/wmapp.cc:1586
+#: src/wmapp.cc:1588
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2296,21 +2302,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1652
+#: src/wmapp.cc:1654
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s 組態目錄︰\n"
 
-#: src/wmapp.cc:1737
+#: src/wmapp.cc:1739
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s 設定的選項：%s\n"
 
-#: src/wmapp.cc:1871
+#: src/wmapp.cc:1873
 msgid "Confirm Logout"
 msgstr "確定登出"
 
-#: src/wmapp.cc:1872
+#: src/wmapp.cc:1874
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2346,7 +2352,7 @@ msgstr "向下循環"
 msgid "Rollup"
 msgstr "向上循環"
 
-#: src/wmclient.cc:461
+#: src/wmclient.cc:462
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2369,11 +2375,6 @@ msgstr "未知值「%s」(對於選項「%s」)。"
 #, c-format
 msgid "Unable to create directory %s"
 msgstr "無法建立目錄 %s"
-
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
-#, c-format
-msgid "Unable to write to %s"
-msgstr "無法寫入 %s"
 
 #: src/wmconfig.cc:184 src/wmsave.cc:306
 #, c-format
@@ -2403,15 +2404,15 @@ msgstr "重新啟動 icewm(_R)"
 msgid "_About"
 msgstr "關於(_A)"
 
-#: src/wmframe.cc:1375
+#: src/wmframe.cc:1377
 msgid "Rename"
 msgstr ""
 
-#: src/wmframe.cc:1376
+#: src/wmframe.cc:1378
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1844
+#: src/wmframe.cc:1846
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2419,7 +2420,7 @@ msgstr ""
 "【警告】！當這個客戶端程式被砍掉時，將會失去所有未儲存的變更。\n"
 "您希望繼續進行嗎？"
 
-#: src/wmframe.cc:1849
+#: src/wmframe.cc:1851
 msgid "Kill Client: "
 msgstr "砍掉客戶端："
 
@@ -2490,11 +2491,11 @@ msgstr "\"%s\" 已逾時！"
 msgid "'%s' produces no output"
 msgstr "「%s」未產生任何輸出"
 
-#: src/wmmgr.cc:3624
+#: src/wmmgr.cc:3631
 msgid "Missing program setxkbmap"
 msgstr "缺少程式 setxkbmap"
 
-#: src/wmmgr.cc:3625
+#: src/wmmgr.cc:3632
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "若要進行鍵盤切換，請安裝 setxkbmap。"
 
@@ -2630,7 +2631,7 @@ msgstr "排列圖示(_I)"
 msgid "_Refresh"
 msgstr "重新整理(_R)"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1007
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1009
 msgid "Hide Taskbar"
 msgstr "隱藏工作列"
 
@@ -2646,7 +2647,7 @@ msgstr "視窗列表選單"
 msgid "Show Desktop"
 msgstr "顯示桌面"
 
-#: src/wmtaskbar.cc:1007
+#: src/wmtaskbar.cc:1009
 msgid "Show Taskbar"
 msgstr "顯示工作列"
 

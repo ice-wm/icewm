@@ -1,11 +1,76 @@
-icewm -- history of user-visible changes.  2022-12-20
+icewm -- history of user-visible changes.  2023-01-23
+
+Release icewm-3.3.1 released 2023-01-23
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.3.0...3.3.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (30):
+      Add support for nanosvg to gdk-pixbuf rendering and to cmake build.
+      Set DoNotCover hint on taskbar when layer is Dock.
+      Report the chosen audio interface in configure for issue #699.
+      Consider that the keyboard may have been changed externally for #698.
+      Free tray gradients when done.
+      Fix compilation of iceclock.
+      Fix tiny memory leak.
+      Delete the manager on exit.
+      Verify that the minimum size hints are positive, before comparing them to
+        maximum.
+      Increase the timeout for the dynamic menu generator to 2.0 seconds.
+      Don't resize the window when a client makes small adjustments to the
+        WM_NORMAL_HINTS property for issue ice-wm/icewm#115.
+      Allow rolled up windows to be moved vertically for issue ice-wm/icewm#77.
+      Compute the adjusted normalized dimensions on the basis of the previous
+        normalized dimensions.
+      Let winoption "ignorePositionHint" also ignore USPosition for issue #701.
+      Adjust normalized dimensions from the outer dimensions, as this avoids
+        accumulating rounding errors.
+      On screen change, update taskbar location before work area, for
+        ice-wm/icewm#116.
+      Make updateLocation public.
+      Don't reactivate a focused window when RaisOnClick is guaranteed.
+      Also spy on RandR events.
+      Also activate a focused rollup.
+      Drop "sync" from examples, because that is now done automatically.
+      Drop "shell", because no shell is used.
+      When the "ignoreOverrideRedirect" winoption is set, then clear the
+        override_redirect flag in the X window attributes in order to receive
+        proper resize events.
+      Cache 3 GCs for rendering XImages to Pixmaps to reduce memory allocations.
+      Prevent a compiler warning for runProgram.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Check the return value of write calls in icesh to avoid warnings.
+      Two pragmas to avoid two irrelevant gcc warnings.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Baurzhan Muftakhidinov <baurthefirst@gmail.com> (4):
+      Added translation using Weblate (Kazakh)
+      Translated using Weblate (Kazakh)
+      Translated using Weblate (Kazakh)
+      Translated using Weblate (Kazakh)
+
+Aleš Kastner <alkas@volny.cz> (1):
+      Translated using Weblate (Czech)
+
+Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
+      Translated using Weblate (Indonesian)
+
+Vincent Legoll <vincent.legoll@gmail.com> (1):
+      Translated using Weblate (French)
+
+dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (1):
+      Dependabot from 2 to 3 (#686)
+
 
 Release icewm-3.3.0 released 2022-12-20
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.2.3...3.3.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (20):
+Bert Gijsbers <gijsbers@science.uva.nl> (21):
       Prevent a derefence of a null-Pixel in xftColor.
       Add "getClass" and "setClass" commands to icesh.
       Support tabs in task grouping.
@@ -28,6 +93,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (20):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.3.0 release
 
 Mehmet Akif 9oglu <madanadam@gmail.com> (1):
       Translated using Weblate (Turkish)
@@ -259,30 +325,4 @@ Wallon <franckjl@hotmail.com> (1):
 
 marcelo cripe <marcelocripe@gmail.com> (1):
       Translated using Weblate (Portuguese (Brazil))
-
-
-Release icewm-3.0.1 released 2022-10-06
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.0.0...3.0.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (8):
-      Fix typo for KeyWinPrev.
-      Fix _NET_REQUEST_FRAME_EXTENTS for issue ice-wm/icewm#93.
-      Remove PHONY to fix distclean.
-      More elaborate implementation of _NET_REQUEST_FRAME_EXTENTS.
-      Fix typo.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.0.1 release
-
-Alexey Yaryshev <clarkez344@gmail.com> (1):
-      Translated using Weblate (Russian)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
 

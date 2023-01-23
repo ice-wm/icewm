@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.21pre1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2022-12-20 20:11+0100\n"
+"POT-Creation-Date: 2023-01-23 22:04+0100\n"
 "PO-Revision-Date: 2016-08-25 08:19+0000\n"
 "Last-Translator: Hoàng Phạm <pnhoang96@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.opensuse.org/projects/icewm/"
@@ -167,12 +167,12 @@ msgstr ""
 msgid "_Separate"
 msgstr ""
 
-#: src/akeyboard.cc:83 src/icesm.cc:466 src/wmmenu.cc:503
+#: src/akeyboard.cc:83 src/icesm.cc:467 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
 msgstr ""
 
-#: src/akeyboard.cc:86 src/icesm.cc:472 src/icesm.cc:626
+#: src/akeyboard.cc:86 src/icesm.cc:473 src/icesm.cc:627
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr ""
@@ -195,7 +195,7 @@ msgstr ""
 msgid "options:"
 msgstr "Tùy chọn tồi: %s"
 
-#: src/akeyboard.cc:151
+#: src/akeyboard.cc:157
 msgid "Keyboard"
 msgstr ""
 
@@ -1366,126 +1366,132 @@ msgstr "Same Game"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 
-#: src/icesh.cc:1637
+#: src/icesh.cc:1642
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Các kí tự tên của vùng `%s' (giới hạn số: %ld-%ld):\n"
 
-#: src/icesh.cc:1706
+#: src/icesh.cc:1711
 #, fuzzy, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Không gian nằm ngoài giới hạn: %d"
 
-#: src/icesh.cc:1727
+#: src/icesh.cc:1732
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Tên không gian không hộp lệ: `%s'"
 
-#: src/icesh.cc:2140
+#: src/icesh.cc:2145
 msgid "GNOME window layer"
 msgstr "Lớp cửa sổ GNOME"
 
-#: src/icesh.cc:2141
+#: src/icesh.cc:2146
 msgid "IceWM tray option"
 msgstr "Tuỳ chọn khay IceWM"
 
-#: src/icesh.cc:2142
+#: src/icesh.cc:2147
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:2143
+#: src/icesh.cc:2148
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif functions"
 msgstr "Ứng dụng ưa thích"
 
-#: src/icesh.cc:2144
+#: src/icesh.cc:2149
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Motif decorations"
 msgstr "Ứng dụng ưa thích"
 
-#: src/icesh.cc:2145
+#: src/icesh.cc:2150
 #, fuzzy
 #| msgid "GNOME window state"
 msgid "EWMH window state"
 msgstr "Trạng thái cửa sổ GNOME"
 
-#: src/icesh.cc:2227 src/icesh.cc:2300
+#: src/icesh.cc:2232 src/icesh.cc:2305
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "không gian #%d: `%s'\n"
 
-#: src/icesh.cc:2551 src/icesh.cc:4249 src/icesh.cc:4752
+#: src/icesh.cc:2556 src/icesh.cc:4261 src/icesh.cc:4873
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Tham số không hợp lệ: `%s'."
 
-#: src/icesh.cc:3472
+#: src/icesh.cc:3477
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3497
+#: src/icesh.cc:3502
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid Xinerama: `%s'."
 msgstr "Tham số không hợp lệ: `%s'."
 
-#: src/icesh.cc:3835 src/icesh.cc:3885 src/icesh.cc:5066
+#: src/icesh.cc:3624 src/icesh.cc:3632 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/wmsave.cc:298 src/wmsave.cc:301
+#, c-format
+msgid "Unable to write to %s"
+msgstr ""
+
+#: src/icesh.cc:3847 src/icesh.cc:3897 src/icesh.cc:5187
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
 msgstr "Tham số không hợp lệ: `%s'."
 
-#: src/icesh.cc:3851
+#: src/icesh.cc:3863
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Hành động `%s' yêu cầu ít nhất %d tham số."
 
-#: src/icesh.cc:3860
+#: src/icesh.cc:3872
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Biểu thức không hợp lệ: `%s'."
 
-#: src/icesh.cc:3871 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
+#: src/icesh.cc:3883 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
 #: src/wmapp.cc:1238 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Không mở được màn hình: %s. Cần chạy X và đặt biến $DISPLAY."
 
-#: src/icesh.cc:3987
+#: src/icesh.cc:3999
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "Từ khoá không mong đợi: %s"
 
-#: src/icesh.cc:4016
+#: src/icesh.cc:4028
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:4032
+#: src/icesh.cc:4044
 msgid "No actions specified."
 msgstr "Không có hành động nào được chỉ ra."
 
-#: src/icesh.cc:4173
+#: src/icesh.cc:4185
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Tên cửa sổ không hợp lệ: `%s'"
 
-#: src/icesh.cc:4189
+#: src/icesh.cc:4201
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "Tham số không hợp lệ: `%s'."
 
-#: src/icesh.cc:4222
+#: src/icesh.cc:4234
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Tham số không hợp lệ: `%s'."
 
-#: src/icesh.cc:5194
+#: src/icesh.cc:5315
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Hành động không xác định: `%s'"
@@ -1527,13 +1533,13 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "Hành động không xác định: `%s'"
 
-#: src/icesm.cc:460 src/icesm.cc:620
+#: src/icesm.cc:461 src/icesm.cc:621
 #, fuzzy, c-format
 #| msgid "Restart"
 msgid "restart %s."
 msgstr "Khởi động lại"
 
-#: src/icesm.cc:511
+#: src/icesm.cc:512
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1543,7 +1549,7 @@ msgid ""
 "\t3: Run a terminal?\n"
 msgstr ""
 
-#: src/icesm.cc:517
+#: src/icesm.cc:518
 #, fuzzy
 #| msgid "IceWM tray option"
 msgid "IceWM crash response"
@@ -1853,7 +1859,7 @@ msgstr ""
 " center:0 scaled:0 = kiểu lát gạch\n"
 " center:1 scaled:1 = giữ tỉ lệ nền\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1821
+#: src/icewmbg.cc:1109 src/wmapp.cc:1823
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Tuỳ chọn không xác định: %s\n"
@@ -2183,19 +2189,19 @@ msgstr ""
 msgid "<none>"
 msgstr "<không>"
 
-#: src/wmapp.cc:1562
+#: src/wmapp.cc:1564
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1568
+#: src/wmapp.cc:1570
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1576
+#: src/wmapp.cc:1578
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2207,7 +2213,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1586
+#: src/wmapp.cc:1588
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2264,21 +2270,21 @@ msgstr ""
 "\n"
 "Để báo cáo lỗi, yêu cầu hỗ trợ, nhận xét,... hãy lên https://ice-wm.org/\n"
 
-#: src/wmapp.cc:1652
+#: src/wmapp.cc:1654
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1737
+#: src/wmapp.cc:1739
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Tuỳ chọn không xác định: %s\n"
 
-#: src/wmapp.cc:1871
+#: src/wmapp.cc:1873
 msgid "Confirm Logout"
 msgstr "Xác nhận việc thoát"
 
-#: src/wmapp.cc:1872
+#: src/wmapp.cc:1874
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2314,7 +2320,7 @@ msgstr "Thả xuống"
 msgid "Rollup"
 msgstr "Kéo lên"
 
-#: src/wmclient.cc:461
+#: src/wmclient.cc:462
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2335,11 +2341,6 @@ msgstr "Hành động không xác định: `%s'"
 #, fuzzy, c-format
 msgid "Unable to create directory %s"
 msgstr "Lỗi khi tạo tiến trình con: %s"
-
-#: src/wmconfig.cc:148 src/wmsave.cc:65 src/wmsave.cc:298 src/wmsave.cc:301
-#, c-format
-msgid "Unable to write to %s"
-msgstr ""
 
 #: src/wmconfig.cc:184 src/wmsave.cc:306
 #, fuzzy, c-format
@@ -2369,15 +2370,15 @@ msgstr "_Chạy lại icewm"
 msgid "_About"
 msgstr "_Giới thiệu về icewm"
 
-#: src/wmframe.cc:1375
+#: src/wmframe.cc:1377
 msgid "Rename"
 msgstr ""
 
-#: src/wmframe.cc:1376
+#: src/wmframe.cc:1378
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1844
+#: src/wmframe.cc:1846
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2385,7 +2386,7 @@ msgstr ""
 "CẢNH BÁO! Tất cả những thay đổi chưa ghi nhớ sẽ bị mất khi\n"
 "chương trình con này bị diệt. Bạn có muốn tiếp tục diệt?"
 
-#: src/wmframe.cc:1849
+#: src/wmframe.cc:1851
 msgid "Kill Client: "
 msgstr "Diệt chương trình con: "
 
@@ -2454,11 +2455,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3624
+#: src/wmmgr.cc:3631
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3625
+#: src/wmmgr.cc:3632
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2598,7 +2599,7 @@ msgstr "Sắp xếp _biểu tượng"
 msgid "_Refresh"
 msgstr "Làm mới _màn hình"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1007
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1009
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -2620,7 +2621,7 @@ msgstr "Trình đơn danh sách cửa sổ"
 msgid "Show Desktop"
 msgstr "Thu nhỏ tất cả"
 
-#: src/wmtaskbar.cc:1007
+#: src/wmtaskbar.cc:1009
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
