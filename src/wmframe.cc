@@ -37,7 +37,7 @@ YArray<YFrameWindow*> YFrameWindow::namedFrames;
 
 YFrameWindow::YFrameWindow(
     YActionListener *wmActionListener, unsigned dep, Visual* vis, Colormap col)
-    : YWindow(nullptr, None, dep ? dep : xapp->depth(),
+    : YWindow(desktop, None, dep ? dep : xapp->depth(),
               vis ? vis : xapp->visual(), col ? col : xapp->colormap()),
     fManaged(false),
     fFocused(false),
@@ -312,6 +312,7 @@ void YFrameWindow::selectTab(YFrameClient* tab) {
     }
     performLayout();
     updateIcon();
+    updateAllowed();
     if (visible()) {
         client()->show();
         container()->show();
@@ -1047,20 +1048,9 @@ void YFrameWindow::handleCrossing(const XCrossingEvent &crossing) {
         (strongPointerFocus ||
          (crossing.serial != YWindow::getLastEnterNotifySerial() &&
           crossing.serial != YWindow::getLastEnterNotifySerial() + 1))
-#if false
-        &&
-        (strongPointerFocus ||
-         fMouseFocusX != crossing.x_root ||
-         fMouseFocusY != crossing.y_root)
-#endif
        )
     {
-        //msg("xf: %d %d", fMouseFocusX, crossing.x_root, fMouseFocusY, crossing.y_root);
-
-//        fMouseFocusX = crossing.x_root;
-//        fMouseFocusY = crossing.y_root;
-
-        if (!clickFocus && visible() && canFocusByMouse()) {
+        if (!clickFocus && visible() && canFocus()) {
             if (!delayPointerFocus)
                 focus(false);
             else {
@@ -1079,9 +1069,6 @@ void YFrameWindow::handleCrossing(const XCrossingEvent &crossing) {
                focusRootWindow &&
                crossing.window == handle())
     {
-//        fMouseFocusX = crossing.x_root;
-//        fMouseFocusY = crossing.y_root;
-
         if (crossing.detail != NotifyInferior &&
             crossing.mode == NotifyNormal)
         {
@@ -1096,6 +1083,14 @@ void YFrameWindow::handleCrossing(const XCrossingEvent &crossing) {
                crossing.detail == NotifyNonlinearVirtual) {
         if (fDelayFocusTimer)
             fDelayFocusTimer->disableTimerListener(this);
+    } else if (crossing.type == EnterNotify &&
+               crossing.mode == NotifyNormal &&
+               crossing.detail == NotifyNonlinearVirtual) {
+        if (fDelayFocusTimer &&
+            fDelayFocusTimer->getTimerListener() == this &&
+            fDelayFocusTimer->isRunning() == false &&
+            delayPointerFocus && !clickFocus && !focused())
+            fDelayFocusTimer->setTimer(pointerFocusDelay, this, true);
     }
 }
 
@@ -1320,10 +1315,10 @@ void YFrameWindow::actionPerformed(YAction action, unsigned int modifiers) {
             wmRaise();
         break;
     case actionDepth:
-        if (overlaps(bool(Below)) && canRaise()){
+        if (overlapped() && canRaise()) {
             wmRaise();
             manager->setFocus(this, true);
-        } else if (overlaps(bool(Above)) && canLower())
+        } else if (overlapping() && canLower())
             wmLower();
         break;
     case actionRollup:
@@ -1576,8 +1571,11 @@ bool YFrameWindow::canRestore() const {
 
 void YFrameWindow::wmRestore() {
     if (canRestore()) {
+        bool unmapped = isUnmapped();
         wmapp->signalGuiEvent(geWindowRestore);
         setState(WinStateUnmapped | WinStateMaximizedBoth, 0);
+        if (unmapped)
+            maybeFocus();
     }
 }
 
@@ -1654,7 +1652,8 @@ void YFrameWindow::restoreHiddenTransients() {
 }
 
 void YFrameWindow::doMaximize(int flags) {
-    if (isUnmapped()) {
+    bool unmapped = isUnmapped();
+    if (unmapped) {
         makeMapped();
         xapp->sync();
     }
@@ -1664,7 +1663,11 @@ void YFrameWindow::doMaximize(int flags) {
     } else {
         wmapp->signalGuiEvent(geWindowMax);
         setState(WinStateMaximizedBoth, flags);
+        if (container()->buttoned() == false && overlapped())
+            container()->grabButtons();
     }
+    if (unmapped)
+        maybeFocus();
 }
 
 void YFrameWindow::wmMaximize() {
@@ -1683,12 +1686,13 @@ void YFrameWindow::wmRollup() {
     if (isRollup()) {
         wmapp->signalGuiEvent(geWindowRestore);
         makeMapped();
+        maybeFocus();
     } else {
         //if (!canRollup())
         //    return ;
         wmapp->signalGuiEvent(geWindowRollup);
         setState(WinStateUnmapped, WinStateRollup);
-        if (focused())
+        if (focused() && !clickFocus && !strongPointerFocus)
             manager->focusLastWindow();
     }
 }
@@ -1697,10 +1701,11 @@ void YFrameWindow::wmHide() {
     if (isHidden()) {
         wmapp->signalGuiEvent(geWindowRestore);
         makeMapped();
+        maybeFocus();
     } else {
         wmapp->signalGuiEvent(geWindowHide);
         setState(WinStateUnmapped, WinStateHidden);
-        if (focused())
+        if (focused() && !clickFocus && !strongPointerFocus)
             manager->focusLastWindow();
     }
 }
@@ -1916,10 +1921,7 @@ void YFrameWindow::loseWinFocus() {
         } else {
             updateLayer();
         }
-        if (true || !clientMouseActions)
-            if (focusOnClickClient || raiseOnClickClient)
-                if (container())
-                    container()->grabButtons();
+        container()->grabButtons();
         if (isIconic())
             fMiniIcon->repaint();
         else {
@@ -1950,10 +1952,8 @@ void YFrameWindow::setWinFocus() {
         }
         updateTaskBar();
 
-        if (true || !clientMouseActions) {
-            if (!raiseOnClickClient || !canRaise() || !overlaps(bool(Below)))
-                container()->releaseButtons();
-        }
+        if (!raiseOnClickClient || !canRaise() || !overlapped())
+            container()->releaseButtons();
         if (taskBar) {
             taskBar->workspacesRepaint(getWorkspace());
         }
@@ -2069,6 +2069,20 @@ void YFrameWindow::wmShow() {
     limitOuterPosition();
     if (isUnmapped()) {
         makeMapped();
+        maybeFocus();
+    }
+}
+
+void YFrameWindow::maybeFocus() {
+    if (manager->netActiveWindow() == None &&
+        manager->focusLocked() == false &&
+        (clickFocus || !strongPointerFocus) &&
+        visible())
+    {
+        bool fom = true;
+        updateFocusOnMap(fom);
+        if (fom)
+            focus();
     }
 }
 
@@ -2790,9 +2804,8 @@ bool YFrameWindow::isModal() {
         return true;
 
     MwmHints *mwmHints = client()->mwmHints();
-    if (mwmHints && (mwmHints->flags & MWM_HINTS_INPUT_MODE))
-        if (mwmHints->input_mode != MWM_INPUT_MODELESS)
-            return true;
+    if (mwmHints && mwmHints->inputModal())
+        return true;
 
     if (hasModal())
         return true;
@@ -2824,10 +2837,6 @@ bool YFrameWindow::hasModal() {
 
 bool YFrameWindow::canFocus() {
     return !hasModal() && !avoidFocus();
-}
-
-bool YFrameWindow::canFocusByMouse() {
-    return canFocus();
 }
 
 bool YFrameWindow::avoidFocus() {

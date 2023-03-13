@@ -630,11 +630,17 @@ void YFrameClient::handleProperty(const XPropertyEvent &property) {
     case XA_WM_CLASS:
         prop.wm_class = new_prop;
         if (prop.wm_class) {
-            ClassHint old(fClassHint);
+            ClassHint previous(fClassHint);
             getClassHint();
-            if (fClassHint.nonempty() && fClassHint != old) {
+            if (fClassHint.nonempty() && fClassHint != previous) {
+                int old = fWindowOption ? fWindowOption->layer : WinLayerInvalid;
+                fWindowOption = null;
                 if (fFrame) {
                     fFrame->getFrameHints();
+                    if (fWindowOption && validLayer(fWindowOption->layer))
+                        fFrame->setRequestedLayer(fWindowOption->layer);
+                    else if (validLayer(old))
+                        fFrame->setRequestedLayer(WinLayerNormal);
                     if (taskBarTaskGrouping) {
                         fFrame->removeAppStatus();
                         fFrame->updateAppStatus();
@@ -1635,12 +1641,12 @@ bool YFrameClient::getWinTrayHint(int* tray_opt) {
 }
 
 void YFrameClient::setStateHint(int state) {
-    MSG(("set state 0x%8X, saved 0x%8X, win 0x%lx",
-          state, fWinStateHint, handle()));
-
     if (((fWinStateHint ^ state) & WIN_STATE_NET) == 0 || destroyed()) {
         return;
     } else {
+        MSG(("0x%07lx: set state 0x%8X, saved 0x%8X", handle(),
+              state & WIN_STATE_NET, fWinStateHint == InvalidFrameState ?
+              InvalidFrameState : fWinStateHint & WIN_STATE_NET));
         fWinStateHint = state;
     }
 
