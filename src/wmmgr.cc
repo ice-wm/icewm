@@ -1148,19 +1148,12 @@ YFrameWindow *YWindowManager::top(int layer) const {
 }
 
 void YWindowManager::setTop(int layer, YFrameWindow *top) {
-    if (true || !clientMouseActions) // some programs are buggy
-        if (fLayers[layer]) {
-            if (raiseOnClickClient)
-                fLayers[layer].front()->container()->grabButtons();
-        }
     fLayers[layer].prepend(top);
     fLayeredUpdated = true;
-    if (true || !clientMouseActions) // some programs are buggy
-        if (fLayers[layer]) {
-            if (raiseOnClickClient &&
-                !(focusOnClickClient && !fLayers[layer].front()->focused()))
-                fLayers[layer].front()->container()->releaseButtons();
-        }
+    if (top->container()->buttoned() && top->focused())
+        top->container()->releaseButtons();
+    else
+        focusOverlap();
 }
 
 YFrameWindow *YWindowManager::bottom(int layer) const {
@@ -1953,7 +1946,14 @@ void YWindowManager::manageClient(YFrameClient* client, bool mapClient) {
         }
         if (fSwitchWindow)
             fSwitchWindow->createdFrame(frame);
+        focusOverlap();
     }
+}
+
+void YWindowManager::focusOverlap() {
+    YFrameWindow* focus = getFocus();
+    if (focus && focus->container()->buttoned() == false && focus->overlapped())
+        focus->container()->grabButtons();
 }
 
 void YWindowManager::handleMapNotify(const XMapEvent& map) {
@@ -2495,8 +2495,9 @@ bool YWindowManager::updateWorkAreaInner() {
             updateArea(ws, s, l, t, r, b);
         }
 
-        if (w->doNotCover() ||
+        if ((w->doNotCover() ||
             (limitByDockLayer && w->getActiveLayer() == WinLayerDock))
+            && (w->client() != taskBar || taskBar->hidden() == false))
         {
             int ws = w->getWorkspace();
             int s = w->getScreen();

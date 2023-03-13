@@ -787,6 +787,15 @@ This action is meant to be used together with the B<-class> option.
 Only if no window is matched by I<WM_CLASS> then
 I<program> [I<arguments...>] is executed.
 
+=item B<loop> [I<count>]
+
+Loop back to the beginning of the command and repeat. The optional
+I<count> limits the number of repetitions.
+
+=item B<pick>
+
+Choose a window by a mouse button click.
+
 =item B<sync>
 
 Synchronize with the IceWM window manager. That is, wait for icewm to
@@ -848,6 +857,8 @@ Named symbols of the domain I<Window layer> (numeric range: 0-15):
     Dock                   (8)
     AboveDock             (10)
     Menu                  (12)
+    Fullscreen            (14)
+    AboveAll              (15)
 
 These symbols are used with the I<LAYER> argument to the C<setLayer>
 action.
@@ -978,6 +989,11 @@ Collect all urxvt terminals from the fourth workspace in a single frame
 on the current workspace.
 
     icesh -W 3 -c urxvt tabto myfunnyname
+
+Use the loop construct conditionally to wait for a certain window to
+appear.
+
+    icesh -t if -n Tooltip then list else delay 0.05 loop end
 
 =head2 ENVIRONMENT
 
