@@ -1,5 +1,542 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit c45448d7f321fe9e8098a5df9b72593c7d5cf06f
+Merge: b7d9c15b 65c0a619
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Mar 13 22:27:53 2023 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 65c0a619c0840ed54cfb15be2bf9126694f77f57
+Merge: 3ebe2ca9 4986f248
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Mar 13 22:27:23 2023 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 4986f248ffe658666c9857442796ce7bf8e99030
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Mar 13 19:26:12 2023 +0100
+
+    Improve more winoption details in the manpages.
+
+ man/icewm-winoptions.pod | 37 ++++++++++++++++++++-----------------
+ man/icewmhint.pod        | 10 +++++++---
+ 2 files changed, 27 insertions(+), 20 deletions(-)
+
+commit 058187ef1ff82127ea9b8b87e8a6ba5ec1a1d0f6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Mar 13 19:06:54 2023 +0100
+
+    When mapping a new client, check if it overlaps the focus.
+    When taskbar is collapsed, don't let it reduce the workarea.
+
+ src/wmmgr.cc     | 15 +++++++++++----
+ src/wmmgr.h      |  1 +
+ src/wmtaskbar.cc |  5 ++++-
+ src/wmtaskbar.h  |  1 +
+ 4 files changed, 17 insertions(+), 5 deletions(-)
+
+commit ee2d4b035c31d9dafc2806b878a32a249690a67c
+Author: neome <neome@posteo.me>
+Date:   Sun Mar 12 20:33:14 2023 +0000
+
+    Translated using Weblate (Polish)
+
+    Currently translated at 96.9% (506 of 522 strings)
+
+ po/pl.po | 318 +++++++++++++++++++++--------------------------------------
+ 1 file changed, 112 insertions(+), 206 deletions(-)
+
+commit b9427c68c3a349a4b79511af9bf35b1fab570f39
+Author: Moo oo <nazaq@protonmail.com>
+Date:   Thu Mar 9 10:48:44 2023 +0000
+
+    Translated using Weblate (Lithuanian)
+
+    Currently translated at 51.9% (271 of 522 strings)
+
+ po/lt.po | 186 +++++++++++++++++++++++++++--------------------------------
+ 1 file changed, 84 insertions(+), 102 deletions(-)
+
+commit b9513d157da37a51b74e4bf3e745a29d818bd6b8
+Author: Moo oo <nazaq@protonmail.com>
+Date:   Wed Mar 8 23:32:30 2023 +0000
+
+    Translated using Weblate (Lithuanian)
+
+    Currently translated at 41.3% (216 of 522 strings)
+
+ po/lt.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit cdf32183bd72f11863e2026342fea2363e0eaa41
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Mar 8 19:24:00 2023 +0100
+
+    Improve readability of the winoptions manpage.
+
+ man/icewm-winoptions.pod | 125 ++++++++++++++-----------------------------
+ 1 file changed, 41 insertions(+), 84 deletions(-)
+
+commit 9d19777a4e01fb6ba234fca4da997f8245d09f68
+Author: Luna  Jernberg <bittin@opensuse.org>
+Date:   Wed Mar 8 13:51:37 2023 +0000
+
+    Translated using Weblate (Swedish)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/sv.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 24731a3a32310e24fb370dd1a9ce35e2cc42b494
+Author: Luna  Jernberg <bittin@opensuse.org>
+Date:   Sun Mar 5 12:58:24 2023 +0000
+
+    Translated using Weblate (Swedish)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/sv.po | 31 +++++++++++++++++++------------
+ 1 file changed, 19 insertions(+), 12 deletions(-)
+
+commit cf5d7582cfbb86f366939032e9a69b190f5dbe03
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 4 17:43:32 2023 +0100
+
+    Fix unpaired parentheses in the manpages.
+
+ man/icewm-menu-xrandr.pod |  2 +-
+ man/icewm-preferences.pod | 10 +++++-----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+commit aefe80c840ac7836747dd2755da1f872e5f0952b
+Author: Mohammad Rezaei Seresht <m.networking@gmail.com>
+Date:   Sat Mar 4 12:57:19 2023 +0000
+
+    Translated using Weblate (Persian)
+
+    Currently translated at 21.2% (37 of 174 strings)
+
+ po/fa.po | 66 ++++++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 35 insertions(+), 31 deletions(-)
+
+commit d05c7ef4c787d1612e4604c4ea51094a6e79edfb
+Author: Mohammad Rezaei Seresht <m.networking@gmail.com>
+Date:   Fri Mar 3 17:52:15 2023 +0000
+
+    Translated using Weblate (Persian)
+
+    Currently translated at 2.8% (5 of 174 strings)
+
+ po/fa.po | 22 +++++++++++++++-------
+ 1 file changed, 15 insertions(+), 7 deletions(-)
+
+commit 7de8c659259cd549d3807227f643187e7b3c432a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 28 19:33:42 2023 +0100
+
+    Preserve the stacking order for fullscreen windows when Alt+Tabbing for
+    issue #611.  When hitting Escape while Alt+Tabbing abandon any selection.
+
+ src/wmswitch.cc | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 53a2ccaa7356056685e2953921cf0d45ffb86918
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 26 22:53:22 2023 +0100
+
+    Document all layer names.
+
+ man/icesh.pod            |  2 ++
+ man/icewm-winoptions.pod |  8 +++++---
+ man/icewmhint.pod        | 22 ++++++++++------------
+ 3 files changed, 17 insertions(+), 15 deletions(-)
+
+commit 276c2eaa0cd99e57e552abde9b27817926b9a27f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 26 22:52:01 2023 +0100
+
+    Include ClickToFocus in maybeFocus.
+
+ src/wmframe.cc | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+commit 3de12e8427ec30ba375ec4b695123060df971b26
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Feb 26 22:51:38 2023 +0100
+
+    Cleanup details.
+
+ src/default.h | 2 +-
+ src/wmapp.cc  | 5 -----
+ 2 files changed, 1 insertion(+), 6 deletions(-)
+
+commit 92f093f9edc2758cc4c64a80f50623f6275465b6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Feb 25 20:56:24 2023 +0100
+
+    Improve the detection of overlapping windows to the focused window for
+    grabbing/releasing the mouse buttons.
+
+ src/decorate.cc    | 24 ++++++++++++++++++++----
+ src/misc.cc        |  3 ++-
+ src/movesize.cc    |  9 +++++++++
+ src/wmcontainer.cc |  2 +-
+ src/wmcontainer.h  |  1 +
+ src/wmframe.cc     | 23 ++++++++---------------
+ src/wmframe.h      |  5 +++--
+ src/wmmgr.cc       | 16 +++++-----------
+ 8 files changed, 49 insertions(+), 34 deletions(-)
+
+commit f05c2fe5026af0d74a6590adf6bb39a39f84aa47
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Feb 23 20:47:57 2023 +0100
+
+    When restoring a window, automatically focus it, if nothing has
+    focus. Consider ClickToFocus and StrongPointerFocus when hiding or
+    rolling up.
+
+ src/wmclient.cc |  6 +++---
+ src/wmframe.cc  | 29 ++++++++++++++++++++++++++---
+ src/wmframe.h   |  1 +
+ 3 files changed, 30 insertions(+), 6 deletions(-)
+
+commit 5884d6dd0630e2ddaf6d310f52f771025e7f8df4
+Author: Jan Papež <honyczek@centrum.cz>
+Date:   Mon Feb 20 13:12:05 2023 +0000
+
+    Translated using Weblate (Czech)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/cs.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 8f08fa1130429a683de7a000ff4bcffd54bf451a
+Author: Yaron Shahrabani <sh.yaron@gmail.com>
+Date:   Mon Feb 20 08:42:45 2023 +0000
+
+    Translated using Weblate (Hebrew)
+
+    Currently translated at 31.0% (162 of 522 strings)
+
+ po/he.po | 58 +++++++++++++++++++++++-----------------------------------
+ 1 file changed, 23 insertions(+), 35 deletions(-)
+
+commit ebeeb9c6af96533b299f1dae3e5fba29d6514faa
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Feb 16 00:20:38 2023 +0100
+
+    Use "hasBorders" in layoutShape to fix "HideBordersMaximized".
+
+ src/decorate.cc | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit 38fff32445ffd9d778e197605f5faaaddc9f6f32
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Feb 16 00:19:28 2023 +0100
+
+    Check prefs and state before starting delay focus timer.
+
+ src/wmframe.cc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 4db763c88d3ce92ec017b8c6d00c2c76e068775e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 14 20:25:00 2023 +0100
+
+    Add a "loop" example.
+
+ man/icesh.pod | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 9b452c127a5fcb203338626c2f221e2effea9acd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 14 20:23:10 2023 +0100
+
+    For for "PointerFocusDelay" when mouse crosses different frame border
+    subwindows.
+
+ src/wmframe.cc | 21 +++++++--------------
+ 1 file changed, 7 insertions(+), 14 deletions(-)
+
+commit f61476ee8ed6ec23f5f3ee6a92e0a997e136776a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 14 20:22:13 2023 +0100
+
+    Add "unset" to "icewm-env" to unset environment variables by icewm-session.
+
+ man/icewm-env.pod |  3 +++
+ src/base.h        |  2 +-
+ src/icesm.cc      |  8 ++++++++
+ src/misc.cc       | 10 ++++------
+ 4 files changed, 16 insertions(+), 7 deletions(-)
+
+commit 36e1b0d44a55ee1c528254f61eea4d901dd0bb78
+Author: Aleš Kastner <alkas@volny.cz>
+Date:   Sun Feb 12 10:24:42 2023 +0000
+
+    Translated using Weblate (Czech)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/cs.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 0874fbec45f7df578faa227c4b7f059b43e6686c
+Author: Sophie Leroy <sophie@stoquart.com>
+Date:   Thu Feb 9 11:18:05 2023 +0000
+
+    Translated using Weblate (French)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/fr.po | 29 +++++++++++++++--------------
+ 1 file changed, 15 insertions(+), 14 deletions(-)
+
+commit d1466d3f32defbe498aa4b9d90a6bda37a37e13d
+Author: Gemineo <vistatec@gemineo.de>
+Date:   Thu Feb 9 12:49:34 2023 +0000
+
+    Translated using Weblate (German)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/de.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c871c990c0e2e6428ba9311f66ff06627366484a
+Author: Antonio Simón <antonio@trans-mission.com>
+Date:   Wed Feb 8 20:05:02 2023 +0000
+
+    Translated using Weblate (Spanish)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/es.po | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit be8cd986ec68a5aba83948e79e787f2dd6bb93e0
+Author: Grace Yu <grace.yu@excel-gits.com>
+Date:   Wed Feb 8 06:31:58 2023 +0000
+
+    Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/zh_TW.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 3a62ada1fc48b27c8842ab00de9699d269e16f3a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 7 22:23:53 2023 +0100
+
+    Let icesh support picking window by frame or title bar.
+
+ src/icesh.cc | 63 +++++++++++++++++++++++++++++---------------------------
+ 1 file changed, 33 insertions(+), 30 deletions(-)
+
+commit 9c560ea138465fa68cd377ec56ef861817e5f7a6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 7 22:22:00 2023 +0100
+
+    Update _NET_WM_ALLOWED_ACTIONS when changing tabs.
+
+ src/wmframe.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 61f2da60304b6554a0d6d4a3a3db664c37fc4f0d
+Author: Grace Yu <grace.yu@excel-gits.com>
+Date:   Tue Feb 7 10:10:15 2023 +0000
+
+    Translated using Weblate (Chinese (China) (zh_CN))
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/zh_CN.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 6f1b023d4dd2e3a511fa1a7b13e998d4085b2724
+Author: Davide Aiello <davide.aiello@novilingulists.com>
+Date:   Tue Feb 7 11:54:30 2023 +0000
+
+    Translated using Weblate (Italian)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/it.po | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit 472bfd10d23de96ea0c8101902cc67170e892581
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Feb 7 00:15:30 2023 +0100
+
+    Set a timeout on synchronization. Make window picking more reliable
+    and tab-aware.  Add resize handles to "bordered" when client is resizable.
+
+ src/icesh.cc | 113 +++++++++++++++++++++++++++++++++++++++----------------
+ 1 file changed, 80 insertions(+), 33 deletions(-)
+
+commit 5c2607eca0fa8e67b46138f37a68c495848a92a5
+Author: Gemineo <vistatec@gemineo.de>
+Date:   Mon Feb 6 12:45:47 2023 +0000
+
+    Translated using Weblate (German)
+
+    Currently translated at 100.0% (522 of 522 strings)
+
+ po/de.po | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit 17c53f8c8dfed4eeee16430cdaa5ce7e965017c3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Feb 1 18:50:27 2023 +0100
+
+    Faster synchronization.
+
+ src/icesh.cc | 38 ++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 36 insertions(+), 2 deletions(-)
+
+commit 8758cd3773bca23a65705f714c2cd2451fc8e04f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 31 22:30:39 2023 +0100
+
+    Handle failure of XGetWindowAttributes more graceful in icesh.
+
+ src/icesh.cc | 144 ++++++++++++++++++++++++++++++++++---------------------
+ 1 file changed, 90 insertions(+), 54 deletions(-)
+
+commit 6b0b1dfb5f9516c13e98e0b9f0fc6069c8c40732
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 31 20:24:33 2023 +0100
+
+    Don't set WM_PROTOCOLS on frames.
+
+ src/wmframe.cc | 2 +-
+ src/ywindow.cc | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit b9114f9ee55c2b6ab006cf8a2e4246c98b48dab8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 31 18:17:03 2023 +0100
+
+    Update layer from winoptions when WM_CLASS is changed.
+
+ src/wmclient.cc | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit c235bd6dcc25e90a60d2e944ca2b94b7b7104afb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 31 18:15:49 2023 +0100
+
+    Modify a copy of the WM_CLASS. Prevent messages for loop.
+
+ man/icesh.pod | 18 +++++++++---------
+ src/icesh.cc  | 45 ++++++++++++++++++++++++++++++---------------
+ 2 files changed, 39 insertions(+), 24 deletions(-)
+
+commit 589b9feca18f9e12cd18ad010a0719a1d32414c0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jan 29 21:34:54 2023 +0100
+
+    Check for libiconv in configure for OpenBSD.
+
+ configure.ac    |  1 +
+ src/Makefile.am | 20 ++++++++++----------
+ 2 files changed, 11 insertions(+), 10 deletions(-)
+
+commit b13116115146b20dc178f83735775b436334244a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jan 29 21:26:08 2023 +0100
+
+    Add "loop" and "pick" commands to icesh. Add "Fullscreen" and "AboveAll"
+    layer symbols to icesh.
+
+ man/icesh.pod |  9 +++++++++
+ src/icesh.cc  | 31 +++++++++++++++++++++++++++++++
+ 2 files changed, 40 insertions(+)
+
+commit b7d9c15bc3fcd5a418be3cc53f81096245b5fe61
+Merge: 02eed8ac 3ebe2ca9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 24 22:13:49 2023 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 3ebe2ca99b87134fa9ce7a3f176e69084682d773
+Merge: d301a540 85aa7f4f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 24 22:13:19 2023 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 85aa7f4f5d5f1359e6c4226934b810558f76e90f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jan 24 11:34:19 2023 +0100
+
+    Add yimage_gdk.h.
+
+ src/Makefile.am | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 02eed8acd046e42f429b6507e8cdbc432367ca3b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jan 23 22:11:28 2023 +0100
+
+    Prepare 3.3.1 release
+
+ AUTHORS      |   9 +-
+ ChangeLog    | 958 ++++++++++++++++++++++++-------------------------------
+ NEWS         |  96 ++++--
+ README.md    |  38 +--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     | 109 +++----
+ po/be.po     | 109 +++----
+ po/bg.po     | 109 +++----
+ po/ca.po     | 109 +++----
+ po/cs.po     | 251 +++++++--------
+ po/da.po     | 109 +++----
+ po/de.po     | 109 +++----
+ po/el.po     | 109 +++----
+ po/en.po     | 109 +++----
+ po/es.po     | 109 +++----
+ po/fi.po     | 109 +++----
+ po/fr.po     | 251 +++++++--------
+ po/he.po     | 109 +++----
+ po/hr.po     | 109 +++----
+ po/hu.po     | 109 +++----
+ po/icewm.pot | 111 +++----
+ po/id.po     | 247 +++++++-------
+ po/it.po     | 109 +++----
+ po/ja.po     | 109 +++----
+ po/ko.po     | 109 +++----
+ po/lt.po     | 109 +++----
+ po/lv.po     | 109 +++----
+ po/mk.po     | 109 +++----
+ po/nb.po     | 109 +++----
+ po/nl.po     | 109 +++----
+ po/no.po     | 109 +++----
+ po/pl.po     | 109 +++----
+ po/pt.po     | 109 +++----
+ po/pt_BR.po  | 109 +++----
+ po/ro.po     | 109 +++----
+ po/ru.po     | 109 +++----
+ po/sk.po     | 109 +++----
+ po/sl.po     | 109 +++----
+ po/sv.po     | 109 +++----
+ po/tr.po     | 109 +++----
+ po/uk.po     | 109 +++----
+ po/vi.po     | 109 +++----
+ po/zh_CN.po  | 109 +++----
+ po/zh_TW.po  | 109 +++----
+ 46 files changed, 2878 insertions(+), 2912 deletions(-)
+
 commit ed8937e38a226c2ec145bd1a8d933964e348e296
 Merge: 0ec434f2 d301a540
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5846,484 +6383,3 @@ Date:   Sat Nov 20 12:48:04 2021 +0100
 
  src/ycursor.cc | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
-
-commit 6f97222553f4e4a8d072f0b5134929d45a07c673
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Nov 20 12:11:56 2021 +0100
-
-    Fix column alignment in menu's for right-to-left languages.
-
- src/themes.cc    |   2 +-
- src/ymenu.cc     | 446 ++++++++++++++++++++++++---------------------------
- src/ymenu.h      |   7 +-
- src/ymenuitem.cc |  40 +++--
- src/ymenuitem.h  |  12 +-
- src/ypaint.cc    |  88 ++++++----
- 6 files changed, 294 insertions(+), 301 deletions(-)
-
-commit 133c5857b948030270e6d263227f62462715ac0d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Nov 20 12:10:16 2021 +0100
-
-    Accept -C,--copying without complaining.
-
- src/icewmbg.cc | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit c01cc3b057aaa111b060a0bf9eaa4d2739eeb2aa
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 17 22:04:54 2021 +0100
-
-    Fix for preferring to open the system menu within the frame.
-
- src/ypopup.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit cb29cd131e8b2690368de91fd91204fc05740bec
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 17 21:34:55 2021 +0100
-
-    Prefer to keep the system menu within the frame when opening it from
-    the menu button in the titlebar.
-
- src/ypopup.cc | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
-
-commit d0f9d6936965de2c16987460377db407ff837583
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 17 21:33:45 2021 +0100
-
-    Fix to prevent the dancing taskbar collapse button, when repeatedly
-    collapsing and expanding the taskbar.
-
- src/ybutton.cc | 33 ++++++++++++++++++++-------------
- 1 file changed, 20 insertions(+), 13 deletions(-)
-
-commit e94791636b663cb9b32a829e7cbb50d87285ec19
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 17 21:31:52 2021 +0100
-
-    Swap titlebar button positions for right-to-left languages.
-
- src/wmbutton.cc |  3 ++-
- src/wmtitle.cc  | 33 ++++++++++++++++++++-------------
- 2 files changed, 22 insertions(+), 14 deletions(-)
-
-commit 7f3ea836fc81246f4d8bc931f6e7a8b219a60347
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 17 21:29:22 2021 +0100
-
-    Don't repaint the taskbar when it is collapsed.  Clear the taskbar
-    window once more after repainting to prevent background artefacts when
-    collapsing and expanding the taskbar in the CoolSteel theme.
-
- src/wmtaskbar.cc | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-commit 77d5d373ede1d8dc45166b025cf421472fa123d9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 17 21:28:40 2021 +0100
-
-    Fix the last entry in the themes menu for the default theme.
-
- src/themes.cc | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-commit 7a7fd3991781d8a92cd89fad84478c16028cc444
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 17 21:24:25 2021 +0100
-
-    Ignore empty resize events prematurely to reduce flickering while resizing
-    windows in the CoolSteel theme.
-
- src/movesize.cc | 20 +++++++++++---------
- src/wmframe.cc  |  3 +++
- 2 files changed, 14 insertions(+), 9 deletions(-)
-
-commit 9d8412cf4997f14a1e07ce0548ef0e403b6baf04
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Nov 15 23:42:08 2021 +0100
-
-    Postpone the redrawing of the frame borders when there is another expose
-    event in the pipeline.
-
- src/wmframe.cc | 14 +++++++++++++-
- 1 file changed, 13 insertions(+), 1 deletion(-)
-
-commit 7685f41a3299171b500b19341071bb8c69689d24
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Nov 15 20:35:37 2021 +0100
-
-    Document the "font" argument to the "--trace" option.
-
- man/icewm.pod | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit af1fddd3720aa6d00253d911404669cbfd3c8dc1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Nov 15 20:34:13 2021 +0100
-
-    Set the background of the bottom right corner of a scrolled view for
-    issue 620.
-
- src/icewmbg.cc     |  2 +-
- src/wmframe.cc     |  2 +-
- src/ypaint.cc      | 21 ++++++++++-----------
- src/ypaint.h       | 12 ++++++------
- src/ypixmap.cc     |  2 +-
- src/yscrollbar.cc  |  4 ++++
- src/yscrollbar.h   |  1 +
- src/yscrollview.cc | 17 +++++++++++++----
- src/yscrollview.h  |  2 +-
- 9 files changed, 38 insertions(+), 25 deletions(-)
-
-commit 6d4bf7a8a55bc21c0a660b9ccf4a68ac361fa284
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 14 17:06:04 2021 +0100
-
-    Add cancel-logout icon.
-
- lib/Makefile.am                   |  1 +
- lib/icons/cancel-logout_16x16.xpm | 82 +++++++++++++++++++++++++++++++++++
- 2 files changed, 83 insertions(+)
-
-commit aae90f4a83e985d56cd88e670783cc9bd6c651ef
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 14 12:54:02 2021 +0100
-
-    Remove bidi from textWidth and fix offset.
-
- src/yfontxft.cc | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-commit 979a539cc6cbdfb70ef7f28fe4a0784ba4b56fcc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 14 12:00:02 2021 +0100
-
-    Update minimum required cmake version to 3.2.
-
- CMakeLists.txt        | 2 +-
- INSTALL-cmakebuild.md | 2 +-
- INSTALL.cmakebuild    | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
-
-commit 7c60ca6f4e6416906b345dc97ee5f093a729b2f5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 14 08:52:50 2021 +0100
-
-    Add logout icons to Logout submenu and closes ice-wm/icewm#69.
-
- src/wmapp.cc | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
-commit d73bc6afe77457b5b2ce0daa4b09036887d0cba1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Nov 13 23:57:55 2021 +0100
-
-    Support right-to-left languages for corefonts when i18n is enabled.
-    When codesets are missing in a fontset, then only search for extra fonts
-    in the same font family, and only when i18n is enabled.
-
- src/yfontcore.cc | 166 +++++++++++++++++++++++++++++++--------------------
- src/yfontxft.cc  |  47 ++-------------
- src/ystring.h    |  17 +++---
- 3 files changed, 115 insertions(+), 115 deletions(-)
-
-commit 3b59be3dc9630adadebc5966212c7f614d3636a5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Nov 13 23:56:36 2021 +0100
-
-    Detect UTF-8 locale and support multibyte to wide character conversions.
-
- src/ylocale.cc | 40 +++++++++++++++++++++++++++++++---------
- src/ylocale.h  |  4 ++++
- 2 files changed, 35 insertions(+), 9 deletions(-)
-
-commit d0bb2b0463ce7505c5b23361fffc2c4b6e0a5d8c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Nov 13 23:55:46 2021 +0100
-
-    Print the codeset.
-
- src/testlocale.cc | 2 ++
- 1 file changed, 2 insertions(+)
-
-commit 147cb47842bbfbbb49b3d42dcae863981fed93d1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Nov 13 23:54:55 2021 +0100
-
-    Make DejaVu the default backup font family for corefonts.
-
- src/fontmacro.h | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
-
-commit e81211710e2dcb33907a335f7ddb06e2425e6dc3
-Merge: 32c05560 d994c940
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Nov 12 05:17:52 2021 +0100
-
-    Merge id.po.
-
-commit 32c05560ead7b0e988b202001072a72f9027fda5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Nov 12 05:16:09 2021 +0100
-
-    Support right-to-left text. Handle width-limited text.
-
- src/yfontxft.cc | 361 +++++++++++++++++++++++++++++++++++-----------------
- 1 file changed, 246 insertions(+), 115 deletions(-)
-
-commit e5ab9eb8c0a8a98fbeefa644b311aa8c15417244
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Nov 12 05:15:41 2021 +0100
-
-    Remove old commented out code.
-
- src/ypaint.cc | 68 -------------------------------------------------------
- 1 file changed, 68 deletions(-)
-
-commit e66618f8a1660a25f62c964492c029398e38ea57
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Nov 12 05:15:31 2021 +0100
-
-    Modernize casts.
-
- src/ylocale.cc | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
-
-commit 93ef8783e997e691dcea39da066bc0f41df7cf3a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Nov 12 05:14:30 2021 +0100
-
-    Drop YString and YLocaleString.
-
- src/ystring.h | 122 ++++++------------------------------------------------
- 1 file changed, 12 insertions(+), 110 deletions(-)
-
-commit d994c940f54c97b3a18381b4aeebdb52619f9292
-Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
-Date:   Fri Nov 12 02:08:21 2021 +0000
-
-    Translated using Weblate (Indonesian)
-
-    Currently translated at 100.0% (503 of 503 strings)
-
- po/id.po | 15 +++++++--------
- 1 file changed, 7 insertions(+), 8 deletions(-)
-
-commit 4f4dd371ca1fbb131ab72ecab2ad7b02616d121e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Nov 12 05:08:26 2021 +0100
-
-    Detect right-to-left text.
-
- src/ybidi.h | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
-
-commit 5d83fb531a1fd6f36134fc1ae73feef4693d83d0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 22:46:38 2021 +0100
-
-    Fix the horizontal scrollbar for the window list window.
-
- src/yscrollview.cc | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
-
-commit c4bb61c8a5a2b609802ad7d3867ce9140301f082
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 18:08:58 2021 +0100
-
-    Improve ascent/descent detection for font sets.
-    Improve fallback font pattern generation for font sets.
-    Much faster optimal text length detection for width-limited text fields.
-    Improve the Xft last resort backup font.
-
- src/yfont.cc     |  23 +++-
- src/yfontbase.h  |  14 ++-
- src/yfontcore.cc | 335 ++++++++++++++++++++++++++++++++++++---------------
- src/yfontxft.cc  | 266 ++++++++++++++++++----------------------
- src/ylocale.cc   |  29 +++--
- src/ylocale.h    |   7 +-
- src/ypaint.cc    |   7 +-
- src/ystring.h    |  38 +++---
- 8 files changed, 425 insertions(+), 294 deletions(-)
-
-commit 7ddf106a7ccb51be92d4e9ac6ab4bfa04e616286
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 18:07:45 2021 +0100
-
-    Improve vertical font positioning for the address bar.
-
- src/yinputline.cc | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-commit bbf57e3058900ea760a734abbd29fc9cb81b3ed5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 18:02:41 2021 +0100
-
-    Improve font tracing.
-
- src/ytrace.h | 21 +++++++++------------
- 1 file changed, 9 insertions(+), 12 deletions(-)
-
-commit 1111aa72ea7c1f8056d6ce6e9fca86545691ee8e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 18:02:14 2021 +0100
-
-    Take into account Right-To-Left when sorting systray icons.
-
- src/yxtray.cc | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
-
-commit 96d6feec365e55c78e3b815dd32fc2f4792b4ee4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 18:01:45 2021 +0100
-
-    Take into account Right-To-Left when ordering task bar subwindows.
-
- src/wmtaskbar.cc | 62 ++++++++++++++++++++++++++++------------------------
- 1 file changed, 33 insertions(+), 29 deletions(-)
-
-commit d7dc4642013d9b8cc28165c8ea849a7e397fbd09
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 18:01:15 2021 +0100
-
-    Remove old FONT macros.
-
- src/yconfig.h | 19 -------------------
- 1 file changed, 19 deletions(-)
-
-commit cc95765f5237d1b2830b351a82193b1df4b003a5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 18:00:25 2021 +0100
-
-    Pass findRemove data parameter by value for 'this'.
-
- src/yarray.h | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
-
-commit 73dfdd7eb5c04a34c242a6bc48f63aac77167630
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:58:51 2021 +0100
-
-    Prefer wchar_t over YUchar.
-
- src/testlocale.cc | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
-
-commit 46df4610fbaf319f379af29e732241e310d58d5b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:58:22 2021 +0100
-
-    Take into account Right-To-Left when sorting object buttons.
-
- src/objbar.cc | 40 +++++++++++++++++++++++-----------------
- 1 file changed, 23 insertions(+), 17 deletions(-)
-
-commit 5a7e2f05d0da1b92dc0b28c96ac1d1a52a8fd72b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:57:44 2021 +0100
-
-    Prefer drawString over drawChars.
-
- src/icelist.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 0ce541fb840b5f37da7e4576ee7286b6254d5ce1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:56:57 2021 +0100
-
-    Take into account Right-To-Left when sorting task buttons, tray icons
-    and workspace buttons.
-
- src/atasks.cc      | 12 ++++++++----
- src/atray.cc       | 43 +++++++++++++++++++++----------------------
- src/atray.h        |  2 +-
- src/aworkspaces.cc | 18 ++++++++++--------
- src/aworkspaces.h  |  4 ++++
- 5 files changed, 44 insertions(+), 35 deletions(-)
-
-commit bffc8d692ab1f42fd33d10b6d9603b12206fc7c5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:53:44 2021 +0100
-
-    Reuse discarded miniicon positions.
-
- src/wmmgr.cc      | 59 +++++++++++++++++++++++++++++++++++++++++++--------
- src/wmmgr.h       |  3 ++-
- src/wmminiicon.cc | 16 ++++++--------
- src/wmminiicon.h  |  4 ++++
- 4 files changed, 62 insertions(+), 20 deletions(-)
-
-commit 427af2a4cc6089a22971a4999e20ce88dba5352e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:53:09 2021 +0100
-
-    Flush stdout after printing preferences.
-
- src/wmconfig.cc | 2 ++
- 1 file changed, 2 insertions(+)
-
-commit fb6a6b29abe991983fd3f897758e14b2c299a002
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:52:39 2021 +0100
-
-    Detect Right-To-Left locales.
-
- src/wmapp.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 7e9cd7c4c6199a4934299b63669665a61bf14680
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:51:55 2021 +0100
-
-    Use new FONT macros from fontmacro.h. Remove minimizedWindowFontName.
-
- src/themable.h | 47 +++++++++++++++++++----------------------------
- 1 file changed, 19 insertions(+), 28 deletions(-)
-
-commit aae615ae8c6a098c85ffd75e7a504cc038d401ae
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:50:20 2021 +0100
-
-    Move screen-window intersection into YWindow coverage.
-
- src/ywindow.cc | 39 ++++++++++-----------------------------
- src/ywindow.h  | 12 +++++++++++-
- 2 files changed, 21 insertions(+), 30 deletions(-)
-
-commit 8ffbe18cca1c877b89e4b156b9b9f4141cd3c3df
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:48:36 2021 +0100
-
-    Add rightToLeft global.
-
- src/yprefs.h | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 34c5696fa9110ebfa0acd1be3f041e135125adfa
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:47:35 2021 +0100
-
-    Add new class YRange.
-
- src/base.h | 11 +++++++++++
- 1 file changed, 11 insertions(+)
-
-commit 6b3cd6f4aebea8674d34f8d815722d9179185cd9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:46:32 2021 +0100
-
-    Move FONT macros to header fontmacro.h.
-
- src/fontmacro.h | 46 ++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 46 insertions(+)
-
-commit c83fddeabcad03cdebffecc310bd960d3a8ed921
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Nov 7 17:45:06 2021 +0100
-
-    Move all FriBidi stuff into a dedicated class YBidi.
-
- src/ybidi.h | 55 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 55 insertions(+)

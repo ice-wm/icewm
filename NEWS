@@ -1,11 +1,101 @@
-icewm -- history of user-visible changes.  2023-01-23
+icewm -- history of user-visible changes.  2023-03-13
+
+Release icewm-3.3.2 released 2023-03-13
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.3.1...3.3.2
+
+Bert Gijsbers <gijsbers@science.uva.nl> (30):
+      Add yimage_gdk.h.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+      Add "loop" and "pick" commands to icesh. Add "Fullscreen" and "AboveAll"
+        layer symbols to icesh.
+      Check for libiconv in configure for OpenBSD.
+      Modify a copy of the WM_CLASS. Prevent messages for loop.
+      Update layer from winoptions when WM_CLASS is changed.
+      Don't set WM_PROTOCOLS on frames.
+      Handle failure of XGetWindowAttributes more graceful in icesh.
+      Faster synchronization.
+      Set a timeout on synchronization. Make window picking more reliable and
+        tab-aware.  Add resize handles to "bordered" when client is resizable.
+      Update _NET_WM_ALLOWED_ACTIONS when changing tabs.
+      Let icesh support picking window by frame or title bar.
+      Add "unset" to "icewm-env" to unset environment variables by
+        icewm-session.
+      For for "PointerFocusDelay" when mouse crosses different frame border
+        subwindows.
+      Add a "loop" example.
+      Check prefs and state before starting delay focus timer.
+      Use "hasBorders" in layoutShape to fix "HideBordersMaximized".
+      When restoring a window, automatically focus it, if nothing has focus.
+        Consider ClickToFocus and StrongPointerFocus when hiding or rolling up.
+      Improve the detection of overlapping windows to the focused window for
+        grabbing/releasing the mouse buttons.
+      Cleanup details.
+      Include ClickToFocus in maybeFocus.
+      Document all layer names.
+      Preserve the stacking order for fullscreen windows when Alt+Tabbing for
+        issue #611.  When hitting Escape while Alt+Tabbing abandon any
+        selection.
+      Fix unpaired parentheses in the manpages.
+      Improve readability of the winoptions manpage.
+      When mapping a new client, check if it overlaps the focus. When taskbar is
+        collapsed, don't let it reduce the workarea.
+      Improve more winoption details in the manpages.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Gemineo <vistatec@gemineo.de> (2):
+      Translated using Weblate (German)
+      Translated using Weblate (German)
+
+Grace Yu <grace.yu@excel-gits.com> (2):
+      Translated using Weblate (Chinese (China) (zh_CN))
+      Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+Luna  Jernberg <bittin@opensuse.org> (2):
+      Translated using Weblate (Swedish)
+      Translated using Weblate (Swedish)
+
+Mohammad Rezaei Seresht <m.networking@gmail.com> (2):
+      Translated using Weblate (Persian)
+      Translated using Weblate (Persian)
+
+Moo oo <nazaq@protonmail.com> (2):
+      Translated using Weblate (Lithuanian)
+      Translated using Weblate (Lithuanian)
+
+Aleš Kastner <alkas@volny.cz> (1):
+      Translated using Weblate (Czech)
+
+Antonio Simón <antonio@trans-mission.com> (1):
+      Translated using Weblate (Spanish)
+
+Davide Aiello <davide.aiello@novilingulists.com> (1):
+      Translated using Weblate (Italian)
+
+Jan Papež <honyczek@centrum.cz> (1):
+      Translated using Weblate (Czech)
+
+Sophie Leroy <sophie@stoquart.com> (1):
+      Translated using Weblate (French)
+
+Yaron Shahrabani <sh.yaron@gmail.com> (1):
+      Translated using Weblate (Hebrew)
+
+neome <neome@posteo.me> (1):
+      Translated using Weblate (Polish)
+
 
 Release icewm-3.3.1 released 2023-01-23
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.3.0...3.3.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (30):
+Bert Gijsbers <gijsbers@science.uva.nl> (31):
       Add support for nanosvg to gdk-pixbuf rendering and to cmake build.
       Set DoNotCover hint on taskbar when layer is Dock.
       Report the chosen audio interface in configure for issue #699.
@@ -45,6 +135,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (30):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.3.1 release
 
 Baurzhan Muftakhidinov <baurthefirst@gmail.com> (4):
       Added translation using Weblate (Kazakh)
@@ -282,47 +373,4 @@ Eduard Bloch <blade@debian.org> (2):
 
 Kristijan Fremen Velkovski <me@krisfremen.com> (1):
       Translated using Weblate (Macedonian)
-
-
-Release icewm-3.1.0 released 2022-10-24
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.0.1...3.1.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (18):
-      Let the window list support tabs.
-      Add MouseWinTabbing button preference for merging frame tabs for issue
-        ice-wm/icewm#95.
-      Replace last Button2 with isTabbingButton for issue ice-wm/icewm#95.
-      When switching tabs, ensure focus is preserved.
-      Improve Alt+Tab for tabbed frames for issue #673.
-      Check owner pointer for transient windows which have an unmapped owner for
-        issue #675.
-      Preserve tabs across restarts.
-      Fix merging a transient as a tab to its owner.  Preserve tray hint across
-        restarts.  Smaller WindowOption.
-      Move WindowOption from frame to client and cache it.
-      Also context save the internal clients.
-      Show tabs on the title bar. Click on title bar to change tabs.
-      Detail how to use tabbed windows.
-      Revert "Revisiting header files and making them self-sufficient"
-      Add winoption "frame" to group new clients as tabs in a single frame.
-      Fix warning on delete.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.1.0 release
-
-Eduard Bloch <blade@debian.org> (2):
-      Revisiting header files and making them self-sufficient
-      [cmake] Various improvements
-
-Stéphane LASSALVY <stephane.lassalvy@laposte.net> (1):
-      Translated using Weblate (French)
-
-Wallon <franckjl@hotmail.com> (1):
-      Translated using Weblate (French)
-
-marcelo cripe <marcelocripe@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
 
