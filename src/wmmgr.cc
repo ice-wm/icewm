@@ -460,9 +460,7 @@ bool YWindowManager::handleWMKey(const XKeyEvent &key, KeySym k, unsigned vm) {
         return true;
     } else if (IS_WMKEY(k, vm, gKeySysDialog)) {
         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-        if (wmapp->getCtrlAltDelete()) {
-            wmapp->getCtrlAltDelete()->activate();
-        }
+        wmActionListener->actionPerformed(actionSysDialog);
         return true;
     } else if (IS_WMKEY(k, vm, gKeySysWinListMenu)) {
         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
@@ -941,6 +939,9 @@ void YWindowManager::handleClientMessage(const XClientMessageEvent &message) {
         MSG(("ClientMessage: _ICEWM_ACTION => %ld", message.data.l[1]));
         WMAction action = WMAction(message.data.l[1]);
         switch (action) {
+        case ICEWM_ACTION_NOP:
+        case ICEWM_ACTION_LOCK:
+            break;
         case ICEWM_ACTION_LOGOUT:
         case ICEWM_ACTION_CANCEL_LOGOUT:
         case ICEWM_ACTION_SHUTDOWN:
@@ -3824,9 +3825,8 @@ void YWindowManager::updateScreenSize(XEvent *event) {
 
     if (updateXineramaInfo(nw, nh)) {
         MSG(("xrandr: %d %d", nw, nh));
-        Atom data[2] = { nw, nh };
-        setProperty(_XA_NET_DESKTOP_GEOMETRY, XA_CARDINAL, data, 2);
         setSize(nw, nh);
+        setDesktopGeometry();
 
         if (taskBar) {
             taskBar->updateLocation();
@@ -3846,6 +3846,7 @@ void YWindowManager::updateScreenSize(XEvent *event) {
         if (arrangeWindowsOnScreenSizeChange) {
             wmActionListener->actionPerformed(actionArrange, 0);
         }
+        manager->arrangeIcons();
     }
 
     refresh();

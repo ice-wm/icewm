@@ -218,8 +218,15 @@ size_t strlcat(char *dest, const char *from, size_t dest_size)
 }
 #endif
 
-char *newstr(char const *str) {
-    return (str != nullptr ? newstr(str, strlen(str)) : nullptr);
+char* newstr(const char* str) {
+    char* s = nullptr;
+    if (str) {
+        size_t len = strlen(str);
+        s = new char[len + 1];
+        if (s)
+            memcpy(s, str, len + 1);
+    }
+    return s;
 }
 
 char *newstr(char const *str, char const *delim) {
@@ -617,20 +624,25 @@ char* path_lookup(const char* name) {
         return isExeFile(name) ? newstr(name) : nullptr;
     }
 
-    strp env = newstr(getenv("PATH"));
+    char* env = getenv("PATH");
     if (env == nullptr)
         return nullptr;
 
     const size_t namlen = strlen(name);
 
-    for (tokens directory(env, ":"); directory; ++directory) {
-        size_t dirlen = strlen(directory);
+    for (char* str = env, *end; *str; str = (end + (*end == ':'))) {
+        for (end = str; *end != ':' && *++end; );
+        size_t dirlen = end - str;
         size_t length = dirlen + namlen + 3;
         const size_t bufsize = 1234;
         if (length < bufsize) {
             char filebuf[bufsize];
-            snprintf(filebuf, bufsize, "%s/%s",
-                     dirlen ? directory : ".", name);
+            if (dirlen) {
+                memcpy(filebuf, str, dirlen);
+                if (filebuf[dirlen - 1] != '/')
+                    filebuf[dirlen++] = '/';
+            }
+            memcpy(filebuf + dirlen, name, namlen + 1);
             if (isExeFile(filebuf)) {
                 return newstr(filebuf);
             }
