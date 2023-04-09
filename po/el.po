@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"POT-Creation-Date: 2023-04-09 23:30+0200\n"
 "PO-Revision-Date: 2021-09-21 08:11+0000\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1416,8 +1416,8 @@ msgstr "Η ενέργεια `%s' απαιτεί τουλάχιστον %d ορί
 msgid "Invalid expression: `%s'"
 msgstr "Μη έγκυρη έκφραση: `%s'"
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1820,12 +1820,12 @@ msgstr "Επέκταση των καρτελών"
 msgid "Wrap Lines"
 msgstr "Αναδίπλωση των γραμμών"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:345
+#: src/icewmbg.cc:34 src/icewmbg.cc:351
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Αδυναμία ανοίγματος της εικόνας '%s'."
 
-#: src/icewmbg.cc:873
+#: src/icewmbg.cc:898
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1951,12 +1951,12 @@ msgstr ""
 "\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1817
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Μη αναγνωρισμένη επιλογή '%s'."
 
-#: src/icewmbg.cc:1139
+#: src/icewmbg.cc:1164
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Αδυναμία εκκίνησης, επειδή, ήδη, τρέχει ένα άλλο icewmbg ."
 

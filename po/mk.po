@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"POT-Creation-Date: 2023-04-09 23:30+0200\n"
 "PO-Revision-Date: 2023-03-27 07:14+0000\n"
 "Last-Translator: Kristijan Fremen Velkovski <me@krisfremen.com>\n"
 "Language-Team: Macedonian <https://l10n.opensuse.org/projects/icewm/"
@@ -1413,8 +1413,8 @@ msgstr "Дејството „%s“ бара најмалку %d аргумен�
 msgid "Invalid expression: `%s'"
 msgstr "Невалиден израз: „%s“"
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1752,12 +1752,12 @@ msgstr "Рашири ливчиња"
 msgid "Wrap Lines"
 msgstr "Пренесување линии"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:345
+#: src/icewmbg.cc:34 src/icewmbg.cc:351
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Не успеа да се отвори сликата '%s'."
 
-#: src/icewmbg.cc:873
+#: src/icewmbg.cc:898
 #, fuzzy
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
@@ -1819,12 +1819,12 @@ msgstr ""
 " DesktopTransparencyColor - боја за полупроѕирните прозорци\n"
 " DesktopTransparencyImage - слика за полупроѕирните прозорци\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1817
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Непрепознаена опција '%s'."
 
-#: src/icewmbg.cc:1139
+#: src/icewmbg.cc:1164
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 

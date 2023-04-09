@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"POT-Creation-Date: 2023-04-09 23:30+0200\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1432,8 +1432,8 @@ msgstr "`%s' 동작은 최소 %d 개의 인수를 요구한다."
 msgid "Invalid expression: `%s'"
 msgstr "잘못된 표현: `%s'"
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "디스플레이를 열지 못함: %s. X 실행 중여야 하고 $DISPLAY 정해야 함."
@@ -1874,12 +1874,12 @@ msgstr "탭 확장"
 msgid "Wrap Lines"
 msgstr "줄 넘기기"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:345
+#: src/icewmbg.cc:34 src/icewmbg.cc:351
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "이미지 '%s'을(를) 로드하지 못했습니다."
 
-#: src/icewmbg.cc:873
+#: src/icewmbg.cc:898
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1977,12 +1977,12 @@ msgstr ""
 " 가운데: 0 배율: 1 = 2차원 채우기 및 가로세로비 유지형\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1817
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "알아볼 수 없는 옵션: '%s'"
 
-#: src/icewmbg.cc:1139
+#: src/icewmbg.cc:1164
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "다른 icewmbg가 여전히 실행 중이므로 시작할 수 없습니다."
 

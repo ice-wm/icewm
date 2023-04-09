@@ -1,11 +1,91 @@
-icewm -- history of user-visible changes.  2023-03-13
+icewm -- history of user-visible changes.  2023-04-09
+
+Release icewm-3.3.3 released 2023-04-09
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.3.2...3.3.3
+
+Bert Gijsbers <gijsbers@science.uva.nl> (35):
+      Also link icewm with libintl and libiconv for FreeBSD.
+      Force token evaluation as char pointer.
+      Inline iterating over PATH for issue ice-wm/icewm#122.
+      Respond to Escape on key release, not on key press.
+      Respond to Escape on key release, not on key press.
+      Respond to Escape on key release, not on key press.
+      Respond to Escape on key release, not on key press.
+      Respond to Escape on key release, not on key press.
+      Optimize the default newstr.
+      Respond to Escape on key release, not on key press.
+      Let QuickSwitch respond to Escape on key release, not on key press.
+      Let Window List respond to Escape on key release, not on key press.
+      Fix for drawing button text in the System Dialog.
+      Respond to Escape on key release, not on key press.
+      Respond to Escape on key release, not on key press.
+      Respond to Escape on key release, not on key press.
+      Report when "menuprog" process crashed.
+      Make the System Dialog modal to avoid confusion about what window has
+        focus. Respond to Escape on key release, not on press, to prevent
+        applications from receiving a stray Escape key release event.
+      Remove upath from DProgram and MenuProgMenu.
+      Fix the drawing of the focused button in the System Dialog for Look=flat.
+      Support commands composed with || in the system dialog. Support the Prior
+        and Next keys in the system dialog.
+      Prevent integer overflow for very small screen dimensions.
+      Adjust width of workspace buttons when screen resolution changes for #713.
+      Add three more buttons to the system dialog.
+      Update potfiles.
+      Document the system dialog.
+      Only enabled buttons are focus traversable.
+      Close doesn't reload.
+      Use actionClose.
+      When the desktop geometry changes, rearrange the desktop icons.
+      Detect when a screen dimension changes, even though the desktop geometry
+        remains the same.
+      Add support for Xrandr events to icewmbg for issue #713.
+      Document the --verbose option of icewmbg.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Kempelen <lion@cmsbazar.hu> (3):
+      Translated using Weblate (Hungarian)
+      Translated using Weblate (Hungarian)
+      Translated using Weblate (Hungarian)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Kristijan Fremen Velkovski <me@krisfremen.com> (1):
+      Translated using Weblate (Macedonian)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Mehmet Akif 9oglu <madanadam@gmail.com> (1):
+      Translated using Weblate (Turkish)
+
+Wallon <franckjl@hotmail.com> (1):
+      Translated using Weblate (French)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
+welaq <welaq@users.noreply.github.com> (1):
+      Add Lithuanian translation to .desktop files (#711)
+
 
 Release icewm-3.3.2 released 2023-03-13
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.3.1...3.3.2
 
-Bert Gijsbers <gijsbers@science.uva.nl> (30):
+Bert Gijsbers <gijsbers@science.uva.nl> (31):
       Add yimage_gdk.h.
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
@@ -47,6 +127,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (30):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.3.2 release
 
 Gemineo <vistatec@gemineo.de> (2):
       Translated using Weblate (German)
@@ -318,59 +399,4 @@ Victor hck <correohck@gmail.com> (1):
 
 Wallon <franckjl@hotmail.com> (1):
       Translated using Weblate (French)
-
-
-Release icewm-3.2.0 released 2022-11-02
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.1.0...3.2.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (26):
-      Update _NET_CLIENT_LIST when adding more tabs.
-      Show the time of day when reporting an unknown window option.
-      Update the title bar shape when switching to a different tab and when
-        removing a tab. Set the desktop, the layer and the state window
-        properties when creating a tab. Always add a new tab to the window list.
-      Add the icesh command "tabto" to move a number of windows as tabs to a new
-        frame.
-      Update a visible quick switch when a frame removes one of its tabs.
-      Only popup the grouping menu on a task button on the first button click
-        without key modifiers. This makes it easier to immediately select or
-        minimize the active application by using the shift or control modifier.
-      Fix maximize and fullscreen for tabs with different normal sizes.
-      When switching to a tab with size limitations, adapt the frame geometry.
-        Prevent the flashing when switching tabs.
-      Support edge switching when dragging a window for issue #681.
-      Add "stacking" and "reverse" commands to icesh for issue ice-wm/icewm#98.
-      Add "stacking" and "reverse" commands to icesh for issue ice-wm/icewm#98.
-      Explain cursors.
-      Let icesh check all atoms in the -Property filter. Improve the window
-        synchronization in icesh.
-      Let the Alt+Tab preserve a history for 30 seconds for issue #673. The next
-        Alt+Tab will then continue where the previous one left off.
-      Fix Alt+Tab prioritization for issue #673.
-      Add "untab" command to icesh to give each client its own frame.
-      Mention Alt+Tab raise candidate in the icewm manpage.
-      Permit a rolled up frame to take focus even if its client has a globally
-        active focus model for issue ice-wm/icewm#98.
-      When activating a rolled up window, set focus to IceTopWin, for issue
-        ice-wm/icewm#98.
-      Ensure KeySysWinNext and KeySysWinPrev work for rolled up windows for
-        issue ice-wm/icewm#98.
-      Force fullscreen windows as focused, even if their input hint is False,
-        for TaskBarFullscreenAutoShow in issue ice-wm/icewm#73.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Add missing override.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.2.0 release
-
-Eduard Bloch <blade@debian.org> (2):
-      DRY, simplify, some flags/folders separation
-      feature: special filtered view and flat rendering
-
-Kristijan Fremen Velkovski <me@krisfremen.com> (1):
-      Translated using Weblate (Macedonian)
 

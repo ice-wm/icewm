@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"POT-Creation-Date: 2023-04-09 23:30+0200\n"
 "PO-Revision-Date: 2021-12-18 21:14+0000\n"
 "Last-Translator: Taras Panchenko <top39@ukr.net>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1401,8 +1401,8 @@ msgstr "Дія `%s' вимагає як мінімум %d аргументу(і�
 msgid "Invalid expression: `%s'"
 msgstr "Невірний вираз: `%s'"
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1781,12 +1781,12 @@ msgstr "Розкрити вкладки"
 msgid "Wrap Lines"
 msgstr "Вирівняти рядки"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:345
+#: src/icewmbg.cc:34 src/icewmbg.cc:351
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Помилка завантаження зображення %s."
 
-#: src/icewmbg.cc:873
+#: src/icewmbg.cc:898
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1886,12 +1886,12 @@ msgstr ""
 " center:0 scaled:1 = заповнити обидва розміри і зберігати співвідношення\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1817
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Невідомий параметр '%s'."
 
-#: src/icewmbg.cc:1139
+#: src/icewmbg.cc:1164
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Помилка запуску, інший процес icewmbg вже запущений."
 

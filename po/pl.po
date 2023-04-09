@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.15\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"POT-Creation-Date: 2023-04-09 23:30+0200\n"
 "PO-Revision-Date: 2023-03-12 23:14+0000\n"
 "Last-Translator: neome <neome@posteo.me>\n"
 "Language-Team: Polish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1415,8 +1415,8 @@ msgstr "Operacja \"%s\" wymaga co najmniej %d argumentów."
 msgid "Invalid expression: `%s'"
 msgstr "Nieprawidłowe wyrażenie: \"%s\""
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1799,12 +1799,12 @@ msgstr "Rozwiń zakładki"
 msgid "Wrap Lines"
 msgstr "Zawijaj linie"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:345
+#: src/icewmbg.cc:34 src/icewmbg.cc:351
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Nie udało się wczytać obrazu %s."
 
-#: src/icewmbg.cc:873
+#: src/icewmbg.cc:898
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1905,12 +1905,12 @@ msgstr ""
 "proporcji↵\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1817
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nierozpoznana opcja %s."
 
-#: src/icewmbg.cc:1139
+#: src/icewmbg.cc:1164
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 "Nie można uruchomić, ponieważ wciąż uruchomiony jest inny program icewmbg."
