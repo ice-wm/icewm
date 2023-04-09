@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-13 22:28+0100\n"
+"POT-Creation-Date: 2023-03-27 21:00+0200\n"
 "PO-Revision-Date: 2001-03-25 17:00+GMT1\n"
 "Last-Translator: Vlatko Kosturjak <kost@iname.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
@@ -149,7 +149,7 @@ msgstr ""
 msgid "%s exited with status %d."
 msgstr ""
 
-#: src/akeyboard.cc:86 src/icesm.cc:481 src/icesm.cc:635
+#: src/akeyboard.cc:86 src/icesm.cc:481 src/icesm.cc:635 src/wmmenu.cc:506
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr ""
@@ -326,7 +326,7 @@ msgstr "Odrolaj"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:612 src/wmstatus.cc:208
+#: src/aworkspaces.cc:635 src/wmstatus.cc:208
 msgid "Workspace: "
 msgstr "Radni prostor: "
 
@@ -1363,78 +1363,78 @@ msgstr "Popis prozora"
 msgid "workspace #%d: `%s'\n"
 msgstr "Radni prostor: "
 
-#: src/icesh.cc:2615 src/icesh.cc:4411 src/icesh.cc:5040
+#: src/icesh.cc:2615 src/icesh.cc:4410 src/icesh.cc:5039
 #, fuzzy, c-format
 msgid "Invalid state: `%s'."
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:2644 src/icesh.cc:3996 src/icesh.cc:4046 src/icesh.cc:5351
+#: src/icesh.cc:2644 src/icesh.cc:3995 src/icesh.cc:4045 src/icesh.cc:5354
 #, fuzzy, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:3626
+#: src/icesh.cc:3625
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3651
+#: src/icesh.cc:3650
 #, fuzzy, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:3773 src/icesh.cc:3781 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3772 src/icesh.cc:3780 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr ""
 
-#: src/icesh.cc:4012
+#: src/icesh.cc:4011
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr ""
 
-#: src/icesh.cc:4021
+#: src/icesh.cc:4020
 #, fuzzy, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:4032 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1233 src/yxapp.cc:1039
+#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
+#: src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Ne mogu otvoriti zaslon: %s. X-i moraju biti pokrenuti i $DISPLAY postavljen."
 
-#: src/icesh.cc:4148
+#: src/icesh.cc:4147
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr ""
 
-#: src/icesh.cc:4178
+#: src/icesh.cc:4177
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:4194
+#: src/icesh.cc:4193
 msgid "No actions specified."
 msgstr ""
 
-#: src/icesh.cc:4335
+#: src/icesh.cc:4334
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr ""
 
-#: src/icesh.cc:4351
+#: src/icesh.cc:4350
 #, fuzzy, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:4384
+#: src/icesh.cc:4383
 #, fuzzy, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Nepravilna putanja: %s\n"
 
-#: src/icesh.cc:5481
+#: src/icesh.cc:5484
 #, fuzzy, c-format
 msgid "Unknown action: `%s'"
 msgstr "Nepoznata opcija prozora: %s"
@@ -1747,7 +1747,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1818
+#: src/icewmbg.cc:1109 src/wmapp.cc:1817
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nepoznata opcija prozora: %s"
@@ -1770,7 +1770,7 @@ msgstr "Nema memorije (vel=%d)."
 msgid "Warning: "
 msgstr "Upozorenje: "
 
-#: src/misc.cc:385
+#: src/misc.cc:392
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1845,249 +1845,248 @@ msgstr ""
 msgid "done."
 msgstr ""
 
-#: src/wmapp.cc:503
+#: src/wmapp.cc:496
 msgid "_Logout"
 msgstr "Odjav_ljivanje"
 
-#: src/wmapp.cc:504
+#: src/wmapp.cc:497
 msgid "_Cancel logout"
 msgstr "_Odustani od odjavljivanja"
 
-#: src/wmapp.cc:510
+#: src/wmapp.cc:503
 msgid "Lock _Workstation"
 msgstr "Zaključaj _Radnu stanicu"
 
-#: src/wmapp.cc:512 src/wmdialog.cc:70
+#: src/wmapp.cc:505 src/wmdialog.cc:85
 msgid "Re_boot"
 msgstr "Ponovno pokreni _računalo"
 
-#: src/wmapp.cc:514 src/wmdialog.cc:71
+#: src/wmapp.cc:507 src/wmdialog.cc:86
 msgid "Shut_down"
 msgstr "_Ugasi računalo"
 
-#. TRANSLATORS: This means "energy saving mode" or "suspended system". Not "interrupt". Not "hibernate".
-#: src/wmapp.cc:516 src/wmdialog.cc:67
+#: src/wmapp.cc:509 src/wmdialog.cc:82
 msgid "_Sleep mode"
 msgstr ""
 
-#: src/wmapp.cc:521
+#: src/wmapp.cc:514
 msgid "Restart _Icewm"
 msgstr "Ponovno pokreni _Icewm"
 
-#: src/wmapp.cc:523
+#: src/wmapp.cc:516
 msgid "Restart _Xterm"
 msgstr "Ponovno pokreni _Xterm"
 
-#: src/wmapp.cc:533
+#: src/wmapp.cc:526
 msgid "_Menu"
 msgstr "_Meni"
 
-#: src/wmapp.cc:534
+#: src/wmapp.cc:527
 msgid "_Above Dock"
 msgstr "_Gornje spajanje"
 
-#: src/wmapp.cc:535
+#: src/wmapp.cc:528
 msgid "_Dock"
 msgstr "_Spoji"
 
-#: src/wmapp.cc:536
+#: src/wmapp.cc:529
 msgid "_OnTop"
 msgstr "Na_Vrhu"
 
-#: src/wmapp.cc:537
+#: src/wmapp.cc:530
 msgid "_Normal"
 msgstr "_Normalno"
 
-#: src/wmapp.cc:538
+#: src/wmapp.cc:531
 msgid "_Below"
 msgstr "_Ispod"
 
-#: src/wmapp.cc:539
+#: src/wmapp.cc:532
 msgid "D_esktop"
 msgstr "_Radno Okružje"
 
-#: src/wmapp.cc:583 src/wmwinlist.cc:374
+#: src/wmapp.cc:576 src/wmwinlist.cc:379
 msgid "Move to New _Window"
 msgstr ""
 
-#: src/wmapp.cc:593
+#: src/wmapp.cc:586
 msgid "Left Half"
 msgstr ""
 
-#: src/wmapp.cc:594
+#: src/wmapp.cc:587
 msgid "Right Half"
 msgstr ""
 
-#: src/wmapp.cc:595
+#: src/wmapp.cc:588
 msgid "Top Half"
 msgstr ""
 
-#: src/wmapp.cc:596
+#: src/wmapp.cc:589
 msgid "Bottom Half"
 msgstr ""
 
-#: src/wmapp.cc:598
+#: src/wmapp.cc:591
 msgid "Top Left"
 msgstr ""
 
-#: src/wmapp.cc:599
+#: src/wmapp.cc:592
 msgid "Top Right"
 msgstr ""
 
-#: src/wmapp.cc:600
+#: src/wmapp.cc:593
 msgid "Bottom Left"
 msgstr ""
 
-#: src/wmapp.cc:601
+#: src/wmapp.cc:594
 msgid "Bottom Right"
 msgstr ""
 
-#: src/wmapp.cc:602
+#: src/wmapp.cc:595
 msgid "Center"
 msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:604 src/wmtaskbar.cc:217 src/wmwinlist.cc:461
-#: src/wmwinlist.cc:494
+#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:466
+#: src/wmwinlist.cc:499
 msgid "T_ile Horizontally"
 msgstr "Posloži _Horizontalno"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:606 src/wmtaskbar.cc:215 src/wmwinlist.cc:460
-#: src/wmwinlist.cc:493
+#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:465
+#: src/wmwinlist.cc:498
 msgid "Tile _Vertically"
 msgstr "Posloži _Vertikalno"
 
-#: src/wmapp.cc:618 src/wmwinlist.cc:441
+#: src/wmapp.cc:611 src/wmwinlist.cc:446
 msgid "_Restore"
 msgstr "Pov_rati"
 
-#: src/wmapp.cc:620
+#: src/wmapp.cc:613
 msgid "_Move"
 msgstr "_Pomakni"
 
-#: src/wmapp.cc:622
+#: src/wmapp.cc:615
 msgid "_Size"
 msgstr "_Veličina"
 
-#: src/wmapp.cc:624 src/wmwinlist.cc:442
+#: src/wmapp.cc:617 src/wmwinlist.cc:447
 msgid "Mi_nimize"
 msgstr "Mi_nimiziraj"
 
-#: src/wmapp.cc:626 src/wmwinlist.cc:443
+#: src/wmapp.cc:619 src/wmwinlist.cc:448
 msgid "Ma_ximize"
 msgstr "Ma_ksimiziraj"
 
-#: src/wmapp.cc:627 src/wmwinlist.cc:444
+#: src/wmapp.cc:620 src/wmwinlist.cc:449
 #, fuzzy
 #| msgid "Maximize"
 msgid "Maximize_Vert"
 msgstr "Maksimiziraj"
 
-#: src/wmapp.cc:628 src/wmwinlist.cc:445
+#: src/wmapp.cc:621 src/wmwinlist.cc:450
 #, fuzzy
 #| msgid "Maximize"
 msgid "MaximizeHori_z"
 msgstr "Maksimiziraj"
 
-#: src/wmapp.cc:631 src/wmwinlist.cc:446
+#: src/wmapp.cc:624 src/wmwinlist.cc:451
 msgid "_Fullscreen"
 msgstr ""
 
-#: src/wmapp.cc:634 src/wmwinlist.cc:448
+#: src/wmapp.cc:627 src/wmwinlist.cc:453
 msgid "_Hide"
 msgstr "_Sakrij"
 
-#: src/wmapp.cc:636 src/wmwinlist.cc:449
+#: src/wmapp.cc:629 src/wmwinlist.cc:454
 msgid "Roll_up"
 msgstr "Zarola_j"
 
-#: src/wmapp.cc:643
+#: src/wmapp.cc:636
 msgid "R_aise"
 msgstr "Po_digni"
 
-#: src/wmapp.cc:645 src/wmwinlist.cc:451
+#: src/wmapp.cc:638 src/wmwinlist.cc:456
 msgid "_Lower"
 msgstr "Spus_ti"
 
-#: src/wmapp.cc:647 src/wmwinlist.cc:452
+#: src/wmapp.cc:640 src/wmwinlist.cc:457
 msgid "La_yer"
 msgstr "Ra_zina"
 
-#: src/wmapp.cc:650 src/wmwinlist.cc:453
+#: src/wmapp.cc:643 src/wmwinlist.cc:458
 msgid "Tile"
 msgstr ""
 
-#: src/wmapp.cc:654 src/wmwinlist.cc:455
+#: src/wmapp.cc:647 src/wmwinlist.cc:460
 msgid "Move _To"
 msgstr "Pomakni _Na"
 
-#: src/wmapp.cc:655 src/wmwinlist.cc:456
+#: src/wmapp.cc:648 src/wmwinlist.cc:461
 msgid "Occupy _All"
 msgstr "Z_auzmi sve"
 
-#: src/wmapp.cc:661
+#: src/wmapp.cc:654
 msgid "Limit _Workarea"
 msgstr ""
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:457
+#: src/wmapp.cc:658 src/wmwinlist.cc:462
 msgid "Tray _icon"
 msgstr ""
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:458
+#: src/wmapp.cc:660 src/wmwinlist.cc:463
 msgid "R_ename title"
 msgstr ""
 
-#: src/wmapp.cc:672 src/wmwinlist.cc:473 src/wmwinlist.cc:481
+#: src/wmapp.cc:665 src/wmwinlist.cc:478 src/wmwinlist.cc:486
 msgid "_Close"
 msgstr "_Zatvori"
 
-#: src/wmapp.cc:674 src/wmwinlist.cc:475
+#: src/wmapp.cc:667 src/wmwinlist.cc:480
 msgid "_Kill Client"
 msgstr "_Ubij klijent"
 
-#: src/wmapp.cc:677 src/wmdialog.cc:72 src/wmwinmenu.cc:134
+#: src/wmapp.cc:670 src/wmdialog.cc:87 src/wmwinmenu.cc:134
 msgid "_Window list"
 msgstr "Popi_s prozora"
 
-#: src/wmapp.cc:716
+#: src/wmapp.cc:709
 msgid "Another window manager already running, exiting..."
 msgstr "Neki drugi upravitelj prozorima je već pokrenut, izlazim..."
 
-#: src/wmapp.cc:791
+#: src/wmapp.cc:784
 #, fuzzy, c-format
 msgid ""
 "Could not restart: %s\n"
 "Does $PATH lead to %s?"
 msgstr "Ne mogu ponovno pokrenuti %s, nije u $PATH-u?"
 
-#: src/wmapp.cc:952
+#: src/wmapp.cc:945
 msgid "Confirm Restart as Terminal"
 msgstr ""
 
-#: src/wmapp.cc:953
+#: src/wmapp.cc:946
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1234 src/yxapp.cc:1040
+#: src/wmapp.cc:1233 src/yxapp.cc:1040
 msgid "<none>"
 msgstr "<nema>"
 
-#: src/wmapp.cc:1559
+#: src/wmapp.cc:1558
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1565
+#: src/wmapp.cc:1564
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1573
+#: src/wmapp.cc:1572
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2099,7 +2098,7 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1583
+#: src/wmapp.cc:1582
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2131,21 +2130,21 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/wmapp.cc:1649
+#: src/wmapp.cc:1648
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1734
+#: src/wmapp.cc:1733
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Nepoznata opcija prozora: %s"
 
-#: src/wmapp.cc:1868
+#: src/wmapp.cc:1867
 msgid "Confirm Logout"
 msgstr "Potvrdite odjavljivanje"
 
-#: src/wmapp.cc:1869
+#: src/wmapp.cc:1868
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2208,29 +2207,43 @@ msgstr ""
 msgid "Unable to rename %s to %s"
 msgstr "Nepoznato ime ključa %s u %s"
 
-#: src/wmdialog.cc:65
+#: src/wmdialog.cc:81
 #, fuzzy
 msgid "Loc_k Workstation"
 msgstr "Zaključaj _Radnu stanicu"
 
-#: src/wmdialog.cc:68 src/ymsgbox.cc:51
+#: src/wmdialog.cc:83 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr "_Odustani"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:69 src/wmprog.cc:460 src/wmprog.cc:462 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:84 src/wmprog.cc:461 src/wmprog.cc:463 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Odjavi"
 
-#: src/wmdialog.cc:73
+#: src/wmdialog.cc:88
 msgid "_Restart icewm"
 msgstr "_Ponovno pokreni icewm"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:74 src/wmprog.cc:428 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:89 src/wmprog.cc:429 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_O programu"
+
+#: src/wmdialog.cc:90
+msgid "Reload win_options"
+msgstr ""
+
+#: src/wmdialog.cc:91
+msgid "Reload ke_ys"
+msgstr ""
+
+#: src/wmdialog.cc:92
+#, fuzzy
+#| msgid "Close"
+msgid "Clos_e"
+msgstr "Zatvori"
 
 #: src/wmframe.cc:1372
 msgid "Rename"
@@ -2310,16 +2323,16 @@ msgstr ""
 msgid "'%s' timed out!"
 msgstr ""
 
-#: src/wmmenu.cc:509
+#: src/wmmenu.cc:512
 #, c-format
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3632
+#: src/wmmgr.cc:3633
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3633
+#: src/wmmgr.cc:3634
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2342,76 +2355,76 @@ msgstr ""
 msgid "Enter a new value for %s: "
 msgstr ""
 
-#: src/wmprog.cc:335
+#: src/wmprog.cc:336
 msgid "_Click to focus"
 msgstr ""
 
-#: src/wmprog.cc:336
+#: src/wmprog.cc:337
 msgid "_Explicit focus"
 msgstr ""
 
-#: src/wmprog.cc:337
+#: src/wmprog.cc:338
 msgid "_Sloppy mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:338
+#: src/wmprog.cc:339
 msgid "S_trict mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:339
+#: src/wmprog.cc:340
 msgid "_Quiet sloppy focus"
 msgstr ""
 
-#: src/wmprog.cc:340
+#: src/wmprog.cc:341
 msgid "Custo_m"
 msgstr ""
 
-#: src/wmprog.cc:362
+#: src/wmprog.cc:363
 msgid "_Manual"
 msgstr ""
 
-#: src/wmprog.cc:363
+#: src/wmprog.cc:364
 msgid "_Icewm(1)"
 msgstr ""
 
-#: src/wmprog.cc:364
+#: src/wmprog.cc:365
 msgid "Icewm_Bg(1)"
 msgstr ""
 
-#: src/wmprog.cc:365
+#: src/wmprog.cc:366
 msgid "Ice_Sound(1)"
 msgstr ""
 
-#: src/wmprog.cc:414
+#: src/wmprog.cc:415
 msgid "Programs"
 msgstr "Programi"
 
-#: src/wmprog.cc:418
+#: src/wmprog.cc:419
 msgid "_Run..."
 msgstr "Pok_reni..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:422 src/wmtaskbar.cc:233
+#: src/wmprog.cc:423 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Prozori"
 
-#: src/wmprog.cc:433
+#: src/wmprog.cc:434
 msgid "_Help"
 msgstr "Po_moć"
 
-#: src/wmprog.cc:438
+#: src/wmprog.cc:439
 msgid "_Focus"
 msgstr ""
 
-#: src/wmprog.cc:443
+#: src/wmprog.cc:444
 msgid "_Preferences"
 msgstr ""
 
-#: src/wmprog.cc:448
+#: src/wmprog.cc:449
 msgid "_Themes"
 msgstr "_Teme"
 
-#: src/wmprog.cc:452
+#: src/wmprog.cc:453
 msgid "Se_ttings"
 msgstr ""
 
@@ -2421,27 +2434,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Upravitelj sesijom: Nepoznata linija %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:462 src/wmwinlist.cc:495
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:467 src/wmwinlist.cc:500
 msgid "Ca_scade"
 msgstr "Ka_skadno"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:463 src/wmwinlist.cc:496
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:468 src/wmwinlist.cc:501
 msgid "_Arrange"
 msgstr "_Posloži"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:465 src/wmwinlist.cc:497
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:470 src/wmwinlist.cc:502
 msgid "_Minimize All"
 msgstr "_Minimiziraj Sve"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:466 src/wmwinlist.cc:498
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:471 src/wmwinlist.cc:503
 msgid "_Hide All"
 msgstr "_Sakrij Sve"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:467 src/wmwinlist.cc:499
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:472 src/wmwinlist.cc:504
 msgid "_Undo"
 msgstr "Vra_ti"
 
@@ -2455,7 +2468,7 @@ msgstr "Posloži _Ikone"
 msgid "_Refresh"
 msgstr "_Osvježi"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1012
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1015
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -2475,7 +2488,7 @@ msgstr "Popis prozora"
 msgid "Show Desktop"
 msgstr "_Radno Okružje"
 
-#: src/wmtaskbar.cc:1012
+#: src/wmtaskbar.cc:1015
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -2486,30 +2499,30 @@ msgstr "Traka s alatima"
 msgid "All Workspaces"
 msgstr "Radni prostor: "
 
-#: src/wmwinlist.cc:447
+#: src/wmwinlist.cc:452
 msgid "_Show"
 msgstr "_Prikaži"
 
-#: src/wmwinlist.cc:450
+#: src/wmwinlist.cc:455
 #, fuzzy
 #| msgid "R_aise"
 msgid "_Raise"
 msgstr "Po_digni"
 
-#: src/wmwinlist.cc:473
+#: src/wmwinlist.cc:478
 #, fuzzy
 msgid "Del"
 msgstr "Obriši"
 
-#: src/wmwinlist.cc:477
+#: src/wmwinlist.cc:482
 msgid "_Terminate Process"
 msgstr "_Terminiraj Proces"
 
-#: src/wmwinlist.cc:478
+#: src/wmwinlist.cc:483
 msgid "Kill _Process"
 msgstr "Ubij _Proces"
 
-#: src/wmwinlist.cc:513 src/wmwinlist.cc:514
+#: src/wmwinlist.cc:518 src/wmwinlist.cc:519
 msgid "Window list"
 msgstr "Popis prozora"
 

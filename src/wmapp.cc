@@ -345,13 +345,6 @@ ref<YIcon> YWMApp::getDefaultAppIcon() {
     return defaultAppIcon;
 }
 
-CtrlAltDelete* YWMApp::getCtrlAltDelete() {
-    if (ctrlAltDelete == nullptr) {
-        ctrlAltDelete = new CtrlAltDelete(this, desktop);
-    }
-    return ctrlAltDelete;
-}
-
 AToolTip* YWMApp::newToolTip() {
     return new YToolTip;
 }
@@ -512,7 +505,7 @@ void LogoutMenu::updatePopup() {
                 addItem(_("Re_boot"), -2, null, actionReboot, "reboot");
             if (canShutdown(Shutdown))
                 addItem(_("Shut_down"), -2, null, actionShutdown, "shutdown");
-            if (couldRunCommand(suspendCommand))
+            if (canSuspend())
                 addItem(_("_Sleep mode"), -2, null, actionSuspend, "suspend");
 
             if (itemCount() != oldItemCount)
@@ -1010,6 +1003,12 @@ void YWMApp::actionPerformed(YAction action, unsigned int /*modifiers*/) {
     }
     else if (action == actionUndoArrange) {
         manager->undoArrange();
+    }
+    else if (action == actionSysDialog) {
+        if (ctrlAltDelete == nullptr)
+            ctrlAltDelete = new CtrlAltDelete(this, desktop);
+        if (ctrlAltDelete && ctrlAltDelete->visible() == false)
+            ctrlAltDelete->activate();
     }
     else if (action == actionWindowList) {
         if (windowList->visible())
