@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.15\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-04-09 23:30+0200\n"
+"POT-Creation-Date: 2023-05-03 12:39+0200\n"
 "PO-Revision-Date: 2023-03-12 23:14+0000\n"
 "Last-Translator: neome <neome@posteo.me>\n"
 "Language-Team: Polish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -341,7 +341,7 @@ msgstr "w dół"
 msgid "NET"
 msgstr "SIEĆ"
 
-#: src/aworkspaces.cc:635 src/wmstatus.cc:208
+#: src/aworkspaces.cc:664 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Obszar roboczy: "
 
@@ -1379,43 +1379,43 @@ msgstr "Stan okna EWMH"
 msgid "workspace #%d: `%s'\n"
 msgstr "obszar roboczy #%d: \"%s\"\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4410 src/icesh.cc:5039
+#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Nieprawidłowy stan: \"%s\"."
 
-#: src/icesh.cc:2644 src/icesh.cc:3995 src/icesh.cc:4045 src/icesh.cc:5354
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Nieprawidłowy argument: `%s'"
 
-#: src/icesh.cc:3625
+#: src/icesh.cc:3639
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Nie można uzyskać geometrii okna 0x%lx"
 
-#: src/icesh.cc:3650
+#: src/icesh.cc:3664
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Nieprawidłowy Xinerama: `%s'."
 
-#: src/icesh.cc:3772 src/icesh.cc:3780 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3786 src/icesh.cc:3794 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Nie można zapisać w %s"
 
-#: src/icesh.cc:4011
+#: src/icesh.cc:4025
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Operacja \"%s\" wymaga co najmniej %d argumentów."
 
-#: src/icesh.cc:4020
+#: src/icesh.cc:4034
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Nieprawidłowe wyrażenie: \"%s\""
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icesh.cc:4045 src/icesound.cc:794 src/icewmbg.cc:1003
 #: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1423,35 +1423,35 @@ msgstr ""
 "Nie można otworzyć ekranu: %s. X-y muszą być uruchomione oraz musi być "
 "ustawiona zmienna $DISPLAY."
 
-#: src/icesh.cc:4147
+#: src/icesh.cc:4161
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Nieoczekiwane: `%s'."
 
-#: src/icesh.cc:4177
+#: src/icesh.cc:4191
 msgid "No windows found."
 msgstr "Nie znaleziono okien."
 
-#: src/icesh.cc:4193
+#: src/icesh.cc:4207
 msgid "No actions specified."
 msgstr "Nie określono akcji."
 
-#: src/icesh.cc:4334
+#: src/icesh.cc:4348
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Nieprawidłowy identyfikator okna: \"%s\""
 
-#: src/icesh.cc:4350
+#: src/icesh.cc:4364
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Nieprawidłowy PID: `%s'"
 
-#: src/icesh.cc:4383
+#: src/icesh.cc:4397
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Nieprawidłowa warstwa: `%s'."
 
-#: src/icesh.cc:5484
+#: src/icesh.cc:5499
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Nieznana akcja: \"%s\""
@@ -1905,7 +1905,7 @@ msgstr ""
 "proporcji↵\n"
 "\n"
 
-#: src/icewmbg.cc:1134 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1818
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nierozpoznana opcja %s."
@@ -2239,14 +2239,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<brak>"
 
-#: src/wmapp.cc:1558
+#: src/wmapp.cc:1559
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Identyfikator klienta używany do kontaktu z menedżerem "
 "sesji.\n"
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1565
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2257,7 +2257,7 @@ msgstr ""
 "  --debug-z           Wyświetlenie komunikatów debugowania dotyczących "
 "układania okien.\n"
 
-#: src/wmapp.cc:1572
+#: src/wmapp.cc:1573
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -2283,7 +2283,7 @@ msgstr ""
 "  --rewrite-preferences  Zaktualizuj istniejący plik preferencji.\n"
 "  --trace=conf,icon   Śledź ścieżki używane do ładowania konfiguracji.\n"
 
-#: src/wmapp.cc:1582
+#: src/wmapp.cc:1583
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2343,21 +2343,21 @@ msgstr ""
 "↵\n"
 "\n"
 
-#: src/wmapp.cc:1648
+#: src/wmapp.cc:1649
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "Katalogi konfiguracji %s:\n"
 
-#: src/wmapp.cc:1733
+#: src/wmapp.cc:1734
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "Skonfigurowane opcje %s: %s\n"
 
-#: src/wmapp.cc:1867
+#: src/wmapp.cc:1868
 msgid "Confirm Logout"
 msgstr "Potwierdź wyjście"
 
-#: src/wmapp.cc:1868
+#: src/wmapp.cc:1869
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2460,15 +2460,15 @@ msgstr "Przeładuj"
 msgid "Clos_e"
 msgstr "Zamknij"
 
-#: src/wmframe.cc:1372
+#: src/wmframe.cc:1375
 msgid "Rename"
 msgstr "Zmień nazwę"
 
-#: src/wmframe.cc:1373
+#: src/wmframe.cc:1376
 msgid "Rename the window title"
 msgstr "Zmień nazwę tytułu okna"
 
-#: src/wmframe.cc:1851
+#: src/wmframe.cc:1854
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2476,7 +2476,7 @@ msgstr ""
 "UWAGA! Wszystkie niezapisane zmiany zostaną utracone\n"
 "gdy ten klient zostanie zamknięty. Czy chcesz kontynuować?"
 
-#: src/wmframe.cc:1856
+#: src/wmframe.cc:1859
 msgid "Kill Client: "
 msgstr "Zamknij klienta: "
 
@@ -2687,7 +2687,7 @@ msgstr "Rozmieść ikony"
 msgid "_Refresh"
 msgstr "Odśwież"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
 msgid "Hide Taskbar"
 msgstr "Ukryj pasek zadań"
 
@@ -2695,15 +2695,15 @@ msgstr "Ukryj pasek zadań"
 msgid "Favorite Applications"
 msgstr "Ulubione aplikacje"
 
-#: src/wmtaskbar.cc:362
+#: src/wmtaskbar.cc:363
 msgid "Window List Menu"
 msgstr "Menu listy okien"
 
-#: src/wmtaskbar.cc:371
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "Pokaż biurko"
 
-#: src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:1019
 msgid "Show Taskbar"
 msgstr "Pokaż pasek zadań"
 

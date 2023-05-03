@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.3.4pre2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"POT-Creation-Date: 2023-05-03 12:39+0200\n"
 "PO-Revision-Date: 2023-04-27 02:14+0000\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive68@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.opensuse.org/projects/icewm/"
@@ -341,7 +341,7 @@ msgstr "Desligado"
 msgid "NET"
 msgstr "Rede"
 
-#: src/aworkspaces.cc:635 src/wmstatus.cc:208
+#: src/aworkspaces.cc:664 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Área de Trabalho: "
 
@@ -1376,79 +1376,79 @@ msgstr "Estado da janela EWMH"
 msgid "workspace #%d: `%s'\n"
 msgstr "Área de Trabalho #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4410 src/icesh.cc:5039
+#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "O estado `%s' não é válido."
 
-#: src/icesh.cc:2644 src/icesh.cc:3995 src/icesh.cc:4045 src/icesh.cc:5354
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "O argumento `%s' não é válido"
 
-#: src/icesh.cc:3625
+#: src/icesh.cc:3639
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Não foi possível obter a geometria da janela 0x%lx"
 
-#: src/icesh.cc:3650
+#: src/icesh.cc:3664
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "A extensão do Xinerama `%s' não é válida."
 
-#: src/icesh.cc:3772 src/icesh.cc:3780 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3786 src/icesh.cc:3794 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Não foi possível escrever em %s"
 
-#: src/icesh.cc:4011
+#: src/icesh.cc:4025
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "A ação `%s' requer ao menos %d argumentos."
 
-#: src/icesh.cc:4020
+#: src/icesh.cc:4034
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "A expressão `%s' não é válida"
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4045 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Não foi possível abrir a tela: %s. O servidor X precisa estar em execução e "
 "o $DISPLAY definido."
 
-#: src/icesh.cc:4147
+#: src/icesh.cc:4161
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Não é esperado: '%s'."
 
-#: src/icesh.cc:4177
+#: src/icesh.cc:4191
 msgid "No windows found."
 msgstr "Nenhuma janela foi encontrada."
 
-#: src/icesh.cc:4193
+#: src/icesh.cc:4207
 msgid "No actions specified."
 msgstr "Nenhuma ação foi especificada."
 
-#: src/icesh.cc:4334
+#: src/icesh.cc:4348
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "O identificador da janela `%s' não é válido"
 
-#: src/icesh.cc:4350
+#: src/icesh.cc:4364
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "O PID `%s' não é válido"
 
-#: src/icesh.cc:4383
+#: src/icesh.cc:4397
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "A camada `%s' não é válida."
 
-#: src/icesh.cc:5484
+#: src/icesh.cc:5499
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "A ação `%s' não é conhecida"
@@ -1799,12 +1799,12 @@ msgstr "Expandir as Abas"
 msgid "Wrap Lines"
 msgstr "Envolver as Linhas"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:345
+#: src/icewmbg.cc:34 src/icewmbg.cc:351
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Falha ao carregar a imagem '%s'."
 
-#: src/icewmbg.cc:873
+#: src/icewmbg.cc:898
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1909,12 +1909,12 @@ msgstr ""
 " center:0 scaled:1 = preenche ambas as dimensões e mantém a proporção\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1818
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "A opção '%s' não foi reconhecida."
 
-#: src/icewmbg.cc:1139
+#: src/icewmbg.cc:1164
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Não foi possível iniciar, porque outro icewmbg está em execução."
 
@@ -2247,14 +2247,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<nenhum>"
 
-#: src/wmapp.cc:1558
+#: src/wmapp.cc:1559
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      O ID do cliente a ser utilizado ao entrar em contato "
 "com o gerenciador de sessão.\n"
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1565
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2265,7 +2265,7 @@ msgstr ""
 "  --debug-z           Exibe as mensagens de depuração relacionadas ao\n"
 "                                 empilhamento das janelas.\n"
 
-#: src/wmapp.cc:1572
+#: src/wmapp.cc:1573
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2287,7 +2287,7 @@ msgstr ""
 "  --trace=conf,icon      Caminho de rastreamento utilizado para carregar\n"
 "                         as configurações.\n"
 
-#: src/wmapp.cc:1582
+#: src/wmapp.cc:1583
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2347,21 +2347,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1648
+#: src/wmapp.cc:1649
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s diretórios de configurações:\n"
 
-#: src/wmapp.cc:1733
+#: src/wmapp.cc:1734
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s opções estão configuradas: %s\n"
 
-#: src/wmapp.cc:1867
+#: src/wmapp.cc:1868
 msgid "Confirm Logout"
 msgstr "Confirmar a Saída"
 
-#: src/wmapp.cc:1868
+#: src/wmapp.cc:1869
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2461,15 +2461,15 @@ msgstr "Recarregar c_haves"
 msgid "Clos_e"
 msgstr "F_echar"
 
-#: src/wmframe.cc:1372
+#: src/wmframe.cc:1375
 msgid "Rename"
 msgstr "Renomear"
 
-#: src/wmframe.cc:1373
+#: src/wmframe.cc:1376
 msgid "Rename the window title"
 msgstr "Renomear o título da janela"
 
-#: src/wmframe.cc:1851
+#: src/wmframe.cc:1854
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2479,7 +2479,7 @@ msgstr ""
 "perdidas quando este cliente for finalizado.\n"
 "Você quer continuar?"
 
-#: src/wmframe.cc:1856
+#: src/wmframe.cc:1859
 msgid "Kill Client: "
 msgstr "Interromper o Cliente: "
 
@@ -2690,7 +2690,7 @@ msgstr "Organizar os Ico_nes"
 msgid "_Refresh"
 msgstr "_Recarregar"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
 msgid "Hide Taskbar"
 msgstr "Ocultar a Barra de Tarefas"
 
@@ -2698,15 +2698,15 @@ msgstr "Ocultar a Barra de Tarefas"
 msgid "Favorite Applications"
 msgstr "Aplicativos Favoritos"
 
-#: src/wmtaskbar.cc:362
+#: src/wmtaskbar.cc:363
 msgid "Window List Menu"
 msgstr "Menu da lista de janelas"
 
-#: src/wmtaskbar.cc:371
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "Exibir a Área de Trabalho"
 
-#: src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:1019
 msgid "Show Taskbar"
 msgstr "Exibir a Barra de Tarefas"
 

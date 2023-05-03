@@ -1,5 +1,369 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 4e4f6603618316a76dfc3c62e03cf5a3a9fa784c
+Merge: 1bef488a 87db7791
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 3 12:38:56 2023 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 87db7791b3db1479001b10b7de587c350edd0cfe
+Merge: 8ada50ff f9149e62
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 3 12:38:05 2023 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit f9149e621694acda21adb3292decde627e9eea9e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 2 23:13:33 2023 +0200
+
+    When managing a new client, postpone sending a Configure event until
+    the final position is known, for issue #720.
+
+ src/decorate.cc | 3 ++-
+ src/wmframe.cc  | 9 ++++++++-
+ src/wmframe.h   | 4 ++--
+ 3 files changed, 12 insertions(+), 4 deletions(-)
+
+commit 885953d0ffdad031d4ebf68863c41d3a8fa3410a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 30 21:44:16 2023 +0200
+
+    Revert "Fix compile error for yximage.cc." 30bd4f5
+
+ src/yximage.cc | 4 ----
+ 1 file changed, 4 deletions(-)
+
+commit 794875889f18b27ae9a90ad1fc3d808c1ac2519a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 30 10:06:40 2023 +0200
+
+    Support icesh "focusmodel" for client windows without a WM_HINTS property.
+
+ src/icesh.cc | 27 ++++++++++++++-------------
+ 1 file changed, 14 insertions(+), 13 deletions(-)
+
+commit 59539385d029184227e0eccefe3c8efd706913ff
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Apr 29 06:53:21 2023 +0200
+
+    Let configure on OpenBSD test for -liconv in EXTRA_LIBS.
+
+ configure.ac | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 8206ae0cec4ed2d8e89b6b544ba535adc41c1cc9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Apr 29 06:49:52 2023 +0200
+
+    Let icesh report up to 1024 bytes of a property in "prop".
+
+ src/icesh.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 278bc29d2bbc8fddf78bbfda39be67351491f41d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Apr 29 06:46:33 2023 +0200
+
+    Turkish translation of .desktop files and closes #716.
+
+ lib/icewm-session.desktop | 2 ++
+ lib/icewm.desktop         | 2 ++
+ 2 files changed, 4 insertions(+)
+
+commit 7fa72b6db815b264395ef36ca01bb9d9b4713270
+Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
+Date:   Wed Apr 26 23:54:34 2023 +0000
+
+    Translated using Weblate (Portuguese (Brazil))
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/pt_BR.po | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+commit f9277940bd80261b944bbacc8332bbd3431221be
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 24 21:31:52 2023 +0200
+
+    Cache toolbar button gradients to speedup drawing.  Eliminate half of
+    the button drawings on startup.
+
+ src/objbar.cc    |  9 +++------
+ src/objbutton.cc | 30 ++++++++++++++++++++++++++++--
+ src/objbutton.h  | 15 ++++++++++-----
+ src/wmtaskbar.cc |  6 +++++-
+ 4 files changed, 46 insertions(+), 14 deletions(-)
+
+commit 031cdf6a87d66a9bb3d07b5390bff8edec1b61f8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 23 18:46:26 2023 +0200
+
+    Guard against workspace button gradient being undefined.
+
+ src/aworkspaces.cc | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit f208e27aefaf629ae26233faad284dbb3e76f217
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 23 18:36:54 2023 +0200
+
+    Cache workspace button backgrounds for faster redrawing.
+
+ src/aworkspaces.cc | 33 +++++++++++++++++++++++++++++++--
+ src/aworkspaces.h  |  6 +++++-
+ 2 files changed, 36 insertions(+), 3 deletions(-)
+
+commit eb0933d1feebc715bb0e5db1c3c4395da3384da7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 23 18:34:01 2023 +0200
+
+    Improve the quality of drawing gradients for the GdkPixbuf renderer.
+
+ src/yimage_gdk.cc | 84 ++++++++++++++++++++++++++++++++++++++++++++++-----
+ src/yimage_gdk.h  | 13 ++++----
+ 2 files changed, 82 insertions(+), 15 deletions(-)
+
+commit f156d91f36dcdadb2f035afc3f25f04ee66e89b1
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Sat Apr 22 05:48:44 2023 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/tr.po | 40 ++++++++++++++++++++--------------------
+ 1 file changed, 20 insertions(+), 20 deletions(-)
+
+commit dd36202452c1ffa41d394f0525a401b1ee304731
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Fri Apr 21 06:28:45 2023 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/tr.po | 82 ++++++++++++++++++++++++++++++------------------------------
+ 1 file changed, 41 insertions(+), 41 deletions(-)
+
+commit d35634ee379b663f97883cdf957a951b5b56349a
+Author: Wallon <franckjl@hotmail.com>
+Date:   Fri Apr 21 09:05:23 2023 +0000
+
+    Translated using Weblate (French)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/fr.po | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
+
+commit 703414c3d27c2499f54b3eea29baab1f714b305b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Apr 19 19:32:12 2023 +0200
+
+    Let icesh also pick icewm internal and override redirect windows.
+
+ src/icesh.cc | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+
+commit 83d8f80309081e42e5b607b88ca5f6cc11339175
+Author: Dmitriy Khanzhin <jinn@altlinux.org>
+Date:   Wed Apr 19 04:37:20 2023 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/ru.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c9e82998930fce2cccdbc4cdcceacdfebffbb8e9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 16 22:18:13 2023 +0200
+
+    Improve arrow navigation in the system dialog.
+
+ src/wmdialog.cc | 43 +++++++++++++++++++++++++++++++------------
+ src/wmdialog.h  |  2 ++
+ 2 files changed, 33 insertions(+), 12 deletions(-)
+
+commit 999cccd3c2d2e66f0c297e7888edc4b09c92b3e8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 16 11:13:32 2023 +0200
+
+    Improve the quality of drawing gradients for the Imlib2 renderer.
+
+ src/ref.h       |  2 +-
+ src/wmstatus.cc |  8 ++----
+ src/yimage2.cc  | 71 +++++++++++++++++++++++++++++++++++++++++++++++++++--
+ src/yimage2.h   |  8 +++---
+ src/ypaint.cc   | 20 +++++++++++++++
+ src/ypaint.h    |  8 ++----
+ 6 files changed, 99 insertions(+), 18 deletions(-)
+
+commit 75c35d5acaa101b7c3efdeb9148f84d65b40b2be
+Author: Dmitriy Khanzhin <jinn@altlinux.org>
+Date:   Sat Apr 15 14:55:33 2023 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/ru.po | 75 ++++++++++++++++++++++++++++--------------------------------
+ 1 file changed, 35 insertions(+), 40 deletions(-)
+
+commit e7fef962ae0fbd353264be01d32ef6d6a3ae1f13
+Author: bittin <droidbittin@gmail.com>
+Date:   Fri Apr 14 18:10:33 2023 +0200
+
+    Swedish translation and credits (#714)
+
+ lib/icewm-session.desktop | 2 ++
+ lib/icewm.desktop         | 2 ++
+ po/sv.po                  | 1 +
+ 3 files changed, 5 insertions(+)
+
+commit 522e38e88e71226da02f25808516aa73734ab2e9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Apr 12 23:55:52 2023 +0200
+
+    When internationalization is disabled, unset LIBICONV.
+
+ configure.ac | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 2b19f7d199fe40c5b655330a00c68a0a5b9dfcfe
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 10 23:38:10 2023 +0200
+
+    Fix corrupted text if built without i18n for issue ice-wm/icewm#131.
+
+ src/ylocale.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 54c594deb9c547cb48e4079d028036647ac83f99
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 10 23:38:05 2023 +0200
+
+    Deprecate XRRDisable.
+
+ src/wmapp.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 30bd4f5dc92f55473c08ceec35ed21ade5d17a0e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 10 23:37:25 2023 +0200
+
+    Fix compile error for yximage.cc.
+
+ src/yximage.cc | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 1bef488a628c7a1ab041fa3016c6b619273e5d45
+Merge: 512dd97f 31c41d1b
+Author: gijsbers <gijsbers@users.noreply.github.com>
+Date:   Mon Apr 10 13:20:06 2023 +0200
+
+    Merge pull request #130 from ice-wm/revert-127-patch-1
+
+    Revert "Update icewm.desktop"
+
+commit 31c41d1beceb214c781fa6918593b1e69306301f
+Author: gijsbers <gijsbers@users.noreply.github.com>
+Date:   Mon Apr 10 13:18:13 2023 +0200
+
+    Revert "Update icewm.desktop"
+
+ lib/icewm.desktop | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 512dd97fae605e83a699bd510ac8132ad25943cc
+Merge: 5c0214ca bf6df611
+Author: gijsbers <gijsbers@users.noreply.github.com>
+Date:   Mon Apr 10 13:17:18 2023 +0200
+
+    Merge pull request #127 from bittin/patch-1
+
+    Update icewm.desktop
+
+commit 5c08dbaed1664db0a4cd71699a344a7b2c97ec11
+Author: Luna  Jernberg <bittin@opensuse.org>
+Date:   Mon Apr 10 04:44:32 2023 +0000
+
+    Translated using Weblate (Swedish)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/sv.po | 34 +++++++++++++++-------------------
+ 1 file changed, 15 insertions(+), 19 deletions(-)
+
+commit bf6df61189c67107b2ff07eb226e25d1b0515e58
+Author: bittin <droidbittin@gmail.com>
+Date:   Mon Apr 10 06:53:26 2023 +0200
+
+    Update icewm.desktop
+
+    Add Swedish Translation
+
+ lib/icewm.desktop | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 5c0214ca3c0c75510595cf04b1d9e859764eaa72
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Apr 9 23:35:26 2023 +0200
+
+    Prepare 3.3.3 release
+
+ AUTHORS      |   20 +-
+ ChangeLog    | 1205 +++++++++++++++++++++++++-----------------------------
+ NEWS         |  140 ++++---
+ README.md    |   38 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |   14 +-
+ po/be.po     |   14 +-
+ po/bg.po     |   14 +-
+ po/ca.po     |   18 +-
+ po/cs.po     |   14 +-
+ po/da.po     |   14 +-
+ po/de.po     |   14 +-
+ po/el.po     |   14 +-
+ po/en.po     |   14 +-
+ po/es.po     |   14 +-
+ po/fi.po     |   14 +-
+ po/fr.po     |   46 +--
+ po/he.po     |   14 +-
+ po/hr.po     |   14 +-
+ po/hu.po     |   18 +-
+ po/icewm.pot |   16 +-
+ po/id.po     |   14 +-
+ po/it.po     |   14 +-
+ po/ja.po     |   18 +-
+ po/ko.po     |   14 +-
+ po/lt.po     |   14 +-
+ po/lv.po     |   14 +-
+ po/mk.po     |   14 +-
+ po/nb.po     |   14 +-
+ po/nl.po     |   18 +-
+ po/no.po     |   14 +-
+ po/pl.po     |   14 +-
+ po/pt.po     |   14 +-
+ po/pt_BR.po  |   14 +-
+ po/ro.po     |   14 +-
+ po/ru.po     |   14 +-
+ po/sk.po     |   18 +-
+ po/sl.po     |   14 +-
+ po/sv.po     |   14 +-
+ po/tr.po     |   18 +-
+ po/uk.po     |   14 +-
+ po/vi.po     |   14 +-
+ po/zh_CN.po  |   14 +-
+ po/zh_TW.po  |   14 +-
+ 46 files changed, 977 insertions(+), 1044 deletions(-)
+
 commit 6aab66de5a205bf4edbc21bb2fc270ae91dd179e
 Merge: accba784 8ada50ff
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5848,443 +6212,3 @@ Date:   Sat Dec 18 12:18:42 2021 +0000
 
  po/sk.po | 28 ++++++++++++++--------------
  1 file changed, 14 insertions(+), 14 deletions(-)
-
-commit 66d0ae10332b34bedeb6f828212c797697afc0a0
-Author: David Medina <medipas@gmail.com>
-Date:   Fri Dec 17 11:07:54 2021 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/ca.po | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)
-
-commit 1cba5a6c38f632cd048d64423d7ce6e2c50ddc9e
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Date:   Fri Dec 17 03:11:37 2021 +0000
-
-    Translated using Weblate (Japanese)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/ja.po | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)
-
-commit 0724f7ec8e599809f33c50ea94f0e328f625c764
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 16 20:45:17 2021 +0100
-
-    Update pot files.
-
- po/ar.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/be.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/bg.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/ca.po     | 228 ++++++++++++++++++++++++++++++++----------------------
- po/cs.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/da.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/de.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/el.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/en.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/es.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/fi.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/fr.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/he.po     | 230 ++++++++++++++++++++++++++++++++-----------------------
- po/hr.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/hu.po     | 228 ++++++++++++++++++++++++++++++++----------------------
- po/icewm.pot | 226 ++++++++++++++++++++++++++++++++----------------------
- po/id.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/it.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/ja.po     | 228 ++++++++++++++++++++++++++++++++----------------------
- po/ko.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/lt.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/lv.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/mk.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/nb.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/nl.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/no.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/pl.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/pt.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/pt_BR.po  | 224 +++++++++++++++++++++++++++++++----------------------
- po/ro.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/ru.po     | 228 ++++++++++++++++++++++++++++++++----------------------
- po/sk.po     | 228 ++++++++++++++++++++++++++++++++----------------------
- po/sl.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/sv.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/tr.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/uk.po     | 228 ++++++++++++++++++++++++++++++++----------------------
- po/vi.po     | 224 +++++++++++++++++++++++++++++++----------------------
- po/zh_CN.po  | 224 +++++++++++++++++++++++++++++++----------------------
- po/zh_TW.po  | 224 +++++++++++++++++++++++++++++++----------------------
- 39 files changed, 5203 insertions(+), 3565 deletions(-)
-
-commit a061b0c16ebf4c13e16b49dc2d774c0ed934bf1a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 16 20:42:38 2021 +0100
-
-    Add a Tile submenu to the title bar menu for issue ice-wm/icewm#74.
-
- lib/Makefile.am                     |   9 ++++
- lib/icons/tilebottom_48x48.png      | Bin 0 -> 1220 bytes
- lib/icons/tilebottomleft_48x48.png  | Bin 0 -> 1201 bytes
- lib/icons/tilebottomright_48x48.png | Bin 0 -> 1204 bytes
- lib/icons/tilecenter_48x48.png      | Bin 0 -> 1206 bytes
- lib/icons/tileleft_48x48.png        | Bin 0 -> 1198 bytes
- lib/icons/tileright_48x48.png       | Bin 0 -> 1189 bytes
- lib/icons/tiletop_48x48.png         | Bin 0 -> 1222 bytes
- lib/icons/tiletopleft_48x48.png     | Bin 0 -> 1199 bytes
- lib/icons/tiletopright_48x48.png    | Bin 0 -> 1208 bytes
- src/decorate.cc                     |  74 ++++++++++++++++++----------
- src/wmaction.h                      |   9 ++++
- src/wmapp.cc                        |  32 +++++++++++++
- src/wmapp.h                         |  26 +++++-----
- src/wmframe.cc                      |  82 ++++++++++++++++++++++++++++++++
- src/wmframe.h                       |   1 +
- src/wmwinlist.cc                    |   3 +-
- 17 files changed, 198 insertions(+), 38 deletions(-)
-
-commit 34c8ec5d6a4f1e3c0c6780ea436228e46ba84f78
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 14 21:53:54 2021 +0100
-
-    Fix for icesh maximize.
-
- src/icesh.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 7965d1392a7d06d86636ec13afbf52c7461a0437
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 13 22:58:33 2021 +0100
-
-    Fix compilation without CONFIG_I18N.
-
- src/ylocale.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 859260767ba06140342ef2d3beb29ed9ee7db36b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 13 22:53:43 2021 +0100
-
-    Initialize locale specific modifiers with XSetLocaleModifiers.
-
- src/ylocale.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 2582a4d38f948a425086b046f810b0f366b7cc98
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 13 22:52:49 2021 +0100
-
-    Denote the language.
-
- po/lv.po | 2 +-
- po/mk.po | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-commit e52c2cfb752bf417b2319a8c521c4dbf63acbe79
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 12 22:59:17 2021 +0100
-
-    Prevent compiler warnings.
-
- src/ybidi.h     | 2 +-
- src/yfontbase.h | 2 +-
- src/yfontxft.cc | 4 ++--
- src/ypaint.cc   | 3 ---
- 4 files changed, 4 insertions(+), 7 deletions(-)
-
-commit fd85b072379091126ab2ee7d92a9aaf52e810485
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 12 20:23:58 2021 +0100
-
-    Support Unicode and non-Latin text in input fields and the address bar.
-
- src/CMakeLists.txt |   2 +-
- src/Makefile.am    |   1 +
- src/testlocale.cc  |  49 ++++++++++++----------
- src/themable.h     |   2 +-
- src/wmtaskbar.cc   |   5 ++-
- src/yfontbase.h    |  14 ++++---
- src/yfontcore.cc   |  40 +++++++++++++++++-
- src/yfontxft.cc    |  14 ++++++-
- src/yinputline.cc  |  56 ++++++++++++-------------
- src/yinputline.h   |  13 +++---
- src/ylocale.cc     |  70 +++++++++++++++++++++++++++----
- src/ylocale.h      |   9 ++--
- src/ypaint.cc      |   6 +++
- src/ypaint.h       |   5 ++-
- src/ystring.cc     | 112 +++++++++++++++++++++++++++++++++++++++++++++++++
- src/ystring.h      |  29 ++++++++-----
- 16 files changed, 333 insertions(+), 94 deletions(-)
-
-commit 775bb1f4f7ad67d78f0fe3c77d5994bcd698b111
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 12 12:59:07 2021 +0100
-
-    Refresh task pane background on expose events.
-
- src/atasks.cc | 8 +++++++-
- src/atasks.h  | 2 +-
- 2 files changed, 8 insertions(+), 2 deletions(-)
-
-commit 568bd8baeec1732eff753f89279a676288d61653
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 12 12:17:49 2021 +0100
-
-    Add font macros for Xft fonts.
-
- src/fontmacro.h |  8 ++++++++
- src/themable.h  | 34 +++++++++++++++++-----------------
- src/yprefs.h    |  2 +-
- 3 files changed, 26 insertions(+), 18 deletions(-)
-
-commit 73561a5f90edb8bec6312cd17e2c7aaa27c9f5a3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Dec 11 12:07:34 2021 +0100
-
-    Immediately create workspace buttons for more reliable taskbar relayouts.
-
- src/aworkspaces.cc | 30 ++++++++++++++++--------------
- src/aworkspaces.h  |  1 +
- src/yarray.h       |  1 +
- 3 files changed, 18 insertions(+), 14 deletions(-)
-
-commit 2a145576699dc10b20483a270495653684e00701
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Dec 11 12:06:39 2021 +0100
-
-    Revert commit 427547115d60d9b41860aa76b27cb8e805ed5d6a "Preferring DejaVu
-    fonts for all purposes".
-
- src/themable.h | 43 +++++++++++++++++--------------------------
- 1 file changed, 17 insertions(+), 26 deletions(-)
-
-commit 0638b9f2fb79878f643953978788af8f77b56f1b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Dec 10 16:29:08 2021 +0100
-
-    Initialize the system tray with a valid height for issue #626.  When the
-    system tray changes height then start from a vertical position of 1 for
-    issue #626.
-
- src/yxtray.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit c70fcded08d099daffe2ffb3e8b7bdbc85a4d901
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Dec 10 16:27:41 2021 +0100
-
-    Only repaint frame when it has borders.
-
- src/wmframe.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit b723f1ca92d327aa9e76ea90123d239f93279416
-Author: David Medina <medipas@gmail.com>
-Date:   Fri Dec 10 09:33:44 2021 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (507 of 507 strings)
-
- po/ca.po | 20 +++++++++-----------
- 1 file changed, 9 insertions(+), 11 deletions(-)
-
-commit 427547115d60d9b41860aa76b27cb8e805ed5d6a
-Author: Eduard Bloch <blade@debian.org>
-Date:   Thu Dec 9 15:36:20 2021 +0100
-
-    Preferring DejaVu fonts for all purposes
-
-    This closes #502 which was mostly solved in 2.9.1 already, however
-    quickswitch and input line still failed to render non-ASCII.
-
-    Also adding an easy option for integrators to amend the default font
-    sizes.
-
- src/themable.h | 43 ++++++++++++++++++++++++++-----------------
- 1 file changed, 26 insertions(+), 17 deletions(-)
-
-commit 2b0b0fb75ae9dff6e548e79b06572e2d8083eaf9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 9 03:45:41 2021 +0100
-
-    Fix vertical position of systray in taskbar to prevent background glitch
-    for issue #626.
-
- src/yxtray.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit b989a3eebd535f50da8c887f00b5eeb07e14254d
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Wed Dec 8 15:59:36 2021 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (507 of 507 strings)
-
- po/pt.po | 16 +++++++---------
- 1 file changed, 7 insertions(+), 9 deletions(-)
-
-commit d91ddc72cd909c3ce2de49eac9f73471d882b7dc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 7 23:50:37 2021 +0100
-
-    Prepare 2.9.2 release
-
- AUTHORS      |   8 +-
- ChangeLog    | 596 +++++++++++++++++++++++++++++--------------------------
- NEWS         | 121 ++++-------
- README.md    |  36 ++--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  16 +-
- po/be.po     |  16 +-
- po/bg.po     |  16 +-
- po/ca.po     |  16 +-
- po/cs.po     |  16 +-
- po/da.po     |  16 +-
- po/de.po     |  16 +-
- po/el.po     |  16 +-
- po/en.po     |  16 +-
- po/es.po     |  16 +-
- po/fi.po     |  16 +-
- po/fr.po     |  16 +-
- po/he.po     |  16 +-
- po/hr.po     |  16 +-
- po/hu.po     |  16 +-
- po/icewm.pot |  18 +-
- po/id.po     |  16 +-
- po/it.po     |  16 +-
- po/ja.po     |  20 +-
- po/ko.po     |  16 +-
- po/lt.po     |  16 +-
- po/lv.po     |  16 +-
- po/mk.po     |  16 +-
- po/nb.po     |  16 +-
- po/nl.po     |  16 +-
- po/no.po     |  16 +-
- po/pl.po     |  16 +-
- po/pt.po     |  16 +-
- po/pt_BR.po  |  16 +-
- po/ro.po     |  16 +-
- po/ru.po     |  20 +-
- po/sk.po     |  20 +-
- po/sl.po     |  16 +-
- po/sv.po     |  16 +-
- po/tr.po     |  16 +-
- po/uk.po     |  20 +-
- po/vi.po     |  16 +-
- po/zh_CN.po  |  16 +-
- po/zh_TW.po  |  16 +-
- 46 files changed, 705 insertions(+), 712 deletions(-)
-
-commit 56e90a031d03cad4702d67fdb91619641b919668
-Merge: 1bcf0ed3 ad5bc16f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 7 23:46:58 2021 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit ad5bc16f34196c543470e11e9cc72425f78c46f3
-Merge: 99719a51 6a89b353
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 7 23:46:05 2021 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 6a89b353df777c389f471e7fd9a71ad013bb300c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 7 23:00:23 2021 +0100
-
-    Postpone XFreeFontSet until names are no longer needed.
-
- src/yfontcore.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit aa9257bcbf77a2d5f934fdf98ff271be32b2fa16
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 7 01:15:15 2021 +0100
-
-    Improve explanation for TimeFormat and give an example.
-
- man/icewm-preferences.pod | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
-
-commit 0ea5a3c5cba86e9b9609614fc1dd013e03fc909c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 6 21:03:55 2021 +0100
-
-    Add support for multiple clocks in different time zones.
-
- man/icewm-preferences.pod |   6 +-
- src/aclock.cc             | 183 +++++++++++++++++++++++++++++-------------
- src/aclock.h              |  24 +++++-
- src/wmprog.cc             |   2 +-
- src/wmtaskbar.cc          |   9 ++-
- src/wmtaskbar.h           |   6 +-
- src/yarray.h              |   7 ++
- 7 files changed, 170 insertions(+), 67 deletions(-)
-
-commit 4315aa3c831bafbbe1303324dd8a73c9483eda18
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Date:   Mon Dec 6 08:54:29 2021 +0000
-
-    Translated using Weblate (Japanese)
-
-    Currently translated at 100.0% (507 of 507 strings)
-
- po/ja.po | 20 +++++++++-----------
- 1 file changed, 9 insertions(+), 11 deletions(-)
-
-commit df0e0e7ab22130869fd610b8b1f2e70de06ddbce
-Author: Taras Panchenko <top39@ukr.net>
-Date:   Sun Dec 5 22:30:22 2021 +0000
-
-    Translated using Weblate (Ukrainian)
-
-    Currently translated at 100.0% (507 of 507 strings)
-
- po/uk.po | 18 ++++++++----------
- 1 file changed, 8 insertions(+), 10 deletions(-)
-
-commit 39ba6f339aaeb712740de60b07624aa2062fdea6
-Author: Taras Panchenko <top39@ukr.net>
-Date:   Sun Dec 5 22:35:10 2021 +0000
-
-    Translated using Weblate (Russian)
-
-    Currently translated at 100.0% (507 of 507 strings)
-
- po/ru.po | 18 ++++++++----------
- 1 file changed, 8 insertions(+), 10 deletions(-)
-
-commit 7659f8ec4d0b9ba13bb2bb7a343d0e8278e6b6a1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 5 23:33:55 2021 +0100
-
-    Delay font loading in APM until battery is detected.
-
- src/aapm.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit b4031cf98f852eee0a09294ba893ca723a340729
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 5 23:32:32 2021 +0100
-
-    Prefer PictOpOver over PictOpSrc in drawPixmap for 24-bit displays.
-
- src/ypaint.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit c50fb5c89f314298d6053c86cf5971b0649f67cf
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Sun Dec 5 16:13:07 2021 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (507 of 507 strings)
-
- po/sk.po | 20 +++++++++-----------
- 1 file changed, 9 insertions(+), 11 deletions(-)

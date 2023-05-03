@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.12\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"POT-Creation-Date: 2023-05-03 12:39+0200\n"
 "PO-Revision-Date: 2023-04-22 08:14+0000\n"
 "Last-Translator: Mehmet Akif 9oglu <madanadam@gmail.com>\n"
-"Language-Team: Turkish <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/tr/>\n"
+"Language-Team: Turkish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -339,7 +339,7 @@ msgstr "inen"
 msgid "NET"
 msgstr "NET"
 
-#: src/aworkspaces.cc:635 src/wmstatus.cc:208
+#: src/aworkspaces.cc:664 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Çalışma Alanı: "
 
@@ -1371,78 +1371,78 @@ msgstr "EWMH pencere durumu"
 msgid "workspace #%d: `%s'\n"
 msgstr "çalışma alanı #%d: '%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4410 src/icesh.cc:5039
+#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Geçersiz durum: '%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:3995 src/icesh.cc:4045 src/icesh.cc:5354
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Geçersiz argüman: '%s'"
 
-#: src/icesh.cc:3625
+#: src/icesh.cc:3639
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "0x%lx penceresinin geometrisi alınamıyor"
 
-#: src/icesh.cc:3650
+#: src/icesh.cc:3664
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Hatalı Xinerama: '%s'."
 
-#: src/icesh.cc:3772 src/icesh.cc:3780 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3786 src/icesh.cc:3794 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "%s konumuna yazılamadı"
 
-#: src/icesh.cc:4011
+#: src/icesh.cc:4025
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "'%s' eylemi en az %d değişken gerektiriyor."
 
-#: src/icesh.cc:4020
+#: src/icesh.cc:4034
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Hatalı ifade: '%s'"
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4045 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Ekran açılamıyor: %s. X çalışır durumda ve $DISPLAY ayarlanmış olmalıdır."
 
-#: src/icesh.cc:4147
+#: src/icesh.cc:4161
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Beklenmeyen: '%s'."
 
-#: src/icesh.cc:4177
+#: src/icesh.cc:4191
 msgid "No windows found."
 msgstr "Pencere bulunamadı."
 
-#: src/icesh.cc:4193
+#: src/icesh.cc:4207
 msgid "No actions specified."
 msgstr "Eylem belirtilmedi."
 
-#: src/icesh.cc:4334
+#: src/icesh.cc:4348
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Hatalı pencere belirteci: '%s'"
 
-#: src/icesh.cc:4350
+#: src/icesh.cc:4364
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Geçersiz PID: '%s'"
 
-#: src/icesh.cc:4383
+#: src/icesh.cc:4397
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Geçersiz katman: '%s'."
 
-#: src/icesh.cc:5484
+#: src/icesh.cc:5499
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Bilinmeyen eylem: '%s'"
@@ -1783,12 +1783,12 @@ msgstr "Sekmeleri Genişlet"
 msgid "Wrap Lines"
 msgstr "Satır Kaydır"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:345
+#: src/icewmbg.cc:34 src/icewmbg.cc:351
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "'%s' resmi yüklemesi başarısız oldu."
 
-#: src/icewmbg.cc:873
+#: src/icewmbg.cc:898
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1893,12 +1893,12 @@ msgstr ""
 " center:0 scaled:1 = her iki boyutu da doldur ve en boy oranını koru\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1818
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Tanınmayan seçenek ' %s'."
 
-#: src/icewmbg.cc:1139
+#: src/icewmbg.cc:1164
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Başlatılamıyor, çünkü başka icewmbg hala çalışıyor."
 
@@ -2226,14 +2226,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<yok>"
 
-#: src/wmapp.cc:1558
+#: src/wmapp.cc:1559
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Oturum yöneticisiyle iletişim kurarken kullanılacak "
 "istemci kimliği.\n"
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1565
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2244,7 +2244,7 @@ msgstr ""
 "  --debug-z           Pencere yığınlaması ile ilgili hata ayıklama "
 "mesajlarını yazdırın.\n"
 
-#: src/wmapp.cc:1572
+#: src/wmapp.cc:1573
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2265,7 +2265,7 @@ msgstr ""
 "  --trace=conf,icon   Yapılandırmayı yüklemek için kullanılan yolları "
 "izleyin.\n"
 
-#: src/wmapp.cc:1582
+#: src/wmapp.cc:1583
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2325,21 +2325,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1648
+#: src/wmapp.cc:1649
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s yapılandırma dizinleri:\n"
 
-#: src/wmapp.cc:1733
+#: src/wmapp.cc:1734
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s yapılandırılmış seçenekler:%s\n"
 
-#: src/wmapp.cc:1867
+#: src/wmapp.cc:1868
 msgid "Confirm Logout"
 msgstr "Oturum Kapatma Onayı"
 
-#: src/wmapp.cc:1868
+#: src/wmapp.cc:1869
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2439,15 +2439,15 @@ msgstr "_Tuşları yükle"
 msgid "Clos_e"
 msgstr "_Kapat"
 
-#: src/wmframe.cc:1372
+#: src/wmframe.cc:1375
 msgid "Rename"
 msgstr "Yeniden adlandır"
 
-#: src/wmframe.cc:1373
+#: src/wmframe.cc:1376
 msgid "Rename the window title"
 msgstr "Pencere başlığını yeniden adlandır"
 
-#: src/wmframe.cc:1851
+#: src/wmframe.cc:1854
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2455,7 +2455,7 @@ msgstr ""
 "DİKKAT!! Bu istemci kapatıldığında tüm kaydedilmemiş\n"
 "değişiklikler kaybedilecektir. Emin misiniz?"
 
-#: src/wmframe.cc:1856
+#: src/wmframe.cc:1859
 msgid "Kill Client: "
 msgstr "İstemciyi öldür: "
 
@@ -2666,7 +2666,7 @@ msgstr "_Simgeleri Düzenle"
 msgid "_Refresh"
 msgstr "Ye_nile"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
 msgid "Hide Taskbar"
 msgstr "Görev Çubuğunu Gizle"
 
@@ -2674,15 +2674,15 @@ msgstr "Görev Çubuğunu Gizle"
 msgid "Favorite Applications"
 msgstr "Favori Uygulamalar"
 
-#: src/wmtaskbar.cc:362
+#: src/wmtaskbar.cc:363
 msgid "Window List Menu"
 msgstr "Pencere Listesi"
 
-#: src/wmtaskbar.cc:371
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "Masaüstünü Göster"
 
-#: src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:1019
 msgid "Show Taskbar"
 msgstr "Görev Çubuğunu Göster"
 

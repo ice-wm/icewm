@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-04-09 23:30+0200\n"
+"POT-Creation-Date: 2023-05-03 12:39+0200\n"
 "PO-Revision-Date: 2021-09-21 08:11+0000\n"
 "Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -345,7 +345,7 @@ msgstr "Ξεδίπλωμα"
 msgid "NET"
 msgstr "ΔΙΚΤ"
 
-#: src/aworkspaces.cc:635 src/wmstatus.cc:208
+#: src/aworkspaces.cc:664 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Επιφάνεια εργασίας: "
 
@@ -1380,43 +1380,43 @@ msgstr "GNOME, κατάσταση παράθυρου"
 msgid "workspace #%d: `%s'\n"
 msgstr "επιφάνεια εργασίας #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4410 src/icesh.cc:5039
+#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Μη έγκυρη κατάσταση: `%s' ."
 
-#: src/icesh.cc:2644 src/icesh.cc:3995 src/icesh.cc:4045 src/icesh.cc:5354
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Μη έγκυρο όρισμα: `%s' ."
 
-#: src/icesh.cc:3625
+#: src/icesh.cc:3639
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Αδυναμία λήψης γεωμετρίας παραθύρου 0x%lx"
 
-#: src/icesh.cc:3650
+#: src/icesh.cc:3664
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Μη έγκυρο Xinerama: `%s' ."
 
-#: src/icesh.cc:3772 src/icesh.cc:3780 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3786 src/icesh.cc:3794 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Αδυναμία εγγραφής στο %s"
 
-#: src/icesh.cc:4011
+#: src/icesh.cc:4025
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Η ενέργεια `%s' απαιτεί τουλάχιστον %d ορίσματα."
 
-#: src/icesh.cc:4020
+#: src/icesh.cc:4034
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Μη έγκυρη έκφραση: `%s'"
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icesh.cc:4045 src/icesound.cc:794 src/icewmbg.cc:1003
 #: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1424,35 +1424,35 @@ msgstr ""
 "Δεν μπορώ να ανοίξω την προβολή: %s . Ο X θα πρέπει να τρέχει, και η "
 "μεταβλητή $DISPLAY να έχει οριστεί."
 
-#: src/icesh.cc:4147
+#: src/icesh.cc:4161
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "Μη αναμενόμενη λέξη κλειδί: %s"
 
-#: src/icesh.cc:4177
+#: src/icesh.cc:4191
 msgid "No windows found."
 msgstr "Δεν βρέθηκαν παράθυρα."
 
-#: src/icesh.cc:4193
+#: src/icesh.cc:4207
 msgid "No actions specified."
 msgstr "Δεν υπάρχουν καθορισμένες ενέργειες."
 
-#: src/icesh.cc:4334
+#: src/icesh.cc:4348
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Μη έγκυρο αναγνωριστικό παράθυρου: `%s'"
 
-#: src/icesh.cc:4350
+#: src/icesh.cc:4364
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Μη έγκυρο PID: `%s' ."
 
-#: src/icesh.cc:4383
+#: src/icesh.cc:4397
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Μη έγκυρο στρώμα: `%s' ."
 
-#: src/icesh.cc:5484
+#: src/icesh.cc:5499
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Άγνωστη ενέργεια: `%s'"
@@ -1951,7 +1951,7 @@ msgstr ""
 "\n"
 "\n"
 
-#: src/icewmbg.cc:1134 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1818
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Μη αναγνωρισμένη επιλογή '%s'."
@@ -2286,14 +2286,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<κανένα>"
 
-#: src/wmapp.cc:1558
+#: src/wmapp.cc:1559
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ΤΑΥΤΟΤΗΤΑ      Ταυτότητα του πελάτη που θα χρησιμοποιηθεί όταν "
 "γίνεται επαφή με το διαχειριστή συνεδρίας.\n"
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1565
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2304,7 +2304,7 @@ msgstr ""
 "  --debug-z              Εκτύπωση μηνυμάτων αποσφαλμάτωσης σχετικά με το "
 "στοίβαγμα των παράθυρων.\n"
 
-#: src/wmapp.cc:1572
+#: src/wmapp.cc:1573
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -2334,7 +2334,7 @@ msgstr ""
 "  --trace=conf,icon   Ίχνη διαδρομών που χρησιμοποιούνται για τη φόρτωση "
 "ρυθμίσεων.\n"
 
-#: src/wmapp.cc:1582
+#: src/wmapp.cc:1583
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2401,21 +2401,21 @@ msgstr ""
 "\n"
 "\n"
 
-#: src/wmapp.cc:1648
+#: src/wmapp.cc:1649
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s κατάλογοι ρυθμίσεων:\n"
 
-#: src/wmapp.cc:1733
+#: src/wmapp.cc:1734
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s ρυθμισμένες επιλογές:%s\n"
 
-#: src/wmapp.cc:1867
+#: src/wmapp.cc:1868
 msgid "Confirm Logout"
 msgstr "Επιβεβαίωση αποσύνδεσης"
 
-#: src/wmapp.cc:1868
+#: src/wmapp.cc:1869
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2518,15 +2518,15 @@ msgstr "Επαναφόρτωση"
 msgid "Clos_e"
 msgstr "Κλείσιμο"
 
-#: src/wmframe.cc:1372
+#: src/wmframe.cc:1375
 msgid "Rename"
 msgstr ""
 
-#: src/wmframe.cc:1373
+#: src/wmframe.cc:1376
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1851
+#: src/wmframe.cc:1854
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2536,7 +2536,7 @@ msgstr ""
 "\n"
 "Επιθυμείς να συνεχίσεις;"
 
-#: src/wmframe.cc:1856
+#: src/wmframe.cc:1859
 msgid "Kill Client: "
 msgstr "Σκότωμα του Πελάτη: "
 
@@ -2745,7 +2745,7 @@ msgstr "Παράθεση _εικονιδίων"
 msgid "_Refresh"
 msgstr "_Ανανέωση"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
 msgid "Hide Taskbar"
 msgstr "Απόκρυψη της γραμμής εργασιών"
 
@@ -2753,15 +2753,15 @@ msgstr "Απόκρυψη της γραμμής εργασιών"
 msgid "Favorite Applications"
 msgstr "Αγαπημένες εφαρμογές"
 
-#: src/wmtaskbar.cc:362
+#: src/wmtaskbar.cc:363
 msgid "Window List Menu"
 msgstr "Μενού λίστας παράθυρων"
 
-#: src/wmtaskbar.cc:371
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "Εμφάνιση της επιφάνεια εργασίας"
 
-#: src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:1019
 msgid "Show Taskbar"
 msgstr "Προβολή της γραμμής εργασιών"
 

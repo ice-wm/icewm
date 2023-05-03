@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.15pre3\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"POT-Creation-Date: 2023-05-03 12:39+0200\n"
 "PO-Revision-Date: 2023-04-21 11:14+0000\n"
 "Last-Translator: Wallon <franckjl@hotmail.com>\n"
-"Language-Team: French <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/fr/>\n"
+"Language-Team: French <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -339,7 +339,7 @@ msgstr "arrêté"
 msgid "NET"
 msgstr "NET"
 
-#: src/aworkspaces.cc:635 src/wmstatus.cc:208
+#: src/aworkspaces.cc:664 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Bureau : "
 
@@ -1264,8 +1264,8 @@ msgstr ""
 "  --sync              Synchronise les commandes X11.\n"
 "\n"
 "  -B                  Affiche la page de manuel icewmbg de IceWM.\n"
-"  -b, --bugs          Affiche les rapports de bogue de IceWM (initialement)."
-"\n"
+"  -b, --bugs          Affiche les rapports de bogue de IceWM "
+"(initialement).\n"
 "  -f, --faq           Affiche la FAQ et les procédures IceWM.\n"
 "  -g                  Affiche le site Web Github de IceWM.\n"
 "  -i, --icewm         Affiche la page de manuel icewm de IceWM.\n"
@@ -1375,79 +1375,79 @@ msgstr "État de fenêtre EWMH"
 msgid "workspace #%d: `%s'\n"
 msgstr "Bureau n°%d : \"%s\"\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4410 src/icesh.cc:5039
+#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "État non valide : '%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:3995 src/icesh.cc:4045 src/icesh.cc:5354
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Argument non valide : `%s'"
 
-#: src/icesh.cc:3625
+#: src/icesh.cc:3639
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Impossible d’obtenir la géométrie de la fenêtre 0x%lx"
 
-#: src/icesh.cc:3650
+#: src/icesh.cc:3664
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Xinerama non valide : `%s'."
 
-#: src/icesh.cc:3772 src/icesh.cc:3780 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3786 src/icesh.cc:3794 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Impossible d’écrire dans %s"
 
-#: src/icesh.cc:4011
+#: src/icesh.cc:4025
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "L’action \"%s\" nécessite au moins %d paramètre(s)."
 
-#: src/icesh.cc:4020
+#: src/icesh.cc:4034
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Expression incorrecte : \"%s\""
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
-#: src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4045 src/icesound.cc:794 src/icewmbg.cc:1003
+#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Impossible d'ouvrir l'affichage : %s. X doit être en cours d'exécution et "
 "$DISPLAY doit être défini."
 
-#: src/icesh.cc:4147
+#: src/icesh.cc:4161
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Inattendu : `%s'."
 
-#: src/icesh.cc:4177
+#: src/icesh.cc:4191
 msgid "No windows found."
 msgstr "Pas de fenêtre trouvée."
 
-#: src/icesh.cc:4193
+#: src/icesh.cc:4207
 msgid "No actions specified."
 msgstr "Pas d’action spécifiée."
 
-#: src/icesh.cc:4334
+#: src/icesh.cc:4348
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Identifiant de fenêtre incorrect : \"%s\""
 
-#: src/icesh.cc:4350
+#: src/icesh.cc:4364
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "PID non valide : '%s'"
 
-#: src/icesh.cc:4383
+#: src/icesh.cc:4397
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Couche non valide : '%s'."
 
-#: src/icesh.cc:5484
+#: src/icesh.cc:5499
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Action inconnue : \"%s\""
@@ -1799,12 +1799,12 @@ msgstr "Ouvrir les onglets"
 msgid "Wrap Lines"
 msgstr "Retour à la ligne automatique"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:345
+#: src/icewmbg.cc:34 src/icewmbg.cc:351
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Échec du chargement de l’image '%s'."
 
-#: src/icewmbg.cc:873
+#: src/icewmbg.cc:898
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1866,18 +1866,18 @@ msgstr ""
 "se fermer.\n"
 "  -r, --restart        Indique à l’instance icewmbg en cours d’exécution de "
 "redémarrer.\n"
-"  -u, --shuffle        Mélange/réordonne la liste des images d’arrière-plan."
-"\n"
+"  -u, --shuffle        Mélange/réordonne la liste des images d’arrière-"
+"plan.\n"
 "\n"
 "  -c, --config=FILE    Charge les préférences à partir de FILE.\n"
 "  -t, --theme=NAME     Charge le thème nommé NAME.\n"
 "\n"
-"  -i, --image=FILE(S)  Charge les images d’arrière-plan à partir de FILE(S)."
-"\n"
+"  -i, --image=FILE(S)  Charge les images d’arrière-plan à partir de "
+"FILE(S).\n"
 "  -k, --color=NAME(S)  Utilise les couleurs d’arrière-plan de NAME(S).\n"
 "\n"
-"  -s, --semis=FILE(S)  Charge les images de transparence à partir de FILE(S)."
-"\n"
+"  -s, --semis=FILE(S)  Charge les images de transparence à partir de "
+"FILE(S).\n"
 "  -x, --trans=NAME(S)  Utilise les couleurs de transparence à partir de "
 "NAME(S).\n"
 "\n"
@@ -1885,8 +1885,8 @@ msgstr ""
 "  -a, --scaled=0/1     Désactive/active la mise à l’échelle de l’arrière-"
 "plan.\n"
 "  -m, --multi=0/1      Désactive/active l’arrière-plan multitête.\n"
-"  -y, --cycle=SECONDS  Faire un cycle des arrières-plans toutes les SECONDS."
-"\n"
+"  -y, --cycle=SECONDS  Faire un cycle des arrières-plans toutes les "
+"SECONDS.\n"
 "\n"
 "  --display=NAME       Utilise NAME pour se connecter au serveur X.\n"
 "  --sync               Synchronise la communication avec le serveur X11.\n"
@@ -1897,8 +1897,8 @@ msgstr ""
 "\n"
 "Charge l’arrière-plan de bureau en fonction du fichier de préférences :\n"
 " DesktopBackgroundCenter  - Affiche l’arrière-plan de bureau centré\n"
-" DesktopBackgroundScaled  - Affiche l’arrière-plan de bureau mis à l’"
-"échelle\n"
+" DesktopBackgroundScaled  - Affiche l’arrière-plan de bureau mis à "
+"l’échelle\n"
 " DesktopBackgroundColor   - Couleur(s) de l’arrière-plan de bureau\n"
 " DesktopBackgroundImage   - Image(s) de l’arrière-plan de bureau\n"
 " ShuffleBackgroundImages  - Mélanger la liste des images d’arrière-plan\n"
@@ -1914,12 +1914,12 @@ msgstr ""
 " center:0 scaled:1 = deux dimensions complètes et respect des proportions\n"
 "\n"
 
-#: src/icewmbg.cc:1109 src/wmapp.cc:1817
+#: src/icewmbg.cc:1134 src/wmapp.cc:1818
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Option non reconnue '%s'."
 
-#: src/icewmbg.cc:1139
+#: src/icewmbg.cc:1164
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 "Impossible de démarrer car une autre instance d'icewmbg est en cours "
@@ -2257,14 +2257,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<aucun>"
 
-#: src/wmapp.cc:1558
+#: src/wmapp.cc:1559
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      ID de client à utiliser lors du contact avec le  "
 "gestionnaire de session.\n"
 
-#: src/wmapp.cc:1564
+#: src/wmapp.cc:1565
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2275,7 +2275,7 @@ msgstr ""
 "  --debug-z           Imprimer les messages de débogage concernant la pile "
 "de fenêtres.\n"
 
-#: src/wmapp.cc:1572
+#: src/wmapp.cc:1573
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2297,7 +2297,7 @@ msgstr ""
 "  --trace=conf,icon   Trace les chemins utilisés pour charger la "
 "configuration.\n"
 
-#: src/wmapp.cc:1582
+#: src/wmapp.cc:1583
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2342,8 +2342,8 @@ msgstr ""
 "  --replace           Remplace un gestionnaire de fenêtres existant.\n"
 "  -r, --restart       Indique à l’instance icewm de redémarrer.\n"
 "\n"
-"  --configured        Imprime la configuration de l’heure de la compilation."
-"\n"
+"  --configured        Imprime la configuration de l’heure de la "
+"compilation.\n"
 "  --directories       Imprime les répertoires de configuration.\n"
 "  -l, --list-themes   Imprime une liste de tous les thèmes disponibles.\n"
 "\n"
@@ -2360,21 +2360,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1648
+#: src/wmapp.cc:1649
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "Répertoires de configuration de %s :\n"
 
-#: src/wmapp.cc:1733
+#: src/wmapp.cc:1734
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s options configurées : %s\n"
 
-#: src/wmapp.cc:1867
+#: src/wmapp.cc:1868
 msgid "Confirm Logout"
 msgstr "Confirmer la déconnexion"
 
-#: src/wmapp.cc:1868
+#: src/wmapp.cc:1869
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2475,15 +2475,15 @@ msgstr "Recharger ke_ys"
 msgid "Clos_e"
 msgstr "Quitt_er"
 
-#: src/wmframe.cc:1372
+#: src/wmframe.cc:1375
 msgid "Rename"
 msgstr "Renommer"
 
-#: src/wmframe.cc:1373
+#: src/wmframe.cc:1376
 msgid "Rename the window title"
 msgstr "Renommer le titre de la fenêtre"
 
-#: src/wmframe.cc:1851
+#: src/wmframe.cc:1854
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2492,7 +2492,7 @@ msgstr ""
 "perdus quand ce processus sera clos. Souhaitez-vous continuer ?"
 
 #
-#: src/wmframe.cc:1856
+#: src/wmframe.cc:1859
 msgid "Kill Client: "
 msgstr "Fermer le client : "
 
@@ -2703,7 +2703,7 @@ msgstr "Arranger les _icônes"
 msgid "_Refresh"
 msgstr "_Rafraîchir"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
 msgid "Hide Taskbar"
 msgstr "Masquer la barre des tâches"
 
@@ -2711,15 +2711,15 @@ msgstr "Masquer la barre des tâches"
 msgid "Favorite Applications"
 msgstr "Applications favorites"
 
-#: src/wmtaskbar.cc:362
+#: src/wmtaskbar.cc:363
 msgid "Window List Menu"
 msgstr "Menu Liste des fenêtres"
 
-#: src/wmtaskbar.cc:371
+#: src/wmtaskbar.cc:373
 msgid "Show Desktop"
 msgstr "Montrer le bureau"
 
-#: src/wmtaskbar.cc:1015
+#: src/wmtaskbar.cc:1019
 msgid "Show Taskbar"
 msgstr "Afficher la barre des tâches"
 
