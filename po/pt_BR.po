@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.3.4pre2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-04-09 23:30+0200\n"
-"PO-Revision-Date: 2023-03-31 20:14+0000\n"
+"POT-Creation-Date: 2023-03-27 21:00+0200\n"
+"PO-Revision-Date: 2023-04-27 02:14+0000\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive68@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.opensuse.org/projects/icewm/"
 "icewm-1-4-branch/pt_BR/>\n"
@@ -1412,8 +1412,8 @@ msgstr "A ação `%s' requer ao menos %d argumentos."
 msgid "Invalid expression: `%s'"
 msgstr "A expressão `%s' não é válida"
 
-#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:1003
-#: src/icewmhint.cc:37 src/wmapp.cc:1232 src/yxapp.cc:1039
+#: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
+#: src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
@@ -1799,12 +1799,12 @@ msgstr "Expandir as Abas"
 msgid "Wrap Lines"
 msgstr "Envolver as Linhas"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:351
+#: src/icewmbg.cc:34 src/icewmbg.cc:345
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Falha ao carregar a imagem '%s'."
 
-#: src/icewmbg.cc:898
+#: src/icewmbg.cc:873
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1909,12 +1909,12 @@ msgstr ""
 " center:0 scaled:1 = preenche ambas as dimensões e mantém a proporção\n"
 "\n"
 
-#: src/icewmbg.cc:1134 src/wmapp.cc:1817
+#: src/icewmbg.cc:1109 src/wmapp.cc:1817
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "A opção '%s' não foi reconhecida."
 
-#: src/icewmbg.cc:1164
+#: src/icewmbg.cc:1139
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Não foi possível iniciar, porque outro icewmbg está em execução."
 
@@ -2451,13 +2451,11 @@ msgstr "So_bre"
 
 #: src/wmdialog.cc:90
 msgid "Reload win_options"
-msgstr ""
+msgstr "Recarregar win_options"
 
 #: src/wmdialog.cc:91
-#, fuzzy
-#| msgid "Reload"
 msgid "Reload ke_ys"
-msgstr "Recarregar"
+msgstr "Recarregar c_haves"
 
 #: src/wmdialog.cc:92
 msgid "Clos_e"
