@@ -3123,10 +3123,24 @@ static Window getClientWindow(Window frame)
                 Window subw = subs[k];
                 if (XGetWindowAttributes(display, subw, &attr) &&
                     0 < attr.map_state) {
-                    if (clist ? clist.have(subw) : WmName(cont) == "Container")
+                    if (clist && clist.have(subw))
                         return subw;
+                    if (subs.count() == 1) {
+                        WmName name(cont);
+                        if (name == "Container" || name == "TaskBarFrame")
+                            return subw;
+                    }
                 }
             }
+        }
+    }
+
+    if (WmName(frame) != "Frame") {
+        XWindowAttributes attr;
+        if (XGetWindowAttributes(display, frame, &attr) &&
+            0 < attr.map_state &&
+            attr.override_redirect == True) {
+            return frame;
         }
     }
 
@@ -3522,7 +3536,7 @@ void IceSh::showProperty(Window window, Atom atom, const char* prefix) {
         return;
     }
 
-    YProperty prop(window, atom, AnyPropertyType, 64);
+    YProperty prop(window, atom, AnyPropertyType, 256);
     if (prop.status() == Success && prop.data<void>()) {
         if (prop.format() == 8) {
             const char* name(atomName(atom));
@@ -5374,23 +5388,24 @@ void IceSh::parseAction()
         }
         else if (isAction("focusmodel", 0)) {
             FOREACH_WINDOW(window) {
+                bool input = true;
                 xsmart<XWMHints> h(XGetWMHints(display, window));
-                if (h) {
-                    bool input = (h->flags & InputHint) && (h->input & True);
-                    Atom* prot = nullptr;
-                    int count = 0;
-                    bool take = false;
-                    if (XGetWMProtocols(display, window, &prot, &count)) {
-                        for (int i = 0; i < count; ++i) {
-                            if (prot[i] == ATOM_WM_TAKE_FOCUS) {
-                                take = true;
-                            }
+                if (h && hasbit(h->flags, InputHint)) {
+                    input = (h->input & True);
+                }
+                Atom* prot = nullptr;
+                int count = 0;
+                bool take = false;
+                if (XGetWMProtocols(display, window, &prot, &count)) {
+                    for (int i = 0; i < count; ++i) {
+                        if (prot[i] == ATOM_WM_TAKE_FOCUS) {
+                            take = true;
                         }
                     }
-                    printf("0x%-8lx focusmodel %s\n", *window,
-                            input ? take ? "Locally" : "Passive"
-                                : take ? "Globally" : "NoInput");
                 }
+                printf("0x%-8lx focusmodel %s\n", *window,
+                        input ? take ? "Locally" : "Passive"
+                            : take ? "Globally" : "NoInput");
             }
         }
         else if (isAction("motif", 0)) {
