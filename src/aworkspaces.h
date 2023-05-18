@@ -117,7 +117,7 @@ class WorkspacesPane:
     typedef AWorkspaces super;
 
 public:
-    WorkspacesPane(YWindow *parent);
+    WorkspacesPane(YWindow* parent, unsigned tall);
     ~WorkspacesPane() { WorkspaceButton::freeFonts(); }
 
     virtual void repaint();
@@ -134,6 +134,7 @@ private:
     int fActive;
     int fDelta;
     int fMoved;
+    unsigned fTall;
     double fSpeed;
     timeval fTime;
     long const fMillis;
@@ -160,6 +161,7 @@ private:
     void scale(WorkspaceButton* button, unsigned height);
     void label(WorkspaceButton* wk);
     void createButtons();
+    void rescaleButtons();
     void repositionButtons();
     void resize(unsigned width, unsigned height);
     long limitWidth(long paneWidth);

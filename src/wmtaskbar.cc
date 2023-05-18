@@ -375,8 +375,13 @@ void TaskBar::initApplets() {
         fShowDesktop->realize();
     }
 
+    unsigned tall = 1;
+    if (taskBarDoubleHeight == false) {
+        for (YWindow* w = firstWindow(); w; w = w->nextSibling())
+            tall = max(tall, w->height());
+    }
     fWorkspaces = taskBarShowWorkspaces
-                ? new WorkspacesPane(this)
+                ? new WorkspacesPane(this, tall)
                 : new AWorkspaces(this);
     fWorkspaces->setTitle("Workspaces");
 
@@ -1013,6 +1018,7 @@ void TaskBar::actionPerformed(YAction action, unsigned int modifiers) {
 void TaskBar::handleCollapseButton() {
     fIsCollapsed = !fIsCollapsed;
     if (fCollapseButton) {
+        fCollapseButton->hide();
         ref<YImage> image = (leftToRight == fIsCollapsed)
                           ? taskbarExpandImage : taskbarCollapseImage;
         const char* text = (leftToRight == fIsCollapsed) ? "<" : ">";
