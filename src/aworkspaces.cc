@@ -220,11 +220,12 @@ void WorkspaceButton::setPosition(int x, int y) {
         show();
 }
 
-WorkspacesPane::WorkspacesPane(YWindow *parent):
+WorkspacesPane::WorkspacesPane(YWindow* parent, unsigned tall):
     super(parent),
     fActive(0),
     fDelta(0),
     fMoved(0),
+    fTall(tall),
     fSpeed(0),
     fTime(zerotime()),
     fMillis(16L),
@@ -242,7 +243,7 @@ WorkspacesPane::WorkspacesPane(YWindow *parent):
 void WorkspacesPane::createButtons() {
     fReconfiguring = true;
     unsigned width = 0;
-    unsigned height = smallIconSize + 8;
+    unsigned height = max(smallIconSize + 8, fTall);
     for (int i = 0, n = workspaceCount; i < n; ++i) {
         width += create(i, height)->width();
     }
@@ -377,7 +378,24 @@ void WorkspacesPane::relabelButtons() {
 
 void WorkspacesPane::configure(const YRect2& r) {
     if ((fReconfiguring | fRepositioning) == false && r.resized()) {
-        repositionButtons();
+        if (pagerShowPreview && r.hh != r.old.hh && 1 < r.old.hh) {
+            rescaleButtons();
+        } else {
+            repositionButtons();
+        }
+    }
+}
+
+void WorkspacesPane::rescaleButtons() {
+    for (auto wk : fButtons) {
+        scale(wk, max(height(), fTall));
+    }
+    repositionButtons();
+    for (auto wk : fButtons) {
+        if (wk->x() < int(width()))
+            wk->show();
+        else
+            break;
     }
 }
 
@@ -393,16 +411,7 @@ void WorkspacesPane::updateButtons() {
         fDesktop = desktop->dimension();
         if (pagerShowPreview) {
             fMoved = 0;
-            for (auto wk : fButtons) {
-                scale(wk, height());
-            }
-            repositionButtons();
-            for (auto wk : fButtons) {
-                if (wk->x() < int(width()))
-                    wk->show();
-                else
-                    break;
-            }
+            rescaleButtons();
         }
     }
 
