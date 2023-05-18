@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-05-03 12:39+0200\n"
+"POT-Creation-Date: 2023-05-18 09:58+0200\n"
 "PO-Revision-Date: 2005-06-12 12:59+0300\n"
 "Last-Translator: Kristaps Kaupe <kristaps.kaupe@inbox.lv>\n"
 "Language-Team: Latvian\n"
@@ -336,7 +336,7 @@ msgstr "Atritināt"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:664 src/wmstatus.cc:204
+#: src/aworkspaces.cc:673 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Darba vide:"
 
@@ -1377,13 +1377,13 @@ msgstr "GNOMEs loga stāvoklis"
 msgid "workspace #%d: `%s'\n"
 msgstr "darba vide #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
+#: src/icesh.cc:2615 src/icesh.cc:4430 src/icesh.cc:5059
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Kļūdains arguments: `%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5374
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
@@ -1428,32 +1428,32 @@ msgstr ""
 msgid "Unexpected: `%s'."
 msgstr "Negaidīts atslēgvārds: %s"
 
-#: src/icesh.cc:4191
+#: src/icesh.cc:4193
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:4207
+#: src/icesh.cc:4209
 msgid "No actions specified."
 msgstr "Nav norādītu darbību."
 
-#: src/icesh.cc:4348
+#: src/icesh.cc:4354
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Kļūdains loga identifikators: `%s'"
 
-#: src/icesh.cc:4364
+#: src/icesh.cc:4370
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "Kļūdains arguments: `%s'."
 
-#: src/icesh.cc:4397
+#: src/icesh.cc:4403
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Kļūdains arguments: `%s'."
 
-#: src/icesh.cc:5499
+#: src/icesh.cc:5505
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Nezināma darbība: `%s'"
@@ -1974,7 +1974,7 @@ msgstr "_Zem"
 msgid "D_esktop"
 msgstr "_Darbavirsma"
 
-#: src/wmapp.cc:576 src/wmwinlist.cc:379
+#: src/wmapp.cc:576 src/wmwinlist.cc:381
 msgid "Move to New _Window"
 msgstr ""
 
@@ -2015,18 +2015,18 @@ msgid "Center"
 msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:466
-#: src/wmwinlist.cc:499
+#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:468
+#: src/wmwinlist.cc:501
 msgid "T_ile Horizontally"
 msgstr "Kārtot blakus hor_izontāli"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:465
-#: src/wmwinlist.cc:498
+#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:467
+#: src/wmwinlist.cc:500
 msgid "Tile _Vertically"
 msgstr "Kārtot blakus _vertikāli"
 
-#: src/wmapp.cc:611 src/wmwinlist.cc:446
+#: src/wmapp.cc:611 src/wmwinlist.cc:448
 msgid "_Restore"
 msgstr "At_jaunot"
 
@@ -2038,35 +2038,35 @@ msgstr "Pā_rvietot"
 msgid "_Size"
 msgstr "Izmēr_s"
 
-#: src/wmapp.cc:617 src/wmwinlist.cc:447
+#: src/wmapp.cc:617 src/wmwinlist.cc:449
 msgid "Mi_nimize"
 msgstr "Mi_nimizēt"
 
-#: src/wmapp.cc:619 src/wmwinlist.cc:448
+#: src/wmapp.cc:619 src/wmwinlist.cc:450
 msgid "Ma_ximize"
 msgstr "Ma_ksimizēt"
 
-#: src/wmapp.cc:620 src/wmwinlist.cc:449
+#: src/wmapp.cc:620 src/wmwinlist.cc:451
 #, fuzzy
 #| msgid "Maximize"
 msgid "Maximize_Vert"
 msgstr "Maksimizēt"
 
-#: src/wmapp.cc:621 src/wmwinlist.cc:450
+#: src/wmapp.cc:621 src/wmwinlist.cc:452
 #, fuzzy
 #| msgid "Maximize"
 msgid "MaximizeHori_z"
 msgstr "Maksimizēt"
 
-#: src/wmapp.cc:624 src/wmwinlist.cc:451
+#: src/wmapp.cc:624 src/wmwinlist.cc:453
 msgid "_Fullscreen"
 msgstr "_Pilnekrānā"
 
-#: src/wmapp.cc:627 src/wmwinlist.cc:453
+#: src/wmapp.cc:627 src/wmwinlist.cc:455
 msgid "_Hide"
 msgstr "N_oslēpt"
 
-#: src/wmapp.cc:629 src/wmwinlist.cc:454
+#: src/wmapp.cc:629 src/wmwinlist.cc:456
 msgid "Roll_up"
 msgstr "Sar_itināt"
 
@@ -2074,23 +2074,23 @@ msgstr "Sar_itināt"
 msgid "R_aise"
 msgstr "P_aaugstināt"
 
-#: src/wmapp.cc:638 src/wmwinlist.cc:456
+#: src/wmapp.cc:638 src/wmwinlist.cc:458
 msgid "_Lower"
 msgstr "Pa_zemināt"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:457
+#: src/wmapp.cc:640 src/wmwinlist.cc:459
 msgid "La_yer"
 msgstr "S_lānis"
 
-#: src/wmapp.cc:643 src/wmwinlist.cc:458
+#: src/wmapp.cc:643 src/wmwinlist.cc:460
 msgid "Tile"
 msgstr ""
 
-#: src/wmapp.cc:647 src/wmwinlist.cc:460
+#: src/wmapp.cc:647 src/wmwinlist.cc:462
 msgid "Move _To"
 msgstr "Pārvie_tot uz"
 
-#: src/wmapp.cc:648 src/wmwinlist.cc:461
+#: src/wmapp.cc:648 src/wmwinlist.cc:463
 msgid "Occupy _All"
 msgstr "_Aizņemt visas"
 
@@ -2098,19 +2098,19 @@ msgstr "_Aizņemt visas"
 msgid "Limit _Workarea"
 msgstr "Ierobežot _darba apgabalu"
 
-#: src/wmapp.cc:658 src/wmwinlist.cc:462
+#: src/wmapp.cc:658 src/wmwinlist.cc:464
 msgid "Tray _icon"
 msgstr "Paplātes _ikona"
 
-#: src/wmapp.cc:660 src/wmwinlist.cc:463
+#: src/wmapp.cc:660 src/wmwinlist.cc:465
 msgid "R_ename title"
 msgstr ""
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:478 src/wmwinlist.cc:486
+#: src/wmapp.cc:665 src/wmwinlist.cc:480 src/wmwinlist.cc:488
 msgid "_Close"
 msgstr "Aiz_vērt"
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:480
+#: src/wmapp.cc:667 src/wmwinlist.cc:482
 msgid "_Kill Client"
 msgstr "Nogalināt _klientu"
 
@@ -2277,7 +2277,7 @@ msgstr "Atritināt"
 msgid "Rollup"
 msgstr "Saritināt"
 
-#: src/wmclient.cc:462
+#: src/wmclient.cc:470
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2535,27 +2535,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Sesiju pārvaldnieks: Nezināma rinda %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:467 src/wmwinlist.cc:500
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:469 src/wmwinlist.cc:502
 msgid "Ca_scade"
 msgstr "Ka_skadēt"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:468 src/wmwinlist.cc:501
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:470 src/wmwinlist.cc:503
 msgid "_Arrange"
 msgstr "S_akārtot"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:470 src/wmwinlist.cc:502
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:472 src/wmwinlist.cc:504
 msgid "_Minimize All"
 msgstr "_Minimizēt visus"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:471 src/wmwinlist.cc:503
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:473 src/wmwinlist.cc:505
 msgid "_Hide All"
 msgstr "_Noslēpt visus"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:472 src/wmwinlist.cc:504
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:474 src/wmwinlist.cc:506
 msgid "_Undo"
 msgstr "Atsa_ukt"
 
@@ -2569,7 +2569,7 @@ msgstr "Sakārtot _ikonas"
 msgid "_Refresh"
 msgstr "A_tsvaidzināt"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -2591,7 +2591,7 @@ msgstr "Logu saraksta izvēlne"
 msgid "Show Desktop"
 msgstr "Parādīt darbavirsmu"
 
-#: src/wmtaskbar.cc:1019
+#: src/wmtaskbar.cc:1025
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -2601,29 +2601,29 @@ msgstr "Uzdevumu josla"
 msgid "All Workspaces"
 msgstr "Visas darba vides"
 
-#: src/wmwinlist.cc:452
+#: src/wmwinlist.cc:454
 msgid "_Show"
 msgstr "_Parādīt"
 
-#: src/wmwinlist.cc:455
+#: src/wmwinlist.cc:457
 #, fuzzy
 #| msgid "R_aise"
 msgid "_Raise"
 msgstr "P_aaugstināt"
 
-#: src/wmwinlist.cc:478
+#: src/wmwinlist.cc:480
 msgid "Del"
 msgstr "Del"
 
-#: src/wmwinlist.cc:482
+#: src/wmwinlist.cc:484
 msgid "_Terminate Process"
 msgstr "Aizvēr_t procesu"
 
-#: src/wmwinlist.cc:483
+#: src/wmwinlist.cc:485
 msgid "Kill _Process"
 msgstr "Nogalināt _procesu"
 
-#: src/wmwinlist.cc:518 src/wmwinlist.cc:519
+#: src/wmwinlist.cc:520 src/wmwinlist.cc:521
 msgid "Window list"
 msgstr "Logu saraksts"
 

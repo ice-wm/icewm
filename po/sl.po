@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sl\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-05-03 12:39+0200\n"
+"POT-Creation-Date: 2023-05-18 09:58+0200\n"
 "PO-Revision-Date: 2004-10-03 21:56+0200\n"
 "Last-Translator: Jernej Kovacic <jkovacic AT email DOT si>\n"
 "Language-Team: Slovenian <translator-team-sl@lists.sourceforge.net>\n"
@@ -347,7 +347,7 @@ msgstr "Spravi navzdol"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:664 src/wmstatus.cc:204
+#: src/aworkspaces.cc:673 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Delovna površina: "
 
@@ -1390,13 +1390,13 @@ msgstr "stanje Gnomovega okna"
 msgid "workspace #%d: `%s'\n"
 msgstr "delovna površina #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
+#: src/icesh.cc:2615 src/icesh.cc:4430 src/icesh.cc:5059
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Neveljaven argument %s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5374
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
@@ -1441,32 +1441,32 @@ msgstr ""
 msgid "Unexpected: `%s'."
 msgstr "Nepričakovana ključna beseda: %s"
 
-#: src/icesh.cc:4191
+#: src/icesh.cc:4193
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:4207
+#: src/icesh.cc:4209
 msgid "No actions specified."
 msgstr "Nobeno dejanje ni določeno."
 
-#: src/icesh.cc:4348
+#: src/icesh.cc:4354
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Neveljaven identifikator okna: `%s'"
 
-#: src/icesh.cc:4364
+#: src/icesh.cc:4370
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "Neveljaven argument %s'."
 
-#: src/icesh.cc:4397
+#: src/icesh.cc:4403
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Neveljaven argument %s'."
 
-#: src/icesh.cc:5499
+#: src/icesh.cc:5505
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Neznano dejanje: `%s'"
@@ -1991,7 +1991,7 @@ msgstr "_Spodaj"
 msgid "D_esktop"
 msgstr "_Namizje"
 
-#: src/wmapp.cc:576 src/wmwinlist.cc:379
+#: src/wmapp.cc:576 src/wmwinlist.cc:381
 msgid "Move to New _Window"
 msgstr ""
 
@@ -2032,18 +2032,18 @@ msgid "Center"
 msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:466
-#: src/wmwinlist.cc:499
+#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:468
+#: src/wmwinlist.cc:501
 msgid "T_ile Horizontally"
 msgstr "Zlož_i vodoravno"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:465
-#: src/wmwinlist.cc:498
+#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:467
+#: src/wmwinlist.cc:500
 msgid "Tile _Vertically"
 msgstr "Zloži na_vpično"
 
-#: src/wmapp.cc:611 src/wmwinlist.cc:446
+#: src/wmapp.cc:611 src/wmwinlist.cc:448
 msgid "_Restore"
 msgstr "O_bnovi"
 
@@ -2055,35 +2055,35 @@ msgstr "P_restavi"
 msgid "_Size"
 msgstr "Velikos_t"
 
-#: src/wmapp.cc:617 src/wmwinlist.cc:447
+#: src/wmapp.cc:617 src/wmwinlist.cc:449
 msgid "Mi_nimize"
 msgstr "Poma_njšaj"
 
-#: src/wmapp.cc:619 src/wmwinlist.cc:448
+#: src/wmapp.cc:619 src/wmwinlist.cc:450
 msgid "Ma_ximize"
 msgstr "R_azpni"
 
-#: src/wmapp.cc:620 src/wmwinlist.cc:449
+#: src/wmapp.cc:620 src/wmwinlist.cc:451
 #, fuzzy
 #| msgid "Maximize"
 msgid "Maximize_Vert"
 msgstr "Razpni"
 
-#: src/wmapp.cc:621 src/wmwinlist.cc:450
+#: src/wmapp.cc:621 src/wmwinlist.cc:452
 #, fuzzy
 #| msgid "Maximize"
 msgid "MaximizeHori_z"
 msgstr "Razpni"
 
-#: src/wmapp.cc:624 src/wmwinlist.cc:451
+#: src/wmapp.cc:624 src/wmwinlist.cc:453
 msgid "_Fullscreen"
 msgstr "_Celoten zaslon"
 
-#: src/wmapp.cc:627 src/wmwinlist.cc:453
+#: src/wmapp.cc:627 src/wmwinlist.cc:455
 msgid "_Hide"
 msgstr "S_krij"
 
-#: src/wmapp.cc:629 src/wmwinlist.cc:454
+#: src/wmapp.cc:629 src/wmwinlist.cc:456
 msgid "Roll_up"
 msgstr "Navz_gor"
 
@@ -2091,23 +2091,23 @@ msgstr "Navz_gor"
 msgid "R_aise"
 msgstr "_Dvigni"
 
-#: src/wmapp.cc:638 src/wmwinlist.cc:456
+#: src/wmapp.cc:638 src/wmwinlist.cc:458
 msgid "_Lower"
 msgstr "_Spusti"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:457
+#: src/wmapp.cc:640 src/wmwinlist.cc:459
 msgid "La_yer"
 msgstr "S_loj"
 
-#: src/wmapp.cc:643 src/wmwinlist.cc:458
+#: src/wmapp.cc:643 src/wmwinlist.cc:460
 msgid "Tile"
 msgstr ""
 
-#: src/wmapp.cc:647 src/wmwinlist.cc:460
+#: src/wmapp.cc:647 src/wmwinlist.cc:462
 msgid "Move _To"
 msgstr "Prestavi _v"
 
-#: src/wmapp.cc:648 src/wmwinlist.cc:461
+#: src/wmapp.cc:648 src/wmwinlist.cc:463
 msgid "Occupy _All"
 msgstr "Za_sedi vse"
 
@@ -2115,19 +2115,19 @@ msgstr "Za_sedi vse"
 msgid "Limit _Workarea"
 msgstr "_Omeji delovno površino"
 
-#: src/wmapp.cc:658 src/wmwinlist.cc:462
+#: src/wmapp.cc:658 src/wmwinlist.cc:464
 msgid "Tray _icon"
 msgstr "Pladenj z _ikonami"
 
-#: src/wmapp.cc:660 src/wmwinlist.cc:463
+#: src/wmapp.cc:660 src/wmwinlist.cc:465
 msgid "R_ename title"
 msgstr ""
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:478 src/wmwinlist.cc:486
+#: src/wmapp.cc:665 src/wmwinlist.cc:480 src/wmwinlist.cc:488
 msgid "_Close"
 msgstr "_Zapri"
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:480
+#: src/wmapp.cc:667 src/wmwinlist.cc:482
 msgid "_Kill Client"
 msgstr "_Ubij odjemalca"
 
@@ -2294,7 +2294,7 @@ msgstr "Spravi navzdol"
 msgid "Rollup"
 msgstr "Spravi navzgor"
 
-#: src/wmclient.cc:462
+#: src/wmclient.cc:470
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2552,27 +2552,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Upravljalnik sej: neznana vrstica %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:467 src/wmwinlist.cc:500
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:469 src/wmwinlist.cc:502
 msgid "Ca_scade"
 msgstr "_Kaskadno"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:468 src/wmwinlist.cc:501
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:470 src/wmwinlist.cc:503
 msgid "_Arrange"
 msgstr "_Razporedi"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:470 src/wmwinlist.cc:502
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:472 src/wmwinlist.cc:504
 msgid "_Minimize All"
 msgstr "Poma_njšaj vse"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:471 src/wmwinlist.cc:503
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:473 src/wmwinlist.cc:505
 msgid "_Hide All"
 msgstr "Skri_j vse"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:472 src/wmwinlist.cc:504
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:474 src/wmwinlist.cc:506
 msgid "_Undo"
 msgstr "P_rekliči"
 
@@ -2586,7 +2586,7 @@ msgstr "Razporedi _ikone"
 msgid "_Refresh"
 msgstr "Os_veži"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
@@ -2608,7 +2608,7 @@ msgstr "Menu s seznamom oken"
 msgid "Show Desktop"
 msgstr "Prikaži namizje"
 
-#: src/wmtaskbar.cc:1019
+#: src/wmtaskbar.cc:1025
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Show Taskbar"
@@ -2618,29 +2618,29 @@ msgstr "Opravilna vrstica"
 msgid "All Workspaces"
 msgstr "Vse delovne površine"
 
-#: src/wmwinlist.cc:452
+#: src/wmwinlist.cc:454
 msgid "_Show"
 msgstr "Pri_kaži"
 
-#: src/wmwinlist.cc:455
+#: src/wmwinlist.cc:457
 #, fuzzy
 #| msgid "R_aise"
 msgid "_Raise"
 msgstr "_Dvigni"
 
-#: src/wmwinlist.cc:478
+#: src/wmwinlist.cc:480
 msgid "Del"
 msgstr "Izbriši"
 
-#: src/wmwinlist.cc:482
+#: src/wmwinlist.cc:484
 msgid "_Terminate Process"
 msgstr "_Prekini proces"
 
-#: src/wmwinlist.cc:483
+#: src/wmwinlist.cc:485
 msgid "Kill _Process"
 msgstr "Ubij _proces"
 
-#: src/wmwinlist.cc:518 src/wmwinlist.cc:519
+#: src/wmwinlist.cc:520 src/wmwinlist.cc:521
 msgid "Window list"
 msgstr "Seznam oken"
 

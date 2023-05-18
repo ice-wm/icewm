@@ -1,11 +1,45 @@
-icewm -- history of user-visible changes.  2023-05-03
+icewm -- history of user-visible changes.  2023-05-18
+
+Release icewm-3.3.5 released 2023-05-18
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.3.4...3.3.5
+
+Bert Gijsbers <gijsbers@science.uva.nl> (17):
+      Lookup icons in more context directories for issue ice-wm/icewm#132.
+      Mention the hash-bang in the startup file.
+      An Escape key release event must match the key press event for #726.
+      Report when icon could not be found for issue ice-wm/icewm#133.
+      Use "firefox" instead of "mozilla" as Firefox icon for ice-wm/icewm#132.
+      Rescale workspace buttons when taskbar is rather high.
+      Temporarily hide the taskbar collapse button when collapsing or expanding.
+      Test for i18n by negation.
+      Compute the ultimate workspace button height, before creating them.
+      Limit the resource string of an unresponsive client for issue #729.
+      Check for TaskBarDoubleHeight when computing workspace button height.
+      Detect idempotent RandR updates for issue #728. Only
+        ArrangeWindowsOnScreenSizeChange when the desktop is really resizing.
+      Also focus last window when hiding and Click-to-focus for issue #727.
+      Let icesh exit with zero if the last action was a successful manager
+        action.
+      Reduce the subcats by 5.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Jan Papež <honyczek@centrum.cz> (1):
+      Translated using Weblate (Czech)
+
 
 Release icewm-3.3.4 released 2023-05-03
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.3.3...3.3.4
 
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
       Fix compile error for yximage.cc.
       Deprecate XRRDisable.
       Fix corrupted text if built without i18n for issue ice-wm/icewm#131.
@@ -28,6 +62,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (19):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.3.4 release
 
 gijsbers <gijsbers@users.noreply.github.com> (3):
       Merge pull request #127 from bittin/patch-1
@@ -379,43 +414,4 @@ Kristijan Fremen Velkovski <me@krisfremen.com> (1):
 
 Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
       Translated using Weblate (Portuguese (Brazil))
-
-
-Release icewm-3.2.2 released 2022-11-14
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.2.1...3.2.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (22):
-      Freeze the task pane layout while Alt is pressed for #549.
-      Also sort Alt+Tab on 'order' winoption.
-      Faster find.
-      Find item within bounds.
-      Menu add after, haveCommand and removeCommand.
-      Add client actions close, kill and untab.
-      Update window list after an untab. Preserve non-fullscreen geometry across
-        restarts. Try harder to avoid a non-focused situation.
-      Restore winoption named frame tabs when recovering from a crash.
-      Much improved sorting in the window list window. Make the window list more
-        tab-savvy.
-      Adapt absolute paths in .desktop files to install prefix for #684.
-      Only sort Alt+Tab on WM_CLASS when persistent for #685.
-      Move all calls to XKillClient in one place.
-      Adapt absolute paths in .desktop files for CMake build.
-      Add menu entry to rename the window title manually for #644.
-      Let Escape cancel the entire menu chain and closes #677.
-      Fix for GCC 4.8.5.
-      One suffices.
-      Update pot files.
-      Use AM_V_GEN before the sed desktop files.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.2.2 release
-
-Naveen <172697+naveensrinivasan@users.noreply.github.com> (1):
-      Include githubactions in the dependabot config (#655)
-
-Pino Toscano <toscano.pino@tiscali.it> (1):
-      Drop LSM file (#660)
 

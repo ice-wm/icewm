@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (China) (icewm)\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-05-03 12:39+0200\n"
+"POT-Creation-Date: 2023-05-18 09:58+0200\n"
 "PO-Revision-Date: 2023-02-07 14:14+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/icewm/"
@@ -334,7 +334,7 @@ msgstr "关闭"
 msgid "NET"
 msgstr "网络"
 
-#: src/aworkspaces.cc:664 src/wmstatus.cc:204
+#: src/aworkspaces.cc:673 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "工作区： "
 
@@ -1362,12 +1362,12 @@ msgstr "EWMH 窗口状态"
 msgid "workspace #%d: `%s'\n"
 msgstr "工作区 #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
+#: src/icesh.cc:2615 src/icesh.cc:4430 src/icesh.cc:5059
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "无效状态：`%s'。"
 
-#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5374
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "无效参数：`%s'"
@@ -1409,30 +1409,30 @@ msgstr "无法打开显示：%s。 X必须正在执行且设定 $DISPLAY。"
 msgid "Unexpected: `%s'."
 msgstr "非预期：`%s'。"
 
-#: src/icesh.cc:4191
+#: src/icesh.cc:4193
 msgid "No windows found."
 msgstr "未找到窗口。"
 
-#: src/icesh.cc:4207
+#: src/icesh.cc:4209
 msgid "No actions specified."
 msgstr "未指定行为。"
 
-#: src/icesh.cc:4348
+#: src/icesh.cc:4354
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "无效的窗口标识符：`%s'"
 
-#: src/icesh.cc:4364
+#: src/icesh.cc:4370
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "无效 PID：`%s'"
 
-#: src/icesh.cc:4397
+#: src/icesh.cc:4403
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "无效层：`%s'。"
 
-#: src/icesh.cc:5499
+#: src/icesh.cc:5505
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "未知的行为：`%s'"
@@ -2034,7 +2034,7 @@ msgstr "底层(_B)"
 msgid "D_esktop"
 msgstr "桌面(_E)"
 
-#: src/wmapp.cc:576 src/wmwinlist.cc:379
+#: src/wmapp.cc:576 src/wmwinlist.cc:381
 msgid "Move to New _Window"
 msgstr "移到新窗口(_W)"
 
@@ -2075,18 +2075,18 @@ msgid "Center"
 msgstr "置中"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:466
-#: src/wmwinlist.cc:499
+#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:468
+#: src/wmwinlist.cc:501
 msgid "T_ile Horizontally"
 msgstr "水平平铺(_I)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:465
-#: src/wmwinlist.cc:498
+#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:467
+#: src/wmwinlist.cc:500
 msgid "Tile _Vertically"
 msgstr "垂直平铺(_V)"
 
-#: src/wmapp.cc:611 src/wmwinlist.cc:446
+#: src/wmapp.cc:611 src/wmwinlist.cc:448
 msgid "_Restore"
 msgstr "恢复(_R)"
 
@@ -2098,31 +2098,31 @@ msgstr "移动(_M)"
 msgid "_Size"
 msgstr "改变大小(_S)"
 
-#: src/wmapp.cc:617 src/wmwinlist.cc:447
+#: src/wmapp.cc:617 src/wmwinlist.cc:449
 msgid "Mi_nimize"
 msgstr "最小化(_N)"
 
-#: src/wmapp.cc:619 src/wmwinlist.cc:448
+#: src/wmapp.cc:619 src/wmwinlist.cc:450
 msgid "Ma_ximize"
 msgstr "最大化(_X)"
 
-#: src/wmapp.cc:620 src/wmwinlist.cc:449
+#: src/wmapp.cc:620 src/wmwinlist.cc:451
 msgid "Maximize_Vert"
 msgstr "垂直最大化(_V)"
 
-#: src/wmapp.cc:621 src/wmwinlist.cc:450
+#: src/wmapp.cc:621 src/wmwinlist.cc:452
 msgid "MaximizeHori_z"
 msgstr "水平最大化(_Z)"
 
-#: src/wmapp.cc:624 src/wmwinlist.cc:451
+#: src/wmapp.cc:624 src/wmwinlist.cc:453
 msgid "_Fullscreen"
 msgstr "全屏(_F)"
 
-#: src/wmapp.cc:627 src/wmwinlist.cc:453
+#: src/wmapp.cc:627 src/wmwinlist.cc:455
 msgid "_Hide"
 msgstr "隐藏(_H)"
 
-#: src/wmapp.cc:629 src/wmwinlist.cc:454
+#: src/wmapp.cc:629 src/wmwinlist.cc:456
 msgid "Roll_up"
 msgstr "卷起(_U)"
 
@@ -2130,23 +2130,23 @@ msgstr "卷起(_U)"
 msgid "R_aise"
 msgstr "上移一层(_A)"
 
-#: src/wmapp.cc:638 src/wmwinlist.cc:456
+#: src/wmapp.cc:638 src/wmwinlist.cc:458
 msgid "_Lower"
 msgstr "下移一层(_L)"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:457
+#: src/wmapp.cc:640 src/wmwinlist.cc:459
 msgid "La_yer"
 msgstr "分层排序(_Y)"
 
-#: src/wmapp.cc:643 src/wmwinlist.cc:458
+#: src/wmapp.cc:643 src/wmwinlist.cc:460
 msgid "Tile"
 msgstr "平铺"
 
-#: src/wmapp.cc:647 src/wmwinlist.cc:460
+#: src/wmapp.cc:647 src/wmwinlist.cc:462
 msgid "Move _To"
 msgstr "移动到(_T)"
 
-#: src/wmapp.cc:648 src/wmwinlist.cc:461
+#: src/wmapp.cc:648 src/wmwinlist.cc:463
 msgid "Occupy _All"
 msgstr "占据所有工作区(_A)"
 
@@ -2154,19 +2154,19 @@ msgstr "占据所有工作区(_A)"
 msgid "Limit _Workarea"
 msgstr "限制工作区(_W)"
 
-#: src/wmapp.cc:658 src/wmwinlist.cc:462
+#: src/wmapp.cc:658 src/wmwinlist.cc:464
 msgid "Tray _icon"
 msgstr "显示为托盘图标(_I)"
 
-#: src/wmapp.cc:660 src/wmwinlist.cc:463
+#: src/wmapp.cc:660 src/wmwinlist.cc:465
 msgid "R_ename title"
 msgstr "重命名标题(_E)"
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:478 src/wmwinlist.cc:486
+#: src/wmapp.cc:665 src/wmwinlist.cc:480 src/wmwinlist.cc:488
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:480
+#: src/wmapp.cc:667 src/wmwinlist.cc:482
 msgid "_Kill Client"
 msgstr "杀死客户程序(_K)"
 
@@ -2347,7 +2347,7 @@ msgstr "放下"
 msgid "Rollup"
 msgstr "卷起"
 
-#: src/wmclient.cc:462
+#: src/wmclient.cc:470
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2608,27 +2608,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "会话管理者：未知行 %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:467 src/wmwinlist.cc:500
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:469 src/wmwinlist.cc:502
 msgid "Ca_scade"
 msgstr "层叠(_S)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:468 src/wmwinlist.cc:501
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:470 src/wmwinlist.cc:503
 msgid "_Arrange"
 msgstr "排列(_A)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:470 src/wmwinlist.cc:502
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:472 src/wmwinlist.cc:504
 msgid "_Minimize All"
 msgstr "全部最小化(_M)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:471 src/wmwinlist.cc:503
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:473 src/wmwinlist.cc:505
 msgid "_Hide All"
 msgstr "全部隐藏(_H)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:472 src/wmwinlist.cc:504
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:474 src/wmwinlist.cc:506
 msgid "_Undo"
 msgstr "撤消(_U)"
 
@@ -2642,7 +2642,7 @@ msgstr "排列图标(_I)"
 msgid "_Refresh"
 msgstr "刷新(_R)"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
 msgid "Hide Taskbar"
 msgstr "隐藏任务栏"
 
@@ -2658,7 +2658,7 @@ msgstr "窗口列表菜单"
 msgid "Show Desktop"
 msgstr "显示桌面"
 
-#: src/wmtaskbar.cc:1019
+#: src/wmtaskbar.cc:1025
 msgid "Show Taskbar"
 msgstr "显示任务栏"
 
@@ -2666,27 +2666,27 @@ msgstr "显示任务栏"
 msgid "All Workspaces"
 msgstr "所有工作区"
 
-#: src/wmwinlist.cc:452
+#: src/wmwinlist.cc:454
 msgid "_Show"
 msgstr "显示(_S)"
 
-#: src/wmwinlist.cc:455
+#: src/wmwinlist.cc:457
 msgid "_Raise"
 msgstr "提升(_R)"
 
-#: src/wmwinlist.cc:478
+#: src/wmwinlist.cc:480
 msgid "Del"
 msgstr "删除"
 
-#: src/wmwinlist.cc:482
+#: src/wmwinlist.cc:484
 msgid "_Terminate Process"
 msgstr "结束进程(_T)"
 
-#: src/wmwinlist.cc:483
+#: src/wmwinlist.cc:485
 msgid "Kill _Process"
 msgstr "杀掉进程(_p)"
 
-#: src/wmwinlist.cc:518 src/wmwinlist.cc:519
+#: src/wmwinlist.cc:520 src/wmwinlist.cc:521
 msgid "Window list"
 msgstr "窗口列表"
 

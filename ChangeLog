@@ -1,5 +1,254 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 3185b32bead57705b267ebd3ed4b3a08bf7b9560
+Merge: c638cd1a 1ba256de
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 18 09:57:25 2023 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 1ba256ded311145b83fcb7dcacefece5a3807e9f
+Merge: 87db7791 2ab2d9e3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 18 09:56:22 2023 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 2ab2d9e3cbaef41a653cc6f6d47efe6ebd4bf925
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 18 09:29:44 2023 +0200
+
+    Reduce the subcats by 5.
+
+ src/yicon.cc | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit a7f12c3765dd02a7575a91e1be0ed0f8ce93633e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 17 21:38:21 2023 +0200
+
+    Let icesh exit with zero if the last action was a successful manager
+    action.
+
+ src/icesh.cc | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit 5827184c8fad273a11d7e8a2a4ea4246783b2b89
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 17 21:33:30 2023 +0200
+
+    Also focus last window when hiding and Click-to-focus for issue #727.
+
+ src/wmframe.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 562da294da84f9d03c29cd8a4c7072d0baf693ab
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 16 19:52:56 2023 +0200
+
+    Detect idempotent RandR updates for issue #728.
+    Only ArrangeWindowsOnScreenSizeChange when the desktop is really resizing.
+
+ src/wmmgr.cc   |  14 ++++---
+ src/yarray.h   |   4 ++
+ src/ywindow.cc | 108 +++++++++++++++++++++++++++++++----------------------
+ src/ywindow.h  |  13 +++++--
+ 4 files changed, 86 insertions(+), 53 deletions(-)
+
+commit 4336686af503efc1b81919392f1e6dfe9bf0be9f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 16 19:51:46 2023 +0200
+
+    Check for TaskBarDoubleHeight when computing workspace button height.
+
+ src/wmtaskbar.cc | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 549a77a64a307ce5df08f01edaf398a41034f94b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 16 19:47:42 2023 +0200
+
+    Limit the resource string of an unresponsive client for issue #729.
+
+ src/wmclient.cc | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit 62fee7a492b01b4e089e3e55038096d0d4a98ab0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri May 12 18:40:18 2023 +0200
+
+    Compute the ultimate workspace button height, before creating them.
+
+ src/aworkspaces.cc | 7 ++++---
+ src/aworkspaces.h  | 3 ++-
+ src/wmtaskbar.cc   | 5 ++++-
+ src/ywindow.h      | 1 +
+ 4 files changed, 11 insertions(+), 5 deletions(-)
+
+commit 1c8fcc7ce89b8bbb54c63d14e6e530a603ae86a2
+Author: Jan Papež <honyczek@centrum.cz>
+Date:   Thu May 11 20:03:57 2023 +0000
+
+    Translated using Weblate (Czech)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/cs.po | 16 ++++++----------
+ 1 file changed, 6 insertions(+), 10 deletions(-)
+
+commit d7a5ffb3a8a83ca145e815ad58eea0950d7eefd2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 11 20:55:34 2023 +0200
+
+    Test for i18n by negation.
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a85838bfbfc2a55fdeb909dc7ae1536e75bcb20c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 10 22:53:32 2023 +0200
+
+    Temporarily hide the taskbar collapse button when collapsing or expanding.
+
+ src/wmtaskbar.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a6cb72bfab927f73045bea212341ad4eff59b3fc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 10 22:52:42 2023 +0200
+
+    Rescale workspace buttons when taskbar is rather high.
+
+ src/aworkspaces.cc | 30 +++++++++++++++++++-----------
+ src/aworkspaces.h  |  1 +
+ 2 files changed, 20 insertions(+), 11 deletions(-)
+
+commit 397e27dcfb38f29bf983bf774c8cea794c7bf501
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 10 12:55:06 2023 +0200
+
+    Use "firefox" instead of "mozilla" as Firefox icon for ice-wm/icewm#132.
+
+ lib/menu.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 80ab66b1bbb2d7fbc47929daec462fe5a46ed1ac
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 8 22:37:54 2023 +0200
+
+    Report when icon could not be found for issue ice-wm/icewm#133.
+
+ src/debug.h    | 4 ++--
+ src/icetray.cc | 2 +-
+ src/yicon.cc   | 4 ++--
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit fd02e721ae6202ddb14620c6af0b1edb2c37b5a0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 8 18:30:59 2023 +0200
+
+    An Escape key release event must match the key press event for #726.
+
+ src/aaddressbar.cc |  4 +++-
+ src/aaddressbar.h  |  1 +
+ src/wmswitch.cc    |  4 +++-
+ src/wmswitch.h     |  1 +
+ src/wmwinlist.cc   |  6 ++++--
+ src/wmwinlist.h    |  3 +++
+ src/ydialog.cc     | 12 ++++++++----
+ src/ydialog.h      |  1 +
+ src/yinputline.cc  |  4 +++-
+ src/yinputline.h   |  1 +
+ src/ymenu.cc       |  4 +++-
+ src/ymenu.h        |  1 +
+ 12 files changed, 32 insertions(+), 10 deletions(-)
+
+commit 725e7a5cd3fa481e606ff2359f7066c916351173
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 7 20:23:20 2023 +0200
+
+    Mention the hash-bang in the startup file.
+
+ man/icewm-startup.pod | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 2f2afd96d715761458f4ce9693c3c5c77053ca54
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 7 20:19:09 2023 +0200
+
+    Lookup icons in more context directories for issue ice-wm/icewm#132.
+
+ src/yicon.cc     | 22 ++++++++++------------
+ src/ymenuitem.cc |  3 +--
+ 2 files changed, 11 insertions(+), 14 deletions(-)
+
+commit dd1adb39b80cb925a2752008fd854501c5fe8f6c
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Wed May 3 19:38:09 2023 +0000
+
+    Translated using Weblate (Portuguese)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/pt.po | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
+
+commit c638cd1a5bd1f7602d59991f5bbe487f9eea4a00
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 3 12:41:08 2023 +0200
+
+    Prepare 3.3.4 release
+
+ AUTHORS      |  13 +-
+ ChangeLog    | 804 +++++++++++++++++++++++++------------------------------
+ NEWS         |  99 ++++---
+ README.md    |  38 +--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  68 ++---
+ po/be.po     |  68 ++---
+ po/bg.po     |  68 ++---
+ po/ca.po     |  68 ++---
+ po/cs.po     |  68 ++---
+ po/da.po     |  68 ++---
+ po/de.po     |  68 ++---
+ po/el.po     |  68 ++---
+ po/en.po     |  68 ++---
+ po/es.po     |  68 ++---
+ po/fi.po     |  68 ++---
+ po/fr.po     | 108 ++++----
+ po/he.po     |  68 ++---
+ po/hr.po     |  68 ++---
+ po/hu.po     |  68 ++---
+ po/icewm.pot |  70 ++---
+ po/id.po     |  68 ++---
+ po/it.po     |  68 ++---
+ po/ja.po     |  68 ++---
+ po/ko.po     |  68 ++---
+ po/lt.po     |  68 ++---
+ po/lv.po     |  68 ++---
+ po/mk.po     |  68 ++---
+ po/nb.po     |  68 ++---
+ po/nl.po     |  68 ++---
+ po/no.po     |  68 ++---
+ po/pl.po     |  68 ++---
+ po/pt.po     |  68 ++---
+ po/pt_BR.po  |  76 +++---
+ po/ro.po     |  68 ++---
+ po/ru.po     |  84 +++---
+ po/sk.po     |  68 ++---
+ po/sl.po     |  68 ++---
+ po/sv.po     |  84 +++---
+ po/tr.po     |  80 +++---
+ po/uk.po     |  68 ++---
+ po/vi.po     |  68 ++---
+ po/zh_CN.po  |  68 ++---
+ po/zh_TW.po  |  68 ++---
+ 46 files changed, 1829 insertions(+), 1885 deletions(-)
+
 commit 4e4f6603618316a76dfc3c62e03cf5a3a9fa784c
 Merge: 1bef488a 87db7791
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5957,258 +6206,3 @@ Date:   Sat Dec 25 20:00:20 2021 +0100
  man/icesh.pod | 66 ++++++++++++++++++++++++-----------------
  src/icesh.cc  | 87 +++++++++++++++++++++++++++++++++++++++++++++----------
  2 files changed, 112 insertions(+), 41 deletions(-)
-
-commit 61d4247b439f6fa2e54e2fc0fdf60f0af9bfa178
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Dec 25 19:21:15 2021 +0100
-
-    Add children.
-
- src/yxapp.cc | 6 ++++++
- src/yxapp.h  | 1 +
- 2 files changed, 7 insertions(+)
-
-commit 10c29c56f95198e08e63d60594b548321f9432cb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Dec 25 19:14:15 2021 +0100
-
-    Improved workaround for 'feh' desktop backgrounds, where its pixmap has
-    been marked persistent, for issue #627.
-
- src/wmapp.cc  |  8 --------
- src/wmapp.h   |  1 -
- src/wmdock.cc |  3 +--
- src/wmmgr.cc  | 48 ++++++++++++++++++++++++++----------------------
- 4 files changed, 27 insertions(+), 33 deletions(-)
-
-commit 68f790d55dc4beaa0d870026638d26cca4662bde
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Dec 25 17:42:00 2021 +0100
-
-    Eliminate flicker when resizing frames which have a shape masked border,
-    like CoolSteel and Illuminate-ice by enabling bit gravity.
-
- src/wmframe.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit 4a82550d25bc4c7a8b6db8ab6469deff4350d358
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 23 21:26:44 2021 +0100
-
-    Minimized windows with startMinimized and ignoreActivationMessages
-    require user intervention to become shown.
-
- src/wmclient.cc    | 2 +-
- src/wmcontainer.cc | 4 +++-
- src/wmframe.cc     | 6 +++++-
- src/wmframe.h      | 2 ++
- 4 files changed, 11 insertions(+), 3 deletions(-)
-
-commit a9f85efcb9d25ac89f61981a2ad209f2e600ac28
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 23 20:53:05 2021 +0100
-
-    Support focus in subwindows of Globally Active Input applications,
-    like full widescreen games for issue ice-wm/icewm#73.
-
- src/wmframe.cc | 13 +++++++++++++
- src/yxapp.cc   | 15 +++++++++++++++
- src/yxapp.h    |  6 ++----
- 3 files changed, 30 insertions(+), 4 deletions(-)
-
-commit 5d91c93d91a8699351af8d48d7979af902e16944
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Dec 22 20:00:37 2021 +0100
-
-    Minimize the number of window restackings for issue #630.
-
- src/wmmgr.cc    | 10 ++++++++++
- src/wmmgr.h     | 16 ++++++++++++++++
- src/wmswitch.cc |  1 +
- 3 files changed, 27 insertions(+)
-
-commit 41ccba2b059f761b4d0002841667ebd41d33a2c0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Dec 22 19:59:15 2021 +0100
-
-    Show time of backtrace.
-
- src/misc.cc | 10 ++++++++--
- 1 file changed, 8 insertions(+), 2 deletions(-)
-
-commit 37633b7170d3559d3c6b9c5fe21bfcad5c75a8e5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Dec 22 17:34:42 2021 +0100
-
-    Put the active window first in the list of switchable windows for
-    issue #631.
-
- src/wmswitch.cc | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
-
-commit 832ddd23b821718b92cdaa539cfa5d41252f304d
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Tue Dec 21 16:36:18 2021 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/pt.po | 24 ++++++++++++------------
- 1 file changed, 12 insertions(+), 12 deletions(-)
-
-commit 14b1f1cd73ec63b63ca5663e3b4d66ba8e2efdd2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 21 00:52:59 2021 +0100
-
-    Prepare 2.9.3 release
-
- AUTHORS      |  10 +-
- ChangeLog    | 804 ++++++++++++++++++++++++++++++-------------------------
- NEWS         | 126 +++++----
- README.md    |  36 +--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  42 +--
- po/be.po     |  42 +--
- po/bg.po     |  42 +--
- po/ca.po     |  46 ++--
- po/cs.po     |  42 +--
- po/da.po     |  42 +--
- po/de.po     |  42 +--
- po/el.po     |  42 +--
- po/en.po     |  42 +--
- po/es.po     |  42 +--
- po/fi.po     |  42 +--
- po/fr.po     |  42 +--
- po/he.po     |  42 +--
- po/hr.po     |  42 +--
- po/hu.po     |  42 +--
- po/icewm.pot |  44 +--
- po/id.po     |  42 +--
- po/it.po     |  42 +--
- po/ja.po     |  46 ++--
- po/ko.po     |  42 +--
- po/lt.po     |  42 +--
- po/lv.po     |  42 +--
- po/mk.po     |  42 +--
- po/nb.po     |  42 +--
- po/nl.po     |  42 +--
- po/no.po     |  42 +--
- po/pl.po     |  42 +--
- po/pt.po     |  42 +--
- po/pt_BR.po  |  42 +--
- po/ro.po     |  42 +--
- po/ru.po     |  42 +--
- po/sk.po     |  46 ++--
- po/sl.po     |  42 +--
- po/sv.po     |  42 +--
- po/tr.po     |  42 +--
- po/uk.po     |  46 ++--
- po/vi.po     |  42 +--
- po/zh_CN.po  |  42 +--
- po/zh_TW.po  |  42 +--
- 46 files changed, 1352 insertions(+), 1294 deletions(-)
-
-commit 4001c8eba38bb6d1f54240b84e4500445e175aeb
-Merge: d91ddc72 fcad4ab6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 21 00:39:17 2021 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit fcad4ab6e139fffebf6743c8a5e82e71975f0fed
-Merge: ad5bc16f 6a1d79a2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 21 00:38:34 2021 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 6a1d79a209c84d11b8dc74a3480647542f044f42
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 20 20:29:31 2021 +0100
-
-    Force the desktop background to be refreshed for 'feh' background pixmaps
-    for issue #627.
-
- src/wmapp.cc | 11 ++++++++++-
- src/wmapp.h  |  1 +
- 2 files changed, 11 insertions(+), 1 deletion(-)
-
-commit 0a765e8f5d0718c5009247954e1d681284d7de48
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 20 20:28:36 2021 +0100
-
-    Record when a client frame is unmapped, to not report further errors.
-
- src/wmclient.cc | 10 ++++++++--
- src/wmclient.h  |  1 +
- 2 files changed, 9 insertions(+), 2 deletions(-)
-
-commit cabaebeef1e1a7d3c8bbd6fd19baf10d0b6d6767
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 20 20:26:41 2021 +0100
-
-    Postpone granting focus to applications which use the Globally Active
-    Input model, like wine, until all its events have been processed.
-
- src/wmframe.cc | 26 +++++++++++++-------------
- src/wmframe.h  |  1 +
- 2 files changed, 14 insertions(+), 13 deletions(-)
-
-commit 22ae81940c02ef3051fb41eab51532c2334301bf
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 20 20:25:51 2021 +0100
-
-    Set fFocusWin to nullptr when a frame is about to lose focus.
-
- src/wmmgr.cc | 13 ++++++++-----
- 1 file changed, 8 insertions(+), 5 deletions(-)
-
-commit 7be24dfa6cf4ba430714701a41aae81e6fc4864e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 20 20:23:52 2021 +0100
-
-    Postpone requesting focus for icewm internal windows until all create
-    and map events have been processed.
-
- src/wmwinlist.cc | 20 ++++++++++++++++----
- src/wmwinlist.h  |  3 ++-
- src/ydialog.cc   | 21 +++++++++++++++++----
- src/ydialog.h    |  2 ++
- 4 files changed, 37 insertions(+), 9 deletions(-)
-
-commit 09cb7bd98a25c2c58871b298a4a6e4a021db0432
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 20 20:21:54 2021 +0100
-
-    Add global 'ignorable' to not report errors for this unmapped client
-    window.
-
- src/yxapp.cc | 29 ++++++++++++++++++-----------
- src/yxapp.h  |  1 +
- 2 files changed, 19 insertions(+), 11 deletions(-)
-
-commit ccf0bd5f86be062f2545f952861da4f43e989657
-Author: Taras Panchenko <top39@ukr.net>
-Date:   Sat Dec 18 18:47:13 2021 +0000
-
-    Translated using Weblate (Ukrainian)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/uk.po | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)
-
-commit 08148ff339681f3f4026b57c7d1fc383839c86c4
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Sat Dec 18 12:18:42 2021 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/sk.po | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)

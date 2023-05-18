@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.3.4pre2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-05-03 12:39+0200\n"
+"POT-Creation-Date: 2023-05-18 09:58+0200\n"
 "PO-Revision-Date: 2023-04-27 02:14+0000\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive68@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.opensuse.org/projects/icewm/"
@@ -341,7 +341,7 @@ msgstr "Desligado"
 msgid "NET"
 msgstr "Rede"
 
-#: src/aworkspaces.cc:664 src/wmstatus.cc:204
+#: src/aworkspaces.cc:673 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Área de Trabalho: "
 
@@ -1376,12 +1376,12 @@ msgstr "Estado da janela EWMH"
 msgid "workspace #%d: `%s'\n"
 msgstr "Área de Trabalho #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4424 src/icesh.cc:5053
+#: src/icesh.cc:2615 src/icesh.cc:4430 src/icesh.cc:5059
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "O estado `%s' não é válido."
 
-#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5368
+#: src/icesh.cc:2644 src/icesh.cc:4009 src/icesh.cc:4059 src/icesh.cc:5374
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "O argumento `%s' não é válido"
@@ -1425,30 +1425,30 @@ msgstr ""
 msgid "Unexpected: `%s'."
 msgstr "Não é esperado: '%s'."
 
-#: src/icesh.cc:4191
+#: src/icesh.cc:4193
 msgid "No windows found."
 msgstr "Nenhuma janela foi encontrada."
 
-#: src/icesh.cc:4207
+#: src/icesh.cc:4209
 msgid "No actions specified."
 msgstr "Nenhuma ação foi especificada."
 
-#: src/icesh.cc:4348
+#: src/icesh.cc:4354
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "O identificador da janela `%s' não é válido"
 
-#: src/icesh.cc:4364
+#: src/icesh.cc:4370
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "O PID `%s' não é válido"
 
-#: src/icesh.cc:4397
+#: src/icesh.cc:4403
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "A camada `%s' não é válida."
 
-#: src/icesh.cc:5499
+#: src/icesh.cc:5505
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "A ação `%s' não é conhecida"
@@ -2077,7 +2077,7 @@ msgstr "Em_baixo"
 msgid "D_esktop"
 msgstr "Ár_ea de Trabalho"
 
-#: src/wmapp.cc:576 src/wmwinlist.cc:379
+#: src/wmapp.cc:576 src/wmwinlist.cc:381
 msgid "Move to New _Window"
 msgstr "Mover para a Nova _janela"
 
@@ -2118,18 +2118,18 @@ msgid "Center"
 msgstr "Centro"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:466
-#: src/wmwinlist.cc:499
+#: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:468
+#: src/wmwinlist.cc:501
 msgid "T_ile Horizontally"
 msgstr "Agrupar Hor_izontalmente"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:465
-#: src/wmwinlist.cc:498
+#: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:467
+#: src/wmwinlist.cc:500
 msgid "Tile _Vertically"
 msgstr "Agrupar _Verticalmente"
 
-#: src/wmapp.cc:611 src/wmwinlist.cc:446
+#: src/wmapp.cc:611 src/wmwinlist.cc:448
 msgid "_Restore"
 msgstr "_Restaurar"
 
@@ -2141,31 +2141,31 @@ msgstr "_Mover"
 msgid "_Size"
 msgstr "_Tamanho"
 
-#: src/wmapp.cc:617 src/wmwinlist.cc:447
+#: src/wmapp.cc:617 src/wmwinlist.cc:449
 msgid "Mi_nimize"
 msgstr "Mi_nimizar"
 
-#: src/wmapp.cc:619 src/wmwinlist.cc:448
+#: src/wmapp.cc:619 src/wmwinlist.cc:450
 msgid "Ma_ximize"
 msgstr "Ma_ximizar"
 
-#: src/wmapp.cc:620 src/wmwinlist.cc:449
+#: src/wmapp.cc:620 src/wmwinlist.cc:451
 msgid "Maximize_Vert"
 msgstr "Maximizar _Vertical"
 
-#: src/wmapp.cc:621 src/wmwinlist.cc:450
+#: src/wmapp.cc:621 src/wmwinlist.cc:452
 msgid "MaximizeHori_z"
 msgstr "Maximizar Hori_zontal"
 
-#: src/wmapp.cc:624 src/wmwinlist.cc:451
+#: src/wmapp.cc:624 src/wmwinlist.cc:453
 msgid "_Fullscreen"
 msgstr "Tela _Cheia"
 
-#: src/wmapp.cc:627 src/wmwinlist.cc:453
+#: src/wmapp.cc:627 src/wmwinlist.cc:455
 msgid "_Hide"
 msgstr "_Ocultar"
 
-#: src/wmapp.cc:629 src/wmwinlist.cc:454
+#: src/wmapp.cc:629 src/wmwinlist.cc:456
 msgid "Roll_up"
 msgstr "Enrol_ar"
 
@@ -2173,23 +2173,23 @@ msgstr "Enrol_ar"
 msgid "R_aise"
 msgstr "Para _Frente"
 
-#: src/wmapp.cc:638 src/wmwinlist.cc:456
+#: src/wmapp.cc:638 src/wmwinlist.cc:458
 msgid "_Lower"
 msgstr "Para Trá_s"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:457
+#: src/wmapp.cc:640 src/wmwinlist.cc:459
 msgid "La_yer"
 msgstr "Cama_da"
 
-#: src/wmapp.cc:643 src/wmwinlist.cc:458
+#: src/wmapp.cc:643 src/wmwinlist.cc:460
 msgid "Tile"
 msgstr "Agrupar"
 
-#: src/wmapp.cc:647 src/wmwinlist.cc:460
+#: src/wmapp.cc:647 src/wmwinlist.cc:462
 msgid "Move _To"
 msgstr "Mover _Para"
 
-#: src/wmapp.cc:648 src/wmwinlist.cc:461
+#: src/wmapp.cc:648 src/wmwinlist.cc:463
 msgid "Occupy _All"
 msgstr "Oc_upar Todas"
 
@@ -2197,19 +2197,19 @@ msgstr "Oc_upar Todas"
 msgid "Limit _Workarea"
 msgstr "_Limitar a Área de Trabalho"
 
-#: src/wmapp.cc:658 src/wmwinlist.cc:462
+#: src/wmapp.cc:658 src/wmwinlist.cc:464
 msgid "Tray _icon"
 msgstr "Ícone da Área de _Notificação"
 
-#: src/wmapp.cc:660 src/wmwinlist.cc:463
+#: src/wmapp.cc:660 src/wmwinlist.cc:465
 msgid "R_ename title"
 msgstr "R_enomear título"
 
-#: src/wmapp.cc:665 src/wmwinlist.cc:478 src/wmwinlist.cc:486
+#: src/wmapp.cc:665 src/wmwinlist.cc:480 src/wmwinlist.cc:488
 msgid "_Close"
 msgstr "Fec_har"
 
-#: src/wmapp.cc:667 src/wmwinlist.cc:480
+#: src/wmapp.cc:667 src/wmwinlist.cc:482
 msgid "_Kill Client"
 msgstr "_Interromper o Cliente"
 
@@ -2397,7 +2397,7 @@ msgstr "Desenrolar"
 msgid "Rollup"
 msgstr "Enrolar"
 
-#: src/wmclient.cc:462
+#: src/wmclient.cc:470
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2656,27 +2656,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Gerenciador de Sessão: A linha %s não é conhecida."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:467 src/wmwinlist.cc:500
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:469 src/wmwinlist.cc:502
 msgid "Ca_scade"
 msgstr "Cas_cata"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:468 src/wmwinlist.cc:501
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:470 src/wmwinlist.cc:503
 msgid "_Arrange"
 msgstr "_Organizar"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:470 src/wmwinlist.cc:502
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:472 src/wmwinlist.cc:504
 msgid "_Minimize All"
 msgstr "_Minimizar Tudo"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:471 src/wmwinlist.cc:503
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:473 src/wmwinlist.cc:505
 msgid "_Hide All"
 msgstr "Ocultar _Tudo"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:472 src/wmwinlist.cc:504
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:474 src/wmwinlist.cc:506
 msgid "_Undo"
 msgstr "_Desfazer"
 
@@ -2690,7 +2690,7 @@ msgstr "Organizar os Ico_nes"
 msgid "_Refresh"
 msgstr "_Recarregar"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1019
+#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
 msgid "Hide Taskbar"
 msgstr "Ocultar a Barra de Tarefas"
 
@@ -2706,7 +2706,7 @@ msgstr "Menu da lista de janelas"
 msgid "Show Desktop"
 msgstr "Exibir a Área de Trabalho"
 
-#: src/wmtaskbar.cc:1019
+#: src/wmtaskbar.cc:1025
 msgid "Show Taskbar"
 msgstr "Exibir a Barra de Tarefas"
 
@@ -2714,27 +2714,27 @@ msgstr "Exibir a Barra de Tarefas"
 msgid "All Workspaces"
 msgstr "Todas as Áreas de Trabalho"
 
-#: src/wmwinlist.cc:452
+#: src/wmwinlist.cc:454
 msgid "_Show"
 msgstr "_Exibir"
 
-#: src/wmwinlist.cc:455
+#: src/wmwinlist.cc:457
 msgid "_Raise"
 msgstr "_Subir"
 
-#: src/wmwinlist.cc:478
+#: src/wmwinlist.cc:480
 msgid "Del"
 msgstr "Apagar"
 
-#: src/wmwinlist.cc:482
+#: src/wmwinlist.cc:484
 msgid "_Terminate Process"
 msgstr "T_erminar o Processo"
 
-#: src/wmwinlist.cc:483
+#: src/wmwinlist.cc:485
 msgid "Kill _Process"
 msgstr "Interromper o _Processo"
 
-#: src/wmwinlist.cc:518 src/wmwinlist.cc:519
+#: src/wmwinlist.cc:520 src/wmwinlist.cc:521
 msgid "Window list"
 msgstr "Lista de janelas"
 
