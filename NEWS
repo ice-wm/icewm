@@ -1,11 +1,41 @@
-icewm -- history of user-visible changes.  2023-05-18
+icewm -- history of user-visible changes.  2023-06-04
+
+Release icewm-3.4.0 released 2023-06-04
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.3.5...3.4.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (12):
+      Support a literal character as the last letter in a "keys" definition if
+        it is from the Latin-1 character set for issue ice-wm/icewm#134.
+      Support bindings to shifted keys in a "keys" definition in issue
+        ice-wm/icewm#134.
+      Support UTF-8 key in "keys" and fix unshift for issue ice-wm/icewm#134.
+      Update manpage for "keys" for issue ice-wm/icewm#134.
+      On a MappingNotify event, reparse the key bindings for ice-wm/icewm#134.
+      Fix for a map request from an unmanaged client for issue #734.
+      Use xconfigurerequest.
+      Support all UTF8 code points in keybindings.
+      Include AltGr in the list of modifiers.
+      Don't complain about empty key definitions.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Temuri Doghonadze <temuri.doghonadze@gmail.com> (2):
+      Added translation using Weblate (Georgian)
+      Translated using Weblate (Georgian)
+
+Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
+      Translated using Weblate (Indonesian)
+
 
 Release icewm-3.3.5 released 2023-05-18
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.3.4...3.3.5
 
-Bert Gijsbers <gijsbers@science.uva.nl> (17):
+Bert Gijsbers <gijsbers@science.uva.nl> (18):
       Lookup icons in more context directories for issue ice-wm/icewm#132.
       Mention the hash-bang in the startup file.
       An Escape key release event must match the key press event for #726.
@@ -26,6 +56,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (17):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.3.5 release
 
 Hugo Carvalho <hugokarvalho@hotmail.com> (1):
       Translated using Weblate (Portuguese)
@@ -361,57 +392,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (21):
 
 Mehmet Akif 9oglu <madanadam@gmail.com> (1):
       Translated using Weblate (Turkish)
-
-
-Release icewm-3.2.3 released 2022-12-05
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.2.2...3.2.3
-
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
-      Only freeze task pane layout when a button was removed.
-      Get rid of destroyedClient and simplify handleUnmap.
-      Minimalize ClientData.
-      Tabbing tips.
-      Make winoption forceClose tab dependent.
-      Mention named tabs.
-      Drop windowCount.
-      Let tabs check for winoption settings.
-      Accept pull request by olf and closes ice-wm/icewm#104.
-      Show an icon in the tooltip of a toolbar button for issue #637.
-      Ensure that a task button is updated once it is mapped.
-      Document "workspace" subdirectory.
-      Only link icewm to tooltips and icons, not icewmbg.
-      Add icon to tray tooltip.
-      Delay the creation of frame button tooltips.
-      Add loadicon and saveicon to icesh.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.2.3 release
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (2):
-      Translated using Weblate (Japanese)
-      Translated using Weblate (Japanese)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Dmitriy Khanzhin <jinn@altlinux.org> (1):
-      Translated using Weblate (Russian)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Kristijan Fremen Velkovski <me@krisfremen.com> (1):
-      Translated using Weblate (Macedonian)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
 
