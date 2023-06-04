@@ -190,17 +190,21 @@ public:
     bool isButton(unsigned state, unsigned mask) const {
         return mask == buttonModMask(state);
     }
+    bool parseKey(const char* arg, KeySym* key, unsigned* mod);
+    void unshift(KeySym* key, unsigned* mod);
 
     static const char* getHelpText();
 
 protected:
     virtual int handleError(XErrorEvent* xev);
     virtual Cursor getRightPointer() const { return None; }
+    virtual void keyboardRemap() { }
 
 private:
     XRenderPictFormat* findFormat(int depth) const;
     Visual* findVisual(int depth) const;
     Colormap getColormap(int depth) const;
+    bool windowExists(Window handle) const;
 
     Display* const fDisplay;
     int const fScreen;
@@ -228,6 +232,10 @@ private:
     lazy<class YClipboard> fClip;
     YWindow *fXGrabWindow;
     YWindow *fGrabWindow;
+    KeySym* fKeycodeMap;
+    int fKeycodeMin;
+    int fKeycodeMax;
+    int fKeysymsPer;
 
     bool fGrabTree;
     bool fGrabMouse;

@@ -1,82 +1,80 @@
-# Indonesian messages for IceWM
-# Copyright (C) 2000-2001 Marko Macek
-# Arif E. Nugroho <arif_endro@yahoo.com>
-# Arif Budiman <arifpedia@gmail.com>, 2016.
-# Kukuh Syafaat <cho2@opensuse.org>, 2017, 2020.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Marko Macek <Marko.Macek@gmx.net>
+# This file is distributed under the same license as the icewm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: icewm 1.0.9\n"
+"Project-Id-Version: icewm 3.3.2.22\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2023-03-27 21:00+0200\n"
-"PO-Revision-Date: 2023-05-31 16:15+0000\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
-"Language-Team: Indonesian <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/id/>\n"
-"Language: id\n"
+"PO-Revision-Date: 2023-05-30 09:14+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/ka/>\n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.9.1\n"
 
 #: src/aapm.cc:66
 #, c-format
 msgid "Can't open the APM device %s"
-msgstr "Tidak bisa membuka perangkat APM %s"
+msgstr ""
 
 #: src/aapm.cc:74 src/aapm.cc:92
 #, c-format
 msgid "Can't ioctl the APM device %s"
-msgstr "Tidak bisa ioctl perangkat APM %s"
+msgstr ""
 
 #: src/aapm.cc:122
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
-msgstr "Format tidak dikenal yang digunakan oleh perangkat APM %s (%d)."
+msgstr ""
 
 #: src/aapm.cc:154 src/aapm.cc:426 src/aapm.cc:636 src/aapm.cc:762
 msgid " - Power"
-msgstr " - Daya"
+msgstr " - კვება"
 
-# P: Power
 #: src/aapm.cc:156 src/aapm.cc:429 src/aapm.cc:639
 msgid "P"
-msgstr "D"
+msgstr "P"
 
 #: src/aapm.cc:160 src/aapm.cc:403 src/aapm.cc:619 src/aapm.cc:730
 msgid " - Charging"
-msgstr " - Mengisi"
+msgstr " - დატენვა"
 
-# C; Charging
 #: src/aapm.cc:162 src/aapm.cc:405 src/aapm.cc:621
 msgid "C"
-msgstr "I"
+msgstr "ჩ"
 
 #: src/aapm.cc:407
 msgid " - Full"
-msgstr " - Penuh"
+msgstr " - სრულად"
 
 #: src/aapm.cc:944
 #, c-format
 msgid "power:\t%s"
-msgstr "daya:\t%s"
+msgstr "სიმძლავრე: %s"
 
 #: src/aclock.cc:192
 msgid "CLOCK"
-msgstr "JAM"
+msgstr "საათი"
 
 #: src/aclock.cc:198
 msgid "Date"
-msgstr "Tanggal"
+msgstr "თარიღი"
 
 #: src/aclock.cc:199 src/themes.cc:82
 msgid "Default"
-msgstr "Bawaan"
+msgstr "ნაგულისხმები"
 
 #: src/aclock.cc:200 src/acpustatus.cc:912 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
-msgstr "_Nonaktif"
+msgstr "_გამორთვა"
 
 #: src/aclock.cc:201
 msgid "_UTC"
@@ -91,7 +89,7 @@ msgstr "°C"
 #: src/acpustatus.cc:552
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
-msgstr "CPU %s Beban: %3.2f %3.2f %3.2f, %u"
+msgstr "CPU %s დატვირთვა: %3.2f %3.2f %3.2f, %u"
 
 #: src/acpustatus.cc:558
 #, c-format
@@ -99,8 +97,6 @@ msgid ""
 "\n"
 "Ram (free): %5.3f (%.3f) G"
 msgstr ""
-"\n"
-"Ram (bebas): %5.3f (%.3f) G"
 
 #: src/acpustatus.cc:563
 #, c-format
@@ -108,8 +104,6 @@ msgid ""
 "\n"
 "Swap (free): %.3f (%.3f) G"
 msgstr ""
-"\n"
-"Swap (bebas): %.3f (%.3f) G"
 
 #: src/acpustatus.cc:571
 #, c-format
@@ -118,7 +112,7 @@ msgid ""
 "ACPI Temp: "
 msgstr ""
 "\n"
-"Temperatur ACPI: "
+"ACPI ტემპ: "
 
 #: src/acpustatus.cc:592 src/acpustatus.cc:630
 #, c-format
@@ -127,7 +121,7 @@ msgid ""
 "CPU Freq: %.3fGHz"
 msgstr ""
 "\n"
-"Frekuensi CPU: %.3fGHz"
+"CPU სიხშ: %.3fგჰც"
 
 #: src/acpustatus.cc:607 src/acpustatus.cc:907
 msgid "CPU"
@@ -135,7 +129,7 @@ msgstr "CPU"
 
 #: src/acpustatus.cc:607
 msgid "Load: "
-msgstr "Beban: "
+msgstr "დატვირთვა: "
 
 #: src/acpustatus.cc:622
 #, c-format
@@ -143,8 +137,6 @@ msgid ""
 "\n"
 "Ram (user): %5.3f (%.3f) G"
 msgstr ""
-"\n"
-"Ram (pengguna): %5.3f (%.3f) G"
 
 #: src/acpustatus.cc:908
 #, c-format
@@ -153,166 +145,166 @@ msgstr "CPU%d"
 
 #: src/acpustatus.cc:914
 msgid "_Combine"
-msgstr "_Gabung"
+msgstr "_კომბინირება"
 
 #: src/acpustatus.cc:916
 msgid "_Separate"
-msgstr "Pi_sahkan"
+msgstr "_ცალ-ცალკე"
 
 #: src/akeyboard.cc:83 src/icesm.cc:475 src/wmmenu.cc:503
 #, c-format
 msgid "%s exited with status %d."
-msgstr "%s keluar dengan status %d."
+msgstr ""
 
 #: src/akeyboard.cc:86 src/icesm.cc:481 src/icesm.cc:635 src/wmmenu.cc:506
 #, c-format
 msgid "%s was killed by signal %d."
-msgstr "%s dibunuh oleh sinyal %d."
+msgstr ""
 
 #: src/akeyboard.cc:98
 msgid "rules:"
-msgstr "aturan:"
+msgstr "წესები:"
 
 #: src/akeyboard.cc:99
 msgid "model:"
-msgstr "model:"
+msgstr "მოდელი:"
 
 #: src/akeyboard.cc:100
 msgid "layout:"
-msgstr "tata letak:"
+msgstr "განლაგება:"
 
 #: src/akeyboard.cc:101
 msgid "options:"
-msgstr "opsi:"
+msgstr "პარამეტრები:"
 
 #: src/akeyboard.cc:157
 msgid "Keyboard"
-msgstr "Papan Tik"
+msgstr "კლავიატურა"
 
 #: src/amailbox.cc:64
 #, c-format
 msgid "Invalid mailbox protocol: \"%s\""
-msgstr "Protokol kotak surat tidak valid: \"%s\""
+msgstr ""
 
 #: src/amailbox.cc:66
 #, c-format
 msgid "Invalid mailbox path: \"%s\""
-msgstr "Path kotak surat tidak valid: \"%s\""
+msgstr ""
 
 #: src/amailbox.cc:140
 #, c-format
 msgid "DNS name lookup failed for %s"
-msgstr "Pencarian nama DNS gagal untuk %s"
+msgstr ""
 
 #: src/amailbox.cc:156
 #, c-format
 msgid "Invalid mailbox port: \"%s\""
-msgstr "Path kotak surat tidak valid: \"%s\""
+msgstr ""
 
 #: src/amailbox.cc:314
 #, c-format
 msgid "Could not connect to %s: %s"
-msgstr "Tidak dapat terhubung ke %s: %s"
+msgstr ""
 
 #: src/amailbox.cc:334
 #, c-format
 msgid "Failed to find %s command"
-msgstr "Gagal menemukan perintah %s"
+msgstr ""
 
 #: src/amailbox.cc:363 src/wmmenu.cc:471 src/wmmenu.cc:488 src/yapp.cc:433
 #, c-format
 msgid "Failed to execute %s"
-msgstr "Gagal mengeksekusi %s"
+msgstr ""
 
 #: src/amailbox.cc:447
 #, c-format
 msgid "Write to socket failed: %s"
-msgstr "Menulis ke soket gagal: %s"
+msgstr ""
 
 #: src/amailbox.cc:694
 #, c-format
 msgid "Using MailBox \"%s\"\n"
-msgstr "Menggunakan Kotak Surat \"%s\"\n"
+msgstr ""
 
 #: src/amailbox.cc:801
 msgid "Suspended"
-msgstr "Ditangguhkan"
+msgstr "გაჩერებულია"
 
 #: src/amailbox.cc:805
 msgid "Error checking mailbox."
-msgstr "Galat memeriksa kotak surat."
+msgstr ""
 
 #: src/amailbox.cc:812
 #, c-format
 msgid "%ld mail message, %ld unread."
-msgstr "%ld pesan surel, %ld belum dibaca."
+msgstr ""
 
 #: src/amailbox.cc:813
 #, c-format
 msgid "%ld mail messages, %ld unread."
-msgstr "%ld pesan surel, %ld belum dibaca."
+msgstr ""
 
 #: src/amailbox.cc:819
 #, c-format
 msgid "%ld mail message."
-msgstr "%ld pesan surel."
+msgstr ""
 
 #: src/amailbox.cc:820
 #, c-format
 msgid "%ld mail messages."
-msgstr "%ld pesan surel."
+msgstr ""
 
 #: src/amailbox.cc:961
 msgid "MAIL"
-msgstr "SUREL"
+msgstr "წერილი"
 
 #: src/amailbox.cc:963
 msgid "_Check"
-msgstr "_Periksa"
+msgstr "_შემოწმება"
 
 #: src/amailbox.cc:965
 msgid "_Suspend"
-msgstr "_Suspensi"
+msgstr "_ძილი"
 
 #: src/amemstatus.cc:144
 msgid "GB"
-msgstr "GB"
+msgstr "გბ"
 
 #: src/amemstatus.cc:148
 msgid "MB"
-msgstr "MB"
+msgstr "მბ"
 
 #: src/amemstatus.cc:152
 msgid "kB"
-msgstr "kB"
+msgstr "კბ"
 
 #: src/amemstatus.cc:156
 msgid "bytes"
-msgstr "bita"
+msgstr "ბაიტი"
 
 #: src/amemstatus.cc:176
 msgid "Memory Total: "
-msgstr "Total Memori: "
+msgstr "მეხსიერება სულ: "
 
 #: src/amemstatus.cc:177
 msgid "Free: "
-msgstr "Bebas: "
+msgstr "თავისუფალი: "
 
 #: src/amemstatus.cc:178
 msgid "Cached: "
-msgstr "Disinggahkan: "
+msgstr "დაკეშილი: "
 
 #: src/amemstatus.cc:179
 msgid "Buffers: "
-msgstr "Penyangga: "
+msgstr "ბუფერები: "
 
 #: src/amemstatus.cc:180
 msgid "User: "
-msgstr "Pengguna: "
+msgstr "მომხმარებელი: "
 
 #: src/amemstatus.cc:262
 msgid "MEM"
-msgstr "MEM"
+msgstr "მეხს"
 
 #: src/apppstatus.cc:268
 #, c-format
@@ -323,361 +315,356 @@ msgid ""
 "  Transferred (in/out):\t%lli %s/%lli %s\n"
 "  Online time:\t%ld:%02ld:%02ld%s%s"
 msgstr ""
-"Antarmuka %s:\n"
-"  Nilai saat ini (masuk/keluar):\t%li %s/%li %s\n"
-"  Rerata arus (masuk/keluar):\t%lli %s/%lli %s\n"
-"  Ditransfer (masuk/keluar):\t%lli %s/%lli %s\n"
-"  Waktu daring:\t%ld:%02ld:%02ld%s%s"
 
 #: src/apppstatus.cc:284
 msgid "disconnected"
-msgstr "terputus"
+msgstr "გათიშულია"
 
 #: src/apppstatus.cc:284
 msgid "down"
-msgstr "turun"
+msgstr "დაბლა"
 
 #: src/apppstatus.cc:705
 msgid "NET"
-msgstr "NET"
+msgstr "ქსელი"
 
 #: src/aworkspaces.cc:635 src/wmstatus.cc:208
 msgid "Workspace: "
-msgstr "Ruang kerja: "
+msgstr "სამუშაო სივრცე: "
 
 #: src/decorate.cc:132
 msgid "Tabs"
-msgstr "Tab"
+msgstr "დაფები"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics
 #: src/fdospecgen.h:43
 msgid "2DGraphics"
-msgstr "Grafis 2D"
+msgstr "2Dგრაფიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics
 #: src/fdospecgen.h:45
 msgid "3DGraphics"
-msgstr "Grafis 3D"
+msgstr "3Dგრაფიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings or Utility
 #: src/fdospecgen.h:47 src/fdospecgen.h:49
 msgid "Accessibility"
-msgstr "Aksesibilitas"
+msgstr "წვდომადობა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:51
 msgid "Accessories"
-msgstr "Aksesoris"
+msgstr "აქსესუარები"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:53
 msgid "ActionGame"
-msgstr "Permainan Aksi"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:55
 msgid "Adult"
-msgstr "Dewasa"
+msgstr "ზრდასრულთა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:57
 msgid "AdventureGame"
-msgstr "Permainan Petualangan"
+msgstr "სათავგადასავლოთამაში"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:59
 msgid "Amusement"
-msgstr "Hiburan"
+msgstr "გართობა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:61
 msgid "ArcadeGame"
-msgstr "Permainan Arkade"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:63
 msgid "Archiving"
-msgstr "Pengarsipan"
+msgstr "არქივირება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:65
 msgid "Art"
-msgstr "Seni"
+msgstr "ხელოვნება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:67
 msgid "ArtificialIntelligence"
-msgstr "Kecerdasan Buatan"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:69
 msgid "Astronomy"
-msgstr "Astronomi"
+msgstr "ასტრონომია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:71
 msgid "Audio"
-msgstr "Audio"
+msgstr "აუდიო"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:73
 msgid "AudioVideo"
-msgstr "Audio Video"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Audio or Video or AudioVideo
 #: src/fdospecgen.h:75
 msgid "AudioVideoEditing"
-msgstr "Penyunting Audio Video"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:77
 msgid "Biology"
-msgstr "Biologi"
+msgstr "ბიოლოგია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:79
 msgid "BlocksGame"
-msgstr "Permainan Blok"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:81
 msgid "BoardGame"
-msgstr "Permainan Papan"
+msgstr "სამაგიდოთამაში"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:83
 msgid "Building"
-msgstr "Bangunan"
+msgstr "შენობა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:85
 msgid "Calculator"
-msgstr "Kalkulator"
+msgstr "კალკულატორი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:87
 msgid "Calendar"
-msgstr "Kalender"
+msgstr "კალენდარი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:89
 msgid "CardGame"
-msgstr "Permainan Kartu"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:91
 msgid "Chart"
-msgstr "Bagan"
+msgstr "გრაფიკი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:93
 msgid "Chat"
-msgstr "Obrolan"
+msgstr "ჩატი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:95
 msgid "Chemistry"
-msgstr "Kimia"
+msgstr "ქიმია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:97
 msgid "Clock"
-msgstr "Jam"
+msgstr "საათი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility;Archiving
 #: src/fdospecgen.h:99
 msgid "Compression"
-msgstr "Kompresi"
+msgstr "შეკუმშვა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:101
 msgid "ComputerScience"
-msgstr "Ilmu Komputer"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:103
 msgid "Construction"
-msgstr "Konstruksi"
+msgstr "მშენებლობა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:105
 msgid "ContactManagement"
-msgstr "Pengelola Kontak"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:107
 msgid "Core"
-msgstr "Inti"
+msgstr "ძირითადი ბირთვული მოდულები"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:109
 msgid "DataVisualization"
-msgstr "Visualisasi Data"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office or Development or AudioVideo
 #: src/fdospecgen.h:111
 msgid "Database"
-msgstr "Basis data"
+msgstr "მონაცემთა ბაზა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:113
 msgid "Debugger"
-msgstr "Pengawakutu"
+msgstr "გამმართველი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings
 #: src/fdospecgen.h:115
 msgid "DesktopSettings"
-msgstr "Pengaturan Destop"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:117
 msgid "Development"
-msgstr "Pengembangan"
+msgstr "შემუშავება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:119
 msgid "Dialup"
-msgstr "Dialup"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office or TextTools
 #: src/fdospecgen.h:121
 msgid "Dictionary"
-msgstr "Kamus"
+msgstr "ლექსიკონი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo
 #: src/fdospecgen.h:123
 msgid "DiscBurning"
-msgstr "Pembakar Diska"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:125
 msgid "Documentation"
-msgstr "Dokumentasi"
+msgstr "დოკუმენტაცია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:127
 msgid "Economy"
-msgstr "Ekonomi"
+msgstr "ეკონომიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:129
 msgid "Editors"
-msgstr "Penyunting"
+msgstr "რედაქტორები"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:131
 msgid "Education"
-msgstr "Pendidikan"
+msgstr "განათლება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:133
 msgid "Electricity"
-msgstr "Kelistrikan"
+msgstr "ელექტროობა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:135
 msgid "Electronics"
-msgstr "Elektronik"
+msgstr "ელექტრონიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office or Network
 #: src/fdospecgen.h:137
 msgid "Email"
-msgstr "Surel"
+msgstr "ელფოტა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System or Game
 #: src/fdospecgen.h:139
 msgid "Emulator"
-msgstr "Emulator"
+msgstr "ემულატორი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:141
 msgid "Engineering"
-msgstr "Teknik"
+msgstr "საინჟინრო"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:143
 msgid "Feed"
-msgstr "Asupan"
+msgstr "ლენტა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System;FileTools
 #: src/fdospecgen.h:145
 msgid "FileManager"
-msgstr "Pengelola Berkas"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility or System
 #: src/fdospecgen.h:147
 msgid "FileTools"
-msgstr "Perkakas Berkas"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:149
 msgid "FileTransfer"
-msgstr "Transfer Berkas"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System
 #: src/fdospecgen.h:151
 msgid "Filesystem"
-msgstr "Sistem Berkas"
+msgstr "ფაილური სისტემა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:153
 msgid "Finance"
-msgstr "Keuangan"
+msgstr "ფინანსები"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:155
 msgid "FlowChart"
-msgstr "Diagram Alir"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:157
 msgid "GUIDesigner"
-msgstr "Perancang Antarmuka"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:159
 msgid "Game"
-msgstr "Permainan"
+msgstr "თამაში"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:161
 msgid "Geography"
-msgstr "Geografi"
+msgstr "გეოგრაფია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:163
 msgid "Geology"
-msgstr "Geologi"
+msgstr "გეოლოგია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:165
 msgid "Geoscience"
-msgstr "Geosains"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:167
 msgid "Graphics"
-msgstr "Grafis"
+msgstr "გრაფიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network or Audio
 #: src/fdospecgen.h:169
 msgid "HamRadio"
-msgstr "HamRadio"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings
 #: src/fdospecgen.h:171
 msgid "HardwareSettings"
-msgstr "Pengaturan Perangkat Keras"
+msgstr "აპარატურისმორგება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:173
 msgid "History"
-msgstr "Riwayat"
+msgstr "ისტორია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:175
 msgid "Humanities"
-msgstr "Humaniora"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:177
@@ -687,67 +674,67 @@ msgstr "IDE"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:179
 msgid "IRCClient"
-msgstr "Klien IRC"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:181
 msgid "ImageProcessing"
-msgstr "Pengolahan Citra"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:183
 msgid "InstantMessaging"
-msgstr "Pesan Instan"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:185
 msgid "KidsGame"
-msgstr "Permainan Anak"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:187
 msgid "Languages"
-msgstr "Bahasa"
+msgstr "ენები"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:189
 msgid "Literature"
-msgstr "Literatur"
+msgstr "ლიტერატურა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:191
 msgid "LogicGame"
-msgstr "Permainan Logika"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science or Utility
 #: src/fdospecgen.h:193
 msgid "Maps"
-msgstr "Peta"
+msgstr "რუკები"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:195
 msgid "Math"
-msgstr "Matematika"
+msgstr "მათემატიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:197
 msgid "MedicalSoftware"
-msgstr "Perangkat Lunak Medis"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Audio
 #: src/fdospecgen.h:199
 msgid "Midi"
-msgstr "Midi"
+msgstr "MIDI"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Audio
 #: src/fdospecgen.h:201
 msgid "Mixer"
-msgstr "Mixer"
+msgstr "მიქსერი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System or Network
 #: src/fdospecgen.h:203
 msgid "Monitor"
-msgstr "Monitor"
+msgstr "მონიტორინგი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:205
@@ -757,27 +744,27 @@ msgstr "Motif"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:207
 msgid "Multimedia"
-msgstr "Multimedia"
+msgstr "მულტიმედია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo or Education
 #: src/fdospecgen.h:209
 msgid "Music"
-msgstr "Musik"
+msgstr "მუსიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:211
 msgid "Network"
-msgstr "Jaringan"
+msgstr "ქსელი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:213
 msgid "News"
-msgstr "Berita"
+msgstr "სიახლეები"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education;Math or Science;Math
 #: src/fdospecgen.h:215
 msgid "NumericalAnalysis"
-msgstr "Analisis Numerik"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics;Scanning
 #: src/fdospecgen.h:217
@@ -787,12 +774,12 @@ msgstr "OCR"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:219
 msgid "Office"
-msgstr "Kantor"
+msgstr "ოფისი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:221
 msgid "Other"
-msgstr "Lainnya"
+msgstr "სხვა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:223
@@ -807,152 +794,152 @@ msgstr "PDA"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings
 #: src/fdospecgen.h:227
 msgid "PackageManager"
-msgstr "Pengelola Paket"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education;ComputerScience or Science;ComputerScience
 #: src/fdospecgen.h:229
 msgid "ParallelComputing"
-msgstr "Komputasi Paralel"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics or Office
 #: src/fdospecgen.h:231
 msgid "Photography"
-msgstr "Fotografi"
+msgstr "ფოტოგრაფია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:233
 msgid "Physics"
-msgstr "Fisika"
+msgstr "ფიზიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Audio or Video or AudioVideo
 #: src/fdospecgen.h:235
 msgid "Player"
-msgstr "Pemain"
+msgstr "მოთამაშე"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:237
 msgid "Presentation"
-msgstr "Presentasi"
+msgstr "პრეზენტაცია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings;HardwareSettings
 #: src/fdospecgen.h:239
 msgid "Printing"
-msgstr "Pencetakan"
+msgstr "დაბეჭდვა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:241
 msgid "Profiling"
-msgstr "Profil"
+msgstr "Profiling"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office or Development
 #: src/fdospecgen.h:243
 msgid "ProjectManagement"
-msgstr "Manajemen Proyek"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics or Office
 #: src/fdospecgen.h:245
 msgid "Publishing"
-msgstr "Penerbitan"
+msgstr "გამოცემა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics;2DGraphics
 #: src/fdospecgen.h:247
 msgid "RasterGraphics"
-msgstr "Grafis Raster"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Audio or Video or AudioVideo
 #: src/fdospecgen.h:249
 msgid "Recorder"
-msgstr "Perekam"
+msgstr "ჩამწერი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:251
 msgid "RemoteAccess"
-msgstr "Akses Jauh"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:253
 msgid "RevisionControl"
-msgstr "Kontrol Revisi"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:255
 msgid "Robotics"
-msgstr "Robotika"
+msgstr "რობოტიკა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:257
 msgid "RolePlaying"
-msgstr "Memainkan Peran"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics
 #: src/fdospecgen.h:259
 msgid "Scanning"
-msgstr "Pemindaian"
+msgstr "სკანირება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:261
 msgid "Science"
-msgstr "Sains"
+msgstr "მეცნიერება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:263
 msgid "Screensavers"
-msgstr "Screensaver"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Settings or System
 #: src/fdospecgen.h:265
 msgid "Security"
-msgstr "Keamanan"
+msgstr "უსაფრთხოება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Audio
 #: src/fdospecgen.h:267
 msgid "Sequencer"
-msgstr "Sequencer"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:269
 msgid "Settings"
-msgstr "Pengaturan"
+msgstr "მორგება"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:271
 msgid "Shooter"
-msgstr "Penembak"
+msgstr "მსროლელი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:273
 msgid "Simulation"
-msgstr "Simulasi"
+msgstr "სიმულაცია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science or Utility
 #: src/fdospecgen.h:275
 msgid "Spirituality"
-msgstr "Spiritualitas"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Education or Science
 #: src/fdospecgen.h:277
 msgid "Sports"
-msgstr "Olahraga"
+msgstr "სპორტი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:279
 msgid "SportsGame"
-msgstr "Permainan Olahraga"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:281
 msgid "Spreadsheet"
-msgstr "Lembar Kerja"
+msgstr "ელექტრონული ცხრილი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Game
 #: src/fdospecgen.h:283
 msgid "StrategyGame"
-msgstr "Permainan Strategi"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:285
 msgid "System"
-msgstr "Sistem"
+msgstr "სისტემა"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Video
 #: src/fdospecgen.h:287
@@ -962,62 +949,62 @@ msgstr "TV"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:289
 msgid "Telephony"
-msgstr "Telefoni"
+msgstr "ტელეფონია"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:291
 msgid "TelephonyTools"
-msgstr "Perkakas Telephony"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: System
 #: src/fdospecgen.h:293
 msgid "TerminalEmulator"
-msgstr "Emulator Terminal"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:295
 msgid "TextEditor"
-msgstr "Penyunting Teks"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Utility
 #: src/fdospecgen.h:297
 msgid "TextTools"
-msgstr "Perkakas Teks"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Development
 #: src/fdospecgen.h:299
 msgid "Translation"
-msgstr "Terjemahan"
+msgstr "თარგმანი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: AudioVideo;Audio
 #: src/fdospecgen.h:301
 msgid "Tuner"
-msgstr "Penyetem"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:303
 msgid "Utility"
-msgstr "Utilitas"
+msgstr "ხელსაწყო"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics;2DGraphics
 #: src/fdospecgen.h:305
 msgid "VectorGraphics"
-msgstr "Grafis Vektor"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:307
 msgid "Video"
-msgstr "Video"
+msgstr "ვიდეო"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:309
 msgid "VideoConference"
-msgstr "Konferensi Video"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Graphics or Office
 #: src/fdospecgen.h:311
 msgid "Viewer"
-msgstr "Penampil"
+msgstr "მაყურებელი"
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes.
 #: src/fdospecgen.h:313
@@ -1027,53 +1014,53 @@ msgstr "WINE"
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network
 #: src/fdospecgen.h:315
 msgid "WebBrowser"
-msgstr "Peramban Web"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Network or Development
 #: src/fdospecgen.h:317
 msgid "WebDevelopment"
-msgstr "Pengembangan Web"
+msgstr ""
 
 #. TRANSLATORS: This is a menu category name from freedesktop.org. Please add spaces as needed but no double-quotes. Context: Office
 #: src/fdospecgen.h:319
 msgid "WordProcessor"
-msgstr "Pengolah Kata"
+msgstr ""
 
 #: src/icehelp.cc:1348
 msgid "Back"
-msgstr "Kembali"
+msgstr "უკან"
 
 #: src/icehelp.cc:1348
 msgid "Alt+Left"
-msgstr "Alt+Kiri"
+msgstr "Alt+მარცხნივ"
 
 #: src/icehelp.cc:1350
 msgid "Forward"
-msgstr "Maju"
+msgstr "წინ"
 
 #: src/icehelp.cc:1350
 msgid "Alt+Right"
-msgstr "Alt+Kanan"
+msgstr "Alt+მარჯვნივ"
 
 #: src/icehelp.cc:1353
 msgid "Previous"
-msgstr "Sebelumnya"
+msgstr "წინა"
 
 #: src/icehelp.cc:1354
 msgid "Next"
-msgstr "Berikutnya"
+msgstr "შემდეგი"
 
 #: src/icehelp.cc:1356
 msgid "Contents"
-msgstr "Isi"
+msgstr "შიგთავსი"
 
 #: src/icehelp.cc:1357
 msgid "Index"
-msgstr "Indeks"
+msgstr "ინდექსი"
 
 #: src/icehelp.cc:1359
 msgid "Find..."
-msgstr "Temukan…"
+msgstr "მოძებნა…"
 
 #: src/icehelp.cc:1359
 msgid "Ctrl+F"
@@ -1081,7 +1068,7 @@ msgstr "Ctrl+F"
 
 #: src/icehelp.cc:1360
 msgid "Find next"
-msgstr "Temukan berikutnya"
+msgstr "მომდევნოს მოძებნა"
 
 #: src/icehelp.cc:1360
 msgid "F3"
@@ -1089,7 +1076,7 @@ msgstr "F3"
 
 #: src/icehelp.cc:1362
 msgid "Open in Browser"
-msgstr "Buka di Peramban"
+msgstr "ბრაუზერში გახსნა"
 
 #: src/icehelp.cc:1362
 msgid "Ctrl+B"
@@ -1097,7 +1084,7 @@ msgstr "Ctrl+B"
 
 #: src/icehelp.cc:1364
 msgid "Reload"
-msgstr "Muat ulang"
+msgstr "თავიდან ჩატვირთვა"
 
 #: src/icehelp.cc:1364 src/icesame.cc:60
 msgid "Ctrl+R"
@@ -1105,7 +1092,7 @@ msgstr "Ctrl+R"
 
 #: src/icehelp.cc:1365 src/icesame.cc:62 src/iceview.cc:63 src/wmbutton.cc:147
 msgid "Close"
-msgstr "Tutup"
+msgstr "დახურვა"
 
 #: src/icehelp.cc:1365 src/icesame.cc:62 src/iceview.cc:63
 msgid "Ctrl+Q"
@@ -1129,11 +1116,11 @@ msgstr "Icesound(1)"
 
 #: src/icehelp.cc:1376
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "ხდკ"
 
 #: src/icehelp.cc:1378
 msgid "Manual"
-msgstr "Manual"
+msgstr "ხელით"
 
 #: src/icehelp.cc:1378
 msgid "Ctrl+M"
@@ -1141,11 +1128,11 @@ msgstr "Ctrl+M"
 
 #: src/icehelp.cc:1380
 msgid "Support"
-msgstr "Dukungan"
+msgstr "მხარდაჭერა"
 
 #: src/icehelp.cc:1382
 msgid "Theme Howto"
-msgstr "Tema Howto"
+msgstr ""
 
 #: src/icehelp.cc:1382 src/iceview.cc:60
 msgid "Ctrl+T"
@@ -1153,7 +1140,7 @@ msgstr "Ctrl+T"
 
 #: src/icehelp.cc:1384
 msgid "Website"
-msgstr "Situs Web"
+msgstr "ვებგვერდი"
 
 #: src/icehelp.cc:1384 src/iceview.cc:61
 msgid "Ctrl+W"
@@ -1173,42 +1160,42 @@ msgstr "Ctrl+V"
 
 #: src/icehelp.cc:2204
 msgid "Unsupported protocol."
-msgstr "Protokol tidak didukung."
+msgstr "მხარდაუჭერელი პროტოკოლი."
 
 #: src/icehelp.cc:2283
 #, c-format
 msgid "Invalid path: %s\n"
-msgstr "Path tidak valid: %s\n"
+msgstr "არასწორი ბილიკი: %s\n"
 
 #: src/icehelp.cc:2307
 msgid "Path does not refer to a file."
-msgstr "Path tidak merujuk ke berkas."
+msgstr "ბილიკი ფაილზე არ მიუთითებს."
 
 #: src/icehelp.cc:2312
 msgid "Failed to open file for reading."
-msgstr "Gagal membuka berkas untuk membaca."
+msgstr "ფაილის წასაკითხად გახსნის შეცდომა."
 
 #: src/icehelp.cc:2341
 msgid "Failed to create a temporary file"
-msgstr "Gagal membuat berkas sementara"
+msgstr "დროებითი ფაილის შექმნის შეცდომა"
 
 #: src/icehelp.cc:2434
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
-msgstr "Gagal mengeksekusi sistem(%s) (%d)"
+msgstr ""
 
 #: src/icehelp.cc:2457
 #, c-format
 msgid "Failed to decompress %s"
-msgstr "Gagal untuk dekompresi %s"
+msgstr ""
 
 #: src/icehelp.cc:2465
 msgid "Could not locate curl or wget in PATH"
-msgstr "Tidak dapat menemukan curl atau wget di PATH"
+msgstr ""
 
 #: src/icehelp.cc:2469
 msgid "Unsafe characters in URL"
-msgstr "Karakter yang tidak aman di URL"
+msgstr ""
 
 #: src/icehelp.cc:2506
 #, c-format
@@ -1247,61 +1234,27 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
-"Penggunaan: %s [OPTIONS] [ FILENAME | URL ]\n"
-"\n"
-"IceHelp adalah sebuah peramban HTML sederhana untuk pengelola jendela "
-"IceWM.\n"
-"Ini dapat menampilkan dokumen HTML dari berkas, atau menelusuri situs web.\n"
-"Ini mengingat halaman yng dikunjungi dalam riwayat, yang dapat dinavigasi\n"
-"dengan pengikatan kunci dan menu konteks (klik kanan tetikus).\n"
-"Ini tidak mendukung render gambar atau JavaScript.\n"
-"Jika tidak ada berkas atau URL yang diberikan akan menampilkan manual IceWM\n"
-"dari %s.\n"
-"\n"
-"Opsi:\n"
-"  -d, --display=NAME  NAME dari peladen X yang akan digunakan.\n"
-"  --sync              Sinkronisasi perintah X11.\n"
-"\n"
-"  -B                  Tampilkan halaman manual icewmbg IceWM.\n"
-"  -b, --bugs          Tampilkan laporan kutu IceWM (secara primitif).\n"
-"  -f, --faq           Tampilkan FAQ IceWM dan Howto.\n"
-"  -g                  Tampilkan situs web Github IceWM.\n"
-"  -i, --icewm         Tampilkan halaman manual icewm IceWM.\n"
-"  -m, --manual        Tampilkan manual IceWM (bawaan).\n"
-"  -s                  Tampilkan halaman manual icesound IceWM.\n"
-"  -t, --theme         Tampilkan tema Howto IceWM.\n"
-"  -w, --website       Tampilkan situs web IceWM.\n"
-"\n"
-"  -V, --version       Cetak informasi versi dan keluar.\n"
-"  -h, --help          Cetak penggunaan layar ini dan keluar.\n"
-"\n"
-"Variabel lingkungan:\n"
-"  DISPLAY=NAME        Nama peladen X yang digunakan.\n"
-"\n"
-"Untuk melaporkan kutu, permintaan dukungan, komentar silakan kunjungi:\n"
-"%s\n"
-"\n"
 
 #: src/icehelp.cc:2596
 #, c-format
 msgid "Ignoring option '%s'"
-msgstr "Mengabaikan opsi '%s'"
+msgstr ""
 
 #: src/icelist.cc:60
 msgid "List View"
-msgstr "Tampilan Daftar"
+msgstr "სიის ხედი"
 
 #: src/icelist.cc:61
 msgid "Icon View"
-msgstr "Tampilan Ikon"
+msgstr "ხატულებით ჩვენება"
 
 #: src/icelist.cc:65
 msgid "Open"
-msgstr "Buka"
+msgstr "გახსნა"
 
 #: src/icesame.cc:57
 msgid "Undo"
-msgstr "Tak jadi"
+msgstr "დაბრუნება"
 
 #: src/icesame.cc:57
 msgid "Ctrl+Z"
@@ -1309,7 +1262,7 @@ msgstr "Ctrl+Z"
 
 #: src/icesame.cc:59
 msgid "New"
-msgstr "Baru"
+msgstr "ახალი"
 
 #: src/icesame.cc:59
 msgid "Ctrl+N"
@@ -1317,139 +1270,139 @@ msgstr "Ctrl+N"
 
 #: src/icesame.cc:60
 msgid "Restart"
-msgstr "Mulai Ulang"
+msgstr "გადარესტარტება"
 
 #: src/icesame.cc:65
 msgid "Same Game"
-msgstr "Permainan yang Sama"
+msgstr "იგივე თამაში"
 
 #: src/icesh.cc:76
 msgid "For help please consult the man page icesh(1).\n"
-msgstr "Untuk bantuan silahkan baca halaman manual icesh(1).\n"
+msgstr ""
 
 #: src/icesh.cc:1667
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
-msgstr "Nama simbol dari domain `%s' (rentang numerik: %ld-%ld):\n"
+msgstr ""
 
 #: src/icesh.cc:1736
 #, c-format
 msgid "Workspace out of range: %ld"
-msgstr "Ruang kerja di luar jangkauan: %ld"
+msgstr ""
 
 #: src/icesh.cc:1757
 #, c-format
 msgid "Invalid workspace name: `%s'"
-msgstr "Nama ruang kerja tidak valid: `%s'"
+msgstr ""
 
 #: src/icesh.cc:2204
 msgid "GNOME window layer"
-msgstr "Lapisan jendela GNOME"
+msgstr ""
 
 #: src/icesh.cc:2205
 msgid "IceWM tray option"
-msgstr "Opsi baki IceWM"
+msgstr ""
 
 #: src/icesh.cc:2206
 msgid "Gravity symbols"
-msgstr "Simbol gravitasi"
+msgstr ""
 
 #: src/icesh.cc:2207
 msgid "Motif functions"
-msgstr "Fungsi motif"
+msgstr ""
 
 #: src/icesh.cc:2208
 msgid "Motif decorations"
-msgstr "Hiasan motif"
+msgstr ""
 
 #: src/icesh.cc:2209
 msgid "EWMH window state"
-msgstr "Keadaan jendela EWMH"
+msgstr ""
 
 #: src/icesh.cc:2291 src/icesh.cc:2364
 #, c-format
 msgid "workspace #%d: `%s'\n"
-msgstr "ruang kerja #%d: `%s'\n"
+msgstr ""
 
 #: src/icesh.cc:2615 src/icesh.cc:4410 src/icesh.cc:5039
 #, c-format
 msgid "Invalid state: `%s'."
-msgstr "Keadaan tidak valid: '%s'."
+msgstr ""
 
 #: src/icesh.cc:2644 src/icesh.cc:3995 src/icesh.cc:4045 src/icesh.cc:5354
 #, c-format
 msgid "Invalid argument: `%s'"
-msgstr "Argumen tidak valid: '%s'"
+msgstr ""
 
 #: src/icesh.cc:3625
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
-msgstr "Tidak dapat mendapatkan geometri jendela 0x%lx"
+msgstr ""
 
 #: src/icesh.cc:3650
 #, c-format
 msgid "Invalid Xinerama: `%s'."
-msgstr "Xinerama tidak valid: `%s'."
+msgstr ""
 
 #: src/icesh.cc:3772 src/icesh.cc:3780 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
-msgstr "Tidak dapat menulis ke %s"
+msgstr ""
 
 #: src/icesh.cc:4011
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
-msgstr "Aksi '%s' memerlukan setidaknya argumen %d."
+msgstr ""
 
 #: src/icesh.cc:4020
 #, c-format
 msgid "Invalid expression: `%s'"
-msgstr "Ekspresi tidak valid: '%s'"
+msgstr ""
 
 #: src/icesh.cc:4031 src/icesound.cc:794 src/icewmbg.cc:978 src/icewmhint.cc:37
 #: src/wmapp.cc:1232 src/yxapp.cc:1039
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
-msgstr "Tidak dapat membuka tampilan: %s. X harus berjalan dan atur $DISPLAY."
+msgstr ""
 
 #: src/icesh.cc:4147
 #, c-format
 msgid "Unexpected: `%s'."
-msgstr "Tak diharapkan: `%s'."
+msgstr ""
 
 #: src/icesh.cc:4177
 msgid "No windows found."
-msgstr "Tidak ada jendela yang ditemukan."
+msgstr ""
 
 #: src/icesh.cc:4193
 msgid "No actions specified."
-msgstr "Tidak ada aksi yang ditentukan."
+msgstr ""
 
 #: src/icesh.cc:4334
 #, c-format
 msgid "Invalid window identifier: `%s'"
-msgstr "Pengidentifikasi jendela tidak valid: '%s'"
+msgstr ""
 
 #: src/icesh.cc:4350
 #, c-format
 msgid "Invalid PID: `%s'"
-msgstr "PID tidak valid: '%s'"
+msgstr "არასწორი PID: \"%s\""
 
 #: src/icesh.cc:4383
 #, c-format
 msgid "Invalid layer: `%s'."
-msgstr "Lapisan tidak valid: `%s'."
+msgstr "არასწორი ფენა: \"%s\"."
 
 #: src/icesh.cc:5484
 #, c-format
 msgid "Unknown action: `%s'"
-msgstr "Aksi tidak diketahui: '%s'"
+msgstr "უცნობი ქმედება: '%s'"
 
 #: src/iceskt.cc:41
 #, c-format
 msgid "Socket error: %d"
-msgstr "Galat soket: %d"
+msgstr "სოკეტის შეცდომა: %d"
 
 #: src/icesm.cc:69
 msgid ""
@@ -1467,17 +1420,6 @@ msgid ""
 "  -n, --notray        Do not start icewmtray.\n"
 "  -s, --sound         Also start icesound.\n"
 msgstr ""
-"  -c, --config=FILE   Biarkan IceWM memuat preferensi dari FILE.\n"
-"  -t, --theme=FILE    Biarkan IceWM memuat tema dari FILE.\n"
-"\n"
-"  -d, --display=NAME  Gunakan NAME untuk terhubung ke peladen X.\n"
-"  -a, --alpha         Gunakan visual 32-bit untuk tembus pandang.\n"
-"  --sync              Sinkronisasi komunikasi dengan peladen X11.\n"
-"  -o, --output=FILE   Mengarahkan semua output ke BERKAS.\n"
-"  -i, --icewm=FILE    Gunakan FILE sebagai pengelola jendela IceWM.\n"
-"  -b, --nobg          Jangan mulai icewmbg.\n"
-"  -n, --notray        Jangan mulai icewmtray.\n"
-"  -s, --sound         Juga mulai icesound.\n"
 
 #: src/icesm.cc:85
 msgid ""
@@ -1488,22 +1430,16 @@ msgid ""
 "  -g, --catchsegv     Let \"/usr/bin/catchsegv\" run icewm.\n"
 "                      Gives a backtrace if icewm segfaults.\n"
 msgstr ""
-"\n"
-"Opsi awakutu:\n"
-"   -v, --valgrind      Biarkan \"/usr/bin/valgrind\" menjalankan icewm.\n"
-"                       Secara menyeluruh memeriksa eksekusi icewm.\n"
-"   -g, --catchsegv     Biarkan \"/usr/bin/catchsegv\" menjalankan icewm.\n"
-"                       Berikan backtrace jika icewm segfaults.\n"
 
 #: src/icesm.cc:188
 #, c-format
 msgid "Unknown option '%s'"
-msgstr "Opsi tidak diketahui '%s'"
+msgstr "უცნობი პარამეტრი %s"
 
 #: src/icesm.cc:469 src/icesm.cc:629
 #, c-format
 msgid "restart %s."
-msgstr "mulai ulang %s."
+msgstr ""
 
 #: src/icesm.cc:520
 msgid ""
@@ -1514,83 +1450,77 @@ msgid ""
 "\t2: Abort this session?\n"
 "\t3: Run a terminal?\n"
 msgstr ""
-" IceWM macet untuk kedua kalinya dalam 10 detik. \n"
-" Apakah Anda ingin:\n"
-"\n"
-"\t1: Memulai ulang IceWM?\n"
-"\t2: Gugurkan sesi ini?\n"
-"\t3: Jalankan terminal?\n"
 
 #: src/icesm.cc:526
 msgid "IceWM crash response"
-msgstr "Respon kres IceWM"
+msgstr ""
 
 #: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
 #, c-format
 msgid "Playing sample #%d (%s)"
-msgstr "Bermain sampel #%d (%s)"
+msgstr ""
 
 #: src/icesound.cc:329
 #, c-format
 msgid "%s: Invalid number of channels"
-msgstr "%s: Jumlah kanal tidak valid"
+msgstr ""
 
 #: src/icesound.cc:335 src/icesound.cc:340
 msgid "Could not set OSS channels"
-msgstr "Tidak dapat mengatur kanal OSS"
+msgstr ""
 
 #: src/icesound.cc:345 src/icesound.cc:373
 msgid "Could not sync OSS"
-msgstr "Tidak dapat menyinkronkan OSS"
+msgstr ""
 
 #: src/icesound.cc:357
 msgid "OSS write failed"
-msgstr "Gagal menulis OSS"
+msgstr ""
 
 #: src/icesound.cc:361
 #, c-format
 msgid "OSS incomplete write (%d/%d)"
-msgstr "OSS ditulis tidak lengkap (%d/%d)"
+msgstr ""
 
 #: src/icesound.cc:368
 msgid "Could not post OSS"
-msgstr "Tidak dapat mempos OSS"
+msgstr ""
 
 #: src/icesound.cc:397
 #, c-format
 msgid "Could not open OSS device %s"
-msgstr "Tidak dapat membuka perangkat OSS %s"
+msgstr ""
 
 #: src/icesound.cc:402
 msgid "Could not set OSS stereo"
-msgstr "Tidak dapat mengatur stereo OSS"
+msgstr ""
 
 #: src/icesound.cc:407
 msgid "Could not reset OSS DSP"
-msgstr "Tidak dapat mengatur ulang OSS DSP"
+msgstr ""
 
 #: src/icesound.cc:412
 msgid "Could not set OSS format"
-msgstr "Tidak dapat mengatur format OSS"
+msgstr ""
 
 #: src/icesound.cc:499
 #, c-format
 msgid "ao_open_live failed with %d"
-msgstr "ao_open_live gagal dengan %d"
+msgstr ""
 
 #: src/icesound.cc:510
 msgid "ao_play failed"
-msgstr "ao_play gagal"
+msgstr ""
 
 #: src/icesound.cc:676
 #, c-format
 msgid "Unrecognized option: %s\n"
-msgstr "Opsi tidak dikenal: %s\n"
+msgstr ""
 
 #: src/icesound.cc:679 src/icesound.cc:972
 #, c-format
 msgid "Unrecognized argument: %s\n"
-msgstr "Argumen yang tidak dikenal: %s\n"
+msgstr ""
 
 #: src/icesound.cc:688
 #, c-format
@@ -1643,109 +1573,55 @@ msgid ""
 "  3    Subsystems error (ie cannot connect to server).\n"
 "\n"
 msgstr ""
-"Penggunaan: %s [OPTION]...\n"
-"\n"
-"Memutar berkas audio pada peristiwa GUI yang diangkat oleh IceWM.\n"
-"Antarmuka suara yang saat ini dikonfigurasi adalah: %s.\n"
-"Icesound akan memilih yang pertama dari yang dapat digunakan.\n"
-"\n"
-"Opsi:\n"
-"\n"
-" -d, --display=DISPLAY   Tampilan X11 yang digunakan oleh IceWM (bawaan: "
-"$DISPLAY).\n"
-"\n"
-" -s, --sample-dir=DIR    Menentukan direktori dengan berkas suara.\n"
-"                         Bawaan adalah $HOME/.config/icewm/sounds.\n"
-"\n"
-" -i, --interface=LIST    Menentukan antarmuka keluaran audio. Satu atau "
-"lebih dari:\n"
-"                         %s dipisahkan dengan koma.\n"
-"\n"
-" -D, --device=DEVICE     Perangkat kompatibilitas mundur hanya: perangkat "
-"bawaan. \n"
-"                         Silakan memilih salah satu pilihan -A/-O/-S.\n"
-"\n"
-" -O, --oss=DEVICE        Menentukan perangkat OSS (bawaan: \"%s\").\n"
-"\n"
-" -A, --alsa=DEVICE       Menentukan perangkat ALSA (bawaan: \"%s\").\n"
-"\n"
-" -z, --snooze=millisecs  Menentukan interval tunda antara peristiwa suara\n"
-"                         dalam milidetik. Bawaan adalah 500 milidetik.\n"
-"\n"
-" -p, --play=sound        Putar suara yang diberikan (nama atau nomor) dan "
-"keluar.\n"
-"\n"
-" -l, --list-files        Mendaftar path berkas suara yang didukung dan "
-"keluar.\n"
-"\n"
-"     --list-sounds       Mendaftar nama berkas suara yang didukung dan "
-"keluar.\n"
-"\n"
-"     --list-interfaces   Mendaftar antarmuka audio yang didukung dan "
-"keluar.\n"
-"\n"
-" -v, --verbose           Jadilah verbose dan cetak setiap peristiwa suara.\n"
-"\n"
-" -V, --version           Cetak informasi versi dan keluar.\n"
-"\n"
-" -h, --help              Cetak layar bantuan ini dan keluar.\n"
-"\n"
-"Nilai pengembalian:\n"
-"\n"
-"  0    Sukses.\n"
-"  1    Galat umum.\n"
-"  2    Galat baris perintah.\n"
-"  3    Galat subsistem (mis. tidak dapat terhubung ke peladen).\n"
-"\n"
 
 #: src/icesound.cc:779
 #, c-format
 msgid "No audio for %s"
-msgstr "Tidak ada audio untuk %s"
+msgstr ""
 
 #: src/icesound.cc:856
 msgid "Could not get GUI event property"
-msgstr "Tidak dapat mendapatkan properti peristiwa GUI"
+msgstr ""
 
 #: src/icesound.cc:860
 #, c-format
 msgid "Received invalid GUI event %d"
-msgstr "Menerima peristiwa GUI yang tidak valid %d"
+msgstr ""
 
 #: src/icesound.cc:864
 #, c-format
 msgid "Received GUI event %s"
-msgstr "Menerima peristiwa GUI %s"
+msgstr ""
 
 #: src/icesound.cc:878
 #, c-format
 msgid "Too quick; ignoring %s."
-msgstr "Terlalu cepat; mengabaikan %s."
+msgstr ""
 
 #: src/icesound.cc:882
 #, c-format
 msgid "Support for the %s interface not compiled."
-msgstr "Dukungan untuk antarmuka %s tidak dikompilasi."
+msgstr ""
 
 #: src/icesound.cc:915
 #, c-format
 msgid "Unsupported interface: %s."
-msgstr "Antarmuka yang tidak didukung: %s."
+msgstr ""
 
 #: src/icesound.cc:924
 #, c-format
 msgid "Using %s audio."
-msgstr "Menggunakan audio %s."
+msgstr ""
 
 #: src/icesound.cc:928
 #, c-format
 msgid "Failed to connect to audio interfaces %s."
-msgstr "Gagal terhubung ke antarmuka audio %s."
+msgstr ""
 
 #: src/icesound.cc:940
 #, c-format
 msgid "Received signal %s: Terminating..."
-msgstr "Menerima sinyal %s: Menghentikan..."
+msgstr ""
 
 #: src/icetray.cc:220
 msgid ""
@@ -1756,17 +1632,10 @@ msgid ""
 "  -c, --config=FILE   Load preferences from FILE.\n"
 "  -t, --theme=FILE    Load the theme from FILE.\n"
 msgstr ""
-"  -n, --notify        Beri tahu proses induk dengan mengirimkan sinyal "
-"USR1.\n"
-"  --display=NAME      Gunakan NAME untuk terhubung ke peladen X.\n"
-"  --sync              Sinkronisasi komunikasi dengan peladen X11 server.\n"
-"\n"
-"  -c, --config=FILE   Muat preferensi dari FILE.\n"
-"  -t, --theme=FILE    Muat tema dari FILE.\n"
 
 #: src/iceview.cc:59
 msgid "Hex View"
-msgstr "Tampilan Heksa"
+msgstr ""
 
 #: src/iceview.cc:59
 msgid "Ctrl+H"
@@ -1774,16 +1643,16 @@ msgstr "Ctrl+H"
 
 #: src/iceview.cc:60
 msgid "Expand Tabs"
-msgstr "Perluas Tab"
+msgstr ""
 
 #: src/iceview.cc:61
 msgid "Wrap Lines"
-msgstr "Lipat Baris"
+msgstr "სიტყვების გადატანა"
 
 #: src/icewmbg.cc:34 src/icewmbg.cc:345
 #, c-format
 msgid "Failed to load image '%s'."
-msgstr "Gagal memuat berkas gambar '%s'."
+msgstr ""
 
 #: src/icewmbg.cc:873
 msgid ""
@@ -1835,79 +1704,28 @@ msgid ""
 " center:0 scaled:1 = fill both dimensions and keep aspect ratio\n"
 "\n"
 msgstr ""
-"Penggunaan: icewmbg [OPTIONS]\n"
-"Di mana beberapa nilai dapat diberikan mereka dipisahkan oleh koma.\n"
-"Ketika gambar adalah direktori maka semua gambar dari direktori tersebut "
-"digunakan.\n"
-"\n"
-"Opsi:\n"
-"  -p, --replace        Ganti icewmbg yang ada.\n"
-"  -q, --quit           Beri tahu icewmbg yang berjalan untuk berhenti.\n"
-"  -r, --restart        Beri tahu icewmbg yang berjalan untuk memulai ulang "
-"sendiri.\n"
-"  -u, --shuffle        Acak/acak ulang daftar gambar latar belakang.\n"
-"\n"
-"  -c, --config=FILE    Muat preferensi dari FILE.\n"
-"  -t, --theme=NAME     Muat tema dengan nama NAME.\n"
-"\n"
-"  -i, --image=FILE(S)  Muat gambar latar belakang dari FILE(S).\n"
-"  -k, --color=NAME(S)  Gunakan gambar latar belakang dari NAME(S).\n"
-"\n"
-"  -s, --semis=FILE(S)  Muat gambar transparan dari FILE(S).\n"
-"  -x, --trans=NAME(S)  Gunakan gambar transparan dari NAME(S).\n"
-"\n"
-"  -e, --center=0/1     Nonaktifkan/Aktifkan latar belakang pemusatan.\n"
-"  -a, --scaled=0/1     Nonaktifkan/Aktifkan latar belakang penskalaan.\n"
-"  -m, --multi=0/1      Nonaktifkan/Aktifkan latar belakang multihead.\n"
-"  -y, --cycle=SECONDS  Siklus latar belakang setiap SECONDS.\n"
-"\n"
-"  --display=NAME       Gunakan NAME untuk terhubung ke peladen X.\n"
-"  --sync               Sinkronisasi komunikasi dengan peladen X11.\n"
-"\n"
-"  -h, --help           Cetak layar penggunaan ini dan keluar.\n"
-"  -V, --version        Cetak informasi versi dan keluar.\n"
-"\n"
-"Memuat latar belakang destop menurut berkas preferensi:\n"
-" DesktopBackgroundCenter  - Tampilkan latar belakang destop terpusat\n"
-" DesktopBackgroundScaled  - Tampilkan latar belakang destop yang diskalakan\n"
-" DesktopBackgroundColor   - Warna latar belakang destop\n"
-" DesktopBackgroundImage   - Gambar latar belakang destop\n"
-" ShuffleBackgroundImages  - Acak daftar gambar latar belakang\n"
-" SupportSemitransparency  - Dukungan untuk terminal semitransparan\n"
-" DesktopTransparencyColor - Warna latar belakang semi transparan\n"
-" DesktopTransparencyImage - Gambar latar belakang semi transparan\n"
-" DesktopBackgroundMultihead - Satu latar belakang dari semua monitor\n"
-" CycleBackgroundsPeriod   - Detik antara siklus di latar belakang\n"
-"\n"
-" center:0 scaled:0 = ubin\n"
-" center:1 scaled:0 = terpusat\n"
-" center:1 scaled:1 = isi satu dimensi dan pertahankan rasio aspek\n"
-" center:0 scaled:1 = isi kedua dimensi dan pertahankan rasio aspek\n"
-"\n"
 
 #: src/icewmbg.cc:1109 src/wmapp.cc:1817
 #, c-format
 msgid "Unrecognized option '%s'."
-msgstr "Opsi yang tidak dikenali '%s'."
+msgstr ""
 
 #: src/icewmbg.cc:1139
 msgid "Cannot start, because another icewmbg is still running."
-msgstr "Tidak dapat memulai, karena icewmbg lain masih berjalan."
+msgstr ""
 
 #: src/icewmhint.cc:20
 msgid "Usage: icewmhint class.instance option arg\n"
 msgstr ""
-"Penggunaan: icewmhint class.instance opsi arg\n"
-"\n"
 
 #: src/icewmhint.cc:57
 #, c-format
 msgid "Out of memory (len=%d)."
-msgstr "Kehabisan memori (len=%d)."
+msgstr ""
 
 #: src/misc.cc:70 src/misc.cc:82
 msgid "Warning: "
-msgstr "Peringatan: "
+msgstr "გაფრთხილება: "
 
 #: src/misc.cc:392
 #, c-format
@@ -1920,18 +1738,11 @@ msgid ""
 "  -h, --help          Prints this usage screen and exits.\n"
 "\n"
 msgstr ""
-"Penggunaan: %s [OPTIONS]\n"
-"Opsi:\n"
-"%s\n"
-"  -C, --copying       Cetak informasi lisensi dan keluar.\n"
-"  -V, --version       Cetak informasi versi dan keluar.\n"
-"  -h, --help          Cetak layar penggunaan ini dan keluar.\n"
-"\n"
 
 #: src/movesize.cc:905
 #, c-format
 msgid "Unknown direction in move/resize request: %d"
-msgstr "Arah tidak dikenal dalam memindahkan/mengubah  permintaan: %d"
+msgstr ""
 
 #: src/wmabout.cc:29 src/wmabout.cc:30
 msgid "(C)"
@@ -1939,260 +1750,260 @@ msgstr "(C)"
 
 #: src/wmabout.cc:40
 msgid "Theme:"
-msgstr "Tema:"
+msgstr "თემა:"
 
 #: src/wmabout.cc:41
 msgid "Theme Description:"
-msgstr "Deskripsi Tema:"
+msgstr "თემის აღწერა:"
 
 #: src/wmabout.cc:42
 msgid "Theme Author:"
-msgstr "Penulis Tema:"
+msgstr "თემის ავტორი:"
 
 #: src/wmabout.cc:51
 msgid "CodeSet:"
-msgstr "SetKode:"
+msgstr ""
 
 #: src/wmabout.cc:52
 msgid "Language:"
-msgstr "Bahasa:"
+msgstr "ენა:"
 
 #: src/wmabout.cc:56
 msgid "DoubleBuffer"
-msgstr "Buffer Ganda"
+msgstr ""
 
 #: src/wmabout.cc:57
 msgid "AlphaBlending"
-msgstr "Alfa Blending"
+msgstr ""
 
 #: src/wmabout.cc:58
 msgid "Renderer:"
-msgstr "Perender:"
+msgstr "რენდერერი:"
 
 #: src/wmabout.cc:66
 msgid "icewm - About"
-msgstr "icewm - Tentang"
+msgstr ""
 
 #: src/wmapp.cc:90
 msgid "A window manager is already running, use --replace to replace it"
-msgstr "Pengelola jendela sudah berjalan, gunakan --replace untuk menggantinya"
+msgstr ""
 
 #: src/wmapp.cc:106
 #, c-format
 msgid "Failed to become the owner of the %s selection"
-msgstr "Gagal menjadi pemilik pilihan %s"
+msgstr ""
 
 #: src/wmapp.cc:110
 msgid "Waiting to replace the old window manager"
-msgstr "Menunggu untuk mengganti pengelola jendela lama"
+msgstr ""
 
 #: src/wmapp.cc:115
 msgid "done."
-msgstr "selesai."
+msgstr "დასრულდა."
 
 #: src/wmapp.cc:496
 msgid "_Logout"
-msgstr "_Keluar"
+msgstr "_გასვლა"
 
 #: src/wmapp.cc:497
 msgid "_Cancel logout"
-msgstr "Batal kelua_r"
+msgstr ""
 
 #: src/wmapp.cc:503
 msgid "Lock _Workstation"
-msgstr "Kunci _Workstation"
+msgstr ""
 
 #: src/wmapp.cc:505 src/wmdialog.cc:85
 msgid "Re_boot"
-msgstr "Mulai Ulan_g"
+msgstr "_გადატვირთვა"
 
 #: src/wmapp.cc:507 src/wmdialog.cc:86
 msgid "Shut_down"
-msgstr "Ma_tikan"
+msgstr "გა_მორთვა"
 
 #: src/wmapp.cc:509 src/wmdialog.cc:82
 msgid "_Sleep mode"
-msgstr "Mode _Tidur"
+msgstr "_ძილის რეჟიმი"
 
 #: src/wmapp.cc:514
 msgid "Restart _Icewm"
-msgstr "Mulai ulang _Icewm"
+msgstr "_Icewm-ის გადატვირთვა"
 
 #: src/wmapp.cc:516
 msgid "Restart _Xterm"
-msgstr "Mulai ulang _Xterm"
+msgstr "_Xterm-ის გადატვირთვა"
 
 #: src/wmapp.cc:526
 msgid "_Menu"
-msgstr "_Menu"
+msgstr "_მენიუ"
 
 #: src/wmapp.cc:527
 msgid "_Above Dock"
-msgstr "Di _Atas Dok"
+msgstr ""
 
 #: src/wmapp.cc:528
 msgid "_Dock"
-msgstr "_Dok"
+msgstr ""
 
 #: src/wmapp.cc:529
 msgid "_OnTop"
-msgstr "D_i Atas"
+msgstr "_ზემოდან"
 
 #: src/wmapp.cc:530
 msgid "_Normal"
-msgstr "_Normal"
+msgstr "_ნორმალური"
 
 #: src/wmapp.cc:531
 msgid "_Below"
-msgstr "Di _Bawah"
+msgstr "_ქვემოდან"
 
 #: src/wmapp.cc:532
 msgid "D_esktop"
-msgstr "D_estop"
+msgstr "_სამუშაომაგიდა"
 
 #: src/wmapp.cc:576 src/wmwinlist.cc:379
 msgid "Move to New _Window"
-msgstr "Pindah ke _Jendela Baru"
+msgstr "_ახალ ფანჯარაში გადატანა"
 
 #: src/wmapp.cc:586
 msgid "Left Half"
-msgstr "Belahan Kiri"
+msgstr "მარცხენა ნახევარი"
 
 #: src/wmapp.cc:587
 msgid "Right Half"
-msgstr "Belahan Kanan"
+msgstr "მარჯვენა ნახევარი"
 
 #: src/wmapp.cc:588
 msgid "Top Half"
-msgstr "Belahan Puncak"
+msgstr "ზედა ნახევარი"
 
 #: src/wmapp.cc:589
 msgid "Bottom Half"
-msgstr "Belahan Bawah"
+msgstr "ქვედა ნახევარი"
 
 #: src/wmapp.cc:591
 msgid "Top Left"
-msgstr "Kiri Atas"
+msgstr "ზედა მარცხენა"
 
 #: src/wmapp.cc:592
 msgid "Top Right"
-msgstr "Kanan Atas"
+msgstr "ზედა მარჯვენა"
 
 #: src/wmapp.cc:593
 msgid "Bottom Left"
-msgstr "Kiri Bawah"
+msgstr "ქვედა მარცხენა"
 
 #: src/wmapp.cc:594
 msgid "Bottom Right"
-msgstr "Kanan Bawah"
+msgstr "ქვედა მარჯვენა"
 
 #: src/wmapp.cc:595
 msgid "Center"
-msgstr "Tengah"
+msgstr "ცენტრი"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmapp.cc:597 src/wmtaskbar.cc:217 src/wmwinlist.cc:466
 #: src/wmwinlist.cc:499
 msgid "T_ile Horizontally"
-msgstr "Ub_in Secara Horizontal"
+msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmapp.cc:599 src/wmtaskbar.cc:215 src/wmwinlist.cc:465
 #: src/wmwinlist.cc:498
 msgid "Tile _Vertically"
-msgstr "Ubin Secara _Vertikal"
+msgstr ""
 
 #: src/wmapp.cc:611 src/wmwinlist.cc:446
 msgid "_Restore"
-msgstr "P_ulihkan"
+msgstr "_აღდგენა"
 
 #: src/wmapp.cc:613
 msgid "_Move"
-msgstr "_Pindahkan"
+msgstr "_გადაადგილება"
 
 #: src/wmapp.cc:615
 msgid "_Size"
-msgstr "U_kuran"
+msgstr "_ზომა"
 
 #: src/wmapp.cc:617 src/wmwinlist.cc:447
 msgid "Mi_nimize"
-msgstr "Mi_nimalkan"
+msgstr "ჩაკეცვა"
 
 #: src/wmapp.cc:619 src/wmwinlist.cc:448
 msgid "Ma_ximize"
-msgstr "Maksima_lkan"
+msgstr "გადიდება"
 
 #: src/wmapp.cc:620 src/wmwinlist.cc:449
 msgid "Maximize_Vert"
-msgstr "Maksimalkan_Vertikal"
+msgstr ""
 
 #: src/wmapp.cc:621 src/wmwinlist.cc:450
 msgid "MaximizeHori_z"
-msgstr "MaksimalkanHori_zontal"
+msgstr ""
 
 #: src/wmapp.cc:624 src/wmwinlist.cc:451
 msgid "_Fullscreen"
-msgstr "Layar Penu_h"
+msgstr "მ_თელ ეკრანზე"
 
 #: src/wmapp.cc:627 src/wmwinlist.cc:453
 msgid "_Hide"
-msgstr "Sembun_yikan"
+msgstr "_დამალვა"
 
 #: src/wmapp.cc:629 src/wmwinlist.cc:454
 msgid "Roll_up"
-msgstr "G_ulung"
+msgstr ""
 
 #: src/wmapp.cc:636
 msgid "R_aise"
-msgstr "N_aik"
+msgstr "_აწევა"
 
 #: src/wmapp.cc:638 src/wmwinlist.cc:456
 msgid "_Lower"
-msgstr "Tur_un"
+msgstr "_დაწევა"
 
 #: src/wmapp.cc:640 src/wmwinlist.cc:457
 msgid "La_yer"
-msgstr "La_pisan"
+msgstr "_ფენა"
 
 #: src/wmapp.cc:643 src/wmwinlist.cc:458
 msgid "Tile"
-msgstr "Jejeran"
+msgstr "ფილა"
 
 #: src/wmapp.cc:647 src/wmwinlist.cc:460
 msgid "Move _To"
-msgstr "Pindah _Ke"
+msgstr "_გადატანა"
 
 #: src/wmapp.cc:648 src/wmwinlist.cc:461
 msgid "Occupy _All"
-msgstr "Tempati Semu_a"
+msgstr ""
 
 #: src/wmapp.cc:654
 msgid "Limit _Workarea"
-msgstr "Batasi Area Ker_ja"
+msgstr ""
 
 #: src/wmapp.cc:658 src/wmwinlist.cc:462
 msgid "Tray _icon"
-msgstr "_Ikon baki"
+msgstr ""
 
 #: src/wmapp.cc:660 src/wmwinlist.cc:463
 msgid "R_ename title"
-msgstr "G_anti judul"
+msgstr ""
 
 #: src/wmapp.cc:665 src/wmwinlist.cc:478 src/wmwinlist.cc:486
 msgid "_Close"
-msgstr "_Tutup"
+msgstr "და_კეტვა"
 
 #: src/wmapp.cc:667 src/wmwinlist.cc:480
 msgid "_Kill Client"
-msgstr "Bunuh _Klien"
+msgstr ""
 
 #: src/wmapp.cc:670 src/wmdialog.cc:87 src/wmwinmenu.cc:134
 msgid "_Window list"
-msgstr "Daftar _jendela"
+msgstr ""
 
 #: src/wmapp.cc:709
 msgid "Another window manager already running, exiting..."
-msgstr "Pengelola jendela yang lain sudah berjalan, keluar..."
+msgstr ""
 
 #: src/wmapp.cc:784
 #, c-format
@@ -2200,31 +2011,25 @@ msgid ""
 "Could not restart: %s\n"
 "Does $PATH lead to %s?"
 msgstr ""
-"Tidak dapat memulai ulang: %s\n"
-"Apakah $PATH menuju ke %s?"
 
 #: src/wmapp.cc:945
 msgid "Confirm Restart as Terminal"
-msgstr "Konfirmasi Mulai Ulang sebagai Terminal"
+msgstr ""
 
 #: src/wmapp.cc:946
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
-"Lepaskan semua aplikasi dan mulai ulang\n"
-"sebagai terminal. Melanjutkan?"
 
 #: src/wmapp.cc:1233 src/yxapp.cc:1040
 msgid "<none>"
-msgstr "<NIHIL>"
+msgstr ""
 
 #: src/wmapp.cc:1558
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
-"  --client-id=ID      Klien id yang digunakan saat menghubungi pengelola "
-"sesi.\n"
 
 #: src/wmapp.cc:1564
 msgid ""
@@ -2232,9 +2037,6 @@ msgid ""
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
-"\n"
-"  --debug             Cetak pesan awakutu umum.\n"
-"  --debug-z           Cetak pesan awakutu tentang penumpukan jendela.\n"
 
 #: src/wmapp.cc:1572
 msgid ""
@@ -2247,14 +2049,6 @@ msgid ""
 "  --rewrite-preferences  Update an existing preferences file.\n"
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
-"\n"
-"  -a, --alpha         Gunakan visual 32-bit untuk tembus pandang.\n"
-"  -c, --config=FILE   Muat preferensi dari FILE.\n"
-"  -t, --theme=FILE    Muat tema dari FILE.\n"
-"  -s, --splash=IMAGE  Perlihatkan secara singkat IMAGE pada saat awal mula.\n"
-"  -p, --postpreferences  Preferensi cetak setelah semua pemrosesan.\n"
-"  --rewrite-preferences  Mutakhirkan berkas preferensi yang ada.\n"
-"  --trace=conf,icon   Path jejak yang digunakan untuk memuat konfigurasi.\n"
 
 #: src/wmapp.cc:1582
 #, c-format
@@ -2287,84 +2081,54 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
-"Penggunan: %s [OPTIONS]\n"
-"Mulai pengelola jendela IceWM.\n"
-"\n"
-"Opsi:\n"
-"  -d, --display=NAME  NAME dari peladen X yang akan digunakan.\n"
-"%s  --sync              Sinkronisasi perintah X11.\n"
-"%s\n"
-"  -V, --version       Cetak informasi versi dan keluar.\n"
-"  -h, --help          Cetak layar penggunaan ini dan keluar.\n"
-"%s\n"
-"  --replace           Ganti pengelola jendela yang ada.\n"
-"  -r, --restart       Beri tahu icewm yang sedang berjalan untuk memulai "
-"kembali sendiri.\n"
-"\n"
-"  --configured        Cetak konfigurasi waktu kompilasi.\n"
-"  --directories       Cetak direktori konfigurasi.\n"
-"  -l, --list-themes   Cetak daftar semua tema yang tersedia.\n"
-"\n"
-"Variabel lingkungan:\n"
-"  ICEWM_PRIVCFG=PATH  Direktori untuk berkas konfigurasi pengguna,\n"
-"                      \"$XDG_CONFIG_HOME/icewm\" jika ada atau\n"
-"                      \"$HOME/.icewm\" secara bawaan.\n"
-"  DISPLAY=NAME        Nama peladen X yang digunakan.\n"
-"  MAIL=URL            Lokasi kotak surat Anda.\n"
-"\n"
-"Untuk melaporkan kutu, permintaan dukungan, komentar silakan kunjungi:\n"
-"%s\n"
-"\n"
 
 #: src/wmapp.cc:1648
 #, c-format
 msgid "%s configuration directories:\n"
-msgstr "Direktori konfigurasi %s:\n"
+msgstr ""
 
 #: src/wmapp.cc:1733
 #, c-format
 msgid "%s configured options:%s\n"
-msgstr "Opsi %s yang dikonfigurasi: %s\n"
+msgstr ""
 
 #: src/wmapp.cc:1867
 msgid "Confirm Logout"
-msgstr "Konfirmasi Log Keluar"
+msgstr ""
 
 #: src/wmapp.cc:1868
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
 msgstr ""
-"Log keluar akan menutup semua aplikasi yang aktif.\n"
-"Proses?"
 
 #: src/wmbutton.cc:124
 msgid "Raise/Lower"
-msgstr "Naikkan/Turunkan"
+msgstr ""
 
 #: src/wmbutton.cc:127
 msgid "Hide"
-msgstr "Sembunyikan"
+msgstr "დამალვა"
 
 #: src/wmbutton.cc:131
 msgid "Restore"
-msgstr "Pulihkan"
+msgstr "აღდგენა"
 
 #: src/wmbutton.cc:133
 msgid "Maximize"
-msgstr "Maksimalkan"
+msgstr "გადიდება"
 
 #: src/wmbutton.cc:137
 msgid "Minimize"
-msgstr "Minimalkan"
+msgstr "ჩაკეცვა"
 
 #: src/wmbutton.cc:141
 msgid "Rolldown"
-msgstr "Gulung bawah"
+msgstr ""
 
 #: src/wmbutton.cc:143
 msgid "Rollup"
-msgstr "Gulung atas"
+msgstr ""
 
 #: src/wmclient.cc:462
 #, c-format
@@ -2372,131 +2136,127 @@ msgid ""
 "Client %s with PID %ld fails to respond.\n"
 "Do you wish to terminate this client?\n"
 msgstr ""
-"Klien %s dengan PID %ld gagal merespon.\n"
-"Apakah Anda ingin mengakhiri klien ini?\n"
 
 #: src/wmconfig.cc:35 src/wmconfig.cc:40 src/wmconfig.cc:46
 #, c-format
 msgid "Failed to load theme %s"
-msgstr "Gagal memuat tema %s"
+msgstr ""
 
 #: src/wmconfig.cc:113
 #, c-format
 msgid "Unknown value '%s' for option '%s'."
-msgstr "Nilai '%s' yang tidak diketahui untuk opsi '%s'."
+msgstr ""
 
 #: src/wmconfig.cc:121
 #, c-format
 msgid "Unable to create directory %s"
-msgstr "Tidak dapat membuat direktori %s"
+msgstr ""
 
 #: src/wmconfig.cc:184 src/wmsave.cc:306
 #, c-format
 msgid "Unable to rename %s to %s"
-msgstr "Tidak dapat mengganti nama %s menjadi %s"
+msgstr ""
 
 #: src/wmdialog.cc:81
 msgid "Loc_k Workstation"
-msgstr "_Kunci Workstation"
+msgstr ""
 
 #: src/wmdialog.cc:83 src/ymsgbox.cc:51
 msgid "_Cancel"
-msgstr "_Batal"
+msgstr "&გაუქმება"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmdialog.cc:84 src/wmprog.cc:461 src/wmprog.cc:463 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
-msgstr "_Keluar..."
+msgstr ""
 
 #: src/wmdialog.cc:88
 msgid "_Restart icewm"
-msgstr "Mu_lai ulang icewm"
+msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmdialog.cc:89 src/wmprog.cc:429 src/wmtaskbar.cc:238
 msgid "_About"
-msgstr "Tent_ang"
+msgstr "_შესახებ"
 
 #: src/wmdialog.cc:90
 msgid "Reload win_options"
-msgstr "Muat ulang win_options"
+msgstr ""
 
 #: src/wmdialog.cc:91
 msgid "Reload ke_ys"
-msgstr "Muat ulang tombo_l"
+msgstr ""
 
 #: src/wmdialog.cc:92
 msgid "Clos_e"
-msgstr "Tut_up"
+msgstr "_დახურვა"
 
 #: src/wmframe.cc:1372
 msgid "Rename"
-msgstr "Ganti nama"
+msgstr "გადარქმევა"
 
 #: src/wmframe.cc:1373
 msgid "Rename the window title"
-msgstr "Ganti nama judul jendela"
+msgstr ""
 
 #: src/wmframe.cc:1851
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
 msgstr ""
-"PERINGATAN! Semua perubahan yang belum disimpan akan hilang saat\n"
-"klien ini terbunuh. Apakah Anda ingin melanjutkan?"
 
 #: src/wmframe.cc:1856
 msgid "Kill Client: "
-msgstr "Bunuh Klien: "
+msgstr ""
 
 #: src/wmmenu.cc:37
 msgid "Missing command argument"
-msgstr "Argumen perintah tidak ada"
+msgstr ""
 
 #: src/wmmenu.cc:55
 #, c-format
 msgid "Bad argument %d to command '%s'"
-msgstr "Argumen buruk %d untuk perintah '%s'"
+msgstr ""
 
 #: src/wmmenu.cc:110
 #, c-format
 msgid "Error at keyword '%s' for %s"
-msgstr "Kesalahan pada kata kunci '%s' untuk %s"
+msgstr ""
 
 #: src/wmmenu.cc:156
 #, c-format
 msgid "Error at %s '%s'"
-msgstr "Kesalahan pada %s '%s'"
+msgstr ""
 
 #: src/wmmenu.cc:222
 #, c-format
 msgid "Unexepected menu keyword: '%s'"
-msgstr "Kata kunci menu yang tidak dipilih: '%s'"
+msgstr ""
 
 #: src/wmmenu.cc:276
 #, c-format
 msgid "Error at menuprog '%s'"
-msgstr "Kesalahan saat menuprog '%s'"
+msgstr ""
 
 #: src/wmmenu.cc:320
 #, c-format
 msgid "Error at menuprogreload: '%s'"
-msgstr "Kesalahan di menuprogreload: '%s'"
+msgstr ""
 
 #: src/wmmenu.cc:347
 msgid "Missing filename argument to include statement"
-msgstr "Argumen nama berkas hilang untuk menyertakan pernyataan"
+msgstr ""
 
 #: src/wmmenu.cc:365
 #, c-format
 msgid "Error at includeprog '%s'"
-msgstr "Kesalahan di includeprog '%s'"
+msgstr ""
 
 #: src/wmmenu.cc:408
 #, c-format
 msgid "Unknown keyword '%s'"
-msgstr "Kata kunci tidak dikenal '%s'"
+msgstr ""
 
 #: src/wmmenu.cc:419
 #, c-format
@@ -2504,73 +2264,71 @@ msgid ""
 "Unknown keyword for a non-container: '%s'.\n"
 "Expected either 'key' or 'runonce' here.\n"
 msgstr ""
-"Kata kunci tidak dikenal untuk penampung non-kontainer: '%s'.\n"
-"Diharapkan 'kunci' atau 'runonce' di sini.\n"
 
 #: src/wmmenu.cc:498
 #, c-format
 msgid "'%s' timed out!"
-msgstr "'%s' waktunya habis!"
+msgstr ""
 
 #: src/wmmenu.cc:512
 #, c-format
 msgid "'%s' produces no output"
-msgstr "'%s' tidak menghasilkan keluaran"
+msgstr ""
 
 #: src/wmmgr.cc:3633
 msgid "Missing program setxkbmap"
-msgstr "Tak ada program setxkbmap"
+msgstr ""
 
 #: src/wmmgr.cc:3634
 msgid "For keyboard switching, please install setxkbmap."
-msgstr "Untuk mengubah papan tik, silakan instal setxkbmap."
+msgstr ""
 
 #: src/wmoption.cc:284
 #, c-format
 msgid "Unknown window option: %s"
-msgstr "Opsi jendela tidak dikenal: %s"
+msgstr ""
 
 #: src/wmoption.cc:356
 #, c-format
 msgid "Syntax error in window options on line %d of %s"
-msgstr "Kesalahan sintaks dalam opsi jendela pada baris %d dari %s"
+msgstr ""
 
 #: src/wmpref.cc:101
 msgid "Save Modifications"
-msgstr "Simpan Modifikasi"
+msgstr ""
 
 #: src/wmpref.cc:179
 #, c-format
 msgid "Enter a new value for %s: "
-msgstr "Masukkan nilai baru untuk %s: "
+msgstr ""
 
 #: src/wmprog.cc:336
 msgid "_Click to focus"
-msgstr "_Klik untuk fokus"
+msgstr ""
 
 #: src/wmprog.cc:337
 msgid "_Explicit focus"
-msgstr "Fokus _Eksplicit"
+msgstr ""
 
 #: src/wmprog.cc:338
 msgid "_Sloppy mouse focus"
-msgstr "Foku_s tetikus yang ceroboh"
+msgstr ""
 
 #: src/wmprog.cc:339
 msgid "S_trict mouse focus"
-msgstr "Fokus _tetikus yang ketat"
+msgstr ""
 
 #: src/wmprog.cc:340
 msgid "_Quiet sloppy focus"
-msgstr "Fokus ceroboh yang tenan_g"
+msgstr ""
 
 #: src/wmprog.cc:341
 msgid "Custo_m"
-msgstr "Ubaha_n"
+msgstr "_ხელით"
 
 #: src/wmprog.cc:363
 msgid "_Manual"
-msgstr "_Manual"
+msgstr "_ხელით"
 
 #: src/wmprog.cc:364
 msgid "_Icewm(1)"
@@ -2586,205 +2344,203 @@ msgstr "Ice_Sound(1)"
 
 #: src/wmprog.cc:415
 msgid "Programs"
-msgstr "Program"
+msgstr "პროგრამები"
 
 #: src/wmprog.cc:419
 msgid "_Run..."
-msgstr "Jalan_kan..."
+msgstr "_გაშვება..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmprog.cc:423 src/wmtaskbar.cc:233
 msgid "_Windows"
-msgstr "_Jendela"
+msgstr "_ფანჯრები"
 
 #: src/wmprog.cc:434
 msgid "_Help"
-msgstr "_Bantuan"
+msgstr "_დახმარება"
 
 #: src/wmprog.cc:439
 msgid "_Focus"
-msgstr "_Fokus"
+msgstr "ფოკუსი"
 
 #: src/wmprog.cc:444
 msgid "_Preferences"
-msgstr "_Preferensi"
+msgstr "_მორგება"
 
 #: src/wmprog.cc:449
 msgid "_Themes"
-msgstr "_Tema"
+msgstr "_თემები"
 
 #: src/wmprog.cc:453
 msgid "Se_ttings"
-msgstr "Penga_turan"
+msgstr "_მორგება"
 
 #: src/wmsession.cc:214 src/wmsession.cc:230 src/wmsession.cc:240
 #, c-format
 msgid "Session Manager: Unknown line %s"
-msgstr "Pengelola Sesi: Baris tidak diketahui %s"
+msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:219 src/wmwinlist.cc:467 src/wmwinlist.cc:500
 msgid "Ca_scade"
-msgstr "Bertin_gkat"
+msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:221 src/wmwinlist.cc:468 src/wmwinlist.cc:501
 msgid "_Arrange"
-msgstr "_Atur"
+msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:223 src/wmwinlist.cc:470 src/wmwinlist.cc:502
 msgid "_Minimize All"
-msgstr "_Minimalkan Semua"
+msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:225 src/wmwinlist.cc:471 src/wmwinlist.cc:503
 msgid "_Hide All"
-msgstr "_Sembunyikan Semua"
+msgstr "_ყველას დამალვა"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:227 src/wmwinlist.cc:472 src/wmwinlist.cc:504
 msgid "_Undo"
-msgstr "Ta_k Jadi"
+msgstr "გა_უქმება"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:230
 msgid "Arrange _Icons"
-msgstr "Atur _Ikon"
+msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:236
 msgid "_Refresh"
-msgstr "Sega_rkan"
+msgstr "_განახლება"
 
 #: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1015
 msgid "Hide Taskbar"
-msgstr "Sembunyikan bilah tugas"
+msgstr ""
 
 #: src/wmtaskbar.cc:337
 msgid "Favorite Applications"
-msgstr "Aplikasi Favorit"
+msgstr "რჩეული აპლიკაციები"
 
 #: src/wmtaskbar.cc:362
 msgid "Window List Menu"
-msgstr "Menu Daftar Jendela"
+msgstr ""
 
 #: src/wmtaskbar.cc:371
 msgid "Show Desktop"
-msgstr "Tampilkan Destop"
+msgstr "სამუშაო მაგიდის ჩვენება"
 
 #: src/wmtaskbar.cc:1015
 msgid "Show Taskbar"
-msgstr "Tampilkan bilah tugas"
+msgstr ""
 
 #: src/wmwinlist.cc:83
 msgid "All Workspaces"
-msgstr "Semua Ruang kerja"
+msgstr ""
 
 #: src/wmwinlist.cc:452
 msgid "_Show"
-msgstr "_Tampilkan"
+msgstr "_ჩვენება"
 
 #: src/wmwinlist.cc:455
 msgid "_Raise"
-msgstr "_Naikkan"
+msgstr "_აწევა"
 
 #: src/wmwinlist.cc:478
 msgid "Del"
-msgstr "Hapus"
+msgstr "Del"
 
 #: src/wmwinlist.cc:482
 msgid "_Terminate Process"
-msgstr "Hen_tikan Proses"
+msgstr "პროცესის _დასრულება"
 
 #: src/wmwinlist.cc:483
 msgid "Kill _Process"
-msgstr "Bunuh _Process"
+msgstr "პროცესის _მოკვლა"
 
 #: src/wmwinlist.cc:518 src/wmwinlist.cc:519
 msgid "Window list"
-msgstr "Daftar jendela"
+msgstr "ფანჯრების სია"
 
 #: src/wmwinmenu.cc:96
 #, c-format
 msgid "%lu. Workspace %-.32s"
-msgstr "%lu. Ruang kerja %-.32s"
+msgstr ""
 
 #: src/wpixres.cc:93 src/wpixres.cc:100
 #, c-format
 msgid "Image not readable: %s"
-msgstr "Gambar tidak dapat dibaca: %s"
+msgstr ""
 
 #: src/yapp.cc:296
 #, c-format
 msgid "%s: select failed"
-msgstr "%s: pilih gagal"
+msgstr ""
 
 #: src/ycolor.cc:229 src/ycolor.cc:240
 #, c-format
 msgid "Could not parse color \"%s\""
-msgstr "Tidak dapat mengurai warna '%s'"
+msgstr ""
 
 #: src/yconfig.cc:113
 #, c-format
 msgid "Unknown key name %s in %s"
-msgstr "Nama kunci %s tidak dikenal dalam %s"
+msgstr ""
 
 #: src/yconfig.cc:128 src/yconfig.cc:139 src/yconfig.cc:151
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
-msgstr "Argumen buruk: %s untuk %s [%d,%d]"
+msgstr ""
 
 #: src/ycursor.cc:110
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
-msgstr "Gagal memuat pixmap \"%s\" : %s"
+msgstr ""
 
 #: src/ycursor.cc:135
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
-msgstr "Gagal memuat pixmap \"%s\""
+msgstr ""
 
 #: src/ycursor.cc:179
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
-msgstr "KUTU? Imlib dapat membaca \"%s\""
+msgstr ""
 
 #: src/ycursor.cc:204
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
-msgstr "Kutu? Tajuk XPM salah format tetapi Imlib dapat menguraikan \"%s\""
+msgstr ""
 
 #: src/ycursor.cc:212
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
-"KUTU? Akhir berkas XPM yang tidak terduga tetapi Imlib dapat menguraikan \"%s"
-"\""
 
 #: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
-msgstr "KUTU? Karakter tidak terduga tetapi Imlib dapat menguraikan \"%s\""
+msgstr ""
 
 #: src/yfontcore.cc:121 src/yfontxft.cc:117
 #, c-format
 msgid "Could not load font \"%s\"."
-msgstr "Tidak dapat memuat fonta \"%s\"."
+msgstr ""
 
 #: src/yfontcore.cc:233
 #, c-format
 msgid "Missing codesets for fontset \"%s\":"
-msgstr "Set kode tidak ada untuk set fonta \"%s\":"
+msgstr ""
 
 #: src/yfontcore.cc:261
 #, c-format
 msgid "Could not load fontset \"%s\"."
-msgstr "Tidak dapat memuat set fonta \"%s\"."
+msgstr ""
 
 #: src/yinputline.cc:18
 msgid "_Copy"
-msgstr "_Salin"
+msgstr ""
 
 #: src/yinputline.cc:18
 msgid "Ctrl+C"
@@ -2792,15 +2548,15 @@ msgstr "Ctrl+C"
 
 #: src/yinputline.cc:19
 msgid "Cu_t"
-msgstr "Po_tong"
+msgstr "ამოჭრა"
 
 #: src/yinputline.cc:20
 msgid "_Paste"
-msgstr "Tem_pel"
+msgstr "ჩასმა"
 
 #: src/yinputline.cc:21
 msgid "Paste _Selection"
-msgstr "Te_mpel Pilihan"
+msgstr ""
 
 #: src/yinputline.cc:21
 msgid "Ctrl+P"
@@ -2808,7 +2564,7 @@ msgstr "Ctrl+P"
 
 #: src/yinputline.cc:23
 msgid "Select _All"
-msgstr "Pilih Semu_a"
+msgstr "_ყველას მონიშვნა"
 
 #: src/yinputline.cc:23
 msgid "Ctrl+A"
@@ -2816,567 +2572,66 @@ msgstr "Ctrl+A"
 
 #: src/ylocale.cc:60
 msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
-msgstr "Locale tidak didukung oleh pustaka C. Kembali ke locale 'C'."
+msgstr ""
 
 #: src/ylocale.cc:95
 msgid ""
 "Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
 msgstr ""
-"Gagal untuk menentukan set kode locale saat ini. Dengan asumsi ISO-8859-1.\n"
 
 #: src/ylocale.cc:128 src/ylocale.cc:136
 #, c-format
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
-msgstr "iconv tidak menyediakan (cukup) %s ke %s konverter."
+msgstr ""
 
 #: src/ylocale.cc:247
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
-msgstr "String multibyte \"%s\": %s tidak valid"
+msgstr ""
 
 #: src/ymsgbox.cc:48
 msgid "_OK"
-msgstr "_OK"
+msgstr "_კარგი"
 
 #: src/ysmapp.cc:98
 msgid "$USER or $LOGNAME not set?"
-msgstr "$USER atau $LOGNAME tidak diatur?"
+msgstr ""
 
 #: src/yurl.cc:145
 #, c-format
 msgid "Failed to parse URL \"%s\"."
-msgstr "Gagal untuk mengurai URL \"%s\"."
+msgstr ""
 
 #: src/yurl.cc:161
 #, c-format
 msgid "Incomplete hex escape in URL at position %d."
-msgstr "Pelarian hex tidak lengkap di URL pada posisi %d."
+msgstr ""
 
 #: src/yurl.cc:168
 #, c-format
 msgid "Invalid hex escape in URL at position %d."
-msgstr "Pelarian hex tidak valid di URL pada posisi %d."
+msgstr ""
 
 #: src/yxapp.cc:998
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"
 "  --sync              Synchronize X11 commands.\n"
 msgstr ""
-"  -d, --display=NAME  NAME dari peladen X yang akan digunakan..\n"
-"  --sync              Sinkronisasi perintah X11.\n"
 
 #: src/yximage.cc:157
 msgid "Support for PNG images was not enabled"
-msgstr "Dukungan untuk gambar PNG tidak diaktifkan"
+msgstr ""
 
 #: src/yximage.cc:165
 msgid "Support for JPEG images was not enabled"
-msgstr "Dukungan untuk gambar JPEG tidak diaktifkan"
+msgstr ""
 
 #: src/yximage.cc:171
 #, c-format
 msgid "Unsupported file format: %s"
-msgstr "Format berkas yang tidak didukung: %s"
+msgstr ""
 
 #: src/yximage.cc:175 src/yximage.cc:198
 #, c-format
 msgid "Could not load image \"%s\""
-msgstr "Tidak dapat memuat gambar “%s”."
-
-#~ msgid "Loading of fallback font \"%s\" failed."
-#~ msgstr "Gagal memuat fonta fallback \"%s\"."
-
-#~ msgid ""
-#~ "\n"
-#~ "  Caller id:\t"
-#~ msgstr ""
-#~ "\n"
-#~ "  Id pemanggil:\t"
-
-#~ msgid "Kill IceWM, replace with Xterm"
-#~ msgstr "Bunuh IceWM, ganti dengan Xterm"
-
-#~ msgid "GNOME window state"
-#~ msgstr "Keadaan jendela GNOME"
-
-#~ msgid "GNOME window hint"
-#~ msgstr "Petunjuk jendela GNOME"
-
-#~ msgid "Invalid cursor pixmap: \"%s\" contains too much unique colors"
-#~ msgstr ""
-#~ "Pixmap kursor tidak valid: \"%s\" mengandung terlalu banyak warna unik"
-
-#~ msgid ""
-#~ "stat:\tuser = %llu, nice = %llu, sys = %llu, idle = %llu, iowait = %llu, "
-#~ "intr = %llu, softirq = %llu, steal = %llu\n"
-#~ msgstr ""
-#~ "stat:\tpengguna = %llu, nice = %llu, sys = %llu, idle = %llu, iowait = "
-#~ "%llu, intr = %llu, softirq = %llu, steal = %llu\n"
-
-#~ msgid ""
-#~ "bars:\tuser = %llu, nice = %llu, sys = %llu, iowait = %llu, intr = %llu, "
-#~ "softirq = %llu, steal = %llu (h = %i)\n"
-#~ msgstr ""
-#~ "bilah:\tpengguna = %llu, nice = %llu, sys = %llu, iowait = %llu, intr = "
-#~ "%llu, softirq = %llu, steal = %llu (h = %i)\n"
-
-#~ msgid "CPU: %llu %llu %llu %llu %llu %llu %llu %llu"
-#~ msgstr "CPU: %llu %llu %llu %llu %llu %llu %llu %llu"
-
-#~ msgid ""
-#~ " IceWM crashed for the second time in 10 seconds. \n"
-#~ " Do you wish to:\n"
-#~ "\n"
-#~ "\t1: Restart IceWM?\n"
-#~ "\t2: Abort this session?\n"
-#~ msgstr ""
-#~ " IceWM kres untuk kedua kalinya dalam 10 detik. \n"
-#~ " Apakah Anda ingin:\n"
-#~ "\n"
-#~ "\t1: Memulai ulang IceWM?\n"
-#~ "\t2: Gugurkan sesi ini?\n"
-
-#~ msgid "Unable to get current font path."
-#~ msgstr "Tidak dapat mendapatkan path fonta saat ini."
-
-#~ msgid "Unexpected format of ICEWM_FONT_PATH property"
-#~ msgstr "Format properti ICEWM_FONT_PATH yang tidak terduga"
-
-#~ msgid "Task Bar"
-#~ msgstr "Bilah tugas"
-
-#~ msgid "_License"
-#~ msgstr "_Lisensi"
-
-#, fuzzy
-#~| msgid ""
-#~| "Usage: %s [OPTIONS] ACTIONS\n"
-#~| "\n"
-#~| "Options:\n"
-#~| "  -display DISPLAY            Connects to the X server specified by "
-#~| "DISPLAY.\n"
-#~| "                              Default: $DISPLAY or :0.0 when not set.\n"
-#~| "  -window WINDOW_ID           Specifies the window to manipulate. "
-#~| "Special\n"
-#~| "                              identifiers are `root' for the root window "
-#~| "and\n"
-#~| "                              `focus' for the currently focused window.\n"
-#~| "  -class WM_CLASS             Window management class of the window(s) "
-#~| "to\n"
-#~| "                              manipulate. If WM_CLASS contains a period, "
-#~| "only\n"
-#~| "                              windows with exactly the same WM_CLASS "
-#~| "property\n"
-#~| "                              are matched. If there is no period, "
-#~| "windows of\n"
-#~| "                              the same class and windows of the same "
-#~| "instance\n"
-#~| "                              (aka. `-name') are selected.\n"
-#~| "\n"
-#~| "Actions:\n"
-#~| "  setIconTitle   TITLE        Set the icon title.\n"
-#~| "  setWindowTitle TITLE        Set the window title.\n"
-#~| "  setGeometry    geometry     Set the window geometry\n"
-#~| "  setState       MASK STATE   Set the GNOME window state to STATE.\n"
-#~| "                              Only the bits selected by MASK are "
-#~| "affected.\n"
-#~| "                              STATE and MASK are expressions of the "
-#~| "domain\n"
-#~| "                              `GNOME window state'.\n"
-#~| "  toggleState    STATE        Toggle the GNOME window state bits "
-#~| "specified by\n"
-#~| "                              the STATE expression.\n"
-#~| "  setHints       HINTS        Set the GNOME window hints to HINTS.\n"
-#~| "  setLayer       LAYER        Moves the window to another GNOME window "
-#~| "layer.\n"
-#~| "  setWorkspace   WORKSPACE    Moves the window to another workspace. "
-#~| "Select\n"
-#~| "                              the root window to change the current "
-#~| "workspace.\n"
-#~| "  listWorkspaces              Lists the names of all workspaces.\n"
-#~| "  setTrayOption  TRAYOPTION   Set the IceWM tray option hint.\n"
-#~| "\n"
-#~| "Expressions:\n"
-#~| "  Expressions are list of symbols of one domain concatenated by `+' or "
-#~| "`|':\n"
-#~| "\n"
-#~| "  EXPRESSION ::= SYMBOL | EXPRESSION ( `+' | `|' ) SYMBOL\n"
-#~| "\n"
-#~ msgid ""
-#~ "Usage: %s [OPTIONS] ACTIONS\n"
-#~ "\n"
-#~ "Options:\n"
-#~ "  -d, -display DISPLAY        Connects to the X server specified by "
-#~ "DISPLAY.\n"
-#~ "                              Default: $DISPLAY or :0.0 when not set.\n"
-#~ "  -w, -window WINDOW_ID       Specifies the window to manipulate. "
-#~ "Special\n"
-#~ "                              identifiers are `root' for the root window "
-#~ "and\n"
-#~ "                              `focus' for the currently focused window.\n"
-#~ "  -c, -class WM_CLASS         Window management class of the window(s) "
-#~ "to\n"
-#~ "                              manipulate. If WM_CLASS contains a period, "
-#~ "only\n"
-#~ "                              windows with exactly the same WM_CLASS "
-#~ "property\n"
-#~ "                              are matched. If there is no period, windows "
-#~ "of\n"
-#~ "                              the same class and windows of the same "
-#~ "instance\n"
-#~ "                              (aka. `-name') are selected.\n"
-#~ "\n"
-#~ "Actions:\n"
-#~ "  setIconTitle   TITLE        Set the icon title.\n"
-#~ "  setWindowTitle TITLE        Set the window title.\n"
-#~ "  setGeometry    geometry     Set the window geometry\n"
-#~ "  setState       MASK STATE   Set the GNOME window state to STATE.\n"
-#~ "                              Only the bits selected by MASK are "
-#~ "affected.\n"
-#~ "                              STATE and MASK are expressions of the "
-#~ "domain\n"
-#~ "                              `GNOME window state'.\n"
-#~ "  toggleState    STATE        Toggle the GNOME window state bits "
-#~ "specified by\n"
-#~ "                              the STATE expression.\n"
-#~ "  setHints       HINTS        Set the GNOME window hints to HINTS.\n"
-#~ "  setLayer       LAYER        Moves the window to another GNOME window "
-#~ "layer.\n"
-#~ "  setWorkspace   WORKSPACE    Moves the window to another workspace. "
-#~ "Select\n"
-#~ "                              the root window to change the current "
-#~ "workspace.\n"
-#~ "                              Select 0xFFFFFFFF or \"All\" for all "
-#~ "workspaces.\n"
-#~ "  listWorkspaces              Lists the names of all workspaces.\n"
-#~ "  setTrayOption  TRAYOPTION   Set the IceWM tray option hint.\n"
-#~ "  logout                      Tell IceWM to logout.\n"
-#~ "  reboot                      Tell IceWM to reboot.\n"
-#~ "  shutdown                    Tell IceWM to shutdown.\n"
-#~ "  cancel                      Tell IceWM to cancel the logout/reboot/"
-#~ "shutdown.\n"
-#~ "  about                       Tell IceWM to show the about window.\n"
-#~ "  windowlist                  Tell IceWM to show the window list.\n"
-#~ "  restart                     Tell IceWM to restart.\n"
-#~ "  suspend                     Tell IceWM to suspend.\n"
-#~ "\n"
-#~ "Expressions:\n"
-#~ "  Expressions are list of symbols of one domain concatenated by `+' or "
-#~ "`|':\n"
-#~ "\n"
-#~ "  EXPRESSION ::= SYMBOL | EXPRESSION ( `+' | `|' ) SYMBOL\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Penggunaan: %s [OPSI] AKSI\n"
-#~ "\n"
-#~ "Opsi:\n"
-#~ "  -display DISPLAY            Meyambung ke server X yang ditetapkan oleh "
-#~ "DISPLAY.\n"
-#~ "                              Baku: $DISPLAY atau :0.0 saat tidak "
-#~ "diatur.\n"
-#~ "  -window WINDOW_ID           Menentukan jendela yang akan dimanipulasi. "
-#~ "Pengenal\n"
-#~ "                              khusus adalah `root' untuk jendela root "
-#~ "dan\n"
-#~ "                              `focus' untuk jendela yang saat ini "
-#~ "berfokus.\n"
-#~ "  -class WM_CLASS             Kelas manajemen jendela dari jendela yang "
-#~ "akan\n"
-#~ "                              dimanipulasi. Jika WM_CLASS berisi sebuah "
-#~ "periode,\n"
-#~ "                              hanya jendela dengan properti WM_CLASS yang "
-#~ "sama persis\n"
-#~ "                              yang akan cocok. Jika tanpa periode, "
-#~ "jendela dari kelas\n"
-#~ "                              yang sama dan jendela dari intansi yang "
-#~ "sama\n"
-#~ "                              (contoh `-name') yang akan dipilih.\n"
-#~ "\n"
-#~ "Aksi:\n"
-#~ "  setIconTitle   TITLE        Menetapkan nama ikon.\n"
-#~ "  setWindowTitle TITLE        Menetapkan nama jendela.\n"
-#~ "  setGeometry    geometry     Menetapkan geometri jendela\n"
-#~ "  setState       MASK STATE   Menetapkan status jendela GNOME pada "
-#~ "STATE.\n"
-#~ "                              Hanya bit yang dipilih MASK yang akan "
-#~ "berdampak.\n"
-#~ "                              STATE dan MASK adalah ekspresi dari domain\n"
-#~ "                              `status jendela GNOME'.\n"
-#~ "  toggleState    STATE        Mengganti bit status jendela GNOME yang "
-#~ "ditentukan oleh\n"
-#~ "                              ekspresi STATE.\n"
-#~ "  setHints       HINTS        Menetapkan tips jendela GNOME pada HINTS.\n"
-#~ "  setLayer       LAYER        Memindahkan jendela ke lapisan jendela "
-#~ "GNOME lainnya.\n"
-#~ "  setWorkspace   WORKSPACE    Memindahkan jendela ke ruang kerja lainnya. "
-#~ "Pilih\n"
-#~ "                              jendela akar untuk mengganti ruang kerja "
-#~ "saat ini.\n"
-#~ "  listWorkspaces              Daftar nama dari semua ruang kerja.\n"
-#~ "  setTrayOption  TRAYOPTION   Menetapkan tips opsi tray IceWM.\n"
-#~ "\n"
-#~ "Ekspresi:\n"
-#~ "  Ekspresi adalah daftar simbol dari satu domain diakhiri dengan `+' or "
-#~ "`|':\n"
-#~ "\n"
-#~ "  EXPRESSION ::= SYMBOL | EXPRESSION ( `+' | `|' ) SYMBOL\n"
-#~ "\n"
-
-#~ msgid "Can't connect to ESound daemon: %s"
-#~ msgstr "Tidak dapat tersambung ke ESound daemon: %s"
-
-#~ msgid "Error <%d> while uploading `%s:%s'"
-#~ msgstr "Kesalahan <%d> saat mengunggah `%s:%s'"
-
-#~ msgid "Sample <%d> uploaded as `%s:%s'"
-#~ msgstr "Sampel <%d> diunggah sebagai `%s:%s'"
-
-#, fuzzy
-#~ msgid "Playing sample #%d: %d"
-#~ msgstr "Memutar sampel #%d"
-
-#~ msgid "Usage error: "
-#~ msgstr "Kesalahan penggunaan: "
-
-#~ msgid "Out of memory for image %s"
-#~ msgstr "Kehabisan memori untuk gambar %s"
-
-#~ msgid "_Minimize"
-#~ msgstr "_Kecilkan"
-
-#~ msgid "Error at %s: '%s'"
-#~ msgstr "Kesalahan pada %s: '%s'"
-
-#~ msgid "\"%s\" contains no scheme description"
-#~ msgstr "\"%s\" tidak terdapat deskripsi skema"
-
-#~ msgid "\"%s\" doesn't describe a common internet scheme"
-#~ msgstr "\"%s\" tidak menjelaskan skema internet secara umum"
-
-#~ msgid "Out of memory for pixmap \"%s\""
-#~ msgstr "Kehabisan memori untuk pixmap \"%s\""
-
-#~ msgid "Out of memory for window options"
-#~ msgstr "Kehabisan memori untuk opsi jendela"
-
-#~ msgid "Error in window option: %s"
-#~ msgstr "Kesalahan dalam opsi jendela: %s"
-
-#~ msgid ""
-#~ "Usage: %s FILENAME\n"
-#~ "\n"
-#~ "A very simple HTML browser displaying the document specified by "
-#~ "FILENAME.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Penggunaan: %s NAMABERKAS\n"
-#~ "\n"
-#~ "Sebuah peramban HTML sederhana untuk menampilkan dokumen yang ditentukan "
-#~ "oleh NAMABERKAS.\n"
-#~ "\n"
-
-#~ msgid "No such device: %s"
-#~ msgstr "Perangkat tidak ada: %s"
-
-#~ msgid "Can't change to audio mode `%s'."
-#~ msgstr "Tidak dapat berganti ke mode audio `%s'."
-
-#~ msgid ""
-#~ "Audio mode switch detected, initial audio mode `%s' no longer in effect."
-#~ msgstr ""
-#~ "Penggantian mode audio terdeteksi, mode audio inisial `%s' tidak lagi "
-#~ "berlaku."
-
-#~ msgid "Audio mode switch detected, automatic audio mode changing disabled."
-#~ msgstr ""
-#~ "Penggantian mode audio terdeteksi, mengganti mode audio secara otomatis "
-#~ "dinonaktifkan."
-
-#~ msgid "Overriding previous audio mode `%s'."
-#~ msgstr "Mengesampingkan mode audio sebelumnya `%s'."
-
-#~ msgid "Multiple sound interfaces given."
-#~ msgstr "Beberapa antarmuka suara diberikan."
-
-#~ msgid "Received signal %d: Reloading samples..."
-#~ msgstr "Menerima sinyal %d: Memuat ulang sampel..."
-
-#~ msgid "Message Loop: select failed (errno=%d)"
-#~ msgstr "Pesan Loop: gagal memilih (errno=%d)"
-
-#~ msgid "Argument required for %s switch"
-#~ msgstr "Argumen diperlukan untuk %s penggantian"
-
-#~ msgid "Loading of image \"%s\" failed"
-#~ msgstr "Pemuatan gambar \"%s\" gagal"
-
-#~ msgid "Imlib: Acquisition of X pixmap failed"
-#~ msgstr "Imlib: Gagal mengakuisisi X pixmap"
-
-#~ msgid "Imlib: Imlib image to X pixmap mapping failed"
-#~ msgstr "Imlib: Gagal memetakan gambar Imlib pada X pixmap"
-
-#~ msgid ""
-#~ "Using fallback mechanism to convert pixels (depth: %d; masks (red/green/"
-#~ "blue): %0*x/%0*x/%0*x)"
-#~ msgstr ""
-#~ "Menggunakan mekanisme fallback untuk mengkonversi piksel (kedalaman: %d; "
-#~ "masks (red/green/blue): %0*x/%0*x/%0*x)"
-
-#~ msgid "%s:%d: %d bit visuals are not supported (yet)"
-#~ msgstr "%s:%d: %d bit visuals tidak didukung (lagi)"
-
-#, fuzzy
-#~ msgid "Multiple references for gradient '%s' in theme '%s'."
-#~ msgstr "Beberapa referensi untuk gradien \"%s\""
-
-#, fuzzy
-#~ msgid "Unknown gradient name '%s' in theme '%s'."
-#~ msgstr "Nama gradien tidak diketahui: %s"
-
-#~ msgid "Bad Look name"
-#~ msgstr "Nama terlihat buruk"
-
-#~ msgid ""
-#~ "%s: unrecognized option `%s'\n"
-#~ "Try `%s --help' for more information.\n"
-#~ msgstr ""
-#~ "%s: opsi tidak dikenali `%s'\n"
-#~ "Coba `%s --help' untuk informasi lebih lanjut.\n"
-
-#~ msgid "Loading image %s failed"
-#~ msgstr "Gagal memuat gambar %s"
-
-#~ msgid "Bad argument %d"
-#~ msgstr "Argumen %d buruk"
-
-#~ msgid "Out of memory for image: %s"
-#~ msgstr "Kehabisan memory untuk piksel map: %s"
-
-#~ msgid "Could not find image: %s"
-#~ msgstr "Tidak dapat mencari piksel map: %s"
-
-#~ msgid "Invalid path: "
-#~ msgstr "Jalur tidak valid: "
-
-#~ msgid ""
-#~ "Interface %s:\n"
-#~ "  Current rate (in/out):\t%li %s/%li %s\n"
-#~ "  Current average (in/out):\t%lli %s/%lli %s\n"
-#~ "  Total average (in/out):\t%li %s/%li %s\n"
-#~ "  Transferred (in/out):\t%lli %s/%lli %s\n"
-#~ "  Online time:\t%ld:%02ld:%02ld%s%s"
-#~ msgstr ""
-#~ "Perangkat %s:\n"
-#~ "  Kecepatan saat ini (in/out):\t%li %s/%li %s\n"
-#~ "  Rata-rata saat ini (in/out):\t%lli %s/%lli %s\n"
-#~ "  Jumlah rata-rata (in/out):\t%li %s/%li %s\n"
-#~ "  Pengiriman (in/out):\t%lli %s/%lli %s\n"
-#~ "  Waktu Sambung:\t%ld:%02ld:%02ld%s%s"
-
-#~ msgid ""
-#~ "Usage: icewmbg [ -r | -q ]\n"
-#~ " -r  Restart icewmbg\n"
-#~ " -q  Quit icewmbg\n"
-#~ "Loads desktop background according to preferences file\n"
-#~ " DesktopBackgroundCenter  - Display desktop background centered, not "
-#~ "tiled\n"
-#~ " SupportSemitransparency  - Support for semitransparent terminals\n"
-#~ " DesktopBackgroundColor   - Desktop background color\n"
-#~ " DesktopBackgroundImage   - Desktop background image\n"
-#~ " DesktopTransparencyColor - Color to announce for semi-transparent "
-#~ "windows\n"
-#~ " DesktopTransparencyImage - Image to announce for semi-transparent "
-#~ "windows\n"
-#~ msgstr ""
-#~ "Penggunaan: icewmbg [ -r | -q ]\n"
-#~ " -r  Restart icewmbg\n"
-#~ " -q  Tutup icewmbg\n"
-#~ "Loads desktop background according to preferences file\n"
-#~ " DesktopBackgroundCenter  - Tampilkan desktop background centered, not "
-#~ "tiled\n"
-#~ " SupportSemitransparency  - Support for semitransparent terminals\n"
-#~ " DesktopBackgroundColor   - Warna Desktop background\n"
-#~ " DesktopBackgroundImage   - Gambar Desktop background\n"
-#~ " DesktopTransparencyColor - Color to announce for semi-transparent "
-#~ "windows\n"
-#~ " DesktopTransparencyImage - Image to announce for semi-transparent "
-#~ "windows\n"
-
-#~ msgid "Out of memory for pixel map %s"
-#~ msgstr "Kehabisan memory untuk piksel map %s"
-
-#~ msgid "Could not find pixel map %s"
-#~ msgstr "Tidak dapat mencari piksel map %s"
-
-#~ msgid "Out of memory for RGB pixel buffer %s"
-#~ msgstr "Kehabisan memory untuk RGB piksel buffer %s"
-
-#~ msgid "Could not find RGB pixel buffer %s"
-#~ msgstr "Tidak dapat mencari RGB piksel buffer %s"
-
-#~ msgid " processes."
-#~ msgstr " proses."
-
-#~ msgid "program label expected"
-#~ msgstr "Diperkiran label program"
-
-#~ msgid "unknown action"
-#~ msgstr "Aksi tidak diketahui"
-
-#~ msgid "Not a regular file: %s"
-#~ msgstr "Bukan sebuah file regular: %s"
-
-#~ msgid "Identifier expected"
-#~ msgstr "Diperkirakan ada Identifiernya"
-
-#~ msgid "Separator expected"
-#~ msgstr "Diperkirakan ada pemisahnya"
-
-#~ msgid "Invalid token"
-#~ msgstr "Token tidak benar"
-
-#~ msgid "Not a hexadecimal number: %c%c (in \"%s\")"
-#~ msgstr "Bukan angka heksadesimal: %c%c (dalam \"%s\")"
-
-#~ msgid "/proc/apm - unknown format (%d)"
-#~ msgstr "/proc/apm - format tidak diketahui (%d)"
-
-#~ msgid "stat:\tuser = %i, nice = %i, sys = %i, idle = %i"
-#~ msgstr "status:\tuser = %i, nice = %i, sys = %i, idle = %i"
-
-#~ msgid "cpu: %d %d %d %d %d %d %d"
-#~ msgstr "cpu: %d %d %d %d %d %d %d"
-
-#~ msgid "kstat finds too many cpus: should be %d"
-#~ msgstr "kstat menemukan terlalu banyak prosesor: seharusnya %d"
-
-#~ msgid "XQueryTree failed for window 0x%x"
-#~ msgstr "XQueryTree gagal untuk window 0x%x"
-
-#~ msgid "Compiled with DEBUG flag. Debugging messages will be printed."
-#~ msgstr "Di kompile dengan DEBUG flag. Pesan debug akan ditampilkan."
-
-#~ msgid "_No icon"
-#~ msgstr "_Tidak ada ikon"
-
-#~ msgid "_Minimized"
-#~ msgstr "_Minimal"
-
-#~ msgid "Failed to duplicate file descriptor: %s"
-#~ msgstr "Gagal menduplikasi deskripsi file: %s"
-
-#~ msgid "%s:%d: Failed to copy drawable 0x%x to pixel buffer"
-#~ msgstr "%s:%d: Gagal menyalin drawable 0x%x ke piksel buffer"
-
-#~ msgid "%s:%d: Failed to copy drawable 0x%x to pixel buffer (%d:%d-%dx%d)"
-#~ msgstr "%s:%d: Gagal menyalin drawable 0x%x ke piksel buffer (%d:%d-%dx%d)"
-
-#~ msgid "TOO MANY ICE CONNECTIONS -- not supported"
-#~ msgstr "TERLALU BANYAK KONEKSI ICE -- tidak disupport"
-
-#~ msgid "Session Manager: IceAddConnectionWatch failed."
-#~ msgstr "Session Manager: IceAddConnetionWatch gagal."
-
-#~ msgid "Session Manager: Init error: %s"
-#~ msgstr "Session Manager: Init salah: %s"
+msgstr ""
