@@ -1,5 +1,147 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit f3a6e8ea37691e0132db47cc1c78b6c286cc6b15
+Merge: 0539235b ad29458d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jun 5 16:41:00 2023 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit ad29458d28adb2da9b7b9dc2bd01bd9df0333aeb
+Merge: 6d13e912 c6363d22
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jun 5 16:39:31 2023 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit c6363d22a8154c5897b66ec7e53901696d12224f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jun 5 16:36:32 2023 +0200
+
+    Include more source files in POTFILES.in.
+
+ po/POTFILES.in | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit b39bb60ba7360da5ef7f5bf258bc8b251b590976
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jun 5 16:30:00 2023 +0200
+
+    Include ast, eo, fa, hi, ie, ka, kk, nn, si in LINGUAS
+
+ po/LINGUAS | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 5d64a2465ae9e2ca8b352c7113360676773c18bf
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jun 5 16:15:29 2023 +0200
+
+    Update potfiles.
+
+ po/ar.po     |  258 ++--
+ po/be.po     |  258 ++--
+ po/bg.po     |  258 ++--
+ po/ca.po     |  262 ++--
+ po/cs.po     |  262 ++--
+ po/da.po     |  258 ++--
+ po/de.po     |  258 ++--
+ po/el.po     |  258 ++--
+ po/en.po     |  258 ++--
+ po/eo.po     | 2547 ++++++++++++++++++++++++++++---------
+ po/es.po     |  258 ++--
+ po/fa.po     | 2472 ++++++++++++++++++++++++++++--------
+ po/fi.po     |  258 ++--
+ po/fr.po     |  290 ++---
+ po/he.po     |  258 ++--
+ po/hi.po     | 2079 +++++++++++++++++++++---------
+ po/hr.po     |  258 ++--
+ po/hu.po     |  262 ++--
+ po/icewm.pot |  260 ++--
+ po/id.po     |  258 ++--
+ po/ie.po     | 3688 ++++++++++++++++++++++++++++++------------------------
+ po/it.po     |  258 ++--
+ po/ja.po     |  262 ++--
+ po/ka.po     |  262 ++--
+ po/kk.po     |  366 +++---
+ po/ko.po     |  258 ++--
+ po/lt.po     |  258 ++--
+ po/lv.po     |  258 ++--
+ po/mk.po     |  258 ++--
+ po/nb.po     |  258 ++--
+ po/nl.po     |  262 ++--
+ po/nn.po     | 2514 ++++++++++++++++++++++++++++---------
+ po/no.po     |  258 ++--
+ po/pl.po     |  258 ++--
+ po/pt.po     |  258 ++--
+ po/pt_BR.po  |  258 ++--
+ po/ro.po     |  258 ++--
+ po/ru.po     |  266 ++--
+ po/si.po     | 2909 ++++++++++++++++++++++--------------------
+ po/sk.po     |  262 ++--
+ po/sl.po     |  258 ++--
+ po/sv.po     |  266 ++--
+ po/tr.po     |  262 ++--
+ po/uk.po     |  258 ++--
+ po/vi.po     |  258 ++--
+ po/zh_CN.po  |  258 ++--
+ po/zh_TW.po  |  258 ++--
+ 47 files changed, 16268 insertions(+), 10709 deletions(-)
+
+commit 0539235b31598253446b0006a344a5b014bebeb6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 4 22:21:13 2023 +0200
+
+    Prepare 3.4.0 release
+
+ AUTHORS      |   5 +-
+ ChangeLog    | 411 ++++++++++++++++++++++++++++---------------------------
+ NEWS         |  88 +++++-------
+ README.md    |  38 ++---
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     | 176 ++++++++++++------------
+ po/be.po     | 176 ++++++++++++------------
+ po/bg.po     | 176 ++++++++++++------------
+ po/ca.po     | 176 ++++++++++++------------
+ po/cs.po     | 176 ++++++++++++------------
+ po/da.po     | 176 ++++++++++++------------
+ po/de.po     | 176 ++++++++++++------------
+ po/el.po     | 176 ++++++++++++------------
+ po/en.po     | 176 ++++++++++++------------
+ po/es.po     | 176 ++++++++++++------------
+ po/fi.po     | 176 ++++++++++++------------
+ po/fr.po     | 176 ++++++++++++------------
+ po/he.po     | 176 ++++++++++++------------
+ po/hr.po     | 176 ++++++++++++------------
+ po/hu.po     | 176 ++++++++++++------------
+ po/icewm.pot | 178 ++++++++++++------------
+ po/id.po     | 258 +++++++++++++++++-----------------
+ po/it.po     | 176 ++++++++++++------------
+ po/ja.po     | 176 ++++++++++++------------
+ po/ko.po     | 176 ++++++++++++------------
+ po/lt.po     | 176 ++++++++++++------------
+ po/lv.po     | 176 ++++++++++++------------
+ po/mk.po     | 176 ++++++++++++------------
+ po/nb.po     | 176 ++++++++++++------------
+ po/nl.po     | 176 ++++++++++++------------
+ po/no.po     | 176 ++++++++++++------------
+ po/pl.po     | 176 ++++++++++++------------
+ po/pt.po     | 176 ++++++++++++------------
+ po/pt_BR.po  | 176 ++++++++++++------------
+ po/ro.po     | 176 ++++++++++++------------
+ po/ru.po     | 176 ++++++++++++------------
+ po/sk.po     | 176 ++++++++++++------------
+ po/sl.po     | 176 ++++++++++++------------
+ po/sv.po     | 176 ++++++++++++------------
+ po/tr.po     | 176 ++++++++++++------------
+ po/uk.po     | 176 ++++++++++++------------
+ po/vi.po     | 176 ++++++++++++------------
+ po/zh_CN.po  | 176 ++++++++++++------------
+ po/zh_TW.po  | 176 ++++++++++++------------
+ 46 files changed, 3744 insertions(+), 3760 deletions(-)
+
 commit f234276b8fc51f184aecfd60906486f4457dfae6
 Merge: 43f00671 6d13e912
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6136,78 +6278,3 @@ Date:   Tue Jan 11 05:17:51 2022 +0100
 
  src/wmtaskbar.cc | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
-
-commit 418ef48bddabe47236c0ea1cbebb4fd70b21a6e8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jan 10 01:19:49 2022 +0100
-
-    Fix OSS / APM confusion in some translations.
-
- po/da.po    | 4 ++--
- po/el.po    | 4 ++--
- po/es.po    | 4 ++--
- po/fi.po    | 4 ++--
- po/hu.po    | 4 ++--
- po/it.po    | 4 ++--
- po/ko.po    | 4 ++--
- po/sv.po    | 4 ++--
- po/tr.po    | 4 ++--
- po/zh_CN.po | 4 ++--
- po/zh_TW.po | 4 ++--
- 11 files changed, 22 insertions(+), 22 deletions(-)
-
-commit 82206a339e6eeaa221e1fe53faaaba9570bc2508
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jan 10 00:49:49 2022 +0100
-
-    Fix for taskbar on icewm restart when there is a fullscreen window.
-    Fix for TaskBarAutoHide. Fix for focusing address bar.
-
- src/wmtaskbar.cc | 31 +++++++++++++++++++------------
- src/wmtaskbar.h  |  3 ++-
- 2 files changed, 21 insertions(+), 13 deletions(-)
-
-commit 618d63e2a1af34757f602bb2e4ab528ad20531f5
-Author: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>
-Date:   Sun Jan 9 15:07:42 2022 +0000
-
-    Translated using Weblate (Portuguese (Brazil))
-
-    Currently translated at 98.0% (507 of 517 strings)
-
- po/pt_BR.po | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
-
-commit a71b88bd1cffb529c7a1fb1c122f281a54bc992a
-Author: Sarah Kriesch <ada.lovelace@gmx.de>
-Date:   Sat Jan 8 21:03:42 2022 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 94.0% (486 of 517 strings)
-
- po/de.po | 15 +++++++--------
- 1 file changed, 7 insertions(+), 8 deletions(-)
-
-commit b15db989cb7c84b2158d034f7c1cdd183d5844e9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jan 6 23:55:44 2022 +0100
-
-    Cancel the DelayPointerFocus timer when the mouse leaves the window.
-
- src/wmframe.cc | 5 +++++
- 1 file changed, 5 insertions(+)
-
-commit b3d48996dad7590ffb10ce9a0a13b077a812277d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jan 6 19:05:43 2022 +0100
-
-    Remove inefficient management of fullscreen layer.
-    Make TaskBarFullscreenAutoShow option more reliable.
-
- src/wmframe.cc   |  7 ++-----
- src/wmmgr.cc     | 24 +++++-------------------
- src/wmmgr.h      |  5 +----
- src/wmtaskbar.cc | 10 ++++++++--
- src/wmtaskbar.h  |  2 +-
- 5 files changed, 17 insertions(+), 31 deletions(-)

@@ -19,7 +19,7 @@ list, and various other GitHub forks.
 Release
 -------
 
-This is the `icewm-3.4.0` package, released 2023-06-04.  This release, and
+This is the `icewm-3.4.0` package, released 2023-06-05.  This release, and
 the latest version, can be obtained from [GitHub][1], using a command such as:
 
     $> git clone https://github.com/bbidulock/icewm.git

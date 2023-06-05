@@ -1,11 +1,11 @@
-icewm -- history of user-visible changes.  2023-06-04
+icewm -- history of user-visible changes.  2023-06-05
 
-Release icewm-3.4.0 released 2023-06-04
+Release icewm-3.4.0 released 2023-06-05
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.3.5...3.4.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (12):
+Bert Gijsbers <gijsbers@science.uva.nl> (18):
       Support a literal character as the last letter in a "keys" definition if
         it is from the Latin-1 character set for issue ice-wm/icewm#134.
       Support bindings to shifted keys in a "keys" definition in issue
@@ -18,6 +18,13 @@ Bert Gijsbers <gijsbers@science.uva.nl> (12):
       Support all UTF8 code points in keybindings.
       Include AltGr in the list of modifiers.
       Don't complain about empty key definitions.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.4.0 release
+      Update potfiles.
+      Include ast, eo, fa, hi, ie, ka, kk, nn, si in LINGUAS
+      Include more source files in POTFILES.in.
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
