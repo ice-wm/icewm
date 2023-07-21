@@ -48,7 +48,7 @@ applications, and to a small set of monitoring applets.
 
 The background setting application. It can assign plain background color
 or images in different formats to the X background.  Each workspace can
-have its own background.  It supports semi-transparency. Semitransparent
+have its own background.  It supports semitransparency. Semitransparent
 background image and colour can be configured. When the background image
 has changed then L<icewmbg(1)> can be notified to update the background.
 Multi-head monitor setups are fully supported.  See the L<icewmbg(1)>.
@@ -119,6 +119,11 @@ the look and feel of B<icewm>, like colors, fonts and buttons.
 
 Connect to the X11 server on I<DISPLAY>.  By default
 the environment variable C<DISPLAY> is used.
+
+=item B<-o>, B<--output=FILE>
+
+Redirect all output to I<FILE>.
+A leading tilde or environment variable is expanded.
 
 =item B<--sync>
 

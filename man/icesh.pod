@@ -765,6 +765,10 @@ Let icewm restart itself.
 
 Let icewm execute the C<SuspendCommand>.
 
+=item B<hibernate>
+
+Let icewm execute the C<HibernateCommand>.
+
 =item B<winoptions>
 
 Let icewm reload the C<winoptions>.
@@ -772,6 +776,10 @@ Let icewm reload the C<winoptions>.
 =item B<keys>
 
 Let icewm reload the C<keys> file.
+
+=item B<refresh>
+
+Let icewm refresh the desktop background.
 
 =item B<guievents>
 

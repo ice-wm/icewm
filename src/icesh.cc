@@ -2807,8 +2807,11 @@ bool IceSh::icewmAction()
         { "windowlist", ICEWM_ACTION_WINDOWLIST },
         { "restart",    ICEWM_ACTION_RESTARTWM },
         { "suspend",    ICEWM_ACTION_SUSPEND },
+        { "hibernate",  ICEWM_ACTION_HIBERNATE },
         { "winoptions", ICEWM_ACTION_WINOPTIONS },
         { "keys",       ICEWM_ACTION_RELOADKEYS },
+        { "icewmbg",    ICEWM_ACTION_ICEWMBG },
+        { "refresh",    ICEWM_ACTION_REFRESH },
     };
     for (Symbol sym : sa) {
         if (0 == strcmp(*argp, sym.name)) {

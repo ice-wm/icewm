@@ -191,20 +191,8 @@ private:
         }
         if (displayArg)
             setenv("DISPLAY", displayArg, 1);
-        if (outputArg) {
-            upath path(upath(outputArg).expand());
-            int flags = O_WRONLY|O_CREAT|O_TRUNC|O_NOCTTY|O_APPEND;
-            int fd(path.open(flags, 0600));
-            if (fd == -1) {
-                perror(path.string());
-            } else {
-                dup2(fd, 1);
-                dup2(fd, 2);
-                if (fd > 2) {
-                    close(fd);
-                }
-            }
-        }
+        if (outputArg)
+            upath::redirectOutput(outputArg);
     }
 
 public:
@@ -224,6 +212,7 @@ public:
         catchSignal(SIGTERM);
         catchSignal(SIGINT);
         catchSignal(SIGUSR1);
+        catchSignal(SIGUSR2);
     }
 
     void loadEnv(const char *scriptName) {
@@ -461,6 +450,10 @@ private:
         }
         else if (sig == SIGUSR1)
             notified();
+        else if (sig == SIGUSR2 && nobgArg == false) {
+            if (bg_pid == -1)
+                runIcewmbg();
+        }
     }
 
     void checkWMExitStatus(int status) {
