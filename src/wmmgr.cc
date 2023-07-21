@@ -946,12 +946,15 @@ void YWindowManager::handleClientMessage(const XClientMessageEvent &message) {
         case ICEWM_ACTION_CANCEL_LOGOUT:
         case ICEWM_ACTION_SHUTDOWN:
         case ICEWM_ACTION_SUSPEND:
+        case ICEWM_ACTION_HIBERNATE:
         case ICEWM_ACTION_REBOOT:
         case ICEWM_ACTION_RESTARTWM:
         case ICEWM_ACTION_WINDOWLIST:
         case ICEWM_ACTION_ABOUT:
         case ICEWM_ACTION_WINOPTIONS:
         case ICEWM_ACTION_RELOADKEYS:
+        case ICEWM_ACTION_ICEWMBG:
+        case ICEWM_ACTION_REFRESH:
             smActionListener->handleSMAction(action);
             break;
         }
@@ -3849,8 +3852,10 @@ void YWindowManager::updateScreenSize(XEvent *event) {
         if (arrangeWindowsOnScreenSizeChange && resize) {
             wmActionListener->actionPerformed(actionArrange, 0);
         }
-        if (resize)
-            manager->arrangeIcons();
+        if (resize) {
+            arrangeIcons();
+            smActionListener->handleSMAction(ICEWM_ACTION_ICEWMBG);
+        }
     }
 
     refresh();
