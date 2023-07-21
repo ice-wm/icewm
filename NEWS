@@ -1,11 +1,58 @@
-icewm -- history of user-visible changes.  2023-06-05
+icewm -- history of user-visible changes.  2023-07-21
+
+Release icewm-3.4.1 released 2023-07-21
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.4.0...3.4.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (21):
+      When the screen size changes, let icewm-session check that icewmbg is
+        running or start a new instance, for issue ice-wm/icewm#137.
+      Add a OutputFile preference and a -o,--output option to redirect all
+        output to a file, which is truncated on startup if it exceeds 5 KB.
+      Don't draw a border on quick switch when Look=flat for issue #736.
+      Add title as placeholder text in rename title dialog for ice-wm/icewm#138.
+      Give logEvent a force option.
+      Wider message box for rename title.
+      Add "refresh" command to icesh. Refresh desktop on icewm restart.
+      manpage details.
+      Prevent unlikely case of freeing the _XROOTPMAP_ID pixmap in icewmbg.
+      When canceling the quick switch, check if a focused fullscreen is in the
+        right layer.
+      Don't use OutputFile when printing information.
+      Hide the Close button in the System Dialog.
+      Deactivate the system dialog on a click outside of the window.
+      Two .pod typos.
+      Make geometry zero-based.
+      When WM_NORMAL_HINTS changes, only update the normalized dimensions, if
+        the increments have changed, for issue ice-wm/icewm#141.
+      Update potfiles.
+      Include algorithm first for portability to GCC-4.8.2.
+      Fix constness for object arrays in begin+end member functions.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Aleš Kastner <alkas@volny.cz> (1):
+      Translated using Weblate (Czech)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+ItzSelenux <74371741+ItzSelenux@users.noreply.github.com> (1):
+      Add a "Hibernate" option as a possible workaround for nosystemd systems
+        (#737)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-3.4.0 released 2023-06-05
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.3.5...3.4.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (18):
+Bert Gijsbers <gijsbers@science.uva.nl> (19):
       Support a literal character as the last letter in a "keys" definition if
         it is from the Latin-1 character set for issue ice-wm/icewm#134.
       Support bindings to shifted keys in a "keys" definition in issue
@@ -28,6 +75,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (18):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.4.0 release
 
 Temuri Doghonadze <temuri.doghonadze@gmail.com> (2):
       Added translation using Weblate (Georgian)
@@ -365,38 +413,4 @@ Vincent Legoll <vincent.legoll@gmail.com> (1):
 
 dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (1):
       Dependabot from 2 to 3 (#686)
-
-
-Release icewm-3.3.0 released 2022-12-20
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.2.3...3.3.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (21):
-      Prevent a derefence of a null-Pixel in xftColor.
-      Add "getClass" and "setClass" commands to icesh.
-      Support tabs in task grouping.
-      Use spaces instead of dots when printing WM_COMMAND.
-      When a focused window hides or rolls up, focus some other window.
-      When looking for a focusable window, avoid rolled up windows.
-      Fix for setting focus on passive motif dialogs for issue #400 and
-        ice-wm/icewm#110.
-      Fallback to rolled up windows in the second pass of getLastFocus.
-      Use CurrentTime when setting focus to a passive client in the timeout.
-      On icon not found, report dimensions.
-      Don't refocus a focused window in focusLastWindow.
-      Don't activate an active window when receiving an activation message.
-      Ignore duplicate map requests.
-      Let icesh implicitly select windows at most once.
-      Add support for nanosvg for issue #695.
-      Add preference ToolTipIcon=1 for issue #637.
-      Add nanosvg to .gitignore.
-      Remove unneeded logevent from icesh.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.3.0 release
-
-Mehmet Akif 9oglu <madanadam@gmail.com> (1):
-      Translated using Weblate (Turkish)
 
