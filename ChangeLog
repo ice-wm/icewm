@@ -1,5 +1,276 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 40600c375fb7dec0cab827445fadfe2749b0efb9
+Merge: 147e4cfe b56c0559
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Sep 11 04:41:43 2023 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit b56c0559fe4afab83d0316480229b7ecb3cfb769
+Merge: 6ff46c17 0de955ce
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Sep 11 04:40:41 2023 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 147e4cfebf50dfb4260bb93e9b171ce8cc7111e5
+Merge: a6dc4ad1 ec3ddbe5
+Author: gijsbers <gijsbers@users.noreply.github.com>
+Date:   Mon Sep 11 03:28:24 2023 +0200
+
+    Merge pull request #145 from ice-wm/dependabot
+
+commit ec3ddbe54c5ffebdf539e6f6ef873ff6b3c2a0c7
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Mon Sep 11 01:18:59 2023 +0000
+
+    Bump actions/checkout from 3 to 4
+
+    Bumps [actions/checkout](https://github.com/actions/checkout) from 3 to 4.
+    - [Release notes](https://github.com/actions/checkout/releases)
+    - [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+    - [Commits](https://github.com/actions/checkout/compare/v3...v4)
+
+    ---
+    updated-dependencies:
+    - dependency-name: actions/checkout
+      dependency-type: direct:production
+      update-type: version-update:semver-major
+    ...
+
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+ .github/workflows/cmake.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0de955ce6eb1b61c286d19ab388e67c4b0b77563
+Author: Luna  Jernberg <bittin@opensuse.org>
+Date:   Sat Sep 9 02:51:11 2023 +0000
+
+    Translated using Weblate (Swedish)
+
+    Currently translated at 100.0% (526 of 526 strings)
+
+ po/sv.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit abe473b48b3d2dcdb2dde0ee2b86d9004cc2996a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Sep 5 04:35:39 2023 +0200
+
+    Support tabs in the window list menu.
+
+ src/wmwinmenu.cc | 41 ++++++++++++++++++++++++-----------------
+ 1 file changed, 24 insertions(+), 17 deletions(-)
+
+commit e998895c2aa9b2460d28f39b73a2daa456653bee
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Tue Sep 5 04:34:40 2023 +0200
+
+    Bump actions/checkout from 3 to 4 (#745)
+
+ .github/workflows/cmake.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 30be0d266176dea33870ffb36986704796d5424b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Sep 4 22:33:34 2023 +0200
+
+    Always update the Window List Menu action handler for ice-wm/icewm#144.
+
+ src/wmwinmenu.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6acb3f018074989e9589bb17288f565ef50211f6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Aug 19 23:49:12 2023 +0200
+
+    Prefer 'that' over 'which' when restrictive.
+
+ src/WinMgr.h        | 2 +-
+ src/default.h       | 6 +++---
+ src/icehelp.cc      | 2 +-
+ src/themes.cc       | 2 +-
+ src/upath.cc        | 4 ++++
+ src/upath.h         | 1 +
+ src/wmconfig.h      | 2 +-
+ src/wmmenu.cc       | 2 +-
+ src/wmprog.h        | 2 +-
+ src/ycollections.cc | 2 +-
+ src/ycollections.h  | 2 +-
+ src/yicon.cc        | 4 ++--
+ src/ypointer.h      | 4 ++--
+ src/yxtray.cc       | 2 +-
+ 14 files changed, 21 insertions(+), 16 deletions(-)
+
+commit 2c8244e4b01c1c0923522f4c8ca7fef54806c9c0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Aug 19 19:02:04 2023 +0200
+
+    Prefer 'that' over 'which' when restrictive.
+
+ man/icesh.pod              | 42 ++++++++++++-------------
+ man/icesound.pod           |  5 ++-
+ man/icewm-env.pod          |  2 +-
+ man/icewm-menu-xrandr.pod  |  4 +--
+ man/icewm-menu.pod         |  2 +-
+ man/icewm-preferences.pod  | 16 +++++-----
+ man/icewm-prefoverride.pod |  4 +--
+ man/icewm-programs.pod     |  2 +-
+ man/icewm-session.pod      |  2 +-
+ man/icewm-set-gnomewm.pod  |  2 +-
+ man/icewm-startup.pod      |  2 +-
+ man/icewm-toolbar.pod      |  2 +-
+ man/icewm-winoptions.pod   |  2 +-
+ man/icewm.pod              | 70 ++++++++++++++++++++----------------------
+ man/icewmtray.pod          |  2 +-
+ 15 files changed, 78 insertions(+), 81 deletions(-)
+
+commit 7fbd3db2ec3ee9e346b6de02b2ef83adcd6c99bc
+Author: Gustavs Kivlenieks <kivlenieksgustavs@proton.me>
+Date:   Fri Aug 18 12:12:36 2023 +0000
+
+    Translated using Weblate (Latvian)
+
+    Currently translated at 31.1% (164 of 526 strings)
+
+ po/lv.po | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+commit 2d5f3e706f732aef013656a75ccdfd18c1fd7c25
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Aug 18 13:01:21 2023 +0200
+
+    Prefer 'that' over 'which' when restrictive.
+
+ man/icewm-menu-fdo.pod | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit ca951c124a1cfbe865d5e4be3f8e75013a198356
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Aug 12 16:28:43 2023 +0200
+
+    Add a --terminal option to icewm-menu-fdo to define the preferred
+    terminal. Otherwise examine the TERMINAL environment variable for a
+    possible terminal. If the given terminal cannot be found, see if other
+    supported terminals can be run instead.
+
+ man/icewm-menu-fdo.pod |  6 ++++++
+ src/fdomenu.cc         | 23 +++++++++++++++--------
+ 2 files changed, 21 insertions(+), 8 deletions(-)
+
+commit f53bf5f649b6e4abca84123b2061c76d8aa200e0
+Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
+Date:   Tue Aug 8 12:59:18 2023 +0000
+
+    Translated using Weblate (Indonesian)
+
+    Currently translated at 100.0% (526 of 526 strings)
+
+ po/id.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 6a950883baea970ad01913a722b533321f64c709
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 31 13:42:31 2023 +0200
+
+    Android Termux.
+
+ src/misc.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit af59afcd026aeae095d4ccdbc27d163f19178bd6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 25 21:47:20 2023 +0200
+
+    If only the base dimensions of WM_NORMAL_HINTS has changed, continue
+    with normal processing in updateMwmHints, for issue ice-wm/icewm#141.
+    This fixes restoring from fullscreen with F11 in chromium.
+
+ src/wmframe.cc | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 32df579651ad6575eb7001f42253c79b763c2575
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Tue Jul 25 07:13:47 2023 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (526 of 526 strings)
+
+ po/tr.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 766cd7386de6b82375d5485f7818eab872e946c0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 24 20:49:21 2023 +0200
+
+    Center icerun and add -r option.
+
+ src/icerun.cc | 96 ++++++++++++-------------------------------------------
+ 1 file changed, 20 insertions(+), 76 deletions(-)
+
+commit 5b042b2f402571d5300bc35a09daa2f642801a6a
+Author: Hugo Carvalho <hugokarvalho@hotmail.com>
+Date:   Sun Jul 23 09:32:04 2023 +0000
+
+    Translated using Weblate (Portuguese)
+
+    Currently translated at 100.0% (526 of 526 strings)
+
+ po/pt.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit b52d6139395e96df181a611a3cfd9c7ed7e41cf3
+Author: Dmitriy Khanzhin <jinn@altlinux.org>
+Date:   Sat Jul 22 15:36:52 2023 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (526 of 526 strings)
+
+ po/ru.po | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit 14cd34dc2ff19bec167ff9c1ee1eed2081ca9a9a
+Author: Freek de Kruijf <freek@opensuse.org>
+Date:   Fri Jul 21 20:20:14 2023 +0000
+
+    Translated using Weblate (Dutch)
+
+    Currently translated at 100.0% (526 of 526 strings)
+
+ po/nl.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit ff2fd45442ef06a82682262061712c223ba73a1e
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Date:   Fri Jul 21 14:28:50 2023 +0000
+
+    Translated using Weblate (Slovak)
+
+    Currently translated at 100.0% (526 of 526 strings)
+
+ po/sk.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit a6dc4ad18f1b4f5400548c124e1d551700f5b4c0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Jul 21 16:17:35 2023 +0200
+
+    Prepare 3.4.1 release
+
+ AUTHORS      |   9 +-
+ ChangeLog    | 725 +++++++++++++++++++++++++++++--------------------------
+ NEWS         |  86 ++++---
+ README.md    |  38 +--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ 7 files changed, 460 insertions(+), 412 deletions(-)
+
 commit 02feebb509b3368985e61618e9c5fa6db8a872cd
 Merge: c1a5c682 6ff46c17
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6029,285 +6300,3 @@ Date:   Sun Apr 17 20:13:28 2022 +0200
  man/icewm.pod          |   4 +-
  src/fdomenu.cc         | 149 ++++++++++++++++++++++++++-------------------
  4 files changed, 142 insertions(+), 79 deletions(-)
-
-commit aee432cf32c3a67dd431202a73af50501270df68
-Author: Jan Papež <honyczek@centrum.cz>
-Date:   Wed Apr 6 20:37:34 2022 +0000
-
-    Translated using Weblate (Czech)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/cs.po | 42 ++++++++++++++++++++----------------------
- 1 file changed, 20 insertions(+), 22 deletions(-)
-
-commit 311144a2d19c19d8024bb70ee741686276a7dc21
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Mar 26 14:29:08 2022 +0100
-
-    Fix format string in da.po.
-
- po/da.po | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 7f545ab8b5412c8bae637a28501ee7e6dd68ad1b
-Author: Alexander Mortensen <Mortensen.alexander@gmail.com>
-Date:   Wed Mar 23 16:35:25 2022 +0000
-
-    Translated using Weblate (Danish)
-
-    Currently translated at 99.8% (516 of 517 strings)
-
- po/da.po | 181 +++++++++++++++++++++++------------------------------------
- 1 file changed, 71 insertions(+), 110 deletions(-)
-
-commit 21b4def2ffc7f83d4ccc724ab8b3d9774ed03792
-Author: Alexander Mortensen <Mortensen.alexander@gmail.com>
-Date:   Wed Mar 23 16:12:39 2022 +0000
-
-    Translated using Weblate (Danish)
-
-    Currently translated at 90.1% (466 of 517 strings)
-
- po/da.po | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
-
-commit a6aa10b27cfae56c12894c3d662966a950c93b09
-Author: Sergey Mashkov <cy6ergn0m@gmail.com>
-Date:   Tue Mar 15 23:20:16 2022 +0000
-
-    Translated using Weblate (Russian)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/ru.po | 30 +++++++++++++++---------------
- 1 file changed, 15 insertions(+), 15 deletions(-)
-
-commit a4a6ab11395242aeee6e13bbcfec824f53ff412d
-Author: Tommi Nieminen <software@legisign.org>
-Date:   Thu Mar 10 13:03:01 2022 +0000
-
-    Translated using Weblate (Finnish)
-
-    Currently translated at 86.0% (445 of 517 strings)
-
- po/fi.po | 346 +++++++++++++++++++++++++++--------------------------------
- 1 file changed, 158 insertions(+), 188 deletions(-)
-
-commit efab2afcd4509e1cb8af4fb60a5e2d7b3b5bcd50
-Author: Mehmet Akif 9oglu <madanadam@gmail.com>
-Date:   Sat Mar 5 13:41:32 2022 +0000
-
-    Translated using Weblate (Turkish)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/tr.po | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 271af0b874a6b96ffe69a8e7a350001ff827125a
-Author: Mehmet Akif 9oglu <madanadam@gmail.com>
-Date:   Sat Mar 5 08:06:17 2022 +0000
-
-    Translated using Weblate (Turkish)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/tr.po | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit ffc40dda8be478bc397d9fbc480fdfda62a999ab
-Author: Tommi Nieminen <software@legisign.org>
-Date:   Fri Mar 4 09:00:06 2022 +0000
-
-    Translated using Weblate (Finnish)
-
-    Currently translated at 55.5% (287 of 517 strings)
-
- po/fi.po | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
-
-commit c822e186f4785be738a816c8f4ce27a6ee9dbcf6
-Author: Gemineo <vistatec@gemineo.de>
-Date:   Fri Mar 4 11:11:33 2022 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/de.po | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 5d26d18ebbfbf14914cb3f261ab91e590a1f9bf0
-Author: Mehmet Akif 9oglu <madanadam@gmail.com>
-Date:   Tue Mar 1 17:40:56 2022 +0000
-
-    Translated using Weblate (Turkish)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/tr.po | 118 ++++++++++++++++++++++++++++-------------------------------
- 1 file changed, 55 insertions(+), 63 deletions(-)
-
-commit e021b213612edcdcf9244fc60881dff0e4eff80b
-Author: Sophie Leroy <sophie@stoquart.com>
-Date:   Wed Feb 23 16:53:53 2022 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/fr.po | 42 ++++++++++++++++++++----------------------
- 1 file changed, 20 insertions(+), 22 deletions(-)
-
-commit 3cb28f607e2d817833c55ad891a1501432bcc82d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Feb 23 19:19:26 2022 +0100
-
-    Prepare 2.9.6 release
-
- AUTHORS      |  14 +-
- ChangeLog    | 635 +++++++++++++++++++++++++++----------------------------
- NEWS         | 134 +++++-------
- README.md    |  36 ++--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  88 ++++----
- po/be.po     |  88 ++++----
- po/bg.po     |  88 ++++----
- po/ca.po     |  88 ++++----
- po/cs.po     |  88 ++++----
- po/da.po     |  88 ++++----
- po/de.po     | 102 ++++-----
- po/el.po     |  88 ++++----
- po/en.po     |  88 ++++----
- po/es.po     | 106 +++++-----
- po/fi.po     |  88 ++++----
- po/fr.po     |  88 ++++----
- po/he.po     |  88 ++++----
- po/hr.po     |  88 ++++----
- po/hu.po     |  88 ++++----
- po/icewm.pot |  90 ++++----
- po/id.po     |  88 ++++----
- po/it.po     | 130 ++++++------
- po/ja.po     |  88 ++++----
- po/ko.po     |  88 ++++----
- po/lt.po     |  88 ++++----
- po/lv.po     |  88 ++++----
- po/mk.po     |  88 ++++----
- po/nb.po     |  88 ++++----
- po/nl.po     |  88 ++++----
- po/no.po     |  88 ++++----
- po/pl.po     |  88 ++++----
- po/pt.po     |  88 ++++----
- po/pt_BR.po  | 118 +++++------
- po/ro.po     |  88 ++++----
- po/ru.po     |  88 ++++----
- po/sk.po     |  88 ++++----
- po/sl.po     |  88 ++++----
- po/sv.po     |  88 ++++----
- po/tr.po     |  88 ++++----
- po/uk.po     |  88 ++++----
- po/vi.po     |  88 ++++----
- po/zh_CN.po  |  98 ++++-----
- po/zh_TW.po  |  98 ++++-----
- 46 files changed, 2171 insertions(+), 2220 deletions(-)
-
-commit 68f15fe2fe57dcc57847fe8b0984d07d9af5e9fe
-Merge: 842af4cd e63c67a6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Feb 23 19:09:30 2022 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit e63c67a69d567b9bfcf1ab56436e82bd1a73a677
-Merge: c8ee5c87 714b979d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Feb 23 19:08:03 2022 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 714b979de132369165830a4b6f0fd132a7eb4cd6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Feb 23 08:34:22 2022 +0100
-
-    Update keys.
-
- man/icewm-keys.pod | 36 ++++++++++++++++++++++++++----------
- 1 file changed, 26 insertions(+), 10 deletions(-)
-
-commit b17b5df2dccbadcaf038a99771446b87ed4b04e0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Feb 22 22:18:00 2022 +0100
-
-    Support workspace names "next" and "prev" in icesh for issue #640.
-
- man/icesh.pod |  6 ++++--
- src/icesh.cc  | 15 +++++++++++++--
- 2 files changed, 17 insertions(+), 4 deletions(-)
-
-commit 23b22a34be918d456e0d08f6610c89108b62afc1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Feb 21 23:46:24 2022 +0100
-
-    Let CPUs share a single timer. Adjust to changes to taskBarCPUSamples.
-
- src/acpustatus.cc | 22 ++++++++++++++++++----
- src/acpustatus.h  |  5 ++++-
- 2 files changed, 22 insertions(+), 5 deletions(-)
-
-commit c7fbd3ec3132ee5f916f85c72a581ff58e83b310
-Author: Antonio Simón <antonio@trans-mission.com>
-Date:   Mon Feb 21 19:41:05 2022 +0000
-
-    Translated using Weblate (Spanish)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/es.po | 133 ++++++++++++++++++++++++-----------------------------------
- 1 file changed, 55 insertions(+), 78 deletions(-)
-
-commit 4b7916c6169fd7fbf765621f18ac5438de359c9f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Feb 21 22:44:17 2022 +0100
-
-    Share a single temperature object and free it on exit.
-
- src/acpustatus.cc | 11 ++++++++++-
- src/acpustatus.h  |  5 +++--
- 2 files changed, 13 insertions(+), 3 deletions(-)
-
-commit c90772630a18dcd0e876e9b453d14ea5a61f7dbf
-Author: Gemineo <vistatec@gemineo.de>
-Date:   Mon Feb 21 16:12:00 2022 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/de.po | 52 +++++++++++-----------------------------------------
- 1 file changed, 11 insertions(+), 41 deletions(-)
-
-commit 4f1fb8da47a613181a6113cdea83055651d1d4b9
-Author: Davide Aiello <davide.aiello@novilingulists.com>
-Date:   Mon Feb 21 10:33:49 2022 +0000
-
-    Translated using Weblate (Italian)
-
-    Currently translated at 100.0% (517 of 517 strings)
-
- po/it.po | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit 7a2d2c50b363f38cfd9a82fba938980d28f76985
-Author: Gemineo <vistatec@gemineo.de>
-Date:   Mon Feb 21 07:54:33 2022 +0000
-
-    Translated using Weblate (German)
-
-    Currently translated at 94.0% (486 of 517 strings)
-
- po/de.po | 19 +++++++++----------
- 1 file changed, 9 insertions(+), 10 deletions(-)

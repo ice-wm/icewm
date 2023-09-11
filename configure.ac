@@ -2,10 +2,10 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([icewm],[3.4.1],
+AC_INIT([icewm],[3.4.2],
         [https://github.com/bbidulock/icewm/issues],
         [icewm],[https://ice-wm.org])
-AC_REVISION([3.4.1])
+AC_REVISION([3.4.2])
 
 # set better defaults
 AC_PREFIX_DEFAULT([/usr])
@@ -22,13 +22,13 @@ AC_CONFIG_AUX_DIR([scripts])
 AC_USE_SYSTEM_EXTENSIONS
 AC_CANONICAL_TARGET
 
-DATE='2023-07-21'
+DATE='2023-09-11'
 AC_SUBST([DATE])
 
-MDOCDATE='July 21, 2023'
+MDOCDATE='September 11, 2023'
 AC_SUBST([MDOCDATE])
 
-BRANCH='3.4.1'
+BRANCH='3.4.2'
 AC_SUBST([BRANCH])
 
 APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icehelp'

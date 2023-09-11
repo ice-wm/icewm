@@ -1,11 +1,67 @@
-icewm -- history of user-visible changes.  2023-07-21
+icewm -- history of user-visible changes.  2023-09-11
+
+Release icewm-3.4.2 released 2023-09-11
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.4.1...3.4.2
+
+Bert Gijsbers <gijsbers@science.uva.nl> (11):
+      Center icerun and add -r option.
+      If only the base dimensions of WM_NORMAL_HINTS has changed, continue with
+        normal processing in updateMwmHints, for issue ice-wm/icewm#141. This
+        fixes restoring from fullscreen with F11 in chromium.
+      Android Termux.
+      Add a --terminal option to icewm-menu-fdo to define the preferred
+        terminal. Otherwise examine the TERMINAL environment variable for a
+        possible terminal. If the given terminal cannot be found, see if other
+        supported terminals can be run instead.
+      Prefer 'that' over 'which' when restrictive.
+      Prefer 'that' over 'which' when restrictive.
+      Prefer 'that' over 'which' when restrictive.
+      Always update the Window List Menu action handler for ice-wm/icewm#144.
+      Support tabs in the window list menu.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (2):
+      Bump actions/checkout from 3 to 4 (#745)
+      Bump actions/checkout from 3 to 4
+
+Dmitriy Khanzhin <jinn@altlinux.org> (1):
+      Translated using Weblate (Russian)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Gustavs Kivlenieks <kivlenieksgustavs@proton.me> (1):
+      Translated using Weblate (Latvian)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
+      Translated using Weblate (Indonesian)
+
+Luna  Jernberg <bittin@opensuse.org> (1):
+      Translated using Weblate (Swedish)
+
+Mehmet Akif 9oglu <madanadam@gmail.com> (1):
+      Translated using Weblate (Turkish)
+
+gijsbers <gijsbers@users.noreply.github.com> (1):
+      Merge pull request #145 from ice-wm/dependabot
+
 
 Release icewm-3.4.1 released 2023-07-21
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.4.0...3.4.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (21):
+Bert Gijsbers <gijsbers@science.uva.nl> (22):
       When the screen size changes, let icewm-session check that icewmbg is
         running or start a new instance, for issue ice-wm/icewm#137.
       Add a OutputFile preference and a -o,--output option to redirect all
@@ -32,6 +88,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (21):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.4.1 release
 
 Aleš Kastner <alkas@volny.cz> (1):
       Translated using Weblate (Czech)
@@ -347,70 +404,4 @@ Yaron Shahrabani <sh.yaron@gmail.com> (1):
 
 neome <neome@posteo.me> (1):
       Translated using Weblate (Polish)
-
-
-Release icewm-3.3.1 released 2023-01-23
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.3.0...3.3.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (31):
-      Add support for nanosvg to gdk-pixbuf rendering and to cmake build.
-      Set DoNotCover hint on taskbar when layer is Dock.
-      Report the chosen audio interface in configure for issue #699.
-      Consider that the keyboard may have been changed externally for #698.
-      Free tray gradients when done.
-      Fix compilation of iceclock.
-      Fix tiny memory leak.
-      Delete the manager on exit.
-      Verify that the minimum size hints are positive, before comparing them to
-        maximum.
-      Increase the timeout for the dynamic menu generator to 2.0 seconds.
-      Don't resize the window when a client makes small adjustments to the
-        WM_NORMAL_HINTS property for issue ice-wm/icewm#115.
-      Allow rolled up windows to be moved vertically for issue ice-wm/icewm#77.
-      Compute the adjusted normalized dimensions on the basis of the previous
-        normalized dimensions.
-      Let winoption "ignorePositionHint" also ignore USPosition for issue #701.
-      Adjust normalized dimensions from the outer dimensions, as this avoids
-        accumulating rounding errors.
-      On screen change, update taskbar location before work area, for
-        ice-wm/icewm#116.
-      Make updateLocation public.
-      Don't reactivate a focused window when RaisOnClick is guaranteed.
-      Also spy on RandR events.
-      Also activate a focused rollup.
-      Drop "sync" from examples, because that is now done automatically.
-      Drop "shell", because no shell is used.
-      When the "ignoreOverrideRedirect" winoption is set, then clear the
-        override_redirect flag in the X window attributes in order to receive
-        proper resize events.
-      Cache 3 GCs for rendering XImages to Pixmaps to reduce memory allocations.
-      Prevent a compiler warning for runProgram.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Check the return value of write calls in icesh to avoid warnings.
-      Two pragmas to avoid two irrelevant gcc warnings.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.3.1 release
-
-Baurzhan Muftakhidinov <baurthefirst@gmail.com> (4):
-      Added translation using Weblate (Kazakh)
-      Translated using Weblate (Kazakh)
-      Translated using Weblate (Kazakh)
-      Translated using Weblate (Kazakh)
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-Vincent Legoll <vincent.legoll@gmail.com> (1):
-      Translated using Weblate (French)
-
-dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (1):
-      Dependabot from 2 to 3 (#686)
 
