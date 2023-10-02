@@ -1,5 +1,122 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 5fa4e90d2d5c3343f26128c9d4d4613e4e9ca300
+Merge: 8bd5d4de bb673f56
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 2 20:05:52 2023 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit bb673f56971e08c887c00aa5617ba23a811dfa4d
+Merge: b56c0559 f837124a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Oct 2 20:05:24 2023 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit f837124ab1c018791994ce44d3389aac047355f2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Sep 28 19:04:26 2023 +0200
+
+    After daemonizing reopen the output file.
+
+ src/icewmbg.cc | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit 11868632e80ca5498af953e720447575a3547bbe
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Sep 27 23:44:19 2023 +0200
+
+    Let icewmbg interpret command-line arguments relative to the current
+    working directory for issue #497. Let icewmbg accept additional
+    arguments as images or directories. Add -f,--fork option to icewmbg. Add
+    --postpreferences option to icewmbg.
+
+ man/icesh.pod      |   1 +
+ man/icewm-menu.pod |   8 +--
+ man/icewmbg.pod    |  23 ++++++---
+ src/icewmbg.cc     | 133 +++++++++++++++++++++++++++++++++++++++----------
+ 4 files changed, 128 insertions(+), 37 deletions(-)
+
+commit 210fff6a39d24c34432f822a0c24629ef1964fba
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Sep 21 00:00:42 2023 +0200
+
+    Add DoNotManage winoption for issues #653 and ice-wm/icewm#136.
+
+ man/icewm-winoptions.pod |  1 +
+ man/icewmhint.pod        |  1 +
+ src/wmframe.h            |  1 +
+ src/wmmgr.cc             | 26 ++++++++++++++++++++++++--
+ src/wmmgr.h              |  1 +
+ src/wmoption.cc          |  1 +
+ 6 files changed, 29 insertions(+), 2 deletions(-)
+
+commit 23f4fb3fa506039f436df14f30313878036cb926
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Sep 19 18:10:13 2023 +0200
+
+    Document new pref "TaskBarShowWindowTitles".
+
+ man/icewm-preferences.pod | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 84d26eb3f35c977765c4b025f22cc3682115859f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Sep 18 20:59:23 2023 +0200
+
+    Add pref "TaskBarShowTransientWindows" to only show window titles on
+    task buttons when it is true, which is the default, for issue 633.
+
+ src/atasks.cc | 8 +++++---
+ src/default.h | 4 +++-
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+commit 6f4a7b4762a9539aa18f00a3acf63c33b953a42d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Sep 18 00:12:56 2023 +0200
+
+    When cascading, include the border size for bbidulock/icewm#747.
+
+ src/wmmgr.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 130e835a90a0a44ee11c95749828fcab5621436b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Sep 12 18:25:02 2023 +0200
+
+    Simplify APM file handling with class SysFS for bbidulock/icewm#746.
+
+ src/aapm.cc | 231 ++++++++++++++++++++++++--------------------------------
+ src/aapm.h  |  11 +++
+ 2 files changed, 109 insertions(+), 133 deletions(-)
+
+commit 0458282fd8337ef8614766039619302513aa4717
+Author: diego roversi <diegor@tiscali.it>
+Date:   Tue Sep 12 11:24:29 2023 +0200
+
+    Use capacity when battery doesn't have information about full
+    charge. (#746)
+
+ src/aapm.cc | 33 ++++++++++++++++++++++++++++++++-
+ 1 file changed, 32 insertions(+), 1 deletion(-)
+
+commit 8bd5d4de14d7ab64a46b8dcaaa077f653712ab69
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Sep 11 04:46:39 2023 +0200
+
+    Prepare 3.4.2 release
+
+ AUTHORS      |  21 ++-
+ ChangeLog    | 553 +++++++++++++++++++++++++++----------------------------
+ NEWS         | 127 ++++++-------
+ README.md    |  38 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ 7 files changed, 367 insertions(+), 386 deletions(-)
+
 commit 40600c375fb7dec0cab827445fadfe2749b0efb9
 Merge: 147e4cfe b56c0559
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6167,136 +6284,3 @@ Date:   Mon May 2 00:38:47 2022 +0200
 
     Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
     icewm-1-4-BRANCH
-
-commit 6db922b6a7582e4e06fd8568739fc0e638454ea3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 1 12:34:23 2022 +0200
-
-    Fix for saving keyboard layouts in --rewrite-preferences.
-
- src/wmsave.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit afaa5192a49472e5c692c1c9cfa55952431f90b9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 1 00:49:51 2022 +0200
-
-    Faster and more reliable restart of icewmbg.
-
- src/icewmbg.cc      | 73 +++++++++++++++++++++++++++++++++++++++++--------
- src/icewmbg_prefs.h |  2 +-
- 2 files changed, 63 insertions(+), 12 deletions(-)
-
-commit 7f02ed5a4da7a156edd2f6e4768eb0f655cec6dd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 1 00:48:46 2022 +0200
-
-    Add themable ColorKeyboardLayoutText.
-
- man/icewm-preferences.pod | 6 +++++-
- src/akeyboard.cc          | 2 +-
- src/themable.h            | 4 +++-
- 3 files changed, 9 insertions(+), 3 deletions(-)
-
-commit 54224aac565f48f94550827670ab69a6dd1dcf91
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 22 23:39:57 2022 +0200
-
-    Add KeySysKeyboardNext to switch to next keyboard layout for issue
-    ice-wm/icewm#90.
-
- man/icewm.pod | 9 +++++++--
- src/bindkey.h | 2 ++
- src/default.h | 1 +
- src/wmmgr.cc  | 6 ++++++
- 4 files changed, 16 insertions(+), 2 deletions(-)
-
-commit a5052c7f2273b23c5b34a1e28c985239545f075e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Apr 22 23:38:19 2022 +0200
-
-    Use the ColorClockText for keyboard status for issue ice-wm/icewm#90.
-
- src/akeyboard.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit d9b093e7172da49c86ad56e725deeeea585c0443
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Apr 19 18:25:42 2022 +0200
-
-    Document alternative keypad handling in icewm-keys(1).
-
- man/icewm-keys.pod | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
-
-commit a27a9db8eba708247cd904ee73b4d700a298a103
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Apr 19 18:24:38 2022 +0200
-
-    Handle right-to-left languages in icewm-menu-fdo.
-
- src/fdomenu.cc | 34 ++++++++++++++++++++++++++++++----
- 1 file changed, 30 insertions(+), 4 deletions(-)
-
-commit a1aa0dc479f89e07debafae7c8bd06017a130b2e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Apr 19 09:47:02 2022 +0200
-
-    Check if the case insensitive GenericName is not in the Name field,
-    for issue #646.
-
- src/fdomenu.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit c2cabaeb3829a813001e1f01ee01fd51c5b26e4d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 18 00:00:12 2022 +0200
-
-    Update help usage for icewm-menu-fdo.
-
- src/fdomenu.cc | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
-
-commit f15a1a0906869059942e95d4eea2393e1ddbac38
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 17 23:48:25 2022 +0200
-
-    Prefer head2 over head1 in pod files.
-
- man/icehelp.pod            | 16 ++++++++--------
- man/icesh.pod              | 26 +++++++++++++-------------
- man/icesound.pod           | 18 +++++++++---------
- man/icewm-env.pod          | 18 +++++++++---------
- man/icewm-focus_mode.pod   | 18 +++++++++---------
- man/icewm-keys.pod         | 18 +++++++++---------
- man/icewm-menu-fdo.pod     | 28 ++++++++++++++--------------
- man/icewm-menu-xrandr.pod  | 16 ++++++++--------
- man/icewm-menu.pod         | 18 +++++++++---------
- man/icewm-preferences.pod  | 18 +++++++++---------
- man/icewm-prefoverride.pod | 14 +++++++-------
- man/icewm-programs.pod     | 18 +++++++++---------
- man/icewm-session.pod      | 20 ++++++++++----------
- man/icewm-set-gnomewm.pod  | 14 +++++++-------
- man/icewm-shutdown.pod     | 14 +++++++-------
- man/icewm-startup.pod      | 16 ++++++++--------
- man/icewm-theme.pod        | 18 +++++++++---------
- man/icewm-toolbar.pod      | 18 +++++++++---------
- man/icewm-winoptions.pod   | 20 ++++++++++----------
- man/icewm.pod              | 28 ++++++++++++++--------------
- man/icewmbg.pod            | 20 ++++++++++----------
- man/icewmhint.pod          | 18 +++++++++---------
- man/icewmtray.pod          | 18 +++++++++---------
- 23 files changed, 215 insertions(+), 215 deletions(-)
-
-commit d188e71fe5766376760a1af4f9e7be4c8a078928
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 17 20:13:28 2022 +0200
-
-    Add -g,--generic and -o,--output options to icewm-menu-fdo for issue
-    #646. Document all icewm-menu-fdo options.
-
- man/icewm-menu-fdo.pod |  65 ++++++++++++++++----
- man/icewm-menu.pod     |   3 +-
- man/icewm.pod          |   4 +-
- src/fdomenu.cc         | 149 ++++++++++++++++++++++++++-------------------
- 4 files changed, 142 insertions(+), 79 deletions(-)
