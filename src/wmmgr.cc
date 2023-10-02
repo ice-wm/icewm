@@ -1573,8 +1573,8 @@ void YWindowManager::getCascadePlace(YFrameWindow *frame, int &lastX, int &lastY
     y = lastY;
     y -= min(frame->borderYN(), int(topSideVerticalOffset));
 
-    lastX += wsTitleBar;
-    lastY += wsTitleBar;
+    lastX += wsTitleBar + frame->borderXN();
+    lastY += wsTitleBar + frame->borderYN();
     if (int(y + h) >= My) {
         y = my;
         lastY = wsTitleBar;
@@ -1736,6 +1736,27 @@ setGeo:
     frame->setNormalGeometryOuter(posX, posY, posWidth, posHeight);
 }
 
+bool YWindowManager::isManageable(Window win, bool mapClient) {
+    bool manage = true;
+    if (WindowOptions::anyOption(YFrameWindow::foDoNotManage)) {
+        ClassHint hint;
+        if (hint.get(win) &&
+            nonempty(hint.res_name) && hint.res_name[0] != '/')
+        {
+            WindowOption wo(hint.res_name);
+            if (hintOptions)
+                hintOptions->mergeWindowOption(wo, hint.res_name, false);
+            if (defOptions)
+                defOptions->mergeWindowOption(wo, hint.res_name, false);
+            if (wo.hasOption(YFrameWindow::foDoNotManage))
+                manage = false;
+            if (manage == false && mapClient)
+                XMapWindow(xapp->display(), win);
+        }
+    }
+    return manage;
+}
+
 bool YWindowManager::ignoreOverride(Window win, const XWindowAttributes& attr,
                                     int* layer) {
     bool ignoring = false;
@@ -1788,8 +1809,9 @@ YFrameClient* YWindowManager::allocateClient(Window win, bool mapClient) {
     XWindowAttributes attributes;
     int layer = WinLayerInvalid;
     if (XGetWindowAttributes(xapp->display(), win, &attributes) &&
-        (attributes.override_redirect == false ||
-         ignoreOverride(win, attributes, &layer)) &&
+        (attributes.override_redirect
+            ? ignoreOverride(win, attributes, &layer)
+            : isManageable(win, mapClient)) &&
         (mapClient || attributes.map_state > IsUnmapped))
     {
         client = new YFrameClient(nullptr, nullptr, win,
