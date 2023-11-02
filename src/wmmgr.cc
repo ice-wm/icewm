@@ -2159,7 +2159,7 @@ YFrameWindow *YWindowManager::getLastFocus(bool skipAllWorkspaces, int workspace
         for (; pass < 3; pass++) {
             YFrameIter w = focusedReverseIterator();
             while (++w) {
-                if (!w->client()->adopted())
+                if (!w->client() || !w->client()->adopted())
                     continue;
                 if (w->isUnmapped() && (pass < 2 || !w->isRollup()))
                     continue;
@@ -3030,7 +3030,7 @@ void YWindowManager::setNetDesktopNames(int count) {
 }
 
 void YWindowManager::setDesktopNames(int count) {
-    MSG(("setting: %ld desktop names", count));
+    MSG(("setting: %d desktop names", count));
     setNetDesktopNames(count);
 }
 
