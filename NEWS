@@ -1,11 +1,45 @@
-icewm -- history of user-visible changes.  2023-10-02
+icewm -- history of user-visible changes.  2023-11-02
+
+Release icewm-3.4.4 released 2023-11-02
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.4.3...3.4.4
+
+Bert Gijsbers <gijsbers@science.uva.nl> (16):
+      Use fcsmart for capturing loadText data.
+      Support TIFF and WEBP in icewmbg.
+      More permissive parsing of a PAM image header in icesh.
+      Remove obsolete winoption examples and add one for plank.
+      Use --disable-librsvg instead of --disable-rsvg.
+      Add `supportsFormat` to check for support of additional image formats.
+      Support JXL, JP2, RAW, SVG, TGA image formats in icewmbg.
+      Test if a color can be considered dark for issue #715.
+      Brighten the color of inactive preview icons for dark themes for issue
+        #715.
+      Fix a crash when a ping timeout dialog is destroyed for issue #729.
+      Let icewmbg interpret command-line arguments relative to the current
+        working directory.
+      Clarify prefoverride and closes #750
+      When mapping a client by PID, search for the best match.
+      Don't enforce the use of clang++ in the debug build.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Eduard Bloch <blade@debian.org> (2):
+      Fix ordering in the 4th configuration
+      Fix minor warnings from recent CMake and GCC
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
 
 Release icewm-3.4.3 released 2023-10-02
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.4.2...3.4.3
 
-Bert Gijsbers <gijsbers@science.uva.nl> (9):
+Bert Gijsbers <gijsbers@science.uva.nl> (10):
       Simplify APM file handling with class SysFS for bbidulock/icewm#746.
       When cascading, include the border size for bbidulock/icewm#747.
       Add pref "TaskBarShowTransientWindows" to only show window titles on task
@@ -20,6 +54,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (9):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.4.3 release
 
 diego roversi <diegor@tiscali.it> (1):
       Use capacity when battery doesn't have information about full charge.
@@ -259,85 +294,4 @@ Luna  Jernberg <bittin@opensuse.org> (1):
 
 Wallon <franckjl@hotmail.com> (1):
       Translated using Weblate (French)
-
-
-Release icewm-3.3.3 released 2023-04-09
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.3.2...3.3.3
-
-Bert Gijsbers <gijsbers@science.uva.nl> (36):
-      Also link icewm with libintl and libiconv for FreeBSD.
-      Force token evaluation as char pointer.
-      Inline iterating over PATH for issue ice-wm/icewm#122.
-      Respond to Escape on key release, not on key press.
-      Respond to Escape on key release, not on key press.
-      Respond to Escape on key release, not on key press.
-      Respond to Escape on key release, not on key press.
-      Respond to Escape on key release, not on key press.
-      Optimize the default newstr.
-      Respond to Escape on key release, not on key press.
-      Let QuickSwitch respond to Escape on key release, not on key press.
-      Let Window List respond to Escape on key release, not on key press.
-      Fix for drawing button text in the System Dialog.
-      Respond to Escape on key release, not on key press.
-      Respond to Escape on key release, not on key press.
-      Respond to Escape on key release, not on key press.
-      Report when "menuprog" process crashed.
-      Make the System Dialog modal to avoid confusion about what window has
-        focus. Respond to Escape on key release, not on press, to prevent
-        applications from receiving a stray Escape key release event.
-      Remove upath from DProgram and MenuProgMenu.
-      Fix the drawing of the focused button in the System Dialog for Look=flat.
-      Support commands composed with || in the system dialog. Support the Prior
-        and Next keys in the system dialog.
-      Prevent integer overflow for very small screen dimensions.
-      Adjust width of workspace buttons when screen resolution changes for #713.
-      Add three more buttons to the system dialog.
-      Update potfiles.
-      Document the system dialog.
-      Only enabled buttons are focus traversable.
-      Close doesn't reload.
-      Use actionClose.
-      When the desktop geometry changes, rearrange the desktop icons.
-      Detect when a screen dimension changes, even though the desktop geometry
-        remains the same.
-      Add support for Xrandr events to icewmbg for issue #713.
-      Document the --verbose option of icewmbg.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.3.3 release
-
-Kempelen <lion@cmsbazar.hu> (3):
-      Translated using Weblate (Hungarian)
-      Translated using Weblate (Hungarian)
-      Translated using Weblate (Hungarian)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Kristijan Fremen Velkovski <me@krisfremen.com> (1):
-      Translated using Weblate (Macedonian)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Mehmet Akif 9oglu <madanadam@gmail.com> (1):
-      Translated using Weblate (Turkish)
-
-Wallon <franckjl@hotmail.com> (1):
-      Translated using Weblate (French)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
-
-welaq <welaq@users.noreply.github.com> (1):
-      Add Lithuanian translation to .desktop files (#711)
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-07-21 01:44+0200\n"
+"POT-Creation-Date: 2023-11-02 12:47+0100\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -20,43 +20,43 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.3\n"
 
-#: src/aapm.cc:66
+#: src/aapm.cc:113
 #, fuzzy, c-format
 #| msgid "Could not open APM device %s"
 msgid "Can't open the APM device %s"
 msgstr "APM 장치%s을(를) 열 수 없음"
 
-#: src/aapm.cc:74 src/aapm.cc:92
+#: src/aapm.cc:121 src/aapm.cc:139
 #, c-format
 msgid "Can't ioctl the APM device %s"
 msgstr ""
 
-#: src/aapm.cc:122
+#: src/aapm.cc:169
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
 msgstr ""
 
-#: src/aapm.cc:154 src/aapm.cc:426 src/aapm.cc:636 src/aapm.cc:762
+#: src/aapm.cc:201 src/aapm.cc:473 src/aapm.cc:632 src/aapm.cc:758
 msgid " - Power"
 msgstr " - 전력"
 
-#: src/aapm.cc:156 src/aapm.cc:429 src/aapm.cc:639
+#: src/aapm.cc:203 src/aapm.cc:476 src/aapm.cc:635
 msgid "P"
 msgstr "P"
 
-#: src/aapm.cc:160 src/aapm.cc:403 src/aapm.cc:619 src/aapm.cc:730
+#: src/aapm.cc:207 src/aapm.cc:450 src/aapm.cc:615 src/aapm.cc:726
 msgid " - Charging"
 msgstr " - 충전 중"
 
-#: src/aapm.cc:162 src/aapm.cc:405 src/aapm.cc:621
+#: src/aapm.cc:209 src/aapm.cc:452 src/aapm.cc:617
 msgid "C"
 msgstr "C"
 
-#: src/aapm.cc:407
+#: src/aapm.cc:454
 msgid " - Full"
 msgstr " - 전체"
 
-#: src/aapm.cc:944
+#: src/aapm.cc:940
 #, c-format
 msgid "power:\t%s"
 msgstr "전원:\t%s"
@@ -1393,13 +1393,13 @@ msgstr "GNOME 창 상태"
 msgid "workspace #%d: `%s'\n"
 msgstr "작업공간 #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4433 src/icesh.cc:5062
+#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5072
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "잘못된 인수: `%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:4012 src/icesh.cc:4062 src/icesh.cc:5377
+#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5387
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
@@ -1416,60 +1416,60 @@ msgstr ""
 msgid "Invalid Xinerama: `%s'."
 msgstr "잘못된 인수: `%s'."
 
-#: src/icesh.cc:3789 src/icesh.cc:3797 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3799 src/icesh.cc:3807 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "%s에 쓸 수 없음"
 
-#: src/icesh.cc:4028
+#: src/icesh.cc:4038
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "`%s' 동작은 최소 %d 개의 인수를 요구한다."
 
-#: src/icesh.cc:4037
+#: src/icesh.cc:4047
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "잘못된 표현: `%s'"
 
-#: src/icesh.cc:4048 src/icesound.cc:800 src/icewmbg.cc:1006
-#: src/icewmhint.cc:37 src/wmapp.cc:1261 src/yxapp.cc:1046
+#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1046
+#: src/icewmhint.cc:37 src/wmapp.cc:1277 src/yxapp.cc:1046
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "디스플레이를 열지 못함: %s. X 실행 중여야 하고 $DISPLAY 정해야 함."
 
-#: src/icesh.cc:4164
+#: src/icesh.cc:4174
 #, fuzzy, c-format
 #| msgid "Unexepected menu keyword: '%s'"
 msgid "Unexpected: `%s'."
 msgstr "예기치 않은 메뉴 키워드: '%s'"
 
-#: src/icesh.cc:4196
+#: src/icesh.cc:4206
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:4212
+#: src/icesh.cc:4222
 msgid "No actions specified."
 msgstr "아무 동작도 지정하지 않음."
 
-#: src/icesh.cc:4357
+#: src/icesh.cc:4367
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "잘못된 창 식별명: `%s'"
 
-#: src/icesh.cc:4373
+#: src/icesh.cc:4383
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "잘못된 인수: `%s'."
 
-#: src/icesh.cc:4406
+#: src/icesh.cc:4416
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "잘못된 인수: `%s'."
 
-#: src/icesh.cc:5508
+#: src/icesh.cc:5518
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "알 수 없는 동작: `%s'"
@@ -1874,12 +1874,12 @@ msgstr "탭 확장"
 msgid "Wrap Lines"
 msgstr "줄 넘기기"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:351
+#: src/icewmbg.cc:33 src/icewmbg.cc:365
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "이미지 '%s'을(를) 로드하지 못했습니다."
 
-#: src/icewmbg.cc:901
+#: src/icewmbg.cc:941
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1977,12 +1977,12 @@ msgstr ""
 " 가운데: 0 배율: 1 = 2차원 채우기 및 가로세로비 유지형\n"
 "\n"
 
-#: src/icewmbg.cc:1141 src/wmapp.cc:1865
+#: src/icewmbg.cc:1207 src/wmapp.cc:1881
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "알아볼 수 없는 옵션: '%s'"
 
-#: src/icewmbg.cc:1173
+#: src/icewmbg.cc:1294
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "다른 icewmbg가 여전히 실행 중이므로 시작할 수 없습니다."
 
@@ -2281,7 +2281,7 @@ msgstr "닫기(_C)"
 msgid "_Kill Client"
 msgstr "죽이기(_K)"
 
-#: src/wmapp.cc:688 src/wmdialog.cc:92 src/wmwinmenu.cc:134
+#: src/wmapp.cc:688 src/wmdialog.cc:92 src/wmwinmenu.cc:141
 msgid "_Window list"
 msgstr "창 목록(_W)"
 
@@ -2298,27 +2298,27 @@ msgstr ""
 "다시 시작 못함: %s\n"
 "$PATH가 %s를 가리키는가?"
 
-#: src/wmapp.cc:974
+#: src/wmapp.cc:990
 msgid "Confirm Restart as Terminal"
 msgstr ""
 
-#: src/wmapp.cc:975
+#: src/wmapp.cc:991
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1262 src/yxapp.cc:1047
+#: src/wmapp.cc:1278 src/yxapp.cc:1047
 msgid "<none>"
 msgstr "<none>"
 
-#: src/wmapp.cc:1592
+#: src/wmapp.cc:1608
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      세션 관리자에게 문의할 때 사용할 클라이언트 ID입니다.\n"
 
-#: src/wmapp.cc:1598
+#: src/wmapp.cc:1614
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2328,7 +2328,7 @@ msgstr ""
 "  --debug             일반 디버그 메시지를 인쇄합니다.\n"
 "  --debug-z           창 스택 관련 디버그 메시지를 인쇄합니다.\n"
 
-#: src/wmapp.cc:1606
+#: src/wmapp.cc:1622
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -2350,11 +2350,11 @@ msgstr ""
 "  -t, --theme=FILE    FILE에서 테마를 로드합니다.\n"
 "  --postpreferences   모든 처리 후 기본 설정을 인쇄합니다.\n"
 
-#: src/wmapp.cc:1617
+#: src/wmapp.cc:1633
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr ""
 
-#: src/wmapp.cc:1622
+#: src/wmapp.cc:1638
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2413,21 +2413,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1689
+#: src/wmapp.cc:1705
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s 구성 디렉터리:\n"
 
-#: src/wmapp.cc:1774
+#: src/wmapp.cc:1790
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s 구성된 옵션: %s\n"
 
-#: src/wmapp.cc:1915
+#: src/wmapp.cc:1931
 msgid "Confirm Logout"
 msgstr "종료 확인"
 
-#: src/wmapp.cc:1916
+#: src/wmapp.cc:1932
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2611,20 +2611,20 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "'%s'은(는) 출력이 없습니다."
 
-#: src/wmmgr.cc:3636
+#: src/wmmgr.cc:3658
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3637
+#: src/wmmgr.cc:3659
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
-#: src/wmoption.cc:284
+#: src/wmoption.cc:285
 #, c-format
 msgid "Unknown window option: %s"
 msgstr "알 수 없는 창 옵션: %s"
 
-#: src/wmoption.cc:356
+#: src/wmoption.cc:357
 #, c-format
 msgid "Syntax error in window options on line %d of %s"
 msgstr "%d 라인(%s)에 있는 창 옵션 구문 오류"
@@ -2799,7 +2799,7 @@ msgstr "프로세스 죽이기(_P)"
 msgid "Window list"
 msgstr "창 목록"
 
-#: src/wmwinmenu.cc:96
+#: src/wmwinmenu.cc:100
 #, c-format
 msgid "%lu. Workspace %-.32s"
 msgstr "%lu. 작업공간 %-.32s"
@@ -2959,23 +2959,23 @@ msgstr ""
 "  -d, --display=NAME  사용할 X 서버의 이름입니다.\n"
 "  --sync              X11 명령을 동기화합니다.\n"
 
-#: src/yximage.cc:157
+#: src/yximage.cc:173
 #, fuzzy
 #| msgid "Support for the %s interface not compiled."
 msgid "Support for PNG images was not enabled"
 msgstr "%s 인터페이스 지원이 컴파일 안 되었음."
 
-#: src/yximage.cc:165
+#: src/yximage.cc:181
 msgid "Support for JPEG images was not enabled"
 msgstr ""
 
-#: src/yximage.cc:171
+#: src/yximage.cc:187
 #, fuzzy, c-format
 #| msgid "Unsupported interface: %s."
 msgid "Unsupported file format: %s"
 msgstr "%s: 인터페이스 지원 안 됨."
 
-#: src/yximage.cc:175 src/yximage.cc:198
+#: src/yximage.cc:191 src/yximage.cc:214
 #, fuzzy, c-format
 #| msgid "Could not find image %s"
 msgid "Could not load image \"%s\""

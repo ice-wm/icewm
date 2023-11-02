@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-07-21 01:44+0200\n"
+"POT-Creation-Date: 2023-11-02 12:47+0100\n"
 "PO-Revision-Date: 2002-09-22 22:00+0200\n"
 "Last-Translator: Petter Johan Olsen <petter.olsen@cc.uit.no>\n"
 "Language-Team: Norwegian\n"
@@ -15,44 +15,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/aapm.cc:66
+#: src/aapm.cc:113
 #, fuzzy, c-format
 msgid "Can't open the APM device %s"
 msgstr "Kunne ikke finne bildet %s"
 
-#: src/aapm.cc:74 src/aapm.cc:92
+#: src/aapm.cc:121 src/aapm.cc:139
 #, c-format
 msgid "Can't ioctl the APM device %s"
 msgstr ""
 
-#: src/aapm.cc:122
+#: src/aapm.cc:169
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
 msgstr ""
 
-#: src/aapm.cc:154 src/aapm.cc:426 src/aapm.cc:636 src/aapm.cc:762
+#: src/aapm.cc:201 src/aapm.cc:473 src/aapm.cc:632 src/aapm.cc:758
 msgid " - Power"
 msgstr " - Strøm"
 
 # this is the short version of "Power" above
-#: src/aapm.cc:156 src/aapm.cc:429 src/aapm.cc:639
+#: src/aapm.cc:203 src/aapm.cc:476 src/aapm.cc:635
 msgid "P"
 msgstr "S"
 
-#: src/aapm.cc:160 src/aapm.cc:403 src/aapm.cc:619 src/aapm.cc:730
+#: src/aapm.cc:207 src/aapm.cc:450 src/aapm.cc:615 src/aapm.cc:726
 msgid " - Charging"
 msgstr " - Lader"
 
 # this is the short version of "Charging" above
-#: src/aapm.cc:162 src/aapm.cc:405 src/aapm.cc:621
+#: src/aapm.cc:209 src/aapm.cc:452 src/aapm.cc:617
 msgid "C"
 msgstr "L"
 
-#: src/aapm.cc:407
+#: src/aapm.cc:454
 msgid " - Full"
 msgstr ""
 
-#: src/aapm.cc:944
+#: src/aapm.cc:940
 #, c-format
 msgid "power:\t%s"
 msgstr ""
@@ -1378,13 +1378,13 @@ msgstr "GNOME vindustilstand"
 msgid "workspace #%d: `%s'\n"
 msgstr "skrivebordsområde #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4433 src/icesh.cc:5062
+#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5072
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Ugyldig argument: `%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:4012 src/icesh.cc:4062 src/icesh.cc:5377
+#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5387
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
@@ -1401,61 +1401,61 @@ msgstr ""
 msgid "Invalid Xinerama: `%s'."
 msgstr "Ugyldig argument: `%s'."
 
-#: src/icesh.cc:3789 src/icesh.cc:3797 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3799 src/icesh.cc:3807 src/wmconfig.cc:148 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr ""
 
-#: src/icesh.cc:4028
+#: src/icesh.cc:4038
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Kommandoen `%s' krever minst %d argumenter."
 
-#: src/icesh.cc:4037
+#: src/icesh.cc:4047
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Ugyldig uttrykk: `%s'"
 
-#: src/icesh.cc:4048 src/icesound.cc:800 src/icewmbg.cc:1006
-#: src/icewmhint.cc:37 src/wmapp.cc:1261 src/yxapp.cc:1046
+#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1046
+#: src/icewmhint.cc:37 src/wmapp.cc:1277 src/yxapp.cc:1046
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Kan ikke koble til display: %s. X må være startet og variabelen $DISPLAY må "
 "være satt."
 
-#: src/icesh.cc:4164
+#: src/icesh.cc:4174
 #, fuzzy, c-format
 msgid "Unexpected: `%s'."
 msgstr "Uventet nøkkelord: `%s'"
 
-#: src/icesh.cc:4196
+#: src/icesh.cc:4206
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:4212
+#: src/icesh.cc:4222
 msgid "No actions specified."
 msgstr "Ingen kommandoer spesifisert."
 
-#: src/icesh.cc:4357
+#: src/icesh.cc:4367
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Ugyldig vindus-identifikator: `%s'"
 
-#: src/icesh.cc:4373
+#: src/icesh.cc:4383
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid PID: `%s'"
 msgstr "Ugyldig argument: `%s'."
 
-#: src/icesh.cc:4406
+#: src/icesh.cc:4416
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Ugyldig argument: `%s'."
 
-#: src/icesh.cc:5508
+#: src/icesh.cc:5518
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Ukjent kommando: `%s'"
@@ -1756,12 +1756,12 @@ msgstr "Utvid tabulatortegn"
 msgid "Wrap Lines"
 msgstr "Del lange linjer"
 
-#: src/icewmbg.cc:34 src/icewmbg.cc:351
+#: src/icewmbg.cc:33 src/icewmbg.cc:365
 #, fuzzy, c-format
 msgid "Failed to load image '%s'."
 msgstr "Kunne ikke åpne %s: %s"
 
-#: src/icewmbg.cc:901
+#: src/icewmbg.cc:941
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1812,12 +1812,12 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1141 src/wmapp.cc:1865
+#: src/icewmbg.cc:1207 src/wmapp.cc:1881
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Ukjent opsjon: %s\n"
 
-#: src/icewmbg.cc:1173
+#: src/icewmbg.cc:1294
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2114,7 +2114,7 @@ msgstr "L_ukk"
 msgid "_Kill Client"
 msgstr "_Drep klient"
 
-#: src/wmapp.cc:688 src/wmdialog.cc:92 src/wmwinmenu.cc:134
+#: src/wmapp.cc:688 src/wmdialog.cc:92 src/wmwinmenu.cc:141
 msgid "_Window list"
 msgstr "_Vindusliste"
 
@@ -2131,33 +2131,33 @@ msgstr ""
 "Kunne ikke starte `%s' på nytt\n"
 "Finnes `%s' i $PATH?"
 
-#: src/wmapp.cc:974
+#: src/wmapp.cc:990
 msgid "Confirm Restart as Terminal"
 msgstr ""
 
-#: src/wmapp.cc:975
+#: src/wmapp.cc:991
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1262 src/yxapp.cc:1047
+#: src/wmapp.cc:1278 src/yxapp.cc:1047
 msgid "<none>"
 msgstr "<ingen>"
 
-#: src/wmapp.cc:1592
+#: src/wmapp.cc:1608
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1598
+#: src/wmapp.cc:1614
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1606
+#: src/wmapp.cc:1622
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2169,11 +2169,11 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1617
+#: src/wmapp.cc:1633
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr ""
 
-#: src/wmapp.cc:1622
+#: src/wmapp.cc:1638
 #, fuzzy, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2232,21 +2232,21 @@ msgstr ""
 "Se https://ice-wm.org/ for å rapportere feil, få hjelp, og gi kommentarer.\n"
 "\n"
 
-#: src/wmapp.cc:1689
+#: src/wmapp.cc:1705
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1774
+#: src/wmapp.cc:1790
 #, fuzzy, c-format
 msgid "%s configured options:%s\n"
 msgstr "Ukjent opsjon: %s\n"
 
-#: src/wmapp.cc:1915
+#: src/wmapp.cc:1931
 msgid "Confirm Logout"
 msgstr "Bekreft avlogging"
 
-#: src/wmapp.cc:1916
+#: src/wmapp.cc:1932
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2426,20 +2426,20 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3636
+#: src/wmmgr.cc:3658
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3637
+#: src/wmmgr.cc:3659
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
-#: src/wmoption.cc:284
+#: src/wmoption.cc:285
 #, c-format
 msgid "Unknown window option: %s"
 msgstr "Ukjent vindusopsjon: `%s'"
 
-#: src/wmoption.cc:356
+#: src/wmoption.cc:357
 #, fuzzy, c-format
 msgid "Syntax error in window options on line %d of %s"
 msgstr "Syntaksfeil i vindusopsjonene"
@@ -2629,7 +2629,7 @@ msgstr "Drep _prosess"
 msgid "Window list"
 msgstr "Vindusliste"
 
-#: src/wmwinmenu.cc:96
+#: src/wmwinmenu.cc:100
 #, c-format
 msgid "%lu. Workspace %-.32s"
 msgstr "%lu. Skrivebordsområde %-.32s"
@@ -2791,23 +2791,23 @@ msgid ""
 "  --sync              Synchronize X11 commands.\n"
 msgstr ""
 
-#: src/yximage.cc:157
+#: src/yximage.cc:173
 #, fuzzy
 #| msgid "Support for the %s interface not compiled."
 msgid "Support for PNG images was not enabled"
 msgstr "Støtte for enheten %s er ikke kompilert."
 
-#: src/yximage.cc:165
+#: src/yximage.cc:181
 msgid "Support for JPEG images was not enabled"
 msgstr ""
 
-#: src/yximage.cc:171
+#: src/yximage.cc:187
 #, fuzzy, c-format
 #| msgid "Unsupported interface: %s."
 msgid "Unsupported file format: %s"
 msgstr "Enheten %s er ikke støttet."
 
-#: src/yximage.cc:175 src/yximage.cc:198
+#: src/yximage.cc:191 src/yximage.cc:214
 #, fuzzy, c-format
 msgid "Could not load image \"%s\""
 msgstr "Kunne ikke finne bildet %s"
