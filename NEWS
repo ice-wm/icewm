@@ -1,11 +1,39 @@
-icewm -- history of user-visible changes.  2023-11-02
+icewm -- history of user-visible changes.  2023-12-28
+
+Release icewm-3.4.5 released 2023-12-28
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.4.4...3.4.5
+
+Bert Gijsbers <gijsbers@science.uva.nl> (13):
+      Center the clock leds vertically for issue ice-wm/icewm#151.
+      Prefer localtime_r over localtime to circumvent glibc inefficiency.
+      Avoid calls to fstat to circumvent glibc inefficiency.
+      Drop binascii.h. Add spanLower and spanUpper.
+      Let KeySysTile only tile the active monitor for issue ice-wm/icewm#152.
+      Fix KeyWinTile commands for multi-monitor for issue ice-wm/icewm#154.
+      After raising a focused window, release its button grab for issue #759.
+      When pasting into the addressbar, replace newlines with spaces.
+      Fix workspace buttons for right-to-left languages.
+      Update copyright.
+      Update the POT files.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Dmitriy Khanzhin <jinn@altlinux.org> (1):
+      Update the 'Hibernate' command and add hibernate icons.
+
+Petteri Aimonen <jpa@git.mail.kapsi.fi> (1):
+      When focusing and RaiseOnFocus, release button grab for issue #759.
+
 
 Release icewm-3.4.4 released 2023-11-02
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.4.3...3.4.4
 
-Bert Gijsbers <gijsbers@science.uva.nl> (16):
+Bert Gijsbers <gijsbers@science.uva.nl> (17):
       Use fcsmart for capturing loadText data.
       Support TIFF and WEBP in icewmbg.
       More permissive parsing of a PAM image header in icesh.
@@ -25,6 +53,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (16):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.4.4 release
 
 Eduard Bloch <blade@debian.org> (2):
       Fix ordering in the 4th configuration
@@ -237,61 +266,4 @@ Hugo Carvalho <hugokarvalho@hotmail.com> (1):
 
 Jan Papež <honyczek@centrum.cz> (1):
       Translated using Weblate (Czech)
-
-
-Release icewm-3.3.4 released 2023-05-03
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.3.3...3.3.4
-
-Bert Gijsbers <gijsbers@science.uva.nl> (20):
-      Fix compile error for yximage.cc.
-      Deprecate XRRDisable.
-      Fix corrupted text if built without i18n for issue ice-wm/icewm#131.
-      When internationalization is disabled, unset LIBICONV.
-      Improve the quality of drawing gradients for the Imlib2 renderer.
-      Improve arrow navigation in the system dialog.
-      Let icesh also pick icewm internal and override redirect windows.
-      Improve the quality of drawing gradients for the GdkPixbuf renderer.
-      Cache workspace button backgrounds for faster redrawing.
-      Guard against workspace button gradient being undefined.
-      Cache toolbar button gradients to speedup drawing.  Eliminate half of the
-        button drawings on startup.
-      Turkish translation of .desktop files and closes #716.
-      Let icesh report up to 1024 bytes of a property in "prop".
-      Let configure on OpenBSD test for -liconv in EXTRA_LIBS.
-      Support icesh "focusmodel" for client windows without a WM_HINTS property.
-      Revert "Fix compile error for yximage.cc." 30bd4f5
-      When managing a new client, postpone sending a Configure event until the
-        final position is known, for issue #720.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.3.4 release
-
-gijsbers <gijsbers@users.noreply.github.com> (3):
-      Merge pull request #127 from bittin/patch-1
-      Revert "Update icewm.desktop"
-      Merge pull request #130 from ice-wm/revert-127-patch-1
-
-Dmitriy Khanzhin <jinn@altlinux.org> (2):
-      Translated using Weblate (Russian)
-      Translated using Weblate (Russian)
-
-Mehmet Akif 9oglu <madanadam@gmail.com> (2):
-      Translated using Weblate (Turkish)
-      Translated using Weblate (Turkish)
-
-bittin <droidbittin@gmail.com> (2):
-      Update icewm.desktop
-      Swedish translation and credits (#714)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Luna  Jernberg <bittin@opensuse.org> (1):
-      Translated using Weblate (Swedish)
-
-Wallon <franckjl@hotmail.com> (1):
-      Translated using Weblate (French)
 

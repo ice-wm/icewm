@@ -1,5 +1,273 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 121b0f94a6868c5e0c87e0029310a925e9f830c4
+Merge: 8e2c69a6 467f07b7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 28 19:27:43 2023 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 467f07b740b4ef623b1b03c543f193dd84a07ae6
+Merge: b921aae2 7c432f92
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 28 19:27:16 2023 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 7c432f9210d427619e3b07f97fabd8afa4fc91a9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 28 19:23:18 2023 +0100
+
+    Update the POT files.
+
+ po/ar.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/ast.po    | 166 ++++++++++++++++++++++++++--------------------------
+ po/be.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/bg.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/ca.po     | 170 +++++++++++++++++++++++++++---------------------------
+ po/cs.po     | 170 +++++++++++++++++++++++++++---------------------------
+ po/da.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/de.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/el.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/en.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/eo.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/es.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/fa.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/fi.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/fr.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/he.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/hi.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/hr.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/hu.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/icewm.pot | 168 ++++++++++++++++++++++++++---------------------------
+ po/id.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/ie.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/it.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/ja.po     | 173 ++++++++++++++++++++++++++++---------------------------
+ po/ka.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/kk.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/ko.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/lt.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/lv.po     | 170 +++++++++++++++++++++++++++---------------------------
+ po/mk.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/nb.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/nl.po     | 170 +++++++++++++++++++++++++++---------------------------
+ po/nn.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/no.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/pl.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/pt.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/pt_BR.po  | 166 ++++++++++++++++++++++++++--------------------------
+ po/ro.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/ru.po     | 170 +++++++++++++++++++++++++++---------------------------
+ po/si.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/sk.po     | 170 +++++++++++++++++++++++++++---------------------------
+ po/sl.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/sv.po     | 170 +++++++++++++++++++++++++++---------------------------
+ po/tr.po     | 170 +++++++++++++++++++++++++++---------------------------
+ po/uk.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/vi.po     | 166 ++++++++++++++++++++++++++--------------------------
+ po/zh_CN.po  | 166 ++++++++++++++++++++++++++--------------------------
+ po/zh_TW.po  | 166 ++++++++++++++++++++++++++--------------------------
+ 48 files changed, 4005 insertions(+), 4004 deletions(-)
+
+commit 31c7346eec9a2f3d881366412e2bf8ab0f2ffde9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Dec 28 18:59:12 2023 +0100
+
+    Update copyright.
+
+ src/wmabout.cc | 13 +++++++++----
+ src/ylabel.cc  | 11 ++++++++---
+ src/ylabel.h   |  2 ++
+ 3 files changed, 19 insertions(+), 7 deletions(-)
+
+commit 07eb3001df56249f26a8d7f0e6820e5df275fa1e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Dec 24 21:24:56 2023 +0100
+
+    Fix workspace buttons for right-to-left languages.
+
+ src/aworkspaces.cc | 20 ++++++++++++++++----
+ src/aworkspaces.h  |  4 +++-
+ 2 files changed, 19 insertions(+), 5 deletions(-)
+
+commit 8e3daf9c8913baef227e80cea90f1a2fb43e7fad
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Dec 24 14:23:24 2023 +0100
+
+    When pasting into the addressbar, replace newlines with spaces.
+
+ src/yinputline.cc | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit c680ce814bbc6f6ca780edd2f95e2f81f97bf28a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Dec 24 12:08:11 2023 +0100
+
+    After raising a focused window, release its button grab for issue #759.
+
+ src/wmframe.cc | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit bde6bb544e4b87296ed533980d3415722c38c9cb
+Author: Petteri Aimonen <jpa@git.mail.kapsi.fi>
+Date:   Sun Dec 24 12:54:21 2023 +0200
+
+    When focusing and RaiseOnFocus, release button grab for issue #759.
+
+    Related to issue #742: Strange Firefox Behavior in IceWM. Icewm retains
+    a button grab after focusing. This is problematic for Firefox and Chrome
+    with hover elements on webpages. Data used by canRaise() and overlapped()
+    functions is only updated after YFrameWindow::setWinFocus() ends. When
+    RaiseOnFocus is true we know that the focused window will eventually
+    be raised and it is unnecessary to retain the button grab. This issue
+    remains for RaiseOnClickClient when RaiseOnFocus is false.
+
+ src/wmframe.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d633b37ddd69ea88ec67e1178a8263a44695cc86
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Dec 17 20:20:29 2023 +0100
+
+    Fix KeyWinTile commands for multi-monitor for issue ice-wm/icewm#154.
+
+ src/wmframe.cc | 29 +++++++++++++++++++----------
+ 1 file changed, 19 insertions(+), 10 deletions(-)
+
+commit 659d185f624224e1c36eb4e8d8689566ce3451cb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Dec 12 00:43:31 2023 +0100
+
+    Let KeySysTile only tile the active monitor for issue ice-wm/icewm#152.
+
+ src/wmmgr.cc | 11 ++++++++++-
+ src/wmmgr.h  |  5 +++++
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+
+commit b748bdeebd6d6c5b6cbb9ecf5afdde530d0ec75b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Dec 11 12:53:39 2023 +0100
+
+    Drop binascii.h. Add spanLower and spanUpper.
+
+ src/Makefile.am |  2 --
+ src/ascii.h     | 51 +++++++++++++++++++++++++++++++++------------------
+ src/binascii.h  | 15 ---------------
+ src/yconfig.cc  |  1 -
+ src/yurl.cc     |  6 +++---
+ 5 files changed, 36 insertions(+), 39 deletions(-)
+
+commit dae7b1ab49d0d6739c588e1495f3800e70ec0ccd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Dec 11 01:35:28 2023 +0100
+
+    Avoid calls to fstat to circumvent glibc inefficiency.
+
+ src/akeyboard.cc |  3 ++-
+ src/icehelp.cc   | 12 ++++--------
+ src/upath.cc     |  6 +++---
+ src/yfileio.cc   | 44 +++++++++++++++++---------------------------
+ src/yfileio.h    | 21 ++++-----------------
+ 5 files changed, 30 insertions(+), 56 deletions(-)
+
+commit 747a401c65637dfb4b39bf198c2847c73ae19838
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Dec 6 23:14:14 2023 +0100
+
+    Prefer localtime_r over localtime to circumvent glibc inefficiency.
+
+ src/aclock.cc | 12 +++++++++---
+ src/icesh.cc  |  4 +++-
+ src/misc.cc   |  5 +++--
+ 3 files changed, 15 insertions(+), 6 deletions(-)
+
+commit b97f65679904286ce557b9e71f8b1af6dad52321
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Dec 5 19:59:48 2023 +0100
+
+    Center the clock leds vertically for issue ice-wm/icewm#151.
+
+ src/aclock.cc | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 8e107ce2474a0cd7991d1aa50d0f5c797b0b785b
+Author: Dmitriy Khanzhin <jinn@altlinux.org>
+Date:   Mon Dec 4 20:15:07 2023 +0300
+
+    Update the 'Hibernate' command and add hibernate icons.
+
+ lib/Makefile.am               |  2 ++
+ lib/icons/hibernate_16x16.xpm | 44 +++++++++++++++++++++++++++++++++++++++
+ lib/icons/hibernate_32x32.xpm | 38 +++++++++++++++++++++++++++++++++
+ man/icewm-preferences.pod     | 10 ++++-----
+ src/default.h                 |  2 +-
+ 5 files changed, 90 insertions(+), 6 deletions(-)
+
+commit 8e2c69a61b587c06942494431273e196cf523c26
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Nov 2 12:51:36 2023 +0100
+
+    Prepare 3.4.4 release
+
+ AUTHORS      |   6 +-
+ ChangeLog    | 463 +++++++++++++++++++++++--------------------------------
+ NEWS         | 120 +++++---------
+ README.md    |  38 ++---
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     | 100 ++++++------
+ po/ast.po    | 100 ++++++------
+ po/be.po     | 100 ++++++------
+ po/bg.po     | 100 ++++++------
+ po/ca.po     | 104 ++++++-------
+ po/cs.po     | 104 ++++++-------
+ po/da.po     | 100 ++++++------
+ po/de.po     | 100 ++++++------
+ po/el.po     | 100 ++++++------
+ po/en.po     | 100 ++++++------
+ po/eo.po     | 100 ++++++------
+ po/es.po     | 100 ++++++------
+ po/fa.po     | 100 ++++++------
+ po/fi.po     | 100 ++++++------
+ po/fr.po     | 100 ++++++------
+ po/he.po     | 100 ++++++------
+ po/hi.po     | 100 ++++++------
+ po/hr.po     | 100 ++++++------
+ po/hu.po     | 100 ++++++------
+ po/icewm.pot | 102 ++++++------
+ po/id.po     | 100 ++++++------
+ po/ie.po     | 100 ++++++------
+ po/it.po     | 100 ++++++------
+ po/ja.po     | 107 ++++++-------
+ po/ka.po     | 100 ++++++------
+ po/kk.po     | 100 ++++++------
+ po/ko.po     | 100 ++++++------
+ po/lt.po     | 100 ++++++------
+ po/lv.po     | 104 ++++++-------
+ po/mk.po     | 100 ++++++------
+ po/nb.po     | 100 ++++++------
+ po/nl.po     | 104 ++++++-------
+ po/nn.po     | 100 ++++++------
+ po/no.po     | 100 ++++++------
+ po/pl.po     | 100 ++++++------
+ po/pt.po     | 100 ++++++------
+ po/pt_BR.po  | 100 ++++++------
+ po/ro.po     | 100 ++++++------
+ po/ru.po     | 104 ++++++-------
+ po/si.po     | 100 ++++++------
+ po/sk.po     | 104 ++++++-------
+ po/sl.po     | 100 ++++++------
+ po/sv.po     | 104 ++++++-------
+ po/tr.po     | 104 ++++++-------
+ po/uk.po     | 100 ++++++------
+ po/vi.po     | 100 ++++++------
+ po/zh_CN.po  | 100 ++++++------
+ po/zh_TW.po  | 100 ++++++------
+ 55 files changed, 2684 insertions(+), 2798 deletions(-)
+
 commit 0e056cb15ab8df9ae5a2e2e59f86f32eee451171
 Merge: 2784c09f b921aae2
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6005,213 +6273,3 @@ Date:   Tue Jul 26 20:30:30 2022 +0200
  src/acpustatus.cc | 8 ++++++--
  src/fdomenu.cc    | 7 +++++--
  3 files changed, 13 insertions(+), 4 deletions(-)
-
-commit b706d6aad7936ed3213dcc15115a5141f563b92b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 26 20:03:14 2022 +0200
-
-    Remove dependency on asciidoc and prefer markdown format for the manual.
-
- VERSION         |    2 +-
- configure.ac    |   25 +-
- doc/Makefile.am |    6 +-
- doc/icewm.md    | 2558 +++++++++++++++++++++++++++++++++++++++++++++++++++
- 4 files changed, 2570 insertions(+), 21 deletions(-)
-
-commit fbb8c1b4371c521c993a10dff040ca8b2cb83056
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 26 19:03:14 2022 +0200
-
-    Support more HTML entities in icehelp.
-
- src/icehelp.cc | 32 +++++++++++++++++++++++++++-----
- 1 file changed, 27 insertions(+), 5 deletions(-)
-
-commit 72ecc8d87627f0a5b6c2cc4e25dc50db2e656e49
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 26 18:05:27 2022 +0200
-
-    WindowMaker dock apps are supported.
-
- TODO | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 40cf52e4786a3f73d1908743ad9883496ee21f85
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 26 16:19:16 2022 +0200
-
-    Complete -e option.
-
- src/genpref.cc | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit 80a4a852ad6949756ab961329477c6f85049a1d9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 26 16:05:31 2022 +0200
-
-    Add key bindings for single window tiling operations for issues
-    bbidulock/icewm#335, ice-wm/icewm#74 and ice-wm/icewm#84.
-
- man/icewm.pod   | 36 +++++++++++++++++++++++++
- src/bindkey.h   | 36 ++++++++++++++++++-------
- src/default.h   |  9 +++++++
- src/genpref.cc  | 10 ++++++-
- src/movesize.cc | 18 +++++++++++++
- src/wmapp.cc    | 26 ++++++++----------
- src/wmframe.cc  |  9 +++++++
- src/ywindow.cc  | 78 ++++++++++++++++++++++++++++-------------------------
- 8 files changed, 160 insertions(+), 62 deletions(-)
-
-commit 79ee5df4cf487558e1b6e6e1aef6f9141804aa03
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 26 13:16:58 2022 +0200
-
-    Keep accurate track of window changes in workspace buttons for
-    PagerShowPreview.  Only redraw affected workspace buttons, which reduces
-    the total number of workspace button redraws, especially for larges
-    number of workspace buttons.
-
- src/aworkspaces.cc |  31 +++++++++----
- src/aworkspaces.h  |   9 +++-
- src/decorate.cc    |   2 +-
- src/movesize.cc    |   2 +-
- src/wmframe.cc     |  41 +++++++++++------
- src/wmmgr.cc       | 116 ++++++++++++++++++++++++-------------------------
- src/wmmgr.h        |  21 +++++----
- src/wmtaskbar.cc   |   5 ++-
- src/wmtaskbar.h    |   4 +-
- src/wmwinlist.cc   |   2 +-
- 10 files changed, 134 insertions(+), 99 deletions(-)
-
-commit 5a3f36f2e082fa4edfc3ab287d2eef514d77baa4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 26 13:15:45 2022 +0200
-
-    Permit percentages to have comma's in icesh.
-
- src/icesh.cc | 34 ++++++++++++++++++++++++++--------
- 1 file changed, 26 insertions(+), 8 deletions(-)
-
-commit 9b23165b88e4104be210406130f13303f7fe3ecf
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 18 22:55:37 2022 +0200
-
-    Prepare 2.9.8 release
-
- AUTHORS      |   5 +-
- ChangeLog    | 625 ++++++++++++++++++++++++++++---------------------------
- NEWS         |  90 ++++----
- README.md    |  36 ++--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     | 104 ++++-----
- po/be.po     | 104 ++++-----
- po/bg.po     | 104 ++++-----
- po/ca.po     | 104 ++++-----
- po/cs.po     | 104 ++++-----
- po/da.po     | 104 ++++-----
- po/de.po     | 104 ++++-----
- po/el.po     | 104 ++++-----
- po/en.po     | 104 ++++-----
- po/es.po     | 104 ++++-----
- po/fi.po     | 104 ++++-----
- po/fr.po     | 104 ++++-----
- po/he.po     | 104 ++++-----
- po/hr.po     | 104 ++++-----
- po/hu.po     | 104 ++++-----
- po/icewm.pot | 106 +++++-----
- po/id.po     | 104 ++++-----
- po/it.po     | 104 ++++-----
- po/ja.po     | 104 ++++-----
- po/ko.po     | 104 ++++-----
- po/lt.po     | 104 ++++-----
- po/lv.po     | 104 ++++-----
- po/mk.po     | 130 ++++++------
- po/nb.po     | 104 ++++-----
- po/nl.po     | 104 ++++-----
- po/no.po     | 104 ++++-----
- po/pl.po     | 104 ++++-----
- po/pt.po     | 104 ++++-----
- po/pt_BR.po  | 104 ++++-----
- po/ro.po     | 104 ++++-----
- po/ru.po     | 104 ++++-----
- po/sk.po     | 104 ++++-----
- po/sl.po     | 104 ++++-----
- po/sv.po     | 134 ++++++------
- po/tr.po     | 104 ++++-----
- po/uk.po     | 104 ++++-----
- po/vi.po     | 104 ++++-----
- po/zh_CN.po  | 104 ++++-----
- po/zh_TW.po  | 104 ++++-----
- 46 files changed, 2454 insertions(+), 2430 deletions(-)
-
-commit 4427e35bc1f5cd99ee10866aa8c63aee4514d56a
-Merge: 8d8acc27 d876f65e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 18 22:49:35 2022 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit d876f65e770947bd8cd251f69c36e4fcc20153bb
-Merge: 9dd5a5aa 16ffd8ce
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 18 22:47:07 2022 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 16ffd8ce178017979f7581bff280a0259a943c34
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 18 22:09:32 2022 +0200
-
-    Clarify which preferences are themable in icewm-preferences(5).
-
- man/icewm-preferences.pod | 54 +++++++++++++++++++++----------------------
- 1 file changed, 27 insertions(+), 27 deletions(-)
-
-commit 31b9785885b49ae57261f99fd5fa41bd7d80fe15
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 18 20:42:02 2022 +0200
-
-    Preserve errno in testOnce.
-
- src/yarray.cc | 16 +++++++++++++---
- 1 file changed, 13 insertions(+), 3 deletions(-)
-
-commit 73c688eca63f9dcb51f363a7f70a3c076dd26af6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 8 07:22:51 2022 +0200
-
-    Restore prettyClock as false.
-
- src/themable.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit a47b3cfdaeb5fb92b4fe8d4a805fffb1e2b89ec9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 8 07:11:24 2022 +0200
-
-    Make TaskBarGraphHeight themable for issue #659.
-
- src/default.h  | 2 --
- src/themable.h | 6 ++----
- 2 files changed, 2 insertions(+), 6 deletions(-)
-
-commit 148e06e91b31fd82cacf984e44bff30a38a67bf1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jun 24 00:28:57 2022 +0200
-
-    Don't convert XA_STRING in icesh.
-
- src/icesh.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit d95c8e2c0ce3f17f9bf4b75bb37fe72017b2ee54
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jun 23 21:03:57 2022 +0200
-
-    Restore 2.5.0 container handling of button presses for issue #649.
-
- src/wmcontainer.cc | 53 +++++++++++++++++++++++++-------------------------
- 1 file changed, 26 insertions(+), 27 deletions(-)
