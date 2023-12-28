@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.10\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-11-02 12:47+0100\n"
+"POT-Creation-Date: 2023-12-28 19:22+0100\n"
 "PO-Revision-Date: 2017-02-26 21:51+0000\n"
 "Last-Translator: Shyukri Shyukriev <shshyukriev@suse.com>\n"
 "Language-Team: Bulgarian <https://l10n.opensuse.org/projects/icewm/icewm-1-3-"
@@ -61,24 +61,24 @@ msgstr " - Пълен"
 msgid "power:\t%s"
 msgstr ""
 
-#: src/aclock.cc:192
+#: src/aclock.cc:195
 msgid "CLOCK"
 msgstr ""
 
-#: src/aclock.cc:198
+#: src/aclock.cc:201
 msgid "Date"
 msgstr ""
 
-#: src/aclock.cc:199 src/themes.cc:82
+#: src/aclock.cc:202 src/themes.cc:82
 msgid "Default"
 msgstr "По подразбиране"
 
-#: src/aclock.cc:200 src/acpustatus.cc:912 src/amailbox.cc:964
+#: src/aclock.cc:203 src/acpustatus.cc:912 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr ""
 
-#: src/aclock.cc:201
+#: src/aclock.cc:204
 msgid "_UTC"
 msgstr ""
 
@@ -168,25 +168,25 @@ msgstr ""
 msgid "%s was killed by signal %d."
 msgstr ""
 
-#: src/akeyboard.cc:98
+#: src/akeyboard.cc:99
 msgid "rules:"
 msgstr ""
 
-#: src/akeyboard.cc:99
+#: src/akeyboard.cc:100
 msgid "model:"
 msgstr ""
 
-#: src/akeyboard.cc:100
+#: src/akeyboard.cc:101
 msgid "layout:"
 msgstr ""
 
-#: src/akeyboard.cc:101
+#: src/akeyboard.cc:102
 #, fuzzy
 #| msgid "Bad option: %s"
 msgid "options:"
 msgstr "Неправилна опция: %s"
 
-#: src/akeyboard.cc:157
+#: src/akeyboard.cc:158
 msgid "Keyboard"
 msgstr ""
 
@@ -346,7 +346,7 @@ msgstr "Развива"
 msgid "NET"
 msgstr ""
 
-#: src/aworkspaces.cc:673 src/wmstatus.cc:204
+#: src/aworkspaces.cc:685 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Работно поле: "
 
@@ -1257,25 +1257,25 @@ msgstr ""
 msgid "Failed to create a temporary file"
 msgstr "Failed to create anonymous pipe: %s"
 
-#: src/icehelp.cc:2434
+#: src/icehelp.cc:2431
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr ""
 
-#: src/icehelp.cc:2457
+#: src/icehelp.cc:2453
 #, fuzzy, c-format
 msgid "Failed to decompress %s"
 msgstr "Не мога да отворя %s: %s"
 
-#: src/icehelp.cc:2465
+#: src/icehelp.cc:2461
 msgid "Could not locate curl or wget in PATH"
 msgstr ""
 
-#: src/icehelp.cc:2469
+#: src/icehelp.cc:2465
 msgid "Unsafe characters in URL"
 msgstr ""
 
-#: src/icehelp.cc:2506
+#: src/icehelp.cc:2502
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -1313,7 +1313,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icehelp.cc:2596
+#: src/icehelp.cc:2592
 #, fuzzy, c-format
 msgid "Ignoring option '%s'"
 msgstr "Неизвестно действие: `%s'"
@@ -1408,13 +1408,13 @@ msgstr "GNOME състояние на прозорец"
 msgid "workspace #%d: `%s'\n"
 msgstr "работно поле #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5072
+#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5074
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Неправилен аргумент: `%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5387
+#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5389
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
@@ -1484,7 +1484,7 @@ msgstr "Неправилен аргумент: `%s'."
 msgid "Invalid layer: `%s'."
 msgstr "Неправилен аргумент: `%s'."
 
-#: src/icesh.cc:5518
+#: src/icesh.cc:5520
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Неизвестно действие: `%s'"
@@ -1871,7 +1871,7 @@ msgstr "Недостатъчна памет (len=%d)."
 msgid "Warning: "
 msgstr "Предупреждение: "
 
-#: src/misc.cc:392
+#: src/misc.cc:393
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1888,43 +1888,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "Неизвестна посока при move/resize заявка: %d"
 
-#: src/wmabout.cc:29 src/wmabout.cc:30
+#: src/wmabout.cc:29
 msgid "(C)"
 msgstr "(C)"
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:45
 msgid "Theme:"
 msgstr "Тема:"
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:46
 msgid "Theme Description:"
 msgstr "Описание на тема:"
 
-#: src/wmabout.cc:42
+#: src/wmabout.cc:47
 msgid "Theme Author:"
 msgstr "Автор на тема:"
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:56
 msgid "CodeSet:"
 msgstr ""
 
-#: src/wmabout.cc:52
+#: src/wmabout.cc:57
 msgid "Language:"
 msgstr "Език:"
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:61
 msgid "DoubleBuffer"
 msgstr ""
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:62
 msgid "AlphaBlending"
 msgstr ""
 
-#: src/wmabout.cc:58
+#: src/wmabout.cc:63
 msgid "Renderer:"
 msgstr ""
 
-#: src/wmabout.cc:66
+#: src/wmabout.cc:71
 msgid "icewm - About"
 msgstr "За IceWM"
 
@@ -2383,7 +2383,7 @@ msgstr ""
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1857
+#: src/wmframe.cc:1868
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2391,7 +2391,7 @@ msgstr ""
 "ВНИМАНИЕ! Всички незапазени промени ще бъдат изгубени, когато този клиент "
 "бъде убит. Искате ли да продължите?"
 
-#: src/wmframe.cc:1862
+#: src/wmframe.cc:1873
 msgid "Kill Client: "
 msgstr "Убий Клиент: "
 
@@ -2460,11 +2460,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3658
+#: src/wmmgr.cc:3667
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3659
+#: src/wmmgr.cc:3668
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2681,12 +2681,12 @@ msgstr ""
 msgid "Could not parse color \"%s\""
 msgstr "Не мога да заредя шрифт \"%s\"."
 
-#: src/yconfig.cc:84
+#: src/yconfig.cc:83
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "Непознато име на ключ %s в %s"
 
-#: src/yconfig.cc:160 src/yconfig.cc:171 src/yconfig.cc:183
+#: src/yconfig.cc:159 src/yconfig.cc:170 src/yconfig.cc:182
 #, fuzzy, c-format
 #| msgid "Bad argument: %s for %s"
 msgid "Bad argument: %s for %s [%d,%d]"
@@ -2722,7 +2722,7 @@ msgstr "ГРЕШКА? Unexpected end of XPM file but Imlib was able to parse \"%
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "ГРЕШКА? Unexpected characted but Imlib was able to parse \"%s\""
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:117
+#: src/yfontcore.cc:121 src/yfontxft.cc:143
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "Не мога да заредя шрифт \"%s\"."

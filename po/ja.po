@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-11-02 12:47+0100\n"
+"POT-Creation-Date: 2023-12-28 19:22+0100\n"
 "PO-Revision-Date: 2023-07-21 10:15+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -58,24 +58,24 @@ msgstr " - 充電完了"
 msgid "power:\t%s"
 msgstr "電源: \t%s"
 
-#: src/aclock.cc:192
+#: src/aclock.cc:195
 msgid "CLOCK"
 msgstr "時計"
 
-#: src/aclock.cc:198
+#: src/aclock.cc:201
 msgid "Date"
 msgstr "日付"
 
-#: src/aclock.cc:199 src/themes.cc:82
+#: src/aclock.cc:202 src/themes.cc:82
 msgid "Default"
 msgstr "既定値"
 
-#: src/aclock.cc:200 src/acpustatus.cc:912 src/amailbox.cc:964
+#: src/aclock.cc:203 src/acpustatus.cc:912 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "無効 (_D)"
 
-#: src/aclock.cc:201
+#: src/aclock.cc:204
 msgid "_UTC"
 msgstr "UTC (_U)"
 
@@ -166,23 +166,23 @@ msgstr "%s はステータスコード %d で終了しました。"
 msgid "%s was killed by signal %d."
 msgstr "%s はシグナル %d で終了しました。"
 
-#: src/akeyboard.cc:98
+#: src/akeyboard.cc:99
 msgid "rules:"
 msgstr "ルール:"
 
-#: src/akeyboard.cc:99
+#: src/akeyboard.cc:100
 msgid "model:"
 msgstr "モデル:"
 
-#: src/akeyboard.cc:100
+#: src/akeyboard.cc:101
 msgid "layout:"
 msgstr "レイアウト:"
 
-#: src/akeyboard.cc:101
+#: src/akeyboard.cc:102
 msgid "options:"
 msgstr "オプション:"
 
-#: src/akeyboard.cc:157
+#: src/akeyboard.cc:158
 msgid "Keyboard"
 msgstr "キーボード"
 
@@ -338,7 +338,7 @@ msgstr "ダウン"
 msgid "NET"
 msgstr "ネット"
 
-#: src/aworkspaces.cc:673 src/wmstatus.cc:204
+#: src/aworkspaces.cc:685 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "ワークスペース: "
 
@@ -1189,25 +1189,25 @@ msgstr "ファイルを読み込み用に開く処理が失敗しました。"
 msgid "Failed to create a temporary file"
 msgstr "一時ファイルを作成する処理が失敗しました"
 
-#: src/icehelp.cc:2434
+#: src/icehelp.cc:2431
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr "system(%s) の実行に失敗しました (%d)"
 
-#: src/icehelp.cc:2457
+#: src/icehelp.cc:2453
 #, c-format
 msgid "Failed to decompress %s"
 msgstr "%s の展開に失敗しました"
 
-#: src/icehelp.cc:2465
+#: src/icehelp.cc:2461
 msgid "Could not locate curl or wget in PATH"
 msgstr "PATH 内に curl および wget のどちらも見つかりません"
 
-#: src/icehelp.cc:2469
+#: src/icehelp.cc:2465
 msgid "Unsafe characters in URL"
 msgstr "URL 内に安全ではない文字が含まれています"
 
-#: src/icehelp.cc:2506
+#: src/icehelp.cc:2502
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -1282,7 +1282,7 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/icehelp.cc:2596
+#: src/icehelp.cc:2592
 #, c-format
 msgid "Ignoring option '%s'"
 msgstr "下記のオプションは無視されます: '%s'"
@@ -1372,12 +1372,12 @@ msgstr "EWMH ウインドウ状態"
 msgid "workspace #%d: `%s'\n"
 msgstr "ワークスペース #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5072
+#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5074
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "状態が正しくありません: `%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5387
+#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5389
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "パラメータが正しくありません: `%s'"
@@ -1444,7 +1444,7 @@ msgstr "PID が正しくありません: `%s'"
 msgid "Invalid layer: `%s'."
 msgstr "レイヤが正しくありません: `%s'."
 
-#: src/icesh.cc:5518
+#: src/icesh.cc:5520
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "不明なアクションです: `%s'"
@@ -1920,7 +1920,7 @@ msgstr "メモリ不足 (長さ=%d)."
 msgid "Warning: "
 msgstr "警告: "
 
-#: src/misc.cc:392
+#: src/misc.cc:393
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1944,43 +1944,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "移動／サイズ変更の要求において、未知の方向を指定しています: %d"
 
-#: src/wmabout.cc:29 src/wmabout.cc:30
+#: src/wmabout.cc:29
 msgid "(C)"
 msgstr "(C)"
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:45
 msgid "Theme:"
 msgstr "テーマ:"
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:46
 msgid "Theme Description:"
 msgstr "テーマの説明:"
 
-#: src/wmabout.cc:42
+#: src/wmabout.cc:47
 msgid "Theme Author:"
 msgstr "テーマの作者:"
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:56
 msgid "CodeSet:"
 msgstr "コードセット:"
 
-#: src/wmabout.cc:52
+#: src/wmabout.cc:57
 msgid "Language:"
 msgstr "言語:"
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:61
 msgid "DoubleBuffer"
 msgstr "ダブルバッファ"
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:62
 msgid "AlphaBlending"
 msgstr "アルファブレンディング"
 
-#: src/wmabout.cc:58
+#: src/wmabout.cc:63
 msgid "Renderer:"
 msgstr "レンダラ:"
 
-#: src/wmabout.cc:66
+#: src/wmabout.cc:71
 msgid "icewm - About"
 msgstr "icewm について"
 
@@ -2457,7 +2457,7 @@ msgstr "名前変更"
 msgid "Rename the window title"
 msgstr "ウインドウタイトルの名前変更"
 
-#: src/wmframe.cc:1857
+#: src/wmframe.cc:1868
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2465,7 +2465,7 @@ msgstr ""
 "このクライアントを強制終了すると、保存されて\n"
 "いない変更点が失われてしまいます。処理を続けてよろしいですか？"
 
-#: src/wmframe.cc:1862
+#: src/wmframe.cc:1873
 msgid "Kill Client: "
 msgstr "クライアント強制終了: "
 
@@ -2536,11 +2536,11 @@ msgstr "'%s' が時間切れになりました！"
 msgid "'%s' produces no output"
 msgstr "'%s' は何も出力しませんでした"
 
-#: src/wmmgr.cc:3658
+#: src/wmmgr.cc:3667
 msgid "Missing program setxkbmap"
 msgstr "プログラム setxkbmap がありません"
 
-#: src/wmmgr.cc:3659
+#: src/wmmgr.cc:3668
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 "キーボードの切り替えを行なうため、 setxkbmap をインストールしてください。"
@@ -2745,12 +2745,12 @@ msgstr "%s: select が失敗しました"
 msgid "Could not parse color \"%s\""
 msgstr "色 \"%s\" を処理できませんでした"
 
-#: src/yconfig.cc:84
+#: src/yconfig.cc:83
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "%2$s 内に未知のキー名 %1$s があります"
 
-#: src/yconfig.cc:160 src/yconfig.cc:171 src/yconfig.cc:183
+#: src/yconfig.cc:159 src/yconfig.cc:170 src/yconfig.cc:182
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "無効な引数: %2$s に対して %1$s [%3$d,%4$d]"
@@ -2791,7 +2791,7 @@ msgstr ""
 "バグ？ \"%s\" で予期しない文字が現われましたが、 imlib 側で読み込めてしまいま"
 "した"
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:117
+#: src/yfontcore.cc:121 src/yfontxft.cc:143
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "フォント \"%s\" を読み込めませんでした。"

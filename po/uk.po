@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-11-02 12:47+0100\n"
+"POT-Creation-Date: 2023-12-28 19:22+0100\n"
 "PO-Revision-Date: 2021-12-18 21:14+0000\n"
 "Last-Translator: Taras Panchenko <top39@ukr.net>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -55,24 +55,24 @@ msgstr " - Повний"
 msgid "power:\t%s"
 msgstr "потужність:\t%s"
 
-#: src/aclock.cc:192
+#: src/aclock.cc:195
 msgid "CLOCK"
 msgstr "ГОДИННИК"
 
-#: src/aclock.cc:198
+#: src/aclock.cc:201
 msgid "Date"
 msgstr "Дата"
 
-#: src/aclock.cc:199 src/themes.cc:82
+#: src/aclock.cc:202 src/themes.cc:82
 msgid "Default"
 msgstr "Типово"
 
-#: src/aclock.cc:200 src/acpustatus.cc:912 src/amailbox.cc:964
+#: src/aclock.cc:203 src/acpustatus.cc:912 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Вимкнути"
 
-#: src/aclock.cc:201
+#: src/aclock.cc:204
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -163,23 +163,23 @@ msgstr "%s завершилася з кодом %d."
 msgid "%s was killed by signal %d."
 msgstr "%s був знищений через сигнал %d."
 
-#: src/akeyboard.cc:98
+#: src/akeyboard.cc:99
 msgid "rules:"
 msgstr "правила:"
 
-#: src/akeyboard.cc:99
+#: src/akeyboard.cc:100
 msgid "model:"
 msgstr "модель:"
 
-#: src/akeyboard.cc:100
+#: src/akeyboard.cc:101
 msgid "layout:"
 msgstr "розкладка:"
 
-#: src/akeyboard.cc:101
+#: src/akeyboard.cc:102
 msgid "options:"
 msgstr "опції:"
 
-#: src/akeyboard.cc:157
+#: src/akeyboard.cc:158
 msgid "Keyboard"
 msgstr "Клавіатура"
 
@@ -335,7 +335,7 @@ msgstr "донизу"
 msgid "NET"
 msgstr "МЕРЕЖА"
 
-#: src/aworkspaces.cc:673 src/wmstatus.cc:204
+#: src/aworkspaces.cc:685 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Робочий простір: "
 
@@ -1186,25 +1186,25 @@ msgstr "Не вдалося відкрити файл для читання."
 msgid "Failed to create a temporary file"
 msgstr "Помилка створення тимчасового файлу"
 
-#: src/icehelp.cc:2434
+#: src/icehelp.cc:2431
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr "Не вдалося запустити систему(%s) (%d)"
 
-#: src/icehelp.cc:2457
+#: src/icehelp.cc:2453
 #, c-format
 msgid "Failed to decompress %s"
 msgstr "Не вдалося розпакувати %s"
 
-#: src/icehelp.cc:2465
+#: src/icehelp.cc:2461
 msgid "Could not locate curl or wget in PATH"
 msgstr "Не вдалося знайти curl або wget у PATH"
 
-#: src/icehelp.cc:2469
+#: src/icehelp.cc:2465
 msgid "Unsafe characters in URL"
 msgstr "Небезпечні знаки в URL-посиланні"
 
-#: src/icehelp.cc:2506
+#: src/icehelp.cc:2502
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -1276,7 +1276,7 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/icehelp.cc:2596
+#: src/icehelp.cc:2592
 #, c-format
 msgid "Ignoring option '%s'"
 msgstr "Відхилений параметр '%s'"
@@ -1365,12 +1365,12 @@ msgstr "Стан вікна EWMH"
 msgid "workspace #%d: `%s'\n"
 msgstr "робочий простір #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5072
+#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5074
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Недійсний стан: `%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5387
+#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5389
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Невірний аргумент: `%s'"
@@ -1437,7 +1437,7 @@ msgstr "Недійсний PID: `%s'"
 msgid "Invalid layer: `%s'."
 msgstr "Недійсний пласт: `%s'."
 
-#: src/icesh.cc:5518
+#: src/icesh.cc:5520
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Невідома дія: `%s'"
@@ -1908,7 +1908,7 @@ msgstr "Невистачає пам'яті (len=%d)."
 msgid "Warning: "
 msgstr "Попередження: "
 
-#: src/misc.cc:392
+#: src/misc.cc:393
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1932,43 +1932,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "Невідомий напрямок у запиті на пересування/зміну розміру: %d"
 
-#: src/wmabout.cc:29 src/wmabout.cc:30
+#: src/wmabout.cc:29
 msgid "(C)"
 msgstr "(C)"
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:45
 msgid "Theme:"
 msgstr "Тема:"
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:46
 msgid "Theme Description:"
 msgstr "Опис теми:"
 
-#: src/wmabout.cc:42
+#: src/wmabout.cc:47
 msgid "Theme Author:"
 msgstr "Автор теми:"
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:56
 msgid "CodeSet:"
 msgstr "Кодування:"
 
-#: src/wmabout.cc:52
+#: src/wmabout.cc:57
 msgid "Language:"
 msgstr "Мова:"
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:61
 msgid "DoubleBuffer"
 msgstr "Подвійний буфер"
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:62
 msgid "AlphaBlending"
 msgstr "Альфа-змішування"
 
-#: src/wmabout.cc:58
+#: src/wmabout.cc:63
 msgid "Renderer:"
 msgstr "Відтворювач:"
 
-#: src/wmabout.cc:66
+#: src/wmabout.cc:71
 msgid "icewm - About"
 msgstr "Про IceWM"
 
@@ -2447,7 +2447,7 @@ msgstr ""
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1857
+#: src/wmframe.cc:1868
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2455,7 +2455,7 @@ msgstr ""
 "УВАГА! Всі незбережені дані будуть втрачені\n"
 "при знищенні цього клієнта. Бажаєте продовжити?"
 
-#: src/wmframe.cc:1862
+#: src/wmframe.cc:1873
 msgid "Kill Client: "
 msgstr "Знищити клієнта: "
 
@@ -2526,11 +2526,11 @@ msgstr "У '%s' вийшов час!"
 msgid "'%s' produces no output"
 msgstr "'%s' не створює виводу"
 
-#: src/wmmgr.cc:3658
+#: src/wmmgr.cc:3667
 msgid "Missing program setxkbmap"
 msgstr "Застосунок setxkbmap відсутній"
 
-#: src/wmmgr.cc:3659
+#: src/wmmgr.cc:3668
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Для перемикання клавіатури потрібно встановити setxkbmap."
 
@@ -2734,12 +2734,12 @@ msgstr "%s: не вдалося вибрати"
 msgid "Could not parse color \"%s\""
 msgstr "Не вдалося розібрати колір \"%s\""
 
-#: src/yconfig.cc:84
+#: src/yconfig.cc:83
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "Невідомий символ %s у %s"
 
-#: src/yconfig.cc:160 src/yconfig.cc:171 src/yconfig.cc:183
+#: src/yconfig.cc:159 src/yconfig.cc:170 src/yconfig.cc:182
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Невірний аргумент: %s for %s [%d,%d]"
@@ -2774,7 +2774,7 @@ msgstr "ВАДА? Неочікуваний кінець файлу XPM, але I
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "ВАДА? Неочікуваний символ, але Imlib проаналізував \"%s\""
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:117
+#: src/yfontcore.cc:121 src/yfontxft.cc:143
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "Не можу завантажити шрифт \"%s\"."

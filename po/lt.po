@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-11-02 12:47+0100\n"
+"POT-Creation-Date: 2023-12-28 19:22+0100\n"
 "PO-Revision-Date: 2023-03-09 14:14+0000\n"
 "Last-Translator: Moo oo <nazaq@protonmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.opensuse.org/projects/icewm/"
@@ -62,24 +62,24 @@ msgstr " - Įkrauta"
 msgid "power:\t%s"
 msgstr "maitinimas:\t%s"
 
-#: src/aclock.cc:192
+#: src/aclock.cc:195
 msgid "CLOCK"
 msgstr "LAIKRODIS"
 
-#: src/aclock.cc:198
+#: src/aclock.cc:201
 msgid "Date"
 msgstr "Data"
 
-#: src/aclock.cc:199 src/themes.cc:82
+#: src/aclock.cc:202 src/themes.cc:82
 msgid "Default"
 msgstr "Numatytasis"
 
-#: src/aclock.cc:200 src/acpustatus.cc:912 src/amailbox.cc:964
+#: src/aclock.cc:203 src/acpustatus.cc:912 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Išjungti"
 
-#: src/aclock.cc:201
+#: src/aclock.cc:204
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -170,23 +170,23 @@ msgstr "%s išėjo su būsena %d."
 msgid "%s was killed by signal %d."
 msgstr "%s buvo nutraukta signalo %d."
 
-#: src/akeyboard.cc:98
+#: src/akeyboard.cc:99
 msgid "rules:"
 msgstr "taisyklės:"
 
-#: src/akeyboard.cc:99
+#: src/akeyboard.cc:100
 msgid "model:"
 msgstr "modelis:"
 
-#: src/akeyboard.cc:100
+#: src/akeyboard.cc:101
 msgid "layout:"
 msgstr "išdėstymas:"
 
-#: src/akeyboard.cc:101
+#: src/akeyboard.cc:102
 msgid "options:"
 msgstr "parinktys:"
 
-#: src/akeyboard.cc:157
+#: src/akeyboard.cc:158
 msgid "Keyboard"
 msgstr "Klaviatūra"
 
@@ -342,7 +342,7 @@ msgstr "neveikia"
 msgid "NET"
 msgstr "TINKLAS"
 
-#: src/aworkspaces.cc:673 src/wmstatus.cc:204
+#: src/aworkspaces.cc:685 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Darbo sritis: "
 
@@ -1238,25 +1238,25 @@ msgstr ""
 msgid "Failed to create a temporary file"
 msgstr "Nepavyko įrašyti istorijos bylos %s: %s"
 
-#: src/icehelp.cc:2434
+#: src/icehelp.cc:2431
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr ""
 
-#: src/icehelp.cc:2457
+#: src/icehelp.cc:2453
 #, fuzzy, c-format
 msgid "Failed to decompress %s"
 msgstr "Nepavyko įrašyti istorijos bylos %s: %s"
 
-#: src/icehelp.cc:2465
+#: src/icehelp.cc:2461
 msgid "Could not locate curl or wget in PATH"
 msgstr ""
 
-#: src/icehelp.cc:2469
+#: src/icehelp.cc:2465
 msgid "Unsafe characters in URL"
 msgstr ""
 
-#: src/icehelp.cc:2506
+#: src/icehelp.cc:2502
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -1294,7 +1294,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icehelp.cc:2596
+#: src/icehelp.cc:2592
 #, fuzzy, c-format
 msgid "Ignoring option '%s'"
 msgstr "Nežinomas veiksmas: „%s“"
@@ -1389,13 +1389,13 @@ msgstr "GNOME lango būsena"
 msgid "workspace #%d: `%s'\n"
 msgstr "#%d darbalaukis: „%s“\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5072
+#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5074
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid state: `%s'."
 msgstr "Netinkamas argumentas: „%s“."
 
-#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5387
+#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5389
 #, fuzzy, c-format
 #| msgid "Invalid argument: `%s'."
 msgid "Invalid argument: `%s'"
@@ -1465,7 +1465,7 @@ msgstr "Netinkamas argumentas: „%s“."
 msgid "Invalid layer: `%s'."
 msgstr "Netinkamas argumentas: „%s“."
 
-#: src/icesh.cc:5518
+#: src/icesh.cc:5520
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Nežinomas veiksmas: „%s“"
@@ -1840,7 +1840,7 @@ msgstr "Nepakanka atminties (dydis=%d)."
 msgid "Warning: "
 msgstr "Dėmesio: "
 
-#: src/misc.cc:392
+#: src/misc.cc:393
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -1857,43 +1857,43 @@ msgstr ""
 msgid "Unknown direction in move/resize request: %d"
 msgstr "Perkėlimo ar dydžio keitimo užklausoje nežinoma kryptis: %d"
 
-#: src/wmabout.cc:29 src/wmabout.cc:30
+#: src/wmabout.cc:29
 msgid "(C)"
 msgstr "©"
 
-#: src/wmabout.cc:40
+#: src/wmabout.cc:45
 msgid "Theme:"
 msgstr "Apipavidalinimas:"
 
-#: src/wmabout.cc:41
+#: src/wmabout.cc:46
 msgid "Theme Description:"
 msgstr "Apipavidalinimo aprašymas:"
 
-#: src/wmabout.cc:42
+#: src/wmabout.cc:47
 msgid "Theme Author:"
 msgstr "Apipavidalinimo kūrėjas:"
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:56
 msgid "CodeSet:"
 msgstr "Koduotė:"
 
-#: src/wmabout.cc:52
+#: src/wmabout.cc:57
 msgid "Language:"
 msgstr "Kalba:"
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:61
 msgid "DoubleBuffer"
 msgstr ""
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:62
 msgid "AlphaBlending"
 msgstr ""
 
-#: src/wmabout.cc:58
+#: src/wmabout.cc:63
 msgid "Renderer:"
 msgstr ""
 
-#: src/wmabout.cc:66
+#: src/wmabout.cc:71
 msgid "icewm - About"
 msgstr "IceWM - Apie"
 
@@ -2326,7 +2326,7 @@ msgstr ""
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1857
+#: src/wmframe.cc:1868
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2334,7 +2334,7 @@ msgstr ""
 "DĖMESIO! Nužudę šį klientą prarasite visus \n"
 "neišsaugotus pakeitimus. Ar nori tęsti?"
 
-#: src/wmframe.cc:1862
+#: src/wmframe.cc:1873
 msgid "Kill Client: "
 msgstr "Nužudyti klientą: "
 
@@ -2403,11 +2403,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3658
+#: src/wmmgr.cc:3667
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3659
+#: src/wmmgr.cc:3668
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2627,12 +2627,12 @@ msgstr ""
 msgid "Could not parse color \"%s\""
 msgstr "Negaliu įkelti šrifto „%s“."
 
-#: src/yconfig.cc:84
+#: src/yconfig.cc:83
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "Nežinomas klavišo pavadinimas %s (%s)"
 
-#: src/yconfig.cc:160 src/yconfig.cc:171 src/yconfig.cc:183
+#: src/yconfig.cc:159 src/yconfig.cc:170 src/yconfig.cc:182
 #, fuzzy, c-format
 #| msgid "Bad argument: %s for %s"
 msgid "Bad argument: %s for %s [%d,%d]"
@@ -2669,7 +2669,7 @@ msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr ""
 "KLAIDA? Tokio simbolio nesitikėta, tačiau Imlib galėjo išanalizuoti „%s“"
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:117
+#: src/yfontcore.cc:121 src/yfontxft.cc:143
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "Negaliu įkelti šrifto „%s“."

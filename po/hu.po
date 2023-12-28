@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-11-02 12:47+0100\n"
+"POT-Creation-Date: 2023-12-28 19:22+0100\n"
 "PO-Revision-Date: 2023-03-28 22:14+0000\n"
 "Last-Translator: Kempelen <lion@cmsbazar.hu>\n"
 "Language-Team: Hungarian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -65,25 +65,25 @@ msgstr " - Feltöltve"
 msgid "power:\t%s"
 msgstr "Töltés:\t%s"
 
-#: src/aclock.cc:192
+#: src/aclock.cc:195
 msgid "CLOCK"
 msgstr "ÓRA"
 
-#: src/aclock.cc:198
+#: src/aclock.cc:201
 msgid "Date"
 msgstr "Dátum"
 
 # ../src/wmwinlist.cc:236
-#: src/aclock.cc:199 src/themes.cc:82
+#: src/aclock.cc:202 src/themes.cc:82
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: src/aclock.cc:200 src/acpustatus.cc:912 src/amailbox.cc:964
+#: src/aclock.cc:203 src/acpustatus.cc:912 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
 msgstr "_Letiltás"
 
-#: src/aclock.cc:201
+#: src/aclock.cc:204
 msgid "_UTC"
 msgstr "_UTC"
 
@@ -175,24 +175,24 @@ msgstr "A(z) %s kilépett a következő állapottal: %d."
 msgid "%s was killed by signal %d."
 msgstr "A(z) %s programot leállította a(z) %d jel."
 
-#: src/akeyboard.cc:98
+#: src/akeyboard.cc:99
 msgid "rules:"
 msgstr "szabályok:"
 
-#: src/akeyboard.cc:99
+#: src/akeyboard.cc:100
 msgid "model:"
 msgstr "modell:"
 
-#: src/akeyboard.cc:100
+#: src/akeyboard.cc:101
 msgid "layout:"
 msgstr "elrendezés:"
 
 # ../src/wmconfig.cc:355
-#: src/akeyboard.cc:101
+#: src/akeyboard.cc:102
 msgid "options:"
 msgstr "opciók:"
 
-#: src/akeyboard.cc:157
+#: src/akeyboard.cc:158
 msgid "Keyboard"
 msgstr "Billentyűzet"
 
@@ -359,7 +359,7 @@ msgid "NET"
 msgstr "HÁLÓZAT"
 
 # ../src/wmstatus.cc:170
-#: src/aworkspaces.cc:673 src/wmstatus.cc:204
+#: src/aworkspaces.cc:685 src/wmstatus.cc:204
 msgid "Workspace: "
 msgstr "Munkaterület: "
 
@@ -1236,26 +1236,26 @@ msgstr "Nem sikerült megnyitni a fájlt olvasáshoz."
 msgid "Failed to create a temporary file"
 msgstr "Nem sikerült létrehozni egy ideiglenes fájlt"
 
-#: src/icehelp.cc:2434
+#: src/icehelp.cc:2431
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
 msgstr "Nem sikerült végrehajtani a rendszerparancsot (%s) (%d)"
 
-#: src/icehelp.cc:2457
+#: src/icehelp.cc:2453
 #, c-format
 msgid "Failed to decompress %s"
 msgstr "Nem sikerült a(z) %s kibontása"
 
-#: src/icehelp.cc:2465
+#: src/icehelp.cc:2461
 msgid "Could not locate curl or wget in PATH"
 msgstr ""
 "Nem sikerült megtalálni a curl vagy a wget programot a PATH könyvtáraiban"
 
-#: src/icehelp.cc:2469
+#: src/icehelp.cc:2465
 msgid "Unsafe characters in URL"
 msgstr "Az URL nem biztonságos karaktereket tartalmaz"
 
-#: src/icehelp.cc:2506
+#: src/icehelp.cc:2502
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS] [ FILENAME | URL ]\n"
@@ -1330,7 +1330,7 @@ msgstr ""
 "\n"
 
 # ../src/wmoption.cc:209
-#: src/icehelp.cc:2596
+#: src/icehelp.cc:2592
 #, c-format
 msgid "Ignoring option '%s'"
 msgstr "'%s' beállítás figyelmen kívül hagyása"
@@ -1433,13 +1433,13 @@ msgid "workspace #%d: `%s'\n"
 msgstr "Munkaterület száma: %d: \"%s\"\n"
 
 # ../src/icehelp.cc:1247
-#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5072
+#: src/icesh.cc:2615 src/icesh.cc:4443 src/icesh.cc:5074
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Érvénytelen állapot: \"%s\"."
 
 # ../src/icehelp.cc:1247
-#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5387
+#: src/icesh.cc:2644 src/icesh.cc:4022 src/icesh.cc:4072 src/icesh.cc:5389
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Érvénytelen argumentum: \"%s\""
@@ -1513,7 +1513,7 @@ msgid "Invalid layer: `%s'."
 msgstr "Érvénytelen réteg: \"%s\"."
 
 # ../src/wmoption.cc:209
-#: src/icesh.cc:5518
+#: src/icesh.cc:5520
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Ismeretlen művelet: \"%s\""
@@ -2002,7 +2002,7 @@ msgstr "Elfogyott a memória (hossz=%d)."
 msgid "Warning: "
 msgstr "Figyelmeztetés: "
 
-#: src/misc.cc:392
+#: src/misc.cc:393
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2027,47 +2027,47 @@ msgid "Unknown direction in move/resize request: %d"
 msgstr "Ismeretlen irány az áthelyezés/átméretezés kérésnél: %d"
 
 # ../src/wmabout.cc:26 ../src/wmabout.cc:27
-#: src/wmabout.cc:29 src/wmabout.cc:30
+#: src/wmabout.cc:29
 msgid "(C)"
 msgstr "(C)"
 
 # ../src/wmabout.cc:31
-#: src/wmabout.cc:40
+#: src/wmabout.cc:45
 msgid "Theme:"
 msgstr "Téma:"
 
 # ../src/wmabout.cc:32
-#: src/wmabout.cc:41
+#: src/wmabout.cc:46
 msgid "Theme Description:"
 msgstr "Téma leírása:"
 
 # ../src/wmabout.cc:33
-#: src/wmabout.cc:42
+#: src/wmabout.cc:47
 msgid "Theme Author:"
 msgstr "Téma szerzője:"
 
-#: src/wmabout.cc:51
+#: src/wmabout.cc:56
 msgid "CodeSet:"
 msgstr "Kódkészlet:"
 
-#: src/wmabout.cc:52
+#: src/wmabout.cc:57
 msgid "Language:"
 msgstr "Nyelv:"
 
-#: src/wmabout.cc:56
+#: src/wmabout.cc:61
 msgid "DoubleBuffer"
 msgstr "Dupla-puffer"
 
-#: src/wmabout.cc:57
+#: src/wmabout.cc:62
 msgid "AlphaBlending"
 msgstr "Alfa-összemosás"
 
-#: src/wmabout.cc:58
+#: src/wmabout.cc:63
 msgid "Renderer:"
 msgstr "Megjelenítő:"
 
 # ../src/wmabout.cc:47
-#: src/wmabout.cc:66
+#: src/wmabout.cc:71
 msgid "icewm - About"
 msgstr "IceWM - Névjegy"
 
@@ -2603,7 +2603,7 @@ msgstr "Átnevezés"
 msgid "Rename the window title"
 msgstr "Az ablak címének átszerkesztése"
 
-#: src/wmframe.cc:1857
+#: src/wmframe.cc:1868
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2613,7 +2613,7 @@ msgstr ""
 
 #
 # ../src/wmframe.cc:1183
-#: src/wmframe.cc:1862
+#: src/wmframe.cc:1873
 msgid "Kill Client: "
 msgstr "Kliens kilövése: "
 
@@ -2693,11 +2693,11 @@ msgstr "'%s' időtúllépésre futott!"
 msgid "'%s' produces no output"
 msgstr "A(z) '%s' nem hoz létre kimenetet"
 
-#: src/wmmgr.cc:3658
+#: src/wmmgr.cc:3667
 msgid "Missing program setxkbmap"
 msgstr "Hiányzó program: setxkbmap"
 
-#: src/wmmgr.cc:3659
+#: src/wmmgr.cc:3668
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "A billentyűzet váltásához telepítse a setxkbmap programot."
 
@@ -2930,13 +2930,13 @@ msgid "Could not parse color \"%s\""
 msgstr "Szín értelmezése nem sikerült: \"%s\""
 
 # ../src/wmconfig.cc:248
-#: src/yconfig.cc:84
+#: src/yconfig.cc:83
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "Ismeretlen kulcsnév: %s Hely: %s"
 
 # ../src/wmconfig.cc:264 ../src/wmconfig.cc:277
-#: src/yconfig.cc:160 src/yconfig.cc:171 src/yconfig.cc:183
+#: src/yconfig.cc:159 src/yconfig.cc:170 src/yconfig.cc:182
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Hibás argumentum: %s ehhez: %s [%d,%d]"
@@ -2983,7 +2983,7 @@ msgstr ""
 "értelmezést: \"%s\""
 
 # ../src/ypaint.cc:287
-#: src/yfontcore.cc:121 src/yfontxft.cc:117
+#: src/yfontcore.cc:121 src/yfontxft.cc:143
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "A betűkészlet betöltése nem sikerült: \"%s\"."
