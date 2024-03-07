@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-12-28 19:22+0100\n"
+"POT-Creation-Date: 2024-03-07 19:32+0100\n"
 "PO-Revision-Date: 2023-07-21 10:15+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1406,7 +1406,7 @@ msgstr "L'acció \"%s\" necessita com a mínim %d arguments."
 msgid "Invalid expression: `%s'"
 msgstr "Expressió no vàlida: %s"
 
-#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1046
+#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1087
 #: src/icewmhint.cc:37 src/wmapp.cc:1277 src/yxapp.cc:1046
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1785,12 +1785,12 @@ msgstr "Expandeix les pestanyes"
 msgid "Wrap Lines"
 msgstr "Ajusta les línies"
 
-#: src/icewmbg.cc:33 src/icewmbg.cc:365
+#: src/icewmbg.cc:35 src/icewmbg.cc:372
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Ha fallat carregar la imatge \"%s\"."
 
-#: src/icewmbg.cc:941
+#: src/icewmbg.cc:969
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1889,12 +1889,12 @@ msgstr ""
 " center:0 scaled:1 = omple ambdues dimensions i mantén la ràtio d'aspecte\n"
 "\n"
 
-#: src/icewmbg.cc:1207 src/wmapp.cc:1881
+#: src/icewmbg.cc:1248 src/wmapp.cc:1881
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Opció no reconeguda: \"%s\"."
 
-#: src/icewmbg.cc:1294
+#: src/icewmbg.cc:1335
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "No es pot iniciar, perquè encara s'executa un altre icewmbg."
 
@@ -2665,19 +2665,19 @@ msgstr "Organitza les _icones"
 msgid "_Refresh"
 msgstr "_Refresca"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
+#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1025
 msgid "Hide Taskbar"
 msgstr "Amaga la barra de tasques"
 
-#: src/wmtaskbar.cc:337
+#: src/wmtaskbar.cc:336
 msgid "Favorite Applications"
 msgstr "Aplicacions preferides"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:362
 msgid "Window List Menu"
 msgstr "Menú de llista de finestres"
 
-#: src/wmtaskbar.cc:373
+#: src/wmtaskbar.cc:372
 msgid "Show Desktop"
 msgstr "Mostra l'escriptori"
 
@@ -2774,7 +2774,7 @@ msgstr ""
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "ERROR? Caràcter imprevist, però Imlib ha pogut analitzar \"%s\""
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:143
+#: src/yfontcore.cc:121 src/yfontxft.cc:117
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "No s'ha pogut carregar la lletra \"%s\"."

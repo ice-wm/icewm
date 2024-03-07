@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-12-28 19:22+0100\n"
+"POT-Creation-Date: 2024-03-07 19:32+0100\n"
 "PO-Revision-Date: 2002-09-22 22:00+0200\n"
 "Last-Translator: Petter Johan Olsen <petter.olsen@cc.uit.no>\n"
 "Language-Team: Norwegian\n"
@@ -1416,7 +1416,7 @@ msgstr "Kommandoen `%s' krever minst %d argumenter."
 msgid "Invalid expression: `%s'"
 msgstr "Ugyldig uttrykk: `%s'"
 
-#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1046
+#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1087
 #: src/icewmhint.cc:37 src/wmapp.cc:1277 src/yxapp.cc:1046
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1755,12 +1755,12 @@ msgstr "Utvid tabulatortegn"
 msgid "Wrap Lines"
 msgstr "Del lange linjer"
 
-#: src/icewmbg.cc:33 src/icewmbg.cc:365
+#: src/icewmbg.cc:35 src/icewmbg.cc:372
 #, fuzzy, c-format
 msgid "Failed to load image '%s'."
 msgstr "Kunne ikke åpne %s: %s"
 
-#: src/icewmbg.cc:941
+#: src/icewmbg.cc:969
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1811,12 +1811,12 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1207 src/wmapp.cc:1881
+#: src/icewmbg.cc:1248 src/wmapp.cc:1881
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Ukjent opsjon: %s\n"
 
-#: src/icewmbg.cc:1294
+#: src/icewmbg.cc:1335
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2567,25 +2567,25 @@ msgstr "Still opp _ikoner"
 msgid "_Refresh"
 msgstr "G_jenoppfrisk"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
+#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1025
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
 msgstr "Oppgavelinje"
 
-#: src/wmtaskbar.cc:337
+#: src/wmtaskbar.cc:336
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Favorite Applications"
 msgstr "Ofte brukte applikasjoner"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:362
 #, fuzzy
 #| msgid "Window list menu"
 msgid "Window List Menu"
 msgstr "Vindusmeny"
 
-#: src/wmtaskbar.cc:373
+#: src/wmtaskbar.cc:372
 #, fuzzy
 msgid "Show Desktop"
 msgstr "_Skrivebord"
@@ -2690,7 +2690,7 @@ msgstr "BUG? Uventet slutt på XPM-fil men Imlib klarte å fortolke `%s'"
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "BUG? Uventet tegn men Imlib klarte å fortolke `%s'"
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:143
+#: src/yfontcore.cc:121 src/yfontxft.cc:117
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "Kunne ikke laste tegnsett `%s'."

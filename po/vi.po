@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.21pre1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-12-28 19:22+0100\n"
+"POT-Creation-Date: 2024-03-07 19:32+0100\n"
 "PO-Revision-Date: 2016-08-25 08:19+0000\n"
 "Last-Translator: Hoàng Phạm <pnhoang96@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.opensuse.org/projects/icewm/"
@@ -1455,7 +1455,7 @@ msgstr "Hành động `%s' yêu cầu ít nhất %d tham số."
 msgid "Invalid expression: `%s'"
 msgstr "Biểu thức không hợp lệ: `%s'."
 
-#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1046
+#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1087
 #: src/icewmhint.cc:37 src/wmapp.cc:1277 src/yxapp.cc:1046
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1788,12 +1788,12 @@ msgstr "Mở rộng các thẻ"
 msgid "Wrap Lines"
 msgstr "Khuôn dòng"
 
-#: src/icewmbg.cc:33 src/icewmbg.cc:365
+#: src/icewmbg.cc:35 src/icewmbg.cc:372
 #, fuzzy, c-format
 msgid "Failed to load image '%s'."
 msgstr "Lỗi khi mở %s: %s"
 
-#: src/icewmbg.cc:941
+#: src/icewmbg.cc:969
 #, fuzzy
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
@@ -1859,12 +1859,12 @@ msgstr ""
 " center:0 scaled:0 = kiểu lát gạch\n"
 " center:1 scaled:1 = giữ tỉ lệ nền\n"
 
-#: src/icewmbg.cc:1207 src/wmapp.cc:1881
+#: src/icewmbg.cc:1248 src/wmapp.cc:1881
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Tuỳ chọn không xác định: %s\n"
 
-#: src/icewmbg.cc:1294
+#: src/icewmbg.cc:1335
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2614,25 +2614,25 @@ msgstr "Sắp xếp _biểu tượng"
 msgid "_Refresh"
 msgstr "Làm mới _màn hình"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
+#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1025
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
 msgstr "Thanh tác vụ"
 
-#: src/wmtaskbar.cc:337
+#: src/wmtaskbar.cc:336
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Favorite Applications"
 msgstr "Ứng dụng ưa thích"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:362
 #, fuzzy
 #| msgid "Window list menu"
 msgid "Window List Menu"
 msgstr "Trình đơn danh sách cửa sổ"
 
-#: src/wmtaskbar.cc:373
+#: src/wmtaskbar.cc:372
 msgid "Show Desktop"
 msgstr "Thu nhỏ tất cả"
 
@@ -2734,7 +2734,7 @@ msgstr "LỖI? Kết thúc của XPM lạ nhưng Imlib vẫn phân tích đượ
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "LỖI? Kí tự không mong đợi nhưng Imlib vẫn phân tích được \"%s\""
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:143
+#: src/yfontcore.cc:121 src/yfontxft.cc:117
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "Không thể nạp phông chữ \"%s\"."

@@ -1,11 +1,71 @@
-icewm -- history of user-visible changes.  2023-12-28
+icewm -- history of user-visible changes.  2024-03-07
+
+Release icewm-3.4.6 released 2024-03-07
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.4.5...3.4.6
+
+Bert Gijsbers <gijsbers@science.uva.nl> (21):
+      Add shutdown command for BSD and closes #761.
+      In DEBUG mode, guard against nullptr focus.
+      Fix icewmbg centering when the XRender extension is used.
+      Force the taskbar on the XineramaPrimaryScreen for issue ice-wm/icewm#157.
+      Revert "Force taskbar on XineramaPrimaryScreen"
+        617b375b79b54602f0848ceff6a654dc7c5b0204.
+      Delay the allocation of the taskbar frame until after the layout.
+      Expand tilde and HOME in IconPath for issue 766.
+      Fix typo dx to dy in menu focusItem.
+      When positioning a menu, include the vertical screen offset.
+      Include the Xinerama and RandR preferences in icewmbg.
+      Explain that keys button bidings only work over the root window.
+      Remove the static window gravity from the taskbar collapse button.
+      succinct
+      When undoing an arrange or showing the desktop, focus the last focused
+        window instead of the topmost window.
+      Prevent the RandR options from being set by a theme in icewmbg.
+      Document the --verbose option to icewmbg.
+      Let icewmbg log the image path when verbose is true.
+      Avoid updating the desktop background image twice in succession.
+      Always pass first mouse click to icewm internal windows for issue #768.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Grace Yu <grace.yu@excel-gits.com> (2):
+      Translated using Weblate (Chinese (China) (zh_CN))
+      Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+Antonio Simón <antonio@trans-mission.com> (1):
+      Translated using Weblate (Spanish)
+
+Arnold Marko <atomicmind@yahoo.com> (1):
+      Translated using Weblate (Slovenian)
+
+Davide Aiello <davide.aiello@novilingulists.com> (1):
+      Translated using Weblate (Italian)
+
+Eduard Bloch <blade@debian.org> (1):
+      Fix dependency of msgmerge command
+
+Foo Bar <foobarcc@segfault.net> (1):
+      Translated using Weblate (Chinese (China) (zh_CN))
+
+Gemineo <vistatec@gemineo.de> (1):
+      Translated using Weblate (German)
+
+Sophie Leroy <sophie@stoquart.com> (1):
+      Translated using Weblate (French)
+
+Vik On <4o3lxdc1y@mozmail.com> (1):
+      Translated using Weblate (Russian)
+
 
 Release icewm-3.4.5 released 2023-12-28
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.4.4...3.4.5
 
-Bert Gijsbers <gijsbers@science.uva.nl> (13):
+Bert Gijsbers <gijsbers@science.uva.nl> (14):
       Center the clock leds vertically for issue ice-wm/icewm#151.
       Prefer localtime_r over localtime to circumvent glibc inefficiency.
       Avoid calls to fstat to circumvent glibc inefficiency.
@@ -20,6 +80,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (13):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.4.5 release
 
 Dmitriy Khanzhin <jinn@altlinux.org> (1):
       Update the 'Hibernate' command and add hibernate icons.
@@ -231,39 +292,4 @@ Temuri Doghonadze <temuri.doghonadze@gmail.com> (2):
 
 Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
       Translated using Weblate (Indonesian)
-
-
-Release icewm-3.3.5 released 2023-05-18
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.3.4...3.3.5
-
-Bert Gijsbers <gijsbers@science.uva.nl> (18):
-      Lookup icons in more context directories for issue ice-wm/icewm#132.
-      Mention the hash-bang in the startup file.
-      An Escape key release event must match the key press event for #726.
-      Report when icon could not be found for issue ice-wm/icewm#133.
-      Use "firefox" instead of "mozilla" as Firefox icon for ice-wm/icewm#132.
-      Rescale workspace buttons when taskbar is rather high.
-      Temporarily hide the taskbar collapse button when collapsing or expanding.
-      Test for i18n by negation.
-      Compute the ultimate workspace button height, before creating them.
-      Limit the resource string of an unresponsive client for issue #729.
-      Check for TaskBarDoubleHeight when computing workspace button height.
-      Detect idempotent RandR updates for issue #728. Only
-        ArrangeWindowsOnScreenSizeChange when the desktop is really resizing.
-      Also focus last window when hiding and Click-to-focus for issue #727.
-      Let icesh exit with zero if the last action was a successful manager
-        action.
-      Reduce the subcats by 5.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.3.5 release
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Jan Papež <honyczek@centrum.cz> (1):
-      Translated using Weblate (Czech)
 

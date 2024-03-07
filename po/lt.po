@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-12-28 19:22+0100\n"
+"POT-Creation-Date: 2024-03-07 19:32+0100\n"
 "PO-Revision-Date: 2023-03-09 14:14+0000\n"
 "Last-Translator: Moo oo <nazaq@protonmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.opensuse.org/projects/icewm/"
@@ -1428,7 +1428,7 @@ msgstr "„%s“ vykdymui reikia bent %d argumentų."
 msgid "Invalid expression: `%s'"
 msgstr "Netinkama išraiška: „%s'“"
 
-#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1046
+#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1087
 #: src/icewmhint.cc:37 src/wmapp.cc:1277 src/yxapp.cc:1046
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1761,12 +1761,12 @@ msgstr "Išplėsti tabuliaciją"
 msgid "Wrap Lines"
 msgstr "Laužyti eilutes"
 
-#: src/icewmbg.cc:33 src/icewmbg.cc:365
+#: src/icewmbg.cc:35 src/icewmbg.cc:372
 #, fuzzy, c-format
 msgid "Failed to load image '%s'."
 msgstr "Nepavyko įrašyti istorijos bylos %s: %s"
 
-#: src/icewmbg.cc:941
+#: src/icewmbg.cc:969
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1817,12 +1817,12 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1207 src/wmapp.cc:1881
+#: src/icewmbg.cc:1248 src/wmapp.cc:1881
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Neatpažinta parinktis: %s\n"
 
-#: src/icewmbg.cc:1294
+#: src/icewmbg.cc:1335
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2548,25 +2548,25 @@ msgstr "Sutvarkyt_i ženkliukus"
 msgid "_Refresh"
 msgstr "At_naujinti"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
+#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1025
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
 msgstr "Užduočių juosta"
 
-#: src/wmtaskbar.cc:337
+#: src/wmtaskbar.cc:336
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Favorite Applications"
 msgstr "Mėgstamiausios programos"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:362
 #, fuzzy
 #| msgid "Window list menu"
 msgid "Window List Menu"
 msgstr "Langų sąrašo meniu"
 
-#: src/wmtaskbar.cc:373
+#: src/wmtaskbar.cc:372
 msgid "Show Desktop"
 msgstr "Rodyti darbalaukį"
 
@@ -2669,7 +2669,7 @@ msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr ""
 "KLAIDA? Tokio simbolio nesitikėta, tačiau Imlib galėjo išanalizuoti „%s“"
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:143
+#: src/yfontcore.cc:121 src/yfontxft.cc:117
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "Negaliu įkelti šrifto „%s“."

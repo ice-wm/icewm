@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.10\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2023-12-28 19:22+0100\n"
+"POT-Creation-Date: 2024-03-07 19:32+0100\n"
 "PO-Revision-Date: 2017-02-26 21:51+0000\n"
 "Last-Translator: Shyukri Shyukriev <shshyukriev@suse.com>\n"
 "Language-Team: Bulgarian <https://l10n.opensuse.org/projects/icewm/icewm-1-3-"
@@ -1447,7 +1447,7 @@ msgstr "Действие `%s' изисква минимум %d аргумент�
 msgid "Invalid expression: `%s'"
 msgstr "Неправилен израз: `%s'"
 
-#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1046
+#: src/icesh.cc:4058 src/icesound.cc:800 src/icewmbg.cc:1087
 #: src/icewmhint.cc:37 src/wmapp.cc:1277 src/yxapp.cc:1046
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1783,12 +1783,12 @@ msgstr "Разширява табулациите"
 msgid "Wrap Lines"
 msgstr "Свиване на редовете"
 
-#: src/icewmbg.cc:33 src/icewmbg.cc:365
+#: src/icewmbg.cc:35 src/icewmbg.cc:372
 #, fuzzy, c-format
 msgid "Failed to load image '%s'."
 msgstr "Не мога да отворя %s: %s"
 
-#: src/icewmbg.cc:941
+#: src/icewmbg.cc:969
 #, fuzzy
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
@@ -1848,12 +1848,12 @@ msgstr ""
 " DesktopTransparencyColor - Цвят за полу-прозрачни прозорци\n"
 " DesktopTransparencyImage - Изображение за полу-прозрачни прозорци\n"
 
-#: src/icewmbg.cc:1207 src/wmapp.cc:1881
+#: src/icewmbg.cc:1248 src/wmapp.cc:1881
 #, fuzzy, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Неразпозната опция: %s\n"
 
-#: src/icewmbg.cc:1294
+#: src/icewmbg.cc:1335
 msgid "Cannot start, because another icewmbg is still running."
 msgstr ""
 
@@ -2602,25 +2602,25 @@ msgstr "Подрежда _Икони"
 msgid "_Refresh"
 msgstr "_Опресняване"
 
-#: src/wmtaskbar.cc:314 src/wmtaskbar.cc:1025
+#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1025
 #, fuzzy
 #| msgid "Task Bar"
 msgid "Hide Taskbar"
 msgstr "Лента за задачи"
 
-#: src/wmtaskbar.cc:337
+#: src/wmtaskbar.cc:336
 #, fuzzy
 #| msgid "Favorite applications"
 msgid "Favorite Applications"
 msgstr "Любими приложения"
 
-#: src/wmtaskbar.cc:363
+#: src/wmtaskbar.cc:362
 #, fuzzy
 #| msgid "Window list menu"
 msgid "Window List Menu"
 msgstr "Меню Списък на прозорци"
 
-#: src/wmtaskbar.cc:373
+#: src/wmtaskbar.cc:372
 msgid "Show Desktop"
 msgstr "Покажи Десктоп"
 
@@ -2722,7 +2722,7 @@ msgstr "ГРЕШКА? Unexpected end of XPM file but Imlib was able to parse \"%
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr "ГРЕШКА? Unexpected characted but Imlib was able to parse \"%s\""
 
-#: src/yfontcore.cc:121 src/yfontxft.cc:143
+#: src/yfontcore.cc:121 src/yfontxft.cc:117
 #, c-format
 msgid "Could not load font \"%s\"."
 msgstr "Не мога да заредя шрифт \"%s\"."
