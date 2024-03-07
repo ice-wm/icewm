@@ -302,7 +302,6 @@ void TaskBar::initApplets() {
     if (taskBarShowCollapseButton) {
         fCollapseButton = new ObjectButton(this, actionCollapseTaskbar);
         if (fCollapseButton) {
-            fCollapseButton->setWinGravity(StaticGravity);
             ref<YImage> image = leftToRight
                               ? taskbarCollapseImage : taskbarExpandImage;
             if (image != null) {
@@ -681,9 +680,6 @@ void TaskBar::updateFullscreen() {
 void TaskBar::updateLocation() {
     fNeedRelayout = false;
 
-    if (getFrame() == nullptr) {
-        showBar();
-    }
     if (fIsHidden && !fIsCollapsed) {
         if (getFrame() && visible())
             getFrame()->wmHide();
@@ -751,6 +747,10 @@ void TaskBar::updateLocation() {
             setGeometry(YRect(x, y, w, h));
     }
     fEdgeTrigger->show((fFullscreen | fIsHidden) && !fIsCollapsed);
+
+    if (getFrame() == nullptr) {
+        showBar();
+    }
 
     ///!!! fix
     updateWMHints();
