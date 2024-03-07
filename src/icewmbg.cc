@@ -14,6 +14,7 @@
 #include "appnames.h"
 
 #define CFGDEF
+#define ICEWMBG
 #include "icewmbg_prefs.h"
 
 char const *ApplicationName = nullptr;
@@ -22,11 +23,12 @@ typedef ref<YImage> Image;
 
 class Cache {
 public:
-    Cache() { }
+    Cache(bool verb) : verbose(verb) { }
     ~Cache() { clear(); }
     void clear() { iname = null; image = null; }
-    Image get(const mstring& name) {
+    Image get(mstring name) {
         if (iname != name) {
+            if (verbose) tlog("load %s", name.c_str());
             iname = name;
             image = YImage::load(iname);
             if (image == null && testOnce(iname, __LINE__)) {
@@ -38,6 +40,7 @@ public:
 private:
     mstring iname;
     Image image;
+    bool verbose;
 };
 
 class Background: public YXApplication, private YTimerListener {
@@ -121,6 +124,7 @@ private:
     bool randInited;
     bool themeInited;
     bool imageInited;
+    bool forceUpdate;
     Strings backgroundImages;
     YColors backgroundColors;
     Strings transparencyImages;
@@ -139,6 +143,7 @@ private:
     lazy<YTimer> cycleTimer;
     lazy<YTimer> checkTimer;
     lazy<YTimer> randrTimer;
+    lazy<YTimer> updateTimer;
 
     Atom _XA_XROOTPMAP_ID;
     Atom _XA_XROOTCOLOR_PIXEL;
@@ -162,6 +167,8 @@ Background::Background(int *argc, char ***argv, bool verb):
     randInited(false),
     themeInited(false),
     imageInited(false),
+    forceUpdate(false),
+    cache(verb),
     mypid(getpid()),
     activeWorkspace(0),
     cycleOffset(0),
@@ -250,7 +257,7 @@ Background::~Background() {
 }
 
 int Background::mainLoop() {
-    update();
+    changeBackground(false);
     if (0 < cycleBackgroundsPeriod) {
         cycleTimer->setTimer(cycleBackgroundsPeriod * 1000L, this, true);
     }
@@ -443,6 +450,14 @@ bool Background::handleTimer(YTimer* timer) {
             update(true);
         }
     }
+    else if (timer == updateTimer) {
+        if (cycleTimer && cycleTimer->expires()) {
+            cycleTimer->startTimer();
+            cycleOffset += desktopCount;
+        }
+        changeBackground(forceUpdate);
+        forceUpdate = false;
+    }
     return false;
 }
 
@@ -539,9 +554,8 @@ void Background::startShuffle() {
 }
 
 void Background::update(bool force) {
-    activeWorkspace = getWorkspace();
-    if (verbose) tlog("update %s %d", boolstr(force), activeWorkspace);
-    changeBackground(force);
+    forceUpdate |= force;
+    updateTimer->setTimer(0L, this, true);
 }
 
 long* Background::getLongProperties(Atom property, int n) const {
@@ -677,6 +691,15 @@ ref<YPixmap> Background::renderBackground(Image back, YColor color) {
         }
         ref<YPixmap> pixm = todraw->renderToPixmap(g.rdepth());
         if (pixm != null) {
+            if (verbose) {
+                tlog(" ... @%d,%d %ux%u+%d+%d",
+                             max(0, int(bw - width) / 2),
+                             max(0, int(bh - height) / 2),
+                             min(width, bw),
+                             min(height, bh),
+                             max(x, x + int(width - bw) / 2),
+                             max(y, y + int(height - bh) / 2));
+            }
             g.drawPixmap(pixm,
                          max(0, int(bw - width) / 2),
                          max(0, int(bh - height) / 2),
@@ -691,6 +714,10 @@ ref<YPixmap> Background::renderBackground(Image back, YColor color) {
 }
 
 void Background::changeBackground(bool force) {
+    activeWorkspace = getWorkspace();
+    if (verbose)
+        tlog("update f=%s ws=%d", boolstr(force), activeWorkspace);
+
     Image backgroundImage = getBackgroundImage();
     YColor backgroundColor(getBackgroundColor());
     if (force == false) {
@@ -911,7 +938,8 @@ bool Background::become(bool replace) {
 }
 
 void Background::printOptions() {
-    for (cfoption* o = icewmbg_prefs; o && o->type; ++o) {
+    for (int k = 0; k < 10 && icewmbg_prefs[k].type; ++k) {
+        cfoption* o = &icewmbg_prefs[k];
         switch (o->type) {
             case cfoption::CF_BOOL:
                 printf("%-26s = %d\n", o->name, *o->v.b.bool_value);
@@ -1016,7 +1044,20 @@ static void bgLoadConfig(const char *configFile, const char *overrideTheme)
         };
         YConfig(theme_prefs).load(configFile).load("theme");
     }
-    YConfig(icewmbg_prefs).load(configFile).loadTheme().loadOverride();
+    YConfig conf(icewmbg_prefs);
+    conf.load(configFile);
+
+    cfoption* o = icewmbg_prefs;
+    while (o->type && *o->name != 'X')
+        ++o;
+    cfoption::OptionType type = cfoption::CF_NONE;
+    if (o)
+        swap(type, o->type);
+    conf.loadTheme();
+    if (o)
+        swap(type, o->type);
+
+    conf.loadOverride();
 }
 
 static void bgParse(const char* name, const char* value) {

@@ -2,7 +2,7 @@
 
 =head2 NAME
 
- icewmbg - a background settings manager for the IceWM window manager
+ icewmbg - a desktop background image manager for IceWM
 
 =head2 SYNOPSIS
 
@@ -16,8 +16,7 @@ its own background.
 
 When the background image changes, B<icewmbg> can be notified to
 update the background.  When switching workspaces, it checks the image
-file modification time.  If the file has changed, it reloads the
-image from file.
+file modification time.  If it has changed, it reloads the image.
 
 B<icewmbg> supports semitransparency.  Semitransparent background
 images and colours can be configured.
@@ -135,6 +134,10 @@ A leading tilde or environment variable is expanded.
 =item B<--postpreferences>
 
 Print a list of all preference values that B<icewmbg> will use.
+
+=item B<--verbose>
+
+Print a log of actions and some events.
 
 =back
 

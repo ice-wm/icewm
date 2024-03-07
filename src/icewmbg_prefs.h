@@ -3,7 +3,7 @@
 
 /* Synchronize with MAXWORKSPACES from wmmgr.h */
 #define MAX_WORKSPACES  20
-#define ICEBG_MAX_ARGS  5120
+#define ICEBG_MAX_ARGS  5632
 
 #include "yconfig.h"
 
@@ -46,6 +46,14 @@ cfoption icewmbg_prefs[] = {
 
     OIV("CycleBackgroundsPeriod",  &cycleBackgroundsPeriod, 0, INT_MAX,
         "Seconds between cycling over all background images, default zero is off"),
+
+#ifdef ICEWMBG
+    OBV("XRRDisable",            &xrrDisable,                   nullptr),
+
+    OIV("XineramaPrimaryScreen", &xineramaPrimaryScreen, 0, 63, nullptr),
+
+    OSV("XRRPrimaryScreenName",  &xineramaPrimaryScreenName,    nullptr),
+#endif
 
     OK0()
 };
