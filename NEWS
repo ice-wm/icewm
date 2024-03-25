@@ -1,11 +1,24 @@
-icewm -- history of user-visible changes.  2024-03-07
+icewm -- history of user-visible changes.  2024-03-25
+
+Release icewm-3.4.7 released 2024-03-25
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.4.6...3.4.7
+
+Bert Gijsbers <gijsbers@science.uva.nl> (4):
+      Support more international keyboard layouts for issue #768.
+      detail
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
 
 Release icewm-3.4.6 released 2024-03-07
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.4.5...3.4.6
 
-Bert Gijsbers <gijsbers@science.uva.nl> (21):
+Bert Gijsbers <gijsbers@science.uva.nl> (22):
       Add shutdown command for BSD and closes #761.
       In DEBUG mode, guard against nullptr focus.
       Fix icewmbg centering when the XRender extension is used.
@@ -30,6 +43,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (21):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.4.6 release
 
 Grace Yu <grace.yu@excel-gits.com> (2):
       Translated using Weblate (Chinese (China) (zh_CN))
@@ -254,42 +268,4 @@ ItzSelenux <74371741+ItzSelenux@users.noreply.github.com> (1):
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
-
-
-Release icewm-3.4.0 released 2023-06-05
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.3.5...3.4.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
-      Support a literal character as the last letter in a "keys" definition if
-        it is from the Latin-1 character set for issue ice-wm/icewm#134.
-      Support bindings to shifted keys in a "keys" definition in issue
-        ice-wm/icewm#134.
-      Support UTF-8 key in "keys" and fix unshift for issue ice-wm/icewm#134.
-      Update manpage for "keys" for issue ice-wm/icewm#134.
-      On a MappingNotify event, reparse the key bindings for ice-wm/icewm#134.
-      Fix for a map request from an unmanaged client for issue #734.
-      Use xconfigurerequest.
-      Support all UTF8 code points in keybindings.
-      Include AltGr in the list of modifiers.
-      Don't complain about empty key definitions.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.4.0 release
-      Update potfiles.
-      Include ast, eo, fa, hi, ie, ka, kk, nn, si in LINGUAS
-      Include more source files in POTFILES.in.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.4.0 release
-
-Temuri Doghonadze <temuri.doghonadze@gmail.com> (2):
-      Added translation using Weblate (Georgian)
-      Translated using Weblate (Georgian)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
 

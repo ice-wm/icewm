@@ -1,5 +1,108 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit a69deee625d18deecc7091a111117e55c8bb7023
+Merge: 4064096b 803f8224
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Mar 25 20:00:33 2024 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 803f82247fe4a9f762c575535ae747e1fbed6d3c
+Merge: 85f70037 5bd70713
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Mar 25 19:59:11 2024 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 5bd7071318ad731d5e151a73b1eeb9e2130ddeb3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 17 10:05:41 2024 +0100
+
+    detail
+
+ src/keysyms.cc | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit e534b92a3bd4e1c7188f25e90085933b6bbc4f3b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 16 22:04:30 2024 +0100
+
+    Support more international keyboard layouts for issue #768.
+
+ src/CMakeLists.txt |   2 +-
+ src/Makefile.am    |   2 +
+ src/keysyms.cc     | 782 +++++++++++++++++++++++++++++++++++++++++++++++++
+ src/keysyms.h      |   6 +
+ src/wmapp.cc       |  17 +-
+ src/wmapp.h        |   1 +
+ src/yconfig.cc     |  26 +-
+ 7 files changed, 827 insertions(+), 9 deletions(-)
+
+commit 4064096b73962b16f1eecec232f848bf998d354b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Mar 7 19:38:03 2024 +0100
+
+    Prepare 3.4.6 release
+
+ AUTHORS            |  17 +-
+ ChangeLog          | 761 +++++++++++++++++++++----------------------------
+ INSTALL.cmakebuild |   7 +-
+ NEWS               | 100 ++++---
+ README.md          |  38 +--
+ RELEASE.md         |   2 +-
+ VERSION            |   2 +-
+ configure.ac       |  10 +-
+ po/ar.po           |  22 +-
+ po/ast.po          |  22 +-
+ po/be.po           |  22 +-
+ po/bg.po           |  22 +-
+ po/ca.po           |  22 +-
+ po/cs.po           |  22 +-
+ po/da.po           |  22 +-
+ po/de.po           |  26 +-
+ po/el.po           |  22 +-
+ po/en.po           |  22 +-
+ po/eo.po           |  22 +-
+ po/es.po           |  26 +-
+ po/fa.po           |  22 +-
+ po/fi.po           |  22 +-
+ po/fr.po           |  26 +-
+ po/he.po           |  22 +-
+ po/hi.po           |  22 +-
+ po/hr.po           |  22 +-
+ po/hu.po           |  22 +-
+ po/icewm.pot       |  24 +-
+ po/id.po           |  22 +-
+ po/ie.po           |  22 +-
+ po/it.po           |  26 +-
+ po/ja.po           |  22 +-
+ po/ka.po           |  22 +-
+ po/kk.po           |  22 +-
+ po/ko.po           |  22 +-
+ po/lt.po           |  22 +-
+ po/lv.po           |  22 +-
+ po/mk.po           |  22 +-
+ po/nb.po           |  22 +-
+ po/nl.po           |  22 +-
+ po/nn.po           |  22 +-
+ po/no.po           |  22 +-
+ po/pl.po           |  22 +-
+ po/pt.po           |  22 +-
+ po/pt_BR.po        |  22 +-
+ po/ro.po           |  22 +-
+ po/ru.po           |  26 +-
+ po/si.po           |  22 +-
+ po/sk.po           |  22 +-
+ po/sl.po           |  26 +-
+ po/sv.po           |  22 +-
+ po/tr.po           |  22 +-
+ po/uk.po           |  22 +-
+ po/vi.po           |  22 +-
+ po/zh_CN.po        |  22 +-
+ po/zh_TW.po        |  22 +-
+ 56 files changed, 966 insertions(+), 1053 deletions(-)
+
 commit 44031657751c5a620fb1cfeffd221f60a1846741
 Merge: abb22149 85f70037
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -6063,92 +6166,3 @@ Date:   Mon Oct 3 16:26:38 2022 +0200
 
     Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
     icewm-1-4-BRANCH
-
-commit 0992e08389dc2b74f834ed6c07c0c311eeb7da5b
-Author: Freek de Kruijf <freek@opensuse.org>
-Date:   Mon Oct 3 09:28:26 2022 +0000
-
-    Translated using Weblate (Dutch)
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/nl.po | 44 +++++++++++++++++++++-----------------------
- 1 file changed, 21 insertions(+), 23 deletions(-)
-
-commit 2b616712d8583eec47eec1dc4f44083e9976ebf6
-Author: David Medina <medipas@gmail.com>
-Date:   Mon Oct 3 09:07:11 2022 +0000
-
-    Translated using Weblate (Catalan)
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/ca.po | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit e32c3ca4dbc944e54214772ad465bb1ac243abe9
-Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
-Date:   Mon Oct 3 04:07:29 2022 +0000
-
-    Translated using Weblate (Japanese)
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/ja.po | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit 480638581fafdbf68b87d2c78beb10774139db2e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 3 05:55:39 2022 +0200
-
-    Only generate manual if source is newer than output.
-
- doc/Makefile.am | 28 ++++++++++++++++++++--------
- 1 file changed, 20 insertions(+), 8 deletions(-)
-
-commit 8fc585ddd8db367fdbb69f9dc3b268ffd2a298a0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 3 05:53:53 2022 +0200
-
-    Update pot files.
-
- po/ar.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/be.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/bg.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/ca.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/cs.po     | 414 ++++++++++++++++++++++++++-------------------------
- po/da.po     | 418 ++++++++++++++++++++++++++--------------------------
- po/de.po     | 414 ++++++++++++++++++++++++++-------------------------
- po/el.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/en.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/es.po     | 418 ++++++++++++++++++++++++++--------------------------
- po/fi.po     | 414 ++++++++++++++++++++++++++-------------------------
- po/fr.po     | 414 ++++++++++++++++++++++++++-------------------------
- po/he.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/hr.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/hu.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/icewm.pot | 412 ++++++++++++++++++++++++++-------------------------
- po/id.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/it.po     | 442 ++++++++++++++++++++++++++++---------------------------
- po/ja.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/ko.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/lt.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/lv.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/mk.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/nb.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/nl.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/no.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/pl.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/pt.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/pt_BR.po  | 430 +++++++++++++++++++++++++++--------------------------
- po/ro.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/ru.po     | 414 ++++++++++++++++++++++++++-------------------------
- po/sk.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/sl.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/sv.po     | 414 ++++++++++++++++++++++++++-------------------------
- po/tr.po     | 414 ++++++++++++++++++++++++++-------------------------
- po/uk.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/vi.po     | 410 ++++++++++++++++++++++++++-------------------------
- po/zh_CN.po  | 410 ++++++++++++++++++++++++++-------------------------
- po/zh_TW.po  | 410 ++++++++++++++++++++++++++-------------------------
- 39 files changed, 8200 insertions(+), 7888 deletions(-)
