@@ -331,8 +331,6 @@ void TaskButton::setFlash(bool flashing) {
             fFlashOn = true;
             fFlashStart = monotime();
             fFlashTimer->setTimer(focusRequestFlashInterval, this, true);
-        } else {
-            //fFlashTimer->stopTimer();
         }
 
         if (fShown == false)

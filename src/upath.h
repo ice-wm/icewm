@@ -32,6 +32,7 @@ public:
     upath removeExtension() const;
     upath replaceExtension(const char *ext) const;
     mstring expand() const;
+    mstring real();
 
     bool fileExists();
     bool dirExists();
@@ -45,6 +46,7 @@ public:
     bool hasProtocol() const;
     int access(int mode = 0);
     int mkdir(int mode = 0700);
+    int chdir();
     int open(int flags, int mode = 0666);
     FILE* fopen(const char *mode);
     int stat(struct stat *st);
@@ -91,6 +93,7 @@ public:
     }
 
     static void redirectOutput(const char* outputFile);
+    static mstring cwd();
 
 private:
     mstring fPath;

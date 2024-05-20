@@ -213,6 +213,7 @@ public:
     void setFrameState(FrameState state);
 
     void getWMHints();
+    void updateWMHints();
     XWMHints *hints() const { return fHints; }
     bool wmHint(int flag) const { return fHints && (fHints->flags & flag); }
     Window windowGroupHint() const;
@@ -220,6 +221,7 @@ public:
     Pixmap iconPixmapHint() const;
     Pixmap iconMaskHint() const;
     bool urgencyHint() const { return wmHint(XUrgencyHint); }
+    void clearUrgency();
     bool isDockApp() const;
     bool isDockAppIcon() const;
     bool isDockAppWindow() const;
@@ -347,6 +349,7 @@ private:
     long fPingTime;
     long fPid;
     lazy<YTimer> fPingTimer;
+    lazy<YTimer> fUrgencyTimer;
     ref<YIcon> fIcon;
 
     mstring fWindowTitle;
