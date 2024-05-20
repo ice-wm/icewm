@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.31\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2024-05-09 20:44+0200\n"
+"POT-Creation-Date: 2024-05-20 16:47+0200\n"
 "PO-Revision-Date: 2024-03-01 16:42+0000\n"
 "Last-Translator: Davide Aiello <davide.aiello@novilingulists.com>\n"
 "Language-Team: Italian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -2457,15 +2457,15 @@ msgstr "Ricarica win_options"
 msgid "Reload ke_ys"
 msgstr "Ricarica ke_ys"
 
-#: src/wmframe.cc:1375
+#: src/wmframe.cc:1376
 msgid "Rename"
 msgstr "Rinomina"
 
-#: src/wmframe.cc:1376
+#: src/wmframe.cc:1377
 msgid "Rename the window title"
 msgstr "Rinomina titolo finestra"
 
-#: src/wmframe.cc:1868
+#: src/wmframe.cc:1871
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2473,7 +2473,7 @@ msgstr ""
 "Attenzione: la terminazione del client comporta\n"
 "la perdita delle modifiche non salvate. Procedere?"
 
-#: src/wmframe.cc:1873
+#: src/wmframe.cc:1876
 msgid "Kill Client: "
 msgstr "Termina client: "
 
@@ -2861,7 +2861,7 @@ msgstr ""
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv non fornisce (abbastanza) convertitori da %s a %s."
 
-#: src/ylocale.cc:247
+#: src/ylocale.cc:241
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Stringa multibyte \"%s\" non valida: %s"

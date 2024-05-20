@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2024-05-09 20:44+0200\n"
+"POT-Creation-Date: 2024-05-20 16:47+0200\n"
 "PO-Revision-Date: 2023-03-28 22:14+0000\n"
 "Last-Translator: Kempelen <lion@cmsbazar.hu>\n"
 "Language-Team: Hungarian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -2599,15 +2599,15 @@ msgstr "_Ablakbeállítások újratöltése"
 msgid "Reload ke_ys"
 msgstr "_Billentyűk újratöltése"
 
-#: src/wmframe.cc:1375
+#: src/wmframe.cc:1376
 msgid "Rename"
 msgstr "Átnevezés"
 
-#: src/wmframe.cc:1376
+#: src/wmframe.cc:1377
 msgid "Rename the window title"
 msgstr "Az ablak címének átszerkesztése"
 
-#: src/wmframe.cc:1868
+#: src/wmframe.cc:1871
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2617,7 +2617,7 @@ msgstr ""
 
 #
 # ../src/wmframe.cc:1183
-#: src/wmframe.cc:1873
+#: src/wmframe.cc:1876
 msgid "Kill Client: "
 msgstr "Kliens kilövése: "
 
@@ -3063,7 +3063,7 @@ msgstr ""
 "Az iconv nem biztosít (megfelelő) %s elemet a(z) %s konverterek számára."
 
 # ../src/amailbox.cc:71
-#: src/ylocale.cc:247
+#: src/ylocale.cc:241
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Érvénytelen többbájtos karakterlánc: \"%s\": %s"

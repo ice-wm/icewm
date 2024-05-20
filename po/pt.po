@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.6.6.83\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2024-05-09 20:44+0200\n"
+"POT-Creation-Date: 2024-05-20 16:47+0200\n"
 "PO-Revision-Date: 2023-07-23 12:15+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.opensuse.org/projects/icewm/"
@@ -2440,15 +2440,15 @@ msgstr "Recarregar win_options"
 msgid "Reload ke_ys"
 msgstr "Recarregar tec_las"
 
-#: src/wmframe.cc:1375
+#: src/wmframe.cc:1376
 msgid "Rename"
 msgstr "Renomear"
 
-#: src/wmframe.cc:1376
+#: src/wmframe.cc:1377
 msgid "Rename the window title"
 msgstr "Renomear o título da janela"
 
-#: src/wmframe.cc:1868
+#: src/wmframe.cc:1871
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2456,7 +2456,7 @@ msgstr ""
 "ATENÇÃO! Qualquer alteração não guardada será perdida\n"
 "ao interromper este cliente. Deseja continuar?"
 
-#: src/wmframe.cc:1873
+#: src/wmframe.cc:1876
 msgid "Kill Client: "
 msgstr "Interromper cliente: "
 
@@ -2839,7 +2839,7 @@ msgstr ""
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv não supre (suficientes) %s para conversores %s."
 
-#: src/ylocale.cc:247
+#: src/ylocale.cc:241
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Cadeia multibyte \"%s\" inválida: %s"

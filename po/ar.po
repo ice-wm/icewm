@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.3.12.52\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2024-05-09 20:44+0200\n"
+"POT-Creation-Date: 2024-05-20 16:47+0200\n"
 "PO-Revision-Date: 2022-01-01 23:12+0000\n"
 "Last-Translator: Ghassan <ghassan.alnajjar1984@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -2449,15 +2449,15 @@ msgstr ""
 msgid "Reload ke_ys"
 msgstr "إعادة تحميل"
 
-#: src/wmframe.cc:1375
+#: src/wmframe.cc:1376
 msgid "Rename"
 msgstr ""
 
-#: src/wmframe.cc:1376
+#: src/wmframe.cc:1377
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1868
+#: src/wmframe.cc:1871
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2465,7 +2465,7 @@ msgstr ""
 "تحذير! سيتم فقدان جميع التغييرات غير المحفوظة عند\n"
 "قتل هذا العميل. هل ترغب في المتابعة؟"
 
-#: src/wmframe.cc:1873
+#: src/wmframe.cc:1876
 msgid "Kill Client: "
 msgstr "إنهاء العميل: "
 
@@ -2847,7 +2847,7 @@ msgstr "فشل في تحديد ترميز اللغة الحالية. الافت�
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "لا يوفر iconv محولات %s إلى %s كافية."
 
-#: src/ylocale.cc:247
+#: src/ylocale.cc:241
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "البيانات المتعددة غير صحيحة \"%s\": %s"

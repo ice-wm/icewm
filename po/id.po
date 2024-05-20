@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2024-05-09 20:44+0200\n"
+"POT-Creation-Date: 2024-05-20 16:47+0200\n"
 "PO-Revision-Date: 2023-08-08 15:15+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/icewm/"
@@ -2438,15 +2438,15 @@ msgstr "Muat ulang win_options"
 msgid "Reload ke_ys"
 msgstr "Muat ulang tombo_l"
 
-#: src/wmframe.cc:1375
+#: src/wmframe.cc:1376
 msgid "Rename"
 msgstr "Ganti nama"
 
-#: src/wmframe.cc:1376
+#: src/wmframe.cc:1377
 msgid "Rename the window title"
 msgstr "Ganti nama judul jendela"
 
-#: src/wmframe.cc:1868
+#: src/wmframe.cc:1871
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2454,7 +2454,7 @@ msgstr ""
 "PERINGATAN! Semua perubahan yang belum disimpan akan hilang saat\n"
 "klien ini terbunuh. Apakah Anda ingin melanjutkan?"
 
-#: src/wmframe.cc:1873
+#: src/wmframe.cc:1876
 msgid "Kill Client: "
 msgstr "Bunuh Klien: "
 
@@ -2837,7 +2837,7 @@ msgstr ""
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv tidak menyediakan (cukup) %s ke %s konverter."
 
-#: src/ylocale.cc:247
+#: src/ylocale.cc:241
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "String multibyte \"%s\": %s tidak valid"

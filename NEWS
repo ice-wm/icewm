@@ -1,16 +1,95 @@
-icewm -- history of user-visible changes.  2024-03-25
+icewm -- history of user-visible changes.  2024-05-20
+
+Release icewm-3.5.0 released 2024-05-20
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.4.7...3.5.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (32):
+      Never handle internal WM actions via XSendEvent, but always via XPutBack.
+      Succinct handling of mstrings in themes.
+      Let "icesh restore" also clear the urgency flag.
+      Clear urgency and stop flashing when focusing a client.
+      When the frame drops urgency, also update the client.
+      Improve readability of setState.
+      Set errno in dirExists and fix leak for userhome in expand.
+      Avoid a shell in show_backtrace.
+      Add fmt to mstring.
+      Add -i,--install option to icewm to install an extra theme.
+      Clarify icons for keyboard layouts.
+      Keyboard layout icon names can be longer than 2 letters for issue
+        ice-wm/icewm#161.
+      Add chdir and set errno in fileExists.
+      Add -i,--install option to help output.
+      Update pot files.
+      Show spaces around KeyboardLayouts example.
+      2024
+      Fix portability to NetBSD 10 and closes #774.
+      Fix portability to NetBSD 10 and closes #775.
+      Add file argument completion to the addressbar for ice-wm/icewm#33
+      'icesh winoptions' only affects new windows.
+      Drop the C from the glob flags as it returns a starred string on failure.
+      update README to 3.4.7
+      Point documentation links to website.
+      Document the address bar editing keys.
+      Also do tilde expansion in file arguments.
+      Delay clearing the urgency flag in the client for half a second.
+      When lowering a frame by KeyWinLower or by a menu action, then also lower
+        the frame in the focus order, otherwise it appears as the first entry in
+        the Quick Switch.
+      Add "cd" and "pwd" commands to the address bar. Add tilde expansion on
+        user login names.
+      Don't chdir after realpath, but test for directory.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Dmitriy Khanzhin <jinn@altlinux.org> (2):
+      Translated using Weblate (Russian)
+      Translated using Weblate (Russian)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (2):
+      Translated using Weblate (Slovak)
+      Translated using Weblate (Slovak)
+
+Mehmet Akif 9oglu <madanadam@gmail.com> (2):
+      Translated using Weblate (Turkish)
+      Translated using Weblate (Turkish)
+
+Aleš Kastner <alkas@volny.cz> (1):
+      Translated using Weblate (Czech)
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Eduard Bloch <blade@debian.org> (1):
+      Adding FDO weblinks to specification references
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Luna  Jernberg <bittin@opensuse.org> (1):
+      Translated using Weblate (Swedish)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
+openSUSE Weblate <weblate-noreply@opensuse.org> (1):
+      Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
+
 
 Release icewm-3.4.7 released 2024-03-25
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.4.6...3.4.7
 
-Bert Gijsbers <gijsbers@science.uva.nl> (4):
+Bert Gijsbers <gijsbers@science.uva.nl> (5):
       Support more international keyboard layouts for issue #768.
       detail
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.4.7 release
 
 
 Release icewm-3.4.6 released 2024-03-07
@@ -220,52 +299,4 @@ Mehmet Akif 9oglu <madanadam@gmail.com> (1):
 
 gijsbers <gijsbers@users.noreply.github.com> (1):
       Merge pull request #145 from ice-wm/dependabot
-
-
-Release icewm-3.4.1 released 2023-07-21
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.4.0...3.4.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (22):
-      When the screen size changes, let icewm-session check that icewmbg is
-        running or start a new instance, for issue ice-wm/icewm#137.
-      Add a OutputFile preference and a -o,--output option to redirect all
-        output to a file, which is truncated on startup if it exceeds 5 KB.
-      Don't draw a border on quick switch when Look=flat for issue #736.
-      Add title as placeholder text in rename title dialog for ice-wm/icewm#138.
-      Give logEvent a force option.
-      Wider message box for rename title.
-      Add "refresh" command to icesh. Refresh desktop on icewm restart.
-      manpage details.
-      Prevent unlikely case of freeing the _XROOTPMAP_ID pixmap in icewmbg.
-      When canceling the quick switch, check if a focused fullscreen is in the
-        right layer.
-      Don't use OutputFile when printing information.
-      Hide the Close button in the System Dialog.
-      Deactivate the system dialog on a click outside of the window.
-      Two .pod typos.
-      Make geometry zero-based.
-      When WM_NORMAL_HINTS changes, only update the normalized dimensions, if
-        the increments have changed, for issue ice-wm/icewm#141.
-      Update potfiles.
-      Include algorithm first for portability to GCC-4.8.2.
-      Fix constness for object arrays in begin+end member functions.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.4.1 release
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-ItzSelenux <74371741+ItzSelenux@users.noreply.github.com> (1):
-      Add a "Hibernate" option as a possible workaround for nosystemd systems
-        (#737)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.12\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2024-05-09 20:44+0200\n"
+"POT-Creation-Date: 2024-05-20 16:47+0200\n"
 "PO-Revision-Date: 2024-05-14 07:43+0000\n"
 "Last-Translator: Mehmet Akif 9oglu <madanadam@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -2447,15 +2447,15 @@ msgstr "Yenile win_options"
 msgid "Reload ke_ys"
 msgstr "_Tuşları yükle"
 
-#: src/wmframe.cc:1375
+#: src/wmframe.cc:1376
 msgid "Rename"
 msgstr "Yeniden adlandır"
 
-#: src/wmframe.cc:1376
+#: src/wmframe.cc:1377
 msgid "Rename the window title"
 msgstr "Pencere başlığını yeniden adlandır"
 
-#: src/wmframe.cc:1868
+#: src/wmframe.cc:1871
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2463,7 +2463,7 @@ msgstr ""
 "DİKKAT!! Bu istemci kapatıldığında tüm kaydedilmemiş\n"
 "değişiklikler kaybedilecektir. Emin misiniz?"
 
-#: src/wmframe.cc:1873
+#: src/wmframe.cc:1876
 msgid "Kill Client: "
 msgstr "İstemciyi öldür: "
 
@@ -2850,7 +2850,7 @@ msgstr ""
 msgid "iconv doesn't supply (sufficient) %s to %s converters."
 msgstr "iconv (yeterli) %s - %s dönüştürücüsü sağlamıyor."
 
-#: src/ylocale.cc:247
+#: src/ylocale.cc:241
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
 msgstr "Geçersiz çok baytlı dize \"%s\": %s"

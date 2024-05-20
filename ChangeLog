@@ -1,5 +1,533 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit a98a2c4e13df96b59b25e28e1eee48263fabc9e5
+Merge: dc1e68ff 1fb15135
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 20 16:43:46 2024 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 1fb15135f115271cffc3cc50c81889c9d9c17498
+Merge: 803f8224 32a5fc42
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 20 16:40:47 2024 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 32a5fc429ef718732588585f66889a9321d46d1d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 20 15:41:47 2024 +0200
+
+    Don't chdir after realpath, but test for directory.
+
+ src/aaddressbar.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 670a60c6d2e0861cc4e7cd3aeebe6c5ae49b8e5d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 20 11:40:06 2024 +0200
+
+    Add "cd" and "pwd" commands to the address bar. Add tilde expansion on
+    user login names.
+
+ man/icewm.pod      | 29 ++++++++++------
+ src/aaddressbar.cc | 92 +++++++++++++++++++++++++++++++++++++-------------
+ src/aaddressbar.h  | 16 ++++++---
+ src/aworkspaces.cc |  2 +-
+ src/aworkspaces.h  |  2 +-
+ src/icehelp.cc     |  2 +-
+ src/icerun.cc      |  2 +-
+ src/upath.cc       | 42 +++++++++++++++++++----
+ src/upath.h        |  2 ++
+ src/yfileio.cc     |  8 +----
+ src/yinputline.cc  | 15 ++++----
+ src/yinputline.h   |  2 +-
+ src/ymsgbox.cc     |  2 +-
+ src/ymsgbox.h      |  2 +-
+ 14 files changed, 152 insertions(+), 66 deletions(-)
+
+commit f343387857843be6bdfc69541cd9027f44c5705b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 19 22:53:27 2024 +0200
+
+    When lowering a frame by KeyWinLower or by a menu action, then also
+    lower the frame in the focus order, otherwise it appears as the first
+    entry in the Quick Switch.
+
+ src/wmframe.cc | 19 +++++++++++--------
+ src/wmframe.h  |  3 ++-
+ src/wmmgr.cc   |  3 ++-
+ 3 files changed, 15 insertions(+), 10 deletions(-)
+
+commit ca61a8f05bce3e6dc54d46953c2e19c946bc7913
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat May 18 00:09:00 2024 +0200
+
+    Delay clearing the urgency flag in the client for half a second.
+
+ src/wmclient.cc | 48 ++++++++++++++++++++++++++++++------------------
+ src/wmclient.h  |  2 ++
+ 2 files changed, 32 insertions(+), 18 deletions(-)
+
+commit ebb8358b0e4beeea2cde5a79049bdab44f67176b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 16 20:09:25 2024 +0200
+
+    Also do tilde expansion in file arguments.
+
+ src/upath.cc      | 1 +
+ src/yinputline.cc | 7 ++++++-
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+commit afc144259a587e2b85518c38d756b2395630d5c8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 16 18:43:30 2024 +0200
+
+    Document the address bar editing keys.
+
+ man/icewm.pod | 56 ++++++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 51 insertions(+), 5 deletions(-)
+
+commit e2c090dfeafb87c696603c2966f8eb31ace3c76f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 16 18:21:23 2024 +0200
+
+    Point documentation links to website.
+
+ README.md    | 16 ++++++++--------
+ README.md.in | 16 ++++++++--------
+ 2 files changed, 16 insertions(+), 16 deletions(-)
+
+commit b63d74747489e1e79cada759f380800a78c05265
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 16 18:14:07 2024 +0200
+
+    update README to 3.4.7
+
+ README.md | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 58bebf5386babd4027bf1d98c83e6198facf4d23
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 16 18:09:34 2024 +0200
+
+    Drop the C from the glob flags as it returns a starred string on failure.
+
+ src/yinputline.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 305e090a20c78e0eb7fc49e722e14876f35c6ab7
+Author: Luna  Jernberg <bittin@opensuse.org>
+Date:   Wed May 15 20:02:22 2024 +0000
+
+    Translated using Weblate (Swedish)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/sv.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 2ce64dc03d7ae243fa95a62c3305ded75d804bc7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 15 23:58:36 2024 +0200
+
+    'icesh winoptions' only affects new windows.
+
+ man/icesh.pod | 1 +
+ man/icewm.pod | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit a3298454936809d7d9054ec6b1d7c53a7617d9cf
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 15 23:44:29 2024 +0200
+
+    Add file argument completion to the addressbar for ice-wm/icewm#33
+
+ src/yinputline.cc | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 9208fa4deb3fc805587a3db7bd18e4df0ebb31fd
+Author: David Medina <medipas@gmail.com>
+Date:   Tue May 14 14:27:17 2024 +0000
+
+    Translated using Weblate (Catalan)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/ca.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 31e2f172ad1991d34c5008ca0963fd5a7541f623
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 14 16:13:11 2024 +0200
+
+    Fix portability to NetBSD 10 and closes #775.
+
+ src/ylocale.cc | 6 ------
+ 1 file changed, 6 deletions(-)
+
+commit 723ee459ce049e0ff078e95d9391c02470b5c42a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 14 16:12:29 2024 +0200
+
+    Fix portability to NetBSD 10 and closes #774.
+
+ src/udir.cc | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit af8b9e1808b362ba5613cfb6c16f50dfa119d0ce
+Merge: 3027a685 3576580c
+Author: openSUSE Weblate <weblate-noreply@opensuse.org>
+Date:   Tue May 14 14:02:50 2024 +0000
+
+    Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
+
+commit 3576580c8a593a6ae1be622332a4b9f21f437f11
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Tue May 14 05:37:09 2024 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/tr.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 3027a68525cc0423c014b20f63d0a3a8f344151e
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Tue May 14 05:37:09 2024 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/tr.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit a34494aae7f2249274ec9a9b363eb9771114751f
+Author: Aleš Kastner <alkas@volny.cz>
+Date:   Mon May 13 19:57:08 2024 +0000
+
+    Translated using Weblate (Czech)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/cs.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 38b59c715b592398e3853f3b25e7b977db4b248b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 12 12:57:28 2024 +0200
+
+    2024
+
+ src/wmabout.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8dc73965603b70516782c32cd475d36b51272c6b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 12 12:57:03 2024 +0200
+
+    Show spaces around KeyboardLayouts example.
+
+ man/icewm.pod | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1c5c5a0aafe17e527cd00831fcef630b3d7afe53
+Author: Dmitriy Khanzhin <jinn@altlinux.org>
+Date:   Sun May 12 06:05:08 2024 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/ru.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 3d8f83f8c72704e056795ad6e00127508e91c441
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Date:   Fri May 10 12:33:42 2024 +0000
+
+    Translated using Weblate (Slovak)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/sk.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit d9be91403fd06e942a81d71b6237fc1e94afd29b
+Author: Dmitriy Khanzhin <jinn@altlinux.org>
+Date:   Fri May 10 14:51:59 2024 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/ru.po | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+commit b432968f83f733c66a912b7e99be4d5ad54ac7c2
+Author: Freek de Kruijf <freek@opensuse.org>
+Date:   Thu May 9 21:18:38 2024 +0000
+
+    Translated using Weblate (Dutch)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/nl.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 08d55176545e23b9570dfa4ec9e5d422ec01cb9b
+Author: Yasuhiko Kamata <belphegor@belbel.or.jp>
+Date:   Thu May 9 22:13:49 2024 +0000
+
+    Translated using Weblate (Japanese)
+
+    Currently translated at 100.0% (527 of 527 strings)
+
+ po/ja.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 1023c55360a8fa680c045297d23263974c872ae0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 9 20:46:46 2024 +0200
+
+    Update pot files.
+
+ po/ar.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/ast.po    | 222 +++++++++++++++++++++++++++--------------------------
+ po/be.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/bg.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/ca.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/cs.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/da.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/de.po     | 228 ++++++++++++++++++++++++++++---------------------------
+ po/el.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/en.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/eo.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/es.po     | 228 ++++++++++++++++++++++++++++---------------------------
+ po/fa.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/fi.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/fr.po     | 228 ++++++++++++++++++++++++++++---------------------------
+ po/he.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/hi.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/hr.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/hu.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/icewm.pot | 224 +++++++++++++++++++++++++++---------------------------
+ po/id.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/ie.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/it.po     | 228 ++++++++++++++++++++++++++++---------------------------
+ po/ja.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/ka.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/kk.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/ko.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/lt.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/lv.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/mk.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/nb.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/nl.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/nn.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/no.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/pl.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/pt.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/pt_BR.po  | 224 +++++++++++++++++++++++++++---------------------------
+ po/ro.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/ru.po     | 228 ++++++++++++++++++++++++++++---------------------------
+ po/si.po     | 222 +++++++++++++++++++++++++++--------------------------
+ po/sk.po     | 228 ++++++++++++++++++++++++++++---------------------------
+ po/sl.po     | 228 ++++++++++++++++++++++++++++---------------------------
+ po/sv.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/tr.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/uk.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/vi.po     | 224 +++++++++++++++++++++++++++---------------------------
+ po/zh_CN.po  | 224 +++++++++++++++++++++++++++---------------------------
+ po/zh_TW.po  | 224 +++++++++++++++++++++++++++---------------------------
+ 48 files changed, 5472 insertions(+), 5280 deletions(-)
+
+commit e35d440f4acad66ad81f954b436648de1bf9cd95
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 9 20:46:23 2024 +0200
+
+    Add -i,--install option to help output.
+
+ src/wmapp.cc | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+commit 5eda9c0cc036ba09c613587bad1e8c066c2cff36
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 9 20:43:49 2024 +0200
+
+    Add chdir and set errno in fileExists.
+
+ src/theminst.cc |  2 +-
+ src/upath.cc    | 11 ++++++++++-
+ src/upath.h     |  1 +
+ 3 files changed, 12 insertions(+), 2 deletions(-)
+
+commit 5b44cc106e7763ae9524b3e3288a28189bce4b0d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 9 12:18:20 2024 +0200
+
+    Keyboard layout icon names can be longer than 2 letters for issue
+    ice-wm/icewm#161.
+
+ man/icewm.pod    |  2 +-
+ src/akeyboard.cc | 27 +++++++++++++++++++--------
+ src/akeyboard.h  |  1 +
+ 3 files changed, 21 insertions(+), 9 deletions(-)
+
+commit 5bad4b0a5cebf5716184b4e5a15cb1cf66907150
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed May 8 17:27:14 2024 +0200
+
+    Clarify icons for keyboard layouts.
+
+ man/icewm.pod | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
+
+commit cc183f635aaede9f8235fab988d113c1a9cb4b0e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 7 22:58:46 2024 +0200
+
+    Add -i,--install option to icewm to install an extra theme.
+
+ man/icewm.pod      |   5 ++
+ src/CMakeLists.txt |   2 +-
+ src/Makefile.am    |   2 +
+ src/theminst.cc    | 215 +++++++++++++++++++++++++++++++++++++++++++++++++
+ src/theminst.h     |   6 ++
+ src/wmapp.cc       |  19 ++---
+ 6 files changed, 239 insertions(+), 10 deletions(-)
+
+commit 67df1d4d6fe26894375e28aa5dae1a542c359738
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 7 22:48:34 2024 +0200
+
+    Add fmt to mstring.
+
+ src/mstring.cc | 52 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/mstring.h  |  1 +
+ src/strtest.cc |  9 +++++++++
+ 3 files changed, 62 insertions(+)
+
+commit dfb6fecab38f9f51ce58f9543a3c8b0affd18d9d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 7 22:47:31 2024 +0200
+
+    Avoid a shell in show_backtrace.
+
+ src/misc.cc | 59 ++++++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 48 insertions(+), 11 deletions(-)
+
+commit a73e9837f8db5159302d16185d1680559527fb17
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue May 7 22:45:01 2024 +0200
+
+    Set errno in dirExists and fix leak for userhome in expand.
+
+ src/upath.cc | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+
+commit 5caef064a75e580bcb9f396d040a8f40870442fc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 5 15:38:32 2024 +0200
+
+    Improve readability of setState.
+
+ src/wmframe.cc | 69 +++++++++++++++++++++++++-----------------------------
+ 1 file changed, 32 insertions(+), 37 deletions(-)
+
+commit 0a9b70b1aaa8aba1ce8f2fbec8a69f7e513c5504
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 29 22:55:22 2024 +0200
+
+    When the frame drops urgency, also update the client.
+
+ src/atasks.cc   | 2 --
+ src/wmclient.cc | 6 +++++-
+ src/wmframe.cc  | 4 ++--
+ 3 files changed, 7 insertions(+), 5 deletions(-)
+
+commit f59682cc732c4060811175c9191b11e36e4cc3d4
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Apr 25 15:24:27 2024 +0200
+
+    Clear urgency and stop flashing when focusing a client.
+
+ src/atasks.cc   | 4 ++--
+ src/wmclient.cc | 7 +++++++
+ src/wmclient.h  | 1 +
+ src/wmframe.cc  | 6 +++---
+ src/wmmgr.cc    | 2 ++
+ 5 files changed, 15 insertions(+), 5 deletions(-)
+
+commit 2dadb9b3388078c6c38a0d2968d615f9a6e20948
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Apr 25 14:51:28 2024 +0200
+
+    Let "icesh restore" also clear the urgency flag.
+
+ man/icesh.pod |  4 ++--
+ src/icesh.cc  | 11 ++++++++++-
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+commit af5650d4855b1c36c72653d8d6707ab2f35fd78d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 22 18:40:25 2024 +0200
+
+    Succinct handling of mstrings in themes.
+
+ src/themes.cc | 25 +++++++++++++------------
+ src/themes.h  | 20 ++++++++++----------
+ 2 files changed, 23 insertions(+), 22 deletions(-)
+
+commit 68ff0f45fc0b9d6052a9094d4f2052c59d9c176a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 22 18:38:26 2024 +0200
+
+    Never handle internal WM actions via XSendEvent, but always via XPutBack.
+
+ src/wmapp.cc |  4 ++--
+ src/wmmgr.cc | 26 ++++++++++----------------
+ src/wmmgr.h  |  2 +-
+ 3 files changed, 13 insertions(+), 19 deletions(-)
+
+commit e54d76ec9be21e633915a34faeb9f508f40f5e25
+Author: Ferdinand Galko <galko.ferdinand@gmail.com>
+Date:   Wed Apr 17 16:25:29 2024 +0000
+
+    Translated using Weblate (Slovak)
+
+    Currently translated at 100.0% (526 of 526 strings)
+
+ po/sk.po | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 3429a0a015a0300e7b1061b1b2b340f98303834a
+Author: Eduard Bloch <blade@debian.org>
+Date:   Thu Apr 4 12:19:11 2024 +0200
+
+    Adding FDO weblinks to specification references
+
+ man/icewm-menu-fdo.pod | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit dc1e68ff1bb3510ec804f8438ed304525175b9b9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Mar 25 20:07:58 2024 +0100
+
+    Prepare 3.4.7 release
+
+ AUTHORS      |   2 +-
+ ChangeLog    | 192 +++++++++++++++++++++++++++++--------------------------
+ NEWS         |  56 +++++-----------
+ README.md    |  38 +++++------
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +--
+ 7 files changed, 146 insertions(+), 156 deletions(-)
+
 commit a69deee625d18deecc7091a111117e55c8bb7023
 Merge: 4064096b 803f8224
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5484,685 +6012,3 @@ Date:   Fri Oct 28 19:01:29 2022 +0200
 
  src/atasks.cc | 12 ++++++++----
  1 file changed, 8 insertions(+), 4 deletions(-)
-
-commit 88601d97795f3e0ca6379b905e7baa2ab99bb724
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 27 18:17:19 2022 +0200
-
-    Update a visible quick switch when a frame removes one of its tabs.
-
- src/wmframe.cc  |  3 +--
- src/wmmgr.cc    | 11 ++++++++---
- src/wmmgr.h     |  1 +
- src/wmswitch.cc |  8 +++++---
- 4 files changed, 15 insertions(+), 8 deletions(-)
-
-commit 00d36ffa31c4088f1525d87e76f98329be7b0a06
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Oct 26 20:01:18 2022 +0200
-
-    Add the icesh command "tabto" to move a number of windows as tabs to a
-    new frame.
-
- man/icesh.pod |  5 +++
- src/icesh.cc  | 93 ++++++++++++++++++++++++++++++++++++++++++++++++++++---
- 2 files changed, 93 insertions(+), 5 deletions(-)
-
-commit 7e725639028f62122ed4839ca3b397e41999dfc3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Oct 26 19:55:28 2022 +0200
-
-    Update the title bar shape when switching to a different tab and when
-    removing a tab.
-    Set the desktop, the layer and the state window properties when creating
-    a tab.
-    Always add a new tab to the window list.
-
- src/decorate.cc |  6 +++++-
- src/wmclient.cc |  6 +++---
- src/wmclient.h  |  2 +-
- src/wmframe.cc  | 49 ++++++++++++++++++++++++++++++++++++++-----------
- src/wmframe.h   |  6 +++++-
- src/wmtitle.cc  | 12 ++++--------
- 6 files changed, 56 insertions(+), 25 deletions(-)
-
-commit f1d50770254bc44ec027257cce8d677dc980794f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Oct 26 19:54:26 2022 +0200
-
-    Show the time of day when reporting an unknown window option.
-
- src/wmoption.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 992bb0cb0dcb85d8473ec60f662c67302427d91d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Oct 26 19:52:45 2022 +0200
-
-    Update _NET_CLIENT_LIST when adding more tabs.
-
- src/wmmgr.cc | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
-
-commit ff39e0b3305eac16db6e09bb32f656c9a0fc8b09
-Author: Eduard Bloch <blade@debian.org>
-Date:   Tue Oct 25 16:52:04 2022 +0200
-
-    feature: special filtered view and flat rendering
-
- man/icewm-menu-fdo.pod |  30 +++++++++++-
- src/fdomenu.cc         | 117 ++++++++++++++++++++++++++++++++++++++++-----
- 2 files changed, 134 insertions(+), 13 deletions(-)
-
-commit f806e829bb24a5735e46819e6a4caf591b5bf630
-Author: Eduard Bloch <blade@debian.org>
-Date:   Mon Oct 24 18:59:45 2022 +0200
-
-    DRY, simplify, some flags/folders separation
-
- src/CMakeLists.txt | 93 +++++++++++++++++++++-----------------------------
- 1 file changed, 39 insertions(+), 54 deletions(-)
-
-commit 731fdda3be247b4234c137e20748d751d63b1078
-Author: Kristijan Fremen Velkovski <me@krisfremen.com>
-Date:   Mon Oct 24 07:36:34 2022 +0000
-
-    Translated using Weblate (Macedonian)
-
-    Currently translated at 36.2% (188 of 519 strings)
-
- po/mk.po | 29 ++++++++++++-----------------
- 1 file changed, 12 insertions(+), 17 deletions(-)
-
-commit 8aa693a54ba9aa810e16741abf3c9cbcf11e9d61
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 24 01:42:17 2022 +0200
-
-    Prepare 3.1.0 release
-
- AUTHORS      |   8 +-
- ChangeLog    | 657 +++++++++++++++++++++++++++++++------------------------
- NEWS         | 101 ++++-----
- README.md    |  38 ++--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  86 ++++----
- po/be.po     |  86 ++++----
- po/bg.po     |  86 ++++----
- po/ca.po     |  86 ++++----
- po/cs.po     |  86 ++++----
- po/da.po     |  86 ++++----
- po/de.po     |  86 ++++----
- po/el.po     |  86 ++++----
- po/en.po     |  86 ++++----
- po/es.po     |  86 ++++----
- po/fi.po     |  86 ++++----
- po/fr.po     |  90 ++++----
- po/he.po     |  86 ++++----
- po/hr.po     |  86 ++++----
- po/hu.po     |  86 ++++----
- po/icewm.pot |  88 ++++----
- po/id.po     |  86 ++++----
- po/it.po     |  86 ++++----
- po/ja.po     |  86 ++++----
- po/ko.po     |  86 ++++----
- po/lt.po     |  86 ++++----
- po/lv.po     |  86 ++++----
- po/mk.po     |  86 ++++----
- po/nb.po     |  86 ++++----
- po/nl.po     |  86 ++++----
- po/no.po     |  86 ++++----
- po/pl.po     |  86 ++++----
- po/pt.po     |  86 ++++----
- po/pt_BR.po  |  89 ++++----
- po/ro.po     |  86 ++++----
- po/ru.po     |  86 ++++----
- po/sk.po     |  86 ++++----
- po/sl.po     |  86 ++++----
- po/sv.po     |  86 ++++----
- po/tr.po     |  86 ++++----
- po/uk.po     |  86 ++++----
- po/vi.po     |  86 ++++----
- po/zh_CN.po  |  86 ++++----
- po/zh_TW.po  |  86 ++++----
- 46 files changed, 2125 insertions(+), 2056 deletions(-)
-
-commit 27708152b38933f5ea5f43227ad07d40f26b0bf7
-Merge: f20ff627 dd144756
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 24 01:37:15 2022 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit dd1447569fd2ea3e1a8899e2ce084798c01f50be
-Merge: cc8d3180 50c4791e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 24 01:36:17 2022 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 50c4791e4b20449e1abbc2dc6b6a3295d7b4ca88
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 24 01:18:16 2022 +0200
-
-    Fix warning on delete.
-
- src/wmmgr.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 429d528d8e38aaef97cd4351cd710962744def97
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Oct 23 21:32:17 2022 +0200
-
-    Add winoption "frame" to group new clients as tabs in a single frame.
-
- man/icewm-winoptions.pod |  4 ++++
- src/wmclient.cc          | 43 +++++++++++++++++++++++++++++++++++++++++++
- src/wmclient.h           |  1 +
- src/wmframe.cc           | 15 +++++++++++++++
- src/wmframe.h            |  8 +++++---
- src/wmmgr.cc             | 31 +++++++++++++++++++++++++------
- src/wmoption.cc          |  6 +++++-
- src/wmoption.h           |  1 +
- 8 files changed, 99 insertions(+), 10 deletions(-)
-
-commit 06ef4f455957e37aed771346db0245911d05f3ae
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Oct 23 17:21:17 2022 +0200
-
-    Revert "Revisiting header files and making them self-sufficient"
-
-    This reverts commit 1859cae6c437bc1c7f6419b47d16e51a0e338ba1.
-
- src/aapm.h       | 2 --
- src/acpustatus.h | 6 ------
- src/amemstatus.h | 4 ----
- src/applet.h     | 4 ----
- src/apppstatus.h | 7 -------
- src/browse.h     | 2 --
- src/genpref.cc   | 1 -
- src/logevent.h   | 2 --
- src/objbar.h     | 2 --
- src/themable.h   | 1 -
- src/wmoption.h   | 1 +
- src/wmsession.h  | 4 ----
- src/wmswitch.h   | 3 ---
- src/wmtitle.h    | 4 ----
- src/wmwinmenu.h  | 3 ---
- src/ybidi.h      | 2 --
- src/yconfig.h    | 1 -
- src/ycursor.h    | 2 --
- src/yicon.h      | 3 ---
- src/yimage.h     | 3 +--
- src/ylist.h      | 2 --
- src/yrect.h      | 4 ----
- src/yxcontext.h  | 5 -----
- 23 files changed, 2 insertions(+), 66 deletions(-)
-
-commit d13fbd7b5210a73769b9b1dd62e9f704eb799ef1
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sat Oct 22 22:28:14 2022 +0200
-
-    [cmake] Various improvements
-
-    - increased minimum required version to stop printing warnings
-    - use target_link_options where it makes sense so that linker options are
-      passed through explicitly as raw linker arguments instead of abusing the
-      library list for this purpose
-    - Intl_INCLUDE_DIRS passed explicitly as include directory list (it
-    would break
-      before if there are more than one directory exported)
-    - removing duplicates in the linked libraries while creating a unified
-    list,
-      also removing duplicates from include folders
-    - optional discovery of the related header files (visual sugar for
-    IDE users)
-    - dropping legacy hints and upgrading to newer cmake version requirement
-    - unified handling of extra linker flags and extra libraries
-    - using the new -flto=... option with value to avoid warnings when building
-      with ENABLE_LTO
-
- doc/CMakeLists.txt |   2 +-
- lib/CMakeLists.txt |   2 +-
- po/CMakeLists.txt  |   2 +-
- src/CMakeLists.txt | 153 ++++++++++++++++++++++++++++++-------------------
- 4 files changed, 97 insertions(+), 62 deletions(-)
-
-commit 1859cae6c437bc1c7f6419b47d16e51a0e338ba1
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sat Oct 22 21:04:14 2022 +0200
-
-    Revisiting header files and making them self-sufficient
-
- src/aapm.h       | 2 ++
- src/acpustatus.h | 6 ++++++
- src/amemstatus.h | 4 ++++
- src/applet.h     | 4 ++++
- src/apppstatus.h | 7 +++++++
- src/browse.h     | 2 ++
- src/genpref.cc   | 1 +
- src/logevent.h   | 2 ++
- src/objbar.h     | 2 ++
- src/themable.h   | 1 +
- src/wmoption.h   | 1 -
- src/wmsession.h  | 4 ++++
- src/wmswitch.h   | 3 +++
- src/wmtitle.h    | 4 ++++
- src/wmwinmenu.h  | 3 +++
- src/ybidi.h      | 2 ++
- src/yconfig.h    | 1 +
- src/ycursor.h    | 2 ++
- src/yicon.h      | 3 +++
- src/yimage.h     | 3 ++-
- src/ylist.h      | 2 ++
- src/yrect.h      | 4 ++++
- src/yxcontext.h  | 5 +++++
- 23 files changed, 66 insertions(+), 2 deletions(-)
-
-commit 5c7f922e8b55b4cb27e53584e1f14076a7792c45
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Oct 23 12:08:42 2022 +0200
-
-    Detail how to use tabbed windows.
-
- man/icewm.pod | 35 ++++++++++++++++++++++++++++++++---
- 1 file changed, 32 insertions(+), 3 deletions(-)
-
-commit a555fc88eaf47bfbcb5faa5fd62c2c3fa730c988
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Oct 23 01:42:42 2022 +0200
-
-    Show tabs on the title bar. Click on title bar to change tabs.
-
- src/decorate.cc |   2 +
- src/wmframe.cc  |  17 ++++++-
- src/wmframe.h   |   2 +
- src/wmtitle.cc  | 127 +++++++++++++++++++++++++++++++++++++++++++++-------
- src/wmtitle.h   |   4 ++
- 5 files changed, 133 insertions(+), 19 deletions(-)
-
-commit f4b21c030f648eb4a7517715663e7107b0a175de
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 20 22:54:29 2022 +0200
-
-    Also context save the internal clients.
-
- src/wmclient.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 016149bf6b03880bf9e6214e8b40cb8f0bcdcbb1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 20 22:41:49 2022 +0200
-
-    Move WindowOption from frame to client and cache it.
-
- src/wmclient.cc | 62 ++++++++++++++++++++++++++++++------
- src/wmclient.h  |  5 +++
- src/wmframe.cc  | 92 +++++++++++++----------------------------------------
- src/wmframe.h   |  6 ----
- src/wmmgr.cc    | 53 +++++++++++++++---------------
- src/wmoption.cc | 17 ++++++++--
- src/wmoption.h  |  3 ++
- 7 files changed, 121 insertions(+), 117 deletions(-)
-
-commit 22794bf476d13016ed6e0da986b303cc12b17a80
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Oct 19 23:07:01 2022 +0200
-
-    Fix merging a transient as a tab to its owner.  Preserve tray hint
-    across restarts.  Smaller WindowOption.
-
- src/WinMgr.h     |  8 +++---
- src/wmclient.cc  |  6 ++---
- src/wmclient.h   |  6 ++---
- src/wmframe.cc   | 69 +++++++++++++++++++++++-----------------------------
- src/wmframe.h    | 14 ++---------
- src/wmmgr.cc     |  8 +++---
- src/wmoption.cc  | 24 +++++++++++++-----
- src/wmoption.h   |  8 ++++--
- src/wmtaskbar.cc |  2 +-
- src/wmtitle.cc   |  4 +--
- src/wmwinlist.cc |  2 +-
- src/ydialog.cc   |  2 +-
- 12 files changed, 75 insertions(+), 78 deletions(-)
-
-commit aa38383336205a62dc2d0f93b04ed6aa7bb611f1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Oct 18 19:21:34 2022 +0200
-
-    Preserve tabs across restarts.
-
- src/wmframe.cc | 62 ++++++++++++++++++++++++++++++------------
- src/wmframe.h  |  6 ++++-
- src/wmmgr.cc   | 79 +++++++++++++++++++++++++++++++++++++++++++++++++++---
- src/wmmgr.h    |  1 +
- src/yxapp.cc   |  2 ++
- 5 files changed, 129 insertions(+), 21 deletions(-)
-
-commit cf09ff125d48f0c5d34d5e4d4b67ef2306e10d90
-Author: Stéphane LASSALVY <stephane.lassalvy@laposte.net>
-Date:   Sun Oct 16 15:42:53 2022 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/fr.po | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-commit af136ee53632932ca252ac0e6c42036029413493
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Oct 14 17:45:50 2022 +0200
-
-    Check owner pointer for transient windows which have an unmapped owner
-    for issue #675.
-
- src/wmwinlist.cc | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
-
-commit e1b41e23f21c57751399281231e37c6ce650c00f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Oct 11 22:49:48 2022 +0200
-
-    Improve Alt+Tab for tabbed frames for issue #673.
-
- src/wmmgr.cc    |  2 ++
- src/wmswitch.cc | 42 +++++++++++++++++++++++-------------------
- src/wmswitch.h  |  4 +++-
- 3 files changed, 28 insertions(+), 20 deletions(-)
-
-commit cc87846c3cdb57385b6b1f7d817ffefb54fcfc28
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Oct 11 22:20:36 2022 +0200
-
-    When switching tabs, ensure focus is preserved.
-
- src/wmframe.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit 68f1ab18d9982cf7757a3b12a9c14961586b4c4c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Oct 11 20:51:47 2022 +0200
-
-    Replace last Button2 with isTabbingButton for issue ice-wm/icewm#95.
-
- src/wmtitle.cc | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-commit f328bba2e1f1faf08a8f4a83ab121631416f0879
-Author: marcelo cripe <marcelocripe@gmail.com>
-Date:   Tue Oct 11 16:48:39 2022 +0000
-
-    Translated using Weblate (Portuguese (Brazil))
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/pt_BR.po | 600 +++++++++++++++++++++++++++++---------------------------
- 1 file changed, 306 insertions(+), 294 deletions(-)
-
-commit 71d15fba6ee3bf3913fabe72423e3d2490859c1d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 10 18:46:30 2022 +0200
-
-    Add MouseWinTabbing button preference for merging frame tabs for issue
-    ice-wm/icewm#95.
-
- man/icewm.pod  |  6 ++++++
- src/bindkey.h  |  2 ++
- src/default.h  |  1 +
- src/wmtitle.cc | 14 +++++++++++---
- src/wmtitle.h  |  2 ++
- 5 files changed, 22 insertions(+), 3 deletions(-)
-
-commit 51bd0a6f7a7c4cfc12f9b877928668a732891ab1
-Author: Wallon <franckjl@hotmail.com>
-Date:   Mon Oct 10 01:42:51 2022 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/fr.po | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
-
-commit 55308def4ce5be5a67573818c38783bf24bde128
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Oct 9 21:51:59 2022 +0200
-
-    Let the window list support tabs.
-
- src/wmclient.cc  |  20 ++---
- src/wmclient.h   |  13 ++-
- src/wmframe.cc   |  35 ++++----
- src/wmframe.h    |   2 -
- src/wmwinlist.cc | 224 +++++++++++++++++++++++++++++++--------------------
- src/wmwinlist.h  |  47 +++++++----
- src/ylistbox.h   |   1 +
- 7 files changed, 205 insertions(+), 137 deletions(-)
-
-commit f20ff627185755159ebf1312470bc884156239e1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 6 08:35:09 2022 +0200
-
-    Prepare 3.0.1 release
-
- AUTHORS      |   7 +-
- ChangeLog    | 322 +++++++++++++++++++++++++++----------------------------
- NEWS         |  67 +++++-------
- README.md    |  38 +++----
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |   6 +-
- po/be.po     |   6 +-
- po/bg.po     |   6 +-
- po/ca.po     |  10 +-
- po/cs.po     |   6 +-
- po/da.po     |   6 +-
- po/de.po     |   6 +-
- po/el.po     |   6 +-
- po/en.po     |   6 +-
- po/es.po     |   6 +-
- po/fi.po     |   6 +-
- po/fr.po     |   6 +-
- po/he.po     |   6 +-
- po/hr.po     |   6 +-
- po/hu.po     |   6 +-
- po/icewm.pot |   8 +-
- po/id.po     |   6 +-
- po/it.po     |   6 +-
- po/ja.po     |  10 +-
- po/ko.po     |   6 +-
- po/lt.po     |   6 +-
- po/lv.po     |   6 +-
- po/mk.po     |   6 +-
- po/nb.po     |   6 +-
- po/nl.po     |  10 +-
- po/no.po     |   6 +-
- po/pl.po     |   6 +-
- po/pt.po     |   6 +-
- po/pt_BR.po  |   6 +-
- po/ro.po     |   6 +-
- po/ru.po     |  10 +-
- po/sk.po     |  10 +-
- po/sl.po     |   6 +-
- po/sv.po     |   6 +-
- po/tr.po     |   6 +-
- po/uk.po     |   6 +-
- po/vi.po     |   6 +-
- po/zh_CN.po  |   6 +-
- po/zh_TW.po  |   6 +-
- 46 files changed, 343 insertions(+), 361 deletions(-)
-
-commit 397a7834460742e5d9a2133f1bda76f7be9186e2
-Merge: f722c68e cc8d3180
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 6 08:30:31 2022 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit cc8d3180465d7e3c5cc86c5ec6a301e8c26fee73
-Merge: 7f38d19c 7f83078a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 6 08:24:37 2022 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 7f83078a52dc9d8d75451892bd2ea5316122b500
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 6 08:20:06 2022 +0200
-
-    Fix typo.
-
- src/wmmgr.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 2e8ad584d0cac1dd580d49f2c02534c9932d91cf
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 6 01:26:45 2022 +0200
-
-    More elaborate implementation of _NET_REQUEST_FRAME_EXTENTS.
-
- src/wmmgr.cc | 104 +++++++++++++++++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 102 insertions(+), 2 deletions(-)
-
-commit 9f391061cfabad44eef19b95c386a54a85a5e793
-Author: Alexey Yaryshev <clarkez344@gmail.com>
-Date:   Wed Oct 5 14:36:57 2022 +0000
-
-    Translated using Weblate (Russian)
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/ru.po | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
-
-commit 3e2bc3d87dc60ca3ef8dbda304752c89ca951e06
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Oct 5 01:49:01 2022 +0200
-
-    Remove PHONY to fix distclean.
-
- doc/Makefile.am | 1 -
- 1 file changed, 1 deletion(-)
-
-commit 8cbb0ebb828e2fea3772bc192cef9f760e2c956f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Oct 5 01:16:03 2022 +0200
-
-    Fix _NET_REQUEST_FRAME_EXTENTS for issue ice-wm/icewm#93.
-
- src/wmmgr.cc | 43 ++++---------------------------------------
- 1 file changed, 4 insertions(+), 39 deletions(-)
-
-commit b76be51c36ab56110b440d4a5ce3d9aecb8dfc15
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Oct 5 00:14:47 2022 +0200
-
-    Fix typo for KeyWinPrev.
-
- man/icewm.pod | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit e97a1e0e8af65bb588b9b868a4b840b23109542c
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Mon Oct 3 20:59:37 2022 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/pt.po | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit 3e62b2d8e4b1a9fbe64ddecac14449ede671b2b9
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Mon Oct 3 14:25:03 2022 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (519 of 519 strings)
-
- po/sk.po | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit f722c68ec5f4e20e32746583d2393d515dc3e11f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 3 16:48:15 2022 +0200
-
-    Prepare 3.0.0 release
-
- AUTHORS      |  12 +-
- ChangeLog    | 708 ++++++++++++++++++++++++++++++++-----------------------
- NEWS         | 113 ++++-----
- README.md    |  40 ++--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |   2 +-
- po/be.po     |   2 +-
- po/bg.po     |   2 +-
- po/ca.po     |   2 +-
- po/cs.po     |   2 +-
- po/da.po     |   2 +-
- po/de.po     |   2 +-
- po/el.po     |   2 +-
- po/en.po     |   2 +-
- po/es.po     |   2 +-
- po/fi.po     |   2 +-
- po/fr.po     |   2 +-
- po/he.po     |   2 +-
- po/hr.po     |   2 +-
- po/hu.po     |   2 +-
- po/icewm.pot |   4 +-
- po/id.po     |   2 +-
- po/it.po     |   2 +-
- po/ja.po     |   2 +-
- po/ko.po     |   2 +-
- po/lt.po     |   2 +-
- po/lv.po     |   2 +-
- po/mk.po     |   2 +-
- po/nb.po     |   2 +-
- po/nl.po     |   2 +-
- po/no.po     |   2 +-
- po/pl.po     |   2 +-
- po/pt.po     |   2 +-
- po/pt_BR.po  |   2 +-
- po/ro.po     |   2 +-
- po/ru.po     |   2 +-
- po/sk.po     |   2 +-
- po/sl.po     |   2 +-
- po/sv.po     |   2 +-
- po/tr.po     |   2 +-
- po/uk.po     |   2 +-
- po/vi.po     |   2 +-
- po/zh_CN.po  |   2 +-
- po/zh_TW.po  |   2 +-
- 46 files changed, 535 insertions(+), 432 deletions(-)
-
-commit 68197ee0c5b81ce86f83c9381d1e73317486d0e9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 3 16:39:40 2022 +0200
-
-    Drop phony.
-
- doc/Makefile.am | 1 -
- 1 file changed, 1 deletion(-)
-
-commit 5b330f3ed6d4936380528d8b5126fc929fae2e83
-Merge: 31cfc736 7f38d19c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 3 16:28:21 2022 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 7f38d19c6aa975310c3df8980a0e2f633f42426b
-Merge: 751e987a 0992e083
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 3 16:26:38 2022 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
