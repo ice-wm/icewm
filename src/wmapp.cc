@@ -28,6 +28,7 @@
 #include "prefs.h"
 #include "udir.h"
 #include "ascii.h"
+#include "theminst.h"
 #include "ycursor.h"
 #include "yxcontext.h"
 #include "ytooltip.h"
@@ -1605,7 +1606,7 @@ void YWMApp::afterWindowEvent(XEvent &xev) {
                 manager->popupStartMenu(desktop);
             }
             else if (k1 == xapp->Win_R && k2 == xapp->Win_R) {
-                manager->doWMAction(ICEWM_ACTION_WINDOWLIST, true);
+                manager->doWMAction(ICEWM_ACTION_WINDOWLIST);
             }
         }
     }
@@ -1649,6 +1650,10 @@ static void print_usage(const char *argv0) {
              );
     char* joint_preferences = cstrJoin(usage_preferences, output_preferences,
                                        nullptr);
+    const char* install_preferences =
+             _(
+             "  -i, --install=THEME Install THEME from extra or 'list'.\n"
+             );
 
     printf(_("Usage: %s [OPTIONS]\n"
              "Starts the IceWM window manager.\n"
@@ -1657,19 +1662,17 @@ static void print_usage(const char *argv0) {
              "  -d, --display=NAME  NAME of the X server to use.\n"
              "%s"
              "  --sync              Synchronize X11 commands.\n"
-             "%s"
-             "\n"
+             "%s\n"
              "  -V, --version       Prints version information and exits.\n"
              "  -h, --help          Prints this usage screen and exits.\n"
-             "%s"
-             "\n"
+             "%s\n"
              "  --replace           Replace an existing window manager.\n"
              "  -r, --restart       Tell the running icewm to restart itself.\n"
              "\n"
              "  --configured        Print the compile time configuration.\n"
              "  --directories       Print the configuration directories.\n"
              "  -l, --list-themes   Print a list of all available themes.\n"
-             "\n"
+             "%s\n"
              "Environment variables:\n"
              "  ICEWM_PRIVCFG=PATH  Directory for user configuration files,\n"
              "                      \"$XDG_CONFIG_HOME/icewm\" if exists or\n"
@@ -1683,6 +1686,7 @@ static void print_usage(const char *argv0) {
              usage_client_id,
              joint_preferences,
              usage_debug,
+             install_preferences,
              PACKAGE_BUGREPORT[0] ? PACKAGE_BUGREPORT :
              PACKAGE_URL[0] ? PACKAGE_URL :
              "https://ice-wm.org/");
@@ -1852,15 +1856,7 @@ int main(int argc, char **argv) {
                 rewrite_prefs = true;
             else if (is_long_switch(*arg, "extensions"))
                 show_extensions = true;
-            else
-#ifdef DEBUG
-            if (is_long_switch(*arg, "debug"))
-                debug = true;
-            else if (is_long_switch(*arg, "debug-z"))
-                debug_z = true;
-            else
-#endif
-            if (is_switch(*arg, "r", "restart"))
+            else if (is_switch(*arg, "r", "restart"))
                 restart_wm = true;
             else if (is_long_switch(*arg, "replace"))
                 replace_wm = true;
@@ -1886,12 +1882,20 @@ int main(int argc, char **argv) {
                 YXApplication::alphaBlending = true;
             else if (GetArgument(value, "d", "display", arg, argv+argc))
                 displayName = value;
+            else if (GetArgument(value, "i", "install", arg, argv+argc))
+                install_theme(value);
             else if (GetArgument(value, "o", "output", arg, argv+argc))
                 outputFile = value;
             else if (GetArgument(value, "s", "splash", arg, argv+argc))
                 splashFile = value;
             else if (GetLongArgument(value, "trace", arg, argv+argc))
                 YTrace::tracing(value);
+#ifdef DEBUG
+            else if (is_long_switch(*arg, "debug"))
+                debug = true;
+            else if (is_long_switch(*arg, "debug-z"))
+                debug_z = true;
+#endif
             else
                 warn(_("Unrecognized option '%s'."), *arg);
         }
@@ -2014,11 +2018,11 @@ void YWMApp::handleSMAction(WMAction message) {
         { ICEWM_ACTION_WINDOWLIST,    actionWindowList },
         { ICEWM_ACTION_RESTARTWM,     actionRestart },
         { ICEWM_ACTION_SUSPEND,       actionSuspend },
-        { ICEWM_ACTION_HIBERNATE,     actionHibernate },
         { ICEWM_ACTION_WINOPTIONS,    actionWinOptions },
         { ICEWM_ACTION_RELOADKEYS,    actionReloadKeys },
         { ICEWM_ACTION_ICEWMBG,       actionIcewmbg },
         { ICEWM_ACTION_REFRESH,       actionRefresh },
+        { ICEWM_ACTION_HIBERNATE,     actionHibernate },
     };
     for (auto p : pairs)
         if (message == p.left)

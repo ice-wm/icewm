@@ -478,6 +478,14 @@ bool YFrameClient::handleTimer(YTimer* timer) {
             }
         }
     }
+    if (fUrgencyTimer == timer) {
+        fUrgencyTimer = null;
+        xsmart<XWMHints> h(XGetWMHints(xapp->display(), handle()));
+        if (h && hasbit(h->flags, XUrgencyHint)) {
+            h->flags &= ~XUrgencyHint;
+            XSetWMHints(xapp->display(), handle(), h);
+        }
+    }
 
     return false;
 }
@@ -660,19 +668,7 @@ void YFrameClient::handleProperty(const XPropertyEvent &property) {
 
     case XA_WM_HINTS:
         if (new_prop) prop.wm_hints = true;
-        {
-            Drawable oldPix = iconPixmapHint();
-            Drawable oldMask = iconMaskHint();
-            bool oldUrge = urgencyHint();
-            getWMHints();
-            if (oldPix != iconPixmapHint() || oldMask != iconMaskHint()) {
-                refreshIcon();
-            }
-            if (oldUrge != urgencyHint()) {
-                if (getFrame())
-                    getFrame()->setWmUrgency(urgencyHint());
-            }
-        }
+        updateWMHints();
         prop.wm_hints = new_prop;
         break;
 
@@ -1282,6 +1278,33 @@ Pixmap YFrameClient::iconPixmapHint() const {
 
 Pixmap YFrameClient::iconMaskHint() const {
     return wmHint(IconMaskHint) ? fHints->icon_mask : None;
+}
+
+void YFrameClient::updateWMHints() {
+    Drawable oldPix = iconPixmapHint();
+    Drawable oldMask = iconMaskHint();
+    bool oldUrgency = urgencyHint();
+    getWMHints();
+    if (oldPix != iconPixmapHint() || oldMask != iconMaskHint()) {
+        refreshIcon();
+    }
+    if (fUrgencyTimer) {
+        if (urgencyHint() == false)
+            fUrgencyTimer = null;
+        else if (getFrame() && getFrame()->focused())
+            fHints->flags &= ~XUrgencyHint;
+    }
+    if (oldUrgency != urgencyHint()) {
+        if (getFrame())
+            getFrame()->setWmUrgency(urgencyHint());
+    }
+}
+
+void YFrameClient::clearUrgency() {
+    if (urgencyHint()) {
+        fHints->flags &= ~XUrgencyHint;
+        fUrgencyTimer->setTimer(500L, this, true);
+    }
 }
 
 bool YFrameClient::isDockApp() const {

@@ -187,6 +187,11 @@ it to search for configuration files.
 B<icewm> will search all the configuration directories for theme files
 and print a list of all found themes.
 
+=item B<-i>, B<--install>=I<THEME>
+
+Install I<THEME> from icewm-extra and exit. When I<THEME> is I<list>,
+print a listing of available themes to install.
+
 =item B<-p>, B<--postpreferences>
 
 This gives a long list of all the internal B<icewm> options with their
@@ -516,19 +521,74 @@ also be changed by bringing the drag icon to the screen edge.
 
 =head2 ADDRESS BAR
 
-If B<EnableAddressBar>=1 then B<KeySysAddressBar>=C<Alt+Ctrl+Space>
-activates the address bar in the task bar.
-If B<ShowAddressBar>=1 it is always shown. This is a command-line in
-the task bar where a shell command can be typed.
-Pressing C<Enter> will execute the command.
-B<AddressBarCommand>=C</bin/sh> will be used to execute the command.
-On C<Control+Enter> the command is executed in a terminal
+The task bar contains a command-line prompt called the address bar,
+if B<EnableAddressBar>=1. It is always shown when B<ShowAddressBar>=1,
+otherwise it is activated by B<KeySysAddressBar>=C<Alt+Ctrl+Space>.
+In it a shell command can be typed, which is executed by the
+B<AddressBarCommand>=C</bin/sh> when pressing C<Enter>.
+On C<Control+Enter> this command is executed in a new terminal
 as given by B<TerminalCommand>.
-The address bar maintains a history that is navigable by the I<Up>
-and I<Down> keys.
-It supports command completion using C<Tab> or C<Ctrl+I>.
-A rich set of editing operations is supported,
-including cut-/copy-/paste-operations.
+
+Commands are executed relative to the working directory of icewm.
+This can be shown by executing C<pwd>. It can be changed using the C<cd>
+command. Without argument it defaults to the home directory. With one
+argument it is changed. This argument is expanded when it starts with a
+dollar or tilde. When it is equal to C<->, it reverts to the previous
+directory.
+
+The address bar has a history that is navigable by I<Up> and I<Down>.
+It supports file completion using C<Tab> or C<Ctrl+I>, cut/copy/paste
+and these editing operations:
+
+=over
+
+=item Ctrl+a: select all
+
+=item Ctrl+backslash: deselect all
+
+=item Ctrl+u: delete selected or to line start
+
+=item Ctrl+v: paste selected
+
+=item Ctrl+w: delete selected or previous word
+
+=item Ctrl+x: cut selection
+
+=item Ctrl+c: copy selection
+
+=item Ctrl+i: completion
+
+=item Ctrl+Left: back a word
+
+=item Ctrl+Right: forward a word
+
+=item Ctrl+Shift+Backspace: delete to beginning
+
+=item Ctrl+Shift+Delete: delete to end
+
+=item Ctrl+Delete: delete word
+
+=item Ctrl+Backspace: delete previous word
+
+=item Shift+Delete: cut selection
+
+=item Shift+Insert: paste selected
+
+=item Tab: completion
+
+=item Left: move cursor left
+
+=item Right: move cursor right
+
+=item Home: move cursor to line start
+
+=item End: move cursor to line end
+
+=item Delete: delete next character
+
+=item Backspace: delete previous character
+
+=back
 
 =head2 WINDOW LIST
 
@@ -666,7 +726,7 @@ To control keyboard layouts on the task bar, define in F<preferences>
 the option B<KeyboardLayouts> to a comma-separated list of your
 preferred keyboard layouts. For example:
 
- KeyboardLayouts="de","fr","jp"
+  KeyboardLayouts = "de", "fr", "jp"
 
 A keyboard layout can simply be a name. Usually this is a two-letter
 country code. See the directory F</usr/share/X11/xkb/symbols> for
@@ -1385,14 +1445,13 @@ in the XPM image is the sensitive point for the mouse pointer.
 
 =item F<icons>
 
-Contains icons that are used to identify applications.  Usually these
-files are in the XPM format, but the PNG and SVG image formats are also
-supported.  The names of icon files may follow a specific naming
-pattern, like F<app_32x32.xpm>.  They start with a base name, usually
-this is just a single word.  Then follows an underscore, followed by a
-size specification in the format C<SIZExSIZE>.  This is followed by a
-dot and the file extension, where the extension denotes the icon image
-format.  Common sizes are 16, 32 and 48 for small, large and huge icons.
+Contains icons for applications and keyboard layouts. These can be in
+XPM, PNG or SVG format.  The filename of an I<application icon> may
+follow a specific naming pattern, like F<app_32x32.xpm>.  They start
+with a base name, which usually is just a single word.  Then follows
+an underscore, followed by a size specification, as in C<SIZExSIZE>.
+This is followed by a dot and the file extension, where the extension
+denotes the icon image format.  Common sizes are 16, 32 and 48.
 This depends on the respective C<IconSize> preferences options.
 
 =item F<ledclock>

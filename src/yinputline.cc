@@ -311,12 +311,15 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
             break;
         default:
             if (fListener &&
-                ((k == XK_Return && m == 0) ||
-                 (k == XK_KP_Enter && m == 0) ||
+                ((k == XK_Return && (m & ~ControlMask) == 0) ||
+                 (k == XK_KP_Enter && (m & ~ControlMask) == 0) ||
                  (k == XK_j && m == ControlMask) ||
                  (k == XK_m && m == ControlMask)))
             {
-                fListener->inputReturn(this);
+                bool control =
+                    (k == XK_Return || k == XK_KP_Enter)
+                    && (m == ControlMask);
+                fListener->inputReturn(this, control);
                 return true;
             }
             else
@@ -463,9 +466,9 @@ unsigned YInputLine::offsetToPos(int offset) {
 }
 
 void YInputLine::handleFocus(const XFocusChangeEvent &focus) {
-    if (focus.type == FocusIn /* && fHasFocus == false*/
-        && focus.detail != NotifyPointer
-        && focus.detail != NotifyPointerRoot)
+    if (focus.type == FocusIn &&
+        focus.detail != NotifyPointer &&
+        focus.detail != NotifyPointerRoot)
     {
         fHasFocus = true;
         selectAll();
@@ -713,6 +716,39 @@ void YInputLine::complete() {
         res_count++;
     if (1 <= res_count)
         setText(res, res_count == 1);
+    else {
+        int i = mstr.lastIndexOf(' ');
+        if (i > 0 && size_t(i + 1) < mstr.length()) {
+            mstring sub(mstr.substring(i + 1));
+            YStringArray list;
+            if (sub[0] == '~' && upath::glob(sub, list, "/ST") &&
+                list.getCount() == 1) {
+                mstring found(mstr.substring(0, i + 1) + list[0]);
+                setText(found, true);
+            }
+            else if (upath::glob(sub + "*", list, "/S") && list.nonempty()) {
+                if (list.getCount() == 1) {
+                    mstring found(mstr.substring(0, i + 1) + list[0]);
+                    setText(found, true);
+                } else {
+                    int len = 0;
+                    for (; list[0][len]; ++len) {
+                        char ch = list[0][len];
+                        int j = 1;
+                        while (j < list.getCount() && ch == list[j][len])
+                            ++j;
+                        if (j < list.getCount())
+                            break;
+                    }
+                    if (len) {
+                        mstring common(list[0], len);
+                        mstring found(mstr.substring(0, i + 1) + common);
+                        setText(found, false);
+                    }
+                }
+            }
+        }
+    }
     free(res);
 }
 

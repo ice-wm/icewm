@@ -944,17 +944,17 @@ void YWindowManager::handleClientMessage(const XClientMessageEvent &message) {
             break;
         case ICEWM_ACTION_LOGOUT:
         case ICEWM_ACTION_CANCEL_LOGOUT:
-        case ICEWM_ACTION_SHUTDOWN:
-        case ICEWM_ACTION_SUSPEND:
-        case ICEWM_ACTION_HIBERNATE:
         case ICEWM_ACTION_REBOOT:
-        case ICEWM_ACTION_RESTARTWM:
-        case ICEWM_ACTION_WINDOWLIST:
+        case ICEWM_ACTION_SHUTDOWN:
         case ICEWM_ACTION_ABOUT:
+        case ICEWM_ACTION_WINDOWLIST:
+        case ICEWM_ACTION_RESTARTWM:
+        case ICEWM_ACTION_SUSPEND:
         case ICEWM_ACTION_WINOPTIONS:
         case ICEWM_ACTION_RELOADKEYS:
         case ICEWM_ACTION_ICEWMBG:
         case ICEWM_ACTION_REFRESH:
+        case ICEWM_ACTION_HIBERNATE:
             smActionListener->handleSMAction(action);
             break;
         }
@@ -1075,6 +1075,8 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
             switchFocusTo(f, reorder);
 
         f->setWmUrgency(false);
+        if (c)
+            c->clearUrgency();
     }
 #ifdef DEBUG
     if (w == desktop) {
@@ -3820,9 +3822,10 @@ int YWindowManager::getSwitchScreen() {
     return inrange(s, 0, getScreenCount() - 1) ? s : 0;
 }
 
-void YWindowManager::doWMAction(WMAction action, bool putback) {
-    XClientMessageEvent xev;
-    memset(&xev, 0, sizeof(xev));
+void YWindowManager::doWMAction(WMAction action) {
+    XEvent event;
+    memset(&event, 0, sizeof(event));
+    XClientMessageEvent& xev = event.xclient;
 
     xev.type = ClientMessage;
     xev.window = xapp->root();
@@ -3831,14 +3834,7 @@ void YWindowManager::doWMAction(WMAction action, bool putback) {
     xev.data.l[0] = CurrentTime;
     xev.data.l[1] = action;
 
-    if (putback) {
-        XEvent event;
-        event.xclient = xev;
-        XPutBackEvent(xapp->display(), &event);
-    }
-    else {
-        xapp->send(xev, xapp->root(), SubstructureNotifyMask);
-    }
+    XPutBackEvent(xapp->display(), &event);
 }
 
 #ifdef CONFIG_XRANDR
@@ -3952,8 +3948,9 @@ void YTopWindow::setFrame(YFrameWindow* frame) {
 bool YTopWindow::handleKey(const XKeyEvent& key) {
     if (key.type == KeyPress &&
         manager->netActiveWindow() == None &&
-        fHandle && fFrame && fFrame->visible() &&
+        fHandle && fFrame &&
         windowContext.find(fHandle) == fFrame &&
+        fFrame->visible() &&
         xapp->AltMask)
     {
         YFrameWindow* f = fFrame;

@@ -103,6 +103,7 @@ YFrameWindow::YFrameWindow(
     fShapeMoreTabs(false),
     fHaveStruts(false),
     indicatorsCreated(false),
+    loweringByAction(false),
     fWindowType(wtNormal)
 {
     setStyle(wsOverrideRedirect);
@@ -1310,12 +1311,12 @@ void YFrameWindow::actionPerformed(YAction action, unsigned int modifiers) {
             wmMaximizeHorz();
         break;
     case actionLower:
-        if (canLower())
-            wmLower();
+        loweringByAction = true;
+        wmLower();
+        loweringByAction = false;
         break;
     case actionRaise:
-        if (canRaise())
-            wmRaise();
+        wmRaise();
         break;
     case actionDepth:
         if (overlapped() && canRaise()) {
@@ -1731,7 +1732,7 @@ void YFrameWindow::wmLower() {
             wmapp->signalGuiEvent(geWindowLower);
         if (owner()) {
             for (YFrameWindow* w = this; w; w = w->owner()) {
-                w->doLower();
+                w->doLower(loweringByAction);
             }
         }
         else if (hasState(WinStateModal) && client()->clientLeader()) {
@@ -1743,22 +1744,24 @@ void YFrameWindow::wmLower() {
                     lower += w;
             }
             for (YFrameWindow* f : lower) {
-                f->doLower();
+                f->doLower(loweringByAction);
             }
         }
         else {
-            doLower();
+            doLower(loweringByAction);
         }
         manager->focusTopWindow();
     }
 }
 
-void YFrameWindow::doLower() {
+void YFrameWindow::doLower(bool lff) {
     if (next()) {
         if (manager->setAbove(this, nullptr)) {
             beneath(prev());
         }
     }
+    if (lff)
+        manager->lowerFocusFrame(this);
 }
 
 void YFrameWindow::wmRaise() {
@@ -3429,17 +3432,17 @@ void YFrameWindow::updateLayout() {
 }
 
 void YFrameWindow::setState(int mask, int state) {
-    int fOldState = fWinState;
-    int fNewState = (fWinState & ~mask) | (state & mask);
-    int deltaState = fOldState ^ fNewState;
-    fWinState = fNewState;
+    const int gain = ~fWinState & mask & state;
+    const int lose = fWinState & mask & ~state;
+    const int flip = gain | lose;
 
-    MSG(("setState: oldState: 0x%X, newState: 0x%X, mask: 0x%X, state: 0x%X",
-         fOldState, fNewState, mask, state));
-    //msg("normal1: (%d:%d %dx%d)", normalX, normalY, normalWidth, normalHeight);
-    if (deltaState & WinStateMinimized) {
+    MSG(("setState: oldState: 0x%X, newState: 0x%X, gain: 0x%X, lose: 0x%X",
+         fWinState, fWinState ^ flip, gain, lose));
+    fWinState ^= flip;
+
+    if (flip & WinStateMinimized) {
         MSG(("WinStateMinimized: %d", isMinimized()));
-        if (fNewState & WinStateMinimized)
+        if (gain & WinStateMinimized)
             minimizeTransients();
         else if (client()->isTransient()) {
             YFrameWindow* own = owner();
@@ -3447,9 +3450,9 @@ void YFrameWindow::setState(int mask, int state) {
                 own->setState(WinStateMinimized, 0);
         }
     }
-    if (deltaState & WinStateHidden) {
+    if (flip & WinStateHidden) {
         MSG(("WinStateHidden: %d", isHidden()));
-        if (fNewState & WinStateHidden)
+        if (gain & WinStateHidden)
             hideTransients();
         else if (client()->isTransient()) {
             YFrameWindow* own = owner();
@@ -3459,53 +3462,48 @@ void YFrameWindow::setState(int mask, int state) {
     }
 
     manager->lockWorkArea();
-    updateDerivedSize(deltaState);
+    updateDerivedSize(flip);
     updateLayout();
     updateState();
     updateLayer();
     manager->unlockWorkArea();
 
-    if (hasbit(deltaState, WinStateRollup | WinStateMinimized)) {
+    if (flip & (WinStateRollup | WinStateMinimized)) {
         setShape();
     }
-    if (deltaState & fOldState & WinStateMinimized) {
+    if (lose & WinStateMinimized) {
         restoreMinimizedTransients();
     }
-    if (deltaState & fOldState & WinStateHidden) {
+    if (lose & WinStateHidden) {
         restoreHiddenTransients();
     }
-    if ((deltaState & WinStateRollup) &&
+    if (flip & WinStateRollup &&
         (clickFocus || !strongPointerFocus) &&
         focused()) {
         manager->setFocus(this);
     }
-    if (deltaState & fNewState & WinStateFullscreen) {
-        if (notbit(deltaState & fNewState, WinStateUnmapped)) {
+    if (gain & WinStateFullscreen) {
+        if (notbit(gain, WinStateUnmapped)) {
             if (manager->isRunning())
                 activate();
         }
     }
-    if (deltaState & fNewState & WinStateFocused) {
+    if (gain & WinStateFocused) {
         if (focused() == false)
             manager->setFocus(this);
     }
 
-    if (deltaState & WinStateUrgent) {
-        if (notbit(fNewState, WinStateUrgent) && client()->urgencyHint()) {
-            client()->hints()->flags &= ~XUrgencyHint;
-        }
-        updateTaskBar();
+    if (lose & WinStateUrgent) {
+        client()->clearUrgency();
     }
-    if (deltaState & WinStateModal) {
-        if (notbit(fNewState, WinStateModal)) {
-            for (int i = groupModals.getCount() - 1; 0 <= i; --i) {
-                if (groupModals[i] == this) {
-                    groupModals.remove(i);
-                }
+    if (lose & WinStateModal) {
+        for (int i = groupModals.getCount() - 1; 0 <= i; --i) {
+            if (groupModals[i] == this) {
+                groupModals.remove(i);
             }
         }
     }
-    if (hasbit(deltaState, WinStateMinimized) && minimizeToDesktop) {
+    if (flip & WinStateMinimized && minimizeToDesktop) {
         if (isMinimized()) {
             if (getMiniIcon()) {
                 fMiniIcon->show();
@@ -3515,26 +3513,26 @@ void YFrameWindow::setState(int mask, int state) {
             fMiniIcon->hide();
         }
     }
-    if (hasbit(deltaState, WinStateMaximizedBoth) && fTitleBar) {
+    if (flip & WinStateMaximizedBoth && fTitleBar) {
         YFrameButton* maxi = fTitleBar->maximizeButton();
         if (maxi) {
             maxi->setKind(YFrameTitleBar::Maxi);
             maxi->repaint();
         }
     }
-    if (hasbit(deltaState, WinStateRollup) && fTitleBar) {
+    if (flip & WinStateRollup && fTitleBar) {
         YFrameButton* rollup = fTitleBar->rollupButton();
         if (rollup) {
             rollup->setKind(YFrameTitleBar::Roll);
             rollup->repaint();
         }
     }
-    if (hasbit(deltaState,
-               WinStateMinimized | WinStateHidden | WinStateSkipTaskBar))
+    if (flip & (WinStateUrgent | WinStateMinimized |
+                WinStateHidden | WinStateSkipTaskBar))
     {
         updateTaskBar();
     }
-    if (hasbit(deltaState, WinStateUnmapped)) {
+    if (flip & WinStateUnmapped) {
         layoutResizeIndicators();
         if (taskBar)
             taskBar->workspacesRepaint(getWorkspace());
@@ -3825,9 +3823,9 @@ void YFrameWindow::updateNetWMFullscreenMonitors(int t, int b, int l, int r) {
     }
 }
 
-void YFrameWindow::setWmUrgency(bool wmUrgency) {
-    if ( !frameOption(foIgnoreUrgent) || !wmUrgency) {
-        if (wmUrgency != hasState(WinStateUrgent)) {
+void YFrameWindow::setWmUrgency(bool urgency) {
+    if ( !urgency || !frameOption(foIgnoreUrgent)) {
+        if (urgency != hasState(WinStateUrgent)) {
             fWinState ^= WinStateUrgent;
             client()->setStateHint(getState());
             updateTaskBar();
