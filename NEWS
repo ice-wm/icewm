@@ -1,11 +1,51 @@
-icewm -- history of user-visible changes.  2024-05-20
+icewm -- history of user-visible changes.  2024-06-06
+
+Release icewm-3.5.1 released 2024-06-06
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.5.0...3.5.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (25):
+      Drop obsolete AC_HEADERs from configure.
+      MailBoxPath is a list separated by spaces.
+      MailBoxPath is a list separated by spaces.
+      Replace duplicate code in getsesfile with getPrivConfFile.
+      Add ensureDirectory to upath.
+      Use 'space' instead of 'Space' in default key bindings.
+      Extra test on upath expansion.
+      Check for path existence in rewritePrefs.
+      Use ensureDirectory in getPrivConfDir.
+      Always create directory in getPrivConfFile.
+      Add minute as a time unit.
+      Add Tab completion on usernames and on environment variables.
+      Add a permanent history of commands to the address bar.
+      Update new address bar features.
+      Tab-complete a leading environment variable in the address bar.
+      Don't arrange, but only limit the position on screen dimension changes.
+      Warn if DESKTOP_SESSION is icewm instead of icewm-session.
+      Update icewm manpage description.
+      Also expand a leading tilde username prefix.
+      Update INSTALL.cmakebuild from INSTALL-cmakebuild.md.
+      Drop empty si.po.
+      Fix test -nt for NetBSD and closes ice-wm/icewm#168.
+      Add percentage to icesh move for ice-wm/icewm#169
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Rodrigo Macedo <sottomaiormacedotec@sottomaiormacedo.tech> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
 
 Release icewm-3.5.0 released 2024-05-20
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.4.7...3.5.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (32):
+Bert Gijsbers <gijsbers@science.uva.nl> (33):
       Never handle internal WM actions via XSendEvent, but always via XPutBack.
       Succinct handling of mstrings in themes.
       Let "icesh restore" also clear the urgency flag.
@@ -43,6 +83,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (32):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.5.0 release
 
 Dmitriy Khanzhin <jinn@altlinux.org> (2):
       Translated using Weblate (Russian)
@@ -242,61 +283,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (10):
 diego roversi <diegor@tiscali.it> (1):
       Use capacity when battery doesn't have information about full charge.
         (#746)
-
-
-Release icewm-3.4.2 released 2023-09-11
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.4.1...3.4.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (12):
-      Center icerun and add -r option.
-      If only the base dimensions of WM_NORMAL_HINTS has changed, continue with
-        normal processing in updateMwmHints, for issue ice-wm/icewm#141. This
-        fixes restoring from fullscreen with F11 in chromium.
-      Android Termux.
-      Add a --terminal option to icewm-menu-fdo to define the preferred
-        terminal. Otherwise examine the TERMINAL environment variable for a
-        possible terminal. If the given terminal cannot be found, see if other
-        supported terminals can be run instead.
-      Prefer 'that' over 'which' when restrictive.
-      Prefer 'that' over 'which' when restrictive.
-      Prefer 'that' over 'which' when restrictive.
-      Always update the Window List Menu action handler for ice-wm/icewm#144.
-      Support tabs in the window list menu.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.4.2 release
-
-dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (2):
-      Bump actions/checkout from 3 to 4 (#745)
-      Bump actions/checkout from 3 to 4
-
-Dmitriy Khanzhin <jinn@altlinux.org> (1):
-      Translated using Weblate (Russian)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Gustavs Kivlenieks <kivlenieksgustavs@proton.me> (1):
-      Translated using Weblate (Latvian)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-Luna  Jernberg <bittin@opensuse.org> (1):
-      Translated using Weblate (Swedish)
-
-Mehmet Akif 9oglu <madanadam@gmail.com> (1):
-      Translated using Weblate (Turkish)
-
-gijsbers <gijsbers@users.noreply.github.com> (1):
-      Merge pull request #145 from ice-wm/dependabot
 

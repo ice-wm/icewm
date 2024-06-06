@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2024-05-20 16:47+0200\n"
+"POT-Creation-Date: 2024-06-06 20:18+0200\n"
 "PO-Revision-Date: 2024-05-10 00:56+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -1328,87 +1328,87 @@ msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 "ヘルプを読みたい場合は icesh(1) のマニュアルページを参照してください。\n"
 
-#: src/icesh.cc:1667
+#: src/icesh.cc:1668
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "領域 `%s' に対するシンボル名 (数値範囲: %ld-%ld):\n"
 
-#: src/icesh.cc:1736
+#: src/icesh.cc:1737
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "ワークスペースの範囲が正しくありません: %ld"
 
-#: src/icesh.cc:1757
+#: src/icesh.cc:1758
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "ワークスペース名が正しくありません: `%s'"
 
-#: src/icesh.cc:2204
+#: src/icesh.cc:2269
 msgid "GNOME window layer"
 msgstr "GNOME ウインドウレイヤ"
 
-#: src/icesh.cc:2205
+#: src/icesh.cc:2270
 msgid "IceWM tray option"
 msgstr "IceWM トレイアイコン"
 
-#: src/icesh.cc:2206
+#: src/icesh.cc:2271
 msgid "Gravity symbols"
 msgstr "グラビティシンボル"
 
-#: src/icesh.cc:2207
+#: src/icesh.cc:2272
 msgid "Motif functions"
 msgstr "Motif 機能"
 
-#: src/icesh.cc:2208
+#: src/icesh.cc:2273
 msgid "Motif decorations"
 msgstr "Motif 装飾"
 
-#: src/icesh.cc:2209
+#: src/icesh.cc:2274
 msgid "EWMH window state"
 msgstr "EWMH ウインドウ状態"
 
-#: src/icesh.cc:2291 src/icesh.cc:2364
+#: src/icesh.cc:2356 src/icesh.cc:2429
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "ワークスペース #%d: `%s'\n"
 
-#: src/icesh.cc:2615 src/icesh.cc:4446 src/icesh.cc:5077
+#: src/icesh.cc:2680 src/icesh.cc:4511 src/icesh.cc:5108
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "状態が正しくありません: `%s'."
 
-#: src/icesh.cc:2644 src/icesh.cc:4025 src/icesh.cc:4075 src/icesh.cc:5398
+#: src/icesh.cc:2709 src/icesh.cc:4090 src/icesh.cc:4140 src/icesh.cc:5429
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "パラメータが正しくありません: `%s'"
 
-#: src/icesh.cc:3645
+#: src/icesh.cc:3710
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "ウインドウ 0x%lx のジオメトリを取得できません"
 
-#: src/icesh.cc:3670
+#: src/icesh.cc:3735
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Xinerama が正しくありません: `%s'."
 
-#: src/icesh.cc:3802 src/icesh.cc:3810 src/wmconfig.cc:148 src/wmsave.cc:65
+#: src/icesh.cc:3867 src/icesh.cc:3875 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "%s に書き込めません"
 
-#: src/icesh.cc:4041
+#: src/icesh.cc:4106
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "アクション `%s' には少なくとも %d 個のパラメータが必要です。"
 
-#: src/icesh.cc:4050
+#: src/icesh.cc:4115
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "表現が正しくありません: `%s'"
 
-#: src/icesh.cc:4061 src/icesound.cc:800 src/icewmbg.cc:1087
+#: src/icesh.cc:4126 src/icesound.cc:800 src/icewmbg.cc:1087
 #: src/icewmhint.cc:37 src/wmapp.cc:1293 src/yxapp.cc:1046
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1416,35 +1416,35 @@ msgstr ""
 "ディスプレイ %s を開くことができません。X が起動されていて、かつ $DISPLAY が"
 "セットされていなければなりません。"
 
-#: src/icesh.cc:4177
+#: src/icesh.cc:4242
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "予期しないキーワードです: '%s'."
 
-#: src/icesh.cc:4209
+#: src/icesh.cc:4274
 msgid "No windows found."
 msgstr "ウインドウが見つかりませんでした。"
 
-#: src/icesh.cc:4225
+#: src/icesh.cc:4290
 msgid "No actions specified."
 msgstr "アクションが指定されていません。"
 
-#: src/icesh.cc:4370
+#: src/icesh.cc:4435
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "ウインドウの識別子が正しくありません: `%s'"
 
-#: src/icesh.cc:4386
+#: src/icesh.cc:4451
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "PID が正しくありません: `%s'"
 
-#: src/icesh.cc:4419
+#: src/icesh.cc:4484
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "レイヤが正しくありません: `%s'."
 
-#: src/icesh.cc:5529
+#: src/icesh.cc:5560
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "不明なアクションです: `%s'"
@@ -1898,7 +1898,7 @@ msgstr ""
 " center:0 scaled:1 = 縦横の両方を埋め、アスペクト比を維持\n"
 "\n"
 
-#: src/icewmbg.cc:1248 src/wmapp.cc:1900
+#: src/icewmbg.cc:1248 src/wmapp.cc:1902
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "認識できないオプション '%s' です。"
@@ -1943,6 +1943,11 @@ msgstr ""
 #, c-format
 msgid "Unknown direction in move/resize request: %d"
 msgstr "移動／サイズ変更の要求において、未知の方向を指定しています: %d"
+
+#: src/upath.cc:172
+#, c-format
+msgid "Unable to create directory %s"
+msgstr "ディレクトリ %s を作成できません"
 
 #: src/wmabout.cc:29
 msgid "(C)"
@@ -2236,14 +2241,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<なし>"
 
-#: src/wmapp.cc:1624
+#: src/wmapp.cc:1626
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      セッションマネージャに接続する際のクライアント ID を指"
 "定します。\n"
 
-#: src/wmapp.cc:1630
+#: src/wmapp.cc:1632
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2254,7 +2259,7 @@ msgstr ""
 "  --debug-z           ウインドウのスタック処理に関連するデバッグメッセージを"
 "表示します。\n"
 
-#: src/wmapp.cc:1638
+#: src/wmapp.cc:1640
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2274,17 +2279,17 @@ msgstr ""
 "  --rewrite-preferences  既存の設定ファイルを更新します。\n"
 "  --trace=conf,icon   設定の読み込み時に使用するパスをトレースします。\n"
 
-#: src/wmapp.cc:1649
+#: src/wmapp.cc:1651
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr ""
 "  -o, --output=FILE   全ての出力を FILE で指定したファイルに転送します。\n"
 
-#: src/wmapp.cc:1655
+#: src/wmapp.cc:1657
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr ""
 "  -i, --install=THEME extra または 'list' からテーマをインストールします。\n"
 
-#: src/wmapp.cc:1658
+#: src/wmapp.cc:1660
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2344,21 +2349,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1724
+#: src/wmapp.cc:1726
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s の設定ディレクトリ:\n"
 
-#: src/wmapp.cc:1809
+#: src/wmapp.cc:1811
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s の設定済みオプション: %s\n"
 
-#: src/wmapp.cc:1950
+#: src/wmapp.cc:1952
 msgid "Confirm Logout"
 msgstr "ログアウトの確認"
 
-#: src/wmapp.cc:1951
+#: src/wmapp.cc:1953
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2413,12 +2418,7 @@ msgstr "テーマ %s の読み込みに失敗しました"
 msgid "Unknown value '%s' for option '%s'."
 msgstr "オプション '%2$s' に対する値 '%1$s' が不明です。"
 
-#: src/wmconfig.cc:121
-#, c-format
-msgid "Unable to create directory %s"
-msgstr "ディレクトリ %s を作成できません"
-
-#: src/wmconfig.cc:184 src/wmsave.cc:306
+#: src/wmconfig.cc:175 src/wmsave.cc:306
 #, c-format
 msgid "Unable to rename %s to %s"
 msgstr "%s を %s に名前変更できません"
@@ -2870,7 +2870,7 @@ msgstr "マルチバイト文字列が正しくありません \"%s\": %s"
 msgid "_OK"
 msgstr "_OK"
 
-#: src/ysmapp.cc:98
+#: src/ysmapp.cc:95
 msgid "$USER or $LOGNAME not set?"
 msgstr "$USER または $LOGNAME がセットされていないようです？"
 
