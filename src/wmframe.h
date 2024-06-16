@@ -126,7 +126,7 @@ public:
     YFrameTitleBar *titlebar();
     YClientContainer *container() const { return fContainer; }
 
-    void startMoveSize(int x, int y, int direction);
+    void netMoveSize(int x, int y, int direction);
 
     void startMoveSize(bool doMove, bool byMouse,
                        int sideX, int sideY,
@@ -140,10 +140,11 @@ public:
     void snapTo(int &wx, int &wy);
 
     void drawMoveSizeFX(int x, int y, int w, int h);
-    int handleMoveKeys(const XKeyEvent &xev, int &newX, int &newY);
-    int handleResizeKeys(const XKeyEvent &key,
-                         int &newX, int &newY, int &newWidth, int &newHeight,
-                         int incX, int incY);
+    enum MoveState { MoveIgnore, MoveMoving, MoveCancel, MoveAccept, };
+    MoveState handleMoveKey(const XKeyEvent& xev, int& newX, int& newY);
+    MoveState handleResizeKey(const XKeyEvent& key, int& newX, int& newY,
+                               int& newWidth, int& newHeight,
+                               int incX, int incY);
     void handleMoveMouse(const XMotionEvent &motion, int &newX, int &newY);
     void handleResizeMouse(const XMotionEvent &motion,
                            int &newX, int &newY, int &newWidth, int &newHeight);
