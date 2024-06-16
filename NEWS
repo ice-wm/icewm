@@ -1,11 +1,50 @@
-icewm -- history of user-visible changes.  2024-06-06
+icewm -- history of user-visible changes.  2024-06-16
+
+Release icewm-3.6.0 released 2024-06-16
+---------------------------------------
+
+git shortlog -e -n -w80,6,8 3.5.1...3.6.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
+      Double-click the border to maximize just that side for ice-wm/icewm#163.
+        Repeat to restore that side. Also for corners.
+      Restore moving windows by dragging with the right button down.
+      Double-clicking on the border can undo a maximization.
+      Support composing characters in the address bar with X input method.
+      Fix checking for mkdir success in ensureDirectory.
+      Provide for the case when XCreateIC fails.
+      Convert to wchar_t using YWideString.
+      Only compare icewm-extra tar file against ctime.
+      Ignore moving/sizing requests, when a moving or sizing is already in
+        progress.
+      Don't create Window handle when destroyed or without a parent.
+      Don't install mouse bindings when the frame is being destroyed.
+      Don't dispatch events to destroyed windows.
+      Fix length calculation after getCharFromEvent.
+      Log key events.
+      Avoid constructing invalid work areas.
+      Do XFilterEvent globally.
+      Mention the requirements for the --install option.
+      Update pot files.
+      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+        icewm-1-4-BRANCH
+      Merge branch 'icewm-1-4-BRANCH'
+
+Baurzhan Muftakhidinov <baurthefirst@gmail.com> (3):
+      Translated using Weblate (Kazakh)
+      Translated using Weblate (Kazakh)
+      Translated using Weblate (Kazakh)
+
+Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
+      Translated using Weblate (Georgian)
+
 
 Release icewm-3.5.1 released 2024-06-06
 ---------------------------------------
 
 git shortlog -e -n -w80,6,8 3.5.0...3.5.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (25):
+Bert Gijsbers <gijsbers@science.uva.nl> (26):
       Drop obsolete AC_HEADERs from configure.
       MailBoxPath is a list separated by spaces.
       MailBoxPath is a list separated by spaces.
@@ -32,6 +71,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (25):
       Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
         icewm-1-4-BRANCH
       Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.5.1 release
 
 Hugo Carvalho <hugokarvalho@hotmail.com> (1):
       Translated using Weblate (Portuguese)
@@ -256,31 +296,4 @@ Eduard Bloch <blade@debian.org> (2):
 
 Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
       Translated using Weblate (Portuguese (Brazil))
-
-
-Release icewm-3.4.3 released 2023-10-02
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.4.2...3.4.3
-
-Bert Gijsbers <gijsbers@science.uva.nl> (10):
-      Simplify APM file handling with class SysFS for bbidulock/icewm#746.
-      When cascading, include the border size for bbidulock/icewm#747.
-      Add pref "TaskBarShowTransientWindows" to only show window titles on task
-        buttons when it is true, which is the default, for issue 633.
-      Document new pref "TaskBarShowWindowTitles".
-      Add DoNotManage winoption for issues #653 and ice-wm/icewm#136.
-      Let icewmbg interpret command-line arguments relative to the current
-        working directory for issue #497. Let icewmbg accept additional
-        arguments as images or directories. Add -f,--fork option to icewmbg. Add
-        --postpreferences option to icewmbg.
-      After daemonizing reopen the output file.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.4.3 release
-
-diego roversi <diegor@tiscali.it> (1):
-      Use capacity when battery doesn't have information about full charge.
-        (#746)
 
