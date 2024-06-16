@@ -628,11 +628,14 @@ void YXApplication::dispatchEvent(YWindow *win, XEvent &xev) {
                 w = w->getFocusWindow();
         }
 
-        for (; w && (w->handleKey(xev.xkey) == false); w = w->parent()) {
+        for (; w; w = w->parent()) {
+            if (w->destroyed() || w->handleKey(xev.xkey))
+                break;
             if (fGrabTree && w == fXGrabWindow)
                 break;
         }
-    } else {
+    } else if (win->destroyed() == false ||
+               xev.type == DestroyNotify || xev.type == UnmapNotify) {
         Window child;
 
         if (xev.type == MotionNotify) {
@@ -698,7 +701,7 @@ void YXApplication::handleGrabEvent(YWindow *winx, XEvent &xev) {
         }
         if (win.ptr == nullptr)
             return ;
-        {
+        else {
             YWindow *p = win.ptr;
             for (; p; p = p->parent()) {
                 if (p == fXGrabWindow)
@@ -1079,6 +1082,7 @@ YXApplication::YXApplication(int *argc, char ***argv, const char *displayName):
     lastEventTime(CurrentTime),
     fPopup(nullptr),
     xfd(this),
+    fXIM(initInput(fDisplay)),
     fXGrabWindow(nullptr),
     fGrabWindow(nullptr),
     fKeycodeMap(nullptr),
@@ -1098,6 +1102,17 @@ YXApplication::YXApplication(int *argc, char ***argv, const char *displayName):
 
     initAtoms();
     initModifiers();
+}
+
+XIM YXApplication::initInput(Display* dpy) {
+    XSetLocaleModifiers("");
+
+    XIM xim = XOpenIM(dpy, None, nullptr, nullptr);
+    if (xim == nullptr) {
+        XSetLocaleModifiers("@im=none");
+        xim = XOpenIM(dpy, None, nullptr, nullptr);
+    }
+    return xim;
 }
 
 void YExtension::init(Display* dis, QueryFunc ext, QueryFunc ver) {
@@ -1141,6 +1156,8 @@ YXApplication::~YXApplication() {
         XFreeColormap(display(), fColormap32);
     if (fKeycodeMap)
         XFree(fKeycodeMap);
+    if (fXIM)
+        XCloseIM(fXIM);
 
     xfd.unregisterPoll();
     XCloseDisplay(display());
@@ -1157,7 +1174,6 @@ bool YXApplication::handleXEvents() {
 #ifdef DEBUG
         xeventcount++;
 #endif
-        //msg("%d", xev.type);
 
         saveEventTime(xev);
 
@@ -1177,6 +1193,8 @@ bool YXApplication::handleXEvents() {
 #endif
         }
 #endif
+        if (XFilterEvent(&xev, None))
+            continue;
 
         if (filterEvent(xev)) {
         } else {

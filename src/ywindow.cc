@@ -299,7 +299,7 @@ void YWindow::readAttributes() {
 }
 
 Window YWindow::create() {
-    if (flags & wfCreated)
+    if (flags & (wfCreated | wfDestroyed) || fParent == nullptr)
         return fHandle;
 
     XSetWindowAttributes attributes = { 0, };
@@ -897,8 +897,8 @@ void YWindow::handleMotion(const XMotionEvent &motion) {
         if (fClickDrag) {
             handleDrag(fClickEvent, motion);
         }
-        else if ((motion.state & xapp->ButtonMask) / Button1Mask
-                  == fClickButton) {
+        else if (int(motion.state & xapp->ButtonMask) ==
+                 Button1Mask << (fClickButton - Button1)) {
             if (motion.time >= fClickTime + ClickMotionDelay ||
                 sqr(motion.x_root - fClickEvent.x_root) +
                 sqr(motion.y_root - fClickEvent.y_root) >=
@@ -1863,9 +1863,10 @@ bool YWindow::getCharFromEvent(const XKeyEvent &key, char *s, int maxLen) {
     char keyBuf[16];
     KeySym ksym;
     XKeyEvent kev = key;
+    static XComposeStatus compose = { NULL, 0 };
 
     // FIXME:
-    int klen = XLookupString(&kev, keyBuf, sizeof(keyBuf), &ksym, nullptr);
+    int klen = XLookupString(&kev, keyBuf, sizeof(keyBuf), &ksym, &compose);
 #ifndef USE_XmbLookupString
     if ((klen == 0)  && (ksym < 0x1000)) {
         klen = 1;
