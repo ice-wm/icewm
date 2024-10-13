@@ -281,9 +281,12 @@ class DesktopFile {
     static DesktopFilePtr load_visible(string &&path, const string &lang) {
         try {
             auto ret = new DesktopFile(path, lang);
-            if (ret->NoDisplay || !userFilter(ret->Name.c_str(), false) ||
-                !userFilter(ret->GetTranslatedName().c_str(), false)) {
-                // matched conditions to hide the desktop entry?
+            // matched conditions to hide the desktop entry?
+            if (ret->NoDisplay)
+                ret = nullptr;
+            else if (!userFilter(ret->Name.c_str(), false) &&
+                     !userFilter(ret->GetTranslatedName().c_str(), false) &&
+                     !userFilter(ret->GetCommand().c_str(), false)) {
                 ret = nullptr;
             } else {
                 if (add_comments) {
