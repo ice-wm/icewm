@@ -793,7 +793,7 @@ void YInputLine::complete() {
     if (res_count == 1 && upath(res).dirExists())
         res_count++;
     if (1 <= res_count)
-        setText(ignoredPfx + mstring(res), res_count == 1);
+        setText(ignoredPfx + mstring(res), false);
     else {
         int i = mstr.lastIndexOf(' ');
         if (i > 0 && size_t(i + 1) < mstr.length()) {
@@ -825,7 +825,7 @@ void YInputLine::complete() {
             if (upath::glob(sub + "*", list, "/S") && list.nonempty()) {
                 if (list.getCount() == 1) {
                     mstring found(mstr.substring(0, i + 1) + list[0]);
-                    setText(ignoredPfx + found, true);
+                    setText(ignoredPfx + found, false);
                 } else {
                     int len = 0;
                     for (; list[0][len]; ++len) {
