@@ -3,7 +3,11 @@
  * License: WTFPL
  *
  * Collection of various data structures used to support certain IceWM functionality.
- * All of them are made for simple data structures that must be trivially copyable and mem-movable!
+ * All of them are made for simple data structures that must be trivially copyable!
+ *
+ * XXX: this was originally intended as simple storage for PODs (memmove-able)
+ * but has been modified into object-aware one, but then OTOH not strictly
+ * acting in the most performant way, see resize().
  */
 #ifndef __YCOLLECTIONS_H
 #define __YCOLLECTIONS_H
@@ -31,15 +35,22 @@ class YVec
 {
 protected:
     SizeType capa;
-    inline void resize(SizeType newSize)
+    void resize(SizeType newSize)
     {
-        DataType *old = data;
-        data = new DataType[newSize];
-        for (SizeType i = 0;i<size;++i) data[i] = old[i];
-        delete[] old;
-        capa = newSize;
+        if (newSize == size)
+            return;
+        auto vnew = new DataType[newSize];
+        if (size > 0) {
+            if (size > newSize)
+                size = newSize;
+            for (SizeType i = 0; i < size; ++i)
+                vnew[i] = data[i];
+            delete[] data;
+        }
+        data = vnew;
+        capa = size = newSize;
     }
-    inline void inflate() {
+    void inflate() {
         resize(capa == 0 ? 2 : capa*2);
     }
     // shall not be copyable
@@ -50,18 +61,18 @@ protected:
 public:
     SizeType size;
     DataType *data;
-    inline YVec(): capa(0), size(0), data(nullptr) {}
-    inline YVec(SizeType initialCapa):  capa(initialCapa), size(0), data(new DataType[initialCapa]) { }
-    inline YVec(YVec&& src) { src.swap(*this); }
+    YVec(): capa(0), size(0), data(nullptr) {}
+    YVec(SizeType initialCapa):  capa(initialCapa), size(0), data(new DataType[initialCapa]) { }
+    YVec(YVec&& src) { src.swap(*this); }
 
-    inline void reset() {
+    void reset() {
         if (!size) return;
         delete[] data; data = nullptr;
         capa = size = 0;
     }
-    inline void preserve(SizeType wanted) { if (wanted > capa) resize(wanted); }
-    inline SizeType remainingCapa() { return capa - size; }
-    inline ~YVec() { reset(); }
+    void preserve(SizeType wanted) { if (wanted > capa) resize(wanted); }
+    SizeType remainingCapa() { return capa - size; }
+    ~YVec() { reset(); }
     void swap(YVec& other) { if(this == &other) return; ::swap(data, other.data); ::swap(size, other.size); }
     DataType& add(const DataType& element) {
         if (size >= capa)
@@ -95,7 +106,7 @@ public:
     SizeType getCount() const { return size; }
 
     typedef YArrayIterator<DataType, YVec<DataType, SizeType> > iterator;
-    inline iterator getIterator(bool reverse = false) {
+    iterator getIterator(bool reverse = false) {
         return iterator(this, reverse);
     }
     // STL-friendly iterator
@@ -109,12 +120,12 @@ public:
 template<typename DataType>
 struct YPointVec : public YVec<DataType*>
 {
-    inline void reset() {
+    void reset() {
         for (DataType **p = this->data, **e = this->data + this->size; p<e; ++p)
             delete *p;
         YVec<DataType*>::reset();
     }
-    inline ~YPointVec() { reset(); }
+    ~YPointVec() { reset(); }
 };
 
 template<typename KeyType, typename ValueType>
@@ -171,11 +182,10 @@ private:
             return false;
         }
 
-        inline bool
-        values_equal (size_t v, size_t w) {
-            return !lessThan (store[v].value, store[w].value)
-                    && !lessThan (store[w].value, store[v].value);
-        }
+    bool values_equal (size_t v, size_t w) {
+        return !lessThan (store[v].value, store[w].value)
+                && !lessThan (store[w].value, store[v].value);
+    }
 
 public:
     const ValueType& find(const KeyType& key, const ValueType &notFoundRetValue)
@@ -217,7 +227,7 @@ public:
 
     // FIXME: YArrayIterator<kvp> find(KeyType key);
     // FIXME: iterator? Just wrap the one from store?
-    inline void add(KeyType key, ValueType value)
+    void add(KeyType key, ValueType value)
     {
         if (store.size == 0)
         {
