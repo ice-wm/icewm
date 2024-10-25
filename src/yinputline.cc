@@ -13,6 +13,10 @@
 #include "regex.h"
 #include <X11/keysym.h>
 
+// to create deduplicated and sorted sequence of alternatives
+#include <string>
+#include <set>
+
 class YInputMenu: public YMenu {
 public:
     YInputMenu() {
@@ -739,13 +743,11 @@ bool YInputLine::cutSelection() {
 
 bool YInputLine::copySelection() {
     unsigned min = ::min(curPos, markPos), max = ::max(curPos, markPos);
-    if (min < max && fText.length() <= max) {
-        YWideString copy(fText.copy(min, max - min));
-        xapp->setClipboardText(copy);
-        return true;
-    } else {
+    if (min >= max || fText.length() > max)
         return false;
-    }
+    YWideString copy(fText.copy(min, max - min));
+    xapp->setClipboardText(copy);
+    return true;
 }
 
 void YInputLine::actionPerformed(YAction action, unsigned int /*modifiers*/) {
@@ -764,6 +766,16 @@ void YInputLine::actionPerformed(YAction action, unsigned int /*modifiers*/) {
 void YInputLine::autoScroll(int delta, const XMotionEvent *motion) {
     fAutoScrollDelta = delta;
     beginAutoScroll(delta ? true : false, motion);
+}
+
+using tCandCollector = std::set<std::string>;
+
+void passCompCand(const void *param, const char * const *name, unsigned cnt) {
+//    if (cnt < 2)
+//        return; // no further candidates, so will be completed
+    auto& collection = * ((tCandCollector*) param);
+    for (auto p = name; p < name + cnt; ++p)
+        collection.insert(*p);
 }
 
 void YInputLine::complete() {
@@ -788,7 +800,29 @@ void YInputLine::complete() {
             mstr = mstr.substring(full_match.rm_eo);
         }
     }
-    int res_count = globit_best(mstr, &res, nullptr, nullptr);
+
+    tCandCollector glob_cand;
+
+    int res_count = globit_best(mstr, &res, &passCompCand, &glob_cand);
+
+    if (glob_cand.size() > 1) {
+        //mstring all;
+        // mstring is crap, .append does not append
+        std::string all;
+        toolTipVisibility(true);
+        for(const auto& s: glob_cand) {
+            if (!all.empty())
+                all.append("\n");
+            all.append(s.substr(0, mstr.length()) + " " + s.substr(mstr.length()));
+        }
+        //printf("\ngimme tooltip: %s\n, res: %s, res_count: %d\n", all.c_str(), res.data(), res_count);
+        setToolTip(mstring(all.data(), all.size()));
+    }
+    else {
+        setToolTip(null);
+        toolTipVisibility(false);
+    }
+
     // directory is not a final match
     if (res_count == 1 && upath(res).dirExists())
         res_count++;
@@ -950,6 +984,9 @@ void YInputLine::lostFocus() {
     cursorBlinkTimer = null;
     fCursorVisible = false;
     fHasFocus = false;
+    setToolTip(null);
+    toolTipVisibility(false);
+
     if (focused())
         YWindow::lostFocus();
     else
