@@ -10,12 +10,28 @@
 #include "yxapp.h"
 #include "prefs.h"
 #include "intl.h"
+#include "ylocale.h"
 #include "regex.h"
 #include <X11/keysym.h>
 
 // to create deduplicated and sorted sequence of alternatives
 #include <string>
 #include <set>
+
+struct tCandCollector {
+    std::set<std::string> hits;
+    mstring match_string;
+    std::string join_candidates() {
+        std::string all;
+        for (const auto &s : hits) {
+            if (!all.empty())
+                all.append("\n");
+            all.append(s.substr(0, match_string.length()) + " " +
+                       s.substr(match_string.length()));
+        }
+        return all;
+    }
+};
 
 class YInputMenu: public YMenu {
 public:
@@ -352,6 +368,32 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
 
                 int len = getWCharFromEvent(key, s, n);
                 if (len) {
+                    if (toolTipVisible() && lastSeenCandidates) {
+                        // FFS, redoing some work of replaceSelection just
+                        // because YWideString is taking ownership :-(
+                        size_t reglen;
+                        auto str = YLocale::narrowString(s, len + 1, reglen);
+                        // printf("typed in: %s\n", str);
+                        if (str) {
+                            auto wanted_pfx =
+                                lastSeenCandidates->match_string + str;
+                            delete[] str;
+
+                            for (auto it = lastSeenCandidates->hits.begin();
+                                 it != lastSeenCandidates->hits.end();) {
+
+                                if (0 == it->compare(0, wanted_pfx.length(),
+                                                     wanted_pfx.c_str()))
+                                    ++it;
+                                else
+                                    it = lastSeenCandidates->hits.erase(it);
+                            }
+                            lastSeenCandidates->match_string = wanted_pfx;
+                            setToolTip(
+                                lastSeenCandidates->join_candidates().c_str());
+                        }
+                    }
+
                     replaceSelection(s, len);
                     return true;
                 } else {
@@ -768,18 +810,22 @@ void YInputLine::autoScroll(int delta, const XMotionEvent *motion) {
     beginAutoScroll(delta ? true : false, motion);
 }
 
-using tCandCollector = std::set<std::string>;
-
 void passCompCand(const void *param, const char * const *name, unsigned cnt) {
-//    if (cnt < 2)
-//        return; // no further candidates, so will be completed
     auto& collection = * ((tCandCollector*) param);
-    for (auto p = name; p < name + cnt; ++p)
-        collection.insert(*p);
+    for (auto p = name; p < name + cnt; ++p) {
+        collection.hits.insert(*p);
+        if (collection.hits.size() >= 255)
+            break;
+    }
 }
 
 void YInputLine::complete() {
-    mstring mstr(fText);
+
+    lastSeenCandidates = new tCandCollector;
+    auto& glob_cand = *lastSeenCandidates;
+    auto& mstr = lastSeenCandidates->match_string;
+    
+    mstr = fText;
     if (mstr[0] == '~' && mstr.length() > 1
         && mstr.lastIndexOf(' ') == -1
         && mstr.lastIndexOf('/') == -1) {
@@ -790,8 +836,8 @@ void YInputLine::complete() {
             return;
         }
     }
-    csmart res;
 
+    // this is chopped of when starting the lookup, and readded when applying the result below
     mstring ignoredPfx;
     if (prefixRegex) {
         regmatch_t full_match;
@@ -801,20 +847,15 @@ void YInputLine::complete() {
         }
     }
 
-    tCandCollector glob_cand;
-
+    char* res = nullptr;
     int res_count = globit_best(mstr, &res, &passCompCand, &glob_cand);
+    fcsmart cleaner(res);
 
-    if (glob_cand.size() > 1) {
+    if (glob_cand.hits.size() > 1) {
         //mstring all;
         // mstring is crap, .append does not append
-        std::string all;
         toolTipVisibility(true);
-        for(const auto& s: glob_cand) {
-            if (!all.empty())
-                all.append("\n");
-            all.append(s.substr(0, mstr.length()) + " " + s.substr(mstr.length()));
-        }
+        auto all = glob_cand.join_candidates();
         //printf("\ngimme tooltip: %s\n, res: %s, res_count: %d\n", all.c_str(), res.data(), res_count);
         setToolTip(mstring(all.data(), all.size()));
     }
@@ -986,6 +1027,7 @@ void YInputLine::lostFocus() {
     fHasFocus = false;
     setToolTip(null);
     toolTipVisibility(false);
+    lastSeenCandidates.release();
 
     if (focused())
         YWindow::lostFocus();

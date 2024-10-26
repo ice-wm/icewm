@@ -12,6 +12,7 @@ class YMenu;
 class YInputLine;
 class YInputMenu;
 class YWideString;
+struct tCandCollector;
 
 class YInputListener {
 public:
@@ -106,6 +107,7 @@ private:
     lazy<YTimer> cursorBlinkTimer;
     lazy<YInputMenu> inputMenu;
     regex_t* prefixRegex;
+    osmart<tCandCollector> lastSeenCandidates;
 
 private: // not-used
     YInputLine(const YInputLine &);
