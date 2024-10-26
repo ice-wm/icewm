@@ -68,7 +68,6 @@ src/wpixres.cc
 src/yapp.cc
 src/yarray.cc
 src/ybutton.cc
-src/ycollections.cc
 src/ycolor.cc
 src/yconfig.cc
 src/ycursor.cc
