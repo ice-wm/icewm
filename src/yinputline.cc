@@ -26,6 +26,9 @@ struct tCandCollector {
         for (const auto &s : hits) {
             if (!all.empty())
                 all.append("\n");
+
+            // XXX: both match_string and candidates are supposed to contain
+            // strings under UTF-8 law?!
             all.append(s.substr(0, match_string.length()) + " " +
                        s.substr(match_string.length()));
         }
@@ -375,22 +378,27 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
                         auto str = YLocale::narrowString(s, len + 1, reglen);
                         // printf("typed in: %s\n", str);
                         if (str) {
-                            auto wanted_pfx =
-                                lastSeenCandidates->match_string + str;
-                            delete[] str;
+                            if (isspace((unsigned) *str)) {
+                                setToolTip(null);
+                                toolTipVisibility(false);
+                            } else {
+                                auto wanted_pfx =
+                                    lastSeenCandidates->match_string + str;
 
-                            for (auto it = lastSeenCandidates->hits.begin();
-                                 it != lastSeenCandidates->hits.end();) {
+                                for (auto it = lastSeenCandidates->hits.begin();
+                                     it != lastSeenCandidates->hits.end();) {
 
-                                if (0 == it->compare(0, wanted_pfx.length(),
-                                                     wanted_pfx.c_str()))
-                                    ++it;
-                                else
-                                    it = lastSeenCandidates->hits.erase(it);
+                                    if (0 == it->compare(0, wanted_pfx.length(),
+                                                         wanted_pfx.c_str())) {
+                                        ++it;
+                                    } else
+                                        it = lastSeenCandidates->hits.erase(it);
+                                }
+                                lastSeenCandidates->match_string = wanted_pfx;
+                                auto ttext(lastSeenCandidates->join_candidates());
+                                setToolTip(mstring(ttext.data(), ttext.length()));
                             }
-                            lastSeenCandidates->match_string = wanted_pfx;
-                            setToolTip(
-                                lastSeenCandidates->join_candidates().c_str());
+                            delete[] str;
                         }
                     }
 
