@@ -333,23 +333,27 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
                     }
                     break;
                 case XK_BackSpace:
+                    auto done = false;
                     if (m & ControlMask) {
-                        if (m & ShiftMask) {
-                            if (deleteToBegin())
-                                return true;
-                        } else {
-                            if (deletePreviousWord())
-                                return true;
+                        done = (m & ShiftMask) ? deleteToBegin()
+                                               : deletePreviousWord();
+                    } else
+                        done = deletePreviousChar();
+
+                    if (done) {
+                        if (toolTipVisible()) {
+                            // must kill the timer!
+                            toolTipVisibility(false);
+                            goto simu_tab;
                         }
-                    } else {
-                        if (deletePreviousChar())
-                            return true;
+                        return true;
                     }
                     break;
                 }
             }
             break;
         case XK_Tab:
+            simu_tab:
             complete();
             break;
         default:
