@@ -472,7 +472,7 @@ void TaskBar::updateLayout(unsigned &size_w, unsigned &size_h) {
     wlist.append(nw);
 
     if (taskBarShowShowDesktopButton == 2) {
-        nw = LayoutInfo( fShowDesktop, Over, Top, Show, Keep, 1, 1);
+        nw = LayoutInfo( fShowDesktop, Over, Top, Show, Grow, 1, 1);
         wlist.append(nw);
     }
 
@@ -596,6 +596,9 @@ void TaskBar::updateLayout(unsigned &size_w, unsigned &size_h) {
             right[wlist[i].row] -= ww + wlist[i].pre + wlist[i].post;
         }
         YRect r(xx, yy, ww, hh);
+        // if we are in the corner,move this a bit so that mouse events at the edge receive that window
+        r.xx += (w - r.ww - r.xx == 1);
+
         if (rightToLeft) {
             r.xx = w - r.xx - r.ww;
         }
