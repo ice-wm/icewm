@@ -596,8 +596,10 @@ void TaskBar::updateLayout(unsigned &size_w, unsigned &size_h) {
             right[wlist[i].row] -= ww + wlist[i].pre + wlist[i].post;
         }
         YRect r(xx, yy, ww, hh);
-        // if we are in the corner,move this a bit so that mouse events at the edge receive that window
-        r.xx += (w - r.ww - r.xx == 1);
+        // if we are near the corner, move this one bit, so
+        // that mouse events at the edge go to that window.
+        if (w - 1 == r.xx + r.ww)
+            r.xx++;
 
         if (rightToLeft) {
             r.xx = w - r.xx - r.ww;
