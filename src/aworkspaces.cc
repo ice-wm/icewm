@@ -776,20 +776,22 @@ void WorkspaceButton::paint(Graphics &g, const YRect& r) {
                         g.setColor(colors[2]);
                     g.fillRect(wx+1, wy+1, ww-2, wh-2);
 
-                    for (auto &xsize : {64, 48, 32, 24, 22, 16}) {
-                        if (xsize > int(smallIconSize))
-                            continue;
-                        if (pagerShowWindowIcons && ww > 1 + int(xsize) &&
-                            wh > 1 + int(xsize) &&
-                            (icon = yfw->getIcon()) != null &&
-                            icon->small() != null) {
-                            g.drawImage(icon->getScaledIcon(xsize),
-                                        wx + (ww - xsize) / 2,
-                                        wy + (wh - xsize) / 2);
-
-                            // stop trying at smallIconSize or whichever size
-                            // below fits it
-                            break;
+                    if (pagerShowWindowIcons) {
+                        for (int size : {64, 48, 32, 24, 16}) {
+                            if (size <= int(smallIconSize) &&
+                                ww > 1 + int(size) &&
+                                wh > 1 + int(size)) {
+                                icon = yfw->getIcon();
+                                if (icon != null) {
+                                    ref<YImage> sc(icon->getScaledIcon(size));
+                                    if (sc != null) {
+                                        g.drawImage(sc,
+                                                    wx + (ww - size) / 2,
+                                                    wy + (wh - size) / 2);
+                                    }
+                                }
+                                break;
+                            }
                         }
                     }
                 }
