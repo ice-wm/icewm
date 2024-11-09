@@ -457,8 +457,6 @@ icewm_menu_fdo_SOURCES = \
 	intl.h \
 	sysdep.h \
 	yarray.h \
-	ycollections.cc \
-	ycollections.h \
 	sysdep.h \
 	fdomenu.cc
 icewm_menu_fdo_LDADD = libice.la $(GIO_LIBS)
