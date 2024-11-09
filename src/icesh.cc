@@ -743,7 +743,8 @@ private:
                     substitute(copy, XA_STRING);
                 }
             }
-            if (type() != XA_STRING && type() != kind) {
+            if (type() != XA_STRING && type() != kind &&
+                type() != ATOM_UTF8_STRING) {
                 substitute(nullptr, XA_STRING);
             }
         }
