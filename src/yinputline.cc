@@ -344,7 +344,8 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
                         if (toolTipVisible()) {
                             // must kill the timer!
                             toolTipVisibility(false);
-                            goto simu_tab;
+                            complete(true);
+                            break;
                         }
                         return true;
                     }
@@ -353,7 +354,6 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
             }
             break;
         case XK_Tab:
-            simu_tab:
             complete();
             break;
         default:
@@ -831,7 +831,7 @@ void passCompCand(const void *param, const char * const *name, unsigned cnt) {
     }
 }
 
-void YInputLine::complete() {
+void YInputLine::complete(bool previewOnly) {
 
     lastSeenCandidates = new tCandCollector;
     auto& glob_cand = *lastSeenCandidates;
@@ -863,7 +863,7 @@ void YInputLine::complete() {
     int res_count = globit_best(mstr, &res, &passCompCand, &glob_cand);
     fcsmart cleaner(res);
 
-    if (glob_cand.hits.size() > 1) {
+    if (glob_cand.hits.size() > 1 || previewOnly) {
         //mstring all;
         // mstring is crap, .append does not append
         toolTipVisibility(true);
@@ -875,6 +875,10 @@ void YInputLine::complete() {
         setToolTip(null);
         toolTipVisibility(false);
     }
+
+    // this was a plain call to update the tooltip preview, not inserting yet
+    if (previewOnly)
+        return;
 
     // directory is not a final match
     if (res_count == 1 && upath(res).dirExists())

@@ -72,7 +72,7 @@ public:
     void unselectAll();
     bool cutSelection();
     bool copySelection();
-    void complete();
+    void complete(bool previewOnly = false);
 
 protected:
     virtual bool handleTimer(YTimer *timer);
