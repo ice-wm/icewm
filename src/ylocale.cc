@@ -314,16 +314,17 @@ char* YLocale::narrowString(const wchar_t* uStr, size_t uLen, size_t& lLen) {
     return dest;
 }
 
-const char *YLocale::getCheckedExplicitLocale(bool lctype)
-{
-    auto loc = setlocale(lctype ? LC_CTYPE : LC_MESSAGES, NULL);
-    if (loc == NULL)
-        return NULL;
-    return (islower(*loc & 0xff)
-        && islower(loc[1] & 0xff)
-        && !isalpha(loc[2] & 0xff))
-        ? loc
-        : NULL;
+const char* YLocale::getCheckedLocaleName() {
+    using namespace ASCII;
+    const char* loc = getLocaleName();
+    if (loc && isLower(*loc) && isLower(loc[1])) {
+        int i = 2;
+        if (isLower(loc[i]))
+            i++;
+        if (loc[i] == '_' && isUpper(loc[i + 1]) && isUpper(loc[i + 2]))
+            return loc;
+    }
+    return nullptr;
 }
 
 const char *YLocale::getLocaleName() {
