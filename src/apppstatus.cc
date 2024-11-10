@@ -786,7 +786,7 @@ void NetStatusControl::linuxUpdate() {
     }
 
     int const count(fNetStatus.getCount());
-    asmart<bool> covered(new bool[count]);
+    bool covered[count];
     for (int i = 0; i < count; ++i) {
         covered[i] = (nullptr == fNetStatus[i]);
     }

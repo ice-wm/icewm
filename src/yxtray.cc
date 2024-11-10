@@ -860,7 +860,7 @@ void YXTray::trayUpdateGeometry(unsigned w, unsigned h, bool visible) {
 
 void YXTray::updateTrayWindows() {
     const int count = fDocked.getCount();
-    asmart<Window> windows(new Window[count]);
+    Window windows[count];
 
     for (IterType ec = fDocked.iterator(); ++ec; )
         windows[ec.where()] = ec->leader();
