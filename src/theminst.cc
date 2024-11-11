@@ -4,6 +4,7 @@
 #include "base.h"
 #include "yapp.h"
 #include "ytime.h"
+#include "ascii.h"
 #include <ftw.h>
 #include <errno.h>
 #include <unistd.h>
@@ -166,10 +167,12 @@ static void install_extra(const char* name, bool* result) {
                 char* a = strchr(line, '/');
                 if (a) {
                     char* b = strchr(++a, '/');
-                    if (b && b[1] == '\n') {
+                    char* c = strchr(a, '.');
+                    if (b ? (b[1] == '\n') :
+                        (a[1] && (c == nullptr || ASCII::isDigit(c[1])))) {
                         if (++k > 1)
                             putchar(' ');
-                        fwrite(a, 1, b - a, stdout);
+                        fwrite(a, 1, b ? (b - a) : strlen(a), stdout);
                     }
                 }
             }
