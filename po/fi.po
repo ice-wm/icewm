@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: IceWM 1.2.14\n"
 "Report-Msgid-Bugs-To: \"https://github.com/bbidulock/icewm/issues\"\n"
 "POT-Creation-Date: 2024-10-06 18:14+0200\n"
-"PO-Revision-Date: 2022-03-10 16:12+0000\n"
-"Last-Translator: Tommi Nieminen <software@legisign.org>\n"
-"Language-Team: Finnish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/fi/>\n"
+"PO-Revision-Date: 2024-11-23 21:48+0000\n"
+"Last-Translator: Rantala <toni.rantala@protonmail.com>\n"
+"Language-Team: Finnish <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 5.8.4\n"
 
 #: src/wmapp.cc:1629
 msgid ""
@@ -408,9 +408,9 @@ msgid "Back"
 msgstr "Takaisin"
 
 #: src/wmmenu.cc:55
-#, fuzzy, c-format
+#, c-format
 msgid "Bad argument %d to command '%s'"
-msgstr "Virheellinen argumentti: %s %s:lle"
+msgstr "Virheellinen argumentti: %d komennolle '%s'"
 
 #: src/yconfig.cc:170 src/yconfig.cc:181 src/yconfig.cc:193
 #, c-format
@@ -642,9 +642,9 @@ msgid "Could not open OSS device %s"
 msgstr "OSS -laitetta %s ei voitu avata"
 
 #: src/ycolor.cc:229 src/ycolor.cc:240
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse color \"%s\""
-msgstr "Kirjasimen \"%s\" lataaminen epäonnistui."
+msgstr "Kirjasimen \"%s\" lataaminen epäonnistui"
 
 #: src/icesound.cc:368
 msgid "Could not post OSS"
@@ -878,9 +878,9 @@ msgid "Enter a new value for %s: "
 msgstr ""
 
 #: src/wmmenu.cc:160
-#, fuzzy, c-format
+#, c-format
 msgid "Error at %s '%s'"
-msgstr "Virhe avaimessa %s"
+msgstr "Virhe %s '%s':ssa"
 
 #: src/wmmenu.cc:369
 #, fuzzy, c-format
@@ -888,9 +888,9 @@ msgid "Error at includeprog '%s'"
 msgstr "Virhe ohjelmassa %s"
 
 #: src/wmmenu.cc:110
-#, fuzzy, c-format
+#, c-format
 msgid "Error at keyword '%s' for %s"
-msgstr "Virhe avaimessa %s"
+msgstr "Virhe avainsanaassa '%s' %s:lle"
 
 #: src/wmmenu.cc:280
 #, fuzzy, c-format
@@ -1902,9 +1902,8 @@ msgid "Support for JPEG images was not enabled"
 msgstr ""
 
 #: src/yximage.cc:173
-#, fuzzy
 msgid "Support for PNG images was not enabled"
-msgstr "Tukea liitännälle %s ei ole käännetty mukaan."
+msgstr "PNG-kuvien tukea ei ole otettu käyttöön"
 
 #: src/icesound.cc:888
 #, c-format
@@ -2166,9 +2165,9 @@ msgid "Unsafe characters in URL"
 msgstr "Kelvottomat merkit URL-osoitteessa"
 
 #: src/yximage.cc:187
-#, fuzzy, c-format
+#, c-format
 msgid "Unsupported file format: %s"
-msgstr "Liitäntää ei tueta: %s."
+msgstr "Tukematon tiedostotyyppi: %s"
 
 #: src/icesound.cc:921
 #, c-format
@@ -2192,7 +2191,7 @@ msgid ""
 msgstr ""
 
 #: src/wmapp.cc:1657
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
 "Starts the IceWM window manager.\n"
@@ -2238,8 +2237,8 @@ msgstr ""
 "%s --restart           Älä käytä tätä; vain sisäiseen käyttöön\n"
 "%s\n"
 "Ympäristömuuttujat:\n"
-"  ICEWM_PRIVCFG=POLKU     Hakemisto, johon käyttäjän asetukset "
-"tallennetaan.\n"
+"  ICEWM_PRIVCFG=POLKU     Hakemisto, johon käyttäjän asetukset tallennetaan."
+"\n"
 "                          Oletuksena \"$HOME/.icewm/\"\n"
 "  DISPLAY=NIMI            X-palvelimen nimi jota käytetään, oletus riippuu\n"
 "                          Xlib:sta.\n"
@@ -2249,6 +2248,8 @@ msgstr ""
 "\n"
 "Käy osoitteessa https://ice-wm.org/ kun haluat ilmoittaa virheestä, kaipaat\n"
 "apua tai jos haluat vain antaa kommenttisi.\n"
+"%s\n"
+"\n"
 
 #: src/icehelp.cc:2502
 #, c-format
