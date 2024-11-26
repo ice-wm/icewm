@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: icewm 3.3.2.22\n"
 "Report-Msgid-Bugs-To: \"https://github.com/bbidulock/icewm/issues\"\n"
 "POT-Creation-Date: 2024-10-06 18:14+0200\n"
-"PO-Revision-Date: 2024-06-14 16:46+0000\n"
+"PO-Revision-Date: 2024-11-26 06:48+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/ka/>\n"
+"Language-Team: Georgian <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.8.4\n"
 
 #: src/wmapp.cc:1629
 msgid ""
@@ -2564,7 +2564,7 @@ msgstr "ჩასმა"
 
 #: src/wmprog.cc:451
 msgid "_Preferences"
-msgstr "_მორგება"
+msgstr "მ_ორგება"
 
 #: src/wmprog.cc:347
 msgid "_Quiet sloppy focus"
