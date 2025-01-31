@@ -19,7 +19,7 @@ void addBgImage(const char *, const char *, bool) {}
 #define extern
 #include "yprefs.h"
 #undef extern
-#include "bindkey.h"
+#include "bindkey.cc"
 #include "default.h"
 #include "themable.h"
 #include "icewmbg_prefs.h"

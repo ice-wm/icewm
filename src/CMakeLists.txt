@@ -434,7 +434,7 @@ SET(ICE_COMMON_SRCS udir.cc upath.cc yapp.cc yxapp.cc ytimer.cc yprefs.cc
                     ypipereader.cc yxembed.cc yconfig.cc yfont.cc ysvg.cc
                     ypixmap.cc yimage2.cc yimage_gdk.cc yximage.cc ycolor.cc
                     ytooltip.cc ylocale.cc yarray.cc yfileio.cc ytime.cc
-                    ystring.cc mstring.cc ref.cc bindkey.cc keysyms.cc
+                    ystring.cc mstring.cc ref.cc keysyms.cc wmkey.cc
                     logevent.cc misc.cc)
 
 if(CONFIG_XFREETYPE)
@@ -455,7 +455,7 @@ if(TARGET NanoSVG::nanosvg)
     target_link_libraries(ice NanoSVG::nanosvg)
 endif()
 
-SET(ITK_SRCS ymenu.cc ylabel.cc yscrollview.cc ymenuitem.cc
+SET(ITK_SRCS ymenu.cc ylabel.cc yscrollview.cc ymenuitem.cc bindkey.cc
              yscrollbar.cc ybutton.cc ylistbox.cc yinputline.cc
              globit.cc yicon.cc wmconfig.cc wmsave.cc wpixres.cc)
 

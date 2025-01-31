@@ -1701,7 +1701,7 @@ YDesktop::~YDesktop() {
         desktop = nullptr;
 }
 
-void YWindow::grab(const WMKey& wmkey) {
+void YWindow::grab(struct WMKey& wmkey) {
     grabVKey(wmkey.key, wmkey.mod);
 }
 

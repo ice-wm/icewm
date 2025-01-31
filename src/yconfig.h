@@ -139,8 +139,8 @@ public:
                                cfoption* more = nullptr, cfoption* xtra = nullptr);
     static bool findLoadConfigFile(cfoption* options, const char* name);
     static bool findLoadThemeFile(cfoption* options);
-    static bool parseKey(const char* arg, KeySym* key, unsigned int* mod);
-    static KeySym parseKeySym(const char* arg);
+    static bool parseKey(const char* arg, unsigned* key, unsigned short* mod);
+    static unsigned parseKeySym(const char* arg);
     static size_t cfoptionSize();
 
 private:

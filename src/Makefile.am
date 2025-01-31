@@ -85,8 +85,6 @@ libice_la_SOURCES = \
 	argument.h \
 	ascii.h \
 	base.h \
-	bindkey.cc \
-	bindkey.h \
 	debug.h \
 	default.h \
 	guievent.h \
@@ -109,6 +107,8 @@ libice_la_SOURCES = \
 	udir.h \
 	upath.cc \
 	upath.h \
+	wmkey.cc \
+	wmkey.h \
 	wmmgr.h \
 	wmprog.h \
 	workspaces.h \
@@ -188,6 +188,7 @@ libitk_la_SOURCES = \
 	appnames.h \
 	ascii.h \
 	base.h \
+	bindkey.cc \
 	bindkey.h \
 	debug.h \
 	default.h \

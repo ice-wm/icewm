@@ -97,6 +97,14 @@ public:
     virtual bool forRead() { return true; }
 };
 
+class YKeycodeMap {
+public:
+    const KeySym* const map;
+    const int per, min, max;
+    YKeycodeMap(KeySym* k, int p, int lo, int hi) :
+        map(k), per(p), min(lo), max(hi) { }
+};
+
 class YXApplication: public YApplication {
 public:
     YXApplication(int *argc, char ***argv, const char *displayName = nullptr);
@@ -190,9 +198,10 @@ public:
     bool isButton(unsigned state, unsigned mask) const {
         return mask == buttonModMask(state);
     }
-    KeySym keyCodeToKeySym(unsigned keycode, unsigned index = 0);
-    bool parseKey(const char* arg, KeySym* key, unsigned* mod);
-    void unshift(KeySym* key, unsigned* mod);
+    unsigned keyCodeToKeySym(unsigned keycode, unsigned index = 0);
+    bool parseKey(const char* arg, unsigned* key, unsigned short* mod);
+    void unshift(unsigned* key, unsigned short* mod);
+    YKeycodeMap getKeycodeMap();
 
     static const char* getHelpText();
     XIM xim() const { return fXIM; }

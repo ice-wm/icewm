@@ -163,7 +163,7 @@ public:
     void grabKeyM(unsigned key, unsigned modifiers);
     void grabKey(unsigned key, unsigned modifiers);
     void grabVKey(unsigned key, unsigned modifiers);
-    void grab(const struct WMKey& wmkey);
+    void grab(struct WMKey& wmkey);
     unsigned VMod(unsigned modifiers);
     void grabButtonM(int button, unsigned modifiers);
     void grabButton(int button, unsigned modifiers);
