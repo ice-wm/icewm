@@ -1702,74 +1702,7 @@ YDesktop::~YDesktop() {
 }
 
 void YWindow::grab(struct WMKey& wmkey) {
-    grabVKey(wmkey.key, wmkey.mod);
-}
-
-void YWindow::grabVKey(unsigned key, unsigned vm) {
-    if (key) {
-        if (vm == 0) {
-            grabKey(key, 0);
-        } else {
-            unsigned m = 0;
-            bool ok = true;
-
-            if (vm & kfShift)
-                m |= ShiftMask;
-            if (vm & kfCtrl)
-                m |= ControlMask;
-            if (vm & kfAlt) {
-                if (xapp->AltMask)
-                    m |= xapp->AltMask;
-                else
-                    ok = false;
-            }
-            if (vm & kfMeta) {
-                if (xapp->MetaMask)
-                    m |= xapp->MetaMask;
-                else
-                    ok = false;
-            }
-            if (vm & kfSuper) {
-                if (xapp->SuperMask)
-                    m |= xapp->SuperMask;
-                else
-                    ok = false;
-            }
-            if (vm & kfHyper) {
-                if (xapp->HyperMask)
-                    m |= xapp->HyperMask;
-                else
-                    ok = false;
-            }
-            if (vm & kfAltGr) {
-                if (xapp->ModeSwitchMask)
-                    m |= xapp->ModeSwitchMask;
-                else
-                    ok = false;
-            }
-
-            MSG(("grabVKey k=0x%04x v=0x%02x m=0x%02x o=%d", key, vm, m, ok));
-            if (m && ok) {
-                grabKey(key, m);
-
-                // !!! recheck this
-                if (modSuperIsCtrlAlt && xapp->WinMask &&
-                    hasbits(vm, kfAlt | kfCtrl))
-                {
-                    m = xapp->WinMask;
-                    if (vm & kfShift)
-                        m |= ShiftMask;
-                    if (vm & kfSuper)
-                        m |= xapp->SuperMask;
-                    if (vm & kfHyper)
-                        m |= xapp->HyperMask;
-                    if (vm & kfAltGr)
-                        m |= xapp->ModeSwitchMask;
-                    grabKey(key, m);
-                }
-            }
-        }
-    }
+    wmkey.grab(handle());
 }
 
 void YWindow::grabVButton(int button, unsigned int vm) {

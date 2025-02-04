@@ -1395,13 +1395,6 @@ void YXApplication::queryMouse(int* x, int* y) {
         *x = *y = 0;
 }
 
-bool YXApplication::parseKey(const char* arg, unsigned* key, unsigned short* mod) {
-    bool yes = YConfig::parseKey(arg, key, mod);
-    if (yes)
-        unshift(key, mod);
-    return yes;
-}
-
 void YXApplication::unshift(unsigned* ksym, unsigned short* mod) {
     const unsigned key = unsigned(*ksym);
     if ((' ' < key && key < 'a') || ('z' < key && key <= 0xFF) ||

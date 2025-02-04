@@ -32,7 +32,7 @@ private:
     char* parseMenuFile(char *data, ObjectContainer *container);
     char* parseMenuProg(char *data, ObjectContainer *container);
     char* parseMenuProgReload(char *data, ObjectContainer *container);
-    char* parseKey(char *word, char *p);
+    char* parseAKey(char *word, char *p);
     char* parseProgram(char *word, char *p, ObjectContainer *container);
     char* parseWord(char *word, char *p, ObjectContainer *container);
 
@@ -177,8 +177,7 @@ public:
         return wm.eq(key, mod);
     }
     void open(unsigned mods);
-    KeySym key() const { return wm.key; }
-    unsigned modifiers() const { return wm.mod; }
+    void grab(int handle) { wm.grab(handle); }
 
 private:
     WMKey wm;

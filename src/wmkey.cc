@@ -16,7 +16,7 @@ bool WMKey::set(const char* arg) {
     else {
         unsigned ks = 0;
         unsigned short mo = 0;
-        if (xapp->parseKey(arg, &ks, &mo)) {
+        if (YConfig::parseKey(arg, &ks, &mo)) {
             if (initial == false)
                 delete[] const_cast<char *>(name);
             name = newstr(arg);
@@ -33,7 +33,7 @@ bool WMKey::set(const char* arg) {
 bool WMKey::parse() {
     if (nonempty(name)) {
         key = mod = xmod = kc = 0;
-        return xapp->parseKey(name, &key, &mod);
+        return YConfig::parseKey(name, &key, &mod);
     } else {
         return false;
     }
@@ -83,7 +83,8 @@ void WMKey::grab(int handle) {
             return;
         }
     }
-    if (kc == 0) {
+    if (kc == 0 && key) {
+        xapp->unshift(&key, &xmod);
         kc = XKeysymToKeycode(xapp->display(), KeySym(key));
     }
     if (kc) {

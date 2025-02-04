@@ -199,7 +199,6 @@ public:
         return mask == buttonModMask(state);
     }
     unsigned keyCodeToKeySym(unsigned keycode, unsigned index = 0);
-    bool parseKey(const char* arg, unsigned* key, unsigned short* mod);
     void unshift(unsigned* key, unsigned short* mod);
     YKeycodeMap getKeycodeMap();
 

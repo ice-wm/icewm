@@ -247,8 +247,9 @@ void YWindowManager::grabKeys() {
         grab(gKeySysKeyboardNext);
 
     {
-        for (KProgram* k : keyProgs) {
-            grabVKey(k->key(), k->modifiers());
+        int win = handle();
+        for (KProgram* kp : keyProgs) {
+            kp->grab(win);
         }
     }
     if (xapp->WinMask && win95keys) {

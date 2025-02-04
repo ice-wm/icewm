@@ -85,7 +85,7 @@ static mstring guessIconNameFromExe(const char* exe)
     return "-";
 }
 
-char* MenuLoader::parseKey(char *word, char *p)
+char* MenuLoader::parseAKey(char *word, char *p)
 {
     bool runonce = !strcmp(word, "runonce");
     bool switchkey = !strcmp(word, "switchkey");
@@ -417,7 +417,7 @@ char* MenuLoader::parseWord(char *word, char *p, ObjectContainer *container)
           || !strcmp(word, "runonce")
           || !strcmp(word, "switchkey"))
     {
-        p = parseKey(word, p);
+        p = parseAKey(word, p);
     }
     else {
         msg(_("Unknown keyword for a non-container: '%s'.\n"
