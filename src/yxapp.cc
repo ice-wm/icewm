@@ -24,6 +24,7 @@ YContext<YWindow> windowContext("windowContext", false);
 
 bool YXApplication::synchronizeX11;
 bool YXApplication::alphaBlending;
+bool YXApplication::xkbExtension;
 Window YXApplication::ignorable;
 
 Atom _XA_WM_CHANGE_STATE;
@@ -580,14 +581,6 @@ void YXApplication::initModifiers() {
 
     ButtonKeyMask = KeyMask | ButtonMask;
 
-#if 0
-    KeySym wl = XKeycodeToKeysym(app->display(), 115, 0);
-    KeySym wr = XKeycodeToKeysym(app->display(), 116, 0);
-
-    if (wl == XK_Super_L) {
-    } else if (wl == XK_Meta_L) {
-    }
-#endif
     // this will do for now, but we should actualy check the keycodes
     Win_L = Win_R = 0;
 
@@ -1149,6 +1142,9 @@ void YXApplication::initExtensions(Display* dpy) {
 #endif
 
     xshm.init(dpy, XShmQueryExtension, XShmQueryVersion);
+
+    int op = 0, ev = 0, er = 0, ma = XkbMajorVersion, mi = XkbMinorVersion;
+    xkbExtension = (XkbQueryExtension(dpy, &op, &ev, &er, &ma, &mi) == True);
 }
 
 YXApplication::~YXApplication() {
@@ -1433,8 +1429,23 @@ YKeycodeMap YXApplication::getKeycodeMap() {
         fKeycodeMap = XGetKeyboardMapping(xapp->display(), fKeycodeMin,
                                           fKeycodeMax - fKeycodeMin + 1,
                                           &fKeysymsPer);
+        if (fKeycodeMap) {
+            fKeycodeTimer->setTimer(2000L, this, true);
+        }
     }
     return YKeycodeMap(fKeycodeMap, fKeysymsPer, fKeycodeMin, fKeycodeMax);
+}
+
+bool YXApplication::handleTimer(YTimer* timer) {
+    if (timer == fKeycodeTimer) {
+        fKeycodeTimer = null;
+        if (fKeycodeMap) {
+            XFree(fKeycodeMap);
+            fKeycodeMap = nullptr;
+            fKeycodeMin = fKeycodeMax = fKeysymsPer = 0;
+        }
+    }
+    return false;
 }
 
 bool YXApplication::windowExists(Window handle) const {

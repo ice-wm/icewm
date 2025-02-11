@@ -173,9 +173,8 @@ public:
     ~KProgram();
 
     void parse() { wm.parse(); }
-    bool isKey(KeySym key, unsigned mod) const {
-        return wm.eq(key, mod);
-    }
+    bool isKey(const XKeyEvent& x) const { return wm == x; }
+    bool isButton(const XButtonEvent& b) const { return wm == b; }
     void open(unsigned mods);
     void grab(int handle) { wm.grab(handle); }
 

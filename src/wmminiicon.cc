@@ -226,23 +226,24 @@ void MiniIcon::handleDrag(const XButtonEvent &down, const XMotionEvent &motion) 
 
 bool MiniIcon::handleKey(const XKeyEvent& key) {
     if (key.type == KeyPress) {
-        KeySym k = keyCodeToKeySym(key.keycode);
-        unsigned int m = KEY_MODMASK(key.state);
-        unsigned int vm = VMod(m);
-        if (gKeyWinClose.eq(k, vm)) {
+        if (gKeyWinClose == key) {
             fFrame->actionPerformed(actionClose);
         }
-        else if (gKeyWinLower.eq(k, vm)) {
+        else if (gKeyWinLower == key) {
             fFrame->actionPerformed(actionLower);
         }
-        else if (gKeyWinRestore.eq(k, vm)) {
+        else if (gKeyWinRestore == key) {
             fFrame->actionPerformed(actionRestore);
         }
-        else if (k == XK_Return || k == XK_KP_Enter) {
-            fFrame->activate();
-        }
-        else if (k == XK_Menu || (k == XK_F10 && m == ShiftMask)) {
-            fFrame->popupSystemMenu(fFrame);
+        else {
+            KeySym k = keyCodeToKeySym(key.keycode);
+            unsigned m = KEY_MODMASK(key.state);
+            if (k == XK_Return || k == XK_KP_Enter) {
+                fFrame->activate();
+            }
+            else if (k == XK_Menu || (k == XK_F10 && m == ShiftMask)) {
+                fFrame->popupSystemMenu(fFrame);
+            }
         }
     }
     return true;

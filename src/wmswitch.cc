@@ -326,9 +326,8 @@ public:
         return fActiveItem.frame;
     }
 
-    bool isKey(KeySym k, unsigned vm) override {
-        return gKeySysSwitchNext.eq(k, vm) || (fWMClass &&
-               gKeySysSwitchClass.eq(k, vm));
+    bool isKey(const XKeyEvent& x) override {
+        return gKeySysSwitchNext == x || (fWMClass && gKeySysSwitchClass == x);
     }
 
     unsigned modifiers() override {
@@ -947,24 +946,21 @@ void SwitchWindow::target(int delta) {
 
 bool SwitchWindow::handleKey(const XKeyEvent &key) {
     KeySym k = keyCodeToKeySym(key.keycode);
-    unsigned m = KEY_MODMASK(key.state);
-    unsigned vm = VMod(m);
-
     if (key.type == KeyPress) {
         keyPressed = k;
-        if (isKey(k, vm)) {
+        if (isKey(key)) {
             target(+1);
         }
-        else if (gKeySysSwitchLast.eq(k, vm)) {
+        else if (gKeySysSwitchLast == key) {
             target(-1);
         }
-        else if (gKeyWinClose.eq(k, vm)) {
+        else if (gKeyWinClose == key) {
             zItems->destroyTarget();
         }
         else if (k == XK_Return) {
             accept();
         }
-        else if (manager->handleSwitchWorkspaceKey(key, k, vm)) {
+        else if (manager->handleSwitchWorkspaceKey(key)) {
             bool change = (fWorkspace != manager->activeWorkspace());
             fWorkspace = manager->activeWorkspace();
             if ((change && !quickSwitchToAllWorkspaces) ||
@@ -1008,12 +1004,12 @@ bool SwitchWindow::handleKey(const XKeyEvent &key) {
             if (index < zItems->getCount())
                 target(index - zItems->getActiveItem());
         }
-        else if (zItems->isKey(k, vm) && !modDown(m)) {
+        else if (zItems->isKey(key) && !modDown(key.state)) {
             accept();
         }
     }
     else if (key.type == KeyRelease) {
-        if ((isKey(k, vm) && !modDown(m)) || isModKey(key.keycode)) {
+        if ((isKey(key) && !modDown(key.state)) || isModKey(key.keycode)) {
             accept();
         }
         else if (k == XK_Escape && k == keyPressed) {
@@ -1024,8 +1020,8 @@ bool SwitchWindow::handleKey(const XKeyEvent &key) {
     return true;
 }
 
-bool SwitchWindow::isKey(KeySym k, unsigned vm) {
-    return zItems->isKey(k, vm);
+bool SwitchWindow::isKey(const XKeyEvent& key) {
+    return zItems->isKey(key);
 }
 
 unsigned SwitchWindow::modifiers() {

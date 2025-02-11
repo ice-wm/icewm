@@ -162,11 +162,9 @@ public:
     void setPointer(Cursor pointer);
     void grabKeyM(unsigned key, unsigned modifiers);
     void grabKey(unsigned key, unsigned modifiers);
-    void grab(struct WMKey& wmkey);
     unsigned VMod(unsigned modifiers);
     void grabButtonM(int button, unsigned modifiers);
     void grabButton(int button, unsigned modifiers);
-    void grabVButton(int button, unsigned vmodifiers);
 
     Window handle() { return (flags & wfCreated) ? fHandle : create(); }
     YWindow *parent() const { return fParent; }

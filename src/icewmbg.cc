@@ -43,7 +43,7 @@ private:
     bool verbose;
 };
 
-class Background: public YXApplication, private YTimerListener {
+class Background: public YXApplication {
 public:
     Background(int *argc, char ***argv, bool verbose = false);
     ~Background();

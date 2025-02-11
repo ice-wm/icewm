@@ -133,7 +133,10 @@ public:
     virtual bool isEmpty() override {
         return menu->itemCount() == 0;
     }
-    virtual bool isKey(KeySym k, unsigned int mod) override {
+    virtual bool isKey(const XKeyEvent& key) override {
+        KeySym k = xapp->keyCodeToKeySym(key.keycode);
+        unsigned m = KEY_MODMASK(key.state);
+        unsigned mod = desktop->VMod(m);
         return k == this->key && mod == this->mod;
     }
     unsigned modifiers() override {

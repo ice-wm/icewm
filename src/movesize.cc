@@ -698,85 +698,81 @@ bool YFrameWindow::handleKey(const XKeyEvent &key) {
                 break;
             }
         } else if (xapp->AltMask != 0) {
-            KeySym k = keyCodeToKeySym(key.keycode);
-            unsigned int m = KEY_MODMASK(key.state);
-            unsigned int vm = VMod(m);
-
             if (!isRollup() && !isIconic() &&
                 key.window != handle())
                 return true;
 
-            if (gKeyWinClose.eq(k, vm)) {
+            if (gKeyWinClose == key) {
                 actionPerformed(actionClose);
-            } else if (gKeyWinPrev.eq(k, vm)) {
+            } else if (gKeyWinPrev == key) {
                 wmPrevWindow();
-            } else if (gKeyWinMaximizeVert.eq(k, vm)) {
+            } else if (gKeyWinMaximizeVert == key) {
                 actionPerformed(actionMaximizeVert);
-            } else if (gKeyWinMaximizeHoriz.eq(k, vm)) {
+            } else if (gKeyWinMaximizeHoriz == key) {
                 actionPerformed(actionMaximizeHoriz);
-            } else if (gKeyWinRaise.eq(k, vm)) {
+            } else if (gKeyWinRaise == key) {
                 actionPerformed(actionRaise);
-            } else if (gKeyWinOccupyAll.eq(k, vm)) {
+            } else if (gKeyWinOccupyAll == key) {
                 actionPerformed(actionOccupyAllOrCurrent);
-            } else if (gKeyWinLower.eq(k, vm)) {
+            } else if (gKeyWinLower == key) {
                 actionPerformed(actionLower);
-            } else if (gKeyWinRestore.eq(k, vm)) {
+            } else if (gKeyWinRestore == key) {
                 actionPerformed(actionRestore);
-            } else if (gKeyWinNext.eq(k, vm)) {
+            } else if (gKeyWinNext == key) {
                 wmNextWindow();
-            } else if (gKeyWinMove.eq(k, vm)) {
+            } else if (gKeyWinMove == key) {
                 actionPerformed(actionMove);
-            } else if (gKeyWinSize.eq(k, vm)) {
+            } else if (gKeyWinSize == key) {
                 actionPerformed(actionSize);
-            } else if (gKeyWinMinimize.eq(k, vm)) {
+            } else if (gKeyWinMinimize == key) {
                 actionPerformed(actionMinimize);
-            } else if (gKeyWinMaximize.eq(k, vm)) {
+            } else if (gKeyWinMaximize == key) {
                 actionPerformed(actionMaximize);
-            } else if (gKeyWinHide.eq(k, vm)) {
+            } else if (gKeyWinHide == key) {
                 actionPerformed(actionHide);
-            } else if (gKeyWinRollup.eq(k, vm)) {
+            } else if (gKeyWinRollup == key) {
                 actionPerformed(actionRollup);
-            } else if (gKeyWinFullscreen.eq(k, vm)) {
+            } else if (gKeyWinFullscreen == key) {
                 actionPerformed(actionFullscreen);
-            } else if (gKeyWinMenu.eq(k, vm)) {
+            } else if (gKeyWinMenu == key) {
                 popupSystemMenu(this);
-            } else if (gKeyWinArrangeN.eq(k, vm)) {
+            } else if (gKeyWinArrangeN == key) {
                 if (canMove()) wmArrange(waTop, waCenter);
-            } else if (gKeyWinArrangeNE.eq(k, vm)) {
+            } else if (gKeyWinArrangeNE == key) {
                 if (canMove()) wmArrange(waTop, waRight);
-            } else if (gKeyWinArrangeE.eq(k, vm)) {
+            } else if (gKeyWinArrangeE == key) {
                 if (canMove()) wmArrange(waCenter, waRight);
-            } else if (gKeyWinArrangeSE.eq(k, vm)) {
+            } else if (gKeyWinArrangeSE == key) {
                 if (canMove()) wmArrange(waBottom, waRight);
-            } else if (gKeyWinArrangeS.eq(k, vm)) {
+            } else if (gKeyWinArrangeS == key) {
                 if (canMove()) wmArrange(waBottom, waCenter);
-            } else if (gKeyWinArrangeSW.eq(k, vm)) {
+            } else if (gKeyWinArrangeSW == key) {
                 if (canMove()) wmArrange(waBottom, waLeft);
-            } else if (gKeyWinArrangeW.eq(k, vm)) {
+            } else if (gKeyWinArrangeW == key) {
                 if (canMove()) wmArrange(waCenter, waLeft);
-            } else if (gKeyWinArrangeNW.eq(k, vm)) {
+            } else if (gKeyWinArrangeNW == key) {
                 if (canMove()) wmArrange(waTop, waLeft);
-            } else if (gKeyWinArrangeC.eq(k, vm)) {
+            } else if (gKeyWinArrangeC == key) {
                 if (canMove()) wmArrange(waCenter, waCenter);
-            } else if (gKeyWinTileLeft.eq(k, vm)) {
+            } else if (gKeyWinTileLeft == key) {
                 wmTile(actionTileLeft);
-            } else if (gKeyWinTileRight.eq(k, vm)) {
+            } else if (gKeyWinTileRight == key) {
                 wmTile(actionTileRight);
-            } else if (gKeyWinTileTop.eq(k, vm)) {
+            } else if (gKeyWinTileTop == key) {
                 wmTile(actionTileTop);
-            } else if (gKeyWinTileBottom.eq(k, vm)) {
+            } else if (gKeyWinTileBottom == key) {
                 wmTile(actionTileBottom);
-            } else if (gKeyWinTileTopLeft.eq(k, vm)) {
+            } else if (gKeyWinTileTopLeft == key) {
                 wmTile(actionTileTopLeft);
-            } else if (gKeyWinTileTopRight.eq(k, vm)) {
+            } else if (gKeyWinTileTopRight == key) {
                 wmTile(actionTileTopRight);
-            } else if (gKeyWinTileBottomLeft.eq(k, vm)) {
+            } else if (gKeyWinTileBottomLeft == key) {
                 wmTile(actionTileBottomLeft);
-            } else if (gKeyWinTileBottomRight.eq(k, vm)) {
+            } else if (gKeyWinTileBottomRight == key) {
                 wmTile(actionTileBottomRight);
-            } else if (gKeyWinTileCenter.eq(k, vm)) {
+            } else if (gKeyWinTileCenter == key) {
                 wmTile(actionTileCenter);
-            } else if (gKeyWinSmartPlace.eq(k, vm)) {
+            } else if (gKeyWinSmartPlace == key) {
                 if (canMove()) {
                     int newX = x();
                     int newY = y();
@@ -785,6 +781,9 @@ bool YFrameWindow::handleKey(const XKeyEvent &key) {
                     }
                 }
             } else if (isIconic() || isRollup()) {
+                KeySym k = keyCodeToKeySym(key.keycode);
+                unsigned m = KEY_MODMASK(key.state);
+
                 if (k == XK_Return || k == XK_KP_Enter) {
                     if (isMinimized())
                         wmMinimize();

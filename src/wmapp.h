@@ -37,8 +37,7 @@ class YWMApp:
     public YSMApplication,
     public YActionListener,
     public YMsgBoxListener,
-    public YSMListener,
-    public YTimerListener
+    public YSMListener
 {
     typedef YSMApplication super;
 

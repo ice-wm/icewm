@@ -717,6 +717,9 @@ bool YWMApp::handleTimer(YTimer *timer) {
         themeOnlyPath.clear();
         pathsTimer = null;
     }
+    else {
+        return super::handleTimer(timer);
+    }
 
     return false;
 }
@@ -1245,6 +1248,19 @@ static void showExtensions() {
         if (!x->supported) {
             printf("%-9s unsupported\n", s);
         }
+    }
+    int ka = XkbMajorVersion, ki = XkbMinorVersion;
+    if (XkbLibraryVersion(&ka, &ki)) {
+        ka = XkbMajorVersion, ki = XkbMinorVersion;
+        int ev = 0, er = 0;
+        if (XkbQueryExtension(xapp->display(), NULL, &ev, &er, &ka, &ki)) {
+            printf("%-9s %d.%-2d (%2d, %3d)\n", "xkeyboard", ka, ki, ev, er);
+        } else {
+            printf("%-9s unsupported\n", "xkeyboard");
+        }
+    } else {
+        printf("incompatible XKEYBOARD library %d.%d vs. %d.%d!\n",
+                ka, ki, XkbMajorVersion, XkbMinorVersion);
     }
 }
 

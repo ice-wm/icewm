@@ -51,12 +51,9 @@ void YClientContainer::handleButton(const XButtonEvent &button) {
     }
 
     if (clientMouseActions) {
-        unsigned int k = button.button + XK_Pointer_Button1 - 1;
-        unsigned int m = KEY_MODMASK(button.state);
-        unsigned int vm = VMod(m);
-
-        if (gMouseWinSize.eq(k, vm)) {
+        if (gMouseWinSize == button) {
             XAllowEvents(xapp->display(), AsyncPointer, CurrentTime);
+            NOTE(MouseWinSize);
 
             int px = button.x + x();
             int py = button.y + y();
@@ -84,7 +81,7 @@ void YClientContainer::handleButton(const XButtonEvent &button) {
             }
             return ;
         }
-        else if (gMouseWinMove.eq(k, vm)) {
+        else if (gMouseWinMove == button) {
             XAllowEvents(xapp->display(), AsyncPointer, CurrentTime);
 
             if (getFrame()->canMove()) {
@@ -96,14 +93,14 @@ void YClientContainer::handleButton(const XButtonEvent &button) {
             }
             return ;
         }
-        else if (gMouseWinRaise.eq(k, vm)
+        else if (gMouseWinRaise == button
             && (gMouseWinRaise != gMouseWinLower || getFrame()->canRaise()))
         {
             XAllowEvents(xapp->display(), AsyncPointer, CurrentTime);
             getFrame()->wmRaise();
             return ;
         }
-        else if (gMouseWinLower.eq(k, vm)) {
+        else if (gMouseWinLower == button) {
             XAllowEvents(xapp->display(), AsyncPointer, CurrentTime);
             getFrame()->wmLower();
             return ;
@@ -170,15 +167,12 @@ void YClientContainer::regrabMouse() {
 
 void YClientContainer::grabActions() {
     if (clientMouseActions && fHaveActionGrab == false) {
-        WMKey grab[] = { gMouseWinMove, gMouseWinSize,
-                         gMouseWinRaise, gMouseWinLower };
-        const int count = int ACOUNT(grab) - (gMouseWinRaise == gMouseWinLower);
-        for (int i = 0; i < count; ++i) {
-            int button = int(grab[i].key) - XK_Pointer_Button1 + Button1;
-            if (inrange(button, Button1, Button3)) {
-                grabVButton(button, grab[i].mod);
-            }
-        }
+        const Window win = handle();
+        gMouseWinMove.grab(win);
+        gMouseWinSize.grab(win);
+        gMouseWinRaise.grab(win);
+        if (gMouseWinLower != gMouseWinRaise)
+            gMouseWinLower.grab(win);
         fHaveActionGrab = true;
     }
 }
