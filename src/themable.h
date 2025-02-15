@@ -160,6 +160,10 @@ cfoption icewm_themable_preferences[] = {
     OUV("TrayIconMaxWidth",                     &trayIconMaxWidth, 16, 128,     "Maximum scaled width of tray icons"),
     OUV("TrayIconMaxHeight",                    &trayIconMaxHeight, 16, 128,    "Maximum scaled height of tray icons"),
     OBV("TrayDrawBevel",                        &trayDrawBevel,                 "Surround the tray with plastic border"),
+    OIV("TaskBarApmGraphWidth",                 &taskBarApmGraphWidth, 1, 1000,  "Width of battery Monitor"),
+    OIV("TaskBarCPUSamples",                    &taskBarCPUSamples, 2, 1000,    "The width of the CPU Monitor applet in pixels"),
+    OIV("TaskBarMEMSamples",                    &taskBarMEMSamples, 2, 1000,    "The width of the Memory Monitor applet in pixels"),
+    OIV("TaskBarNetSamples",                    &taskBarNetSamples, 2, 1000,    "The width of the Net Monitor applet in pixels"),
 
     OBV("TitleBarCentered",                     &titleBarCentered,              "Draw window title centered (obsoleted by TitleBarJustify)"),
     OBV("TitleBarJoinLeft",                     &titleBarJoinLeft,              "Join title*S and title*T"),
