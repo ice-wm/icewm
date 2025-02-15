@@ -53,7 +53,6 @@ void YClientContainer::handleButton(const XButtonEvent &button) {
     if (clientMouseActions) {
         if (gMouseWinSize == button) {
             XAllowEvents(xapp->display(), AsyncPointer, CurrentTime);
-            NOTE(MouseWinSize);
 
             int px = button.x + x();
             int py = button.y + y();
