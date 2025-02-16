@@ -591,7 +591,7 @@ void SwitchWindow::repaint() {
 void SwitchWindow::paint(Graphics &g, const YRect &/*r*/) {
     int b1 = (wmLook != lookFlat);
     int b2 = b1 * 2;
-    int b3 = b1 * 3;
+    int b3 = b2 + 1;
 
     if (switchbackPixbuf != null &&
         (fGradient == null ||
