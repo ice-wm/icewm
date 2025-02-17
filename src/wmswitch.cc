@@ -447,6 +447,7 @@ SwitchWindow::SwitchWindow(YWindow *parent, ISwitchItems *items,
     fWorkspace(WorkspaceInvalid),
     switchFg(&clrQuickSwitchText),
     switchBg(&clrQuickSwitch),
+    switchBc(&clrQuickSwitchBorder),
     switchHl(&clrQuickSwitchActive),
     switchMfg(&clrActiveTitleBarText),
     switchFont(switchFontName),
@@ -597,16 +598,22 @@ void SwitchWindow::paint(Graphics &g, const YRect &/*r*/) {
         fGradient = switchbackPixbuf->scale(width() - 2, height() - 2);
     }
 
-    g.setColor(switchBg);
-    g.drawBorderW(0, 0, width() - 1, height() - 1, true);
+    if (switchBc) {
+        g.setColor(switchBc);
+        g.drawRect(0, 0, width() - 1, height() - 1);
+    } else {
+        g.setColor(switchBg);
+        g.drawBorderW(0, 0, width() - 1, height() - 1, true);
+    }
 
     if (fGradient != null)
         g.drawImage(fGradient, 1, 1, width() - 2, height() - 2, 1, 1);
-    else
-    if (switchbackPixmap != null)
+    else if (switchbackPixmap != null)
         g.fillPixmap(switchbackPixmap, 1, 1, width() - 3, height() - 3);
-    else
+    else {
+        g.setColor(switchBg);
         g.fillRect(1, 1, width() - 3, height() - 3);
+    }
 
     m_verticalStyle ? paintVertical(g) : paintHorizontal(g);
 }

@@ -88,6 +88,7 @@ XSV(const char *, clrMoveSizeStatus,            "rgb:C0/C0/C0")
 XSV(const char *, clrMoveSizeStatusText,        "rgb:00/00/00")
 XSV(const char *, clrQuickSwitch,               "rgb:C0/C0/C0")
 XSV(const char *, clrQuickSwitchText,           "rgb:00/00/00")
+XSV(const char *, clrQuickSwitchBorder,         0)
 XSV(const char *, clrQuickSwitchActive,         0)
 XSV(const char *, clrDefaultTaskBar,            "rgb:C0/C0/C0")
 XSV(const char *, clrNormalButton,              "rgb:C0/C0/C0")
@@ -260,6 +261,7 @@ cfoption icewm_themable_preferences[] = {
     OSV("ColorMoveSizeStatusText",              &clrMoveSizeStatusText,         "Text color of move/resize status window"),
 
     OSV("ColorQuickSwitch",                     &clrQuickSwitch,                "Background of the quick switch window"),
+    OSV("ColorQuickSwitchBorder",               &clrQuickSwitchBorder,          "Border color of the quick switch window"),
     OSV("ColorQuickSwitchText",                 &clrQuickSwitchText,            "Text color in the quick switch window"),
     OSV("ColorQuickSwitchActive",               &clrQuickSwitchActive,          "Rectangle arround the active icon in the quick switch window"),
     OSV("ColorDefaultTaskBar",                  &clrDefaultTaskBar,             "Background of the taskbar"),

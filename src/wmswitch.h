@@ -90,6 +90,7 @@ private:
 
     YColorName switchFg;
     YColorName switchBg;
+    YColorName switchBc;
     YColorName switchHl;
     YColorName switchMbg;
     YColorName switchMfg;

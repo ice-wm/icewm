@@ -1077,6 +1077,13 @@ B<WM_CLASS> to allow B<runonce> for B<NetStatusCommand>.
 
 Command to run for address bar entries.
 
+=item B<InputIgnorePrefix>="nohup|(nice[[:space:]]+-n[[:space:]]*[[:digit:]]+)|sudo|(LANG|LC_[[:alnum:]]]*)(=|=[^[:space:]]+)"
+
+Regular expression (POSIX Extended flavor) which marks the begin of a
+command line in command input fields. Such prefixes are ignored while
+the auto-completion action is performed, typically for commands acting
+as pass-through wrapper, executing the specified command.
+
 =back
 
 =head2 WINDOW MENUS
@@ -1200,13 +1207,6 @@ Dimension of the large icons.
 =item B<HugeIconSize>=48  [8-128]
 
 Dimension of the large icons.
-
-=item B<InputIgnorePrefix>="nohup|(nice[[:space:]]+-n[[:space:]]*[[:digit:]]+)|sudo|(LANG|LC_[[:alnum:]]]*)(=|=[^[:space:]]+)"
-
-Regular expression (POSIX Extended flavor) which marks the begin of a
-command line in command input fields. Such prefixes are ignored while
-the auto-completion action is performed, typically for commands acting
-as pass-through wrapper, executing the specified command.
 
 =item B<QuickSwitchHorzMargin>=3  [0-64]
 
@@ -1548,6 +1548,11 @@ Text color in the quick switch window.
 =item B<ColorQuickSwitchActive> = ""
 
 Rectangle around the active icon in the quick switch window.
+
+=item B<ColorQuickSwitchBorder> = ""
+
+The color for the quick switch border. When empty, a one pixel wide
+elevation border will be drawn, based on the quick switch background.
 
 =item B<ColorDefaultTaskBar> = "rgb:C0/C0/C0"
 
