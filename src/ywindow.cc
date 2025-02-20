@@ -184,7 +184,8 @@ Colormap YWindow::colormap() {
     return fColormap;
 }
 
-void YWindow::setWindowFocus(Time timestamp) {
+void YWindow::setInputFocus(const char* origin) {
+    Time timestamp = xapp->getEventTime(origin);
     XSetInputFocus(xapp->display(), handle(), RevertToNone, timestamp);
 }
 
@@ -1250,7 +1251,7 @@ bool YWindow::isFocusTraversable() {
 void YWindow::requestFocus(bool requestUserFocus) {
     if (isToplevel()) {
         if (visible() && requestUserFocus)
-            setWindowFocus();
+            setInputFocus("requestFocus");
     } else {
         if (parent()) {
             parent()->requestFocus(requestUserFocus);

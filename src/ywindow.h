@@ -95,7 +95,7 @@ public:
     bool getWindowAttributes(XWindowAttributes* attr);
     void beneath(YWindow* superior);
     void raiseTo(YWindow* inferior);
-    void setWindowFocus(Time timestamp = CurrentTime);
+    void setInputFocus(const char* origin);
 
     bool fetchTitle(char** title);
     void setTitle(char const * title);

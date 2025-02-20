@@ -155,7 +155,7 @@ void AddressBar::showNow() {
         raise();
         show();
     }
-    setWindowFocus();
+    setInputFocus("addressBar");
 }
 
 void AddressBar::hideNow() {

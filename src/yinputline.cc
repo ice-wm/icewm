@@ -452,7 +452,7 @@ void YInputLine::handleButton(const XButtonEvent &button) {
     if (button.type == ButtonPress) {
         if (button.button == 1) {
             if (fHasFocus == false) {
-                setWindowFocus();
+                setInputFocus("inputLine");
                 requestFocus(false);
             } else {
                 fSelecting = true;

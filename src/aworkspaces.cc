@@ -80,7 +80,7 @@ void WorkspaceButton::handleClick(const XButtonEvent &up, int count) {
                     fInput->setSize(width(), height());
                     fInput->setText(name(), false);
                     fInput->show();
-                    fInput->setWindowFocus();
+                    fInput->setInputFocus("workspaceButton");
                 }
                 return;
             }

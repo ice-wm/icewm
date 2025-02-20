@@ -137,7 +137,7 @@ YWindowManager::YWindowManager(
         edges += new EdgeSwitch(this, +1, true);
     }
 
-    YWindow::setWindowFocus();
+    YWindow::setInputFocus("rootFocus");
 }
 
 YWindowManager::~YWindowManager() {
@@ -1083,12 +1083,12 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
                     fFocusWin->isRollup());
     if (w) {
         if (f->getInputFocusHint()) {
-            w->setWindowFocus();
+            w->setInputFocus("wmSetFocus");
             focusUnset = false;
         }
     }
     if (w == nullptr || focusUnset) {
-        fTopWin->setWindowFocus();
+        fTopWin->setInputFocus("topWindow");
         notifyActive(nullptr);
         fTopWin->setFrame(f);
     } else {
