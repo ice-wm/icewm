@@ -20,11 +20,6 @@
 #define _GNU_SOURCE
 #endif
 
-#include "appnames.h"
-#include "base.h"
-#include "config.h"
-#include "intl.h"
-
 #include <algorithm>
 #include <chrono>
 #include <cstring>
@@ -49,6 +44,11 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+
+#include "appnames.h"
+#include "base.h"
+#include "config.h"
+#include "intl.h"
 
 using namespace std;
 
