@@ -953,10 +953,11 @@ int main(int argc, char **argv) {
 
     std::ios_base::sync_with_stdio(false);
 
+    const char* msglang = nullptr;
 #ifdef CONFIG_I18N
     setlocale(LC_ALL, "");
 
-    auto msglang = getCheckedExplicitLocale(false);
+    msglang = getCheckedExplicitLocale(false);
     right_to_left =
         msglang && *msglang &&
         std::any_of(rtls, rtls + ACOUNT(rtls), [&](const char *rtl) {
