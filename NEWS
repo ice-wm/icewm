@@ -1,11 +1,267 @@
-icewm -- history of user-visible changes.  2024-06-16
+icewm -- history of user-visible changes.  2025-02-22
+
+Release icewm-3.7.0 released 2025-02-22
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.6.0...3.7.0
+
+Eduard Bloch <blade@debian.org> (107):
+      LC_CTYPE specific hints to Xft selection
+      Minor fixes and improvements on XDG menu
+      WIP: switched more glib containers to stl
+      Workaround for gettext not applied on submenu
+      WIP: redesigning menu handling
+      First working printing code after rewrite
+      Fixup some of the expansion patterns in the exec string
+      Cleanup, fix Other menu population
+      Localized sorting
+      Map unknown subcats to Other main cat
+      Simple attempt to get duplicated items in parent nodes
+      Attaching menu description, incomplete
+      Fix main cat fallback
+      Work around missing reverse iterator, can be plain C++11 again
+      Fallback to directory file base name matching the category name
+      Mark submenu labels translateable
+      Drop menu info getter
+      Don't recurse for .directory fetching
+      clang-reformat fdomenu.cc
+      Stop requiring glib in CMake build
+      Common DBG macro to turn on/off debug notes
+      Filter out duplicates where apps declare some intermediate categories as
+        well
+      Add extra separator handling
+      Implemented execution in Terminal
+      Rename local DBG macro
+      Cleaning
+      Support --no-sub-cats
+      Stop storing lookup helper in global member
+      Fewer stat operations using readdir hints
+      Match country-specific languages correctly
+      Printing of GenericName
+      Drop old Perl based converter (obsolete)
+      Restore option to remove Other menu
+      Option to move lone entries to their parent menues.
+      Update CMake requirement to prevent warnings
+      Minor updates
+      Helper to create locale folder mock
+      Fix loading from gettext if menu did not have a description
+      Fix and streamline conversion flow
+      Hint on requirement of SVG support
+      Drop dependency on YLocale class and X11 libs
+      Disable sync with stdio
+      Include implicitly pulled headers directly
+      Deadline option to abort XDG data reading and print what we got so far
+      Refactor, reformat, fix typo
+      Better fix for duplicated appendixes
+      Bugfixes, cleanup
+      More sophisticated -S operation, also fixes, cleanup
+      Restore .desktop launching function
+      Simple string matching filter implemented
+      Icon donation from AudioVideo section to Audio / Video
+      Reimplemented --flat mode
+      Fix segfault when AudioVideo did not have decoration
+      Relocate --match-osec check to hit translated section names too
+      Added a user hint and basic precaching hack on menu timeout
+      Minor refactoring (DRYing)
+      Minor heap usage optimization
+      Tiny runtime saving by not cleaning up the tree in the end
+      Document missing options and align help text format
+      Document new options
+      In timeout, don't waste time with nice-to-have optimizations
+      Disable --no-sep-others again
+      Configured timeout defaults to "sane" values
+      Dodge the GenericName which just repeats Name content
+      Support more OS with the d_ent shortcut
+      Optional source comment, more hidding, various fixes
+      Minor performance tuning with different containers
+      Save a few CPU cycles
+      Update XDG format reference version
+      Fixed merging of some submenu entries into correct parent
+      Stop using std::regex
+      Don't evaluate TryExec
+      Local formating of prog title
+      Option to clamp rogue menu title's length
+      Make true/false checks case-insensitive
+      Overhaul content processing
+      Resolve shadowing of apps which are having the same translated name
+      Convert translated sorting to internal bubble sort
+      Wide char aware string cropping
+      Drop unused fields, ignore comments earlier
+      More similar standard level selection (to autoconf with recent compilers)
+      Fix C++14 issue with constness of functors
+      Use system installation of nanosvg package, where possible
+      Stop using smart pointers
+      Work around GCC11 issue
+      Solve some warnings from receng clang and gcc
+      Stop using VLAs, they are not fully legal in C++
+      Make PACKAGE/VERSION overridable in from-git build mode
+      Document optional requirements
+      Ignore local junk from IDEs and personal notes
+      Build dependency on gennews.sh for NEWS creation
+      Control language selection by LINGUAS file, not filesystem wildcards
+      POT/PO update
+      Explicit blacklisting of menu-xdg subfolders
+      Ignore certain prefix commands
+      Unmark text while not moving ahead at the end
+      Never mark text in the complete operation
+      Fix potential resize-to-smaller problem
+      Drop ycollections classes
+      Render the list of proposals in a tooltip
+      Make the tooltip act like an assistant with further proposals
+      Stop tooltip when space was typed in
+      Redo completion when deleting
+      Try using smaller icon versions in WS overview
+      Make clicks in the corner effective to ShowDesktop button in right-placed
+        mode
+      Fix a crash when selecting Default from the clock menu
+      No text insertion while doing tooltip update only
+
+Bert Gijsbers <gijsbers@science.uva.nl> (69):
+      Add support for _NET_WM_MOVERESIZE_CANCEL.
+      Better guard move/sizes and make sure they are properly terminated.
+      Stop move/sizes when changing tabs.
+      End manual placement when the client exits.
+      Properly compute the first parameter to the select(2) system call.
+      Add -Await option to icesh to wait for and select new client windows.
+      Improve support for properties with COMPOUND_TEXT in icesh.
+      When a key event is handled, don't propagate it further.
+      When DockApps has "dock" and LimitByDockLayer=1 then update the desktop
+        work area so that maximized windows leave the DockApps container visible
+        for issue #779.
+      Also update DockApps container when downsizing.
+      Update DockApps preferences comment.
+      Document the layers and the support for dockapps.
+      Document the use of the LimitByDockLayer pref for DockApps.
+      Simplify captureEvents/releaseEvents.
+      Support changing the Dock container layer while running.
+      When focusing a frame under the mouse, prefer to focus its topmost
+        transient.
+      When raising a frame, check if the focused frame needs to bind the mouse
+        buttons, if it is overlapped. When minimizing or hiding transients,
+        check against transients being tabs in the same frame.
+      When LimitPosition is false, you can drag maximized windows off-screen and
+        closes issue #780.
+      Revert "When LimitPosition is false, you can drag maximized windows
+        off-screen."
+      To drag a maximized window, keep the Shift key down for issue #780.
+      Elaborate on symbols and expressions and document the minus operator.
+      Support keybindings to shifted XF86keysyms like XF86AudioPause for issue
+        #781.
+      Move parsing key definitions to class WMKey.
+      Reuse WMKey in KProgram.
+      Enforce a limit of 8 mouse pointer buttons, as more is impossible.
+      Add constructors to WMKey.
+      Consistently use keyCodeToKeySym.
+      Dissolve the WM_KEY macros.
+      Move all keybinding initializations to its own C++ file.
+      Correct versions and date.
+      Drop ycollections.
+      Succinct.
+      Improve pager icon sizes conditional structure.
+      Remove smart pointers from misc.cc.
+      Restore mstring strncpy's.
+      Improve readability.
+      Restore unsigned char array in yarray.
+      Replace max by min.
+      Let icesh accept UTF-8 strings in properties.
+      Support locales with three letter language codes.
+      Remove silly casts.
+      Restore simple arrays and avoid mallocs.
+      Retstore the previous fontmacro's, because e.g. the InputFont no longer
+        was bold.
+      Let icewmbg also support the AVIF image format.
+      Remove the default 1px black border on the right and bottom sides of the
+        QuickSwitch window when Look is flat for issue ice-wm/icewm#174.
+      Support OpenBSD tar in --install list for issue ice-wm/icewm#179.
+      Both scrollbars need to be able to process the same key event.
+      Cleanup the listing of installable themes for issue ice-wm/icewm#179.
+      Revert "When undoing an arrange or showing the desktop, focus the last
+        focused window instead of the topmost window." for issue #788.
+      fix fi.po to fix the build.
+      Don't call XKeysymToKeycode several times per key grab, but cache it.
+        Create YKeycodeMap and getKeycodeMap.
+      Drop grabVKey and fixupPreferences. Move unshift to WMKey grab.
+      Support grabbing two keys simultaneously by a single keybinding definition
+        when both keys are bound to the same keysym.
+      Increase max backgrounds to 8000.
+      Increase toolbar height when icons are taller for issue ice-wm/icewm#178.
+      Drop a NOTE.
+      Make 4 graph widths themable for issue ice-wm/icewm#178.
+      Revert "Remove the default 1px black border of the QuickSwitch for issue
+        ice-wm/icewm#174." This reverts commit
+        e7511806257cdee92585a21a4a794e19e33478dd.
+      Revert "Don't draw a border on QuickSwitch when Look=flat for issue #736."
+        This reverts commit 11c0b34db6b24f5fbd9815d359e0b5ef1360517f.
+      Mark support for global modality as done.
+      Add ColorQuickSwitchBorder themable preference for issue #736.
+      Never use CurrentTime, but always use last event time when setting the
+        input focus to a window.
+      Fix compilation error for fdomenu.cc undefined msglang when no I18N.
+      Include locale include files last in fdomenu.cc, because they contain
+        macro's.
+      Restore support for NanoSVG in the CMake build.
+      Update the about copyright to 2025.
+      Update potfiles.
+      Restore support for C++11 in fdomenu.cc.
+      Check for __GNUC__ at least 5 for codecvt dependency.
+
+Baurzhan Muftakhidinov <baurthefirst@gmail.com> (2):
+      Translated using Weblate (Kazakh)
+      Translated using Weblate (Kazakh)
+
+David Medina <medipas@gmail.com> (2):
+      Translated using Weblate (Catalan)
+      Translated using Weblate (Catalan)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (2):
+      Translated using Weblate (Slovak)
+      Translated using Weblate (Slovak)
+
+Luna  Jernberg <bittin@opensuse.org> (2):
+      Translated using Weblate (Swedish)
+      Translated using Weblate (Swedish)
+
+Marina J. Donis <marinajdonis@gmail.com> (2):
+      Translated using Weblate (Spanish)
+      Translated using Weblate (Spanish)
+
+Alessio Adamo <alessio.adamo@gmail.com> (1):
+      Translated using Weblate (Italian)
+
+Aleš Kastner <alkas@volny.cz> (1):
+      Translated using Weblate (Czech)
+
+Dmitriy Khanzhin <jinn@altlinux.org> (1):
+      Translated using Weblate (Russian)
+
+Ettore Atalan <atalanttore@googlemail.com> (1):
+      Translated using Weblate (German)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Mehmet Akif 9oglu <madanadam@gmail.com> (1):
+      Translated using Weblate (Turkish)
+
+Rantala <toni.rantala@protonmail.com> (1):
+      Translated using Weblate (Finnish)
+
+Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
+      Translated using Weblate (Georgian)
+
+Virinas code <alexcode228@gmail.com> (1):
+      Translated using Weblate (French)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
 
 Release icewm-3.6.0 released 2024-06-16
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 3.5.1...3.6.0
+git shortlog --no-merges -e -n -w80,6,8 3.5.1...3.6.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (20):
+Bert Gijsbers <gijsbers@science.uva.nl> (19):
       Double-click the border to maximize just that side for ice-wm/icewm#163.
         Repeat to restore that side. Also for corners.
       Restore moving windows by dragging with the right button down.
@@ -26,9 +282,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (20):
       Do XFilterEvent globally.
       Mention the requirements for the --install option.
       Update pot files.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
+      Prepare 3.6.0 release
 
 Baurzhan Muftakhidinov <baurthefirst@gmail.com> (3):
       Translated using Weblate (Kazakh)
@@ -42,9 +296,9 @@ Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
 Release icewm-3.5.1 released 2024-06-06
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 3.5.0...3.5.1
+git shortlog --no-merges -e -n -w80,6,8 3.5.0...3.5.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (26):
+Bert Gijsbers <gijsbers@science.uva.nl> (24):
       Drop obsolete AC_HEADERs from configure.
       MailBoxPath is a list separated by spaces.
       MailBoxPath is a list separated by spaces.
@@ -68,9 +322,6 @@ Bert Gijsbers <gijsbers@science.uva.nl> (26):
       Drop empty si.po.
       Fix test -nt for NetBSD and closes ice-wm/icewm#168.
       Add percentage to icesh move for ice-wm/icewm#169
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
       Prepare 3.5.1 release
 
 Hugo Carvalho <hugokarvalho@hotmail.com> (1):
@@ -83,9 +334,9 @@ Rodrigo Macedo <sottomaiormacedotec@sottomaiormacedo.tech> (1):
 Release icewm-3.5.0 released 2024-05-20
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 3.4.7...3.5.0
+git shortlog --no-merges -e -n -w80,6,8 3.4.7...3.5.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (33):
+Bert Gijsbers <gijsbers@science.uva.nl> (31):
       Never handle internal WM actions via XSendEvent, but always via XPutBack.
       Succinct handling of mstrings in themes.
       Let "icesh restore" also clear the urgency flag.
@@ -120,9 +371,6 @@ Bert Gijsbers <gijsbers@science.uva.nl> (33):
       Add "cd" and "pwd" commands to the address bar. Add tilde expansion on
         user login names.
       Don't chdir after realpath, but test for directory.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
       Prepare 3.5.0 release
 
 Dmitriy Khanzhin <jinn@altlinux.org> (2):
@@ -155,30 +403,24 @@ Luna  Jernberg <bittin@opensuse.org> (1):
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
 
-openSUSE Weblate <weblate-noreply@opensuse.org> (1):
-      Merge branch 'origin/icewm-1-4-BRANCH' into Weblate.
-
 
 Release icewm-3.4.7 released 2024-03-25
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 3.4.6...3.4.7
+git shortlog --no-merges -e -n -w80,6,8 3.4.6...3.4.7
 
-Bert Gijsbers <gijsbers@science.uva.nl> (5):
+Bert Gijsbers <gijsbers@science.uva.nl> (3):
       Support more international keyboard layouts for issue #768.
       detail
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
       Prepare 3.4.7 release
 
 
 Release icewm-3.4.6 released 2024-03-07
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 3.4.5...3.4.6
+git shortlog --no-merges -e -n -w80,6,8 3.4.5...3.4.6
 
-Bert Gijsbers <gijsbers@science.uva.nl> (22):
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
       Add shutdown command for BSD and closes #761.
       In DEBUG mode, guard against nullptr focus.
       Fix icewmbg centering when the XRender extension is used.
@@ -200,9 +442,6 @@ Bert Gijsbers <gijsbers@science.uva.nl> (22):
       Let icewmbg log the image path when verbose is true.
       Avoid updating the desktop background image twice in succession.
       Always pass first mouse click to icewm internal windows for issue #768.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
       Prepare 3.4.6 release
 
 Grace Yu <grace.yu@excel-gits.com> (2):
@@ -237,9 +476,9 @@ Vik On <4o3lxdc1y@mozmail.com> (1):
 Release icewm-3.4.5 released 2023-12-28
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 3.4.4...3.4.5
+git shortlog --no-merges -e -n -w80,6,8 3.4.4...3.4.5
 
-Bert Gijsbers <gijsbers@science.uva.nl> (14):
+Bert Gijsbers <gijsbers@science.uva.nl> (12):
       Center the clock leds vertically for issue ice-wm/icewm#151.
       Prefer localtime_r over localtime to circumvent glibc inefficiency.
       Avoid calls to fstat to circumvent glibc inefficiency.
@@ -251,9 +490,6 @@ Bert Gijsbers <gijsbers@science.uva.nl> (14):
       Fix workspace buttons for right-to-left languages.
       Update copyright.
       Update the POT files.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
       Prepare 3.4.5 release
 
 Dmitriy Khanzhin <jinn@altlinux.org> (1):
@@ -261,39 +497,4 @@ Dmitriy Khanzhin <jinn@altlinux.org> (1):
 
 Petteri Aimonen <jpa@git.mail.kapsi.fi> (1):
       When focusing and RaiseOnFocus, release button grab for issue #759.
-
-
-Release icewm-3.4.4 released 2023-11-02
----------------------------------------
-
-git shortlog -e -n -w80,6,8 3.4.3...3.4.4
-
-Bert Gijsbers <gijsbers@science.uva.nl> (17):
-      Use fcsmart for capturing loadText data.
-      Support TIFF and WEBP in icewmbg.
-      More permissive parsing of a PAM image header in icesh.
-      Remove obsolete winoption examples and add one for plank.
-      Use --disable-librsvg instead of --disable-rsvg.
-      Add `supportsFormat` to check for support of additional image formats.
-      Support JXL, JP2, RAW, SVG, TGA image formats in icewmbg.
-      Test if a color can be considered dark for issue #715.
-      Brighten the color of inactive preview icons for dark themes for issue
-        #715.
-      Fix a crash when a ping timeout dialog is destroyed for issue #729.
-      Let icewmbg interpret command-line arguments relative to the current
-        working directory.
-      Clarify prefoverride and closes #750
-      When mapping a client by PID, search for the best match.
-      Don't enforce the use of clang++ in the debug build.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 3.4.4 release
-
-Eduard Bloch <blade@debian.org> (2):
-      Fix ordering in the 4th configuration
-      Fix minor warnings from recent CMake and GCC
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
 
