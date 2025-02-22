@@ -34,7 +34,9 @@
 #include <utility> // For std::move
 #include <vector>
 
+#if __cplusplus > 201103L
 #include <codecvt>
+#endif
 
 #include <functional>
 #include <initializer_list>
@@ -552,6 +554,7 @@ struct AppEntry {
                 }
         }
         if (prog_name_cut > 0 && ret.size() > prog_name_cut) {
+#if __cplusplus > 201103L
             auto u16_conv =
                 wstring_convert<codecvt_utf8_utf16<char16_t>, char16_t>{}
                     .from_bytes(ret);
@@ -562,6 +565,11 @@ struct AppEntry {
                 trimBack(ret);
                 ret += ellipsis;
             }
+#else
+            ret.erase(prog_name_cut);
+            trimBack(ret);
+            ret += ellipsis;
+#endif
         }
 
         return ret;
