@@ -4,7 +4,6 @@
 #include "ykey.h"
 #include "yconfig.h"
 #include "yprefs.h"
-#include "sysdep.h"
 #include "yapp.h"
 #include "intl.h"
 #include "ascii.h"
@@ -48,7 +47,7 @@ char *YConfig::getArgument(Argument *dest, char *source, bool comma) {
 }
 
 // FIXME: P1 - parse keys later, not when loading
-bool YConfig::parseKey(const char *arg, KeySym *key, unsigned int *mod) {
+bool YConfig::parseKey(const char* arg, unsigned* key, unsigned short* mod) {
     const char *const orig_arg = arg;
     static const struct {
         const char key[7];
@@ -87,7 +86,7 @@ bool YConfig::parseKey(const char *arg, KeySym *key, unsigned int *mod) {
     return true;
 }
 
-KeySym YConfig::parseKeySym(const char* arg) {
+unsigned YConfig::parseKeySym(const char* arg) {
     if (*arg == 0)
         return NoSymbol;
     if (strcmp(arg, "Esc") == 0)
@@ -131,7 +130,7 @@ KeySym YConfig::parseKeySym(const char* arg) {
             }
         }
         if (ch) {
-            KeySym ks;
+            unsigned ks;
             if (inrange(ch, 0xa0, 0xff))
                 ks = ch;
             else if (ch < 0x100)
@@ -145,13 +144,13 @@ KeySym YConfig::parseKeySym(const char* arg) {
         }
     }
 
-    KeySym ks = XStringToKeysym(arg);
+    unsigned ks = unsigned(XStringToKeysym(arg));
     if (ks)
         return ks;
 
     if (strncmp(arg, "Pointer_Button", 14) == 0) {
         int button = 0;
-        if (sscanf(arg + 14, "%d", &button) == 1 && 0 < button)
+        if (sscanf(arg + 14, "%d", &button) == 1 && inrange(button, 1, 8))
             return button + XK_Pointer_Button1 - 1;
         return NoSymbol;
     }
@@ -206,14 +205,7 @@ void YConfig::setOption(char* arg, bool append, cfoption* opt) {
             break;
         case cfoption::CF_KEY:
             if (opt->v.k.key_value) {
-                WMKey *wk = opt->v.k.key_value;
-
-                if (YConfig::parseKey(arg, &wk->key, &wk->mod)) {
-                    if (!wk->initial)
-                        delete[] const_cast<char *>(wk->name);
-                    wk->name = newstr(arg);
-                    wk->initial = false;
-                }
+                opt->v.k.key_value->set(arg);
             }
             break;
         case cfoption::CF_FUNC:

@@ -73,8 +73,8 @@ Prerequisites
 
 Building from tarball requires:
 
- - gcc or clang
- - imlib2
+ - gcc or clang (or C++11 with C99 support)
+ - imlib2 or libgdkpixbuf
  - libxcomposite
  - libxdamage
  - libxfixes
@@ -88,7 +88,12 @@ Building from git also requires:
 
  - complete autoconf or cmake toolchain
  - either markdown or asciidoctor
+ - pod2man
 
+For optional features:
+
+  - libjpeg, libpng, librsvg or nanosvg
+  - gettext, libfribidi
 
 Configuring IceWM
 -----------------

@@ -24,6 +24,7 @@ YContext<YWindow> windowContext("windowContext", false);
 
 bool YXApplication::synchronizeX11;
 bool YXApplication::alphaBlending;
+bool YXApplication::xkbExtension;
 Window YXApplication::ignorable;
 
 Atom _XA_WM_CHANGE_STATE;
@@ -503,9 +504,9 @@ void YXApplication::initModifiers() {
             for (int k = 0; k < xmk->max_keypermod; k++, c++) {
                 if (*c == NoSymbol)
                     continue;
-                KeySym kc = XkbKeycodeToKeysym(xapp->display(), *c, 0, 0);
+                KeySym kc = keyCodeToKeySym(*c);
                 if (kc == NoSymbol)
-                    kc = XkbKeycodeToKeysym(xapp->display(), *c, 0, 1);
+                    kc = keyCodeToKeySym(*c, 1);
                 if (kc == XK_Num_Lock && NumLockMask == 0)
                     NumLockMask = (1 << m);
                 if (kc == XK_Scroll_Lock && ScrollLockMask == 0)
@@ -580,14 +581,6 @@ void YXApplication::initModifiers() {
 
     ButtonKeyMask = KeyMask | ButtonMask;
 
-#if 0
-    KeySym wl = XKeycodeToKeysym(app->display(), 115, 0);
-    KeySym wr = XKeycodeToKeysym(app->display(), 116, 0);
-
-    if (wl == XK_Super_L) {
-    } else if (wl == XK_Meta_L) {
-    }
-#endif
     // this will do for now, but we should actualy check the keycodes
     Win_L = Win_R = 0;
 
@@ -1149,6 +1142,9 @@ void YXApplication::initExtensions(Display* dpy) {
 #endif
 
     xshm.init(dpy, XShmQueryExtension, XShmQueryVersion);
+
+    int op = 0, ev = 0, er = 0, ma = XkbMajorVersion, mi = XkbMinorVersion;
+    xkbExtension = (XkbQueryExtension(dpy, &op, &ev, &er, &ma, &mi) == True);
 }
 
 YXApplication::~YXApplication() {
@@ -1395,16 +1391,11 @@ void YXApplication::queryMouse(int* x, int* y) {
         *x = *y = 0;
 }
 
-bool YXApplication::parseKey(const char* arg, KeySym* key, unsigned* mod) {
-    bool yes = YConfig::parseKey(arg, key, mod);
-    if (yes)
-        unshift(key, mod);
-    return yes;
-}
-
-void YXApplication::unshift(KeySym* ksym, unsigned* mod) {
+void YXApplication::unshift(unsigned* ksym, unsigned short* mod) {
     const unsigned key = unsigned(*ksym);
-    if ((' ' < key && key < 'a') || ('z' < key && key <= 0xff)) {
+    if ((' ' < key && key < 'a') || ('z' < key && key <= 0xFF) ||
+        (0x1008FE01U <= key && key <= 0x1008FFFFU)) /*XF86keysyms*/
+    {
         if (fKeycodeMap == nullptr) {
             XDisplayKeycodes(xapp->display(), &fKeycodeMin, &fKeycodeMax);
             fKeycodeMap = XGetKeyboardMapping(xapp->display(), fKeycodeMin,
@@ -1426,6 +1417,35 @@ void YXApplication::unshift(KeySym* ksym, unsigned* mod) {
             }
         }
     }
+}
+
+unsigned YXApplication::keyCodeToKeySym(unsigned keycode, unsigned index) {
+    return unsigned(XkbKeycodeToKeysym(display(), KeyCode(keycode), 0, index));
+}
+
+YKeycodeMap YXApplication::getKeycodeMap() {
+    if (fKeycodeMap == nullptr) {
+        XDisplayKeycodes(xapp->display(), &fKeycodeMin, &fKeycodeMax);
+        fKeycodeMap = XGetKeyboardMapping(xapp->display(), fKeycodeMin,
+                                          fKeycodeMax - fKeycodeMin + 1,
+                                          &fKeysymsPer);
+        if (fKeycodeMap) {
+            fKeycodeTimer->setTimer(2000L, this, true);
+        }
+    }
+    return YKeycodeMap(fKeycodeMap, fKeysymsPer, fKeycodeMin, fKeycodeMax);
+}
+
+bool YXApplication::handleTimer(YTimer* timer) {
+    if (timer == fKeycodeTimer) {
+        fKeycodeTimer = null;
+        if (fKeycodeMap) {
+            XFree(fKeycodeMap);
+            fKeycodeMap = nullptr;
+            fKeycodeMin = fKeycodeMax = fKeysymsPer = 0;
+        }
+    }
+    return false;
 }
 
 bool YXApplication::windowExists(Window handle) const {

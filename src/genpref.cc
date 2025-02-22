@@ -14,14 +14,12 @@ void addKeyboard(const char *, const char *, bool) {}
 void setLook(const char *, const char *, bool) {}
 void addBgImage(const char *, const char *, bool) {}
 
-//#include "bindkey.h"
-//#include "default.h"
 #define CFGDEF
 #define GENPREF
 #define extern
 #include "yprefs.h"
 #undef extern
-#include "bindkey.h"
+#include "bindkey.cc"
 #include "default.h"
 #include "themable.h"
 #include "icewmbg_prefs.h"

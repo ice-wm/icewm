@@ -16,7 +16,7 @@
 
 * [x] add support for _NET_REQUEST_FRAME_EXTENTS.
 
-* [ ] add support for application and global modality with _NET_WM_STATE_MODAL.
+* [x] add support for application and global modality with _NET_WM_STATE_MODAL.
 
 * [ ] add support for _NET_WM_HANDLED_ICONS.
 

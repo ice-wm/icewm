@@ -240,6 +240,8 @@ XSV(const char *, fmtTimeAlt,                   NULL)
 XSV(const char *, fmtDate,                      "%Y-%m-%d %H:%M:%S %z %B %A")
 #endif
 
+XSV(const char *, inputIgnorePfx,               "nohup|(nice[[:space:]]+-n[[:space:]]*[[:digit:]]+)|sudo|(LANG|LC_[[:alnum:]]]*)(=|=[^[:space:]]+)")
+
 #ifdef CFGDEF
 
 cfoption icewm_preferences[] = {
@@ -424,15 +426,11 @@ cfoption icewm_preferences[] = {
     OIV("PingTimeout",                          &pingTimeout, 0, (3600*24),     "Timeout in seconds for applications to respond to _NET_WM_PING protocol"),
     OIV("MailCheckDelay",                       &mailCheckDelay, 0, (3600*24),  "Delay between new-mail checks in seconds"),
     OIV("TaskBarCPUDelay",                      &taskBarCPUDelay, 10, (60*60*1000),    "Delay between CPU Monitor samples in ms"),
-    OIV("TaskBarCPUSamples",                    &taskBarCPUSamples, 2, 1000,    "The width of the CPU Monitor applet in pixels"),
-    OIV("TaskBarMEMSamples",                    &taskBarMEMSamples, 2, 1000,    "The width of the Memory Monitor applet in pixels"),
     OIV("TaskBarMEMDelay",                      &taskBarMEMDelay, 10, (60*60*1000),    "Delay between Memory Monitor samples in ms"),
-    OIV("TaskBarNetSamples",                    &taskBarNetSamples, 2, 1000,    "The width of the Net Monitor applet in pixels"),
     OIV("TaskBarNetDelay",                      &taskBarNetDelay, 10, (60*60*1000),    "Delay between Net Monitor samples in ms"),
     OIV("TaskbarButtonWidthDivisor",            &taskBarButtonWidthDivisor, 1, 50, "default number of tasks in taskbar"),
     OIV("TaskBarWidthPercentage",               &taskBarWidthPercentage, 0, 100, "Task bar width as percentage of the screen width"),
     OSV("TaskBarJustify",                       &taskBarJustify, "Taskbar justify left, right or center"),
-    OIV("TaskBarApmGraphWidth",                 &taskBarApmGraphWidth, 1, 1000,  "Width of battery Monitor"),
 
     OIV("XineramaPrimaryScreen",                &xineramaPrimaryScreen, 0, 63, "Primary screen for xinerama where taskbar is shown"),
     OIV("FocusRequestFlashTime",                &focusRequestFlashTime, 0, (3600 * 24), "Number of seconds the taskbar app will blink when requesting focus (0 = forever)"),
@@ -469,7 +467,7 @@ cfoption icewm_preferences[] = {
     OSV("TimeFormat",                           &fmtTime,                       "Clock Time format (strftime format string)"),
     OSV("TimeFormatAlt",                        &fmtTimeAlt,                    "Alternate Clock Time format for blinking effects"),
     OSV("DateFormat",                           &fmtDate,                       "Clock Date format for tooltip (strftime format string)"),
-    OSV("DockApps",                             &dockApps,                       "Support DockApps (right, left, center, down, high, above, below, desktop, or empty to disable). Control with Ctrl+Mouse."),
+    OSV("DockApps",                             &dockApps,                       "Support DockApps (right, left, center, down, high, above, dock, ontop, normal, below, desktop, or empty to disable). The first five control positioning, while the next six set the layer. Control with Ctrl+Mouse."),
     OSV("XRRPrimaryScreenName",                 &xineramaPrimaryScreenName,     "screen/output name of the primary screen"),
     OSV("AcpiIgnoreBatteries",                  &acpiIgnoreBatteries,           "List of battery names (directories) in /proc/acpi/battery to ignore. Useful when more slots are built-in, but only one battery is used"),
 
@@ -574,6 +572,8 @@ cfoption icewm_preferences[] = {
     OKF("WorkspaceNames",                       addWorkspace, "Add a workspace"),
     OKF("KeyboardLayouts",                      addKeyboard, "Add a keyboard layout"),
     OSV("WinMenuItems",                         &winMenuItems,                  "The list of items to be supported in the menu window (rmsnxfhualytieckw)"),
+
+    OSV("InputIgnorePrefix",                    &inputIgnorePfx,                "Prefix to ignore while tab-completing (POSIX Extended Regular Expression)"),
     OK0()
 };
 

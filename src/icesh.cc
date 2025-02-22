@@ -478,6 +478,7 @@ public:
         if (type) fType = type;
         if (leng) fLength = leng;
         if (fWindow && fProp && fLength) {
+            fRequest = fProp;
             fStatus = XGetWindowProperty(display, fWindow, fProp, 0L,
                                          fLength, False, fType, &type,
                                          &fFormat, &fCount, &fAfter, &fData);
@@ -559,7 +560,11 @@ private:
     int fFormat, fStatus;
 
     YProperty& operator=(const YProperty& copy);
+
+public:
+    static Atom fRequest;
 };
+Atom YProperty::fRequest;
 
 class YCardinal : public YProperty {
 public:
@@ -720,6 +725,11 @@ public:
     YStringProperty(Window window, Atom property, Atom kind = AnyPropertyType) :
         YProperty(window, property, kind, BUFSIZ)
     {
+        checkString(kind);
+    }
+
+private:
+    void checkString(Atom kind) {
         if (status() == Success && kind == AnyPropertyType) {
             if (type() == ATOM_COMPOUND_TEXT) {
                 XTextProperty text = { data<unsigned char>(), type(),
@@ -733,10 +743,16 @@ public:
                     substitute(copy, XA_STRING);
                 }
             }
-            if (type() != XA_STRING && type() != kind) {
+            if (type() != XA_STRING && type() != kind &&
+                type() != ATOM_UTF8_STRING) {
                 substitute(nullptr, XA_STRING);
             }
         }
+    }
+
+public:
+    YStringProperty(const YProperty& prop) : YProperty(prop) {
+        checkString(AnyPropertyType);
     }
 
     const char* operator&() const { return data<char>(); }
@@ -999,8 +1015,11 @@ public:
         }
     }
 
+    static YWindowTree lastClientList;
+
     void getClientList() {
         getWindowList(ATOM_NET_CLIENT_LIST);
+        lastClientList = *this;
     }
 
     void getSystrayList() {
@@ -1357,6 +1376,7 @@ private:
     vector<Window> fChildren;
     YTreeLeaf fLeaf;
 };
+YWindowTree YWindowTree::lastClientList;
 
 YTreeIter::operator Window() const { return fTree[fIndex]; }
 YTreeLeaf* YTreeIter::operator->() { return fTree.leaf(fIndex); }
@@ -1470,6 +1490,7 @@ private:
     bool desktop();
     bool wmcheck();
     bool change();
+    void await();
     bool loop();
     bool pick();
     bool sync();
@@ -2861,6 +2882,46 @@ bool IceSh::guiEvents()
     return true;
 }
 
+void IceSh::await()
+{
+    windowList.release();
+    YWindowTree old = YWindowTree::lastClientList;
+    if (old == false)
+        old.getClientList();
+
+    running = true;
+    sighandler_t previous = signal(SIGINT, catcher);
+    XSelectInput(display, root, PropertyChangeMask);
+    while (running) {
+        if (XPending(display)) {
+            XEvent xev = { 0 };
+            XNextEvent(display, &xev);
+            if (xev.type == PropertyNotify &&
+                xev.xproperty.atom == ATOM_NET_CLIENT_LIST &&
+                xev.xproperty.state == PropertyNewValue)
+            {
+                YWindowTree now;
+                now.getClientList();
+                for (YTreeIter window(now); window; ++window) {
+                    if (old.have(window) == false)
+                        windowList.append(window);
+                }
+                if (windowList)
+                    break;
+                old = now;
+            }
+        }
+        else {
+            int fd = ConnectionNumber(display);
+            fd_set rfds;
+            FD_ZERO(&rfds);
+            FD_SET(fd, &rfds);
+            select(fd + 1, SELECT_TYPE_ARG234 &rfds, nullptr, nullptr, nullptr);
+        }
+    }
+    signal(SIGINT, previous);
+}
+
 bool IceSh::icewmAction()
 {
     static const Symbol sa[] = {
@@ -3611,7 +3672,7 @@ void IceSh::showProperty(Window window, Atom atom, const char* prefix) {
     if (prop.status() == Success && prop.data<void>()) {
         if (prop.format() == 8) {
             const char* name(atomName(atom));
-            printf("%s%s = ", prefix, (char*) name);
+            printf("%s%s = ", prefix, name);
             if (prop.type() == ATOM_GUI_EVENT) {
                 int gev = prop.data<unsigned char>(0);
                 if (inrange(1 + gev, 1, NUM_GUI_EVENTS)) {
@@ -3622,21 +3683,21 @@ void IceSh::showProperty(Window window, Atom atom, const char* prefix) {
                 char* s = prop.data<char>();
                 int num = int(prop.count());
                 for (int i = 0; i < num; ++i)
-                    if (s[i] == '\0')
+                    if (s[i] == '\0' || isWhiteSpace(s[i]))
                         s[i] = ' ';
                 printf("%*.*s\n", num, num, s);
             }
             else {
-                for (int i = 0; i < prop.count(); ++i) {
-                    unsigned char ch = prop.data<unsigned char>(i);
-                    if (ch == '\0') {
-                        if (i + 1 == prop.count()) {
-                            break;
-                        }
-                    }
-                    putchar(isPrint(ch) ? ch : '.');
+                YStringProperty strp(prop);
+                char* s = strp.data<char>();
+                int num = int(strp.count());
+                while (num > 0 && s[num - 1] == '\0')
+                    --num;
+                for (int i = 0; i < num; ++i) {
+                    if (s[i] == '\0' || isWhiteSpace(s[i]))
+                        s[i] = ' ';
                 }
-                newline();
+                printf("%*.*s\n", num, num, s);
             }
         }
         else if (prop.format() == 32) {
@@ -4361,6 +4422,11 @@ void IceSh::flag(char* arg)
         selecting = true;
         return;
     }
+    if (isOptArg(arg, "-Await", "")) {
+        await();
+        selecting = true;
+        return;
+    }
     if (isOptArg(arg, "+group", "")) {
         extendGroup();
         return;
@@ -4900,19 +4966,22 @@ int IceSh::xerrors(Display* dpy, XErrorEvent* evt) {
 }
 
 void IceSh::xerror(XErrorEvent* evt) {
-    char message[80], req[80], number[80];
+    const int size = 80;
+    char message[size], req[size], number[size];
 
     if (evt->request_code == X_GetWindowAttributes)
         return;
-
-    snprintf(number, 80, "%d", evt->request_code);
-    XGetErrorDatabaseText(display, "XRequest",
-                          number, "",
-                          req, sizeof(req));
+    if (evt->request_code == X_GetProperty)
+        snprintf(req, size, "X_GetProperty(%s)", atomName(YProperty::fRequest));
+    else {
+        snprintf(number, size, "%d", evt->request_code);
+        XGetErrorDatabaseText(display, "XRequest", number,
+                              "", req, sizeof(req));
+    }
     if (req[0] == 0)
-        snprintf(req, 80, "[request_code=%d]", evt->request_code);
+        snprintf(req, size, "[request_code=%d]", evt->request_code);
 
-    if (XGetErrorText(display, evt->error_code, message, 80) != Success)
+    if (XGetErrorText(display, evt->error_code, message, size) != Success)
         *message = '\0';
 
     tlog("%s(0x%lx): %s", req, evt->resourceid, message);

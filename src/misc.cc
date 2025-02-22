@@ -735,8 +735,9 @@ int process_close(FILE* fp, int pid) {
 
 void show_backtrace(const int limit) {
 #if defined(HAVE_BACKTRACE_SYMBOLS_FD) && defined(HAVE_EXECINFO_H)
-    const int asize = Elvis(limit, 20);
-    void *array[asize];
+    const int fixed = 40;
+    const int asize = (0 < limit) ? min(fixed, limit) : 20;
+    void *array[fixed];
     const int count = backtrace(array, asize);
     const char tool[] = "/usr/bin/addr2line";
     char* prog = progpath();
