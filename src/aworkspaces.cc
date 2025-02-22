@@ -80,7 +80,7 @@ void WorkspaceButton::handleClick(const XButtonEvent &up, int count) {
                     fInput->setSize(width(), height());
                     fInput->setText(name(), false);
                     fInput->show();
-                    fInput->setWindowFocus();
+                    fInput->setInputFocus("workspaceButton");
                 }
                 return;
             }
@@ -776,15 +776,23 @@ void WorkspaceButton::paint(Graphics &g, const YRect& r) {
                         g.setColor(colors[2]);
                     g.fillRect(wx+1, wy+1, ww-2, wh-2);
 
-                    if (pagerShowWindowIcons &&
-                        ww > 1 + int(smallIconSize) &&
-                        wh > 1 + int(smallIconSize) &&
-                        (icon = yfw->getIcon()) != null &&
-                        icon->small() != null)
-                    {
-                        g.drawImage(icon->small(),
-                                    wx + (ww-smallIconSize)/2,
-                                    wy + (wh-smallIconSize)/2);
+                    if (pagerShowWindowIcons) {
+                        for (int size : {64, 48, 32, 24, 16}) {
+                            if (size <= int(smallIconSize) &&
+                                ww > 1 + int(size) &&
+                                wh > 1 + int(size)) {
+                                icon = yfw->getIcon();
+                                if (icon != null) {
+                                    ref<YImage> sc(icon->getScaledIcon(size));
+                                    if (sc != null) {
+                                        g.drawImage(sc,
+                                                    wx + (ww - size) / 2,
+                                                    wy + (wh - size) / 2);
+                                    }
+                                }
+                                break;
+                            }
+                        }
                     }
                 }
                 g.setColor(colors[5]);

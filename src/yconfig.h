@@ -32,6 +32,7 @@
 
 #include <X11/X.h>
 #include "yfontname.h"
+#include "wmkey.h"
 
 #define kfShift  1
 #define kfCtrl   2
@@ -40,17 +41,6 @@
 #define kfSuper  16
 #define kfHyper  32
 #define kfAltGr  64
-
-struct WMKey {
-    KeySym key;
-    unsigned mod;
-    const char* name;
-    bool initial;
-
-    bool eq(KeySym k, unsigned m) const { return key == k && mod == m; }
-    bool operator==(const WMKey& o) const { return eq(o.key, o.mod); }
-    bool operator!=(const WMKey& o) const { return !eq(o.key, o.mod); }
-};
 
 #ifdef CFGDESC
 #define DESC(d) d
@@ -149,8 +139,8 @@ public:
                                cfoption* more = nullptr, cfoption* xtra = nullptr);
     static bool findLoadConfigFile(cfoption* options, const char* name);
     static bool findLoadThemeFile(cfoption* options);
-    static bool parseKey(const char* arg, KeySym* key, unsigned int* mod);
-    static KeySym parseKeySym(const char* arg);
+    static bool parseKey(const char* arg, unsigned* key, unsigned short* mod);
+    static unsigned parseKeySym(const char* arg);
     static size_t cfoptionSize();
 
 private:

@@ -85,7 +85,6 @@ libice_la_SOURCES = \
 	argument.h \
 	ascii.h \
 	base.h \
-	bindkey.h \
 	debug.h \
 	default.h \
 	guievent.h \
@@ -108,6 +107,8 @@ libice_la_SOURCES = \
 	udir.h \
 	upath.cc \
 	upath.h \
+	wmkey.cc \
+	wmkey.h \
 	wmmgr.h \
 	wmprog.h \
 	workspaces.h \
@@ -187,6 +188,7 @@ libitk_la_SOURCES = \
 	appnames.h \
 	ascii.h \
 	base.h \
+	bindkey.cc \
 	bindkey.h \
 	debug.h \
 	default.h \
@@ -456,8 +458,6 @@ icewm_menu_fdo_SOURCES = \
 	intl.h \
 	sysdep.h \
 	yarray.h \
-	ycollections.cc \
-	ycollections.h \
 	sysdep.h \
 	fdomenu.cc
 icewm_menu_fdo_LDADD = libice.la $(GIO_LIBS)

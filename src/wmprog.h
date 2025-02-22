@@ -2,6 +2,7 @@
 #define WMPROG_H
 
 #include "objmenu.h"
+#include "wmkey.h"
 
 class ObjectContainer;
 class YSMListener;
@@ -31,7 +32,7 @@ private:
     char* parseMenuFile(char *data, ObjectContainer *container);
     char* parseMenuProg(char *data, ObjectContainer *container);
     char* parseMenuProgReload(char *data, ObjectContainer *container);
-    char* parseKey(char *word, char *p);
+    char* parseAKey(char *word, char *p);
     char* parseProgram(char *word, char *p, ObjectContainer *container);
     char* parseWord(char *word, char *p, ObjectContainer *container);
 
@@ -169,20 +170,17 @@ private:
 class KProgram {
 public:
     KProgram(const char *key, DProgram *prog, bool bIsDynSwitchMenuProg);
-    ~KProgram() { delete fProg; delete[] fDef; }
+    ~KProgram();
 
-    void parse();
-    bool isKey(KeySym key, unsigned int mod) {
-        return (key == fKey && mod == fMod);
-    }
+    void parse() { wm.parse(); }
+    bool isKey(const XKeyEvent& x) const { return wm == x; }
+    bool isButton(const XButtonEvent& b) const { return wm == b; }
     void open(unsigned mods);
-    KeySym key() { return fKey; }
-    unsigned int modifiers() { return fMod; }
+    void grab(int handle) { wm.grab(handle); }
 
 private:
-    const char* fDef;
-    KeySym fKey;
-    unsigned int fMod;
+    WMKey wm;
+
     // not a program starter but custom switch menu
     // use as bool to fit into memory wasted wit 64bit alignment
     unsigned int bIsDynSwitchMenu;

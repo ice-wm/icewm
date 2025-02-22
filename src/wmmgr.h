@@ -261,6 +261,7 @@ public:
     void actionWindows(YAction action);
     void toggleDesktop();
     void cascadeWindows();
+    void focusOverlap();
 
     bool haveClients();
     void setupRootProxy();
@@ -318,7 +319,7 @@ public:
     };
 
     const DesktopLayout& layout() const { return fLayout; }
-    bool handleSwitchWorkspaceKey(const XKeyEvent& key, KeySym k, unsigned vm);
+    bool handleSwitchWorkspaceKey(const XKeyEvent& key);
 
     int getSwitchScreen();
     bool switchWindowVisible() const;
@@ -339,10 +340,9 @@ private:
     YFrameClient* allocateClient(Window win, bool mapClient);
     YFrameWindow* allocateFrame(YFrameClient* client);
     void updateArea(int workspace, int screen_number, int l, int t, int r, int b);
-    bool handleWMKey(const XKeyEvent &key, KeySym k, unsigned vm);
+    bool handleWMKey(const XKeyEvent &key);
     void setWmState(WMState newWmState);
     void refresh();
-    void focusOverlap();
 
     IApp *app;
     YActionListener *wmActionListener;

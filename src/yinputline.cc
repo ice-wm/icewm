@@ -10,7 +10,31 @@
 #include "yxapp.h"
 #include "prefs.h"
 #include "intl.h"
+#include "ylocale.h"
+#include "regex.h"
 #include <X11/keysym.h>
+
+// to create deduplicated and sorted sequence of alternatives
+#include <string>
+#include <set>
+
+struct tCandCollector {
+    std::set<std::string> hits;
+    mstring match_string;
+    std::string join_candidates() {
+        std::string all;
+        for (const auto &s : hits) {
+            if (!all.empty())
+                all.append("\n");
+
+            // XXX: both match_string and candidates are supposed to contain
+            // strings under UTF-8 law?!
+            all.append(s.substr(0, match_string.length()) + " " +
+                       s.substr(match_string.length()));
+        }
+        return all;
+    }
+};
 
 class YInputMenu: public YMenu {
 public:
@@ -46,16 +70,30 @@ YInputLine::YInputLine(YWindow *parent, YInputListener *listener):
     inputBg(&clrInput),
     inputFg(&clrInputText),
     inputSelectionBg(&clrInputSelection),
-    inputSelectionFg(&clrInputSelectionText)
+    inputSelectionFg(&clrInputSelectionText),
+    prefixRegex(nullptr)
 {
     addStyle(wsNoExpose);
     if (inputFont != null)
         setSize(width(), inputFont->height() + 2);
+    if (inputIgnorePfx && *inputIgnorePfx) {
+        prefixRegex = new regex_t;
+        mstring reFullPrefix("^(", inputIgnorePfx, ")[[:space:]]+");
+        if (0 != regcomp(prefixRegex, reFullPrefix, REG_EXTENDED)) {
+            delete prefixRegex;
+            prefixRegex = nullptr;
+        }
+    }
 }
 
 YInputLine::~YInputLine() {
     if (inputContext)
         XDestroyIC(inputContext);
+    if (prefixRegex) {
+        regfree(prefixRegex);
+        delete prefixRegex;
+        prefixRegex = nullptr;
+    }
 }
 
 void YInputLine::setText(mstring text, bool asMarked) {
@@ -255,8 +293,10 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
                         return true;
                 }
             } else {
-                if (curPos < textLen) {
-                    if (move(curPos + 1, extend))
+                if (curPos <= textLen) {
+                    // advance cursor unless at EOL, where the move is a
+                    // no-op BUT it would remove the unwanted text marking
+                    if (move(curPos + (curPos < textLen), extend))
                         return true;
                 }
             }
@@ -293,17 +333,21 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
                     }
                     break;
                 case XK_BackSpace:
+                    auto done = false;
                     if (m & ControlMask) {
-                        if (m & ShiftMask) {
-                            if (deleteToBegin())
-                                return true;
-                        } else {
-                            if (deletePreviousWord())
-                                return true;
+                        done = (m & ShiftMask) ? deleteToBegin()
+                                               : deletePreviousWord();
+                    } else
+                        done = deletePreviousChar();
+
+                    if (done) {
+                        if (toolTipVisible()) {
+                            // must kill the timer!
+                            toolTipVisibility(false);
+                            complete(true);
+                            break;
                         }
-                    } else {
-                        if (deletePreviousChar())
-                            return true;
+                        return true;
                     }
                     break;
                 }
@@ -331,6 +375,37 @@ bool YInputLine::handleKey(const XKeyEvent &key) {
 
                 int len = getWCharFromEvent(key, s, n);
                 if (len) {
+                    if (toolTipVisible() && lastSeenCandidates) {
+                        // FFS, redoing some work of replaceSelection just
+                        // because YWideString is taking ownership :-(
+                        size_t reglen;
+                        auto str = YLocale::narrowString(s, len + 1, reglen);
+                        // printf("typed in: %s\n", str);
+                        if (str) {
+                            if (isspace((unsigned) *str)) {
+                                setToolTip(null);
+                                toolTipVisibility(false);
+                            } else {
+                                auto wanted_pfx =
+                                    lastSeenCandidates->match_string + str;
+
+                                for (auto it = lastSeenCandidates->hits.begin();
+                                     it != lastSeenCandidates->hits.end();) {
+
+                                    if (0 == it->compare(0, wanted_pfx.length(),
+                                                         wanted_pfx.c_str())) {
+                                        ++it;
+                                    } else
+                                        it = lastSeenCandidates->hits.erase(it);
+                                }
+                                lastSeenCandidates->match_string = wanted_pfx;
+                                auto ttext(lastSeenCandidates->join_candidates());
+                                setToolTip(mstring(ttext.data(), ttext.length()));
+                            }
+                            delete[] str;
+                        }
+                    }
+
                     replaceSelection(s, len);
                     return true;
                 } else {
@@ -377,7 +452,7 @@ void YInputLine::handleButton(const XButtonEvent &button) {
     if (button.type == ButtonPress) {
         if (button.button == 1) {
             if (fHasFocus == false) {
-                setWindowFocus();
+                setInputFocus("inputLine");
                 requestFocus(false);
             } else {
                 fSelecting = true;
@@ -722,13 +797,11 @@ bool YInputLine::cutSelection() {
 
 bool YInputLine::copySelection() {
     unsigned min = ::min(curPos, markPos), max = ::max(curPos, markPos);
-    if (min < max && fText.length() <= max) {
-        YWideString copy(fText.copy(min, max - min));
-        xapp->setClipboardText(copy);
-        return true;
-    } else {
+    if (min >= max || fText.length() > max)
         return false;
-    }
+    YWideString copy(fText.copy(min, max - min));
+    xapp->setClipboardText(copy);
+    return true;
 }
 
 void YInputLine::actionPerformed(YAction action, unsigned int /*modifiers*/) {
@@ -749,8 +822,22 @@ void YInputLine::autoScroll(int delta, const XMotionEvent *motion) {
     beginAutoScroll(delta ? true : false, motion);
 }
 
-void YInputLine::complete() {
-    mstring mstr(fText);
+void passCompCand(const void *param, const char * const *name, unsigned cnt) {
+    auto& collection = * ((tCandCollector*) param);
+    for (auto p = name; p < name + cnt; ++p) {
+        collection.hits.insert(*p);
+        if (collection.hits.size() >= 255)
+            break;
+    }
+}
+
+void YInputLine::complete(bool previewOnly) {
+
+    lastSeenCandidates = new tCandCollector;
+    auto& glob_cand = *lastSeenCandidates;
+    auto& mstr = lastSeenCandidates->match_string;
+    
+    mstr = fText;
     if (mstr[0] == '~' && mstr.length() > 1
         && mstr.lastIndexOf(' ') == -1
         && mstr.lastIndexOf('/') == -1) {
@@ -761,13 +848,43 @@ void YInputLine::complete() {
             return;
         }
     }
-    csmart res;
-    int res_count = globit_best(mstr, &res, nullptr, nullptr);
+
+    // this is chopped of when starting the lookup, and readded when applying the result below
+    mstring ignoredPfx;
+    if (prefixRegex) {
+        regmatch_t full_match;
+        if (0 == regexec(prefixRegex, mstr, 1, &full_match, 0)) {
+            ignoredPfx = mstr.substring(0, full_match.rm_eo);
+            mstr = mstr.substring(full_match.rm_eo);
+        }
+    }
+
+    char* res = nullptr;
+    int res_count = globit_best(mstr, &res, &passCompCand, &glob_cand);
+    fcsmart cleaner(res);
+
+    if (glob_cand.hits.size() > 1 || previewOnly) {
+        //mstring all;
+        // mstring is crap, .append does not append
+        toolTipVisibility(true);
+        auto all = glob_cand.join_candidates();
+        //printf("\ngimme tooltip: %s\n, res: %s, res_count: %d\n", all.c_str(), res.data(), res_count);
+        setToolTip(mstring(all.data(), all.size()));
+    }
+    else {
+        setToolTip(null);
+        toolTipVisibility(false);
+    }
+
+    // this was a plain call to update the tooltip preview, not inserting yet
+    if (previewOnly)
+        return;
+
     // directory is not a final match
     if (res_count == 1 && upath(res).dirExists())
         res_count++;
     if (1 <= res_count)
-        setText(mstring(res), res_count == 1);
+        setText(ignoredPfx + mstring(res), false);
     else {
         int i = mstr.lastIndexOf(' ');
         if (i > 0 && size_t(i + 1) < mstr.length()) {
@@ -776,7 +893,7 @@ void YInputLine::complete() {
             if (sub[0] == '$' || sub[0] == '~') {
                 mstring exp = upath(sub).expand();
                 if (exp != sub && exp != null) {
-                    setText(pre + exp, false);
+                    setText(ignoredPfx + pre + exp, false);
                 }
                 else if (sub.indexOf('/') == -1) {
                     mstring var = sub.substring(1);
@@ -788,7 +905,7 @@ void YInputLine::complete() {
                         }
                         if (exp != var) {
                             char doti[] = { char(sub[0]), '\0' };
-                            setText(pre + doti + exp, false);
+                            setText(ignoredPfx + pre + doti + exp, false);
                         }
                     }
                 }
@@ -799,7 +916,7 @@ void YInputLine::complete() {
             if (upath::glob(sub + "*", list, "/S") && list.nonempty()) {
                 if (list.getCount() == 1) {
                     mstring found(mstr.substring(0, i + 1) + list[0]);
-                    setText(found, true);
+                    setText(ignoredPfx + found, false);
                 } else {
                     int len = 0;
                     for (; list[0][len]; ++len) {
@@ -813,7 +930,7 @@ void YInputLine::complete() {
                     if (len) {
                         mstring common(list[0], len);
                         mstring found(mstr.substring(0, i + 1) + common);
-                        setText(found, false);
+                        setText(ignoredPfx + found, false);
                     }
                 }
             }
@@ -822,7 +939,7 @@ void YInputLine::complete() {
             if (mstr[0] == '$') {
                 mstring var = completeVariable(mstr.substring(1));
                 if (var != mstr.substring(1))
-                    setText(mstr.substring(0, 1) + var, false);
+                    setText(ignoredPfx + mstr.substring(0, 1) + var, false);
             }
         }
     }
@@ -924,6 +1041,10 @@ void YInputLine::lostFocus() {
     cursorBlinkTimer = null;
     fCursorVisible = false;
     fHasFocus = false;
+    setToolTip(null);
+    toolTipVisibility(false);
+    lastSeenCandidates.release();
+
     if (focused())
         YWindow::lostFocus();
     else

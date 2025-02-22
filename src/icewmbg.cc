@@ -43,7 +43,7 @@ private:
     bool verbose;
 };
 
-class Background: public YXApplication, private YTimerListener {
+class Background: public YXApplication {
 public:
     Background(int *argc, char ***argv, bool verbose = false);
     ~Background();
@@ -292,6 +292,7 @@ static bool hasImageExt(const char* name) {
             }
             if (len == 4) {
                 if (strcmp(low, "jpeg") == 0 ||
+                    (strcmp(low, "avif") == 0 && YImage::supportsFormat(low)) ||
                     (strcmp(low, "tiff") == 0 && YImage::supportsFormat(low)) ||
                     (strcmp(low, "webp") == 0 && YImage::supportsFormat(low)))
                     return true;

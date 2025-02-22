@@ -37,8 +37,7 @@ class YWMApp:
     public YSMApplication,
     public YActionListener,
     public YMsgBoxListener,
-    public YSMListener,
-    public YTimerListener
+    public YSMListener
 {
     typedef YSMApplication super;
 
@@ -154,7 +153,6 @@ private:
     void initIcons();
     void initIconSize();
     void reparseKeyPrefs();
-    void fixupPreferences();
 };
 
 extern YWMApp * wmapp;
@@ -216,7 +214,6 @@ extern lazy<TabsMenu> tabsMenu;
 
 class KProgram;
 typedef YObjectArray<KProgram> KProgramArrayType;
-typedef KProgramArrayType::IterType KProgramIterType;
 extern KProgramArrayType keyProgs;
 
 extern RebootShutdown rebootOrShutdown;

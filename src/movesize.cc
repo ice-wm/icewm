@@ -577,7 +577,9 @@ void YFrameWindow::manualPlace() {
     drawMoveSizeFX(xx, yy, width(), height());
 
     MoveState state = MoveMoving;
-    while (state != MoveAccept && state != MoveCancel) {
+    while (state != MoveAccept && state != MoveCancel &&
+           client()->testDestroyed() == false)
+    {
         XEvent xev;
         XMaskEvent(xapp->display(),
                    KeyPressMask |
@@ -696,85 +698,81 @@ bool YFrameWindow::handleKey(const XKeyEvent &key) {
                 break;
             }
         } else if (xapp->AltMask != 0) {
-            KeySym k = keyCodeToKeySym(key.keycode);
-            unsigned int m = KEY_MODMASK(key.state);
-            unsigned int vm = VMod(m);
-
             if (!isRollup() && !isIconic() &&
                 key.window != handle())
                 return true;
 
-            if (IS_WMKEY(k, vm, gKeyWinClose)) {
+            if (gKeyWinClose == key) {
                 actionPerformed(actionClose);
-            } else if (IS_WMKEY(k, vm, gKeyWinPrev)) {
+            } else if (gKeyWinPrev == key) {
                 wmPrevWindow();
-            } else if (IS_WMKEY(k, vm, gKeyWinMaximizeVert)) {
+            } else if (gKeyWinMaximizeVert == key) {
                 actionPerformed(actionMaximizeVert);
-            } else if (IS_WMKEY(k, vm, gKeyWinMaximizeHoriz)) {
+            } else if (gKeyWinMaximizeHoriz == key) {
                 actionPerformed(actionMaximizeHoriz);
-            } else if (IS_WMKEY(k, vm, gKeyWinRaise)) {
+            } else if (gKeyWinRaise == key) {
                 actionPerformed(actionRaise);
-            } else if (IS_WMKEY(k, vm, gKeyWinOccupyAll)) {
+            } else if (gKeyWinOccupyAll == key) {
                 actionPerformed(actionOccupyAllOrCurrent);
-            } else if (IS_WMKEY(k, vm, gKeyWinLower)) {
+            } else if (gKeyWinLower == key) {
                 actionPerformed(actionLower);
-            } else if (IS_WMKEY(k, vm, gKeyWinRestore)) {
+            } else if (gKeyWinRestore == key) {
                 actionPerformed(actionRestore);
-            } else if (IS_WMKEY(k, vm, gKeyWinNext)) {
+            } else if (gKeyWinNext == key) {
                 wmNextWindow();
-            } else if (IS_WMKEY(k, vm, gKeyWinMove)) {
+            } else if (gKeyWinMove == key) {
                 actionPerformed(actionMove);
-            } else if (IS_WMKEY(k, vm, gKeyWinSize)) {
+            } else if (gKeyWinSize == key) {
                 actionPerformed(actionSize);
-            } else if (IS_WMKEY(k, vm, gKeyWinMinimize)) {
+            } else if (gKeyWinMinimize == key) {
                 actionPerformed(actionMinimize);
-            } else if (IS_WMKEY(k, vm, gKeyWinMaximize)) {
+            } else if (gKeyWinMaximize == key) {
                 actionPerformed(actionMaximize);
-            } else if (IS_WMKEY(k, vm, gKeyWinHide)) {
+            } else if (gKeyWinHide == key) {
                 actionPerformed(actionHide);
-            } else if (IS_WMKEY(k, vm, gKeyWinRollup)) {
+            } else if (gKeyWinRollup == key) {
                 actionPerformed(actionRollup);
-            } else if (IS_WMKEY(k, vm, gKeyWinFullscreen)) {
+            } else if (gKeyWinFullscreen == key) {
                 actionPerformed(actionFullscreen);
-            } else if (IS_WMKEY(k, vm, gKeyWinMenu)) {
+            } else if (gKeyWinMenu == key) {
                 popupSystemMenu(this);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeN)) {
+            } else if (gKeyWinArrangeN == key) {
                 if (canMove()) wmArrange(waTop, waCenter);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeNE)) {
+            } else if (gKeyWinArrangeNE == key) {
                 if (canMove()) wmArrange(waTop, waRight);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeE)) {
+            } else if (gKeyWinArrangeE == key) {
                 if (canMove()) wmArrange(waCenter, waRight);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeSE)) {
+            } else if (gKeyWinArrangeSE == key) {
                 if (canMove()) wmArrange(waBottom, waRight);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeS)) {
+            } else if (gKeyWinArrangeS == key) {
                 if (canMove()) wmArrange(waBottom, waCenter);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeSW)) {
+            } else if (gKeyWinArrangeSW == key) {
                 if (canMove()) wmArrange(waBottom, waLeft);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeW)) {
+            } else if (gKeyWinArrangeW == key) {
                 if (canMove()) wmArrange(waCenter, waLeft);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeNW)) {
+            } else if (gKeyWinArrangeNW == key) {
                 if (canMove()) wmArrange(waTop, waLeft);
-            } else if (IS_WMKEY(k, vm, gKeyWinArrangeC)) {
+            } else if (gKeyWinArrangeC == key) {
                 if (canMove()) wmArrange(waCenter, waCenter);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileLeft)) {
+            } else if (gKeyWinTileLeft == key) {
                 wmTile(actionTileLeft);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileRight)) {
+            } else if (gKeyWinTileRight == key) {
                 wmTile(actionTileRight);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileTop)) {
+            } else if (gKeyWinTileTop == key) {
                 wmTile(actionTileTop);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileBottom)) {
+            } else if (gKeyWinTileBottom == key) {
                 wmTile(actionTileBottom);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileTopLeft)) {
+            } else if (gKeyWinTileTopLeft == key) {
                 wmTile(actionTileTopLeft);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileTopRight)) {
+            } else if (gKeyWinTileTopRight == key) {
                 wmTile(actionTileTopRight);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileBottomLeft)) {
+            } else if (gKeyWinTileBottomLeft == key) {
                 wmTile(actionTileBottomLeft);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileBottomRight)) {
+            } else if (gKeyWinTileBottomRight == key) {
                 wmTile(actionTileBottomRight);
-            } else if (IS_WMKEY(k, vm, gKeyWinTileCenter)) {
+            } else if (gKeyWinTileCenter == key) {
                 wmTile(actionTileCenter);
-            } else if (IS_WMKEY(k, vm, gKeyWinSmartPlace)) {
+            } else if (gKeyWinSmartPlace == key) {
                 if (canMove()) {
                     int newX = x();
                     int newY = y();
@@ -783,6 +781,9 @@ bool YFrameWindow::handleKey(const XKeyEvent &key) {
                     }
                 }
             } else if (isIconic() || isRollup()) {
+                KeySym k = keyCodeToKeySym(key.keycode);
+                unsigned m = KEY_MODMASK(key.state);
+
                 if (k == XK_Return || k == XK_KP_Enter) {
                     if (isMinimized())
                         wmMinimize();
@@ -832,13 +833,17 @@ bool YFrameWindow::canSize(bool horiz, bool vert) {
 
 void YFrameWindow::netMoveSize(int x, int y, int direction)
 {
-    if (movingWindow || sizingWindow)
+    if (hasMoveSize()) {
+        if (direction == _NET_WM_MOVERESIZE_CANCEL)
+            endMoveSize();
         return;
+    }
 
-    int sx[] = { -1, 0, 1, 1, 1, 0, -1, -1, };
-    int sy[] = { -1, -1, -1, 0, 1, 1, 1, 0, };
+    const int size = 8;
+    int sx[size] = { -1, 0, 1, 1, 1, 0, -1, -1, };
+    int sy[size] = { -1, -1, -1, 0, 1, 1, 1, 0, };
 
-    if (inrange(direction, 0, int ACOUNT(sx) - 1)) {
+    if (inrange(direction, 0, size - 1)) {
         MSG(("move size %d %d direction %d", x, y, direction));
         startMoveSize(false, true, sx[direction], sy[direction], x, y);
     }
@@ -862,6 +867,9 @@ void YFrameWindow::netMoveSize(int x, int y, int direction)
 void YFrameWindow::startMoveSize(bool doMove, bool byMouse,
                                  int sideX, int sideY,
                                  int mouseXroot, int mouseYroot) {
+    if (isMinimized() || isHidden() || isFullscreen() || hasMoveSize())
+        return;
+
     Cursor grabPointer = None;
 
     grabX = sideX;
@@ -942,6 +950,10 @@ void YFrameWindow::startMoveSize(bool doMove, bool byMouse,
         outlineResize();
         endMoveSize();
     }
+}
+
+bool YFrameWindow::notMoveSize() {
+    return hasMoveSize() == false || (endMoveSize(), true);
 }
 
 void YFrameWindow::endMoveSize() {
@@ -1056,7 +1068,7 @@ void YFrameWindow::handleButton(const XButtonEvent &button) {
                 wmRaise();
         }
     } else if (button.type == ButtonRelease) {
-        if (movingWindow || sizingWindow) {
+        if (hasMoveSize()) {
             endMoveSize();
             return ;
         }

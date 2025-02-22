@@ -2,6 +2,7 @@
 
 #ifdef CONFIG_XFREETYPE
 
+#include "ascii.h"
 #include "ypaint.h"
 #include "yprefs.h"
 #include "ystring.h"
@@ -109,6 +110,25 @@ YXftFont::YXftFont(mstring name, bool use_xlfd):
             if (use_xlfd) {
                 font = XftFontOpenXlfd(xapp->display(), xapp->screen(), fname);
             } else {
+                if (fname.find(":lang=") < 0) {
+                    const char* yloc = YLocale::getCheckedLocaleName();
+                    const char* unsc = yloc ? strchr(yloc, '_') : nullptr;
+                    const int prefix = unsc ? int(unsc - yloc) : 0;
+                    if (prefix == 2 || prefix == 3) {
+                        char buf[10];
+                        memcpy(buf, yloc, prefix);
+                        int len = prefix;
+                        buf[len] = '-';
+                        len++;
+                        buf[len] = ASCII::toLower(yloc[len]);
+                        len++;
+                        buf[len] = ASCII::toLower(yloc[len]);
+                        len++;
+                        buf[len] = '\0';
+                        fname += ":lang=";
+                        fname += buf;
+                    }
+                }
                 font = XftFontOpenName(xapp->display(), xapp->screen(), fname);
             }
             if (font) {
@@ -279,6 +299,7 @@ void YXftFont::drawLimitLeft(Graphics& g, XftFont* font, int x, int y,
         if (0 < ew) {
             const int size = lo + 2;
             wchar_t copy[size];
+
             memcpy(copy, str, lo * sizeof(wchar_t));
             copy[lo] = el;
             copy[lo + 1] = 0;

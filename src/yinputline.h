@@ -6,10 +6,13 @@
 #include "ypopup.h"
 #include "ystring.h"
 
+#include <regex.h>
+
 class YMenu;
 class YInputLine;
 class YInputMenu;
 class YWideString;
+struct tCandCollector;
 
 class YInputListener {
 public:
@@ -69,7 +72,7 @@ public:
     void unselectAll();
     bool cutSelection();
     bool copySelection();
-    void complete();
+    void complete(bool previewOnly = false);
 
 protected:
     virtual bool handleTimer(YTimer *timer);
@@ -103,6 +106,8 @@ private:
     YColorName inputSelectionFg;
     lazy<YTimer> cursorBlinkTimer;
     lazy<YInputMenu> inputMenu;
+    regex_t* prefixRegex;
+    osmart<tCandCollector> lastSeenCandidates;
 
 private: // not-used
     YInputLine(const YInputLine &);

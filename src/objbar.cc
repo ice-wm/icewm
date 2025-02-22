@@ -33,10 +33,12 @@ void ObjectBar::addButton(mstring name, ref<YIcon> icon, ObjectButton *button) {
     objects.append(button);
 
     unsigned w = 0;
+    unsigned h = height();
     for (ObjectButton* obj : objects) {
         w += obj ? obj->width() : 4;
+        h = max(h, obj->height());
     }
-    setSize(w, height());
+    setSize(w, h);
 
     button->setTitle(name);
     button->realize();

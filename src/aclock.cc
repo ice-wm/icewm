@@ -23,8 +23,12 @@ static const char AppletClockTimeFmt[] = "%T";
 const char* YClock::strTimeFmt(const struct tm& t) {
     if (fTimeFormat && isEmpty(fAltFormat))
         return fTimeFormat;
-    if (ledPixColon == null || ! prettyClock || strcmp(fmtTime, "%X"))
-        return (fAltFormat && (t.tm_sec & 1) ? fAltFormat : fTimeFormat);
+    if (ledPixColon == null || ! prettyClock || strcmp(fmtTime, "%X")) {
+        if (fAltFormat && (t.tm_sec & 1))
+            return fAltFormat;
+        if (fTimeFormat)
+            return fTimeFormat;
+    }
     return AppletClockTimeFmt;
 }
 

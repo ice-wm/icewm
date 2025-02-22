@@ -184,7 +184,8 @@ Colormap YWindow::colormap() {
     return fColormap;
 }
 
-void YWindow::setWindowFocus(Time timestamp) {
+void YWindow::setInputFocus(const char* origin) {
+    Time timestamp = xapp->getEventTime(origin);
     XSetInputFocus(xapp->display(), handle(), RevertToNone, timestamp);
 }
 
@@ -576,12 +577,12 @@ void YWindow::handleEvent(const XEvent &event) {
         break;
 
     case ButtonPress:
-        captureEvents();
+        xapp->captureGrabEvents(this);
         handleButton(event.xbutton);
         break;
 
     case ButtonRelease:
-        releaseEvents();
+        xapp->releaseGrabEvents(this);
         handleButton(event.xbutton);
         break;
 
@@ -1227,14 +1228,6 @@ void YWindow::grabButton(int button, unsigned int modifiers) {
     }
 }
 
-void YWindow::captureEvents() {
-    xapp->captureGrabEvents(this);
-}
-
-void YWindow::releaseEvents() {
-    xapp->releaseGrabEvents(this);
-}
-
 void YWindow::donePopup(YPopupWindow * /*command*/) {
 }
 
@@ -1258,7 +1251,7 @@ bool YWindow::isFocusTraversable() {
 void YWindow::requestFocus(bool requestUserFocus) {
     if (isToplevel()) {
         if (visible() && requestUserFocus)
-            setWindowFocus();
+            setInputFocus("requestFocus");
     } else {
         if (parent()) {
             parent()->requestFocus(requestUserFocus);
@@ -1707,126 +1700,6 @@ YDesktop::~YDesktop() {
 #endif
     if (desktop == this)
         desktop = nullptr;
-}
-
-void YWindow::grab(const WMKey& wmkey) {
-    grabVKey(wmkey.key, wmkey.mod);
-}
-
-void YWindow::grabVKey(unsigned key, unsigned vm) {
-    if (key) {
-        if (vm == 0) {
-            grabKey(key, 0);
-        } else {
-            unsigned m = 0;
-            bool ok = true;
-
-            if (vm & kfShift)
-                m |= ShiftMask;
-            if (vm & kfCtrl)
-                m |= ControlMask;
-            if (vm & kfAlt) {
-                if (xapp->AltMask)
-                    m |= xapp->AltMask;
-                else
-                    ok = false;
-            }
-            if (vm & kfMeta) {
-                if (xapp->MetaMask)
-                    m |= xapp->MetaMask;
-                else
-                    ok = false;
-            }
-            if (vm & kfSuper) {
-                if (xapp->SuperMask)
-                    m |= xapp->SuperMask;
-                else
-                    ok = false;
-            }
-            if (vm & kfHyper) {
-                if (xapp->HyperMask)
-                    m |= xapp->HyperMask;
-                else
-                    ok = false;
-            }
-            if (vm & kfAltGr) {
-                if (xapp->ModeSwitchMask)
-                    m |= xapp->ModeSwitchMask;
-                else
-                    ok = false;
-            }
-
-            MSG(("grabVKey k=0x%04x v=0x%02x m=0x%02x o=%d", key, vm, m, ok));
-            if (m && ok) {
-                grabKey(key, m);
-
-                // !!! recheck this
-                if (modSuperIsCtrlAlt && xapp->WinMask &&
-                    hasbits(vm, kfAlt | kfCtrl))
-                {
-                    m = xapp->WinMask;
-                    if (vm & kfShift)
-                        m |= ShiftMask;
-                    if (vm & kfSuper)
-                        m |= xapp->SuperMask;
-                    if (vm & kfHyper)
-                        m |= xapp->HyperMask;
-                    if (vm & kfAltGr)
-                        m |= xapp->ModeSwitchMask;
-                    grabKey(key, m);
-                }
-            }
-        }
-    }
-}
-
-void YWindow::grabVButton(int button, unsigned int vm) {
-    unsigned m = 0;
-
-    if (vm & kfShift)
-        m |= ShiftMask;
-    if (vm & kfCtrl)
-        m |= ControlMask;
-    if (vm & kfAlt)
-        m |= xapp->AltMask;
-    if (vm & kfMeta)
-        m |= xapp->MetaMask;
-    if (vm & kfSuper)
-       m |= xapp->SuperMask;
-    if (vm & kfHyper)
-       m |= xapp->HyperMask;
-    if (vm & kfAltGr)
-       m |= xapp->ModeSwitchMask;
-
-    MSG(("grabVButton %d %d %d", button, vm, m));
-
-    if (button != 0 && (vm == 0 || m != 0)) {
-        if ((!(vm & kfMeta) || xapp->MetaMask) &&
-            (!(vm & kfAlt) || xapp->AltMask) &&
-           (!(vm & kfSuper) || xapp->SuperMask) &&
-            (!(vm & kfHyper) || xapp->HyperMask) &&
-            (!(vm & kfAltGr) || xapp->ModeSwitchMask))
-        {
-            grabButton(button, m);
-        }
-
-        // !!! recheck this
-        if (((vm & (kfAlt | kfCtrl)) == (kfAlt | kfCtrl)) &&
-            modSuperIsCtrlAlt &&
-            xapp->WinMask)
-        {
-            m = xapp->WinMask;
-            if (vm & kfShift)
-                m |= ShiftMask;
-            if (vm & kfSuper)
-                m |= xapp->SuperMask;
-            if (vm & kfHyper)
-                m |= xapp->HyperMask;
-            if (vm & kfAltGr)
-                m |= xapp->ModeSwitchMask;
-            grabButton(button, m);
-        }
-    }
 }
 
 unsigned YWindow::VMod(unsigned m) {

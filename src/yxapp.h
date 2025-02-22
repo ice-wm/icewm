@@ -4,6 +4,7 @@
 #include "yapp.h"
 #include "ywindow.h"
 #include "ycursor.h"
+#include "ytimer.h"
 #include <X11/Xutil.h>
 
 #define KEY_MODMASK(x) ((x) & (xapp->KeyMask))
@@ -97,7 +98,16 @@ public:
     virtual bool forRead() { return true; }
 };
 
-class YXApplication: public YApplication {
+class YKeycodeMap {
+public:
+    const KeySym* const map;
+    const int per, min, max;
+    YKeycodeMap(KeySym* k, int p, int lo, int hi) :
+        map(k), per(p), min(lo), max(hi) { }
+    operator bool() const { return map && 1 < max && 1 < per; }
+};
+
+class YXApplication: public YApplication, protected YTimerListener {
 public:
     YXApplication(int *argc, char ***argv, const char *displayName = nullptr);
     virtual ~YXApplication();
@@ -164,6 +174,7 @@ public:
 
     static bool alphaBlending;
     static bool synchronizeX11;
+    static bool xkbExtension;
 
     unsigned int AltMask;
     unsigned int MetaMask;
@@ -190,8 +201,9 @@ public:
     bool isButton(unsigned state, unsigned mask) const {
         return mask == buttonModMask(state);
     }
-    bool parseKey(const char* arg, KeySym* key, unsigned* mod);
-    void unshift(KeySym* key, unsigned* mod);
+    unsigned keyCodeToKeySym(unsigned keycode, unsigned index = 0);
+    void unshift(unsigned* key, unsigned short* mod);
+    YKeycodeMap getKeycodeMap();
 
     static const char* getHelpText();
     XIM xim() const { return fXIM; }
@@ -200,6 +212,7 @@ protected:
     virtual int handleError(XErrorEvent* xev);
     virtual Cursor getRightPointer() const { return None; }
     virtual void keyboardRemap() { }
+    virtual bool handleTimer(YTimer* timer);
 
 private:
     XRenderPictFormat* findFormat(int depth) const;
@@ -231,6 +244,7 @@ private:
     YXPoll xfd;
     XIM fXIM;
 
+    lazy<YTimer> fKeycodeTimer;
     lazy<class YClipboard> fClip;
     YWindow *fXGrabWindow;
     YWindow *fGrabWindow;

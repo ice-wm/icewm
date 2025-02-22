@@ -95,7 +95,7 @@ public:
     bool getWindowAttributes(XWindowAttributes* attr);
     void beneath(YWindow* superior);
     void raiseTo(YWindow* inferior);
-    void setWindowFocus(Time timestamp = CurrentTime);
+    void setInputFocus(const char* origin);
 
     bool fetchTitle(char** title);
     void setTitle(char const * title);
@@ -162,15 +162,9 @@ public:
     void setPointer(Cursor pointer);
     void grabKeyM(unsigned key, unsigned modifiers);
     void grabKey(unsigned key, unsigned modifiers);
-    void grabVKey(unsigned key, unsigned modifiers);
-    void grab(const struct WMKey& wmkey);
     unsigned VMod(unsigned modifiers);
     void grabButtonM(int button, unsigned modifiers);
     void grabButton(int button, unsigned modifiers);
-    void grabVButton(int button, unsigned vmodifiers);
-
-    void captureEvents();
-    void releaseEvents();
 
     Window handle() { return (flags & wfCreated) ? fHandle : create(); }
     YWindow *parent() const { return fParent; }

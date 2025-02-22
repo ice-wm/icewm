@@ -40,7 +40,7 @@ public:
                     return false; }
     virtual void transfer(YFrameClient* client, YFrameWindow* frame) { }
 
-    virtual bool isKey(KeySym k, unsigned mod) = 0;
+    virtual bool isKey(const XKeyEvent& key) = 0;
     virtual unsigned modifiers() = 0;
 
     // Filter items by WM_CLASS
@@ -90,6 +90,7 @@ private:
 
     YColorName switchFg;
     YColorName switchBg;
+    YColorName switchBc;
     YColorName switchHl;
     YColorName switchMbg;
     YColorName switchMfg;
@@ -100,7 +101,7 @@ private:
 
     bool modDown(unsigned m);
     bool isModKey(KeyCode c);
-    bool isKey(KeySym k, unsigned mod);
+    bool isKey(const XKeyEvent& key);
     void target(int delta);
 
     void resize(int xiscreen, bool reposition);

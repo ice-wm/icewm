@@ -271,6 +271,7 @@ void YFrameWindow::changeTab(int delta) {
 void YFrameWindow::selectTab(YFrameClient* tab) {
     if (hasTab(tab) == false || tab == fClient)
         return;
+    notMoveSize();
 
     XSizeHints *sh = client()->sizeHints();
     int nw = sh ? sh->base_width + normalW * max(1, sh->width_inc) : normalW;
@@ -352,7 +353,7 @@ void YFrameWindow::createTab(YFrameClient* client, int place) {
 void YFrameWindow::removeTab(YFrameClient* client) {
     bool found = findRemove(fTabs, client);
     PRECONDITION(found);
-    if (found) {
+    if (found && notMoveSize()) {
         YClientContainer* conter = client->getContainer();
         independer(client);
         delete conter;
@@ -367,7 +368,7 @@ void YFrameWindow::removeTab(YFrameClient* client) {
 }
 
 void YFrameWindow::untab(YFrameClient* client) {
-    if (1 < tabCount()) {
+    if (1 < tabCount() && notMoveSize()) {
         int i = find(fTabs, client);
         PRECONDITION(0 <= i);
         if (0 <= i) {
@@ -616,44 +617,45 @@ void YFrameWindow::createPointerWindows() {
 }
 
 void YFrameWindow::grabKeys() {
-    XUngrabKey(xapp->display(), AnyKey, AnyModifier, handle());
+    const Window win = handle();
+    XUngrabKey(xapp->display(), AnyKey, AnyModifier, win);
 
-    grab(gKeyWinRaise);
-    grab(gKeyWinOccupyAll);
-    grab(gKeyWinLower);
-    grab(gKeyWinClose);
-    grab(gKeyWinRestore);
-    grab(gKeyWinNext);
-    grab(gKeyWinPrev);
-    grab(gKeyWinMove);
-    grab(gKeyWinSize);
-    grab(gKeyWinMinimize);
-    grab(gKeyWinMaximize);
-    grab(gKeyWinMaximizeVert);
-    grab(gKeyWinMaximizeHoriz);
-    grab(gKeyWinHide);
-    grab(gKeyWinRollup);
-    grab(gKeyWinFullscreen);
-    grab(gKeyWinMenu);
-    grab(gKeyWinArrangeN);
-    grab(gKeyWinArrangeNE);
-    grab(gKeyWinArrangeE);
-    grab(gKeyWinArrangeSE);
-    grab(gKeyWinArrangeS);
-    grab(gKeyWinArrangeSW);
-    grab(gKeyWinArrangeW);
-    grab(gKeyWinArrangeNW);
-    grab(gKeyWinArrangeC);
-    grab(gKeyWinTileLeft);
-    grab(gKeyWinTileRight);
-    grab(gKeyWinTileTop);
-    grab(gKeyWinTileBottom);
-    grab(gKeyWinTileTopLeft);
-    grab(gKeyWinTileTopRight);
-    grab(gKeyWinTileBottomLeft);
-    grab(gKeyWinTileBottomRight);
-    grab(gKeyWinTileCenter);
-    grab(gKeyWinSmartPlace);
+    gKeyWinRaise.grab(win);
+    gKeyWinOccupyAll.grab(win);
+    gKeyWinLower.grab(win);
+    gKeyWinClose.grab(win);
+    gKeyWinRestore.grab(win);
+    gKeyWinNext.grab(win);
+    gKeyWinPrev.grab(win);
+    gKeyWinMove.grab(win);
+    gKeyWinSize.grab(win);
+    gKeyWinMinimize.grab(win);
+    gKeyWinMaximize.grab(win);
+    gKeyWinMaximizeVert.grab(win);
+    gKeyWinMaximizeHoriz.grab(win);
+    gKeyWinHide.grab(win);
+    gKeyWinRollup.grab(win);
+    gKeyWinFullscreen.grab(win);
+    gKeyWinMenu.grab(win);
+    gKeyWinArrangeN.grab(win);
+    gKeyWinArrangeNE.grab(win);
+    gKeyWinArrangeE.grab(win);
+    gKeyWinArrangeSE.grab(win);
+    gKeyWinArrangeS.grab(win);
+    gKeyWinArrangeSW.grab(win);
+    gKeyWinArrangeW.grab(win);
+    gKeyWinArrangeNW.grab(win);
+    gKeyWinArrangeC.grab(win);
+    gKeyWinTileLeft.grab(win);
+    gKeyWinTileRight.grab(win);
+    gKeyWinTileTop.grab(win);
+    gKeyWinTileBottom.grab(win);
+    gKeyWinTileTopLeft.grab(win);
+    gKeyWinTileTopRight.grab(win);
+    gKeyWinTileBottomLeft.grab(win);
+    gKeyWinTileBottomRight.grab(win);
+    gKeyWinTileCenter.grab(win);
+    gKeyWinSmartPlace.grab(win);
 
     container()->regrabMouse();
 }
@@ -1215,7 +1217,7 @@ bool YFrameWindow::handleTimer(YTimer *t) {
                 Window win = None; int rev = 0;
                 if (XGetInputFocus(xapp->display(), &win, &rev) && !win) {
                     if (getInputFocusHint()) {
-                        client()->setWindowFocus();
+                        client()->setInputFocus("frameTimer");
                     }
                 }
             }
@@ -1699,18 +1701,21 @@ YFrameClient* YFrameWindow::transient() const {
 }
 
 void YFrameWindow::minimizeTransients() {
+    YArray<YFrameWindow*> trans;
     for (YFrameClient* t = transient(); t; t = t->nextTransient()) {
         YFrameWindow* w = t->getFrame();
         if (w) {
-            MSG(("> isMinimized: %d\n", w->isMinimized()));
             if (w->isMinimized()) {
                 w->fWinState |= WinStateWasMinimized;
-            } else {
+            }
+            else if (find(trans, w) < 0 && w != this) {
                 w->fWinState &= ~WinStateWasMinimized;
-                w->wmMinimize();
+                trans += w;
             }
         }
     }
+    for (YFrameWindow* w : trans)
+        w->wmMinimize();
 }
 
 void YFrameWindow::restoreMinimizedTransients() {
@@ -1724,18 +1729,21 @@ void YFrameWindow::restoreMinimizedTransients() {
 }
 
 void YFrameWindow::hideTransients() {
+    YArray<YFrameWindow*> trans;
     for (YFrameClient* t = transient(); t; t = t->nextTransient()) {
         YFrameWindow* w = t->getFrame();
         if (w) {
-            MSG(("> isHidden: %d\n", w->isHidden()));
             if (w->isHidden()) {
                 w->fWinState |= WinStateWasHidden;
-            } else {
+            }
+            else if (find(trans, w) < 0 && w != this) {
                 w->fWinState&= ~WinStateWasHidden;
-                w->wmHide();
+                trans += w;
             }
         }
     }
+    for (YFrameWindow* w : trans)
+        w->wmHide();
 }
 
 void YFrameWindow::restoreHiddenTransients() {
@@ -1849,8 +1857,13 @@ void YFrameWindow::wmRaise() {
     if (canRaise()) {
         doRaise();
         manager->restackWindows();
-        if (focused() && container()->buttoned())
-            container()->releaseButtons();
+        if (focused()) {
+            if (container()->buttoned()) {
+                container()->releaseButtons();
+            }
+        } else {
+            manager->focusOverlap();
+        }
     }
 }
 
@@ -1931,6 +1944,8 @@ void YFrameWindow::wmCloseClient(YFrameClient* client, bool* confirm) {
 void YFrameWindow::wmClose() {
     if (!canClose())
         return ;
+    if (hasMoveSize())
+        endMoveSize();
 
     manager->grabServer();
     bool confirm = false;
@@ -1962,6 +1977,8 @@ void YFrameWindow::wmConfirmKill(const char* message) {
 void YFrameWindow::wmKill() {
     if (!canClose())
         return ;
+    if (hasMoveSize())
+        endMoveSize();
 #ifdef DEBUG
     if (debug)
         msg("No WM_DELETE_WINDOW protocol");
@@ -2977,7 +2994,7 @@ bool YFrameWindow::getInputFocusHint() {
 void YFrameWindow::setWorkspace(int workspace) {
     if ( ! inrange(workspace, -1, workspaceCount - 1))
         return ;
-    if (workspace != fWinWorkspace) {
+    if (workspace != fWinWorkspace && notMoveSize()) {
         int previous = fWinWorkspace;
         int activeWS = int(manager->activeWorkspace());
         int oldState = fWinState;
@@ -3525,6 +3542,9 @@ void YFrameWindow::setState(int mask, int state) {
          fWinState, fWinState ^ flip, gain, lose));
     fWinState ^= flip;
 
+    if (gain & (WinStateUnmapped | WinStateFullscreen | WinStateMaximizedBoth))
+        if (hasMoveSize())
+            endMoveSize();
     if (flip & WinStateMinimized) {
         MSG(("WinStateMinimized: %d", isMinimized()));
         if (gain & WinStateMinimized)

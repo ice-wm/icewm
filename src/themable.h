@@ -88,6 +88,7 @@ XSV(const char *, clrMoveSizeStatus,            "rgb:C0/C0/C0")
 XSV(const char *, clrMoveSizeStatusText,        "rgb:00/00/00")
 XSV(const char *, clrQuickSwitch,               "rgb:C0/C0/C0")
 XSV(const char *, clrQuickSwitchText,           "rgb:00/00/00")
+XSV(const char *, clrQuickSwitchBorder,         0)
 XSV(const char *, clrQuickSwitchActive,         0)
 XSV(const char *, clrDefaultTaskBar,            "rgb:C0/C0/C0")
 XSV(const char *, clrNormalButton,              "rgb:C0/C0/C0")
@@ -160,6 +161,10 @@ cfoption icewm_themable_preferences[] = {
     OUV("TrayIconMaxWidth",                     &trayIconMaxWidth, 16, 128,     "Maximum scaled width of tray icons"),
     OUV("TrayIconMaxHeight",                    &trayIconMaxHeight, 16, 128,    "Maximum scaled height of tray icons"),
     OBV("TrayDrawBevel",                        &trayDrawBevel,                 "Surround the tray with plastic border"),
+    OIV("TaskBarApmGraphWidth",                 &taskBarApmGraphWidth, 1, 1000,  "Width of battery Monitor"),
+    OIV("TaskBarCPUSamples",                    &taskBarCPUSamples, 2, 1000,    "The width of the CPU Monitor applet in pixels"),
+    OIV("TaskBarMEMSamples",                    &taskBarMEMSamples, 2, 1000,    "The width of the Memory Monitor applet in pixels"),
+    OIV("TaskBarNetSamples",                    &taskBarNetSamples, 2, 1000,    "The width of the Net Monitor applet in pixels"),
 
     OBV("TitleBarCentered",                     &titleBarCentered,              "Draw window title centered (obsoleted by TitleBarJustify)"),
     OBV("TitleBarJoinLeft",                     &titleBarJoinLeft,              "Join title*S and title*T"),
@@ -256,6 +261,7 @@ cfoption icewm_themable_preferences[] = {
     OSV("ColorMoveSizeStatusText",              &clrMoveSizeStatusText,         "Text color of move/resize status window"),
 
     OSV("ColorQuickSwitch",                     &clrQuickSwitch,                "Background of the quick switch window"),
+    OSV("ColorQuickSwitchBorder",               &clrQuickSwitchBorder,          "Border color of the quick switch window"),
     OSV("ColorQuickSwitchText",                 &clrQuickSwitchText,            "Text color in the quick switch window"),
     OSV("ColorQuickSwitchActive",               &clrQuickSwitchActive,          "Rectangle arround the active icon in the quick switch window"),
     OSV("ColorDefaultTaskBar",                  &clrDefaultTaskBar,             "Background of the taskbar"),
