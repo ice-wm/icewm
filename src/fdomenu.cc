@@ -34,7 +34,7 @@
 #include <utility> // For std::move
 #include <vector>
 
-#if __cplusplus > 201103L
+#if __cplusplus >= 201103L && (!defined(__GNUC__) || (__GNUC__ >= 5))
 #include <codecvt>
 #endif
 
@@ -554,7 +554,7 @@ struct AppEntry {
                 }
         }
         if (prog_name_cut > 0 && ret.size() > prog_name_cut) {
-#if __cplusplus > 201103L
+#if __cplusplus >= 201103L && (!defined(__GNUC__) || (__GNUC__ >= 5))
             auto u16_conv =
                 wstring_convert<codecvt_utf8_utf16<char16_t>, char16_t>{}
                     .from_bytes(ret);
