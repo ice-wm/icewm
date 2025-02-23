@@ -492,7 +492,7 @@ endif()
 IF(CONFIG_FDO_MENUS)
     set(_tgt icewm-menu-fdo${EXEEXT})
     ADD_EXECUTABLE(${_tgt} fdomenu.cc)
-    TARGET_LINK_LIBRARIES(${_tgt} ice)
+    TARGET_LINK_LIBRARIES(${_tgt} ice ${nls_LIBS})
     # XXX: static linking or LTO make it actually slower
     #target_compile_options(${_tgt} PUBLIC -flto)
     #target_link_options(${_tgt} PUBLIC -flto)
