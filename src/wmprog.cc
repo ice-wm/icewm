@@ -136,7 +136,7 @@ public:
     virtual bool isKey(const XKeyEvent& key) override {
         KeySym k = xapp->keyCodeToKeySym(key.keycode);
         unsigned m = KEY_MODMASK(key.state);
-        unsigned mod = desktop->VMod(m);
+        unsigned mod = YWindow::VMod(m);
         return k == this->key && mod == this->mod;
     }
     unsigned modifiers() override {
