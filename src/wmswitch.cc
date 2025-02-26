@@ -247,11 +247,13 @@ public:
     }
 
     void accept() override {
-        ZItem active = fActiveItem;
-        if (active) {
-            active.frame->activateWindow(true, false);
-            if (active.frame->isFullscreen())
-                active.frame->updateLayer();
+        ZItem act = fActiveItem;
+        if (act) {
+            if (act.client != act.frame->client())
+                act.frame->selectTab(act.client);
+            act.frame->activateWindow(true, false);
+            if (act.frame->isFullscreen())
+                act.frame->updateLayer();
         } else {
             cancel();
         }
