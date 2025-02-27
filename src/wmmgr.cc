@@ -1083,6 +1083,24 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
                     fFocusWin->isRollup());
     if (w) {
         if (f->getInputFocusHint()) {
+            // update our server time from property events
+            Window ws[2] = { handle(), f->client()->handle() };
+            xapp->sync();
+            for (Window win : ws) {
+                XEvent evt;
+                while (XCheckTypedWindowEvent(xapp->display(), win,
+                                              PropertyNotify, &evt)) {
+                    if (evt.type == PropertyNotify) {
+                        xapp->saveEventTime(evt);
+                        if (evt.xproperty.window == ws[0]) {
+                            handleProperty(evt.xproperty);
+                        }
+                        else if (evt.xproperty.window == ws[1]) {
+                            f->client()->handleProperty(evt.xproperty);
+                        }
+                    }
+                }
+            }
             w->setInputFocus("wmSetFocus");
             focusUnset = false;
         }
