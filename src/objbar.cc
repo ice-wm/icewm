@@ -20,25 +20,22 @@ ObjectBar::~ObjectBar() {
 }
 
 void ObjectBar::addButton(mstring name, ref<YIcon> icon, ObjectButton *button) {
+    unsigned h = height();
     if (icon != null) {
         button->setIcon(icon, YIcon::smallSize());
-        button->setSize(max(button->width() + 4, height()),
-                        max(button->width() + 4, height()));
+        h = max(h, button->width() + 4);
+        button->setSize(h, h);
     } else {
         button->setText(name);
-        if (button->height() < height())
-            button->setSize(button->width(), height());
+        if (button->height() < h)
+            button->setSize(button->width(), h);
+        else if (button->height() > h)
+            h = button->height();
     }
 
     objects.append(button);
 
-    unsigned w = 0;
-    unsigned h = height();
-    for (ObjectButton* obj : objects) {
-        w += obj ? obj->width() : 4;
-        h = max(h, obj->height());
-    }
-    setSize(w, h);
+    setSize(width() + button->width(), h);
 
     button->setTitle(name);
     button->realize();
