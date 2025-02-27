@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.26\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-02-22 16:19+0100\n"
+"POT-Creation-Date: 2025-02-27 23:31+0100\n"
 "PO-Revision-Date: 2024-11-07 17:48+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -349,7 +349,7 @@ msgstr "Arbeitsbereich: "
 msgid "Tabs"
 msgstr "Registerkarte"
 
-#: src/fdomenu.cc:911
+#: src/fdomenu.cc:922
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -385,22 +385,22 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1111 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "Audio"
 
-#: src/fdomenu.cc:1101
+#: src/fdomenu.cc:1112
 msgid "Zarathustra"
 msgstr ""
 
-#: src/fdomenu.cc:1201
+#: src/fdomenu.cc:1212
 msgid "System too slow! Failed to load menu content!"
 msgstr "System zu langsam! Der Inhalt des Menüs konnte nicht geladen werden!"
 
-#: src/fdomenu.cc:1204
+#: src/fdomenu.cc:1215
 msgid "Please push HERE and retry after some seconds."
 msgstr ""
 
@@ -2513,7 +2513,7 @@ msgid "_Cancel"
 msgstr "Ab_brechen"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:88 src/wmprog.cc:471 src/wmprog.cc:473 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:88 src/wmprog.cc:466 src/wmprog.cc:468 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Abmelden..."
@@ -2523,7 +2523,7 @@ msgid "_Restart icewm"
 msgstr "_IceWM neu starten"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:94 src/wmprog.cc:439 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:94 src/wmprog.cc:434 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Über"
 
@@ -2623,11 +2623,11 @@ msgstr "Zeitüberschreitung bei '%s'!"
 msgid "'%s' produces no output"
 msgstr "'%s' produziert keine Ausgabe"
 
-#: src/wmmgr.cc:3686
+#: src/wmmgr.cc:3708
 msgid "Missing program setxkbmap"
 msgstr "Fehlendes Program: 'setxkbmap'"
 
-#: src/wmmgr.cc:3687
+#: src/wmmgr.cc:3709
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Um die Tastatur zu ändern, installieren Sie bitte setxkbmap."
 
@@ -2650,76 +2650,76 @@ msgstr "Änderungen speichern"
 msgid "Enter a new value for %s: "
 msgstr "Geben Sie einen neuen Wert für %s ein: "
 
-#: src/wmprog.cc:346
+#: src/wmprog.cc:341
 msgid "_Click to focus"
 msgstr "Fokus durch _Klicken"
 
-#: src/wmprog.cc:347
+#: src/wmprog.cc:342
 msgid "_Explicit focus"
 msgstr "_Expliziter Fokus"
 
-#: src/wmprog.cc:348
+#: src/wmprog.cc:343
 msgid "_Sloppy mouse focus"
 msgstr "_Salopper Maus-Fokus"
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:344
 msgid "S_trict mouse focus"
 msgstr "Strenger _Maus-Fokus"
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:345
 msgid "_Quiet sloppy focus"
 msgstr "Salopper Fokus (_träge)"
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:346
 msgid "Custo_m"
 msgstr "_Benutzerdefiniert"
 
-#: src/wmprog.cc:373
+#: src/wmprog.cc:368
 msgid "_Manual"
 msgstr "_Handbuch"
 
-#: src/wmprog.cc:374
+#: src/wmprog.cc:369
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:375
+#: src/wmprog.cc:370
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:376
+#: src/wmprog.cc:371
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:420
 msgid "Programs"
 msgstr "Programme"
 
-#: src/wmprog.cc:429
+#: src/wmprog.cc:424
 msgid "_Run..."
 msgstr "Aus_führen..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:433 src/wmtaskbar.cc:233
+#: src/wmprog.cc:428 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "F_enster"
 
-#: src/wmprog.cc:444
+#: src/wmprog.cc:439
 msgid "_Help"
 msgstr "_Hilfe"
 
-#: src/wmprog.cc:449
+#: src/wmprog.cc:444
 msgid "_Focus"
 msgstr "_Fokus"
 
-#: src/wmprog.cc:454
+#: src/wmprog.cc:449
 msgid "_Preferences"
 msgstr "_Wünsche"
 
-#: src/wmprog.cc:459
+#: src/wmprog.cc:454
 msgid "_Themes"
 msgstr "_Themes"
 
-#: src/wmprog.cc:463
+#: src/wmprog.cc:458
 msgid "Se_ttings"
 msgstr "_Einstellungen"
 
@@ -2831,12 +2831,12 @@ msgstr "%s: Auswahl fehlgeschlagen"
 msgid "Could not parse color \"%s\""
 msgstr "Farbe \"%s\" konnte nicht geparst werden"
 
-#: src/yconfig.cc:83
+#: src/yconfig.cc:87
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "Unbekanntes Tastensymbol %s in %s"
 
-#: src/yconfig.cc:170 src/yconfig.cc:181 src/yconfig.cc:193
+#: src/yconfig.cc:174 src/yconfig.cc:185 src/yconfig.cc:197
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Schlechtes Argument: %s für %s [%d,%d]"

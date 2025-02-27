@@ -1,4 +1,28 @@
-icewm -- history of user-visible changes.  2025-02-22
+icewm -- history of user-visible changes.  2025-02-27
+
+Release icewm-3.7.1 released 2025-02-27
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.0...3.7.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (10):
+      Link against NLS libs for icewm-menu-fdo and closes ice-wm/icewm#185.
+      Fix broken modSuperIsCtrlAlt for issue #791.
+      Simplify key handling in MenuProgSwitchItems.
+      Skip past carriage-returns in getArgument for ice-wm/icewm#186.
+      Remove trailing carriage-returns from each input line in icewm-menu-fdo
+        for ice-wm/icewm#186.
+      Let QuickSwitch select the proper client tab, before activating a frame.
+      Fix toolbar addButton for issue ice-wm/icewm#186.
+      Wait for the Return key-release event before accepting the address bar
+        input line to avoid stray Return key-release events in applications.
+      Improve focusing xterms by first updating our notion of the server time
+        from xproperty events for issue ice-wm/icewm#188.
+      Update the event time strictly increasing.
+
+Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
+      Translated using Weblate (Georgian)
+
 
 Release icewm-3.7.0 released 2025-02-22
 ---------------------------------------
@@ -116,7 +140,7 @@ Eduard Bloch <blade@debian.org> (107):
       Fix a crash when selecting Default from the clock menu
       No text insertion while doing tooltip update only
 
-Bert Gijsbers <gijsbers@science.uva.nl> (69):
+Bert Gijsbers <gijsbers@science.uva.nl> (70):
       Add support for _NET_WM_MOVERESIZE_CANCEL.
       Better guard move/sizes and make sure they are properly terminated.
       Stop move/sizes when changing tabs.
@@ -204,6 +228,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (69):
       Update potfiles.
       Restore support for C++11 in fdomenu.cc.
       Check for __GNUC__ at least 5 for codecvt dependency.
+      Prepare 3.7.0 release
 
 Baurzhan Muftakhidinov <baurthefirst@gmail.com> (2):
       Translated using Weblate (Kazakh)
@@ -471,30 +496,4 @@ Sophie Leroy <sophie@stoquart.com> (1):
 
 Vik On <4o3lxdc1y@mozmail.com> (1):
       Translated using Weblate (Russian)
-
-
-Release icewm-3.4.5 released 2023-12-28
----------------------------------------
-
-git shortlog --no-merges -e -n -w80,6,8 3.4.4...3.4.5
-
-Bert Gijsbers <gijsbers@science.uva.nl> (12):
-      Center the clock leds vertically for issue ice-wm/icewm#151.
-      Prefer localtime_r over localtime to circumvent glibc inefficiency.
-      Avoid calls to fstat to circumvent glibc inefficiency.
-      Drop binascii.h. Add spanLower and spanUpper.
-      Let KeySysTile only tile the active monitor for issue ice-wm/icewm#152.
-      Fix KeyWinTile commands for multi-monitor for issue ice-wm/icewm#154.
-      After raising a focused window, release its button grab for issue #759.
-      When pasting into the addressbar, replace newlines with spaces.
-      Fix workspace buttons for right-to-left languages.
-      Update copyright.
-      Update the POT files.
-      Prepare 3.4.5 release
-
-Dmitriy Khanzhin <jinn@altlinux.org> (1):
-      Update the 'Hibernate' command and add hibernate icons.
-
-Petteri Aimonen <jpa@git.mail.kapsi.fi> (1):
-      When focusing and RaiseOnFocus, release button grab for issue #759.
 

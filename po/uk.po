@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-02-22 16:19+0100\n"
+"POT-Creation-Date: 2025-02-27 23:31+0100\n"
 "PO-Revision-Date: 2021-12-18 21:14+0000\n"
 "Last-Translator: Taras Panchenko <top39@ukr.net>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -343,7 +343,7 @@ msgstr "Робочий простір: "
 msgid "Tabs"
 msgstr ""
 
-#: src/fdomenu.cc:911
+#: src/fdomenu.cc:922
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -379,22 +379,22 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1111 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "Аудіо"
 
-#: src/fdomenu.cc:1101
+#: src/fdomenu.cc:1112
 msgid "Zarathustra"
 msgstr ""
 
-#: src/fdomenu.cc:1201
+#: src/fdomenu.cc:1212
 msgid "System too slow! Failed to load menu content!"
 msgstr ""
 
-#: src/fdomenu.cc:1204
+#: src/fdomenu.cc:1215
 msgid "Please push HERE and retry after some seconds."
 msgstr ""
 
@@ -2492,7 +2492,7 @@ msgid "_Cancel"
 msgstr "_Скасувати"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:88 src/wmprog.cc:471 src/wmprog.cc:473 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:88 src/wmprog.cc:466 src/wmprog.cc:468 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Вихід..."
@@ -2502,7 +2502,7 @@ msgid "_Restart icewm"
 msgstr "_Перезапустити IceWM"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:94 src/wmprog.cc:439 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:94 src/wmprog.cc:434 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Про"
 
@@ -2602,11 +2602,11 @@ msgstr "У '%s' вийшов час!"
 msgid "'%s' produces no output"
 msgstr "'%s' не створює виводу"
 
-#: src/wmmgr.cc:3686
+#: src/wmmgr.cc:3708
 msgid "Missing program setxkbmap"
 msgstr "Застосунок setxkbmap відсутній"
 
-#: src/wmmgr.cc:3687
+#: src/wmmgr.cc:3709
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Для перемикання клавіатури потрібно встановити setxkbmap."
 
@@ -2629,76 +2629,76 @@ msgstr "Зберегти зміни"
 msgid "Enter a new value for %s: "
 msgstr "Введіть нове значення для %s: "
 
-#: src/wmprog.cc:346
+#: src/wmprog.cc:341
 msgid "_Click to focus"
 msgstr "_Фокус по натисканню"
 
-#: src/wmprog.cc:347
+#: src/wmprog.cc:342
 msgid "_Explicit focus"
 msgstr "_Явний фокус"
 
-#: src/wmprog.cc:348
+#: src/wmprog.cc:343
 msgid "_Sloppy mouse focus"
 msgstr "_Побічний фокус за мишкою"
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:344
 msgid "S_trict mouse focus"
 msgstr "_Точний фокус за мишкою"
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:345
 msgid "_Quiet sloppy focus"
 msgstr "_Нерухомий побічний фокус"
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:346
 msgid "Custo_m"
 msgstr "_Власні"
 
-#: src/wmprog.cc:373
+#: src/wmprog.cc:368
 msgid "_Manual"
 msgstr "_Посібник"
 
-#: src/wmprog.cc:374
+#: src/wmprog.cc:369
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:375
+#: src/wmprog.cc:370
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:376
+#: src/wmprog.cc:371
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:420
 msgid "Programs"
 msgstr "Програми"
 
-#: src/wmprog.cc:429
+#: src/wmprog.cc:424
 msgid "_Run..."
 msgstr "_Запустити..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:433 src/wmtaskbar.cc:233
+#: src/wmprog.cc:428 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Вікна"
 
-#: src/wmprog.cc:444
+#: src/wmprog.cc:439
 msgid "_Help"
 msgstr "_Довідка"
 
-#: src/wmprog.cc:449
+#: src/wmprog.cc:444
 msgid "_Focus"
 msgstr "_Фокус"
 
-#: src/wmprog.cc:454
+#: src/wmprog.cc:449
 msgid "_Preferences"
 msgstr "_Налаштування"
 
-#: src/wmprog.cc:459
+#: src/wmprog.cc:454
 msgid "_Themes"
 msgstr "_Теми"
 
-#: src/wmprog.cc:463
+#: src/wmprog.cc:458
 msgid "Se_ttings"
 msgstr "Пара_метри"
 
@@ -2810,12 +2810,12 @@ msgstr "%s: не вдалося вибрати"
 msgid "Could not parse color \"%s\""
 msgstr "Не вдалося розібрати колір \"%s\""
 
-#: src/yconfig.cc:83
+#: src/yconfig.cc:87
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "Невідомий символ %s у %s"
 
-#: src/yconfig.cc:170 src/yconfig.cc:181 src/yconfig.cc:193
+#: src/yconfig.cc:174 src/yconfig.cc:185 src/yconfig.cc:197
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Невірний аргумент: %s for %s [%d,%d]"

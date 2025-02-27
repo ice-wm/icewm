@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-02-22 16:19+0100\n"
+"POT-Creation-Date: 2025-02-27 23:31+0100\n"
 "PO-Revision-Date: 2024-10-17 00:48+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -346,7 +346,7 @@ msgstr "ワークスペース: "
 msgid "Tabs"
 msgstr "タブ"
 
-#: src/fdomenu.cc:911
+#: src/fdomenu.cc:922
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -419,22 +419,22 @@ msgstr ""
 "環境変数も合わせて参照します:\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1111 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "オーディオ"
 
-#: src/fdomenu.cc:1101
+#: src/fdomenu.cc:1112
 msgid "Zarathustra"
 msgstr "Zarathustra"
 
-#: src/fdomenu.cc:1201
+#: src/fdomenu.cc:1212
 msgid "System too slow! Failed to load menu content!"
 msgstr "システムが遅すぎます！ メニューコンテンツの読み込みに失敗しました！"
 
-#: src/fdomenu.cc:1204
+#: src/fdomenu.cc:1215
 msgid "Please push HERE and retry after some seconds."
 msgstr "こちらを押してからしばらくお待ちください。"
 
@@ -2541,7 +2541,7 @@ msgid "_Cancel"
 msgstr "キャンセル (_C)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:88 src/wmprog.cc:471 src/wmprog.cc:473 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:88 src/wmprog.cc:466 src/wmprog.cc:468 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "ログアウト (_L)..."
@@ -2551,7 +2551,7 @@ msgid "_Restart icewm"
 msgstr "icewm を再起動 (_R)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:94 src/wmprog.cc:439 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:94 src/wmprog.cc:434 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "情報 (_A)"
 
@@ -2650,11 +2650,11 @@ msgstr "'%s' が時間切れになりました！"
 msgid "'%s' produces no output"
 msgstr "'%s' は何も出力しませんでした"
 
-#: src/wmmgr.cc:3686
+#: src/wmmgr.cc:3708
 msgid "Missing program setxkbmap"
 msgstr "プログラム setxkbmap がありません"
 
-#: src/wmmgr.cc:3687
+#: src/wmmgr.cc:3709
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 "キーボードの切り替えを行なうため、 setxkbmap をインストールしてください。"
@@ -2678,76 +2678,76 @@ msgstr "修正内容の保存"
 msgid "Enter a new value for %s: "
 msgstr "%s に対する新しい値を入力してください: "
 
-#: src/wmprog.cc:346
+#: src/wmprog.cc:341
 msgid "_Click to focus"
 msgstr "クリックしてフォーカス (_C)"
 
-#: src/wmprog.cc:347
+#: src/wmprog.cc:342
 msgid "_Explicit focus"
 msgstr "明示的なフォーカス (_E)"
 
-#: src/wmprog.cc:348
+#: src/wmprog.cc:343
 msgid "_Sloppy mouse focus"
 msgstr "あいまいなマウスフォーカス (_S)"
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:344
 msgid "S_trict mouse focus"
 msgstr "厳密なマウスフォーカス (_T)"
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:345
 msgid "_Quiet sloppy focus"
 msgstr "静寂であいまいなマウスフォーカス (_Q)"
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:346
 msgid "Custo_m"
 msgstr "独自 (_M)"
 
-#: src/wmprog.cc:373
+#: src/wmprog.cc:368
 msgid "_Manual"
 msgstr "マニュアル (_M)"
 
-#: src/wmprog.cc:374
+#: src/wmprog.cc:369
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:375
+#: src/wmprog.cc:370
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:376
+#: src/wmprog.cc:371
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:420
 msgid "Programs"
 msgstr "プログラム"
 
-#: src/wmprog.cc:429
+#: src/wmprog.cc:424
 msgid "_Run..."
 msgstr "実行 (_R)..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:433 src/wmtaskbar.cc:233
+#: src/wmprog.cc:428 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "ウインドウ一覧 (_W)"
 
-#: src/wmprog.cc:444
+#: src/wmprog.cc:439
 msgid "_Help"
 msgstr "ヘルプ (_H)"
 
-#: src/wmprog.cc:449
+#: src/wmprog.cc:444
 msgid "_Focus"
 msgstr "フォーカス (_F)"
 
-#: src/wmprog.cc:454
+#: src/wmprog.cc:449
 msgid "_Preferences"
 msgstr "設定 (_P)"
 
-#: src/wmprog.cc:459
+#: src/wmprog.cc:454
 msgid "_Themes"
 msgstr "テーマ (_T)"
 
-#: src/wmprog.cc:463
+#: src/wmprog.cc:458
 msgid "Se_ttings"
 msgstr "設定 (_T)"
 
@@ -2859,12 +2859,12 @@ msgstr "%s: select が失敗しました"
 msgid "Could not parse color \"%s\""
 msgstr "色 \"%s\" を処理できませんでした"
 
-#: src/yconfig.cc:83
+#: src/yconfig.cc:87
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "%2$s 内に未知のキー名 %1$s があります"
 
-#: src/yconfig.cc:170 src/yconfig.cc:181 src/yconfig.cc:193
+#: src/yconfig.cc:174 src/yconfig.cc:185 src/yconfig.cc:197
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "無効な引数: %2$s に対して %1$s [%3$d,%4$d]"

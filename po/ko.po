@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.2.35\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-02-22 16:19+0100\n"
+"POT-Creation-Date: 2025-02-27 23:31+0100\n"
 "PO-Revision-Date: 2019-02-07 06:32+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -351,7 +351,7 @@ msgstr "작업공간: "
 msgid "Tabs"
 msgstr ""
 
-#: src/fdomenu.cc:911
+#: src/fdomenu.cc:922
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -387,22 +387,22 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1111 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "오디오"
 
-#: src/fdomenu.cc:1101
+#: src/fdomenu.cc:1112
 msgid "Zarathustra"
 msgstr ""
 
-#: src/fdomenu.cc:1201
+#: src/fdomenu.cc:1212
 msgid "System too slow! Failed to load menu content!"
 msgstr ""
 
-#: src/fdomenu.cc:1204
+#: src/fdomenu.cc:1215
 msgid "Please push HERE and retry after some seconds."
 msgstr ""
 
@@ -2480,7 +2480,7 @@ msgid "_Cancel"
 msgstr "취소(_C)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:88 src/wmprog.cc:471 src/wmprog.cc:473 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:88 src/wmprog.cc:466 src/wmprog.cc:468 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "로그아웃(_L)..."
@@ -2490,7 +2490,7 @@ msgid "_Restart icewm"
 msgstr "icewm 다시 시작(_R)"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:94 src/wmprog.cc:439 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:94 src/wmprog.cc:434 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "정보(_A)"
 
@@ -2589,11 +2589,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr "'%s'은(는) 출력이 없습니다."
 
-#: src/wmmgr.cc:3686
+#: src/wmmgr.cc:3708
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3687
+#: src/wmmgr.cc:3709
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2616,76 +2616,76 @@ msgstr "수정 사항 저장"
 msgid "Enter a new value for %s: "
 msgstr ""
 
-#: src/wmprog.cc:346
+#: src/wmprog.cc:341
 msgid "_Click to focus"
 msgstr "클릭에 의한 포커스(_C)"
 
-#: src/wmprog.cc:347
+#: src/wmprog.cc:342
 msgid "_Explicit focus"
 msgstr "명확한 포커스(_E)"
 
-#: src/wmprog.cc:348
+#: src/wmprog.cc:343
 msgid "_Sloppy mouse focus"
 msgstr "슬로피 마우스 포커스(_S)"
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:344
 msgid "S_trict mouse focus"
 msgstr "엄격한 마우스 포커스(_S)"
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:345
 msgid "_Quiet sloppy focus"
 msgstr "조용한 슬로피 포커스(_Q)"
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:346
 msgid "Custo_m"
 msgstr "사용자 설정대로(_M)"
 
-#: src/wmprog.cc:373
+#: src/wmprog.cc:368
 msgid "_Manual"
 msgstr "매뉴얼(_M)"
 
-#: src/wmprog.cc:374
+#: src/wmprog.cc:369
 msgid "_Icewm(1)"
 msgstr "Icewm(1)(_I)"
 
-#: src/wmprog.cc:375
+#: src/wmprog.cc:370
 msgid "Icewm_Bg(1)"
 msgstr "IcewmBg(1)(_B)"
 
-#: src/wmprog.cc:376
+#: src/wmprog.cc:371
 msgid "Ice_Sound(1)"
 msgstr "IceSound(1)(_S)"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:420
 msgid "Programs"
 msgstr "프로그램"
 
-#: src/wmprog.cc:429
+#: src/wmprog.cc:424
 msgid "_Run..."
 msgstr "실행(_R)..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:433 src/wmtaskbar.cc:233
+#: src/wmprog.cc:428 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "창(_W)"
 
-#: src/wmprog.cc:444
+#: src/wmprog.cc:439
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: src/wmprog.cc:449
+#: src/wmprog.cc:444
 msgid "_Focus"
 msgstr "초점(_F)"
 
-#: src/wmprog.cc:454
+#: src/wmprog.cc:449
 msgid "_Preferences"
 msgstr "_기본 설정"
 
-#: src/wmprog.cc:459
+#: src/wmprog.cc:454
 msgid "_Themes"
 msgstr "모양새(_T)"
 
-#: src/wmprog.cc:463
+#: src/wmprog.cc:458
 msgid "Se_ttings"
 msgstr "설정(_T)"
 
@@ -2797,12 +2797,12 @@ msgstr "%s: 선택 실패"
 msgid "Could not parse color \"%s\""
 msgstr "\"%s\" 폰트를 읽지 못함."
 
-#: src/yconfig.cc:83
+#: src/yconfig.cc:87
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "알 수 없는 키 이름 %s: %s"
 
-#: src/yconfig.cc:170 src/yconfig.cc:181 src/yconfig.cc:193
+#: src/yconfig.cc:174 src/yconfig.cc:185 src/yconfig.cc:197
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "잘못된 인수: %s for %s [%d,%d]"
