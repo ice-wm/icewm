@@ -92,14 +92,15 @@ void YClientContainer::handleButton(const XButtonEvent &button) {
             }
             return ;
         }
-        else if (gMouseWinRaise == button
-            && (gMouseWinRaise != gMouseWinLower || getFrame()->canRaise()))
-        {
+        else if (gMouseWinRaise == button) {
             XAllowEvents(xapp->display(), AsyncPointer, CurrentTime);
-            getFrame()->wmRaise();
+            if (getFrame()->canRaise())
+                getFrame()->wmRaise();
+            else if (gMouseWinRaise == gMouseWinLower)
+                getFrame()->wmLower();
             return ;
         }
-        else if (gMouseWinLower == button) {
+        else if (gMouseWinLower != gMouseWinRaise && gMouseWinLower == button) {
             XAllowEvents(xapp->display(), AsyncPointer, CurrentTime);
             getFrame()->wmLower();
             return ;

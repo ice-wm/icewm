@@ -82,6 +82,9 @@ void WMKey::grab(int handle) {
             else
                 ok = false;
         }
+        if (modSuperIsCtrlAlt && xapp->WinMask && hasbits(mod, kfAlt | kfCtrl)) {
+            supered = true;
+        }
         if (km && ok) {
             xm[0] = xm[1] = km;
         } else {
@@ -91,8 +94,7 @@ void WMKey::grab(int handle) {
     if (IS_POINTER(key)) {
         int button = key - XK_Pointer_Button1 + Button1;
         if (inrange(button, Button1, Button3)) {
-            if (hasbits(mod, kfAlt | kfCtrl) &&
-                modSuperIsCtrlAlt && xapp->WinMask) {
+            if (supered) {
                 xm[1] = xapp->WinMask | (xm[0] & ~(ControlMask | xapp->AltMask));
             }
             unsigned short mods[8];
@@ -149,7 +151,7 @@ void WMKey::grab(int handle) {
             mods[count++] = xm[k] | xapp->NumLockMask;
             mods[count++] = xm[k] | LockMask | xapp->NumLockMask;
         }
-        if (hasbits(mod, kfAlt | kfCtrl) && modSuperIsCtrlAlt && xapp->WinMask) {
+        if (supered) {
             unsigned short wmod = xm[k];
             wmod &= ~(ControlMask | xapp->AltMask);
             wmod |= xapp->WinMask;
@@ -168,12 +170,26 @@ void WMKey::grab(int handle) {
 }
 
 bool WMKey::operator==(const XKeyEvent& x) const {
-    return (x.keycode == kc[0] && KEY_MODMASK(x.state) == xm[0])
-        || (x.keycode == kc[1] && KEY_MODMASK(x.state) == xm[1]);
+    for (int i = 0; i < 2; ++i) {
+        if (x.keycode == kc[i]) {
+            const unsigned km = KEY_MODMASK(x.state);
+            if (km == xm[i])
+                return true;
+            if (supered && hasbit(km, xapp->WinMask)) {
+                if (((km & ~xapp->WinMask) | ControlMask | xapp->AltMask) == xm[i])
+                    return true;
+            }
+        }
+    }
+    return false;
 }
 
 bool WMKey::operator==(const XButtonEvent& b) const {
-    return (key == b.button - Button1 + XK_Pointer_Button1
-         && mod == desktop->VMod(KEY_MODMASK(b.state)));
+    if (key == b.button - Button1 + XK_Pointer_Button1) {
+        const unsigned km = KEY_MODMASK(b.state);
+        if (km == xm[0] || km == xm[1])
+            return true;
+    }
+    return false;
 }
 

@@ -382,6 +382,9 @@ DesktopFile::DesktopFile(string filePath, const string &langWanted) {
     while (dfile) {
         line.clear();
         std::getline(dfile, line);
+        while (line.empty() == false && line.back() == '\r') {
+            line.pop_back();
+        }
         if (line.empty()) {
             if (dfile.eof())
                 break;

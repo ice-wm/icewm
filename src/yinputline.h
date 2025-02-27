@@ -94,6 +94,8 @@ private:
     bool fHasFocus;
     bool fCursorVisible;
     bool fSelecting;
+    bool fReturnPressed;
+    bool fReturnControl;
     const short fBlinkTime;
     unsigned fKeyPressed;
     YInputListener* fListener;
