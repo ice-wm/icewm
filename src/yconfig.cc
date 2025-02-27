@@ -37,8 +37,12 @@ char *YConfig::getArgument(Argument *dest, char *source, bool comma) {
             ++p;
             *dest += *p;
         }
-        else if (ASCII::isWhiteSpace(*p) || (*p == ',' && comma))
-            break;
+        else if (ASCII::isWhiteSpace(*p) || (*p == ',' && comma)) {
+            if (*p == '\r')
+                continue;
+            else
+                break;
+        }
         else {
             *dest += *p;
         }

@@ -110,13 +110,11 @@ KProgram::~KProgram() {
 class MenuProgSwitchItems: public ISwitchItems {
     MenuProgMenu *menu;
     int zTarget;
-
-    KeySym key;
-    unsigned int mod;
+    const WMKey* wmkey;
 
 public:
-    MenuProgSwitchItems(DProgram* prog, KeySym key, unsigned keymod) :
-        ISwitchItems(), zTarget(0), key(key), mod(keymod) {
+    MenuProgSwitchItems(DProgram* prog, const WMKey* wmkey) :
+        ISwitchItems(), zTarget(0), wmkey(wmkey) {
         menu = new MenuProgMenu(wmapp, wmapp, nullptr /* no wmaction handling*/,
                 "switch popup internal menu", prog->cmd(), prog->args());
     }
@@ -134,13 +132,10 @@ public:
         return menu->itemCount() == 0;
     }
     virtual bool isKey(const XKeyEvent& key) override {
-        KeySym k = xapp->keyCodeToKeySym(key.keycode);
-        unsigned m = KEY_MODMASK(key.state);
-        unsigned mod = desktop->VMod(m);
-        return k == this->key && mod == this->mod;
+        return *wmkey == key;
     }
     unsigned modifiers() override {
-        return mod;
+        return wmkey->mod;
     }
     virtual bool setWMClass(char* wmclass) override {
         if (wmclass) free(wmclass); // unimplemented
@@ -199,7 +194,7 @@ void KProgram::open(unsigned mods) {
 
     if (bIsDynSwitchMenu) {
         if (!pSwitchWindow) {
-            ISwitchItems* items = new MenuProgSwitchItems(fProg, wm.key, wm.mod);
+            ISwitchItems* items = new MenuProgSwitchItems(fProg, &wm);
             pSwitchWindow = new SwitchWindow(desktop, items, quickSwitchVertical);
         }
         pSwitchWindow->begin(true, mods);

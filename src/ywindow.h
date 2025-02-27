@@ -162,7 +162,7 @@ public:
     void setPointer(Cursor pointer);
     void grabKeyM(unsigned key, unsigned modifiers);
     void grabKey(unsigned key, unsigned modifiers);
-    unsigned VMod(unsigned modifiers);
+    static unsigned VMod(unsigned modifiers);
     void grabButtonM(int button, unsigned modifiers);
     void grabButton(int button, unsigned modifiers);
 

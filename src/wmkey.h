@@ -9,16 +9,17 @@ struct WMKey {
     unsigned short mod, xm[2];
     unsigned char kc[2];
     bool initial;
+    bool supered;
 
-    WMKey() : name(""), key(0), mod(0), initial(true) {
+    WMKey() : name(""), key(0), mod(0), initial(true), supered(false) {
         xm[0] = xm[1] = kc[0] = kc[1] = 0;
     }
-    WMKey(char* s) : name(s), key(0), mod(0), initial(false) {
+    WMKey(char* s) : name(s), key(0), mod(0), initial(false), supered(false) {
         xm[0] = xm[1] = kc[0] = kc[1] = 0;
         parse();
     }
     WMKey(unsigned k, unsigned short m, const char* s) :
-        name(s), key(k), mod(m), initial(true) {
+        name(s), key(k), mod(m), initial(true), supered(false) {
         xm[0] = xm[1] = kc[0] = kc[1] = 0;
     }
 
