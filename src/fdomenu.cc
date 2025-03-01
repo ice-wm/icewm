@@ -746,9 +746,10 @@ void MenuNode::print(std::ostream &prt_strm) {
     for (auto &m : sorted) {
         auto &deco = m.pNode->deco;
 
-        prt_strm << indent_hint << "menu \"" << m.translated << "\" "
+        prt_strm << indent_hint
+                 << "menu \"" << m.translated << "\" \""
                  << ((deco && !deco->Icon.empty()) ? deco->Icon : ICON_FOLDER)
-                 << " {\n";
+                 << "\" {\n";
 
         indent_hint += "\t";
         m.pNode->print(prt_strm);
@@ -761,8 +762,10 @@ void MenuNode::print(std::ostream &prt_strm) {
     for (auto &p : sortedApps) {
         auto &pi = p.pAppEntry->deco;
         pi->print_comment(prt_strm)
-            << indent_hint << "prog \"" << p.pAppEntry->TransWithSfx() << "\" "
-            << pi->Icon << " " << pi->GetCommand() << "\n";
+            << indent_hint
+            << "prog \"" << p.pAppEntry->TransWithSfx()
+            << "\" \"" << pi->Icon << "\" "
+            << pi->GetCommand() << "\n";
     }
 }
 
@@ -785,7 +788,7 @@ void MenuNode::print_flat(std::ostream &prt_strm, const string &pfx_before) {
         else
             prt_strm << pfx_before << p.pAppEntry->TransWithSfx();
 
-        prt_strm << "\" " << pi->Icon << " " << pi->GetCommand() << "\n";
+        prt_strm << "\" \"" << pi->Icon << "\" " << pi->GetCommand() << "\n";
     }
 }
 
