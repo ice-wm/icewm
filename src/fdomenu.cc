@@ -268,13 +268,13 @@ class DesktopFile {
     /// Translate with built-in l10n if needed, and cache it
     const string &GetTranslatedName() {
         if (NameLoc.empty() && !Name.empty())
-            NameLoc = gettext(Name.c_str());
+            NameLoc = _(Name.c_str());
         return NameLoc;
     }
 
     const string &GetTranslatedGenericName() {
         if (GenericNameLoc.empty() && !GenericName.empty())
-            GenericNameLoc = gettext(GenericName.c_str());
+            GenericNameLoc = _(GenericName.c_str());
         return GenericNameLoc;
     }
 
@@ -305,7 +305,7 @@ class DesktopFile {
 };
 
 inline string safeTrans(DesktopFilePtr &node, const string &altRaw) {
-    return node ? node->GetTranslatedName() : gettext(altRaw.c_str());
+    return node ? node->GetTranslatedName() : _(altRaw.c_str());
 }
 
 const string &DesktopFile::GetCommand() {
@@ -1111,8 +1111,8 @@ int main(int argc, char **argv) {
 
         // also need to preload gettext (preheat the cache), otherwise the
         // remaining runtime on printing becomes unpredictable
-        b += (strlen(gettext("Audio")) > 1234) +
-             (strlen(gettext("Zarathustra")) > 5678);
+        b += (strlen(_("Audio")) > 1234) +
+             (strlen(_("Zarathustra")) > 5678);
 
         auto now = std::chrono::steady_clock::now();
         deadline_apps = now + std::chrono::milliseconds(a);
