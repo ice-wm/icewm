@@ -859,10 +859,12 @@ void YXApplication::saveEventTime(const XEvent& xev) {
         time = xev.xselection.time;
         break;
     }
-    if (lastEventTime < time ||
-        lastEventTime - time > 30000 ||
-        lastEventTime == CurrentTime)
-        lastEventTime = time;
+    if (time) {
+        if (lastEventTime < time ||
+            lastEventTime - time > 30000 ||
+            lastEventTime == CurrentTime)
+            lastEventTime = time;
+    }
 }
 
 Time YXApplication::getEventTime(const char *) const {
