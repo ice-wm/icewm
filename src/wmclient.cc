@@ -1831,7 +1831,7 @@ bool YFrameClient::getNetWMUserTime(Window window, unsigned long &time) {
     if (!prop.net_wm_user_time && !prop.net_wm_user_time_window)
         return false;
 
-    YProperty prop(this, _XA_NET_WM_USER_TIME, F32, 1, XA_CARDINAL);
+    YProperty prop(window, _XA_NET_WM_USER_TIME, F32, 1, XA_CARDINAL);
     if (prop) {
         MSG(("got user time"));
         time = *prop & 0xffffffff;
