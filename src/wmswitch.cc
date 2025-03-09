@@ -513,16 +513,19 @@ void SwitchWindow::resize(int xiscreen, bool reposition) {
 
     int tWidth = 0;
     if (quickSwitchMaxWidth && switchFont) {
-        int space = (int) switchFont->textWidth(" ");   /* make entries one space character wider */
-        int zCount = zItems->getCount();
+        const int space = int(switchFont->textWidth(" "));
+        const int zCount = zItems->getCount();
         for (int i = 0; i < zCount; i++) {
             mstring title = zItems->getTitle(i);
-            int oWidth = title != null ? (int) switchFont->textWidth(title) + space : 0;
-            if (oWidth > tWidth)
-                tWidth = oWidth;
+            if (title.nonempty()) {
+                int oWidth = (int) switchFont->textWidth(title) + space;
+                if (tWidth < oWidth)
+                    tWidth = oWidth;
+            }
         }
-    } else {
-        tWidth = cTitle != null && switchFont ? switchFont->textWidth(cTitle) : 0;
+    }
+    else if (cTitle.nonempty() && switchFont) {
+        tWidth = switchFont->textWidth(cTitle);
     }
 
     if (m_verticalStyle || !quickSwitchAllIcons)
