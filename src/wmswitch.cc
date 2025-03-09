@@ -602,6 +602,7 @@ void SwitchWindow::paint(Graphics &g, const YRect &/*r*/) {
 
     if (switchBc) {
         g.setColor(switchBc);
+        g.setLineWidth(1);
         g.drawRect(0, 0, width() - 1, height() - 1);
     } else {
         g.setColor(switchBg);
@@ -609,9 +610,9 @@ void SwitchWindow::paint(Graphics &g, const YRect &/*r*/) {
     }
 
     if (fGradient != null)
-        g.drawImage(fGradient, 1, 1, width() - 2, height() - 2, 1, 1);
+        g.drawImage(fGradient, 0, 0, width() - 2, height() - 2, 1, 1);
     else if (switchbackPixmap != null)
-        g.fillPixmap(switchbackPixmap, 1, 1, width() - 3, height() - 3);
+        g.fillPixmap(switchbackPixmap, 1, 1, width() - 2, height() - 2);
     else {
         g.setColor(switchBg);
         g.fillRect(1, 1, width() - 3, height() - 3);
