@@ -3999,6 +3999,13 @@ void YTopWindow::setFrame(YFrameWindow* frame) {
 }
 
 bool YTopWindow::handleKey(const XKeyEvent& key) {
+    if (key.type != KeyPress)
+        return true;
+
+    unsigned ks = keyCodeToKeySym(key.keycode);
+    if (inrange(ks, 0xffe1U, 0xffeeU))
+        return true;
+
     if (key.type == KeyPress &&
         manager->netActiveWindow() == None &&
         fHandle && fFrame &&
