@@ -61,8 +61,7 @@ set(_potFileStamp "${CMAKE_CURRENT_BINARY_DIR}/${PACKAGE}.pot.stamp")
 file (STRINGS "POTFILES.in" SRCS_IN)
 set(SRCS)
 foreach(_src ${SRCS_IN})
-    cmake_path(ABSOLUTE_PATH _src BASE_DIRECTORY ${CMAKE_SOURCE_DIR} NORMALIZE)
-    list(APPEND SRCS ${_src})
+    LIST(APPEND SRCS "${CMAKE_SOURCE_DIR}/${_src}")
 endforeach()
 
 file (STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/LINGUAS" LANGUAGES)
@@ -81,7 +80,7 @@ add_custom_command(OUTPUT "${_potFileStamp}"
     WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
     VERBATIM
 
-    COMMAND ${XGETTEXT_CMD} 
+    COMMAND ${XGETTEXT_CMD}
 
     ${SRC_UPDATE}
 
@@ -123,7 +122,7 @@ foreach(_lang ${LANGUAGES})
     add_custom_target(generate-${_lang}.gmo DEPENDS ${_tempMO})
     add_dependencies(translations generate-${_lang}.gmo)
 
-    # Install user products 
+    # Install user products
     install(FILES ${_tempMO} DESTINATION "${LOCDIR}/${_lang}/LC_MESSAGES/" RENAME "${PACKAGE}.mo" OPTIONAL)
 
     # mimic the content of the installation folder, for development purposes

@@ -513,16 +513,19 @@ void SwitchWindow::resize(int xiscreen, bool reposition) {
 
     int tWidth = 0;
     if (quickSwitchMaxWidth && switchFont) {
-        int space = (int) switchFont->textWidth(" ");   /* make entries one space character wider */
-        int zCount = zItems->getCount();
+        const int space = int(switchFont->textWidth(" "));
+        const int zCount = zItems->getCount();
         for (int i = 0; i < zCount; i++) {
             mstring title = zItems->getTitle(i);
-            int oWidth = title != null ? (int) switchFont->textWidth(title) + space : 0;
-            if (oWidth > tWidth)
-                tWidth = oWidth;
+            if (title.nonempty()) {
+                int oWidth = (int) switchFont->textWidth(title) + space;
+                if (tWidth < oWidth)
+                    tWidth = oWidth;
+            }
         }
-    } else {
-        tWidth = cTitle != null && switchFont ? switchFont->textWidth(cTitle) : 0;
+    }
+    else if (cTitle.nonempty() && switchFont) {
+        tWidth = switchFont->textWidth(cTitle);
     }
 
     if (m_verticalStyle || !quickSwitchAllIcons)
@@ -602,6 +605,7 @@ void SwitchWindow::paint(Graphics &g, const YRect &/*r*/) {
 
     if (switchBc) {
         g.setColor(switchBc);
+        g.setLineWidth(1);
         g.drawRect(0, 0, width() - 1, height() - 1);
     } else {
         g.setColor(switchBg);
@@ -609,9 +613,9 @@ void SwitchWindow::paint(Graphics &g, const YRect &/*r*/) {
     }
 
     if (fGradient != null)
-        g.drawImage(fGradient, 1, 1, width() - 2, height() - 2, 1, 1);
+        g.drawImage(fGradient, 0, 0, width() - 2, height() - 2, 1, 1);
     else if (switchbackPixmap != null)
-        g.fillPixmap(switchbackPixmap, 1, 1, width() - 3, height() - 3);
+        g.fillPixmap(switchbackPixmap, 1, 1, width() - 2, height() - 2);
     else {
         g.setColor(switchBg);
         g.fillRect(1, 1, width() - 3, height() - 3);

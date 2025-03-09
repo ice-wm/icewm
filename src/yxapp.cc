@@ -821,42 +821,49 @@ bool YXApplication::filterEvent(const XEvent &xev) {
     return false;
 }
 
-void YXApplication::saveEventTime(const XEvent &xev) {
+void YXApplication::saveEventTime(const XEvent& xev) {
+    Time time = 0L;
     switch (xev.type) {
     case ButtonPress:
     case ButtonRelease:
-        lastEventTime = xev.xbutton.time;
+        time = xev.xbutton.time;
         break;
 
     case MotionNotify:
-        lastEventTime = xev.xmotion.time;
+        time = xev.xmotion.time;
         break;
 
     case KeyPress:
     case KeyRelease:
-        lastEventTime = xev.xkey.time;
+        time = xev.xkey.time;
         break;
 
     case EnterNotify:
     case LeaveNotify:
-        lastEventTime = xev.xcrossing.time;
+        time = xev.xcrossing.time;
         break;
 
     case PropertyNotify:
-        lastEventTime = xev.xproperty.time;
+        time = xev.xproperty.time;
         break;
 
     case SelectionClear:
-        lastEventTime = xev.xselectionclear.time;
+        time = xev.xselectionclear.time;
         break;
 
     case SelectionRequest:
-        lastEventTime = xev.xselectionrequest.time;
+        time = xev.xselectionrequest.time;
         break;
 
     case SelectionNotify:
-        lastEventTime = xev.xselection.time;
+        time = xev.xselection.time;
         break;
+    }
+    if (time) {
+        if (lastEventTime < time ||
+            lastEventTime - time > 30000 ||
+            lastEventTime == CurrentTime)
+            lastEventTime = time;
     }
 }
 
