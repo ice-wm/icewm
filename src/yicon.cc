@@ -40,13 +40,19 @@ YIcon::YIcon(ref<YImage> small, ref<YImage> large, ref<YImage> huge) :
 YIcon::~YIcon() {
 }
 
-static const char iconExts[][5] = {
-    ".png",
-    ".xpm",
-#ifdef ICE_SUPPORT_SVG
-    ".svg",
+bool YIcon::fSupportSVG;
+bool YIcon::fExamineSVG;
+bool YIcon::supportSVG() {
+    if (fExamineSVG == false) {
+        fExamineSVG = true;
+#if ICE_SUPPORT_SVG
+        fSupportSVG = true;
+#else
+        fSupportSVG = YImage::supportsFormat("svg");
 #endif
-};
+    }
+    return fSupportSVG;
+}
 
 static const char subcats[][12] = {
     "actions", "apps", "categories",
@@ -61,15 +67,12 @@ static const char subcats[][12] = {
     "legacy",
 };
 
-static bool hasImageExtension(const upath& base) {
-    auto baseExt(base.getExtension());
-    if (baseExt.length() != 4)
+static bool hasImageExtension(mstring base) {
+    if (base.length() <= 4)
         return false;
-    for (auto& pe : iconExts) {
-        if (baseExt.equals(pe, 4))
-            return true;
-    }
-    return false;
+    mstring ext(base.substring(base.length() - 4));
+    return ext == ".png" || ext == ".xpm" ||
+           (YIcon::supportSVG() && ext == ".svg");
 }
 
 class UniqueSizes {
@@ -84,11 +87,9 @@ public:
             + 128
             + 64
             + 32
-
-#ifdef ICE_SUPPORT_SVG
-            + SCALABLE
-#endif
             ;
+        if (YIcon::supportSVG())
+            seen[last++] = SCALABLE;
     }
     bool have(unsigned size) {
         for (unsigned k : *this)
@@ -222,15 +223,15 @@ private:
         for (const char* entry : entries) {
             // try the scalable version if it can handle SVG
             if (strcmp(entry, "scalable") == 0) {
-#ifdef ICE_SUPPORT_SVG
-                auto& scaleCat = pools[fromResources].getCat(SCALABLE);
-                for (const char* sub : subcats) {
-                    mstring path(iconPathToken, "/scalable/", sub);
-                    if (upath(path).dirExists()) {
-                        ret += addPath(path, scaleCat);
+                if (YIcon::supportSVG()) {
+                    auto& scaleCat = pools[fromResources].getCat(SCALABLE);
+                    for (const char* sub : subcats) {
+                        mstring path(iconPathToken, "/scalable/", sub);
+                        if (upath(path).dirExists()) {
+                            ret += addPath(path, scaleCat);
+                        }
                     }
                 }
-#endif
             }
             else if (strcmp(entry, "base") == 0) {
                 mstring basePath(iconPathToken + "/base");
@@ -404,10 +405,12 @@ public:
                 mstring szSize(size);
                 basePath = mstring(basePath, "_", szSize, "x", szSize);
             }
-            for (auto& imgExt : iconExts) {
-                if (checkFile(basePath + imgExt))
-                    return true;
-            }
+            if (checkFile(basePath + ".png"))
+                return true;
+            if (checkFile(basePath + ".xpm"))
+                return true;
+            if (YIcon::supportSVG() && checkFile(basePath + ".svg"))
+                return true;
             return false;
         };
         auto checkFilesInFolder = [&](const mstring& dirPath, unsigned size,
@@ -503,16 +506,17 @@ ref<YImage> YIcon::loadIcon(unsigned size) {
             loadPath = findIcon(size);
         }
         if (loadPath != null) {
-            mstring cs(loadPath.path());
-            YTraceIcon trace(cs);
-
-#ifdef ICE_SUPPORT_SVG
-            mstring ext(loadPath.getExtension().lower());
-            if (ext == ".svg")
-                icon = YImage::loadsvg(cs);
-            else
+            YTraceIcon trace(loadPath.string());
+            if (loadPath.getExtension().lower() == ".svg") {
+#if ICE_SUPPORT_SVG
+                icon = YImage::loadsvg(loadPath);
+#else
+                if (supportSVG())
+                    icon = YImage::load(loadPath);
 #endif
-                icon = YImage::load(cs);
+            }
+            else
+                icon = YImage::load(loadPath);
         }
         else if (XDBG || YTrace::traces("icon")) {
             tlog("icon not found: %s %ux%u", fPath.string(), size, size);

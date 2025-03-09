@@ -320,6 +320,7 @@ public:
 
     const DesktopLayout& layout() const { return fLayout; }
     bool handleSwitchWorkspaceKey(const XKeyEvent& key);
+    bool handleWMKey(const XKeyEvent &key);
 
     int getSwitchScreen();
     bool switchWindowVisible() const;
@@ -340,8 +341,8 @@ private:
     YFrameClient* allocateClient(Window win, bool mapClient);
     YFrameWindow* allocateFrame(YFrameClient* client);
     void updateArea(int workspace, int screen_number, int l, int t, int r, int b);
-    bool handleWMKey(const XKeyEvent &key);
     void setWmState(WMState newWmState);
+    void updateServerTime(YFrameWindow* frame);
     void refresh();
 
     IApp *app;

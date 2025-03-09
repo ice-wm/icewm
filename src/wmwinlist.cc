@@ -401,6 +401,7 @@ WindowList::WindowList(YWindow *aParent):
     list(new WindowListBox(scroll, scroll))
 {
     addStyle(wsNoExpose);
+    setToplevel(true);
 
     if (listbackPixmap != null) {
         scroll->setBackgroundPixmap(listbackPixmap);
@@ -536,12 +537,9 @@ void WindowList::updateWorkspaces() {
 }
 
 void WindowList::handleFocus(const XFocusChangeEvent &focus) {
-    if (focus.type == FocusIn && focus.mode != NotifyUngrab) {
-        if (width() > 1 && height() > 1 && !getFrame()->isUnmapped()) {
-            list->setInputFocus("windowList");
-        }
-    } else if (focus.type == FocusOut) {
-    }
+    YWindow::handleFocus(focus);
+    if (focused())
+        setFocus(list);
 }
 
 void WindowList::relayout() {

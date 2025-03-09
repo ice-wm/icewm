@@ -1083,33 +1083,13 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
                     fFocusWin->isRollup());
     if (w) {
         if (f->getInputFocusHint()) {
-            // update our server time from property events
-            Window ws[2] = { handle(), f->client()->handle() };
-            xapp->sync();
-            Time tim = xapp->getEventTime("");
-            for (Window win : ws) {
-                XEvent evt;
-                while (XCheckTypedWindowEvent(xapp->display(), win,
-                                              PropertyNotify, &evt)) {
-                    if (evt.type == PropertyNotify) {
-                        if (tim < evt.xproperty.time) {
-                            tim = evt.xproperty.time;
-                            xapp->saveEventTime(evt);
-                        }
-                        if (evt.xproperty.window == ws[0]) {
-                            handleProperty(evt.xproperty);
-                        }
-                        else if (evt.xproperty.window == ws[1]) {
-                            f->client()->handleProperty(evt.xproperty);
-                        }
-                    }
-                }
-            }
+            updateServerTime(f);
             w->setInputFocus("wmSetFocus");
             focusUnset = false;
         }
     }
     if (w == nullptr || focusUnset) {
+        updateServerTime(f);
         fTopWin->setInputFocus("topWindow");
         notifyActive(nullptr);
         fTopWin->setFrame(f);
@@ -1152,6 +1132,33 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
     }
 
     MSG(("SET FOCUS END"));
+}
+
+void YWindowManager::updateServerTime(YFrameWindow* frame) {
+    // Update our notion of the X server time from recent property events.
+    Window windows[2] = { handle(), frame ? frame->client()->handle() : None };
+    xapp->sync();
+    Time tim = xapp->getEventTime("updateServerTime");
+    for (Window win : windows) {
+        if (win) {
+            XEvent evt;
+            while (XCheckTypedWindowEvent(xapp->display(), win,
+                                          PropertyNotify, &evt)) {
+                if (evt.type == PropertyNotify) {
+                    if (tim < evt.xproperty.time) {
+                        tim = evt.xproperty.time;
+                        xapp->saveEventTime(evt);
+                    }
+                    if (evt.xproperty.window == windows[0]) {
+                        handleProperty(evt.xproperty);
+                    }
+                    else if (frame && evt.xproperty.window == windows[1]) {
+                        frame->client()->handleProperty(evt.xproperty);
+                    }
+                }
+            }
+        }
+    }
 }
 
 YFrameWindow *YWindowManager::top(int layer) const {
@@ -3992,6 +3999,13 @@ void YTopWindow::setFrame(YFrameWindow* frame) {
 }
 
 bool YTopWindow::handleKey(const XKeyEvent& key) {
+    if (key.type != KeyPress)
+        return true;
+
+    unsigned ks = keyCodeToKeySym(key.keycode);
+    if (inrange(ks, 0xffe1U, 0xffeeU))
+        return true;
+
     if (key.type == KeyPress &&
         manager->netActiveWindow() == None &&
         fHandle && fFrame &&

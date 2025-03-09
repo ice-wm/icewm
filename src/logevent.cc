@@ -234,7 +234,7 @@ void logGravity(const XGravityEvent& xev) {
 }
 
 void logKey(const XKeyEvent& xev) {
-    tlog("window=0x%lX: %s root=0x%lX, subwindow=0x%lX, time=%ld, (%d:%d %d:%d) state=0x%X keycode=0x%x same_screen=%s",
+    tlog("window=0x%lX: %s root=0x%lX, subwindow=0x%lX, time=%ld, (%d:%d %d:%d) state=0x%X keycode=%d same_screen=%s",
         xev.window,
         eventName(xev.type),
         xev.root,

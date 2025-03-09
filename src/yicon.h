@@ -28,6 +28,7 @@ public:
 
     bool draw(Graphics &g, int x, int y, int size);
     upath findIcon(unsigned size);
+    static bool supportSVG();
 
 #ifdef SUPPORT_XDG_ICON_TYPE_CATEGORIES
     enum /* class... or better not, simplify! */ TypeFilter {
@@ -59,6 +60,9 @@ private:
     void removeFromCache();
     static int cacheFind(upath name);
     ref<YImage> loadIcon(unsigned size);
+
+    static bool fSupportSVG;
+    static bool fExamineSVG;
 };
 
 #endif
