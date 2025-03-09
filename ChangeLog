@@ -1,5 +1,210 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit f855e1d42780aa18027a5dc4915eab48037913d8
+Merge: b00baedb 196bd412
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 9 22:17:24 2025 +0100
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 196bd412e331758fecbd363fccea1b58afa1c5f5
+Merge: 5ac0a3c5 1b9c9796
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 9 22:17:05 2025 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 1b9c9796e8409eb7598848997f1f7825565310d5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 9 20:33:57 2025 +0100
+
+    Remove the incompatible cmake_path from the po CMakefile.
+
+ po/CMakeLists.txt | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+commit adaf56274d3783b3a0426a93f93d334ab1b6c3d9
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 9 20:20:26 2025 +0100
+
+    Ignore key releases and modifier presses in the top window key handler.
+
+ src/wmmgr.cc | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 2c48d831c8e95fadb410ac0fa36b1c9638a5f864
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 9 20:18:01 2025 +0100
+
+    Improve readability in SwitchWindow::resize.
+
+ src/wmswitch.cc | 17 ++++++++++-------
+ 1 file changed, 10 insertions(+), 7 deletions(-)
+
+commit 86fdf3e892e74843555b1930eb5489b491872cc0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 9 20:15:16 2025 +0100
+
+    Log the keycode as a decimal.
+
+ src/logevent.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9c8681864ed923d32f9df1946fd1a5cfaa405440
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 9 16:47:27 2025 +0100
+
+    Fix off-by-one errors in the QuickSwitch bottom right border for
+    ice-wm/icewm#174.
+
+ src/wmswitch.cc | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 0499fce909d12d373996707b123acfddfccbc375
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 8 18:00:41 2025 +0100
+
+    Use the window handle when retrieving the user time.
+
+ src/wmclient.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2462a64c7fe67030800234e3a9dc7b3d8cd6c46e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Mar 5 23:08:41 2025 +0100
+
+    Add updateServerTime to class declaration in header.
+
+ src/wmmgr.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit fbfde759caed859a48b883434971fa1b92baff52
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Mar 5 23:00:10 2025 +0100
+
+    Only save event time when it is non-zero.
+
+ src/yxapp.cc | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit 8ff9ec50c2cc4526f44874b6b7551d6f32a2b41b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Mar 5 21:50:39 2025 +0100
+
+    Try not to go backwards in our notion of the X server time.
+
+ src/yxapp.cc | 23 ++++++++++++++---------
+ 1 file changed, 14 insertions(+), 9 deletions(-)
+
+commit d4a069f3dffd40fa52b135436a681eae13f26759
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Mar 5 20:58:46 2025 +0100
+
+    Also update the server time before setting focus to the topWindow.
+
+ src/wmmgr.cc | 51 +++++++++++++++++++++++++++++----------------------
+ 1 file changed, 29 insertions(+), 22 deletions(-)
+
+commit 37abcc2dc2636948d1878ec565c0066f09d2168f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Mar 5 20:55:44 2025 +0100
+
+    Fix compiling without internationalization for icewm-menu-fdo.
+
+ src/fdomenu.cc | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 0f871d4345e31904494c007b7b55faf942403360
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 2 19:41:33 2025 +0100
+
+    Mark the WindowList as a toplevel and redirect its input to the listbox.
+
+ src/wmwinlist.cc | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+commit 0b9fc52c7fd8a0980044268dd09b147f6b3a485d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 1 22:47:58 2025 +0100
+
+    Also support SVG icons when the image library supports it natively.
+
+ src/yicon.cc | 80 +++++++++++++++++++++++++++++---------------------------
+ src/yicon.h  |  4 +++
+ 2 files changed, 46 insertions(+), 38 deletions(-)
+
+commit 74bb0a2989127a3ff87d2932ff547713bc710cfe
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 1 18:08:59 2025 +0100
+
+    Always print icons double-quoted for issue #794.
+
+ src/fdomenu.cc | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+commit b00baedbda6f637575eba3d393d2bb9a9d96fd40
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Feb 27 23:34:03 2025 +0100
+
+    Prepare 3.7.1 release
+
+ AUTHORS      |   4 +-
+ ChangeLog    | 286 +++++++++++++++++++++++++++----------------------------
+ NEWS         |  55 ++++++-----
+ README.md    |  16 ++--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  60 ++++++------
+ po/ast.po    |  60 ++++++------
+ po/be.po     |  60 ++++++------
+ po/bg.po     |  60 ++++++------
+ po/ca.po     |  60 ++++++------
+ po/cs.po     |  60 ++++++------
+ po/da.po     |  60 ++++++------
+ po/de.po     |  60 ++++++------
+ po/el.po     |  60 ++++++------
+ po/en.po     |  60 ++++++------
+ po/eo.po     |  60 ++++++------
+ po/es.po     |  60 ++++++------
+ po/fa.po     |  60 ++++++------
+ po/fi.po     |  60 ++++++------
+ po/fr.po     |  60 ++++++------
+ po/he.po     |  60 ++++++------
+ po/hi.po     |  60 ++++++------
+ po/hr.po     |  60 ++++++------
+ po/hu.po     |  60 ++++++------
+ po/icewm.pot |  62 ++++++------
+ po/id.po     |  60 ++++++------
+ po/ie.po     |  60 ++++++------
+ po/it.po     |  60 ++++++------
+ po/ja.po     |  60 ++++++------
+ po/ka.po     |  64 ++++++-------
+ po/kk.po     |  60 ++++++------
+ po/ko.po     |  60 ++++++------
+ po/lt.po     |  60 ++++++------
+ po/lv.po     |  60 ++++++------
+ po/mk.po     |  60 ++++++------
+ po/nb.po     |  60 ++++++------
+ po/nl.po     |  60 ++++++------
+ po/nn.po     |  60 ++++++------
+ po/no.po     |  60 ++++++------
+ po/pl.po     |  60 ++++++------
+ po/pt.po     |  60 ++++++------
+ po/pt_BR.po  |  60 ++++++------
+ po/ro.po     |  60 ++++++------
+ po/ru.po     |  60 ++++++------
+ po/sk.po     |  60 ++++++------
+ po/sl.po     |  60 ++++++------
+ po/sv.po     |  60 ++++++------
+ po/tr.po     |  60 ++++++------
+ po/uk.po     |  60 ++++++------
+ po/vi.po     |  60 ++++++------
+ po/zh_CN.po  |  60 ++++++------
+ po/zh_TW.po  |  60 ++++++------
+ 54 files changed, 1597 insertions(+), 1604 deletions(-)
+
 commit 2baa0096631ebad54efd287b83d2513191fece9b
 Merge: 55c2ed5f 5ac0a3c5
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5765,224 +5970,3 @@ Date:   Wed May 10 12:55:06 2023 +0200
 
  lib/menu.in | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 80ab66b1bbb2d7fbc47929daec462fe5a46ed1ac
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon May 8 22:37:54 2023 +0200
-
-    Report when icon could not be found for issue ice-wm/icewm#133.
-
- src/debug.h    | 4 ++--
- src/icetray.cc | 2 +-
- src/yicon.cc   | 4 ++--
- 3 files changed, 5 insertions(+), 5 deletions(-)
-
-commit fd02e721ae6202ddb14620c6af0b1edb2c37b5a0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon May 8 18:30:59 2023 +0200
-
-    An Escape key release event must match the key press event for #726.
-
- src/aaddressbar.cc |  4 +++-
- src/aaddressbar.h  |  1 +
- src/wmswitch.cc    |  4 +++-
- src/wmswitch.h     |  1 +
- src/wmwinlist.cc   |  6 ++++--
- src/wmwinlist.h    |  3 +++
- src/ydialog.cc     | 12 ++++++++----
- src/ydialog.h      |  1 +
- src/yinputline.cc  |  4 +++-
- src/yinputline.h   |  1 +
- src/ymenu.cc       |  4 +++-
- src/ymenu.h        |  1 +
- 12 files changed, 32 insertions(+), 10 deletions(-)
-
-commit 725e7a5cd3fa481e606ff2359f7066c916351173
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 7 20:23:20 2023 +0200
-
-    Mention the hash-bang in the startup file.
-
- man/icewm-startup.pod | 2 ++
- 1 file changed, 2 insertions(+)
-
-commit 2f2afd96d715761458f4ce9693c3c5c77053ca54
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun May 7 20:19:09 2023 +0200
-
-    Lookup icons in more context directories for issue ice-wm/icewm#132.
-
- src/yicon.cc     | 22 ++++++++++------------
- src/ymenuitem.cc |  3 +--
- 2 files changed, 11 insertions(+), 14 deletions(-)
-
-commit dd1adb39b80cb925a2752008fd854501c5fe8f6c
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Wed May 3 19:38:09 2023 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (525 of 525 strings)
-
- po/pt.po | 12 ++++--------
- 1 file changed, 4 insertions(+), 8 deletions(-)
-
-commit c638cd1a5bd1f7602d59991f5bbe487f9eea4a00
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 3 12:41:08 2023 +0200
-
-    Prepare 3.3.4 release
-
- AUTHORS      |  13 +-
- ChangeLog    | 804 +++++++++++++++++++++++++------------------------------
- NEWS         |  99 ++++---
- README.md    |  38 +--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  68 ++---
- po/be.po     |  68 ++---
- po/bg.po     |  68 ++---
- po/ca.po     |  68 ++---
- po/cs.po     |  68 ++---
- po/da.po     |  68 ++---
- po/de.po     |  68 ++---
- po/el.po     |  68 ++---
- po/en.po     |  68 ++---
- po/es.po     |  68 ++---
- po/fi.po     |  68 ++---
- po/fr.po     | 108 ++++----
- po/he.po     |  68 ++---
- po/hr.po     |  68 ++---
- po/hu.po     |  68 ++---
- po/icewm.pot |  70 ++---
- po/id.po     |  68 ++---
- po/it.po     |  68 ++---
- po/ja.po     |  68 ++---
- po/ko.po     |  68 ++---
- po/lt.po     |  68 ++---
- po/lv.po     |  68 ++---
- po/mk.po     |  68 ++---
- po/nb.po     |  68 ++---
- po/nl.po     |  68 ++---
- po/no.po     |  68 ++---
- po/pl.po     |  68 ++---
- po/pt.po     |  68 ++---
- po/pt_BR.po  |  76 +++---
- po/ro.po     |  68 ++---
- po/ru.po     |  84 +++---
- po/sk.po     |  68 ++---
- po/sl.po     |  68 ++---
- po/sv.po     |  84 +++---
- po/tr.po     |  80 +++---
- po/uk.po     |  68 ++---
- po/vi.po     |  68 ++---
- po/zh_CN.po  |  68 ++---
- po/zh_TW.po  |  68 ++---
- 46 files changed, 1829 insertions(+), 1885 deletions(-)
-
-commit 4e4f6603618316a76dfc3c62e03cf5a3a9fa784c
-Merge: 1bef488a 87db7791
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 3 12:38:56 2023 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 87db7791b3db1479001b10b7de587c350edd0cfe
-Merge: 8ada50ff f9149e62
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 3 12:38:05 2023 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit f9149e621694acda21adb3292decde627e9eea9e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 2 23:13:33 2023 +0200
-
-    When managing a new client, postpone sending a Configure event until
-    the final position is known, for issue #720.
-
- src/decorate.cc | 3 ++-
- src/wmframe.cc  | 9 ++++++++-
- src/wmframe.h   | 4 ++--
- 3 files changed, 12 insertions(+), 4 deletions(-)
-
-commit 885953d0ffdad031d4ebf68863c41d3a8fa3410a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 30 21:44:16 2023 +0200
-
-    Revert "Fix compile error for yximage.cc." 30bd4f5
-
- src/yximage.cc | 4 ----
- 1 file changed, 4 deletions(-)
-
-commit 794875889f18b27ae9a90ad1fc3d808c1ac2519a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 30 10:06:40 2023 +0200
-
-    Support icesh "focusmodel" for client windows without a WM_HINTS property.
-
- src/icesh.cc | 27 ++++++++++++++-------------
- 1 file changed, 14 insertions(+), 13 deletions(-)
-
-commit 59539385d029184227e0eccefe3c8efd706913ff
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 29 06:53:21 2023 +0200
-
-    Let configure on OpenBSD test for -liconv in EXTRA_LIBS.
-
- configure.ac | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit 8206ae0cec4ed2d8e89b6b544ba535adc41c1cc9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 29 06:49:52 2023 +0200
-
-    Let icesh report up to 1024 bytes of a property in "prop".
-
- src/icesh.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 278bc29d2bbc8fddf78bbfda39be67351491f41d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Apr 29 06:46:33 2023 +0200
-
-    Turkish translation of .desktop files and closes #716.
-
- lib/icewm-session.desktop | 2 ++
- lib/icewm.desktop         | 2 ++
- 2 files changed, 4 insertions(+)
-
-commit 7fa72b6db815b264395ef36ca01bb9d9b4713270
-Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
-Date:   Wed Apr 26 23:54:34 2023 +0000
-
-    Translated using Weblate (Portuguese (Brazil))
-
-    Currently translated at 100.0% (525 of 525 strings)
-
- po/pt_BR.po | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
-
-commit f9277940bd80261b944bbacc8332bbd3431221be
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Apr 24 21:31:52 2023 +0200
-
-    Cache toolbar button gradients to speedup drawing.  Eliminate half of
-    the button drawings on startup.
-
- src/objbar.cc    |  9 +++------
- src/objbutton.cc | 30 ++++++++++++++++++++++++++++--
- src/objbutton.h  | 15 ++++++++++-----
- src/wmtaskbar.cc |  6 +++++-
- 4 files changed, 46 insertions(+), 14 deletions(-)
-
-commit 031cdf6a87d66a9bb3d07b5390bff8edec1b61f8
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Apr 23 18:46:26 2023 +0200
-
-    Guard against workspace button gradient being undefined.
-
- src/aworkspaces.cc | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)

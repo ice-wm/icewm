@@ -1,11 +1,34 @@
-icewm -- history of user-visible changes.  2025-02-27
+icewm -- history of user-visible changes.  2025-03-09
+
+Release icewm-3.7.2 released 2025-03-09
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.1...3.7.2
+
+Bert Gijsbers <gijsbers@science.uva.nl> (14):
+      Always print icons double-quoted for issue #794.
+      Also support SVG icons when the image library supports it natively.
+      Mark the WindowList as a toplevel and redirect its input to the listbox.
+      Fix compiling without internationalization for icewm-menu-fdo.
+      Also update the server time before setting focus to the topWindow.
+      Try not to go backwards in our notion of the X server time.
+      Only save event time when it is non-zero.
+      Add updateServerTime to class declaration in header.
+      Use the window handle when retrieving the user time.
+      Fix off-by-one errors in the QuickSwitch bottom right border for
+        ice-wm/icewm#174.
+      Log the keycode as a decimal.
+      Improve readability in SwitchWindow::resize.
+      Ignore key releases and modifier presses in the top window key handler.
+      Remove the incompatible cmake_path from the po CMakefile.
+
 
 Release icewm-3.7.1 released 2025-02-27
 ---------------------------------------
 
 git shortlog --no-merges -e -n -w80,6,8 3.7.0...3.7.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (10):
+Bert Gijsbers <gijsbers@science.uva.nl> (11):
       Link against NLS libs for icewm-menu-fdo and closes ice-wm/icewm#185.
       Fix broken modSuperIsCtrlAlt for issue #791.
       Simplify key handling in MenuProgSwitchItems.
@@ -19,6 +42,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (10):
       Improve focusing xterms by first updating our notion of the server time
         from xproperty events for issue ice-wm/icewm#188.
       Update the event time strictly increasing.
+      Prepare 3.7.1 release
 
 Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
       Translated using Weblate (Georgian)
@@ -438,62 +462,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (3):
       Support more international keyboard layouts for issue #768.
       detail
       Prepare 3.4.7 release
-
-
-Release icewm-3.4.6 released 2024-03-07
----------------------------------------
-
-git shortlog --no-merges -e -n -w80,6,8 3.4.5...3.4.6
-
-Bert Gijsbers <gijsbers@science.uva.nl> (20):
-      Add shutdown command for BSD and closes #761.
-      In DEBUG mode, guard against nullptr focus.
-      Fix icewmbg centering when the XRender extension is used.
-      Force the taskbar on the XineramaPrimaryScreen for issue ice-wm/icewm#157.
-      Revert "Force taskbar on XineramaPrimaryScreen"
-        617b375b79b54602f0848ceff6a654dc7c5b0204.
-      Delay the allocation of the taskbar frame until after the layout.
-      Expand tilde and HOME in IconPath for issue 766.
-      Fix typo dx to dy in menu focusItem.
-      When positioning a menu, include the vertical screen offset.
-      Include the Xinerama and RandR preferences in icewmbg.
-      Explain that keys button bidings only work over the root window.
-      Remove the static window gravity from the taskbar collapse button.
-      succinct
-      When undoing an arrange or showing the desktop, focus the last focused
-        window instead of the topmost window.
-      Prevent the RandR options from being set by a theme in icewmbg.
-      Document the --verbose option to icewmbg.
-      Let icewmbg log the image path when verbose is true.
-      Avoid updating the desktop background image twice in succession.
-      Always pass first mouse click to icewm internal windows for issue #768.
-      Prepare 3.4.6 release
-
-Grace Yu <grace.yu@excel-gits.com> (2):
-      Translated using Weblate (Chinese (China) (zh_CN))
-      Translated using Weblate (Chinese (Taiwan) (zh_TW))
-
-Antonio Simón <antonio@trans-mission.com> (1):
-      Translated using Weblate (Spanish)
-
-Arnold Marko <atomicmind@yahoo.com> (1):
-      Translated using Weblate (Slovenian)
-
-Davide Aiello <davide.aiello@novilingulists.com> (1):
-      Translated using Weblate (Italian)
-
-Eduard Bloch <blade@debian.org> (1):
-      Fix dependency of msgmerge command
-
-Foo Bar <foobarcc@segfault.net> (1):
-      Translated using Weblate (Chinese (China) (zh_CN))
-
-Gemineo <vistatec@gemineo.de> (1):
-      Translated using Weblate (German)
-
-Sophie Leroy <sophie@stoquart.com> (1):
-      Translated using Weblate (French)
-
-Vik On <4o3lxdc1y@mozmail.com> (1):
-      Translated using Weblate (Russian)
 
