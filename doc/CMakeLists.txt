@@ -1,6 +1,3 @@
-cmake_minimum_required(VERSION 3.5)
-PROJECT(ICEWM CXX)
-
 #
 # The list of files which need to be converted to HTML.
 #
