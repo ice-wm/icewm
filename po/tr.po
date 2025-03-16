@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: IceWM 1.2.12\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2024-10-07 06:40+0000\n"
+"PO-Revision-Date: 2025-03-16 10:56+0000\n"
 "Last-Translator: Mehmet Akif 9oglu <madanadam@gmail.com>\n"
-"Language-Team: Turkish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/tr/>\n"
+"Language-Team: Turkish <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.10.3\n"
 
 #: src/aapm.cc:113
 #, c-format
@@ -2117,7 +2117,7 @@ msgstr "O_turum kapatmayı iptal et"
 
 #: src/wmapp.cc:523
 msgid "Lock _Workstation"
-msgstr "_Bilgisayarı Kilitle"
+msgstr "Bilgisayarı _Kilitle"
 
 #: src/wmapp.cc:525 src/wmdialog.cc:89
 msgid "Re_boot"
