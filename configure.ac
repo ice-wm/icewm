@@ -2,10 +2,10 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([icewm],[3.6.0],
+AC_INIT([icewm],[3.7.2],
         [https://github.com/bbidulock/icewm/issues],
         [icewm],[https://ice-wm.org])
-AC_REVISION([3.6.0])
+AC_REVISION([3.7.2])
 
 # set better defaults
 AC_PREFIX_DEFAULT([/usr])
@@ -22,13 +22,13 @@ AC_CONFIG_AUX_DIR([scripts])
 AC_USE_SYSTEM_EXTENSIONS
 AC_CANONICAL_TARGET
 
-DATE='2024-06-16'
+DATE='2025-03-09'
 AC_SUBST([DATE])
 
-MDOCDATE='June 16, 2024'
+MDOCDATE='March 9, 2025'
 AC_SUBST([MDOCDATE])
 
-BRANCH='icewm-1-4-BRANCH'
+BRANCH='3.7.2'
 AC_SUBST([BRANCH])
 
 APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icehelp'
@@ -296,6 +296,9 @@ for iface in `echo "$with_icesound"|sed 's|,| |g'` ; do
             CONFIG_OSS=yes; audio_support=$iface; break],
             [AC_MSG_WARN([OSS is not supported])])
         ;;
+    (no)
+        true
+        ;;
     (*)
         AC_MSG_WARN([Invalid audio interface: $iface])
         ;;
@@ -308,7 +311,11 @@ then
     BUILD_SOUND=yes
     APPLICATIONS="${APPLICATIONS} icesound"
 else
-    AC_MSG_WARN([No valid sound interface, not building icesound.])
+    audio_support=no
+    if test "x$with_icesound" != "xno"
+    then
+        AC_MSG_WARN([No valid sound interface, not building icesound.])
+    fi
 fi
 
 AC_SUBST([AUDIO_CFLAGS])
@@ -348,7 +355,7 @@ fi
 AC_SUBST([GIO_CFLAGS])
 AC_SUBST([GIO_LIBS])
 
-AC_ARG_ENABLE([rsvg],
+AC_ARG_ENABLE([librsvg],
     AS_HELP_STRING([--disable-librsvg],[Disable SVG using librsvg.]))
 AC_ARG_ENABLE([imlib2],
     AS_HELP_STRING([--disable-imlib2],[Disable imlib2 rendering.
