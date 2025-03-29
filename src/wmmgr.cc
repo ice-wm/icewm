@@ -26,6 +26,7 @@
 #include "yxcontext.h"
 #include "workspaces.h"
 #include "ystring.h"
+#include "keysyms.h"
 #include "intl.h"
 #include "ywordexp.h"
 
@@ -85,7 +86,6 @@ YWindowManager::YWindowManager(
     fLastWorkspace = WinWorkspaceInvalid;
     fArrangeCount = 0;
     fArrangeInfo = nullptr;
-    rootProxy = nullptr;
     fWorkArea = nullptr;
     fWorkAreaWorkspaceCount = 0;
     fWorkAreaScreenCount = 0;
@@ -119,13 +119,13 @@ YWindowManager::YWindowManager(
 
     fTopWin = new YTopWindow();
     fTopWin->setStyle(wsOverrideRedirect | wsInputOnly);
-    fTopWin->setGeometry(YRect(-1, -1, 1, 1));
+    fTopWin->setPosition(-1, -1);
     fTopWin->setTitle("IceTopWin");
     fTopWin->show();
 
     fBottom = new YWindow();
     fBottom->setStyle(wsOverrideRedirect | wsInputOnly);
-    fBottom->setGeometry(YRect(-1, -1, 1, 1));
+    fBottom->setPosition(-1, -1);
     fBottom->setTitle("IceBottom");
 
     if (edgeHorzWorkspaceSwitching) {
@@ -147,7 +147,6 @@ YWindowManager::~YWindowManager() {
     }
     delete fTopWin;
     delete fBottom;
-    delete rootProxy;
     delete fSwitchWindow;
     delete fDockApp;
     if (manager == this)
@@ -278,23 +277,6 @@ void YWindowManager::grabKeys() {
 
     for (YFrameWindow *ff = topLayer(); ff; ff = ff->nextLayer()) {
         ff->grabKeys();
-    }
-}
-
-YProxyWindow::YProxyWindow(YWindow *parent): YWindow(parent) {
-    setStyle(wsOverrideRedirect);
-    setTitle("IceRootProxy");
-}
-
-YProxyWindow::~YProxyWindow() {
-}
-
-void YProxyWindow::handleButton(const XButtonEvent &/*button*/) {
-}
-
-void YWindowManager::setupRootProxy() {
-    if (grabRootWindow) {
-        rootProxy = new YProxyWindow(nullptr);
     }
 }
 
@@ -636,17 +618,11 @@ bool YWindowManager::handleKey(const XKeyEvent &key) {
 }
 
 void YWindowManager::handleButton(const XButtonEvent &button) {
-    if (rootProxy && button.window == handle() &&
-        notbit(useRootButtons, 1 << (button.button - Button1)) &&
+    if (notbit(useRootButtons, 1 << (button.button - Button1)) &&
         !hasbits(button.state, (ControlMask | xapp->AltMask)))
     {
         if (button.send_event == False)
             XUngrabPointer(xapp->display(), CurrentTime);
-        XSendEvent(xapp->display(),
-                   rootProxy->handle(),
-                   False,
-                   SubstructureNotifyMask,
-                   (XEvent *) &button);
         return ;
     }
 
@@ -1089,10 +1065,15 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
         }
     }
     if (w == nullptr || focusUnset) {
-        updateServerTime(f);
-        fTopWin->setInputFocus("topWindow");
-        notifyActive(nullptr);
-        fTopWin->setFrame(f);
+        Window input = None;
+        int revert = RevertToNone;
+        XGetInputFocus(xapp->display(), &input, &revert);
+        if (input != fTopWin->handle()) {
+            updateServerTime(f);
+            fTopWin->setInputFocus("topWindow");
+            notifyActive(nullptr);
+            fTopWin->setFrame(f);
+        }
     } else {
         fTopWin->setFrame(nullptr);
     }
@@ -1269,7 +1250,6 @@ void YWindowManager::manageClients() {
         Window ignore[igsize] = {
             fTopWin ? fTopWin->handle() : None,
             fBottom ? fBottom->handle() : None,
-            rootProxy ? rootProxy->handle() : None,
             fDockApp ? fDockApp->handle() : None,
             sheet.handle()
         };
@@ -4003,7 +3983,7 @@ bool YTopWindow::handleKey(const XKeyEvent& key) {
         return true;
 
     unsigned ks = keyCodeToKeySym(key.keycode);
-    if (inrange(ks, 0xffe1U, 0xffeeU))
+    if (IS_MODIFIER(ks))
         return true;
 
     if (key.type == KeyPress &&

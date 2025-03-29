@@ -2,9 +2,7 @@
 #include "wmkey.h"
 #include "yxapp.h"
 #include "yprefs.h"
-
-#define IS_XF86KEY(key) (0x1008FE01U <= key && key <= 0x1008FFFFU)
-#define IS_POINTER(key) (0x0000FEE0U <= key && key <= 0x0000FEFFU)
+#include "keysyms.h"
 
 bool WMKey::set(const char* arg) {
     bool change = false;
