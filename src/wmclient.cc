@@ -48,30 +48,33 @@ YArray<YFrameClient::transience> YFrameClient::fTransients;
 YFrameClient::YFrameClient(YWindow *parent, YFrameWindow *frame, Window win,
                            int depth, Visual *visual, Colormap colormap):
     YDndWindow(parent, win, depth, visual, colormap),
+    fFrame(frame),
+    fClientItem(nullptr),
+    fProtocols(0),
+    fBorder(0),
+    fSavedFrameState(InvalidFrameState),
+    fWinStateHint(InvalidFrameState),
+    fWinHints(0),
+    fSizeHints(XAllocSizeHints()),
+    fClassHint(),
+    fHints(nullptr),
+    fColormap(colormap),
+    fDocked(false),
+    fShaped(false),
+    fTimedOut(false),
+    fFixedTitle(false),
+    fIconize(true),
+    fPinging(false),
+    fPingTime(0),
+    fPid(0),
     fWindowTitle(),
     fIconTitle(),
-    fWindowRole()
+    fClientLeader(None),
+    fWindowRole(),
+    fUserTime(),
+    fUserTimeWindow(None),
+    fTransientFor(None)
 {
-    fFrame = frame;
-    fClientItem = nullptr;
-    fProtocols = 0;
-    fBorder = 0;
-    fColormap = colormap;
-    fDocked = false;
-    fShaped = false;
-    fTimedOut = false;
-    fFixedTitle = false;
-    fIconize = true;
-    fPinging = false;
-    fPingTime = 0;
-    fHints = nullptr;
-    fWinHints = 0;
-    fSavedFrameState = InvalidFrameState;
-    fWinStateHint = InvalidFrameState;
-    fSizeHints = XAllocSizeHints();
-    fTransientFor = None;
-    fClientLeader = None;
-    fPid = 0;
     prop = {};
     xapp->ignorable = None;
 
@@ -91,6 +94,7 @@ YFrameClient::YFrameClient(YWindow *parent, YFrameWindow *frame, Window win,
         getWMHints();
         getWindowRole();
         getMwmHints();
+        getUserTime();
 
 #ifdef CONFIG_SHAPE
         if (shapes.supported) {
@@ -114,6 +118,7 @@ YFrameClient::~YFrameClient() {
     if (fHints) { XFree(fHints); fHints = nullptr; }
     if (fClientItem) { fClientItem->goodbye(); fClientItem = nullptr; }
     if (fPinging) { fPingTimer = null; }
+    if (fUserTimeWindow) { windowContext.remove(fUserTimeWindow); }
 }
 
 void YFrameClient::getProtocols(bool force) {
@@ -630,6 +635,16 @@ void YFrameClient::handleUnmap(const XUnmapEvent &unmap) {
 void YFrameClient::handleProperty(const XPropertyEvent &property) {
     bool new_prop = (property.state != PropertyDelete);
 
+    if (property.window != handle()) {
+        if (property.window == fUserTimeWindow) {
+            if (property.atom == _XA_NET_WM_USER_TIME) {
+                if (getUserTime() && visible())
+                    manager->updateUserTime(fUserTime);
+            }
+        }
+        return;
+    }
+
     switch (property.atom) {
     case XA_WM_NAME:
         if (new_prop) prop.wm_name = true;
@@ -730,14 +745,14 @@ void YFrameClient::handleProperty(const XPropertyEvent &property) {
         } else if (property.atom == _XA_NET_WM_USER_TIME) {
             MSG(("change: net wm user time"));
             if (new_prop) prop.net_wm_user_time = true;
-            if (getFrame())
-                getFrame()->updateNetWMUserTime();
+            if (getUserTime() && visible())
+                manager->updateUserTime(fUserTime);
             prop.net_wm_user_time = new_prop;
         } else if (property.atom == _XA_NET_WM_USER_TIME_WINDOW) {
             MSG(("change: net wm user time window"));
             if (new_prop) prop.net_wm_user_time_window = true;
-            if (getFrame())
-                getFrame()->updateNetWMUserTimeWindow();
+            if (getUserTimeWindow() && getUserTime() && visible())
+                manager->updateUserTime(fUserTime);
             prop.net_wm_user_time_window = new_prop;
         } else if (property.atom == _XA_NET_WM_WINDOW_OPACITY) {
             MSG(("change: net wm window opacity"));
@@ -1810,7 +1825,7 @@ bool YFrameClient::getNetWMStrutPartial(int *left, int *right, int *top, int *bo
     return false;
 }
 
-bool YFrameClient::getNetStartupId(unsigned long &time) {
+bool YFrameClient::getNetStartupId(unsigned& time) {
     if (!prop.net_startup_id)
         return false;
 
@@ -1818,42 +1833,83 @@ bool YFrameClient::getNetStartupId(unsigned long &time) {
     if (XGetTextProperty(xapp->display(), handle(), &id, _XA_NET_STARTUP_ID)) {
         char* str = strstr((char *)id.value, "_TIME");
         if (str) {
-            time = atol(str + 5) & 0xffffffff;
-            if (time == -1UL)
-                time = -2UL;
+            time = unsigned(atol(str + 5) & 0xffffffff);
+            if (time == -1U)
+                time = -2U;
             return true;
         }
     }
     return false;
 }
 
-bool YFrameClient::getNetWMUserTime(Window window, unsigned long &time) {
-    if (!prop.net_wm_user_time && !prop.net_wm_user_time_window)
+bool YFrameClient::getUserTime(Window window, unsigned& time) {
+    if (!prop.net_wm_user_time && window != fUserTimeWindow)
         return false;
 
     YProperty prop(window, _XA_NET_WM_USER_TIME, F32, 1, XA_CARDINAL);
     if (prop) {
         MSG(("got user time"));
-        time = *prop & 0xffffffff;
-        if (time == -1UL)
-            time = -2UL;
+        time = unsigned(*prop & 0xffffffff);
+        if (time == -1U)
+            time = -2U;
         return true;
     }
     return false;
 }
 
 
-bool YFrameClient::getNetWMUserTimeWindow(Window &window) {
-    if (!prop.net_wm_user_time_window)
+bool YFrameClient::getUserTimeWindow() {
+    if (!prop.net_wm_user_time_window) {
+        if (fUserTimeWindow) {
+            windowContext.remove(fUserTimeWindow);
+            fUserTimeWindow = None;
+        }
         return false;
+    }
 
     YProperty prop(this, _XA_NET_WM_USER_TIME_WINDOW, F32, 1, XA_WINDOW);
     if (prop) {
         MSG(("got user time window"));
-        window = *prop;
-        return true;
+        Window window = *prop;
+        if (window != fUserTimeWindow) {
+            if (fUserTimeWindow) {
+                windowContext.remove(fUserTimeWindow);
+                fUserTimeWindow = None;
+            }
+            if (window && windowContext.find(window) == nullptr) {
+                fUserTimeWindow = window;
+                windowContext.save(fUserTimeWindow, this);
+                XSelectInput(xapp->display(), window, PropertyChangeMask);
+                return true;
+            }
+        }
     }
     return false;
+}
+
+bool YFrameClient::getUserTime() {
+    bool updated = false;
+    unsigned time = None;
+
+    if (prop.net_startup_id &&
+        fUserTime.good() == false &&
+        getNetStartupId(time)) {
+        fUserTime.update(time);
+        updated = true;
+    }
+
+    if (prop.net_wm_user_time_window &&
+        (fUserTimeWindow == None || getUserTimeWindow()) &&
+        getUserTime(fUserTimeWindow, time)) {
+        fUserTime.update(time);
+        updated = true;
+    }
+    else if (prop.net_wm_user_time &&
+        getUserTime(handle(), time)) {
+        fUserTime.update(time);
+        updated = true;
+    }
+    return updated;
 }
 
 bool YFrameClient::getNetWMWindowOpacity(long &opacity) {
