@@ -77,6 +77,7 @@ YApplication::YApplication(int * /*argc*/, char *** /*argv*/) :
     setvbuf(stderr, nullptr, _IOLBF, BUFSIZ);
 
     initSignals();
+    initEnviron();
 }
 
 YApplication::~YApplication() {
@@ -594,6 +595,12 @@ upath YApplication::locateConfigFile(upath name) {
         return p;
 
     return null;
+}
+
+void YApplication::initEnviron() {
+    unsetenv("DESKTOP_AUTOSTART_ID");
+    unsetenv("DESKTOP_STARTUP_ID");
+    unsetenv("XDG_ACTIVATION_TOKEN");
 }
 
 // vim: set sw=4 ts=4 et:
