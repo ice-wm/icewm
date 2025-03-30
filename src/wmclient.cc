@@ -1899,7 +1899,7 @@ bool YFrameClient::getUserTime() {
     }
 
     if (prop.net_wm_user_time_window &&
-        (fUserTimeWindow == None || getUserTimeWindow()) &&
+        (fUserTimeWindow || getUserTimeWindow()) &&
         getUserTime(fUserTimeWindow, time)) {
         fUserTime.update(time);
         updated = true;
