@@ -94,7 +94,6 @@ YFrameWindow::YFrameWindow(
     fStrutRight(0),
     fStrutTop(0),
     fStrutBottom(0),
-    fUserTimeWindow(None),
     fStartManaged(xapp->getEventTime("frame")),
     fShapeWidth(-1),
     fShapeHeight(-1),
@@ -182,9 +181,6 @@ YFrameWindow::~YFrameWindow() {
                 delete conter;
             }
             fTabs.clear();
-        }
-        if (fUserTimeWindow) {
-            windowContext.remove(fUserTimeWindow);
         }
 
         delete fContainer; fContainer = nullptr;
@@ -496,9 +492,6 @@ void YFrameWindow::doManage(YFrameClient *clientw, bool &doActivate, bool &reque
     updateIcon();
     updateNetWMStrut(); /// ? here
     updateNetWMStrutPartial();
-    updateNetStartupId();
-    updateNetWMUserTime();
-    updateNetWMUserTimeWindow();
 
     int workspace = getWorkspace(), mask(0), state(0);
 
@@ -2132,9 +2125,10 @@ void YFrameWindow::updateFocusOnMap(bool& doActivate) {
         }
     }
 
-    manager->updateUserTime(fUserTime);
-    if (doActivate && fUserTime.good())
-        doActivate = (fUserTime.time() && fUserTime == manager->lastUserTime());
+    const UserTime& userTime(client()->userTime());
+    manager->updateUserTime(userTime);
+    if (doActivate && userTime.good())
+        doActivate = (userTime.time() && userTime == manager->lastUserTime());
 }
 
 bool YFrameWindow::canShow() const {
@@ -3866,41 +3860,6 @@ void YFrameWindow::updateNetWMStrutPartial() {
         fHaveStruts = l | r | t | b;
         MSG(("strut: %d %d %d %d", l, r, t, b));
         manager->updateWorkArea();
-    }
-}
-
-void YFrameWindow::updateNetStartupId() {
-    unsigned long time = (unsigned long) -1;
-    if (client()->getNetStartupId(time)) {
-        if (fUserTime.update(time))
-            manager->updateUserTime(fUserTime);
-    }
-}
-
-void YFrameWindow::updateNetWMUserTime() {
-    unsigned long time = (unsigned long) -1;
-    Window window = fUserTimeWindow ? fUserTimeWindow : client()->handle();
-    if (client()->getNetWMUserTime(window, time)) {
-        if (fUserTime.update(time))
-            manager->updateUserTime(fUserTime);
-    }
-}
-
-void YFrameWindow::updateNetWMUserTimeWindow() {
-    Window window = fUserTimeWindow;
-    if (client()->getNetWMUserTimeWindow(window) && window != fUserTimeWindow) {
-        if (fUserTimeWindow != None) {
-            windowContext.remove(fUserTimeWindow);
-        }
-        fUserTimeWindow = window;
-        if (window != None) {
-            windowContext.save(window, client());
-            XWindowAttributes wa;
-            if (XGetWindowAttributes(xapp->display(), window, &wa))
-                XSelectInput(xapp->display(), window,
-                             wa.your_event_mask | PropertyChangeMask);
-        }
-        updateNetWMUserTime();
     }
 }
 

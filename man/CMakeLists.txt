@@ -23,7 +23,7 @@ macro(Pod2Man name sectionId sectionName)
     string(REGEX REPLACE "\\.man$" ".pod" podName "${name}")
     string(REGEX REPLACE "\\.man$" ".${sectionId}" manName "${name}")
     ADD_CUSTOM_COMMAND(
-        COMMENT Convert ${podName} to ${manName}.
+        COMMENT "Convert ${podName} to ${manName}."
         OUTPUT ${manName}
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${podName}
         COMMAND pod2man ARGS
@@ -58,7 +58,7 @@ macro(Pod2Html name sectionId sectionName)
     string(REGEX REPLACE "\\.man$" ".pod" podName "${name}")
     string(REGEX REPLACE "\\.man$" ".${sectionId}.html" htmlName "${name}")
     ADD_CUSTOM_COMMAND(
-        COMMENT Convert ${podName} to ${htmlName}.
+        COMMENT "Convert ${podName} to ${htmlName}."
         OUTPUT ${htmlName}
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${podName}
         COMMAND pod2html ARGS

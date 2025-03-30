@@ -39,14 +39,6 @@ private:
     lazy<YTimer> fEdgeSwitchTimer;
 };
 
-class YProxyWindow: public YWindow {
-public:
-    YProxyWindow(YWindow *parent);
-    virtual ~YProxyWindow();
-
-    virtual void handleButton(const XButtonEvent &button);
-};
-
 class YArrange {
 public:
     YArrange(YFrameWindow** w, int n) : win(w), count(n) { }
@@ -71,6 +63,7 @@ public:
     YTopWindow();
     bool handleKey(const XKeyEvent& key) override;
     void setFrame(YFrameWindow* frame);
+    YFrameWindow* getFrame() const { return fFrame; }
 
 private:
     YFrameWindow* fFrame;
@@ -264,7 +257,6 @@ public:
     void focusOverlap();
 
     bool haveClients();
-    void setupRootProxy();
     void setKeyboard(mstring keyboard);
     void setKeyboard(int configIndex);
     mstring getKeyboard();
@@ -387,7 +379,6 @@ private:
     bool fExitWhenDone;
     int fArrangeCount;
     WindowPosState *fArrangeInfo;
-    YProxyWindow *rootProxy;
     YTopWindow *fTopWin;
     YWindow *fBottom;
     int fCascadeX;

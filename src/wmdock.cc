@@ -30,6 +30,7 @@ DockApp::DockApp():
     isRight(true)
 {
     setStyle(wsOverrideRedirect | wsNoExpose);
+    setTitle("IceDock");
 }
 
 DockApp::~DockApp() {

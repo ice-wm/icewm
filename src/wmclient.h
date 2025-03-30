@@ -78,22 +78,21 @@ public:
  */
 class UserTime {
 private:
-    unsigned long xtime;
+    unsigned xtime;
     bool valid;
-    unsigned long since;
-    enum : unsigned long {
-        XTimeMask = 0xFFFFFFFFUL,       // milliseconds
-        XTimeRange = 0x7FFFFFFFUL,      // milliseconds
-        SInterval = 0x3FFFFFFFUL / 1000,     // seconds
+    unsigned since;
+    enum : unsigned {
+        XTimeMask = 0xFFFFFFFFU,       // milliseconds
+        XTimeRange = 0x7FFFFFFFU,      // milliseconds
+        SInterval = 0x3FFFFFFFU / 1000,     // seconds
     };
 public:
     UserTime() : xtime(0), valid(false), since(0) { }
-    explicit UserTime(unsigned long xtime, bool valid = true) :
+    explicit UserTime(unsigned xtime, bool valid = true) :
         xtime(xtime & XTimeMask), valid(valid), since(seconds()) { }
-    unsigned long time() const { return xtime; }
+    unsigned time() const { return xtime; }
     bool good() const { return valid; }
-    long when() const { return since; }
-    bool update(unsigned long xtime, bool valid = true) {
+    bool update(unsigned xtime, bool valid = true) {
         UserTime u(xtime, valid);
         return *this < u || xtime == 0 ? (*this = u, true) : false;
     }
@@ -284,9 +283,9 @@ public:
     bool getNetWMPid(long *pid);
     bool getNetWMStrut(int *left, int *right, int *top, int *bottom);
     bool getNetWMStrutPartial(int *left, int *right, int *top, int *bottom);
-    bool getNetStartupId(unsigned long &time);
-    bool getNetWMUserTime(Window window, unsigned long &time);
-    bool getNetWMUserTimeWindow(Window &window);
+    bool getNetStartupId(unsigned& time);
+    bool getUserTime(Window window, unsigned& time);
+    bool getUserTimeWindow();
     bool getNetWMWindowOpacity(long &opacity);
     bool getNetWMWindowType(WindowType *window_type);
     void setNetWMFullscreenMonitors(int top, int bottom, int left, int right);
@@ -328,6 +327,9 @@ public:
     bool activateOnMap();
     YAction action();
 
+    bool getUserTime();
+    const UserTime& userTime() const { return fUserTime; }
+
 private:
     YFrameWindow *fFrame;
     YClientItem* fClientItem;
@@ -362,6 +364,9 @@ private:
     lazy<MwmHints> fMwmHints;
     lazy<WindowOption> fWindowOption;
     void loadWindowOptions(WindowOptions* list, bool remove);
+
+    UserTime fUserTime;
+    Window fUserTimeWindow;
 
     struct transience {
         Window trans, owner;
