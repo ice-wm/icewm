@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm-1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-03-09 22:18+0100\n"
+"POT-Creation-Date: 2025-03-30 22:06+0200\n"
 "PO-Revision-Date: 2024-10-18 14:48+0000\n"
 "Last-Translator: Aleš Kastner <alkas@volny.cz>\n"
 "Language-Team: Czech <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -218,7 +218,7 @@ msgstr "Nelze se spojit se %s: %s"
 msgid "Failed to find %s command"
 msgstr "Nelze najít příkaz %s"
 
-#: src/amailbox.cc:363 src/wmmenu.cc:475 src/wmmenu.cc:492 src/yapp.cc:436
+#: src/amailbox.cc:363 src/wmmenu.cc:475 src/wmmenu.cc:492 src/yapp.cc:437
 #, c-format
 msgid "Failed to execute %s"
 msgstr "Selhalo spuštění %s"
@@ -348,7 +348,7 @@ msgstr "Pracovní plocha: "
 msgid "Tabs"
 msgstr "Záložky"
 
-#: src/fdomenu.cc:925
+#: src/fdomenu.cc:928
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -417,22 +417,22 @@ msgstr ""
 "XDG Base Directory Specification:\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1114 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1117 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "Audio"
 
-#: src/fdomenu.cc:1115
+#: src/fdomenu.cc:1118
 msgid "Zarathustra"
 msgstr "Zarathustra"
 
-#: src/fdomenu.cc:1215
+#: src/fdomenu.cc:1218
 msgid "System too slow! Failed to load menu content!"
 msgstr "Systém je příliš pomalý! Nepodařilo se načíst obsah menu!"
 
-#: src/fdomenu.cc:1218
+#: src/fdomenu.cc:1221
 msgid "Please push HERE and retry after some seconds."
 msgstr "Stiskněte ZDE a po několika sekundách to zkuste znovu."
 
@@ -1429,87 +1429,87 @@ msgstr "Stejná Hra"
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Pomoc Vám poskytne man, stránka icesh(1).\n"
 
-#: src/icesh.cc:1689
+#: src/icesh.cc:1690
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Pojmenované znaky domény „%s“ (číselný rozsah: %ld-%ld):\n"
 
-#: src/icesh.cc:1758
+#: src/icesh.cc:1759
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Pracovní prostor je mimo rozsah: %ld"
 
-#: src/icesh.cc:1779
+#: src/icesh.cc:1780
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Neplatné jméno plochy: „%s“"
 
-#: src/icesh.cc:2290
+#: src/icesh.cc:2291
 msgid "GNOME window layer"
 msgstr "GNOME hladina okna"
 
-#: src/icesh.cc:2291
+#: src/icesh.cc:2292
 msgid "IceWM tray option"
 msgstr "Přepínače IceWM tray"
 
-#: src/icesh.cc:2292
+#: src/icesh.cc:2293
 msgid "Gravity symbols"
 msgstr "Symboly váhy"
 
-#: src/icesh.cc:2293
+#: src/icesh.cc:2294
 msgid "Motif functions"
 msgstr "Motif - funkce"
 
-#: src/icesh.cc:2294
+#: src/icesh.cc:2295
 msgid "Motif decorations"
 msgstr "Motif - dekorace"
 
-#: src/icesh.cc:2295
+#: src/icesh.cc:2296
 msgid "EWMH window state"
 msgstr "EWMH stav okna"
 
-#: src/icesh.cc:2377 src/icesh.cc:2450
+#: src/icesh.cc:2387 src/icesh.cc:2460
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "pracovní plocha #%d: „%s“\n"
 
-#: src/icesh.cc:2701 src/icesh.cc:4577 src/icesh.cc:5177
+#: src/icesh.cc:2711 src/icesh.cc:4588 src/icesh.cc:5188
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Neplatný stav: `%s'."
 
-#: src/icesh.cc:2730 src/icesh.cc:4151 src/icesh.cc:4201 src/icesh.cc:5498
+#: src/icesh.cc:2740 src/icesh.cc:4162 src/icesh.cc:4212 src/icesh.cc:5509
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Neplatný argument: `%s'"
 
-#: src/icesh.cc:3771
+#: src/icesh.cc:3782
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Nelze získat rozměry okna 0x%lx"
 
-#: src/icesh.cc:3796
+#: src/icesh.cc:3807
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Neplatná Xinerama: `%s'."
 
-#: src/icesh.cc:3928 src/icesh.cc:3936 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:3939 src/icesh.cc:3947 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Nelze zapisovat do %s"
 
-#: src/icesh.cc:4167
+#: src/icesh.cc:4178
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Akce „%s“ vyžaduje nejméně %d argumentů."
 
-#: src/icesh.cc:4176
+#: src/icesh.cc:4187
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Neplatný výraz: `%s'"
 
-#: src/icesh.cc:4187 src/icesound.cc:800 src/icewmbg.cc:1088
+#: src/icesh.cc:4198 src/icesound.cc:800 src/icewmbg.cc:1088
 #: src/icewmhint.cc:37 src/wmapp.cc:1296 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1517,35 +1517,35 @@ msgstr ""
 "Nelze otevřít displej: %s. Server X musí být spuštěn a proměnná $DISPLAY "
 "nastavena."
 
-#: src/icesh.cc:4303
+#: src/icesh.cc:4314
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Neočekáváno: `%s'."
 
-#: src/icesh.cc:4335
+#: src/icesh.cc:4346
 msgid "No windows found."
 msgstr "Nenalezena žádná okna."
 
-#: src/icesh.cc:4351
+#: src/icesh.cc:4362
 msgid "No actions specified."
 msgstr "Nebyla zadána žádná akce."
 
-#: src/icesh.cc:4501
+#: src/icesh.cc:4512
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Neplatné označení okna: „%s“"
 
-#: src/icesh.cc:4517
+#: src/icesh.cc:4528
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Neplatný PID: `%s'"
 
-#: src/icesh.cc:4550
+#: src/icesh.cc:4561
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Neplatná vrstva: `%s'."
 
-#: src/icesh.cc:5629
+#: src/icesh.cc:5648
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Neznámá akce: „%s“"
@@ -1990,7 +1990,7 @@ msgstr ""
 "část obrazu se ořízne)\n"
 "\n"
 
-#: src/icewmbg.cc:1249 src/wmapp.cc:1903
+#: src/icewmbg.cc:1249 src/wmapp.cc:1901
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Nerozpoznaná volba '%s'."
@@ -2331,14 +2331,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<nic>"
 
-#: src/wmapp.cc:1627
+#: src/wmapp.cc:1625
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      ID klienta, který bude použit při kontaktování správce "
 "sezení.\n"
 
-#: src/wmapp.cc:1633
+#: src/wmapp.cc:1631
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2348,7 +2348,7 @@ msgstr ""
 "  --debug             Vypíše všeobecné ladicí zprávy.\n"
 "  --debug-z          Vypíše ladicí zprávy ohledně seskládání oken.\n"
 
-#: src/wmapp.cc:1641
+#: src/wmapp.cc:1639
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2368,15 +2368,15 @@ msgstr ""
 "  --rewrite-preferences  Aktualizovat soubor s nastavením.\n"
 "  --trace=conf,icon   K zavedení konfigurace použity cesty pro sledování.\n"
 
-#: src/wmapp.cc:1652
+#: src/wmapp.cc:1650
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr "  -o, --output=FILE   Přesměrovat všechen výstup do souboru FILE.\n"
 
-#: src/wmapp.cc:1658
+#: src/wmapp.cc:1656
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr "  -i, --install=TÉMA Instalace TÉMATU z extra nebo 'seznamu'.\n"
 
-#: src/wmapp.cc:1661
+#: src/wmapp.cc:1659
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2435,21 +2435,21 @@ msgstr ""
 "%s.\n"
 "\n"
 
-#: src/wmapp.cc:1727
+#: src/wmapp.cc:1725
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s konfigurační adresáře:\n"
 
-#: src/wmapp.cc:1812
+#: src/wmapp.cc:1810
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s zkonfigurované voľby: %s\n"
 
-#: src/wmapp.cc:1953
+#: src/wmapp.cc:1951
 msgid "Confirm Logout"
 msgstr "Potvrdit odhlášení"
 
-#: src/wmapp.cc:1954
+#: src/wmapp.cc:1952
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2485,7 +2485,7 @@ msgstr "Rozbalit"
 msgid "Rollup"
 msgstr "S_rolovat"
 
-#: src/wmclient.cc:470
+#: src/wmclient.cc:475
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2540,15 +2540,15 @@ msgstr "Znovu načíst volby _oken"
 msgid "Reload ke_ys"
 msgstr "Znovu načíst kláves_y"
 
-#: src/wmframe.cc:1459
+#: src/wmframe.cc:1452
 msgid "Rename"
 msgstr "Přejmenovat"
 
-#: src/wmframe.cc:1460
+#: src/wmframe.cc:1453
 msgid "Rename the window title"
 msgstr "Přejmenovat nadpis okna"
 
-#: src/wmframe.cc:1967
+#: src/wmframe.cc:1960
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2556,7 +2556,7 @@ msgstr ""
 "VAROVÁNÍ! Pokud bude tento klient zabit, budou\n"
 "veškerá neuložená data ztracena. Přejete si pokračovat?"
 
-#: src/wmframe.cc:1972
+#: src/wmframe.cc:1965
 msgid "Kill Client: "
 msgstr "Zabít Klienta: "
 
@@ -2627,11 +2627,11 @@ msgstr "'%s' vypršel!"
 msgid "'%s' produces no output"
 msgstr "'%s' nevytváří žádný výstup"
 
-#: src/wmmgr.cc:3715
+#: src/wmmgr.cc:3695
 msgid "Missing program setxkbmap"
 msgstr "Chybí program setxkbmap"
 
-#: src/wmmgr.cc:3716
+#: src/wmmgr.cc:3696
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Instalujte setxkbmap pro přepínání klávesnic."
 
@@ -2825,7 +2825,7 @@ msgstr "%lu. Pracovní plocha %-.32s"
 msgid "Image not readable: %s"
 msgstr "Obrázek není čitelný: %s"
 
-#: src/yapp.cc:299
+#: src/yapp.cc:300
 #, c-format
 msgid "%s: select failed"
 msgstr "%s: výběr selhal"

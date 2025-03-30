@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.0.6\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-03-09 22:18+0100\n"
+"POT-Creation-Date: 2025-03-30 22:06+0200\n"
 "PO-Revision-Date: 2024-10-17 00:48+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -216,7 +216,7 @@ msgstr "%s:%s に接続できませんでした"
 msgid "Failed to find %s command"
 msgstr "%s コマンドの検出に失敗しました"
 
-#: src/amailbox.cc:363 src/wmmenu.cc:475 src/wmmenu.cc:492 src/yapp.cc:436
+#: src/amailbox.cc:363 src/wmmenu.cc:475 src/wmmenu.cc:492 src/yapp.cc:437
 #, c-format
 msgid "Failed to execute %s"
 msgstr "%s の実行に失敗しました"
@@ -346,7 +346,7 @@ msgstr "ワークスペース: "
 msgid "Tabs"
 msgstr "タブ"
 
-#: src/fdomenu.cc:925
+#: src/fdomenu.cc:928
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -419,22 +419,22 @@ msgstr ""
 "環境変数も合わせて参照します:\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1114 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1117 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "オーディオ"
 
-#: src/fdomenu.cc:1115
+#: src/fdomenu.cc:1118
 msgid "Zarathustra"
 msgstr "Zarathustra"
 
-#: src/fdomenu.cc:1215
+#: src/fdomenu.cc:1218
 msgid "System too slow! Failed to load menu content!"
 msgstr "システムが遅すぎます！ メニューコンテンツの読み込みに失敗しました！"
 
-#: src/fdomenu.cc:1218
+#: src/fdomenu.cc:1221
 msgid "Please push HERE and retry after some seconds."
 msgstr "こちらを押してからしばらくお待ちください。"
 
@@ -1437,87 +1437,87 @@ msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 "ヘルプを読みたい場合は icesh(1) のマニュアルページを参照してください。\n"
 
-#: src/icesh.cc:1689
+#: src/icesh.cc:1690
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "領域 `%s' に対するシンボル名 (数値範囲: %ld-%ld):\n"
 
-#: src/icesh.cc:1758
+#: src/icesh.cc:1759
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "ワークスペースの範囲が正しくありません: %ld"
 
-#: src/icesh.cc:1779
+#: src/icesh.cc:1780
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "ワークスペース名が正しくありません: `%s'"
 
-#: src/icesh.cc:2290
+#: src/icesh.cc:2291
 msgid "GNOME window layer"
 msgstr "GNOME ウインドウレイヤ"
 
-#: src/icesh.cc:2291
+#: src/icesh.cc:2292
 msgid "IceWM tray option"
 msgstr "IceWM トレイアイコン"
 
-#: src/icesh.cc:2292
+#: src/icesh.cc:2293
 msgid "Gravity symbols"
 msgstr "グラビティシンボル"
 
-#: src/icesh.cc:2293
+#: src/icesh.cc:2294
 msgid "Motif functions"
 msgstr "Motif 機能"
 
-#: src/icesh.cc:2294
+#: src/icesh.cc:2295
 msgid "Motif decorations"
 msgstr "Motif 装飾"
 
-#: src/icesh.cc:2295
+#: src/icesh.cc:2296
 msgid "EWMH window state"
 msgstr "EWMH ウインドウ状態"
 
-#: src/icesh.cc:2377 src/icesh.cc:2450
+#: src/icesh.cc:2387 src/icesh.cc:2460
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "ワークスペース #%d: `%s'\n"
 
-#: src/icesh.cc:2701 src/icesh.cc:4577 src/icesh.cc:5177
+#: src/icesh.cc:2711 src/icesh.cc:4588 src/icesh.cc:5188
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "状態が正しくありません: `%s'."
 
-#: src/icesh.cc:2730 src/icesh.cc:4151 src/icesh.cc:4201 src/icesh.cc:5498
+#: src/icesh.cc:2740 src/icesh.cc:4162 src/icesh.cc:4212 src/icesh.cc:5509
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "パラメータが正しくありません: `%s'"
 
-#: src/icesh.cc:3771
+#: src/icesh.cc:3782
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "ウインドウ 0x%lx のジオメトリを取得できません"
 
-#: src/icesh.cc:3796
+#: src/icesh.cc:3807
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Xinerama が正しくありません: `%s'."
 
-#: src/icesh.cc:3928 src/icesh.cc:3936 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:3939 src/icesh.cc:3947 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "%s に書き込めません"
 
-#: src/icesh.cc:4167
+#: src/icesh.cc:4178
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "アクション `%s' には少なくとも %d 個のパラメータが必要です。"
 
-#: src/icesh.cc:4176
+#: src/icesh.cc:4187
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "表現が正しくありません: `%s'"
 
-#: src/icesh.cc:4187 src/icesound.cc:800 src/icewmbg.cc:1088
+#: src/icesh.cc:4198 src/icesound.cc:800 src/icewmbg.cc:1088
 #: src/icewmhint.cc:37 src/wmapp.cc:1296 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
@@ -1525,35 +1525,35 @@ msgstr ""
 "ディスプレイ %s を開くことができません。X が起動されていて、かつ $DISPLAY が"
 "セットされていなければなりません。"
 
-#: src/icesh.cc:4303
+#: src/icesh.cc:4314
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "予期しないキーワードです: '%s'."
 
-#: src/icesh.cc:4335
+#: src/icesh.cc:4346
 msgid "No windows found."
 msgstr "ウインドウが見つかりませんでした。"
 
-#: src/icesh.cc:4351
+#: src/icesh.cc:4362
 msgid "No actions specified."
 msgstr "アクションが指定されていません。"
 
-#: src/icesh.cc:4501
+#: src/icesh.cc:4512
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "ウインドウの識別子が正しくありません: `%s'"
 
-#: src/icesh.cc:4517
+#: src/icesh.cc:4528
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "PID が正しくありません: `%s'"
 
-#: src/icesh.cc:4550
+#: src/icesh.cc:4561
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "レイヤが正しくありません: `%s'."
 
-#: src/icesh.cc:5629
+#: src/icesh.cc:5648
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "不明なアクションです: `%s'"
@@ -2007,7 +2007,7 @@ msgstr ""
 " center:0 scaled:1 = 縦横の両方を埋め、アスペクト比を維持\n"
 "\n"
 
-#: src/icewmbg.cc:1249 src/wmapp.cc:1903
+#: src/icewmbg.cc:1249 src/wmapp.cc:1901
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "認識できないオプション '%s' です。"
@@ -2350,14 +2350,14 @@ msgstr ""
 msgid "<none>"
 msgstr "<なし>"
 
-#: src/wmapp.cc:1627
+#: src/wmapp.cc:1625
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      セッションマネージャに接続する際のクライアント ID を指"
 "定します。\n"
 
-#: src/wmapp.cc:1633
+#: src/wmapp.cc:1631
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2368,7 +2368,7 @@ msgstr ""
 "  --debug-z           ウインドウのスタック処理に関連するデバッグメッセージを"
 "表示します。\n"
 
-#: src/wmapp.cc:1641
+#: src/wmapp.cc:1639
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2388,17 +2388,17 @@ msgstr ""
 "  --rewrite-preferences  既存の設定ファイルを更新します。\n"
 "  --trace=conf,icon   設定の読み込み時に使用するパスをトレースします。\n"
 
-#: src/wmapp.cc:1652
+#: src/wmapp.cc:1650
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr ""
 "  -o, --output=FILE   全ての出力を FILE で指定したファイルに転送します。\n"
 
-#: src/wmapp.cc:1658
+#: src/wmapp.cc:1656
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr ""
 "  -i, --install=THEME extra または 'list' からテーマをインストールします。\n"
 
-#: src/wmapp.cc:1661
+#: src/wmapp.cc:1659
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2458,21 +2458,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1727
+#: src/wmapp.cc:1725
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s の設定ディレクトリ:\n"
 
-#: src/wmapp.cc:1812
+#: src/wmapp.cc:1810
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s の設定済みオプション: %s\n"
 
-#: src/wmapp.cc:1953
+#: src/wmapp.cc:1951
 msgid "Confirm Logout"
 msgstr "ログアウトの確認"
 
-#: src/wmapp.cc:1954
+#: src/wmapp.cc:1952
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2508,7 +2508,7 @@ msgstr "シェード解除"
 msgid "Rollup"
 msgstr "シェード"
 
-#: src/wmclient.cc:470
+#: src/wmclient.cc:475
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2563,15 +2563,15 @@ msgstr "winoptions の再読み込み (_O)"
 msgid "Reload ke_ys"
 msgstr "キーの再読み込み (_Y)"
 
-#: src/wmframe.cc:1459
+#: src/wmframe.cc:1452
 msgid "Rename"
 msgstr "名前変更"
 
-#: src/wmframe.cc:1460
+#: src/wmframe.cc:1453
 msgid "Rename the window title"
 msgstr "ウインドウタイトルの名前変更"
 
-#: src/wmframe.cc:1967
+#: src/wmframe.cc:1960
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2579,7 +2579,7 @@ msgstr ""
 "このクライアントを強制終了すると、保存されて\n"
 "いない変更点が失われてしまいます。処理を続けてよろしいですか？"
 
-#: src/wmframe.cc:1972
+#: src/wmframe.cc:1965
 msgid "Kill Client: "
 msgstr "クライアント強制終了: "
 
@@ -2650,11 +2650,11 @@ msgstr "'%s' が時間切れになりました！"
 msgid "'%s' produces no output"
 msgstr "'%s' は何も出力しませんでした"
 
-#: src/wmmgr.cc:3715
+#: src/wmmgr.cc:3695
 msgid "Missing program setxkbmap"
 msgstr "プログラム setxkbmap がありません"
 
-#: src/wmmgr.cc:3716
+#: src/wmmgr.cc:3696
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 "キーボードの切り替えを行なうため、 setxkbmap をインストールしてください。"
@@ -2849,7 +2849,7 @@ msgstr "%lu. ワークスペース %-.32s"
 msgid "Image not readable: %s"
 msgstr "画像を読み込むことができません: %s"
 
-#: src/yapp.cc:299
+#: src/yapp.cc:300
 #, c-format
 msgid "%s: select failed"
 msgstr "%s: select が失敗しました"

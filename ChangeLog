@@ -1,5 +1,266 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit b606a188ba660c44a0f697f6799392082966b4bf
+Merge: 13049e01 14563ee6
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 30 22:04:21 2025 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 14563ee6eadf811ec0e4e556708142392d9918c8
+Merge: 1e9601fe c2939cbb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 30 22:02:48 2025 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit c2939cbb4fcb3d456917b56093897334b31ff3ac
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 30 19:23:03 2025 +0200
+
+    Fix compiler error on missing include errno.h.
+
+ src/ysvg.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit eb4ccdf88895b94c25c24e6474b7b8d3f2c660f0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 30 16:54:50 2025 +0200
+
+    Startup notification says to always accept updates to _NET_STARTUP_ID.
+
+ src/wmclient.cc | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
+
+commit 45fc5064d5023b5bacc0e2d49c0862cbcf555879
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 30 14:57:45 2025 +0200
+
+    Fix typo for fUserTimeWindow in getUserTime.
+
+ src/wmclient.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ec6f44371aa0d54997de2de5f1c6dc0f3ccccaec
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 29 21:59:28 2025 +0100
+
+    Improve support for _NET_WM_USER_TIME and _NET_STARTUP_ID for issue #799.
+
+ src/wmclient.cc | 132 +++++++++++++++++++++++++++++++++++++---------------
+ src/wmclient.h  |  31 ++++++------
+ src/wmframe.cc  |  49 ++-----------------
+ src/wmframe.h   |   7 ---
+ 4 files changed, 116 insertions(+), 103 deletions(-)
+
+commit b13a28868be10d20023aa9f60e332c5d05e88a2f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 29 15:43:19 2025 +0100
+
+    Remove DESKTOP_AUTOSTART_ID, DESKTOP_STARTUP_ID, XDG_ACTIVATION_TOKEN
+    variables from the environment.
+
+ src/yapp.cc | 7 +++++++
+ src/yapp.h  | 1 +
+ 2 files changed, 8 insertions(+)
+
+commit 3b17a48abf0e8ec0a872f0e57584e3a240f9bfd7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 29 15:40:45 2025 +0100
+
+    Remove the remnants of the root proxy window. Only set focus to the
+    icewm top window when it hasn't focus yet.
+
+ src/keysyms.h |  4 ++++
+ src/wmapp.cc  |  2 --
+ src/wmkey.cc  |  4 +---
+ src/wmmgr.cc  | 48 ++++++++++++++----------------------------------
+ src/wmmgr.h   | 11 +----------
+ 5 files changed, 20 insertions(+), 49 deletions(-)
+
+commit 9ff05e222dac6e27b8a3e178ecf4471598623c2d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 29 15:38:20 2025 +0100
+
+    Add the usertime and x11time commands to icesh.
+
+ man/icesh.pod |  8 ++++++++
+ src/icesh.cc  | 19 +++++++++++++++++++
+ 2 files changed, 27 insertions(+)
+
+commit e5b38e5db353e69fd2b9c020d4350457027a88dd
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Mar 29 15:11:29 2025 +0100
+
+    Set a title to the dock window.
+
+ src/wmdock.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 69a548621af39ea45c666a292d6600095b75fc4d
+Merge: 91cf6b75 f362d182
+Author: Eduard Bloch <blade@debian.org>
+Date:   Mon Mar 17 09:59:37 2025 +0100
+
+    Merge remote-tracking branch 'bbidulock/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 1e9601feedd2d1758e8cea3589d21fa43b89eb5a
+Merge: 196bd412 f362d182
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 16 15:50:36 2025 +0100
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit f362d18207d19caf7a24e6e940e67938a39fb4d8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 16 15:39:12 2025 +0100
+
+    Fix --disable-librsvg. Don't barf when --without-icesound. Update READMEs.
+
+ README.md    | 13 ++++++++++---
+ README.md.in |  4 +++-
+ VERSION      |  2 +-
+ configure.ac | 21 ++++++++++++++-------
+ 4 files changed, 28 insertions(+), 12 deletions(-)
+
+commit 7ea2559d46f2236042813ad8826e36a6696d0d78
+Author: Mehmet Akif 9oglu <madanadam@gmail.com>
+Date:   Sun Mar 16 08:46:00 2025 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/tr.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 91cf6b75e7c1a5c409466dc1dc42894571701ddb
+Author: Eduard Bloch <blade@debian.org>
+Date:   Sun Oct 13 11:16:01 2024 +0200
+
+    App name filter shall consider the command line too
+
+ src/fdomenu.cc | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit 87876772d15e9735f6d59f7228eff85850859b1b
+Author: Eduard Bloch <blade@debian.org>
+Date:   Sun Mar 16 09:37:14 2025 +0100
+
+    Upgrade min.req. of CMake to version 3.10
+
+    Latest CMake releases started throwing warnings about deprecation of
+    old style compatibility.
+
+    Also removed the project tags from subfolders since they are ineffective
+    anyway.
+
+    Removed requirement of C compiler, since globit.c is the only source and
+    even this is wrapped into a C++ compilation unit.
+
+ CMakeLists.txt     | 4 ++--
+ doc/CMakeLists.txt | 3 ---
+ lib/CMakeLists.txt | 2 +-
+ po/CMakeLists.txt  | 3 ---
+ 4 files changed, 3 insertions(+), 9 deletions(-)
+
+commit 80f3648862694399417de51ef65db7ecaef69fb4
+Author: Eduard Bloch <blade@debian.org>
+Date:   Sat Mar 15 17:48:54 2025 +0100
+
+    Fix cmake warning about wrong COMMENT arguments
+
+ man/CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit af8107c032f4fae53e4caa7af16f8effd2612856
+Author: Eduard Bloch <blade@debian.org>
+Date:   Sat Mar 15 17:33:17 2025 +0100
+
+    By default, try fallback to non-specific Sans or non-bold
+
+    Again: Closes ice-wm/icewm#149
+
+ src/fontmacro.h | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
+
+commit 999b27356c94979b835dbec649ab3ce9b03ab390
+Author: Eduard Bloch <blade@debian.org>
+Date:   Tue Mar 11 18:47:36 2025 +0100
+
+    Make location of nanosvg header customizable
+
+    This also simplifies the use of externally located nanosvg headers, for
+    example for offline builds.
+
+ src/CMakeLists.txt | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 13049e01550152426538937fdd6ca998a8e26ef5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 9 22:20:59 2025 +0100
+
+    Prepare 3.7.2 release
+
+ AUTHORS      |   2 +-
+ ChangeLog    | 426 ++++++++++++++++++++++++++-----------------------------
+ NEWS         |  86 ++++-------
+ README.md    |  16 +--
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  86 +++++------
+ po/ast.po    |  86 +++++------
+ po/be.po     |  86 +++++------
+ po/bg.po     |  86 +++++------
+ po/ca.po     |  86 +++++------
+ po/cs.po     |  86 +++++------
+ po/da.po     |  86 +++++------
+ po/de.po     |  86 +++++------
+ po/el.po     |  86 +++++------
+ po/en.po     |  86 +++++------
+ po/eo.po     |  86 +++++------
+ po/es.po     |  86 +++++------
+ po/fa.po     |  86 +++++------
+ po/fi.po     |  86 +++++------
+ po/fr.po     |  86 +++++------
+ po/he.po     |  86 +++++------
+ po/hi.po     |  86 +++++------
+ po/hr.po     |  86 +++++------
+ po/hu.po     |  86 +++++------
+ po/icewm.pot |  88 ++++++------
+ po/id.po     |  86 +++++------
+ po/ie.po     |  86 +++++------
+ po/it.po     |  86 +++++------
+ po/ja.po     |  86 +++++------
+ po/ka.po     |  86 +++++------
+ po/kk.po     |  86 +++++------
+ po/ko.po     |  86 +++++------
+ po/lt.po     |  86 +++++------
+ po/lv.po     |  86 +++++------
+ po/mk.po     |  86 +++++------
+ po/nb.po     |  86 +++++------
+ po/nl.po     |  86 +++++------
+ po/nn.po     |  86 +++++------
+ po/no.po     |  86 +++++------
+ po/pl.po     |  86 +++++------
+ po/pt.po     |  86 +++++------
+ po/pt_BR.po  |  86 +++++------
+ po/ro.po     |  86 +++++------
+ po/ru.po     |  86 +++++------
+ po/sk.po     |  86 +++++------
+ po/sl.po     |  86 +++++------
+ po/sv.po     |  86 +++++------
+ po/tr.po     |  86 +++++------
+ po/uk.po     |  86 +++++------
+ po/vi.po     |  86 +++++------
+ po/zh_CN.po  |  86 +++++------
+ po/zh_TW.po  |  86 +++++------
+ 54 files changed, 2269 insertions(+), 2319 deletions(-)
+
 commit f855e1d42780aa18027a5dc4915eab48037913d8
 Merge: b00baedb 196bd412
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5722,251 +5983,3 @@ Date:   Tue May 30 06:18:45 2023 +0000
 
  po/ka.po | 2630 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 2630 insertions(+)
-
-commit 4a16e0cab319c1cdadbe0217c073af8783947a10
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 23 23:01:01 2023 +0200
-
-    On a MappingNotify event, reparse the key bindings for ice-wm/icewm#134.
-
- src/wmapp.cc  | 7 +++++++
- src/wmapp.h   | 1 +
- src/wmprog.cc | 7 ++++++-
- src/wmprog.h  | 4 +++-
- src/yxapp.cc  | 1 +
- src/yxapp.h   | 1 +
- 6 files changed, 19 insertions(+), 2 deletions(-)
-
-commit a63a52b0d193d4915386664f0ffa72df4d685451
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat May 20 22:53:37 2023 +0200
-
-    Update manpage for "keys" for issue ice-wm/icewm#134.
-
- man/icewm-keys.pod | 56 ++++++++++++++++++++++++++++----------------------
- 1 file changed, 31 insertions(+), 25 deletions(-)
-
-commit 795127f8e9e0f523866acac78d8b5553f81fc398
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat May 20 21:47:34 2023 +0200
-
-    Support UTF-8 key in "keys" and fix unshift for issue ice-wm/icewm#134.
-
- src/yconfig.cc | 7 +++++++
- src/yxapp.cc   | 4 +---
- 2 files changed, 8 insertions(+), 3 deletions(-)
-
-commit 274108e41620f0212220e861aa823cba07965a8a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat May 20 15:35:25 2023 +0200
-
-    Support bindings to shifted keys in a "keys" definition in issue
-    ice-wm/icewm#134.
-
- src/wmapp.cc   | 11 +++++++++++
- src/wmapp.h    |  1 +
- src/wmmgr.cc   |  2 +-
- src/wmpref.cc  |  2 +-
- src/wmprog.cc  |  2 +-
- src/yconfig.cc |  1 -
- src/yxapp.cc   | 47 +++++++++++++++++++++++++++++++++++++++++++++++
- src/yxapp.h    |  6 ++++++
- 8 files changed, 68 insertions(+), 4 deletions(-)
-
-commit 8ab9139f0a90e91bbf742d5fb32b9dc8404487a0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 18 18:00:29 2023 +0200
-
-    Support a literal character as the last letter in a "keys" definition
-    if it is from the Latin-1 character set for issue ice-wm/icewm#134.
-
- src/yconfig.cc | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
-
-commit 43f006719a2b7a65d636e627c1434f87e38ae007
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 18 10:01:21 2023 +0200
-
-    Prepare 3.3.5 release
-
- AUTHORS      |   6 +-
- ChangeLog    | 504 +++++++++++++++++++++++++++----------------------------
- NEWS         |  78 ++++-----
- README.md    |  38 ++---
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     |  92 +++++-----
- po/be.po     |  92 +++++-----
- po/bg.po     |  92 +++++-----
- po/ca.po     |  92 +++++-----
- po/cs.po     | 148 ++++++++--------
- po/da.po     |  92 +++++-----
- po/de.po     |  92 +++++-----
- po/el.po     |  92 +++++-----
- po/en.po     |  92 +++++-----
- po/es.po     |  92 +++++-----
- po/fi.po     |  92 +++++-----
- po/fr.po     |  92 +++++-----
- po/he.po     |  92 +++++-----
- po/hr.po     |  92 +++++-----
- po/hu.po     |  92 +++++-----
- po/icewm.pot |  94 +++++------
- po/id.po     |  92 +++++-----
- po/it.po     |  92 +++++-----
- po/ja.po     |  92 +++++-----
- po/ko.po     |  92 +++++-----
- po/lt.po     |  92 +++++-----
- po/lv.po     |  92 +++++-----
- po/mk.po     |  92 +++++-----
- po/nb.po     |  92 +++++-----
- po/nl.po     |  92 +++++-----
- po/no.po     |  92 +++++-----
- po/pl.po     |  92 +++++-----
- po/pt.po     | 144 ++++++++--------
- po/pt_BR.po  |  92 +++++-----
- po/ro.po     |  92 +++++-----
- po/ru.po     |  92 +++++-----
- po/sk.po     |  92 +++++-----
- po/sl.po     |  92 +++++-----
- po/sv.po     |  92 +++++-----
- po/tr.po     |  92 +++++-----
- po/uk.po     |  92 +++++-----
- po/vi.po     |  92 +++++-----
- po/zh_CN.po  |  92 +++++-----
- po/zh_TW.po  |  92 +++++-----
- 46 files changed, 2164 insertions(+), 2174 deletions(-)
-
-commit 3185b32bead57705b267ebd3ed4b3a08bf7b9560
-Merge: c638cd1a 1ba256de
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 18 09:57:25 2023 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 1ba256ded311145b83fcb7dcacefece5a3807e9f
-Merge: 87db7791 2ab2d9e3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 18 09:56:22 2023 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 2ab2d9e3cbaef41a653cc6f6d47efe6ebd4bf925
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 18 09:29:44 2023 +0200
-
-    Reduce the subcats by 5.
-
- src/yicon.cc | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
-
-commit a7f12c3765dd02a7575a91e1be0ed0f8ce93633e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 17 21:38:21 2023 +0200
-
-    Let icesh exit with zero if the last action was a successful manager
-    action.
-
- src/icesh.cc | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
-
-commit 5827184c8fad273a11d7e8a2a4ea4246783b2b89
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 17 21:33:30 2023 +0200
-
-    Also focus last window when hiding and Click-to-focus for issue #727.
-
- src/wmframe.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 562da294da84f9d03c29cd8a4c7072d0baf693ab
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 16 19:52:56 2023 +0200
-
-    Detect idempotent RandR updates for issue #728.
-    Only ArrangeWindowsOnScreenSizeChange when the desktop is really resizing.
-
- src/wmmgr.cc   |  14 ++++---
- src/yarray.h   |   4 ++
- src/ywindow.cc | 108 +++++++++++++++++++++++++++++++----------------------
- src/ywindow.h  |  13 +++++--
- 4 files changed, 86 insertions(+), 53 deletions(-)
-
-commit 4336686af503efc1b81919392f1e6dfe9bf0be9f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 16 19:51:46 2023 +0200
-
-    Check for TaskBarDoubleHeight when computing workspace button height.
-
- src/wmtaskbar.cc | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
-
-commit 549a77a64a307ce5df08f01edaf398a41034f94b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue May 16 19:47:42 2023 +0200
-
-    Limit the resource string of an unresponsive client for issue #729.
-
- src/wmclient.cc | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
-
-commit 62fee7a492b01b4e089e3e55038096d0d4a98ab0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri May 12 18:40:18 2023 +0200
-
-    Compute the ultimate workspace button height, before creating them.
-
- src/aworkspaces.cc | 7 ++++---
- src/aworkspaces.h  | 3 ++-
- src/wmtaskbar.cc   | 5 ++++-
- src/ywindow.h      | 1 +
- 4 files changed, 11 insertions(+), 5 deletions(-)
-
-commit 1c8fcc7ce89b8bbb54c63d14e6e530a603ae86a2
-Author: Jan Papež <honyczek@centrum.cz>
-Date:   Thu May 11 20:03:57 2023 +0000
-
-    Translated using Weblate (Czech)
-
-    Currently translated at 100.0% (525 of 525 strings)
-
- po/cs.po | 16 ++++++----------
- 1 file changed, 6 insertions(+), 10 deletions(-)
-
-commit d7a5ffb3a8a83ca145e815ad58eea0950d7eefd2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu May 11 20:55:34 2023 +0200
-
-    Test for i18n by negation.
-
- configure.ac | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit a85838bfbfc2a55fdeb909dc7ae1536e75bcb20c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 10 22:53:32 2023 +0200
-
-    Temporarily hide the taskbar collapse button when collapsing or expanding.
-
- src/wmtaskbar.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit a6cb72bfab927f73045bea212341ad4eff59b3fc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 10 22:52:42 2023 +0200
-
-    Rescale workspace buttons when taskbar is rather high.
-
- src/aworkspaces.cc | 30 +++++++++++++++++++-----------
- src/aworkspaces.h  |  1 +
- 2 files changed, 20 insertions(+), 11 deletions(-)
-
-commit 397e27dcfb38f29bf983bf774c8cea794c7bf501
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed May 10 12:55:06 2023 +0200
-
-    Use "firefox" instead of "mozilla" as Firefox icon for ice-wm/icewm#132.
-
- lib/menu.in | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
