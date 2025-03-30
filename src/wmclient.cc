@@ -754,6 +754,10 @@ void YFrameClient::handleProperty(const XPropertyEvent &property) {
             if (getUserTimeWindow() && getUserTime() && visible())
                 manager->updateUserTime(fUserTime);
             prop.net_wm_user_time_window = new_prop;
+        } else if (property.atom == _XA_NET_STARTUP_ID && prop.net_startup_id) {
+            prop.net_startup_id = new_prop;
+            if (getUserTime() && visible())
+                manager->updateUserTime(fUserTime);
         } else if (property.atom == _XA_NET_WM_WINDOW_OPACITY) {
             MSG(("change: net wm window opacity"));
             if (new_prop) prop.net_wm_window_opacity = true;
@@ -1892,22 +1896,17 @@ bool YFrameClient::getUserTime() {
     unsigned time = None;
 
     if (prop.net_startup_id &&
-        fUserTime.good() == false &&
         getNetStartupId(time)) {
-        fUserTime.update(time);
-        updated = true;
+        updated = fUserTime.update(time);
     }
-
     if (prop.net_wm_user_time_window &&
         (fUserTimeWindow || getUserTimeWindow()) &&
         getUserTime(fUserTimeWindow, time)) {
-        fUserTime.update(time);
-        updated = true;
+        updated |= fUserTime.update(time);
     }
     else if (prop.net_wm_user_time &&
         getUserTime(handle(), time)) {
-        fUserTime.update(time);
-        updated = true;
+        updated |= fUserTime.update(time);
     }
     return updated;
 }
