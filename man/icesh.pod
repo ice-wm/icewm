@@ -627,6 +627,10 @@ with dimensions at most 256, a depth of 4, and type I<RGB_ALPHA>.
 Save an icon to a new file in the PAM image format. Digits are
 increased to generate a unique new filename for each window.
 
+=item B<usertime>
+
+Show the time of last user interaction in milliseconds.
+
 =item B<click> I<window-x> I<window-y> I<button>
 
 Send a button press and release event at position (I<window-x>,
@@ -812,6 +816,10 @@ I<count> limits the number of repetitions.
 =item B<pick>
 
 Choose a window by a mouse button click.
+
+=item B<x11time>
+
+Show the current X11 server time in milliseconds.
 
 =item B<sync>
 

@@ -1,4 +1,4 @@
-[icewm -- read me first file.  2024-03-25]: #
+[icewm -- read me first file.  2025-03-09]: #
 
 Ice Window Manager (IceWM)
 ==========================
@@ -56,6 +56,8 @@ like to spend the extra 15 seconds reading `./configure --help`, some compile
 time options can be turned on and off before the build.
 
 For general information on GNU's `./configure`, see the file [INSTALL][7].
+To disable sound support, use --without-icesound. When the image library
+supports SVG natively, you can use --disable-librsvg and --disable-nanosvg.
 
 Please see the [INSTALL][7] file for more detailed installation instructions.
 An alternative way to build IceWM using CMake is [documented here][19].
@@ -74,7 +76,7 @@ Prerequisites
 Building from tarball requires:
 
  - gcc or clang
- - imlib2
+ - imlib2 or libgdkpixbuf
  - libxcomposite
  - libxdamage
  - libxfixes
@@ -88,7 +90,12 @@ Building from git also requires:
 
  - complete autoconf or cmake toolchain
  - either markdown or asciidoctor
+ - pod2man
 
+For optional features:
+
+  - libjpeg, libpng, librsvg or nanosvg
+  - gettext, libfribidi
 
 Configuring IceWM
 -----------------

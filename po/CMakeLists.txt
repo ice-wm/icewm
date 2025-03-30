@@ -1,6 +1,3 @@
-cmake_minimum_required(VERSION 3.5)
-project(ICEWM CXX)
-
 #
 # Custom PO file processing (POT extraction/update, PO merging, MO building).
 #

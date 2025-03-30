@@ -98,6 +98,7 @@ private:
 
     void handleSignalPipe();
     void initSignals();
+    void initEnviron();
 
 protected:
     friend class YTimer;

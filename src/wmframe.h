@@ -403,9 +403,6 @@ public:
 
     void updateNetWMStrut();
     void updateNetWMStrutPartial();
-    void updateNetStartupId();
-    void updateNetWMUserTime();
-    void updateNetWMUserTimeWindow();
     void updateNetWMWindowOpacity();
     void updateNetWMFullscreenMonitors(int top, int bottom, int left, int right);
 
@@ -505,10 +502,6 @@ private:
     int fStrutRight;
     int fStrutTop;
     int fStrutBottom;
-
-    // _NET_WM_USER_TIME support
-    UserTime fUserTime;
-    Window fUserTimeWindow;
     Time fStartManaged;
 
     unsigned fShapeWidth;

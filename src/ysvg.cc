@@ -16,6 +16,7 @@ ref<YImage> YImage::loadsvg(upath filename) {
 #include "nanosvgrast.h"
 #include "yimage_gdk.h"
 #include <stdlib.h>
+#include <errno.h>
 #include "base.h"
 
 static void ucfree(unsigned char* data, void* aux) {

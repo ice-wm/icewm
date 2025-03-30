@@ -43,12 +43,18 @@
 
 #endif
 
+#define PREF_SANS "DejaVu Sans"
+#define ANY_SANS "Sans"
+#define SFX_MONO " Mono:monospace"
+
 #define FQUOT(x) #x
 #define FSIZE(x) ":size=" FQUOT(x)
-#define FSANS   "DejaVu Sans" FSIZE(12)
-#define FBOLD   FSANS ":bold"
-#define FSMAL   "DejaVu Sans" FSIZE(10) ":bold"
-#define FMONO   "DejaVu Sans Mono:monospace" FSIZE(12)
-#define FMONB   FMONO ":bold"
+
+// defines for themeable defaults; if font not available, try to fallback to any compatible font, then try without boldness
+#define FSANS   PREF_SANS FSIZE(12) "," ANY_SANS FSIZE(12)
+#define FBOLD   PREF_SANS FSIZE(12) ":bold," ANY_SANS FSIZE(12) ":bold," ANY_SANS FSIZE(12)
+#define FSMAL   PREF_SANS FSIZE(10) ":bold," ANY_SANS FSIZE(10) ":bold," ANY_SANS FSIZE(10)
+#define FMONO   PREF_SANS SFX_MONO FSIZE(12) "," ANY_SANS SFX_MONO FSIZE(12)
+#define FMONB   PREF_SANS SFX_MONO FSIZE(12) ":bold," ANY_SANS SFX_MONO FSIZE(12) FSANS ":bold," ANY_SANS SFX_MONO FSIZE(12)
 
 #endif

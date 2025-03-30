@@ -1456,6 +1456,7 @@ private:
     bool evaluating();
     void unexpected();
     bool guiEvents();
+    bool showXTime();
     bool listShown();
     bool listXembed();
     void listXembed(Window w);
@@ -2333,6 +2334,15 @@ bool IceSh::listShown()
     return true;
 }
 
+bool IceSh::showXTime()
+{
+    if ( !isAction("x11time", 0))
+        return false;
+
+    printf("%lu\n", serverTime());
+    return true;
+}
+
 bool IceSh::listScreens()
 {
     if (isAction("randr", 0)) {
@@ -2959,6 +2969,7 @@ bool IceSh::icewmAction()
         || listSystray()
         || listXembed()
         || listShown()
+        || showXTime()
         || colormaps()
         || workarea()
         || delay()
@@ -5586,6 +5597,14 @@ void IceSh::parseAction()
                     snprintf(buf, sizeof buf, "0x%07lx ", Window(window));
                     showProperty(window, prop, buf);
                 }
+            }
+        }
+        else if (isAction("usertime", 0)) {
+            FOREACH_WINDOW(window) {
+                use(window);
+                char buf[32];
+                snprintf(buf, sizeof buf, "0x%07lx ", Window(window));
+                showProperty(window, ATOM_NET_WM_USER_TIME, buf);
             }
         }
         else if (isAction("loadicon", 1)) {
