@@ -159,7 +159,7 @@ Development
 If you would like to develop against this fork, the easiest way is to obtain a
 [GitHub account][10], fork the [repository][1] and perform your development.
 Send me a pull request when you have something stable.  If you submit regular
-pull requests that get accepted, I will just give to push access to save time.
+pull requests that get accepted, I will just give you push access to save time.
 
 
 Translations
