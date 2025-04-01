@@ -1,6 +1,6 @@
 
 # to use target_link_options
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.5)
 
 PROJECT(ICEWM CXX)
 
@@ -8,7 +8,13 @@ PROJECT(ICEWM CXX)
 # with -std=c++11.
 set(CMAKE_CXX_STANDARD_REQUIRED off)
 # Actually try to use C++20 as well where possible, to uncover potential issues.
-set(CMAKE_CXX_STANDARD 20)
+if(CMAKE_VERSION VERSION_GREATER OR VERSION_EQUAL "3.20")
+    set(CMAKE_CXX_STANDARD 20)
+else()
+    set(CMAKE_CXX_STANDARD 14)
+endif()
+
+
 
 INCLUDE(CheckIncludeFiles)
 INCLUDE(CheckLibraryExists)
@@ -131,7 +137,7 @@ if(ENABLE_NLS OR CONFIG_I18N)
         LIST(APPEND nls_LIBS iconv)
     endif()
     find_package(Intl)
-    if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.20")
+    if(CMAKE_VERSION VERSION_GREATER OR  VERSION_EQUAL "3.20")
         list(APPEND nls_LIBS Intl::Intl)
     else()
         if(Intl_FOUND)

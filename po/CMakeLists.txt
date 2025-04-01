@@ -126,7 +126,11 @@ foreach(_lang ${LANGUAGES})
     set(PG "${CMAKE_CURRENT_BINARY_DIR}/playground")
     file(MAKE_DIRECTORY "${PG}")
     file(MAKE_DIRECTORY "${PG}/${_lang}/LC_MESSAGES/")
-    file(CREATE_LINK ${_tempMO} "${PG}/${_lang}/LC_MESSAGES/${PACKAGE}.mo" SYMBOLIC)
+    if(CMAKE_VERSION VERSION_GREATER OR  VERSION_EQUAL "3.14")
+        file(CREATE_LINK ${_tempMO} "${PG}/${_lang}/LC_MESSAGES/${PACKAGE}.mo" SYMBOLIC)
+    else()
+        install(FILES ${_tempMO} DESTINATION "${PG}/${_lang}/LC_MESSAGES/" RENAME "${PACKAGE}.mo" OPTIONAL)
+    endif()
 
 endforeach()
 
