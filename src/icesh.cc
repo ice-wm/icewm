@@ -1517,6 +1517,7 @@ private:
     static void catcher(int);
     static void alarmed(int);
     static bool running;
+    static bool intrupt;
     static IceSh* singleton;
     static Window slowWindow;
 };
@@ -1896,11 +1897,13 @@ static void extArea(Window window, int& x, int& y, int& w, int& h) {
 }
 
 bool IceSh::running;
+bool IceSh::intrupt;
 Window IceSh::slowWindow;
 
 void IceSh::catcher(int)
 {
     running = false;
+    intrupt = true;
 }
 
 void IceSh::alarmed(int)
@@ -2728,6 +2731,8 @@ void IceSh::changeState(int state) {
 bool IceSh::loop() {
     if ( !isAction("loop", 0))
         return false;
+    if (intrupt)
+        return true;
 
     long n = 1;
     if (haveArg() && isDigit(**argp)) {
