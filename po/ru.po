@@ -15,17 +15,17 @@ msgstr ""
 "Project-Id-Version: IceWM 1.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2024-10-11 21:48+0000\n"
+"PO-Revision-Date: 2025-04-03 10:56+0000\n"
 "Last-Translator: Dmitriy Khanzhin <jinn@altlinux.org>\n"
-"Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/ru/>\n"
+"Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.10.3\n"
 "X-Language: ru_RU\n"
 "X-Source-Language: C\n"
 
@@ -84,7 +84,7 @@ msgstr "По умолчанию"
 #: src/aclock.cc:207 src/acpustatus.cc:912 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
-msgstr "_Скрыть"
+msgstr "_Отключить"
 
 #: src/aclock.cc:208
 msgid "_UTC"
@@ -99,7 +99,7 @@ msgstr "°C"
 #: src/acpustatus.cc:552
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
-msgstr "Загрузка CPU%s: %3.2f %3.2f %3.2f, %u"
+msgstr "Загрузка ЦП%s: %3.2f %3.2f %3.2f, %u"
 
 #: src/acpustatus.cc:558
 #, c-format
@@ -157,7 +157,7 @@ msgstr ""
 #: src/acpustatus.cc:908
 #, c-format
 msgid "CPU%d"
-msgstr "CPU%d"
+msgstr "ЦП%d"
 
 #: src/acpustatus.cc:914
 msgid "_Combine"
@@ -395,34 +395,34 @@ msgstr ""
 "Параметры:\n"
 "-g, --generic\t\tЗаключать GenericName в скобки после названий приложений\n"
 "-o, --output=ФАЙЛ\tЗаписать вывод в ФАЙЛ\n"
-"-t, --terminal=ТЕРМИНАЛ\tИспользовать ТЕРМИНАЛ, у которого есть параметр '-"
-"e'\n"
+"-t, --terminal=ТЕРМИНАЛ\tИспользовать ТЕРМИНАЛ, у которого есть параметр '-e'"
+"\n"
 "-s, --no-lone-app\tПереместить отдельные элементы в родительское меню\n"
 "-S, --no-lone-hint\tКак -s, но добавить исходные меню\n"
 "-d, --deadline-apps=N\tОстановить загрузку информации о приложении через N "
 "мс\n"
 "-D, --deadline-all=N\tОстановить всю загрузку и напечатать то, что есть "
 "сейчас\n"
-"-m, --match=ШАБЛОН\t\tПоказать только приложения с названием, содержащим "
+"-m, --match=ШАБЛОН\tПоказать только приложения с названием, содержащим "
 "ШАБЛОН\n"
 "-M, --imatch=ШАБЛОН\tКак --match, но игнорировать регистр символов\n"
 "-L, --limit-max-len=N\tОбрезать названия приложений до длины N, добавив ...\n"
-"--seps  \tПечатать разделители перед и после содержимого\n"
-"--sep-before\tПечатать разделитель перед содержимым\n"
-"--sep-after\tПечатать разделитель только после содержимого\n"
-"--no-sep-others\tДля совместимости, ничего не делает\n"
-"--no-sub-cats\tБез дополнительных категорий, простое одноуровневое меню\n"
-"--flat\t\tПоказать все приложения на одном уровне с категориями\n"
-"--flat-sep=СТРОКА\tразделитель категорий, используемая в режиме flat (по "
+"--seps  \t\tПечатать разделители перед и после содержимого\n"
+"--sep-before\t\tПечатать разделитель перед содержимым\n"
+"--sep-after\t\tПечатать разделитель только после содержимого\n"
+"--no-sep-others\t\tДля совместимости, ничего не делает\n"
+"--no-sub-cats\t\tБез дополнительных категорий, простое одноуровневое меню\n"
+"--flat\t\t\tПоказать все приложения на одном уровне с категориями\n"
+"--flat-sep=СТРОКА\tРазделитель категорий, используемая в режиме flat (по "
 "умолчанию: ' / ')\n"
-"--match-sec\tПрименить --match или --imatch к приложениям И секциям\n"
-"--match-osec\tПрименить --match или --imatch только к секциям\n"
-"--orig-comment\tНапечатать исходный файл .desktop в качестве комментария\n"
-"-C, --copying\tНапечатать информацию о правах на копирование\n"
-"-V, --version\tНапечатать информацию о версии\n"
-"-h, --help\tНапечатать эту информацию об использовании и выйти.\n"
+"--match-sec\t\tПрименить --match или --imatch к приложениям И секциям\n"
+"--match-osec\t\tПрименить --match или --imatch только к секциям\n"
+"--orig-comment\t\tНапечатать исходный файл .desktop в качестве комментария\n"
+"-C, --copying\t\tНапечатать информацию о правах на копирование\n"
+"-V, --version\t\tНапечатать информацию о версии\n"
+"-h, --help\t\tНапечатать эту информацию об использовании и выйти.\n"
 "\n"
-"ИМЯ ФАЙЛА\tЛюбой файл .desktop, запускающий приложение командой Exec.\n"
+"ИМЯ ФАЙЛА\t\tЛюбой файл .desktop, запускающий приложение командой Exec.\n"
 "\n"
 "Эта программа также обращает внимание на переменные окружения,\n"
 "определённые в XDG Base Directory Specification:\n"
@@ -486,7 +486,7 @@ msgstr "Утилиты"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A dictionary
 #: src/fdospecgen.h:46 src/fdospecgen.h:444
 msgid "Dictionary"
-msgstr "Словарь"
+msgstr "Словари"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A text tool utility
 #: src/fdospecgen.h:48 src/fdospecgen.h:1032
@@ -496,7 +496,7 @@ msgstr "Текстовые инструменты"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A file manager
 #: src/fdospecgen.h:54
 msgid "FileManager"
-msgstr "Менеджер файлов"
+msgstr "Файловые менеджеры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A file tool utility
 #: src/fdospecgen.h:56 src/fdospecgen.h:528 src/fdospecgen.h:534
@@ -526,7 +526,7 @@ msgstr "Аудио-Видео"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Just a mixer
 #: src/fdospecgen.h:70
 msgid "Mixer"
-msgstr "Микшер"
+msgstr "Микшеры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Numerical analysis software
 #: src/fdospecgen.h:78 src/fdospecgen.h:86
@@ -565,7 +565,7 @@ msgstr "Образование"
 #: src/fdospecgen.h:920 src/fdospecgen.h:968 src/fdospecgen.h:986
 #: src/fdospecgen.h:1122
 msgid "Science"
-msgstr "Наука"
+msgstr "Науки"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Optical character recognition application
 #: src/fdospecgen.h:94
@@ -609,7 +609,7 @@ msgstr "2D Графика"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A sequencer
 #: src/fdospecgen.h:126
 msgid "Sequencer"
-msgstr "Секвенсер"
+msgstr "Секвенсоры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A TV application
 #: src/fdospecgen.h:134
@@ -625,7 +625,7 @@ msgstr "Видео"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tuner
 #: src/fdospecgen.h:142
 msgid "Tuner"
-msgstr "Тюнер"
+msgstr "Тюнеры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application for viewing, creating, or processing vector graphics
 #: src/fdospecgen.h:150
@@ -645,7 +645,7 @@ msgstr "Полезное"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An action game
 #: src/fdospecgen.h:186
 msgid "ActionGame"
-msgstr "Активная игра"
+msgstr "Активные игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A game
 #: src/fdospecgen.h:188 src/fdospecgen.h:200 src/fdospecgen.h:212
@@ -654,7 +654,7 @@ msgstr "Активная игра"
 #: src/fdospecgen.h:926 src/fdospecgen.h:950 src/fdospecgen.h:956
 #: src/fdospecgen.h:992 src/fdospecgen.h:1004 src/fdospecgen.h:1106
 msgid "Game"
-msgstr "Игра"
+msgstr "Игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application handles adult or explicit material
 #: src/fdospecgen.h:192
@@ -674,7 +674,7 @@ msgstr "Развлечения"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Arcade style game
 #: src/fdospecgen.h:210
 msgid "ArcadeGame"
-msgstr "Аркадная игра"
+msgstr "Аркадные игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Software to teach arts
 #: src/fdospecgen.h:222 src/fdospecgen.h:228
@@ -704,12 +704,12 @@ msgstr "Биология"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Falling blocks game
 #: src/fdospecgen.h:288
 msgid "BlocksGame"
-msgstr "Игра в кирпичики"
+msgstr "Игры в кирпичики"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A board game
 #: src/fdospecgen.h:294
 msgid "BoardGame"
-msgstr "Настольная игра"
+msgstr "Настольные игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to build applications
 #: src/fdospecgen.h:300
@@ -727,12 +727,12 @@ msgstr "Разработка"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A calculator
 #: src/fdospecgen.h:306
 msgid "Calculator"
-msgstr "Калькулятор"
+msgstr "Калькуляторы"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Calendar application
 #: src/fdospecgen.h:312
 msgid "Calendar"
-msgstr "Календарь"
+msgstr "Календари"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An office type application
 #: src/fdospecgen.h:314 src/fdospecgen.h:326 src/fdospecgen.h:386
@@ -747,17 +747,17 @@ msgstr "Офис"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A card game
 #: src/fdospecgen.h:318
 msgid "CardGame"
-msgstr "Карточная игра"
+msgstr "Карточные игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Chart application
 #: src/fdospecgen.h:324
 msgid "Chart"
-msgstr "Диаграмма"
+msgstr "Диаграммы"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A chat client
 #: src/fdospecgen.h:330
 msgid "Chat"
-msgstr "Чат"
+msgstr "Чаты"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Network application such as a web browser
 #: src/fdospecgen.h:332 src/fdospecgen.h:440 src/fdospecgen.h:500
@@ -782,7 +782,7 @@ msgstr "Часы"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application that only works inside a terminal (text-based or command line application)
 #: src/fdospecgen.h:366
 msgid "ConsoleOnly"
-msgstr "Консольное"
+msgstr "Консольные"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside:  
 #: src/fdospecgen.h:372 src/fdospecgen.h:378
@@ -797,7 +797,7 @@ msgstr "Управление контактами"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Important application, core to the desktop such as a file manager or a help browser
 #: src/fdospecgen.h:390
 msgid "Core"
-msgstr "Ядро"
+msgstr "Основа"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Data visualization software
 #: src/fdospecgen.h:396 src/fdospecgen.h:402
@@ -807,12 +807,12 @@ msgstr "Визуализация данных"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to manage a database
 #: src/fdospecgen.h:408 src/fdospecgen.h:414 src/fdospecgen.h:420
 msgid "Database"
-msgstr "База данных"
+msgstr "Базы данных"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to debug applications
 #: src/fdospecgen.h:426
 msgid "Debugger"
-msgstr "Отладчик"
+msgstr "Отладка"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Configuration tool for the GUI
 #: src/fdospecgen.h:432
@@ -857,7 +857,7 @@ msgstr "Электронная почта"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Emulator of another platform, such as a DOS emulator
 #: src/fdospecgen.h:504 src/fdospecgen.h:510
 msgid "Emulator"
-msgstr "Эмулятор"
+msgstr "Эмуляторы"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Engineering software, e.g. CAD programs
 #: src/fdospecgen.h:516
@@ -887,7 +887,7 @@ msgstr "Финансы"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A flowchart application
 #: src/fdospecgen.h:558
 msgid "FlowChart"
-msgstr "Блок-схема"
+msgstr "Блок-схемы"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A GUI designer application
 #: src/fdospecgen.h:564
@@ -907,7 +907,7 @@ msgstr "Геология"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Geoscience software, GIS
 #: src/fdospecgen.h:594 src/fdospecgen.h:600
 msgid "Geoscience"
-msgstr "Наука о Земле"
+msgstr "Науки о Земле"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: HAM radio software
 #: src/fdospecgen.h:606 src/fdospecgen.h:612
@@ -927,12 +927,12 @@ msgstr "Гуманитарные науки"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: IDE application
 #: src/fdospecgen.h:648
 msgid "IDE"
-msgstr "Среда разработки"
+msgstr "Среды разработки"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An IRC client
 #: src/fdospecgen.h:654
 msgid "IRCClient"
-msgstr "IRC-клиент"
+msgstr "IRC-клиенты"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Image Processing software
 #: src/fdospecgen.h:660 src/fdospecgen.h:666
@@ -947,7 +947,7 @@ msgstr "Мгновенные сообщения"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A game for kids
 #: src/fdospecgen.h:678
 msgid "KidsGame"
-msgstr "Детская игра"
+msgstr "Детские игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Software to learn foreign languages
 #: src/fdospecgen.h:684 src/fdospecgen.h:690
@@ -962,7 +962,7 @@ msgstr "Литература"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Logic games like puzzles, etc
 #: src/fdospecgen.h:708
 msgid "LogicGame"
-msgstr "Логическая игра"
+msgstr "Логические игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Software for viewing maps, navigation, mapping, GPS
 #: src/fdospecgen.h:714 src/fdospecgen.h:720 src/fdospecgen.h:726
@@ -1017,12 +1017,12 @@ msgstr "Физика"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to play audio/video files
 #: src/fdospecgen.h:828 src/fdospecgen.h:834 src/fdospecgen.h:840
 msgid "Player"
-msgstr "Проигрыватель"
+msgstr "Проигрыватели"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Presentation software
 #: src/fdospecgen.h:846
 msgid "Presentation"
-msgstr "Презентация"
+msgstr "Презентации"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A profiling tool
 #: src/fdospecgen.h:852
@@ -1072,7 +1072,7 @@ msgstr "Безопасность"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A shooter game
 #: src/fdospecgen.h:948
 msgid "Shooter"
-msgstr "Стрелялка"
+msgstr "Стрелялки"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A simulation game
 #: src/fdospecgen.h:954
@@ -1092,17 +1092,17 @@ msgstr "Спорт"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A sports game
 #: src/fdospecgen.h:990
 msgid "SportsGame"
-msgstr "Спортивная игра"
+msgstr "Спортивные игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A spreadsheet
 #: src/fdospecgen.h:996
 msgid "Spreadsheet"
-msgstr "Электронная таблица"
+msgstr "Электронные таблицы"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A strategy game
 #: src/fdospecgen.h:1002
 msgid "StrategyGame"
-msgstr "Стратегическая игра"
+msgstr "Стратегические игры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Telephony via PC
 #: src/fdospecgen.h:1008
@@ -1117,12 +1117,12 @@ msgstr "Инструменты телефонии"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A terminal emulator application
 #: src/fdospecgen.h:1020
 msgid "TerminalEmulator"
-msgstr "Эмулятор терминала"
+msgstr "Терминалы"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A text editor
 #: src/fdospecgen.h:1026
 msgid "TextEditor"
-msgstr "Текстовый редактор"
+msgstr "Текстовые редакторы"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A translation tool
 #: src/fdospecgen.h:1038
@@ -1132,17 +1132,17 @@ msgstr "Переводы"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Video Conference software
 #: src/fdospecgen.h:1044
 msgid "VideoConference"
-msgstr "Видеоконференция"
+msgstr "Видеоконференции"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Tool to view e.g. a graphic or pdf file
 #: src/fdospecgen.h:1050 src/fdospecgen.h:1056
 msgid "Viewer"
-msgstr "Программа просмотра"
+msgstr "Программы просмотра"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A web browser
 #: src/fdospecgen.h:1062
 msgid "WebBrowser"
-msgstr "Веб-браузер"
+msgstr "Веб-браузеры"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool for web developers
 #: src/fdospecgen.h:1068 src/fdospecgen.h:1074
@@ -1152,7 +1152,7 @@ msgstr "Веб-разработка"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A word processor
 #: src/fdospecgen.h:1080
 msgid "WordProcessor"
-msgstr "Текстовый процессор"
+msgstr "Текстовые процессоры"
 
 #: src/icehelp.cc:1348
 msgid "Back"
@@ -1188,7 +1188,7 @@ msgstr "Содержание"
 
 #: src/icehelp.cc:1359
 msgid "Find..."
-msgstr "Поиск..."
+msgstr "Найти..."
 
 #: src/icehelp.cc:1359
 msgid "Ctrl+F"
@@ -1260,7 +1260,7 @@ msgstr "Поддержка"
 
 #: src/icehelp.cc:1382
 msgid "Theme Howto"
-msgstr "Инструкции по темам"
+msgstr "Инструкция по темам"
 
 #: src/icehelp.cc:1382 src/iceview.cc:60
 msgid "Ctrl+T"
@@ -1373,7 +1373,7 @@ msgstr ""
 "из %s.\n"
 "\n"
 "Параметры:\n"
-"  -d, --display=ИМЯ  ИМЯ используемого сервера X.\n"
+"  -d, --display=ИМЯ   ИМЯ используемого сервера X.\n"
 "  --sync              Синхронизировать команды X11.\n"
 "\n"
 "  -B                  Показать man-страницу icewmbg.\n"
@@ -1391,7 +1391,7 @@ msgstr ""
 "  -h, --help          Показать эту справку и выйти.\n"
 "\n"
 "Переменные окружения:\n"
-"  DISPLAY=ИМЯ        ИМЯ используемого сервера X.\n"
+"  DISPLAY=ИМЯ         ИМЯ используемого сервера X.\n"
 "\n"
 "Для отправки отчетов об ошибках, вопросов в техподдержку, комментариев, "
 "посетите:\n"
@@ -1401,7 +1401,7 @@ msgstr ""
 #: src/icehelp.cc:2592
 #, c-format
 msgid "Ignoring option '%s'"
-msgstr "Неизвестный параметр '%s'"
+msgstr "Проигнорирован параметр '%s'"
 
 #: src/icelist.cc:60
 msgid "List View"
@@ -1460,11 +1460,11 @@ msgstr "Неверное имя рабочего места: `%s'"
 
 #: src/icesh.cc:2290
 msgid "GNOME window layer"
-msgstr "Уровень окна GNOME"
+msgstr "Слой окна GNOME"
 
 #: src/icesh.cc:2291
 msgid "IceWM tray option"
-msgstr "Опция системного лотка IceWM"
+msgstr "Параметр системного лотка IceWM"
 
 #: src/icesh.cc:2292
 msgid "Gravity symbols"
@@ -1588,7 +1588,7 @@ msgstr ""
 "  -c, --config=ФАЙЛ   Загрузка настроек IceWM из ФАЙЛА.\n"
 "  -t, --theme=ФАЙЛ   Загрузка темы IceWM из ФАЙЛА.\n"
 "\n"
-"  -d, --display=ИМЯ  Подключение к серверу X с ИМЕНЕМ.\n"
+"  -d, --display=ИМЯ   Подключение к серверу X с ИМЕНЕМ.\n"
 "  -a, --alpha         Использовать 32-битное представление прозрачности. \n"
 "  --sync              Синхронизация обмена данными с сервером X11.\n"
 "\n"
@@ -1772,47 +1772,47 @@ msgstr ""
 "\n"
 "Параметры:\n"
 "\n"
-" -d, --display=ДИСПЛЕЙ   Использовать данный дисплей X11 (по умолчанию: "
+" -d, --display=ДИСПЛЕЙ       Использовать данный дисплей X11 (по умолчанию: "
 "$DISPLAY).\n"
 "\n"
 " -s, --sample-dir=КАТАЛОГ    Каталог со звуковыми файлами.\n"
-"                         По умолчанию $HOME/.config/icewm/sounds.\n"
+"                             По умолчанию $HOME/.config/icewm/sounds.\n"
 "\n"
-" -i, --interface=СПИСОК    Указывает звуковые интерфейсы. Одно или "
+" -i, --interface=СПИСОК      Указывает звуковые интерфейсы. Одно или "
 "несколько\n"
-"                         значений: %s, разделенных запятыми.\n"
+"                             значений: %s, разделенных запятыми.\n"
 "\n"
 " -D, --device=УСТРОЙСТВО     Только для совместимости: устройство по "
 "умолчанию. \n"
-"                         Вместо него используйте параметры -O или -A.\n"
+"                             Вместо него используйте параметры -O или -A.\n"
 "\n"
 " -O, --oss=УСТРОЙСТВО        Устройство OSS (по умолчанию: \"%s\").\n"
 "\n"
 " -A, --alsa=УСТРОЙСТВО       Устройство ALSA (по умолчанию: \"%s\").\n"
 "\n"
-" -z, --snooze=мс  Пауза между звуковыми событиями, в мс.\n"
-"                         По умолчанию 500 миллисекунд.\n"
+" -z, --snooze=мс             Пауза между звуковыми событиями, в мс.\n"
+"                             По умолчанию 500 миллисекунд.\n"
 "\n"
-" -p, --play=звук        Воспроизвести указанный звук (по имени или номеру), "
-"и выйти.\n"
+" -p, --play=звук             Воспроизвести указанный звук (по имени или "
+"номеру), и выйти.\n"
 "\n"
-" -l, --list-files        Вывести список путей звуковых файлов и выйти.\n"
+" -l, --list-files            Вывести список путей звуковых файлов и выйти.\n"
 "\n"
-"     --list-sounds       Вывести список поддерживаемых звуковых файлов и "
+"     --list-sounds           Вывести список поддерживаемых звуковых файлов и "
 "выйти.\n"
 "\n"
-"     --list-interfaces   Вывести список поддерживаемых звуковых интерфейсов "
-"и выйти.\n"
+"     --list-interfaces       Вывести список поддерживаемых звуковых "
+"интерфейсов и выйти.\n"
 "\n"
-" -v, --verbose           Выводить каждое звуковое событие.\n"
+" -v, --verbose               Выводить каждое звуковое событие.\n"
 "\n"
-" -V, --version           Показать информацию о версии и выйти.\n"
+" -V, --version               Показать информацию о версии и выйти.\n"
 "\n"
-" -h, --help              Показать эту справку и выйти.\n"
+" -h, --help                  Показать эту справку и выйти.\n"
 "\n"
 "Коды возврата:\n"
 "\n"
-"  0    Успех.\n"
+"  0    Успешно.\n"
 "  1    Общая ошибка.\n"
 "  2    Ошибка командной строки.\n"
 "  3    Ошибка подсистемы.\n"
@@ -1878,7 +1878,7 @@ msgid ""
 msgstr ""
 "  -n, --notify        Уведомление родительского процесса путем отправки "
 "сигнала USR1.\n"
-"  --display=ИМЯ      Подключение к серверу X с ИМЕНЕМ.\n"
+"  --display=ИМЯ       Подключение к серверу X с ИМЕНЕМ.\n"
 "  --sync              Синхронизация обмена данными с сервером X11.\n"
 "\n"
 "  -c, --config=ФАЙЛ   Загрузка настроек из ФАЙЛА.\n"
@@ -1967,14 +1967,14 @@ msgstr ""
 "  -u, --shuffle        Перемешать/переставить список фоновых изображений.\n"
 "\n"
 "  -c, --config=ФАЙЛ    Использовать конфигурацию из ФАЙЛА.\n"
-"  -t, --theme=ИМЯ     Использовать тему с ИМЕНЕМ.\n"
+"  -t, --theme=ИМЯ      Использовать тему с ИМЕНЕМ.\n"
 "\n"
 "  -i, --image=ФАЙЛ(Ы)  Загрузить фоновое изображение(я) из ФАЙЛА(ОВ).\n"
-"  -k, --color=ИМЯ(ИМЕНА)  Использовать фоновый(ые) цвет(а) из ИМЕНИ(ИМЁН).\n"
+"  -k, --color=ИМЯ(ИМЕНА) Использовать фоновый(ые) цвет(а) из ИМЕНИ(ИМЁН).\n"
 "\n"
 "  -s, --semis=ФАЙЛ(Ы)  Загрузить полупрозрачное(ые) изображение(я) из "
 "ФАЙЛА(ОВ).\n"
-"  -x, --trans=ИМЯ(ИМЕНА)  Использовать полупрозрачный(ые) цвет(а) из "
+"  -x, --trans=ИМЯ(ИМЕНА) Использовать полупрозрачный(ые) цвет(а) из "
 "ИМЕНИ(ИМЁН).\n"
 "\n"
 "  -e, --center=0/1     Отключить/Включить центрирование фона.\n"
@@ -1982,7 +1982,7 @@ msgstr ""
 "  -m, --multi=0/1      Отключить/Включить фон многоголовой конфигурации.\n"
 "  -y, --cycle=СЕКУНДЫ  Циклически менять фон каждое количество СЕКУНД.\n"
 "\n"
-"  --display=ИМЯ       Использовать ИМЯ, чтобы подключиться к серверу X.\n"
+"  --display=ИМЯ        Использовать ИМЯ, чтобы подключиться к серверу X.\n"
 "  --sync               Синхронизировать связь с сервером X11.\n"
 "\n"
 "  -h, --help           Показать информацию о версии и выйти.\n"
@@ -2083,7 +2083,7 @@ msgstr "Язык:"
 
 #: src/wmabout.cc:61
 msgid "DoubleBuffer"
-msgstr "Двойной буфер"
+msgstr "Двойная буферизация"
 
 #: src/wmabout.cc:62
 msgid "AlphaBlending"
@@ -2142,7 +2142,7 @@ msgstr "_Приостановка работы"
 
 #: src/wmapp.cc:531 src/wmdialog.cc:91
 msgid "_Hibernate"
-msgstr "_Режим сна"
+msgstr "_Глубокий сон"
 
 #: src/wmapp.cc:535
 msgid "Restart _Icewm"
@@ -2158,7 +2158,7 @@ msgstr "_Меню"
 
 #: src/wmapp.cc:548
 msgid "_Above Dock"
-msgstr "_Поверх дока"
+msgstr "_Выше дока"
 
 #: src/wmapp.cc:549
 msgid "_Dock"
@@ -2166,7 +2166,7 @@ msgstr "_Док"
 
 #: src/wmapp.cc:550
 msgid "_OnTop"
-msgstr "_Поверх"
+msgstr "_Сверху"
 
 #: src/wmapp.cc:551
 msgid "_Normal"
@@ -2286,7 +2286,7 @@ msgstr "Сл_ой"
 
 #: src/wmapp.cc:664 src/wmwinlist.cc:448
 msgid "Tile"
-msgstr "Замостить"
+msgstr "Разместить"
 
 #: src/wmapp.cc:668 src/wmwinlist.cc:450
 msgid "Move _To"
@@ -2354,7 +2354,8 @@ msgstr "<пусто>"
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
-"  --client-id=ID      Идентификатор клиента для связи с менеджером сеансов.\n"
+"  --client-id=ID            Идентификатор клиента для связи с менеджером "
+"сеансов.\n"
 
 #: src/wmapp.cc:1633
 msgid ""
@@ -2363,9 +2364,9 @@ msgid ""
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 "\n"
-"  --debug             Печатать общие отладочные сообщения.\n"
-"  --debug-z           Печатать отладочные сообщения, относящиеся к стеку "
-"окон.\n"
+"  --debug                   Печатать общие отладочные сообщения.\n"
+"  --debug-z                 Печатать отладочные сообщения, относящиеся к "
+"стеку окон.\n"
 
 #: src/wmapp.cc:1641
 msgid ""
@@ -2379,23 +2380,25 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 "\n"
-"  -a, --alpha         Использовать 32-битное представление прозрачности.\n"
-"  -c, --config=ФАЙЛ   Загрузка настроек из ФАЙЛА.\n"
-"  -t, --theme=ФАЙЛ    Загрузка темы из ФАЙЛА.\n"
+"  -a, --alpha               Использовать 32-битное представление "
+"прозрачности.\n"
+"  -c, --config=ФАЙЛ         Загрузка настроек из ФАЙЛА.\n"
+"  -t, --theme=ФАЙЛ          Загрузка темы из ФАЙЛА.\n"
 "  -s, --splash=ИЗОБРАЖЕНИЕ  Кратковременно показать файл ИЗОБРАЖЕНИЯ во "
 "время запуска.\n"
-"  -p, --postpreferences   Вывод настроек после завершения обработки.\n"
-"  --rewrite-preferences  Перезаписать существующий файл настроек.\n"
-"  --trace=conf,icon   Отслеживание путей, используемых для загрузки "
+"  -p, --postpreferences     Вывод настроек после завершения обработки.\n"
+"  --rewrite-preferences   Перезаписать существующий файл настроек.\n"
+"  --trace=conf,icon       Отслеживание путей, используемых для загрузки "
 "конфигурации.\n"
 
 #: src/wmapp.cc:1652
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
-msgstr "  -o, --output=ФАЙЛ   Перенаправить весь вывод в ФАЙЛ.\n"
+msgstr "  -o, --output=ФАЙЛ         Перенаправить весь вывод в ФАЙЛ.\n"
 
 #: src/wmapp.cc:1658
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
-msgstr "  -i, --install=ТЕМА Установить ТЕМУ из icewm-extra или 'list'.\n"
+msgstr ""
+"  -i, --install=ТЕМА        Установить ТЕМУ из icewm-extra или 'list'.\n"
 
 #: src/wmapp.cc:1661
 #, c-format
@@ -2432,30 +2435,31 @@ msgstr ""
 "Запускает диспетчер окон IceWM.\n"
 "\n"
 "Параметры:\n"
-"  --display=ИМЯ       Имя используемого X-сервера.\n"
-"%s  --sync              Синхронизировать команды X11.\n"
+"  --display=ИМЯ             Имя используемого X-сервера.\n"
+"%s  --sync                    Синхронизировать команды X11.\n"
 "%s\n"
-"  -V, --version       Показать информацию о версии и выйти.\n"
-"  -h, --help          Показать эту справку и выйти.\n"
+"  -V, --version             Показать информацию о версии и выйти.\n"
+"  -h, --help                Показать эту справку и выйти.\n"
 "%s\n"
-"  --replace           Заместить существующий диспетчер окон.\n"
-"  -r, --restart       Дать указание работающему icewm перезапустить себя.\n"
+"  --replace                 Заместить существующий диспетчер окон.\n"
+"  -r, --restart             Дать указание работающему icewm перезапустить "
+"себя.\n"
 "\n"
-"  --configured        Напечатать конфигурацию, которая была во время "
+"  --configured              Напечатать конфигурацию, которая была во время "
 "компиляции.\n"
-"  --directories       Напечатать каталоги конфигурации.\n"
-"  -l, --list-themes   Напечатать список всех доступных тем.\n"
+"  --directories             Напечатать каталоги конфигурации.\n"
+"  -l, --list-themes         Напечатать список всех доступных тем.\n"
 "%s\n"
 "Переменные окружения:\n"
-"  ICEWM_PRIVCFG=ПУТЬ  Каталог, используемый для пользовательских\n"
-"                      файлов конфигурации, \"$XDG_CONFIG_HOME/icewm\", если "
-"есть,\n"
-"                      или по умолчанию \"$HOME/.icewm/\".\n"
-"  DISPLAY=ИМЯ         Имя используемого X-сервера, по умолчанию зависит от "
-"Xlib.\n"
-"  MAIL=URL            Местонахождение Вашего почтового ящика. Если схема "
-"опущена,\n"
-"                      предполагается схема с локальным \"файлом\".\n"
+"  ICEWM_PRIVCFG=ПУТЬ        Каталог, используемый для пользовательских\n"
+"                            файлов конфигурации, \"$XDG_CONFIG_HOME/icewm\", "
+"если есть,\n"
+"                            или по умолчанию \"$HOME/.icewm/\".\n"
+"  DISPLAY=ИМЯ               Имя используемого X-сервера, по умолчанию "
+"зависит от Xlib.\n"
+"  MAIL=URL                  Местонахождение Вашего почтового ящика. Если "
+"схема опущена,\n"
+"                            предполагается схема с локальным \"файлом\".\n"
 "\n"
 "Для сообщений об ошибках, поддержки, комментариев, посетите:\n"
 "%s\n"
@@ -2538,7 +2542,7 @@ msgstr "Не удается переименовать %s в %s"
 
 #: src/wmdialog.cc:85
 msgid "Loc_k Workstation"
-msgstr "Заблокировать _станцию"
+msgstr "Заб_локировать станцию"
 
 #: src/wmdialog.cc:87 src/ymsgbox.cc:51
 msgid "_Cancel"
@@ -2615,7 +2619,7 @@ msgstr "Непредусмотренное ключевое слово меню:
 #: src/wmmenu.cc:280
 #, c-format
 msgid "Error at menuprog '%s'"
-msgstr "Ошибка menuprog %s"
+msgstr "Ошибка в menuprog %s"
 
 #: src/wmmenu.cc:324
 #, c-format
@@ -2666,7 +2670,7 @@ msgstr "Для переключения клавиатуры установит�
 #: src/wmoption.cc:285
 #, c-format
 msgid "Unknown window option: %s"
-msgstr "Неизвестная опция окна: %s"
+msgstr "Неизвестный параметр окна: %s"
 
 #: src/wmoption.cc:357
 #, c-format
@@ -2886,22 +2890,22 @@ msgstr "Ошибка загрузки картинки \"%s\""
 #: src/ycursor.cc:179
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
-msgstr "Ошибка? Imlib проанализировал \"%s\""
+msgstr "Ошибка? Imlib смог прочитать \"%s\""
 
 #: src/ycursor.cc:204
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
-msgstr "Ошибка? Плохой XPM заголовок, но Imlib проанализировал \"%s\""
+msgstr "Ошибка? Плохой XPM заголовок, но Imlib смог разобрать \"%s\""
 
 #: src/ycursor.cc:212
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
-msgstr "Ошибка? Неожиданный конец XPM файла, но Imlib проанализировал \"%s\""
+msgstr "Ошибка? Неожиданный конец XPM файла, но Imlib смог разобрать \"%s\""
 
 #: src/ycursor.cc:215
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
-msgstr "Ошибка? Неожиданный символ, но Imlib проанализировал \"%s\""
+msgstr "Ошибка? Неожиданный символ, но Imlib смог разобрать \"%s\""
 
 #: src/yfontcore.cc:121 src/yfontxft.cc:137
 #, c-format
@@ -2982,7 +2986,7 @@ msgstr "Не установлены переменные $USER и $LOGNAME?"
 #: src/yurl.cc:145
 #, c-format
 msgid "Failed to parse URL \"%s\"."
-msgstr "Не удалось проанализировать URL \"%s\"."
+msgstr "Не удалось разобрать URL \"%s\"."
 
 #: src/yurl.cc:161
 #, c-format
@@ -2999,7 +3003,7 @@ msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"
 "  --sync              Synchronize X11 commands.\n"
 msgstr ""
-"  -d, --display=ИМЯ  ИМЯ используемого сервера X.\n"
+"  -d, --display=ИМЯ   ИМЯ используемого сервера X.\n"
 "  --sync              Синхронизация команд X11.\n"
 
 #: src/yximage.cc:173
