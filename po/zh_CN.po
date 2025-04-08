@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (icewm)\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2024-03-04 05:42+0000\n"
+"PO-Revision-Date: 2025-04-08 10:56+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/icewm/"
 "icewm-1-4-branch/zh_CN/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 5.10.3\n"
 
 #: src/aapm.cc:113
 #, c-format
@@ -376,6 +376,36 @@ msgid ""
 "This program also listens to environment variables defined by\n"
 "the XDG Base Directory Specification:\n"
 msgstr ""
+"用法：icewm-menu-fdo [选项] [文件名]\n"
+"选项：\n"
+"-g、--generic\t\t在程序的括号中包含通用名\n"
+"-o、--output=FILE\t将输出写入到 FILE\n"
+"-t、--terminal=NAME\t使用 NAME 指定带有 '-e' 选项的终端\n"
+"-s、--no-lone-app\t将孤立元素移到父菜单中\n"
+"-S、--no-lone-hint\t与 -s 相似，但会追加原始子菜单\n"
+"-d、--deadline-apps=N\t经过 N 毫秒后停止加载应用程序信息\n"
+"-D、--deadline-all=N\t停止所有加载进程并列显目前为止获得的信息\n"
+"-m、--match=PAT\t\t仅显示名称中包含 PAT 的应用程序\n"
+"-M、--imatch=PAT\t与 --match 相似，但不区分大小写\n"
+"-L、--limit-max-len=N\t截断长度超过 N 个字符的应用程序名称，可添加以下标志："
+"\n"
+"--seps  \t在相关内容前后列显分隔符\n"
+"--sep-before\t在相关内容前列显分隔符\n"
+"--sep-after\t仅在相关内容后列显分隔符\n"
+"--no-sep-others\t遗留标志，没有任何作用\n"
+"--no-sub-cats\t不包含额外的子目录，只列显一层菜单\n"
+"--flat\t\t在一层目录提示中显示所有应用程序\n"
+"--flat-sep=STR\t在扁平模式下使用的目录分隔符（默认为 ' / '）\n"
+"--match-sec\t将 --match 或 --imatch 应用于应用程序和部分\n"
+"--match-osec\t仅将 --match 或 --imatch 应用于部分\n"
+"--orig-comment\t将 .desktop 源文件列显为注释\n"
+"-C、--copying\t列显版权信息\n"
+"-V、--version\t列显版本信息\n"
+"-h、--help\t列显此用法屏幕并退出。\n"
+"\n"
+"文件名\t用于启动相应应用程序执行命令的任何 .desktop 文件。\n"
+"\n"
+"此程序还会侦听 XDG 基本目录规范定义的环境变量：\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
 #: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
@@ -387,15 +417,15 @@ msgstr "音频"
 
 #: src/fdomenu.cc:1101
 msgid "Zarathustra"
-msgstr ""
+msgstr "Zarathustra"
 
 #: src/fdomenu.cc:1201
 msgid "System too slow! Failed to load menu content!"
-msgstr ""
+msgstr "系统太慢！无法加载菜单内容！"
 
 #: src/fdomenu.cc:1204
 msgid "Please push HERE and retry after some seconds."
-msgstr ""
+msgstr "请单击此处，稍后再试。"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to manage printers
 #: src/fdospecgen.h:24
@@ -633,7 +663,6 @@ msgstr "艺术"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Artificial Intelligence software
 #: src/fdospecgen.h:234 src/fdospecgen.h:240
-#, fuzzy
 msgid "Artificialtelligence"
 msgstr "人工智能"
 
@@ -733,7 +762,7 @@ msgstr "时钟"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application that only works inside a terminal (text-based or command line application)
 #: src/fdospecgen.h:366
 msgid "ConsoleOnly"
-msgstr ""
+msgstr "仅限控制台"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside:  
 #: src/fdospecgen.h:372 src/fdospecgen.h:378
@@ -2326,7 +2355,7 @@ msgstr "  -o, --output=FILE   把所有输出重定向到 FILE.\n"
 
 #: src/wmapp.cc:1658
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
-msgstr ""
+msgstr "  -i、--install=THEME 从 extra 或 'list' 安装 THEME。\n"
 
 #: src/wmapp.cc:1661
 #, c-format
