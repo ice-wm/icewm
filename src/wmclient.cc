@@ -532,15 +532,15 @@ bool YFrameClient::getNetWMPid(long* pid) {
     XResClientIdValue* ids = nullptr;
     if (XResQueryClientIds(xapp->display(), 1, &spec, &count, &ids) == Success) {
         for (long i = 0; i < count; ++i) {
-            *pid = long(XResGetClientPid(&ids[i]));
-            if (*pid != -1L)
+            fPid = long(XResGetClientPid(&ids[i]));
+            if (fPid != -1L)
                 break;
         }
         XResClientIdsDestroy(count, ids);
-    }
-    if (*pid > 1) {
-        *pid = fPid;
-        return true;
+        if (fPid > 1) {
+            *pid = fPid;
+            return true;
+        }
     }
 #endif
 
