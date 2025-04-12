@@ -476,9 +476,10 @@ SET(ICEWM_SRCS
     akeyboard.cc aapm.cc atray.cc ysmapp.cc yxtray.cc
     )
 do_auto_inc_headers(ICEWM_SRCS)
-concat_dedup(icewm_libs itk ice ${sm_LIBS} ${fontconfig_LDFLAGS} ${fribidi_LDFLAGS}
-                       ${xft_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
-                       ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${icewm_img_libs})
+concat_dedup(icewm_libs itk ice ${sm_LIBS} ${fontconfig_LDFLAGS}
+             ${fribidi_LDFLAGS} ${xft_LDFLAGS} ${xrandr_LDFLAGS}
+             ${xinerama_LDFLAGS} ${xres_LDFLAGS} ${xext_LDFLAGS}
+             ${x11_LDFLAGS} ${nls_LIBS} ${icewm_img_libs})
 
 ADD_EXECUTABLE(icewm${EXEEXT} ${ICEWM_SRCS})
 TARGET_LINK_LIBRARIES(icewm${EXEEXT} ${icewm_libs})
