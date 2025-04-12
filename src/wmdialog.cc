@@ -91,9 +91,10 @@ CtrlAltDelete::CtrlAltDelete(IApp* app, YWindow* parent)
         { _("_Hibernate"), actionHibernate, ICEWM_ACTION_HIBERNATE },
         { _("_Window list"), actionWindowList, ICEWM_ACTION_WINDOWLIST },
         { _("_Restart icewm"), actionRestart, ICEWM_ACTION_RESTARTWM },
-        { _("_About"), actionAbout, ICEWM_ACTION_ABOUT },
-        { _("Reload win_options"), actionWinOptions, ICEWM_ACTION_WINOPTIONS },
         { _("Reload ke_ys"), actionReloadKeys, ICEWM_ACTION_RELOADKEYS },
+        { _("Reload _toolbar"), actionToolbar, ICEWM_ACTION_TOOLBAR },
+        { _("Reload win_options"), actionWinOptions, ICEWM_ACTION_WINOPTIONS },
+        { _("_About"), actionAbout, ICEWM_ACTION_ABOUT },
         // { _("Clos_e"), actionClose, ICEWM_ACTION_NOP },
     };
     for (int i = 0; i < Count; ++i) {
@@ -122,6 +123,9 @@ CtrlAltDelete::CtrlAltDelete(IApp* app, YWindow* parent)
     for (int i = 0; i < Count; ++i) {
         int x = HORZ + (i % 3) * (w + MIDH);
         int y = VERT + (i / 3) * (h + MIDV);
+        if (i == 12 && Count == 13) {
+            x += w + MIDH;
+        }
         buttons[i]->setGeometry(YRect(x, y, w, h));
     }
 
