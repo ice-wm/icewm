@@ -538,6 +538,10 @@ bool YFrameClient::getNetWMPid(long* pid) {
         }
         XResClientIdsDestroy(count, ids);
     }
+    if (*pid > 1) {
+        *pid = fPid;
+        return true;
+    }
 #endif
 
     if ( !prop.net_wm_pid)
@@ -1783,6 +1787,13 @@ void YFrameClient::getClientLeader() {
             leader = *prop;
     }
     fClientLeader = leader;
+    if (leader) {
+        YTextProperty id(nullptr);
+        if (XGetTextProperty(xapp->display(), leader, &id, _XA_NET_STARTUP_ID)) {
+            char* str = (char *)id.value;
+            tlog("leader 0x%lx has _NET_STARTUP_ID = %s", leader, str);
+        }
+    }
 }
 
 void YFrameClient::getWindowRole() {
@@ -1854,6 +1865,7 @@ bool YFrameClient::getNetStartupId(unsigned& time) {
 
     YTextProperty id(nullptr);
     if (XGetTextProperty(xapp->display(), handle(), &id, _XA_NET_STARTUP_ID)) {
+        tlog("client 0x%lx has _NET_STARTUP_ID = %s", handle(), id.value);
         char* str = strstr((char *)id.value, "_TIME");
         if (str) {
             time = unsigned(atol(str + 5) & 0xffffffff);
