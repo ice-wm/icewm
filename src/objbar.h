@@ -24,6 +24,8 @@ public:
 
     void addButton(mstring name, ref<YIcon> icon, ObjectButton *button);
     void refresh();
+    void discard();
+    bool isEmpty() const { return objects.isEmpty(); }
     bool nonempty() const { return objects.nonempty(); }
 
 private:

@@ -102,6 +102,7 @@ public:
     void popupStartMenu();
     void popupWindowListMenu();
 
+    void initToolbar();
     void showAddressBar();
     void showBar();
     void handleCollapseButton();

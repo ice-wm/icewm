@@ -40,6 +40,9 @@
 #ifdef XINERAMA
 #include <X11/extensions/Xinerama.h>
 #endif
+#if HAVE_XRES
+#include <X11/extensions/XRes.h>
+#endif
 
 #ifdef CONFIG_I18N
 #include <locale.h>
@@ -941,6 +944,32 @@ static int getNormalGravity(Window window) {
     return gravity;
 }
 
+static long getClientPID(Window window) {
+    long pid = None;
+
+#if HAVE_XRES
+    XResClientIdSpec spec = { window, XRES_CLIENT_ID_PID_MASK };
+    long count = None;
+    XResClientIdValue* ids = nullptr;
+    if (XResQueryClientIds(display, 1, &spec, &count, &ids) == Success) {
+        for (long i = 0; i < count; ++i) {
+            pid = XResGetClientPid(&ids[i]);
+            if (pid != -1L)
+                break;
+        }
+        XResClientIdsDestroy(count, ids);
+    }
+#endif
+
+    if (pid <= 1L) {
+        YCardinal prop(window, ATOM_NET_WM_PID);
+        if (prop)
+            pid = *prop;
+    }
+
+    return (pid > 1L) ? pid : None;
+}
+
 class YWindowTree;
 
 class YTreeLeaf {
@@ -1213,8 +1242,8 @@ public:
     void filterByPid(long pid) {
         vector<Window> keep;
         for (YTreeIter client(*this); client; ++client) {
-            YCardinal prop(client, ATOM_NET_WM_PID);
-            if (prop && *prop == pid) {
+            long got = getClientPID(client);
+            if (got == pid) {
                 keep.push_back(client);
             }
         }
@@ -1983,7 +2012,7 @@ void IceSh::details(Window w)
     int x = 0, y = 0, width = 0, height = 0;
     ::getGeometry(w, x, y, width, height);
 
-    long pid = *YCardinal(w, ATOM_NET_WM_PID);
+    long pid = getClientPID(w);
     long work = getWorkspace(w);
 
     printf("0x%-8lx %2ld %5ld %-20s: %-20s %dx%d%+d%+d\n",
@@ -2953,6 +2982,7 @@ bool IceSh::icewmAction()
         { "keys",       ICEWM_ACTION_RELOADKEYS },
         { "icewmbg",    ICEWM_ACTION_ICEWMBG },
         { "refresh",    ICEWM_ACTION_REFRESH },
+        { "toolbar",    ICEWM_ACTION_TOOLBAR },
     };
     for (Symbol sym : sa) {
         if (0 == strcmp(*argp, sym.name)) {
@@ -4107,7 +4137,7 @@ void IceSh::extendPid()
     if (windowList) {
         vector<long> pidset;
         FOREACH_WINDOW(window) {
-            long pid = *YCardinal(window, ATOM_NET_WM_PID);
+            long pid = getClientPID(window);
             if (1 < pid && !contains(pidset, pid))
                 pidset.push_back(pid);
         }
@@ -4116,7 +4146,7 @@ void IceSh::extendPid()
             clients.getClientList();
             for (YTreeIter window(clients); window; ++window) {
                 if (windowList.have(window) == false) {
-                    long pid = *YCardinal(window, ATOM_NET_WM_PID);
+                    long pid = getClientPID(window);
                     if (1 < pid && contains(pidset, pid)) {
                         windowList.append(window);
                     }
@@ -5340,7 +5370,7 @@ void IceSh::parseAction()
         }
         else if (isAction("pid", 0)) {
             FOREACH_WINDOW(window) {
-                long pid = *YCardinal(window, ATOM_NET_WM_PID);
+                long pid = getClientPID(window);
                 if (1 < pid) {
                     printf("%ld\n", pid);
                 }

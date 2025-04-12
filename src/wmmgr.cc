@@ -896,28 +896,11 @@ void YWindowManager::handleClientMessage(const XClientMessageEvent &message) {
         return;
     }
     if (message.message_type == _XA_ICEWM_ACTION) {
-        MSG(("ClientMessage: _ICEWM_ACTION => %ld", message.data.l[1]));
-        WMAction action = WMAction(message.data.l[1]);
-        switch (action) {
-        case ICEWM_ACTION_NOP:
-        case ICEWM_ACTION_LOCK:
-            break;
-        case ICEWM_ACTION_LOGOUT:
-        case ICEWM_ACTION_CANCEL_LOGOUT:
-        case ICEWM_ACTION_REBOOT:
-        case ICEWM_ACTION_SHUTDOWN:
-        case ICEWM_ACTION_ABOUT:
-        case ICEWM_ACTION_WINDOWLIST:
-        case ICEWM_ACTION_RESTARTWM:
-        case ICEWM_ACTION_SUSPEND:
-        case ICEWM_ACTION_WINOPTIONS:
-        case ICEWM_ACTION_RELOADKEYS:
-        case ICEWM_ACTION_ICEWMBG:
-        case ICEWM_ACTION_REFRESH:
-        case ICEWM_ACTION_HIBERNATE:
-            smActionListener->handleSMAction(action);
-            break;
-        }
+        const long data = message.data.l[1];
+        MSG(("ClientMessage: _ICEWM_ACTION => %ld", data));
+        if (inrange(data, 2L, 20L))
+            smActionListener->handleSMAction(WMAction(data));
+        return;
     }
 }
 

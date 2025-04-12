@@ -19,6 +19,7 @@ enum WMAction {
     ICEWM_ACTION_ICEWMBG = 12,
     ICEWM_ACTION_REFRESH = 13,
     ICEWM_ACTION_HIBERNATE = 14,
+    ICEWM_ACTION_TOOLBAR = 15,
 };
 
 enum RebootShutdown {
@@ -124,6 +125,7 @@ enum EAction {
     actionSysDialog          = 259,
     actionIcewmbg            = 261,
     actionHibernate          = 263,
+    actionToolbar            = 265,
 };
 
 bool canShutdown(RebootShutdown reboot);

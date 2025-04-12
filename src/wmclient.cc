@@ -16,6 +16,9 @@
 #include "workspaces.h"
 #include "wmminiicon.h"
 #include "intl.h"
+#if HAVE_XRES
+#include <X11/extensions/XRes.h>
+#endif
 
 extern ref<YIcon> newClientIcon(int count, int reclen, long * elem);
 
@@ -513,21 +516,37 @@ bool YFrameClient::killPid() {
     return fPid > 0 && 0 == kill(fPid, SIGTERM);
 }
 
-bool YFrameClient::getNetWMPid(long *pid) {
-    *pid = 0;
-
-    if (!prop.net_wm_pid || destroyed())
-        return false;
-
-    if (fPid > 0) {
+bool YFrameClient::getNetWMPid(long* pid) {
+    if (fPid > 1) {
         *pid = fPid;
         return true;
     }
+    if (destroyed())
+        return false;
 
-    YProperty prop(this, _XA_NET_WM_PID, F32, 1, XA_CARDINAL);
+    const Window window = handle();
+
+#if HAVE_XRES
+    XResClientIdSpec spec = { window, XRES_CLIENT_ID_PID_MASK };
+    long count = None;
+    XResClientIdValue* ids = nullptr;
+    if (XResQueryClientIds(xapp->display(), 1, &spec, &count, &ids) == Success) {
+        for (long i = 0; i < count; ++i) {
+            *pid = long(XResGetClientPid(&ids[i]));
+            if (*pid != -1L)
+                break;
+        }
+        XResClientIdsDestroy(count, ids);
+    }
+#endif
+
+    if ( !prop.net_wm_pid)
+        return false;
+
+    YProperty prop(window, _XA_NET_WM_PID, F32, 1, XA_CARDINAL);
     if (prop) {
         YTextProperty text(nullptr);
-        if (XGetWMClientMachine(xapp->display(), handle(), &text)) {
+        if (XGetWMClientMachine(xapp->display(), window, &text)) {
             char myhost[HOST_NAME_MAX + 1] = {};
             gethostname(myhost, HOST_NAME_MAX);
             int len = (int) strnlen(myhost, HOST_NAME_MAX);

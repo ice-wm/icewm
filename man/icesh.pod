@@ -188,8 +188,9 @@ To match at the end use a C<$> suffix.
 
 =item B<-p>, B<-pid> I<PID>
 
-Filters clients by process ID. Clients with a _NET_WM_PID property equal
-to I<PID> are selected.
+Filters clients by process ID. Clients are selected that have
+a process ID of I<PID>, when libXRes is at version 1.2, or
+that have a _NET_WM_PID property equal to I<PID>.
 
 =item B<-u>, B<-unmapped>
 
@@ -788,6 +789,10 @@ This only affects new windows.
 =item B<keys>
 
 Let icewm reload the C<keys> file.
+
+=item B<toolbar>
+
+Let icewm reload the C<toolbar> file.
 
 =item B<refresh>
 

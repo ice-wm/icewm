@@ -184,10 +184,12 @@ pkg_check_modules(xrender REQUIRED xrender)
 pkg_check_modules(xcomposite REQUIRED xcomposite)
 pkg_check_modules(xdamage REQUIRED xdamage)
 pkg_check_modules(xfixes REQUIRED xfixes)
+pkg_check_modules(xres REQUIRED xres)
 pkg_check_modules(xext REQUIRED xext)
 pkg_check_modules(x11 REQUIRED x11)
 
 CHECK_LIBRARY_EXISTS(X11 XInternAtoms ${x11_LIBDIR} HAVE_XINTERNATOMS)
+CHECK_LIBRARY_EXISTS(XRes XResQueryClientIds ${xres_LIBDIR} HAVE_XRES)
 
 set(icewm_img_libs ${xrender_LDFLAGS} ${xcomposite_LDFLAGS} ${xdamage_LDFLAGS} ${xfixes_LDFLAGS})
 
@@ -427,7 +429,7 @@ set(icewm_pc_flags ${CXXFLAGS_COMMON} ${fontconfig_CFLAGS} ${xft_CFLAGS}
                    ${librsvg_CFLAGS} ${pixbuf_CFLAGS} ${libimlib2_CFLAGS}
                    ${libpng_CFLAGS} ${libxpm_CFLAGS} ${xrender_CFLAGS}
                    ${xrandr_CFLAGS} ${xinerama_CFLAGS} ${xext_CFLAGS}
-                   ${x11_CFLAGS} ${fribidi_CFLAGS} ${nls_CFLAGS})
+                   ${xres_CFLAGS} ${x11_CFLAGS} ${fribidi_CFLAGS} ${nls_CFLAGS})
 
 SET(ICE_COMMON_SRCS udir.cc upath.cc yapp.cc yxapp.cc ytimer.cc yprefs.cc
                     ywindow.cc ypaint.cc ypopup.cc ycursor.cc ysocket.cc
@@ -521,7 +523,7 @@ target_link_libraries(icewmhint${EXEEXT} ice ${xext_LDFLAGS} ${x11_LDFLAGS}
 
 ADD_EXECUTABLE(icesh${EXEEXT} icesh.cc)
 concat_dedup(icesh_libs ice ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
-                      ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS})
+             ${xres_LDFLAGS} ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS})
 TARGET_LINK_LIBRARIES(icesh${EXEEXT} ${icesh_libs})
 
 ADD_EXECUTABLE(icewmbg${EXEEXT} icewmbg.cc)

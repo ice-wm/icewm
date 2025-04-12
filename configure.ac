@@ -28,7 +28,7 @@ AC_SUBST([DATE])
 MDOCDATE='March 9, 2025'
 AC_SUBST([MDOCDATE])
 
-BRANCH='3.7.2'
+BRANCH='icewm-1-4-BRANCH'
 AC_SUBST([BRANCH])
 
 APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icehelp'
@@ -197,12 +197,14 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[#include <regex>]],[[
                              ])
               ])
 
-PKG_CHECK_MODULES([CORE],[fontconfig xrender xcomposite xdamage xfixes xext x11])
+PKG_CHECK_MODULES([CORE],[fontconfig xrender xcomposite xdamage xfixes xres xext x11])
 AC_SUBST([CORE_CFLAGS])
 AC_SUBST([CORE_LIBS])
 
 AC_CHECK_LIB([X11],[XInternAtoms],
     [AC_DEFINE([HAVE_XINTERNATOMS],[1],[Define to enable XInternAtoms])])
+AC_CHECK_LIB([XRes],[XResQueryClientIds],
+    [AC_DEFINE([HAVE_XRES],[1],[Define 1 if libXRes has XResQueryClientIds])])
 
 AC_ARG_ENABLE([sm],
     AS_HELP_STRING([--disable-sm],[Disable X session management.]))
