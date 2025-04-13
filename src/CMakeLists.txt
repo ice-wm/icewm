@@ -184,12 +184,10 @@ pkg_check_modules(xrender REQUIRED xrender)
 pkg_check_modules(xcomposite REQUIRED xcomposite)
 pkg_check_modules(xdamage REQUIRED xdamage)
 pkg_check_modules(xfixes REQUIRED xfixes)
-pkg_check_modules(xres REQUIRED xres)
 pkg_check_modules(xext REQUIRED xext)
 pkg_check_modules(x11 REQUIRED x11)
 
 CHECK_LIBRARY_EXISTS(X11 XInternAtoms ${x11_LIBDIR} HAVE_XINTERNATOMS)
-CHECK_LIBRARY_EXISTS(XRes XResQueryClientIds ${xres_LIBDIR} HAVE_XRES)
 
 set(icewm_img_libs ${xrender_LDFLAGS} ${xcomposite_LDFLAGS} ${xdamage_LDFLAGS} ${xfixes_LDFLAGS})
 
@@ -324,6 +322,20 @@ if(CONFIG_XRANDR)
     IF(NOT xrandr_FOUND)
         message(WARNING "Xrandr library not found, disabling CONFIG_XRANDR")
         set(CONFIG_XRANDR off)
+    ENDIF()
+endif()
+
+option(HAVE_XRES "Define to enable XRes support" on)
+if(HAVE_XRES)
+    pkg_check_modules(xres xres>=1.2)
+    IF(NOT xres_FOUND)
+        message(WARNING "xres library (>=1.2) not found, disabling HAVE_XRES")
+        set(HAVE_XRES off)
+    ELSE()
+        check_library_exists(XRes XResClientIdsDestroy ${xres_LIBDIR} HAVE_XRES)
+        IF(NOT HAVE_XRES)
+            message(WARNING "xres lacks XResClientIdsDestroy, disabling HAVE_XRES")
+        ENDIF()
     ENDIF()
 endif()
 
@@ -598,6 +610,7 @@ foreach (_variableName
         CONFIG_FRIBIDI
         CONFIG_EXTERNAL_TRAY
         XINERAMA
+        HAVE_XRES
         ENABLE_LTO
         ENABLE_ALSA
         ENABLE_AO
