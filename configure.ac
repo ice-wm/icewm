@@ -2,10 +2,10 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([icewm],[3.7.2],
+AC_INIT([icewm],[3.7.3],
         [https://github.com/bbidulock/icewm/issues],
         [icewm],[https://ice-wm.org])
-AC_REVISION([3.7.2])
+AC_REVISION([3.7.3])
 
 # set better defaults
 AC_PREFIX_DEFAULT([/usr])
@@ -22,10 +22,10 @@ AC_CONFIG_AUX_DIR([scripts])
 AC_USE_SYSTEM_EXTENSIONS
 AC_CANONICAL_TARGET
 
-DATE='2025-03-09'
+DATE='2025-03-30'
 AC_SUBST([DATE])
 
-MDOCDATE='March 9, 2025'
+MDOCDATE='March 30, 2025'
 AC_SUBST([MDOCDATE])
 
 BRANCH='icewm-1-4-BRANCH'
@@ -197,14 +197,12 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[#include <regex>]],[[
                              ])
               ])
 
-PKG_CHECK_MODULES([CORE],[fontconfig xrender xcomposite xdamage xfixes xres xext x11])
+PKG_CHECK_MODULES([CORE],[fontconfig xrender xcomposite xdamage xfixes xext x11])
 AC_SUBST([CORE_CFLAGS])
 AC_SUBST([CORE_LIBS])
 
 AC_CHECK_LIB([X11],[XInternAtoms],
     [AC_DEFINE([HAVE_XINTERNATOMS],[1],[Define to enable XInternAtoms])])
-AC_CHECK_LIB([XRes],[XResQueryClientIds],
-    [AC_DEFINE([HAVE_XRES],[1],[Define 1 if libXRes has XResQueryClientIds])])
 
 AC_ARG_ENABLE([sm],
     AS_HELP_STRING([--disable-sm],[Disable X session management.]))
@@ -238,6 +236,19 @@ if test x$enable_xrandr != xno; then
 	[AC_MSG_ERROR([Package XRANDR is required for X RandR extension.])])
 else
     AC_MSG_WARN([RANDR disabled.])
+fi
+
+AC_ARG_ENABLE([xres],
+    AS_HELP_STRING([--disable-xres],[Disable use of XRES extension.]))
+if test x$enable_xres != xno; then
+    PKG_CHECK_MODULES([XRES],[xres >= 1.2],[
+	CORE_CFLAGS="$XRES_CFLAGS $CORE_CFLAGS"
+	CORE_LIBS="$XRES_LIBS $CORE_LIBS"
+	AC_DEFINE([HAVE_XRES],[1],[Define 1 if libXRes has XResQueryClientIds])
+	features="$features xres"],
+	[AC_MSG_NOTICE([Package XRES is required for X-resource extension.])])
+else
+    AC_MSG_WARN([XRES disabled.])
 fi
 
 AC_ARG_ENABLE([xfreetype],
