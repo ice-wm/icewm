@@ -140,7 +140,7 @@ fi
 if [[ -v DEPEN ]]; then
     for p in \
         x11 xext xcomposite xdamage xfixes \
-        xrender xrandr xinerama xft \
+        xrender xrandr xinerama xft xres \
         fontconfig sm ice \
         sndfile alsa ao \
         gio-2.0 gio-unix-2.0 \
