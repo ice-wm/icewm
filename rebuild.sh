@@ -129,9 +129,9 @@ if [[ -v RELCM ]]; then
         -DCMAKE_VERBOSE_MAKEFILE=ON \
         -DCONFIG_XRANDR=ON \
         -DENABLE_LTO=ON \
-        -DCMAKE_AR=`which gcc-ar` \
-        -DCMAKE_NM=`which gcc-nm` \
-        -DCMAKE_RANLIB=`which gcc-ranlib` \
+        -DCMAKE_AR=`which gcc-ar || which ar` \
+        -DCMAKE_NM=`which gcc-nm || which nm` \
+        -DCMAKE_RANLIB=`which gcc-ranlib || which ranlib` \
         -DXTERMCMD=$xterm &&
     gmake "$jobs"
 fi
