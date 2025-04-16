@@ -55,6 +55,10 @@ to use an external icewmtray process.
 
 Also start icesound.
 
+=item B<--replace>
+
+Replace an existing window manager.
+
 =back
 
 =head2 GENERAL OPTIONS
