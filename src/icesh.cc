@@ -16,6 +16,7 @@
 #include "config.h"
 #include "intl.h"
 
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
@@ -1317,6 +1318,79 @@ public:
                 XFree(hint.res_name);
                 XFree(hint.res_class);
             }
+        }
+        fChildren = keep;
+    }
+
+    static bool isShell(const char* path) {
+        int fd = open("/etc/shells", O_RDONLY);
+        if (fd >= 0) {
+            const ssize_t size = 4096;
+            char file[size];
+            ssize_t got = read(fd, file, size - 1);
+            close(fd);
+            if (1 < got && got < size) {
+                file[got] = '\0';
+                for (char* line = file, *next; line && *line; line = next) {
+                    next = strchr(line, '\n');
+                    if (next) *next++ = '\0';
+                    char* cp = line + strspn(line, " \t");
+                    if (*cp == '/') {
+                        char* ep = cp + strcspn(cp, "# \t");
+                        if (*ep != '#') {
+                            *ep = '\0';
+                            char buf[PATH_MAX];
+                            char *rp = realpath(cp, buf);
+                            if (rp && strcmp(rp, path) == 0)
+                                return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    static bool isTerminal(int pid, const char* shell) {
+        const int bufsize = 123;
+        char buf[bufsize];
+        snprintf(buf, bufsize, "/proc/%d/task/%d/children", pid, pid);
+        int fd = open(buf, O_RDONLY);
+        if (fd >= 0) {
+            ssize_t rd = read(fd, buf, bufsize - 1);
+            close(fd);
+            if (0 < rd) {
+                buf[rd] = '\0';
+                char* end = buf;
+                int num;
+                while (*end && 1 < (num = int(strtol(end, &end, 10)))) {
+                    char exe[bufsize];
+                    snprintf(exe, bufsize, "/proc/%d/exe", num);
+                    char path[bufsize];
+                    ssize_t lk = readlink(exe, path, bufsize - 1);
+                    if (1 < lk && lk < bufsize) {
+                        path[lk] = '\0';
+                        if ((shell && strcmp(path, shell) == 0) ||
+                            isShell(path))
+                            return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    void filterByTerminal() {
+        vector<Window> keep;
+        char solve[PATH_MAX];
+        char* shell = getenv("SHELL");
+        if (shell) {
+            shell = realpath(shell, solve);
+        }
+        for (YTreeIter client(*this); client; ++client) {
+            int pid = int(getClientPID(client));
+            if (pid > 1 && isTerminal(pid, shell))
+                keep.push_back(client);
         }
         fChildren = keep;
     }
@@ -4514,6 +4588,11 @@ void IceSh::flag(char* arg)
         windowList += taskbar;
         MSG(("taskbar appended"));
         selecting = true;
+        return;
+    }
+    if (isOptArg(arg, "-Z", "-Zerminal")) {
+        selectWindows();
+        windowList.filterByTerminal();
         return;
     }
     if (isOptArg(arg, "-quiet", "")) {

@@ -254,6 +254,10 @@ be C<All> for all monitors, C<this> for the monitor where the
 active window is displayed, or a monitor number starting from zero.
 See the output of C<randr> or C<xinerama> below.
 
+=item B<-Z>, B<-Zerminal>
+
+Keep only terminals: clients that have forked a shell.
+
 =back
 
 =head2 GENERAL OPTIONS
