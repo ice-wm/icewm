@@ -135,24 +135,17 @@ Following is the example F<programs> file that ships with L<icewm(1)>:
  #
  # mostly obsolete, fixme
  menu Editors folder {
-     prog fte fte fte
      prog vim vim gvim
-     prog xemacs xemacs xemacs
      prog emacs emacs emacs
-     prog NEdit nedit nedit
-     prog xedit xedit xedit
      prog Lyx emacs lyx
  }
  menu "WWW" folder {
-     prog Netscape netscape netscape
-     prog Mozilla mozilla mozilla
      prog Galeon galeon galeon
      prog Arena arena arena
      prog Lynx lynx xterm -e lynx
      prog Links lynx xterm -e links
  }
  menu "Document Viewers" folder {
-     prog "Acrobat Reader" pdf acroread
      prog "DVI Previewer" xdvi xdvi
      prog "Ghostview" ghostview gv
  }
@@ -163,11 +156,7 @@ Following is the example F<programs> file that ships with L<icewm(1)>:
      prog XFig xfig xfig
  }
  menu Games folder {
-     prog "Koules for X" koules xkoules -f
-     prog Xboing xboing xboing
      prog Xboard xboard xboard
-     prog XGalaga xgalaga xgal
-     prog XDemineur xdemineur xdemineur
      prog "Tux Racer" tuxracer tuxracer
  }
  menu System folder {
