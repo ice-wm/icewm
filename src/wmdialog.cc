@@ -192,24 +192,49 @@ bool CtrlAltDelete::handleKey(const XKeyEvent &key) {
         if ((k == XK_Down || k == XK_KP_Down) && m == 0) {
             int i = indexFocus();
             if (i >= 0) {
-                for (int k = 3; k < Count; k += 3) {
-                    if (buttons[(i + k) % Count]->isFocusTraversable()) {
-                        setFocus(buttons[(i + k) % Count]);
+                int j = i;
+                do {
+                    j += 3;
+                    if (Count % 3 == 1) {
+                        if (j == Count - 1)
+                            j = 0;
+                        else if (j == Count)
+                            j--;
+                        else if (j == Count + 2)
+                            j = 1;
+                    }
+                    if (j >= Count)
+                        j = i % 3;
+                    if (buttons[j]->isFocusTraversable()) {
+                        setFocus(buttons[j]);
                         break;
                     }
-                }
+                } while (j != i);
             }
             return true;
         }
         if ((k == XK_Up || k == XK_KP_Up) && m == 0) {
             int i = indexFocus();
             if (i >= 0) {
-                for (int k = Count - 3; 0 < k; k -= 3) {
-                    if (buttons[(i + k) % Count]->isFocusTraversable()) {
-                        setFocus(buttons[(i + k) % Count]);
-                        break;
+                int j = i;
+                do {
+                    j -= 3;
+                    if (Count % 3 == 1) {
+                        if (j == -2)
+                            j = Count - 1;
+                        else if (j == Count - 4)
+                            j++;
                     }
-                }
+                    if (j < 0) {
+                        j += Count - (Count % 3);
+                    }
+                    if (0 <= j && j < Count) {
+                        if (buttons[j]->isFocusTraversable()) {
+                            setFocus(buttons[j]);
+                            break;
+                        }
+                    }
+                } while (j != i);
             }
             return true;
         }
