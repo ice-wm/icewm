@@ -231,6 +231,7 @@ public:
     }
 
     void cancel() override {
+        YRestackLock restack;
         ZItem last = fLastItem;
         ZItem act = fActiveItem;
         fLastItem.reset();
@@ -249,6 +250,7 @@ public:
     void accept() override {
         ZItem act = fActiveItem;
         if (act) {
+            YRestackLock restack;
             if (act.client != act.frame->client())
                 act.frame->selectTab(act.client);
             act.frame->activateWindow(true, false);
