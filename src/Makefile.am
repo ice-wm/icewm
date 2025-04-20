@@ -405,7 +405,7 @@ icesh_SOURCES = \
 	ytime.h \
 	yrect.h \
 	icesh.cc
-icesh_LDADD = libice.la $(X_LIBS) $(RANDR_LIBS) $(XINERAMA_LIBS) -lXRes -lX11 @LIBINTL@ @LIBICONV@
+icesh_LDADD = libice.la $(X_LIBS) $(RANDR_LIBS) $(XINERAMA_LIBS) $(XRES_LIBS) -lX11 @LIBINTL@ @LIBICONV@
 
 icewm_session_SOURCES = \
 	appnames.h \
