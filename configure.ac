@@ -525,8 +525,8 @@ AC_DEFINE_UNQUOTED([LOCDIR],["${LOCDIR}"],
 
 AC_ARG_WITH([theme],
     AS_HELP_STRING([--with-theme=NAME],[Default theme.
-                    [default="default/default.theme"]]),,
-                    with_theme="default/default.theme")
+                    [default="icedesert/default.theme"]]),,
+                    with_theme="icedesert/default.theme")
 AC_DEFINE_UNQUOTED([CONFIG_DEFAULT_THEME],
                    "${with_theme}",[Name of default theme])
 AC_ARG_WITH([background],

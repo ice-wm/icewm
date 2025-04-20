@@ -32,24 +32,16 @@ alternatives.  Alternatives are small tweaks of a theme.  These are
 specified in their own F<.theme> file, which replaces F<default.theme>.
 
 If no theme file exists then B<icewm> will use the default setting of
-C<Theme="default/default.theme">.
+C<Theme="icedesert/default.theme">.
 
 =head2 EXAMPLES
 
-Following is my current F<theme> file.  You can see from the comments
-that L<icewm(1)> keeps a history of the previous ten theme settings.
+Following is a F<theme> file.  The comments show that L<icewm(1)> keeps
+a history of previous theme settings.
 
-    Theme="Unexicon-towers/default.theme"
-    #Theme="Unexicon-pedestals/default.theme"
-    ##Theme="Unexicon-penguins/default.theme"
-    ###Theme="Unexicon/default.theme"
-    ####Theme="Squared-for-debian/default.theme"
-    #####Theme="Squared-grey/default.theme"
-    ######Theme="Squared-green/default.theme"
-    #######Theme="Penguins/default.theme"
-    ########Theme="Squared-blue/default.theme"
-    #########Theme="default/default.theme"
-    ##########Theme="yellowmotif/default.theme"
+    Theme="CrystalBlue/default.theme"
+    #Theme="icedesert/default.theme"
+    ##Theme="default/default.theme"
 
 =head2 FILES
 
