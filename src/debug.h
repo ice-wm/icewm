@@ -3,6 +3,7 @@
 
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma clang diagnostic ignored "-Wvla-cxx-extension"
 
 #ifdef DEBUG
 extern bool debug;
