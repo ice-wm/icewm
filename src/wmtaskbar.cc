@@ -339,19 +339,8 @@ void TaskBar::initApplets() {
     } else
         fApplications = nullptr;
 
-    fObjectBar = new ObjectBar(this);
-    if (fObjectBar) {
-        upath t = app->findConfigFile("toolbar");
-        if (t != null) {
-            MenuLoader(app, smActionListener, wmActionListener)
-            .loadMenus(t, fObjectBar);
-        }
-        if (fObjectBar->nonempty()) {
-            fObjectBar->setTitle("IceToolbar");
-        } else {
-            delete fObjectBar; fObjectBar = nullptr;
-        }
-    }
+    initToolbar();
+
     if (taskBarShowWindowListMenu) {
         class LazyWindowListMenu : public LazyMenu {
             YMenu* ymenu() { return windowListMenu; }
@@ -422,6 +411,31 @@ void TaskBar::initApplets() {
     if (fCollapseButton) {
         fCollapseButton->realize();
         fCollapseButton->raise();
+    }
+}
+
+void TaskBar::initToolbar() {
+    bool reuse = (fObjectBar != nullptr);
+    if (reuse) {
+        fObjectBar->discard();
+    } else {
+        fObjectBar = new ObjectBar(this);
+    }
+    if (fObjectBar) {
+        upath path = app->findConfigFile("toolbar");
+        if (path != null) {
+            MenuLoader(app, smActionListener, wmActionListener)
+            .loadMenus(path, fObjectBar);
+        }
+        if (fObjectBar->isEmpty()) {
+            delete fObjectBar; fObjectBar = nullptr;
+        }
+        else if (reuse) {
+            relayout();
+        }
+        else {
+            fObjectBar->setTitle("IceToolbar");
+        }
     }
 }
 

@@ -28,7 +28,7 @@ AC_SUBST([DATE])
 MDOCDATE='March 30, 2025'
 AC_SUBST([MDOCDATE])
 
-BRANCH='3.7.3'
+BRANCH='icewm-1-4-BRANCH'
 AC_SUBST([BRANCH])
 
 APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icehelp'
@@ -236,6 +236,19 @@ if test x$enable_xrandr != xno; then
 	[AC_MSG_ERROR([Package XRANDR is required for X RandR extension.])])
 else
     AC_MSG_WARN([RANDR disabled.])
+fi
+
+AC_ARG_ENABLE([xres],
+    AS_HELP_STRING([--disable-xres],[Disable use of XRES extension.]))
+if test x$enable_xres != xno; then
+    PKG_CHECK_MODULES([XRES],[xres >= 1.2],[
+	CORE_CFLAGS="$XRES_CFLAGS $CORE_CFLAGS"
+	CORE_LIBS="$XRES_LIBS $CORE_LIBS"
+	AC_DEFINE([HAVE_XRES],[1],[Define 1 if libXRes has XResQueryClientIds])
+	features="$features xres"],
+	[AC_MSG_NOTICE([Package XRES is required for X-resource extension.])])
+else
+    AC_MSG_WARN([XRES disabled.])
 fi
 
 AC_ARG_ENABLE([xfreetype],
@@ -512,8 +525,8 @@ AC_DEFINE_UNQUOTED([LOCDIR],["${LOCDIR}"],
 
 AC_ARG_WITH([theme],
     AS_HELP_STRING([--with-theme=NAME],[Default theme.
-                    [default="default/default.theme"]]),,
-                    with_theme="default/default.theme")
+                    [default="icedesert/default.theme"]]),,
+                    with_theme="icedesert/default.theme")
 AC_DEFINE_UNQUOTED([CONFIG_DEFAULT_THEME],
                    "${with_theme}",[Name of default theme])
 AC_ARG_WITH([background],

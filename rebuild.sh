@@ -129,6 +129,9 @@ if [[ -v RELCM ]]; then
         -DCMAKE_VERBOSE_MAKEFILE=ON \
         -DCONFIG_XRANDR=ON \
         -DENABLE_LTO=ON \
+        -DCMAKE_AR=`which gcc-ar || which ar` \
+        -DCMAKE_NM=`which gcc-nm || which nm` \
+        -DCMAKE_RANLIB=`which gcc-ranlib || which ranlib` \
         -DXTERMCMD=$xterm &&
     gmake "$jobs"
 fi
@@ -137,7 +140,7 @@ fi
 if [[ -v DEPEN ]]; then
     for p in \
         x11 xext xcomposite xdamage xfixes \
-        xrender xrandr xinerama xft \
+        xrender xrandr xinerama xft xres \
         fontconfig sm ice \
         sndfile alsa ao \
         gio-2.0 gio-unix-2.0 \

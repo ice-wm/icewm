@@ -41,7 +41,7 @@ bool WMConfig::loadThemeConfiguration() {
         }
     }
     if (!conf && strpcmp(themeName, "default", "/")) {
-        themeName = newstr("default/default.theme");
+        themeName = newstr("icedesert/default.theme");
         if (conf.loadTheme() == false) {
             fail(_("Failed to load theme %s"), themeName);
         }

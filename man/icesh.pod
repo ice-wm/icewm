@@ -188,8 +188,9 @@ To match at the end use a C<$> suffix.
 
 =item B<-p>, B<-pid> I<PID>
 
-Filters clients by process ID. Clients with a _NET_WM_PID property equal
-to I<PID> are selected.
+Filters clients by process ID. Clients are selected that have
+a process ID of I<PID>, when libXRes is at version 1.2, or
+that have a _NET_WM_PID property equal to I<PID>.
 
 =item B<-u>, B<-unmapped>
 
@@ -252,6 +253,10 @@ clients that are displayed on I<MONITOR>, where I<MONITOR> can
 be C<All> for all monitors, C<this> for the monitor where the
 active window is displayed, or a monitor number starting from zero.
 See the output of C<randr> or C<xinerama> below.
+
+=item B<-Z>, B<-Zerminal>
+
+Keep only terminals: clients that have forked a shell.
 
 =back
 
@@ -788,6 +793,10 @@ This only affects new windows.
 =item B<keys>
 
 Let icewm reload the C<keys> file.
+
+=item B<toolbar>
+
+Let icewm reload the C<toolbar> file.
 
 =item B<refresh>
 

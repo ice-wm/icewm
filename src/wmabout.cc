@@ -57,9 +57,10 @@ AboutDlg::AboutDlg(YActionListener* al):
     *table += new Row(label(_("Language:")), label(language));
 
     char text[123];
-    snprintf(text, sizeof text, "%s %s %s",
+    snprintf(text, sizeof text, "%s %s %s %s",
              YImage::renderName(), doubleBuffer ? _("DoubleBuffer") : "",
-             xapp->alpha() ? _("AlphaBlending") : "");
+             xapp->alpha() ? _("AlphaBlending") : "",
+             YIcon::supportSVG() ? "SVG" : "");
     *table += new Row(label(_("Renderer:")), label(text));
     if (rightToLeft)
         table->swapColumns();

@@ -28,16 +28,6 @@ nobase_dist_pkgdata_DATA = \
 	icons/bomb_16x16.xpm \
 	icons/bomb_32x32.xpm \
 	icons/cancel-logout_16x16.xpm \
-	icons/communicator-abook_16x16.xpm \
-	icons/communicator-abook_32x32.xpm \
-	icons/communicator-browser_16x16.xpm \
-	icons/communicator-browser_32x32.xpm \
-	icons/communicator-composer_16x16.xpm \
-	icons/communicator-composer_32x32.xpm \
-	icons/communicator-discussion_16x16.xpm \
-	icons/communicator-discussion_32x32.xpm \
-	icons/communicator-mail_16x16.xpm \
-	icons/communicator-mail_32x32.xpm \
 	icons/emacs_16x16.xpm \
 	icons/emacs_32x32.xpm \
 	icons/file_16x16.xpm \
@@ -48,8 +38,6 @@ nobase_dist_pkgdata_DATA = \
 	icons/focus_32x32.png \
 	icons/folder_16x16.xpm \
 	icons/folder_32x32.xpm \
-	icons/fte_16x16.xpm \
-	icons/fte_32x32.xpm \
 	icons/gimp_16x16.xpm \
 	icons/gimp_32x32.xpm \
 	icons/gnome_16x16.xpm \
@@ -64,17 +52,11 @@ nobase_dist_pkgdata_DATA = \
 	icons/kde_16x16.xpm \
 	icons/key_16x16.png \
 	icons/key_32x32.png \
-	icons/koules_16x16.xpm \
-	icons/koules_32x32.xpm \
 	icons/lock_16x16.xpm \
 	icons/lock_32x32.xpm \
 	icons/lock_48x48.xpm \
 	icons/logout_16x16.xpm \
 	icons/logout_32x32.xpm \
-	icons/navigator_16x16.xpm \
-	icons/navigator_32x32.xpm \
-	icons/netscape_16x16.xpm \
-	icons/netscape_32x32.xpm \
 	icons/pdf_16x16.xpm \
 	icons/pdf_32x32.xpm \
 	icons/pref_16x16.png \
@@ -117,8 +99,6 @@ nobase_dist_pkgdata_DATA = \
 	icons/vim_48x48.xpm \
 	icons/windows_16x16.xpm \
 	icons/windows_32x32.xpm \
-	icons/xisp_16x16.xpm \
-	icons/xisp_32x32.xpm \
 	icons/xload_16x16.xpm \
 	icons/xload_32x32.xpm \
 	icons/xterm_16x16.xpm \

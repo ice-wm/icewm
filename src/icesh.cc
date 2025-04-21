@@ -16,6 +16,7 @@
 #include "config.h"
 #include "intl.h"
 
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
@@ -39,6 +40,9 @@
 #endif
 #ifdef XINERAMA
 #include <X11/extensions/Xinerama.h>
+#endif
+#if HAVE_XRES
+#include <X11/extensions/XRes.h>
 #endif
 
 #ifdef CONFIG_I18N
@@ -941,6 +945,32 @@ static int getNormalGravity(Window window) {
     return gravity;
 }
 
+static long getClientPID(Window window) {
+    long pid = None;
+
+#if HAVE_XRES
+    XResClientIdSpec spec = { window, XRES_CLIENT_ID_PID_MASK };
+    long count = None;
+    XResClientIdValue* ids = nullptr;
+    if (XResQueryClientIds(display, 1, &spec, &count, &ids) == Success) {
+        for (long i = 0; i < count; ++i) {
+            pid = XResGetClientPid(&ids[i]);
+            if (pid != -1L)
+                break;
+        }
+        XResClientIdsDestroy(count, ids);
+    }
+#endif
+
+    if (pid <= 1L) {
+        YCardinal prop(window, ATOM_NET_WM_PID);
+        if (prop)
+            pid = *prop;
+    }
+
+    return (pid > 1L) ? pid : None;
+}
+
 class YWindowTree;
 
 class YTreeLeaf {
@@ -1213,8 +1243,8 @@ public:
     void filterByPid(long pid) {
         vector<Window> keep;
         for (YTreeIter client(*this); client; ++client) {
-            YCardinal prop(client, ATOM_NET_WM_PID);
-            if (prop && *prop == pid) {
+            long got = getClientPID(client);
+            if (got == pid) {
                 keep.push_back(client);
             }
         }
@@ -1288,6 +1318,79 @@ public:
                 XFree(hint.res_name);
                 XFree(hint.res_class);
             }
+        }
+        fChildren = keep;
+    }
+
+    static bool isShell(const char* path) {
+        int fd = open("/etc/shells", O_RDONLY);
+        if (fd >= 0) {
+            const ssize_t size = 4096;
+            char file[size];
+            ssize_t got = read(fd, file, size - 1);
+            close(fd);
+            if (1 < got && got < size) {
+                file[got] = '\0';
+                for (char* line = file, *next; line && *line; line = next) {
+                    next = strchr(line, '\n');
+                    if (next) *next++ = '\0';
+                    char* cp = line + strspn(line, " \t");
+                    if (*cp == '/') {
+                        char* ep = cp + strcspn(cp, "# \t");
+                        if (*ep != '#') {
+                            *ep = '\0';
+                            char buf[PATH_MAX];
+                            char *rp = realpath(cp, buf);
+                            if (rp && strcmp(rp, path) == 0)
+                                return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    static bool isTerminal(int pid, const char* shell) {
+        const int bufsize = 123;
+        char buf[bufsize];
+        snprintf(buf, bufsize, "/proc/%d/task/%d/children", pid, pid);
+        int fd = open(buf, O_RDONLY);
+        if (fd >= 0) {
+            ssize_t rd = read(fd, buf, bufsize - 1);
+            close(fd);
+            if (0 < rd) {
+                buf[rd] = '\0';
+                char* end = buf;
+                int num;
+                while (*end && 1 < (num = int(strtol(end, &end, 10)))) {
+                    char exe[bufsize];
+                    snprintf(exe, bufsize, "/proc/%d/exe", num);
+                    char path[bufsize];
+                    ssize_t lk = readlink(exe, path, bufsize - 1);
+                    if (1 < lk && lk < bufsize) {
+                        path[lk] = '\0';
+                        if ((shell && strcmp(path, shell) == 0) ||
+                            isShell(path))
+                            return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    void filterByTerminal() {
+        vector<Window> keep;
+        char solve[PATH_MAX];
+        char* shell = getenv("SHELL");
+        if (shell) {
+            shell = realpath(shell, solve);
+        }
+        for (YTreeIter client(*this); client; ++client) {
+            int pid = int(getClientPID(client));
+            if (pid > 1 && isTerminal(pid, shell))
+                keep.push_back(client);
         }
         fChildren = keep;
     }
@@ -1517,6 +1620,7 @@ private:
     static void catcher(int);
     static void alarmed(int);
     static bool running;
+    static bool intrupt;
     static IceSh* singleton;
     static Window slowWindow;
 };
@@ -1896,11 +2000,13 @@ static void extArea(Window window, int& x, int& y, int& w, int& h) {
 }
 
 bool IceSh::running;
+bool IceSh::intrupt;
 Window IceSh::slowWindow;
 
 void IceSh::catcher(int)
 {
     running = false;
+    intrupt = true;
 }
 
 void IceSh::alarmed(int)
@@ -1980,7 +2086,7 @@ void IceSh::details(Window w)
     int x = 0, y = 0, width = 0, height = 0;
     ::getGeometry(w, x, y, width, height);
 
-    long pid = *YCardinal(w, ATOM_NET_WM_PID);
+    long pid = getClientPID(w);
     long work = getWorkspace(w);
 
     printf("0x%-8lx %2ld %5ld %-20s: %-20s %dx%d%+d%+d\n",
@@ -2728,6 +2834,8 @@ void IceSh::changeState(int state) {
 bool IceSh::loop() {
     if ( !isAction("loop", 0))
         return false;
+    if (intrupt)
+        return true;
 
     long n = 1;
     if (haveArg() && isDigit(**argp)) {
@@ -2948,6 +3056,7 @@ bool IceSh::icewmAction()
         { "keys",       ICEWM_ACTION_RELOADKEYS },
         { "icewmbg",    ICEWM_ACTION_ICEWMBG },
         { "refresh",    ICEWM_ACTION_REFRESH },
+        { "toolbar",    ICEWM_ACTION_TOOLBAR },
     };
     for (Symbol sym : sa) {
         if (0 == strcmp(*argp, sym.name)) {
@@ -4102,7 +4211,7 @@ void IceSh::extendPid()
     if (windowList) {
         vector<long> pidset;
         FOREACH_WINDOW(window) {
-            long pid = *YCardinal(window, ATOM_NET_WM_PID);
+            long pid = getClientPID(window);
             if (1 < pid && !contains(pidset, pid))
                 pidset.push_back(pid);
         }
@@ -4111,7 +4220,7 @@ void IceSh::extendPid()
             clients.getClientList();
             for (YTreeIter window(clients); window; ++window) {
                 if (windowList.have(window) == false) {
-                    long pid = *YCardinal(window, ATOM_NET_WM_PID);
+                    long pid = getClientPID(window);
                     if (1 < pid && contains(pidset, pid)) {
                         windowList.append(window);
                     }
@@ -4479,6 +4588,11 @@ void IceSh::flag(char* arg)
         windowList += taskbar;
         MSG(("taskbar appended"));
         selecting = true;
+        return;
+    }
+    if (isOptArg(arg, "-Z", "-Zerminal")) {
+        selectWindows();
+        windowList.filterByTerminal();
         return;
     }
     if (isOptArg(arg, "-quiet", "")) {
@@ -5335,7 +5449,7 @@ void IceSh::parseAction()
         }
         else if (isAction("pid", 0)) {
             FOREACH_WINDOW(window) {
-                long pid = *YCardinal(window, ATOM_NET_WM_PID);
+                long pid = getClientPID(window);
                 if (1 < pid) {
                     printf("%ld\n", pid);
                 }
