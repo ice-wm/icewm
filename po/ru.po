@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IceWM 1.4.2\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-02-22 16:19+0100\n"
+"POT-Creation-Date: 2025-04-21 20:34+0200\n"
 "PO-Revision-Date: 2025-04-03 19:56+0000\n"
 "Last-Translator: Dmitriy Khanzhin <jinn@altlinux.org>\n"
-"Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/"
-"icewm-1-4-branch/ru/>\n"
+"Language-Team: Russian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
+"branch/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,12 +167,12 @@ msgstr "_Объединить"
 msgid "_Separate"
 msgstr "_Разделить"
 
-#: src/akeyboard.cc:78 src/icesm.cc:468 src/wmmenu.cc:507
+#: src/akeyboard.cc:78 src/icesm.cc:476 src/wmmenu.cc:507
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s завершился с кодом %d."
 
-#: src/akeyboard.cc:81 src/icesm.cc:474 src/icesm.cc:628 src/wmmenu.cc:510
+#: src/akeyboard.cc:81 src/icesm.cc:482 src/icesm.cc:636 src/wmmenu.cc:510
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s был уничтожен через сигнал %d."
@@ -227,7 +227,7 @@ msgstr "Не удалось подключиться к серверу %s: %s"
 msgid "Failed to find %s command"
 msgstr "Не удалось найти команду %s"
 
-#: src/amailbox.cc:363 src/wmmenu.cc:475 src/wmmenu.cc:492 src/yapp.cc:436
+#: src/amailbox.cc:363 src/wmmenu.cc:475 src/wmmenu.cc:492 src/yapp.cc:437
 #, c-format
 msgid "Failed to execute %s"
 msgstr "Не удалось выполнить команду %s"
@@ -357,7 +357,7 @@ msgstr "Рабочее место: "
 msgid "Tabs"
 msgstr "Вкладки"
 
-#: src/fdomenu.cc:911
+#: src/fdomenu.cc:928
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -395,8 +395,8 @@ msgstr ""
 "Параметры:\n"
 "-g, --generic\t\tЗаключать GenericName в скобки после названий приложений\n"
 "-o, --output=ФАЙЛ\tЗаписать вывод в ФАЙЛ\n"
-"-t, --terminal=ТЕРМИНАЛ\tИспользовать ТЕРМИНАЛ, у которого есть параметр '-e'"
-"\n"
+"-t, --terminal=ТЕРМИНАЛ\tИспользовать ТЕРМИНАЛ, у которого есть параметр '-"
+"e'\n"
 "-s, --no-lone-app\tПереместить отдельные элементы в родительское меню\n"
 "-S, --no-lone-hint\tКак -s, но добавить исходные меню\n"
 "-d, --deadline-apps=N\tОстановить загрузку информации о приложении через N "
@@ -428,22 +428,22 @@ msgstr ""
 "определённые в XDG Base Directory Specification:\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1117 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "Аудио"
 
-#: src/fdomenu.cc:1101
+#: src/fdomenu.cc:1118
 msgid "Zarathustra"
 msgstr "Заратустра"
 
-#: src/fdomenu.cc:1201
+#: src/fdomenu.cc:1218
 msgid "System too slow! Failed to load menu content!"
 msgstr "Система слишком медленная! Не удалось загрузить содержимое меню!"
 
-#: src/fdomenu.cc:1204
+#: src/fdomenu.cc:1221
 msgid "Please push HERE and retry after some seconds."
 msgstr "Пожалуйста, нажмите ЗДЕСЬ и повторите через несколько секунд."
 
@@ -1439,127 +1439,127 @@ msgstr "Перезапуск"
 msgid "Same Game"
 msgstr "Игра IceSame"
 
-#: src/icesh.cc:76
+#: src/icesh.cc:80
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "За справкой обратитесь к man-странице icesh(1).\n"
 
-#: src/icesh.cc:1689
+#: src/icesh.cc:1794
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Поименованные символы в домене `%s' (числовой диапазон: %ld-%ld):\n"
 
-#: src/icesh.cc:1758
+#: src/icesh.cc:1863
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Рабочее место за пределами: %ld"
 
-#: src/icesh.cc:1779
+#: src/icesh.cc:1884
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Неверное имя рабочего места: `%s'"
 
-#: src/icesh.cc:2290
+#: src/icesh.cc:2397
 msgid "GNOME window layer"
 msgstr "Слой окна GNOME"
 
-#: src/icesh.cc:2291
+#: src/icesh.cc:2398
 msgid "IceWM tray option"
 msgstr "Параметр системного лотка IceWM"
 
-#: src/icesh.cc:2292
+#: src/icesh.cc:2399
 msgid "Gravity symbols"
 msgstr "Gravity-маркеры"
 
-#: src/icesh.cc:2293
+#: src/icesh.cc:2400
 msgid "Motif functions"
 msgstr "Функции Motif"
 
-#: src/icesh.cc:2294
+#: src/icesh.cc:2401
 msgid "Motif decorations"
 msgstr "Украшения Motif"
 
-#: src/icesh.cc:2295
+#: src/icesh.cc:2402
 msgid "EWMH window state"
 msgstr "Состояние окна EWMH"
 
-#: src/icesh.cc:2377 src/icesh.cc:2450
+#: src/icesh.cc:2493 src/icesh.cc:2566
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "рабочее место #%d: `%s'\n"
 
-#: src/icesh.cc:2701 src/icesh.cc:4577 src/icesh.cc:5177
+#: src/icesh.cc:2817 src/icesh.cc:4702 src/icesh.cc:5302
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Неправильное состояние: `%s'."
 
-#: src/icesh.cc:2730 src/icesh.cc:4151 src/icesh.cc:4201 src/icesh.cc:5498
+#: src/icesh.cc:2848 src/icesh.cc:4271 src/icesh.cc:4321 src/icesh.cc:5623
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Неправильный аргумент: `%s'"
 
-#: src/icesh.cc:3771
+#: src/icesh.cc:3891
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Невозможно получить геометрию окна 0x%lx"
 
-#: src/icesh.cc:3796
+#: src/icesh.cc:3916
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Невозможность Xinerama: `%s'."
 
-#: src/icesh.cc:3928 src/icesh.cc:3936 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:4048 src/icesh.cc:4056 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Ошибка записи в %s"
 
-#: src/icesh.cc:4167
+#: src/icesh.cc:4287
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Действие `%s' требует как минимум %d аргумента(ов)."
 
-#: src/icesh.cc:4176
+#: src/icesh.cc:4296
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Неправильное выражение: `%s'"
 
-#: src/icesh.cc:4187 src/icesound.cc:800 src/icewmbg.cc:1088
-#: src/icewmhint.cc:37 src/wmapp.cc:1296 src/yxapp.cc:1042
+#: src/icesh.cc:4307 src/icesound.cc:800 src/icewmbg.cc:1088
+#: src/icewmhint.cc:37 src/wmapp.cc:1298 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Не могу открыть дисплей: %s. X-сервер должен быть запущен и переменная "
 "$DISPLAY установлена."
 
-#: src/icesh.cc:4303
+#: src/icesh.cc:4423
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Не предусмотрено: `%s'."
 
-#: src/icesh.cc:4335
+#: src/icesh.cc:4455
 msgid "No windows found."
 msgstr "Окна не найдены."
 
-#: src/icesh.cc:4351
+#: src/icesh.cc:4471
 msgid "No actions specified."
 msgstr "Не указано никаких действий."
 
-#: src/icesh.cc:4501
+#: src/icesh.cc:4626
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Неверный идентификатор окна: `%s'"
 
-#: src/icesh.cc:4517
+#: src/icesh.cc:4642
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Неверный PID: `%s'"
 
-#: src/icesh.cc:4550
+#: src/icesh.cc:4675
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Неправильный слой: `%s'."
 
-#: src/icesh.cc:5629
+#: src/icesh.cc:5762
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Неизвестное действие: `%s'"
@@ -1616,17 +1616,17 @@ msgstr ""
 "                      Исполняет обратную трассировку, если icewm выдаст "
 "segfaults.\n"
 
-#: src/icesm.cc:188
+#: src/icesm.cc:193
 #, c-format
 msgid "Unknown option '%s'"
 msgstr "Неизвестная опция: '%s'"
 
-#: src/icesm.cc:462 src/icesm.cc:622
+#: src/icesm.cc:470 src/icesm.cc:630
 #, c-format
 msgid "restart %s."
 msgstr "перезапуск %s."
 
-#: src/icesm.cc:513
+#: src/icesm.cc:521
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1642,7 +1642,7 @@ msgstr ""
 "\t2: Прервать этот сеанс?\n"
 "\t3: Запустить терминал?\n"
 
-#: src/icesm.cc:519
+#: src/icesm.cc:527
 msgid "IceWM crash response"
 msgstr "Ответ на сбой IceWM"
 
@@ -1793,8 +1793,8 @@ msgstr ""
 " -z, --snooze=мс           Пауза между звуковыми событиями, в мс.\n"
 "                           По умолчанию 500 миллисекунд.\n"
 "\n"
-" -p, --play=звук           Воспроизвести указанный звук (по имени или номеру)"
-", и выйти.\n"
+" -p, --play=звук           Воспроизвести указанный звук (по имени или "
+"номеру), и выйти.\n"
 "\n"
 " -l, --list-files          Вывести список путей звуковых файлов и выйти.\n"
 "\n"
@@ -2006,7 +2006,7 @@ msgstr ""
 " center:0 scaled:1 = заполнить с сохранением пропорций\n"
 "\n"
 
-#: src/icewmbg.cc:1249 src/wmapp.cc:1903
+#: src/icewmbg.cc:1249 src/wmapp.cc:1906
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Неизвестная опция '%s'."
@@ -2089,11 +2089,11 @@ msgstr "Двойная буферизация"
 msgid "AlphaBlending"
 msgstr "Альфа-смешение"
 
-#: src/wmabout.cc:63
+#: src/wmabout.cc:64
 msgid "Renderer:"
 msgstr "Рендерер:"
 
-#: src/wmabout.cc:71
+#: src/wmabout.cc:72
 msgid "icewm - About"
 msgstr "О программе IceWM"
 
@@ -2221,18 +2221,18 @@ msgid "Center"
 msgstr "По центру"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:618 src/wmtaskbar.cc:217 src/wmwinlist.cc:456
-#: src/wmwinlist.cc:489
+#: src/wmapp.cc:618 src/wmtaskbar.cc:217 src/wmwinlist.cc:457
+#: src/wmwinlist.cc:490
 msgid "T_ile Horizontally"
 msgstr "Р_азделить Горизонтально"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:620 src/wmtaskbar.cc:215 src/wmwinlist.cc:455
-#: src/wmwinlist.cc:488
+#: src/wmapp.cc:620 src/wmtaskbar.cc:215 src/wmwinlist.cc:456
+#: src/wmwinlist.cc:489
 msgid "Tile _Vertically"
 msgstr "Разделить _Вертикально"
 
-#: src/wmapp.cc:632 src/wmwinlist.cc:436
+#: src/wmapp.cc:632 src/wmwinlist.cc:437
 msgid "_Restore"
 msgstr "_Восстановить"
 
@@ -2244,31 +2244,31 @@ msgstr "_Переместить"
 msgid "_Size"
 msgstr "_Размер"
 
-#: src/wmapp.cc:638 src/wmwinlist.cc:437
+#: src/wmapp.cc:638 src/wmwinlist.cc:438
 msgid "Mi_nimize"
 msgstr "Св_ернуть"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:438
+#: src/wmapp.cc:640 src/wmwinlist.cc:439
 msgid "Ma_ximize"
 msgstr "Ра_звернуть"
 
-#: src/wmapp.cc:641 src/wmwinlist.cc:439
+#: src/wmapp.cc:641 src/wmwinlist.cc:440
 msgid "Maximize_Vert"
 msgstr "Развернуть_Верт"
 
-#: src/wmapp.cc:642 src/wmwinlist.cc:440
+#: src/wmapp.cc:642 src/wmwinlist.cc:441
 msgid "MaximizeHori_z"
 msgstr "РазвернутьГори_з"
 
-#: src/wmapp.cc:645 src/wmwinlist.cc:441
+#: src/wmapp.cc:645 src/wmwinlist.cc:442
 msgid "_Fullscreen"
 msgstr "_Полноэкранный"
 
-#: src/wmapp.cc:648 src/wmwinlist.cc:443
+#: src/wmapp.cc:648 src/wmwinlist.cc:444
 msgid "_Hide"
 msgstr "_Скрыть"
 
-#: src/wmapp.cc:650 src/wmwinlist.cc:444
+#: src/wmapp.cc:650 src/wmwinlist.cc:445
 msgid "Roll_up"
 msgstr "Скру_тить"
 
@@ -2276,23 +2276,23 @@ msgstr "Скру_тить"
 msgid "R_aise"
 msgstr "П_однять"
 
-#: src/wmapp.cc:659 src/wmwinlist.cc:446
+#: src/wmapp.cc:659 src/wmwinlist.cc:447
 msgid "_Lower"
 msgstr "_Опустить"
 
-#: src/wmapp.cc:661 src/wmwinlist.cc:447
+#: src/wmapp.cc:661 src/wmwinlist.cc:448
 msgid "La_yer"
 msgstr "Сл_ой"
 
-#: src/wmapp.cc:664 src/wmwinlist.cc:448
+#: src/wmapp.cc:664 src/wmwinlist.cc:449
 msgid "Tile"
 msgstr "Разместить"
 
-#: src/wmapp.cc:668 src/wmwinlist.cc:450
+#: src/wmapp.cc:668 src/wmwinlist.cc:451
 msgid "Move _To"
 msgstr "Переместить _на"
 
-#: src/wmapp.cc:669 src/wmwinlist.cc:451
+#: src/wmapp.cc:669 src/wmwinlist.cc:452
 msgid "Occupy _All"
 msgstr "Видно _на всех"
 
@@ -2300,19 +2300,19 @@ msgstr "Видно _на всех"
 msgid "Limit _Workarea"
 msgstr "Ограничить _рабочее место"
 
-#: src/wmapp.cc:679 src/wmwinlist.cc:452
+#: src/wmapp.cc:679 src/wmwinlist.cc:453
 msgid "Tray _icon"
 msgstr "Значок _системного лотка"
 
-#: src/wmapp.cc:681 src/wmwinlist.cc:453
+#: src/wmapp.cc:681 src/wmwinlist.cc:454
 msgid "R_ename title"
 msgstr "Пе_реименовать заголовок"
 
-#: src/wmapp.cc:686 src/wmwinlist.cc:468 src/wmwinlist.cc:476
+#: src/wmapp.cc:686 src/wmwinlist.cc:469 src/wmwinlist.cc:477
 msgid "_Close"
 msgstr "_Закрыть"
 
-#: src/wmapp.cc:688 src/wmwinlist.cc:470
+#: src/wmapp.cc:688 src/wmwinlist.cc:471
 msgid "_Kill Client"
 msgstr "_Уничтожить"
 
@@ -2346,7 +2346,7 @@ msgstr ""
 "Отменить управление всеми приложениями\n"
 "и перезапустить как терминал. Продолжить?"
 
-#: src/wmapp.cc:1297 src/yxapp.cc:1043
+#: src/wmapp.cc:1299 src/yxapp.cc:1050
 msgid "<none>"
 msgstr "<пусто>"
 
@@ -2470,16 +2470,16 @@ msgstr ""
 msgid "%s configuration directories:\n"
 msgstr "Каталоги конфигурации %s:\n"
 
-#: src/wmapp.cc:1812
+#: src/wmapp.cc:1815
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "Настроенные параметры %s: %s\n"
 
-#: src/wmapp.cc:1953
+#: src/wmapp.cc:1956
 msgid "Confirm Logout"
 msgstr "Подтверждение выхода"
 
-#: src/wmapp.cc:1954
+#: src/wmapp.cc:1957
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2516,7 +2516,7 @@ msgstr "Скрутить вниз"
 msgid "Rollup"
 msgstr "Скрутить"
 
-#: src/wmclient.cc:470
+#: src/wmclient.cc:478
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2549,7 +2549,7 @@ msgid "_Cancel"
 msgstr "_Отмена"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:88 src/wmprog.cc:471 src/wmprog.cc:473 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:88 src/wmprog.cc:466 src/wmprog.cc:468 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Выход..."
@@ -2558,28 +2558,34 @@ msgstr "_Выход..."
 msgid "_Restart icewm"
 msgstr "_Перезапуск IceWM"
 
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:94 src/wmprog.cc:439 src/wmtaskbar.cc:238
-msgid "_About"
-msgstr "_О программе"
-
-#: src/wmdialog.cc:95
-msgid "Reload win_options"
-msgstr "Перечитать win_options"
-
-#: src/wmdialog.cc:96
+#: src/wmdialog.cc:94
 msgid "Reload ke_ys"
 msgstr "Перечитать ke_ys"
 
-#: src/wmframe.cc:1459
+#: src/wmdialog.cc:95
+#, fuzzy
+#| msgid "Reload win_options"
+msgid "Reload _toolbar"
+msgstr "Перечитать win_options"
+
+#: src/wmdialog.cc:96
+msgid "Reload win_options"
+msgstr "Перечитать win_options"
+
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmdialog.cc:97 src/wmprog.cc:434 src/wmtaskbar.cc:238
+msgid "_About"
+msgstr "_О программе"
+
+#: src/wmframe.cc:1454
 msgid "Rename"
 msgstr "Переименовать"
 
-#: src/wmframe.cc:1460
+#: src/wmframe.cc:1455
 msgid "Rename the window title"
 msgstr "Переименовать заголовок окна"
 
-#: src/wmframe.cc:1967
+#: src/wmframe.cc:1962
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2588,7 +2594,7 @@ msgstr ""
 "при закрытии этого окна. Вы согласны его закрыть?"
 
 #
-#: src/wmframe.cc:1972
+#: src/wmframe.cc:1967
 msgid "Kill Client: "
 msgstr "Уничтожить окно: "
 
@@ -2659,11 +2665,11 @@ msgstr "У '%s' вышло время!"
 msgid "'%s' produces no output"
 msgstr "%s не возвращает выходных данных"
 
-#: src/wmmgr.cc:3686
+#: src/wmmgr.cc:3681
 msgid "Missing program setxkbmap"
 msgstr "Отсутствует программа setxkbmap"
 
-#: src/wmmgr.cc:3687
+#: src/wmmgr.cc:3682
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Для переключения клавиатуры установите setxkbmap."
 
@@ -2686,76 +2692,76 @@ msgstr "Сохранить изменения"
 msgid "Enter a new value for %s: "
 msgstr "Введите новое значение для %s: "
 
-#: src/wmprog.cc:346
+#: src/wmprog.cc:341
 msgid "_Click to focus"
 msgstr "_Фокус по щелчку"
 
-#: src/wmprog.cc:347
+#: src/wmprog.cc:342
 msgid "_Explicit focus"
 msgstr "_Явный фокус"
 
-#: src/wmprog.cc:348
+#: src/wmprog.cc:343
 msgid "_Sloppy mouse focus"
 msgstr "_Липкий фокус с помощью мыши"
 
-#: src/wmprog.cc:349
+#: src/wmprog.cc:344
 msgid "S_trict mouse focus"
 msgstr "С_трогий фокус с помощью мыши"
 
-#: src/wmprog.cc:350
+#: src/wmprog.cc:345
 msgid "_Quiet sloppy focus"
 msgstr "_Спокойный липкий фокус"
 
-#: src/wmprog.cc:351
+#: src/wmprog.cc:346
 msgid "Custo_m"
 msgstr "Сво_е"
 
-#: src/wmprog.cc:373
+#: src/wmprog.cc:368
 msgid "_Manual"
 msgstr "_Руководство"
 
-#: src/wmprog.cc:374
+#: src/wmprog.cc:369
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:375
+#: src/wmprog.cc:370
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:376
+#: src/wmprog.cc:371
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:420
 msgid "Programs"
 msgstr "Программы"
 
-#: src/wmprog.cc:429
+#: src/wmprog.cc:424
 msgid "_Run..."
 msgstr "_Выполнить..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:433 src/wmtaskbar.cc:233
+#: src/wmprog.cc:428 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Окна"
 
-#: src/wmprog.cc:444
+#: src/wmprog.cc:439
 msgid "_Help"
 msgstr "_Помощь"
 
-#: src/wmprog.cc:449
+#: src/wmprog.cc:444
 msgid "_Focus"
 msgstr "_Фокус"
 
-#: src/wmprog.cc:454
+#: src/wmprog.cc:449
 msgid "_Preferences"
 msgstr "_Предпочтения"
 
-#: src/wmprog.cc:459
+#: src/wmprog.cc:454
 msgid "_Themes"
 msgstr "_Темы"
 
-#: src/wmprog.cc:463
+#: src/wmprog.cc:458
 msgid "Se_ttings"
 msgstr "Нас_тройки"
 
@@ -2765,27 +2771,27 @@ msgid "Session Manager: Unknown line %s"
 msgstr "Session Manager: Неизвестная строка %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:219 src/wmwinlist.cc:457 src/wmwinlist.cc:490
+#: src/wmtaskbar.cc:219 src/wmwinlist.cc:458 src/wmwinlist.cc:491
 msgid "Ca_scade"
 msgstr "Ка_скадом"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:221 src/wmwinlist.cc:458 src/wmwinlist.cc:491
+#: src/wmtaskbar.cc:221 src/wmwinlist.cc:459 src/wmwinlist.cc:492
 msgid "_Arrange"
 msgstr "_Упорядочить"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:223 src/wmwinlist.cc:460 src/wmwinlist.cc:492
+#: src/wmtaskbar.cc:223 src/wmwinlist.cc:461 src/wmwinlist.cc:493
 msgid "_Minimize All"
 msgstr "_Свернуть все"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:225 src/wmwinlist.cc:461 src/wmwinlist.cc:493
+#: src/wmtaskbar.cc:225 src/wmwinlist.cc:462 src/wmwinlist.cc:494
 msgid "_Hide All"
 msgstr "_Скрыть все"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmtaskbar.cc:227 src/wmwinlist.cc:462 src/wmwinlist.cc:494
+#: src/wmtaskbar.cc:227 src/wmwinlist.cc:463 src/wmwinlist.cc:495
 msgid "_Undo"
 msgstr "_Отмена"
 
@@ -2799,7 +2805,7 @@ msgstr "Упорядочить _значки"
 msgid "_Refresh"
 msgstr "_Обновить"
 
-#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1030
+#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1044
 msgid "Hide Taskbar"
 msgstr "Скрыть Панель задач"
 
@@ -2807,15 +2813,15 @@ msgstr "Скрыть Панель задач"
 msgid "Favorite Applications"
 msgstr "Любимые приложения"
 
-#: src/wmtaskbar.cc:362
+#: src/wmtaskbar.cc:351
 msgid "Window List Menu"
 msgstr "Меню Списка окон"
 
-#: src/wmtaskbar.cc:372
+#: src/wmtaskbar.cc:361
 msgid "Show Desktop"
 msgstr "Показать Рабочий стол"
 
-#: src/wmtaskbar.cc:1030
+#: src/wmtaskbar.cc:1044
 msgid "Show Taskbar"
 msgstr "Показать Панель задач"
 
@@ -2823,27 +2829,27 @@ msgstr "Показать Панель задач"
 msgid "All Workspaces"
 msgstr "Все рабочие места"
 
-#: src/wmwinlist.cc:442
+#: src/wmwinlist.cc:443
 msgid "_Show"
 msgstr "_Показать"
 
-#: src/wmwinlist.cc:445
+#: src/wmwinlist.cc:446
 msgid "_Raise"
 msgstr "_Поднять"
 
-#: src/wmwinlist.cc:468
+#: src/wmwinlist.cc:469
 msgid "Del"
 msgstr "Удалить"
 
-#: src/wmwinlist.cc:472
+#: src/wmwinlist.cc:473
 msgid "_Terminate Process"
 msgstr "_Прервать процесс"
 
-#: src/wmwinlist.cc:473
+#: src/wmwinlist.cc:474
 msgid "Kill _Process"
 msgstr "Уничтожить _процесс"
 
-#: src/wmwinlist.cc:508 src/wmwinlist.cc:509
+#: src/wmwinlist.cc:509 src/wmwinlist.cc:510
 msgid "Window list"
 msgstr "Список окон"
 
@@ -2857,7 +2863,7 @@ msgstr "%lu. Рабочее место %-.32s"
 msgid "Image not readable: %s"
 msgstr "Картинка не читается: %s"
 
-#: src/yapp.cc:299
+#: src/yapp.cc:300
 #, c-format
 msgid "%s: select failed"
 msgstr "%s: не удалось выбрать"
@@ -2867,12 +2873,12 @@ msgstr "%s: не удалось выбрать"
 msgid "Could not parse color \"%s\""
 msgstr "Не удалось разобрать цвет \"%s\""
 
-#: src/yconfig.cc:83
+#: src/yconfig.cc:87
 #, c-format
 msgid "Unknown key name %s in %s"
 msgstr "Неизвестный символ %s в %s"
 
-#: src/yconfig.cc:170 src/yconfig.cc:181 src/yconfig.cc:193
+#: src/yconfig.cc:174 src/yconfig.cc:185 src/yconfig.cc:197
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Неправильный аргумент: %s для %s [%d,%d]"
@@ -2998,7 +3004,7 @@ msgstr "Неполный шестнадцатеричный управляющи
 msgid "Invalid hex escape in URL at position %d."
 msgstr "Недопустимый шестнадцатеричный управляющий символ в URL в позиции %d."
 
-#: src/yxapp.cc:1001
+#: src/yxapp.cc:1008
 msgid ""
 "  -d, --display=NAME  NAME of the X server to use.\n"
 "  --sync              Synchronize X11 commands.\n"

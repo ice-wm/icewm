@@ -1,11 +1,72 @@
-icewm -- history of user-visible changes.  2025-03-30
+icewm -- history of user-visible changes.  2025-04-21
+
+Release icewm-3.7.4 released 2025-04-21
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.3...3.7.4
+
+Bert Gijsbers <gijsbers@science.uva.nl> (25):
+      Lower minimum required CMake version to 3.5.
+      Fix CMake LTO build.
+      Remove obsolete CMake warning for SVG library.
+      Let icesh don't loop when interrupted.
+      Use X-resource library 1.2 to reliably obtain process identifiers of
+        client windows. Add the "toolbar" command to icesh to let icewm reload
+        the toolbar configuration.
+      Add xres_LDFLAGS to icewm_libs for CMake.
+      Add a toolbar button to the CAD-dialog.
+      Return first found PID in getNetWMPid.
+      Better fix for getNetWMPid sorry.
+      Add xres to dependencies.
+      Make XRes disableable in configure. Up version to 3.7.3.
+      Make XRes disableable in the CMake build.
+      Give which a backup in rebuild.sh.
+      Remove debugging statements.
+      Add a --replace option to icewm-session.
+      Add -Z filter to icesh to select only terminals.
+      Drop old obsolete icons.
+      Change default theme to icedesert.
+      Fix the stacking order when a QuickSwitch ends.
+      Replace -lXRes with $(XRES_LIBS) for icesh.
+      Improve CAD-dialog up-down traversal.
+      In getLastFocus, ignore unmanaged frames.
+      Restack the windows after a QuickSwitch has ended.
+      Fix typo.
+      Permit some global keys in case the global keybinds are not active.
+
+Dmitriy Khanzhin <jinn@altlinux.org> (2):
+      Translated using Weblate (Russian)
+      Translated using Weblate (Russian)
+
+Gemineo <vistatec@gemineo.de> (2):
+      Translated using Weblate (German)
+      Translated using Weblate (German)
+
+Davide Aiello <davide.aiello@novilingulists.com> (1):
+      Translated using Weblate (Italian)
+
+Emily Dong <Emily.Dong@excel-gits.com> (1):
+      Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+Fran Serrador <serrador@proton.me> (1):
+      Translated using Weblate (Spanish)
+
+Grace Yu <grace.yu@excel-gits.com> (1):
+      Translated using Weblate (Chinese (China) (zh_CN))
+
+Samanta Magalhaes <samanta_texttrans@outlook.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Sophie Leroy <sophie@stoquart.com> (1):
+      Translated using Weblate (French)
+
 
 Release icewm-3.7.3 released 2025-03-30
 ---------------------------------------
 
 git shortlog --no-merges -e -n -w80,6,8 3.7.2...3.7.3
 
-Bert Gijsbers <gijsbers@science.uva.nl> (9):
+Bert Gijsbers <gijsbers@science.uva.nl> (10):
       Fix --disable-librsvg. Don't barf when --without-icesound. Update READMEs.
       Set a title to the dock window.
       Add the usertime and x11time commands to icesh.
@@ -17,6 +78,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (9):
       Fix typo for fUserTimeWindow in getUserTime.
       Startup notification says to always accept updates to _NET_STARTUP_ID.
       Fix compiler error on missing include errno.h.
+      Prepare 3.7.3 release
 
 Eduard Bloch <blade@debian.org> (5):
       Make location of nanosvg header customizable
@@ -408,77 +470,4 @@ Hugo Carvalho <hugokarvalho@hotmail.com> (1):
 
 Rodrigo Macedo <sottomaiormacedotec@sottomaiormacedo.tech> (1):
       Translated using Weblate (Portuguese (Brazil))
-
-
-Release icewm-3.5.0 released 2024-05-20
----------------------------------------
-
-git shortlog --no-merges -e -n -w80,6,8 3.4.7...3.5.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (31):
-      Never handle internal WM actions via XSendEvent, but always via XPutBack.
-      Succinct handling of mstrings in themes.
-      Let "icesh restore" also clear the urgency flag.
-      Clear urgency and stop flashing when focusing a client.
-      When the frame drops urgency, also update the client.
-      Improve readability of setState.
-      Set errno in dirExists and fix leak for userhome in expand.
-      Avoid a shell in show_backtrace.
-      Add fmt to mstring.
-      Add -i,--install option to icewm to install an extra theme.
-      Clarify icons for keyboard layouts.
-      Keyboard layout icon names can be longer than 2 letters for issue
-        ice-wm/icewm#161.
-      Add chdir and set errno in fileExists.
-      Add -i,--install option to help output.
-      Update pot files.
-      Show spaces around KeyboardLayouts example.
-      2024
-      Fix portability to NetBSD 10 and closes #774.
-      Fix portability to NetBSD 10 and closes #775.
-      Add file argument completion to the addressbar for ice-wm/icewm#33
-      'icesh winoptions' only affects new windows.
-      Drop the C from the glob flags as it returns a starred string on failure.
-      update README to 3.4.7
-      Point documentation links to website.
-      Document the address bar editing keys.
-      Also do tilde expansion in file arguments.
-      Delay clearing the urgency flag in the client for half a second.
-      When lowering a frame by KeyWinLower or by a menu action, then also lower
-        the frame in the focus order, otherwise it appears as the first entry in
-        the Quick Switch.
-      Add "cd" and "pwd" commands to the address bar. Add tilde expansion on
-        user login names.
-      Don't chdir after realpath, but test for directory.
-      Prepare 3.5.0 release
-
-Dmitriy Khanzhin <jinn@altlinux.org> (2):
-      Translated using Weblate (Russian)
-      Translated using Weblate (Russian)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (2):
-      Translated using Weblate (Slovak)
-      Translated using Weblate (Slovak)
-
-Mehmet Akif 9oglu <madanadam@gmail.com> (2):
-      Translated using Weblate (Turkish)
-      Translated using Weblate (Turkish)
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Eduard Bloch <blade@debian.org> (1):
-      Adding FDO weblinks to specification references
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Luna  Jernberg <bittin@opensuse.org> (1):
-      Translated using Weblate (Swedish)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 

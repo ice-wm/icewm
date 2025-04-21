@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.3.12.459\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-03-30 22:06+0200\n"
+"POT-Creation-Date: 2025-04-21 20:34+0200\n"
 "PO-Revision-Date: 2017-07-22 13:47+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: NorwegianNynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -144,12 +144,12 @@ msgstr ""
 msgid "_Separate"
 msgstr ""
 
-#: src/akeyboard.cc:78 src/icesm.cc:468 src/wmmenu.cc:507
+#: src/akeyboard.cc:78 src/icesm.cc:476 src/wmmenu.cc:507
 #, c-format
 msgid "%s exited with status %d."
 msgstr ""
 
-#: src/akeyboard.cc:81 src/icesm.cc:474 src/icesm.cc:628 src/wmmenu.cc:510
+#: src/akeyboard.cc:81 src/icesm.cc:482 src/icesm.cc:636 src/wmmenu.cc:510
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr ""
@@ -1358,126 +1358,126 @@ msgstr ""
 msgid "Same Game"
 msgstr ""
 
-#: src/icesh.cc:76
+#: src/icesh.cc:80
 msgid "For help please consult the man page icesh(1).\n"
 msgstr ""
 
-#: src/icesh.cc:1690
+#: src/icesh.cc:1794
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr ""
 
-#: src/icesh.cc:1759
+#: src/icesh.cc:1863
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr ""
 
-#: src/icesh.cc:1780
+#: src/icesh.cc:1884
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr ""
 
-#: src/icesh.cc:2291
+#: src/icesh.cc:2397
 msgid "GNOME window layer"
 msgstr ""
 
-#: src/icesh.cc:2292
+#: src/icesh.cc:2398
 msgid "IceWM tray option"
 msgstr ""
 
-#: src/icesh.cc:2293
+#: src/icesh.cc:2399
 msgid "Gravity symbols"
 msgstr ""
 
-#: src/icesh.cc:2294
+#: src/icesh.cc:2400
 msgid "Motif functions"
 msgstr ""
 
-#: src/icesh.cc:2295
+#: src/icesh.cc:2401
 msgid "Motif decorations"
 msgstr ""
 
-#: src/icesh.cc:2296
+#: src/icesh.cc:2402
 #, fuzzy
 msgid "EWMH window state"
 msgstr "Vindaugsliste"
 
-#: src/icesh.cc:2387 src/icesh.cc:2460
+#: src/icesh.cc:2493 src/icesh.cc:2566
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr ""
 
-#: src/icesh.cc:2711 src/icesh.cc:4588 src/icesh.cc:5188
+#: src/icesh.cc:2817 src/icesh.cc:4702 src/icesh.cc:5302
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr ""
 
-#: src/icesh.cc:2740 src/icesh.cc:4162 src/icesh.cc:4212 src/icesh.cc:5509
+#: src/icesh.cc:2848 src/icesh.cc:4271 src/icesh.cc:4321 src/icesh.cc:5623
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr ""
 
-#: src/icesh.cc:3782
+#: src/icesh.cc:3891
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr ""
 
-#: src/icesh.cc:3807
+#: src/icesh.cc:3916
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr ""
 
-#: src/icesh.cc:3939 src/icesh.cc:3947 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:4048 src/icesh.cc:4056 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr ""
 
-#: src/icesh.cc:4178
+#: src/icesh.cc:4287
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr ""
 
-#: src/icesh.cc:4187
+#: src/icesh.cc:4296
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr ""
 
-#: src/icesh.cc:4198 src/icesound.cc:800 src/icewmbg.cc:1088
-#: src/icewmhint.cc:37 src/wmapp.cc:1296 src/yxapp.cc:1049
+#: src/icesh.cc:4307 src/icesound.cc:800 src/icewmbg.cc:1088
+#: src/icewmhint.cc:37 src/wmapp.cc:1298 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 
-#: src/icesh.cc:4314
+#: src/icesh.cc:4423
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr ""
 
-#: src/icesh.cc:4346
+#: src/icesh.cc:4455
 msgid "No windows found."
 msgstr ""
 
-#: src/icesh.cc:4362
+#: src/icesh.cc:4471
 msgid "No actions specified."
 msgstr ""
 
-#: src/icesh.cc:4512
+#: src/icesh.cc:4626
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr ""
 
-#: src/icesh.cc:4528
+#: src/icesh.cc:4642
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr ""
 
-#: src/icesh.cc:4561
+#: src/icesh.cc:4675
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr ""
 
-#: src/icesh.cc:5648
+#: src/icesh.cc:5762
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr ""
@@ -1514,17 +1514,17 @@ msgid ""
 "                      Gives a backtrace if icewm segfaults.\n"
 msgstr ""
 
-#: src/icesm.cc:188
+#: src/icesm.cc:193
 #, c-format
 msgid "Unknown option '%s'"
 msgstr ""
 
-#: src/icesm.cc:462 src/icesm.cc:622
+#: src/icesm.cc:470 src/icesm.cc:630
 #, c-format
 msgid "restart %s."
 msgstr ""
 
-#: src/icesm.cc:513
+#: src/icesm.cc:521
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1534,7 +1534,7 @@ msgid ""
 "\t3: Run a terminal?\n"
 msgstr ""
 
-#: src/icesm.cc:519
+#: src/icesm.cc:527
 msgid "IceWM crash response"
 msgstr ""
 
@@ -1788,7 +1788,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1249 src/wmapp.cc:1901
+#: src/icewmbg.cc:1249 src/wmapp.cc:1906
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr ""
@@ -1864,11 +1864,11 @@ msgstr ""
 msgid "AlphaBlending"
 msgstr ""
 
-#: src/wmabout.cc:63
+#: src/wmabout.cc:64
 msgid "Renderer:"
 msgstr ""
 
-#: src/wmabout.cc:71
+#: src/wmabout.cc:72
 msgid "icewm - About"
 msgstr "icewm – Om"
 
@@ -2116,23 +2116,23 @@ msgid ""
 "as a terminal. Proceed?"
 msgstr ""
 
-#: src/wmapp.cc:1297 src/yxapp.cc:1050
+#: src/wmapp.cc:1299 src/yxapp.cc:1050
 msgid "<none>"
 msgstr ""
 
-#: src/wmapp.cc:1625
+#: src/wmapp.cc:1627
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 
-#: src/wmapp.cc:1631
+#: src/wmapp.cc:1633
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
 
-#: src/wmapp.cc:1639
+#: src/wmapp.cc:1641
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2144,15 +2144,15 @@ msgid ""
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
 
-#: src/wmapp.cc:1650
+#: src/wmapp.cc:1652
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr ""
 
-#: src/wmapp.cc:1656
+#: src/wmapp.cc:1658
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr ""
 
-#: src/wmapp.cc:1659
+#: src/wmapp.cc:1661
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2184,21 +2184,21 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/wmapp.cc:1725
+#: src/wmapp.cc:1727
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr ""
 
-#: src/wmapp.cc:1810
+#: src/wmapp.cc:1815
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr ""
 
-#: src/wmapp.cc:1951
+#: src/wmapp.cc:1956
 msgid "Confirm Logout"
 msgstr "Stadfest utlogging"
 
-#: src/wmapp.cc:1952
+#: src/wmapp.cc:1957
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2232,7 +2232,7 @@ msgstr "Rull ned"
 msgid "Rollup"
 msgstr "Rull opp"
 
-#: src/wmclient.cc:475
+#: src/wmclient.cc:478
 #, c-format
 msgid ""
 "Client %s with PID %ld fails to respond.\n"
@@ -2272,35 +2272,40 @@ msgstr "_Logg ut …"
 msgid "_Restart icewm"
 msgstr "_Start icewm på nytt"
 
-#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:94 src/wmprog.cc:434 src/wmtaskbar.cc:238
-msgid "_About"
-msgstr "_Om"
+#: src/wmdialog.cc:94
+msgid "Reload ke_ys"
+msgstr ""
 
 #: src/wmdialog.cc:95
+#, fuzzy
+msgid "Reload _toolbar"
+msgstr "Ugyldig val: %s"
+
+#: src/wmdialog.cc:96
 #, fuzzy
 msgid "Reload win_options"
 msgstr "Ugyldig val: %s"
 
-#: src/wmdialog.cc:96
-msgid "Reload ke_ys"
-msgstr ""
+#. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
+#: src/wmdialog.cc:97 src/wmprog.cc:434 src/wmtaskbar.cc:238
+msgid "_About"
+msgstr "_Om"
 
-#: src/wmframe.cc:1452
+#: src/wmframe.cc:1454
 msgid "Rename"
 msgstr ""
 
-#: src/wmframe.cc:1453
+#: src/wmframe.cc:1455
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1960
+#: src/wmframe.cc:1962
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
 msgstr ""
 
-#: src/wmframe.cc:1965
+#: src/wmframe.cc:1967
 msgid "Kill Client: "
 msgstr "Avslutt klient: "
 
@@ -2369,11 +2374,11 @@ msgstr ""
 msgid "'%s' produces no output"
 msgstr ""
 
-#: src/wmmgr.cc:3695
+#: src/wmmgr.cc:3681
 msgid "Missing program setxkbmap"
 msgstr ""
 
-#: src/wmmgr.cc:3696
+#: src/wmmgr.cc:3682
 msgid "For keyboard switching, please install setxkbmap."
 msgstr ""
 
@@ -2509,7 +2514,7 @@ msgstr ""
 msgid "_Refresh"
 msgstr "_Oppdater"
 
-#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1030
+#: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1044
 #, fuzzy
 msgid "Hide Taskbar"
 msgstr "Oppgåvelinje"
@@ -2518,16 +2523,16 @@ msgstr "Oppgåvelinje"
 msgid "Favorite Applications"
 msgstr ""
 
-#: src/wmtaskbar.cc:362
+#: src/wmtaskbar.cc:351
 #, fuzzy
 msgid "Window List Menu"
 msgstr "Vindaugsliste"
 
-#: src/wmtaskbar.cc:372
+#: src/wmtaskbar.cc:361
 msgid "Show Desktop"
 msgstr "Vis skrivebord"
 
-#: src/wmtaskbar.cc:1030
+#: src/wmtaskbar.cc:1044
 #, fuzzy
 msgid "Show Taskbar"
 msgstr "Oppgåvelinje"
