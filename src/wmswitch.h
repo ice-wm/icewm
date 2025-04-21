@@ -25,8 +25,8 @@ public:
 
     // set target cursor and setup
     virtual void begin(bool zdown) = 0;
-    virtual void cancel() = 0;
-    virtual void accept() = 0;
+    virtual void cancelItem() = 0;
+    virtual void acceptItem() = 0;
 
     virtual int getActiveItem() = 0;
     virtual mstring getTitle(int idx) = 0;

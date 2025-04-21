@@ -230,8 +230,7 @@ public:
         moveTarget(zdown);
     }
 
-    void cancel() override {
-        YRestackLock restack;
+    void cancelItem() override {
         ZItem last = fLastItem;
         ZItem act = fActiveItem;
         fLastItem.reset();
@@ -247,17 +246,16 @@ public:
         }
     }
 
-    void accept() override {
+    void acceptItem() override {
         ZItem act = fActiveItem;
         if (act) {
-            YRestackLock restack;
             if (act.client != act.frame->client())
                 act.frame->selectTab(act.client);
             act.frame->activateWindow(true, false);
             if (act.frame->isFullscreen())
                 act.frame->updateLayer();
         } else {
-            cancel();
+            cancelItem();
         }
     }
 
@@ -479,17 +477,21 @@ void SwitchWindow::close() {
 }
 
 void SwitchWindow::cancel() {
+    YRestackLock restack;
     close();
-    zItems->cancel();
+    zItems->cancelItem();
 
     YFrameWindow* f = manager->getFocus();
     if (f && f->isFullscreen() && f->getActiveLayer() != WinLayerFullscreen)
         f->updateLayer();
+    manager->restackWindows();
 }
 
 void SwitchWindow::accept() {
+    YRestackLock restack;
     close();
-    zItems->accept();
+    zItems->acceptItem();
+    manager->restackWindows();
 }
 
 SwitchWindow::~SwitchWindow() {
