@@ -4040,6 +4040,12 @@ bool YTopWindow::handleKey(const XKeyEvent& key) {
             }
         }
     }
+    else if (key.type == KeyPress &&
+        manager->netActiveWindow() == None &&
+        hasbit(key.state, xapp->AltMask | ControlMask | ShiftMask))
+    {
+        manager->handleWMKey(key);
+    }
     return true;
 }
 
