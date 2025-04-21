@@ -1418,8 +1418,7 @@ by a slash, followed by the theme file.  Usually the theme file is just
 F<default.theme>, but a theme may have alternatives.  Alternatives are
 small tweaks of a theme.  These are specified in their own F<.theme>
 file, which replaces F<default.theme>.  If no theme file exists then
-B<icewm> will use the default setting of
-C<Theme="default/default.theme">.
+B<icewm> will use as default C<Theme="icedesert/default.theme">.
 
 See L<icewm-theme(5)>.
 

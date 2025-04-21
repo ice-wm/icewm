@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: icewm 1.2.15pre3\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2024-09-03 11:47+0000\n"
-"Last-Translator: Virinas code <alexcode228@gmail.com>\n"
-"Language-Team: French <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/fr/>\n"
+"PO-Revision-Date: 2025-04-09 14:56+0000\n"
+"Last-Translator: Sophie Leroy <sophie@stoquart.com>\n"
+"Language-Team: French <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.7.1\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: src/aapm.cc:113
 #, c-format
@@ -381,6 +381,43 @@ msgid ""
 "This program also listens to environment variables defined by\n"
 "the XDG Base Directory Specification:\n"
 msgstr ""
+"SYNTAXE : icewm-menu-fdo [OPTIONS] [NOM DE FICHIER]\n"
+"OPTIONS :\n"
+"-g, --generic\t\tInclure le nom générique des programmes entre parenthèses \n"
+"-o, --output=FICHIER\tÉcrire la sortie dans FICHIER\n"
+"-t, --terminal=NOM\tUtiliser NOM pour un terminal avec « -e »\n"
+"-s, --no-lone-app\tDéplacer les éléments isolés vers le menu parent\n"
+"-S, --no-lone-hint\tSimilaire à -s mais ajouter les sous-menus d'origine\n"
+"-d, --deadline-apps=N\tArrêter le chargement des informations d'application "
+"après N ms\n"
+"-D, --deadline-all=N\tArrêter tous les chargements et afficher ce que l'on a "
+"à ce stade\n"
+"-m, --match=PAT\tAfficher uniquement les applications dont le titre contient "
+"PAT\n"
+"-M, --imatch=PAT\tSimilaire à --match mais ignorer la casse\n"
+"-L, --limit-max-len=N\tRogner les titres des applications à la longueur N, "
+"ajouter …\n"
+"--seps\tAfficher les séparateurs avant et après le contenu\n"
+"--sep-before\tAffiche le séparateur avant le contenu\n"
+"--sep-after\tAffiche le séparateur uniquement après le contenu\n"
+"--no-sep-others\tHérité, sans effet\n"
+"--no-sub-cats\tAucune sous-catégorie supplémentaire, un seul niveau de "
+"menus\n"
+"--flat\tAfficher toutes les applications sur une seule couche avec des "
+"indications de catégorie\n"
+"--flat-sep=STR\tSéparateur de catégories utilisé en mode plat (par défaut : "
+"' / ')\n"
+"--match-sec\tAppliquer --match ou --imatch aux applications ET aux sections\n"
+"--match-osec\tAppliquer --match ou --imatch uniquement aux sections\n"
+"--orig-comment\tAfficher le fichier source .desktop en commentaire\n"
+"-C, --copying\tAfficher les informations de copyright\n"
+"-V, --version\tAfficher les informations de version\n"
+"-h, --help\tAfficher cet écran de syntaxe et quitter.\n"
+"\n"
+"NOM DE FICHIER\tTout fichier .desktop pour lancer sa commande Exec.\n"
+"\n"
+"Ce programme écoute également les variables d'environnement définies par\n"
+"la spécification du répertoire de base XDG :\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
 #: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
@@ -392,15 +429,15 @@ msgstr "Audio"
 
 #: src/fdomenu.cc:1101
 msgid "Zarathustra"
-msgstr ""
+msgstr "Zarathoustra"
 
 #: src/fdomenu.cc:1201
 msgid "System too slow! Failed to load menu content!"
-msgstr ""
+msgstr "Système trop lent ! Impossible de charger le contenu du menu !"
 
 #: src/fdomenu.cc:1204
 msgid "Please push HERE and retry after some seconds."
-msgstr ""
+msgstr "Appuyez ICI et réessayez après quelques secondes."
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to manage printers
 #: src/fdospecgen.h:24
@@ -638,7 +675,6 @@ msgstr "Art"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Artificial Intelligence software
 #: src/fdospecgen.h:234 src/fdospecgen.h:240
-#, fuzzy
 msgid "Artificialtelligence"
 msgstr "Intelligence artificielle"
 
@@ -738,7 +774,7 @@ msgstr "Horloge"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application that only works inside a terminal (text-based or command line application)
 #: src/fdospecgen.h:366
 msgid "ConsoleOnly"
-msgstr ""
+msgstr "Console uniquement"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside:  
 #: src/fdospecgen.h:372 src/fdospecgen.h:378

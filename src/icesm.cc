@@ -100,6 +100,7 @@ private:
     const char *icewmExe;
     bool syncArg;
     bool nobgArg;
+    bool replaceArg;
     bool notrayArg;
     bool soundArg;
     bool grindArg;
@@ -116,6 +117,7 @@ private:
         icewmExe = ICEWMEXE;
         syncArg = false;
         nobgArg = false;
+        replaceArg = false;
         notrayArg = NOTRAY;
         soundArg = false;
         grindArg = false;
@@ -142,6 +144,9 @@ private:
                 }
                 else if (is_switch(*arg, "a", "alpha")) {
                     alphaArg = *arg;
+                }
+                else if (is_long_switch(*arg, "replace")) {
+                    replaceArg = true;
                 }
                 else if (is_long_switch(*arg, "sync")) {
                     syncArg = true;
@@ -380,6 +385,9 @@ public:
             args[count++] = icewmExe;
             if (notify) {
                 args[count++] = "--notify";
+            }
+            if (replaceArg) {
+                args[count++] = "--replace";
             }
             args[count] = nullptr;
             appendOptions(args, count, size);

@@ -19,6 +19,12 @@ ObjectBar::~ObjectBar() {
     ObjectButton::freeFont();
 }
 
+
+void ObjectBar::discard() {
+    objects.clear();
+    setSize(1, 1);
+}
+
 void ObjectBar::addButton(mstring name, ref<YIcon> icon, ObjectButton *button) {
     unsigned h = height();
     if (icon != null) {

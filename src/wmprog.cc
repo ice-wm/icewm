@@ -167,9 +167,9 @@ public:
         moveTarget(zdown);
     }
 
-    virtual void cancel() override {
+    virtual void cancelItem() override {
     }
-    virtual void accept() override {
+    virtual void acceptItem() override {
         YMenuItem* item = menu->getItem(zTarget);
         if (item) {
             menu->actionPerformed(item->getAction(), 0);

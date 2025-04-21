@@ -1,6 +1,6 @@
 
 # to use target_link_options
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.5)
 
 PROJECT(ICEWM CXX)
 
@@ -8,7 +8,13 @@ PROJECT(ICEWM CXX)
 # with -std=c++11.
 set(CMAKE_CXX_STANDARD_REQUIRED off)
 # Actually try to use C++20 as well where possible, to uncover potential issues.
-set(CMAKE_CXX_STANDARD 20)
+if(CMAKE_VERSION VERSION_GREATER OR VERSION_EQUAL "3.20")
+    set(CMAKE_CXX_STANDARD 20)
+else()
+    set(CMAKE_CXX_STANDARD 14)
+endif()
+
+
 
 INCLUDE(CheckIncludeFiles)
 INCLUDE(CheckLibraryExists)
@@ -114,7 +120,7 @@ option(ENABLE_LTO "Enable Link Time Optimization" off)
 option(ENABLE_LOGEVENTS "Enable logging of X11 events" off)
 
 set(LOGEVENTS ${ENABLE_LOGEVENTS})
-SET(CONFIG_DEFAULT_THEME "default/default.theme" CACHE STRING "Name of default theme")
+SET(CONFIG_DEFAULT_THEME "icedesert/default.theme" CACHE STRING "Name of default theme")
 SET(CONFIG_DEFAULT_BACKGROUND "" CACHE STRING "Default background image or directory")
 SET(CONFIG_UNICODE_SET "" CACHE STRING "Your iconv unicode set in machine endian encoding (e.g. WCHAR_T, UCS-4-INTERNAL, UCS-4LE, UCS-4BE)")
 # turn off when empty, see config.h template for details
@@ -131,7 +137,7 @@ if(ENABLE_NLS OR CONFIG_I18N)
         LIST(APPEND nls_LIBS iconv)
     endif()
     find_package(Intl)
-    if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.20")
+    if(CMAKE_VERSION VERSION_GREATER OR  VERSION_EQUAL "3.20")
         list(APPEND nls_LIBS Intl::Intl)
     else()
         if(Intl_FOUND)
@@ -206,7 +212,7 @@ set(HINT_IMG_LOADERS
 # image configuration error check
 if(CONFIG_IMLIB2 OR CONFIG_GDK_PIXBUF_XLIB)
     if (NOT CONFIG_LIBRSVG AND NOT CONFIG_NANOSVG)
-        message(WARNING "Support for SVG icons was not enabled (requires either CONFIG_LIBRSVG or CONFIG_NANOSVG)")
+        # ok
     endif()
 elseif(CONFIG_XPM AND CONFIG_LIBPNG)
     if (NOT CONFIG_LIBJPEG)
@@ -319,6 +325,20 @@ if(CONFIG_XRANDR)
     ENDIF()
 endif()
 
+option(HAVE_XRES "Define to enable XRes support" on)
+if(HAVE_XRES)
+    pkg_check_modules(xres xres>=1.2)
+    IF(NOT xres_FOUND)
+        message(WARNING "xres library (>=1.2) not found, disabling HAVE_XRES")
+        set(HAVE_XRES off)
+    ELSE()
+        check_library_exists(XRes XResClientIdsDestroy ${xres_LIBDIR} HAVE_XRES)
+        IF(NOT HAVE_XRES)
+            message(WARNING "xres lacks XResClientIdsDestroy, disabling HAVE_XRES")
+        ENDIF()
+    ENDIF()
+endif()
+
 option(CONFIG_COREFONTS "Define to enable X11 core fonts" off)
 option(CONFIG_XFREETYPE "Define to enable XFT support" on)
 if(CONFIG_XFREETYPE)
@@ -421,7 +441,7 @@ set(icewm_pc_flags ${CXXFLAGS_COMMON} ${fontconfig_CFLAGS} ${xft_CFLAGS}
                    ${librsvg_CFLAGS} ${pixbuf_CFLAGS} ${libimlib2_CFLAGS}
                    ${libpng_CFLAGS} ${libxpm_CFLAGS} ${xrender_CFLAGS}
                    ${xrandr_CFLAGS} ${xinerama_CFLAGS} ${xext_CFLAGS}
-                   ${x11_CFLAGS} ${fribidi_CFLAGS} ${nls_CFLAGS})
+                   ${xres_CFLAGS} ${x11_CFLAGS} ${fribidi_CFLAGS} ${nls_CFLAGS})
 
 SET(ICE_COMMON_SRCS udir.cc upath.cc yapp.cc yxapp.cc ytimer.cc yprefs.cc
                     ywindow.cc ypaint.cc ypopup.cc ycursor.cc ysocket.cc
@@ -468,9 +488,10 @@ SET(ICEWM_SRCS
     akeyboard.cc aapm.cc atray.cc ysmapp.cc yxtray.cc
     )
 do_auto_inc_headers(ICEWM_SRCS)
-concat_dedup(icewm_libs itk ice ${sm_LIBS} ${fontconfig_LDFLAGS} ${fribidi_LDFLAGS}
-                       ${xft_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
-                       ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${icewm_img_libs})
+concat_dedup(icewm_libs itk ice ${sm_LIBS} ${fontconfig_LDFLAGS}
+             ${fribidi_LDFLAGS} ${xft_LDFLAGS} ${xrandr_LDFLAGS}
+             ${xinerama_LDFLAGS} ${xres_LDFLAGS} ${xext_LDFLAGS}
+             ${x11_LDFLAGS} ${nls_LIBS} ${icewm_img_libs})
 
 ADD_EXECUTABLE(icewm${EXEEXT} ${ICEWM_SRCS})
 TARGET_LINK_LIBRARIES(icewm${EXEEXT} ${icewm_libs})
@@ -515,7 +536,7 @@ target_link_libraries(icewmhint${EXEEXT} ice ${xext_LDFLAGS} ${x11_LDFLAGS}
 
 ADD_EXECUTABLE(icesh${EXEEXT} icesh.cc)
 concat_dedup(icesh_libs ice ${xrandr_LDFLAGS} ${xinerama_LDFLAGS}
-                      ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS})
+             ${xres_LDFLAGS} ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS})
 TARGET_LINK_LIBRARIES(icesh${EXEEXT} ${icesh_libs})
 
 ADD_EXECUTABLE(icewmbg${EXEEXT} icewmbg.cc)
@@ -589,6 +610,7 @@ foreach (_variableName
         CONFIG_FRIBIDI
         CONFIG_EXTERNAL_TRAY
         XINERAMA
+        HAVE_XRES
         ENABLE_LTO
         ENABLE_ALSA
         ENABLE_AO

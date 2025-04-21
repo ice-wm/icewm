@@ -1078,6 +1078,8 @@ void YWMApp::actionPerformed(YAction action, unsigned int /*modifiers*/) {
         }
     } else if (action == actionCollapseTaskbar && taskBar) {
         taskBar->handleCollapseButton();
+    } else if (action == actionToolbar && taskBar) {
+        taskBar->initToolbar();
     } else {
         for (int w = 0; w < workspaceCount; w++) {
             if (workspaceActionActivate[w] == action) {
@@ -1806,6 +1808,9 @@ static void print_configured(const char *argv0) {
 #ifdef CONFIG_XRANDR
     " xrandr"
 #endif
+#if HAVE_XRES
+    " xres"
+#endif
     "\n";
     printf(_("%s configured options:%s\n"), argv0,
             compile_time_configured_options);
@@ -2024,6 +2029,7 @@ void YWMApp::handleSMAction(WMAction message) {
         { ICEWM_ACTION_ICEWMBG,       actionIcewmbg },
         { ICEWM_ACTION_REFRESH,       actionRefresh },
         { ICEWM_ACTION_HIBERNATE,     actionHibernate },
+        { ICEWM_ACTION_TOOLBAR,       actionToolbar },
     };
     for (auto p : pairs)
         if (message == p.left)

@@ -896,28 +896,11 @@ void YWindowManager::handleClientMessage(const XClientMessageEvent &message) {
         return;
     }
     if (message.message_type == _XA_ICEWM_ACTION) {
-        MSG(("ClientMessage: _ICEWM_ACTION => %ld", message.data.l[1]));
-        WMAction action = WMAction(message.data.l[1]);
-        switch (action) {
-        case ICEWM_ACTION_NOP:
-        case ICEWM_ACTION_LOCK:
-            break;
-        case ICEWM_ACTION_LOGOUT:
-        case ICEWM_ACTION_CANCEL_LOGOUT:
-        case ICEWM_ACTION_REBOOT:
-        case ICEWM_ACTION_SHUTDOWN:
-        case ICEWM_ACTION_ABOUT:
-        case ICEWM_ACTION_WINDOWLIST:
-        case ICEWM_ACTION_RESTARTWM:
-        case ICEWM_ACTION_SUSPEND:
-        case ICEWM_ACTION_WINOPTIONS:
-        case ICEWM_ACTION_RELOADKEYS:
-        case ICEWM_ACTION_ICEWMBG:
-        case ICEWM_ACTION_REFRESH:
-        case ICEWM_ACTION_HIBERNATE:
-            smActionListener->handleSMAction(action);
-            break;
-        }
+        const long data = message.data.l[1];
+        MSG(("ClientMessage: _ICEWM_ACTION => %ld", data));
+        if (inrange(data, 2L, 20L))
+            smActionListener->handleSMAction(WMAction(data));
+        return;
     }
 }
 
@@ -2127,11 +2110,11 @@ YFrameWindow *YWindowManager::getLastFocus(bool skipAllWorkspaces, int workspace
         workspace = activeWorkspace();
 
     YFrameWindow *toFocus = workspaces[workspace].focused;
-
-    if (toFocus != nullptr) {
+    if (toFocus) {
         if (toFocus->isUnmapped() ||
             !toFocus->visibleOn(workspace) ||
             toFocus->client()->destroyed() ||
+            toFocus->isManaged() == false ||
             toFocus->client() == taskBar ||
             toFocus->avoidFocus())
         {
@@ -2151,6 +2134,7 @@ YFrameWindow *YWindowManager::getLastFocus(bool skipAllWorkspaces, int workspace
                     frame->isUnmapped() == false &&
                     frame->visibleOn(workspace) &&
                     frame->avoidFocus() == false &&
+                    frame->isManaged() &&
                     trans->destroyed() == false &&
                     trans != taskBar &&
                     (frame->getActiveLayer() > toFocus->getActiveLayer() ||
@@ -2183,6 +2167,8 @@ YFrameWindow *YWindowManager::getLastFocus(bool skipAllWorkspaces, int workspace
                     continue;
                 }
                 if (w->client() == taskBar)
+                    continue;
+                if (w->isManaged() == false)
                     continue;
                 toFocus = w;
                 goto gotit;
@@ -4053,6 +4039,12 @@ bool YTopWindow::handleKey(const XKeyEvent& key) {
                 f->popupSystemMenu(this);
             }
         }
+    }
+    else if (key.type == KeyPress &&
+        manager->netActiveWindow() == None &&
+        hasbit(key.state, xapp->AltMask | ControlMask | ShiftMask))
+    {
+        manager->handleWMKey(key);
     }
     return true;
 }
