@@ -2110,11 +2110,11 @@ YFrameWindow *YWindowManager::getLastFocus(bool skipAllWorkspaces, int workspace
         workspace = activeWorkspace();
 
     YFrameWindow *toFocus = workspaces[workspace].focused;
-
-    if (toFocus != nullptr) {
+    if (toFocus) {
         if (toFocus->isUnmapped() ||
             !toFocus->visibleOn(workspace) ||
             toFocus->client()->destroyed() ||
+            toFocus->isManaged() == false ||
             toFocus->client() == taskBar ||
             toFocus->avoidFocus())
         {
@@ -2134,6 +2134,7 @@ YFrameWindow *YWindowManager::getLastFocus(bool skipAllWorkspaces, int workspace
                     frame->isUnmapped() == false &&
                     frame->visibleOn(workspace) &&
                     frame->avoidFocus() == false &&
+                    frame->isManaged() &&
                     trans->destroyed() == false &&
                     trans != taskBar &&
                     (frame->getActiveLayer() > toFocus->getActiveLayer() ||
@@ -2166,6 +2167,8 @@ YFrameWindow *YWindowManager::getLastFocus(bool skipAllWorkspaces, int workspace
                     continue;
                 }
                 if (w->client() == taskBar)
+                    continue;
+                if (w->isManaged() == false)
                     continue;
                 toFocus = w;
                 goto gotit;

@@ -1300,6 +1300,8 @@ YFrameWindow *YFrameWindow::findWindow(int flags) {
             goto next;
         if (!p->client()->adopted() || p->client()->destroyed())
             goto next;
+        if (p->isManaged() == false);
+            goto next;
 
         return p;
 
