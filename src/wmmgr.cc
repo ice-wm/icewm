@@ -2065,20 +2065,19 @@ void YWindowManager::focusTopWindow() {
         focusTop(topLayer());
 }
 
-bool YWindowManager::focusTop(YFrameWindow *f) {
-    if (!f)
-        return false;
-
-    f = f->findWindow(YFrameWindow::fwfVisible |
+bool YWindowManager::focusTop(YFrameWindow* frame) {
+    const int flags = YFrameWindow::fwfVisible |
                       YFrameWindow::fwfFocusable |
                       YFrameWindow::fwfNotHidden |
                       YFrameWindow::fwfWorkspace |
                       YFrameWindow::fwfSame |
                       YFrameWindow::fwfLayers |
-                      YFrameWindow::fwfCycle);
-    //msg("found focus %lX", f);
-    setFocus(f);
-    return f;
+                      YFrameWindow::fwfCycle;
+    if (frame) {
+        frame = frame->findByFlags(flags);
+        setFocus(frame);
+    }
+    return (frame != nullptr);
 }
 
 YFrameWindow *YWindowManager::getFrameUnderMouse(int workspace) {

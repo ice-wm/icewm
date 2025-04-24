@@ -1275,7 +1275,7 @@ void YFrameWindow::insertFrame(bool top) {
 #endif
 }
 
-YFrameWindow *YFrameWindow::findWindow(int flags) {
+YFrameWindow* YFrameWindow::findByFlags(int flags) {
     YFrameWindow *p = this;
 
     if (flags & fwfNext)
@@ -1996,7 +1996,7 @@ void YFrameWindow::wmPrevWindow() {
 
     int flags = fwfNext | fwfVisible | fwfCycle |
                 fwfFocusable | fwfWorkspace | fwfSame;
-    YFrameWindow *f = findWindow(flags | fwfBackward);
+    YFrameWindow* f = findByFlags(flags | fwfBackward);
     if (f && f != this) {
         f->wmRaise();
         manager->setFocus(f, true);
@@ -2017,7 +2017,7 @@ void YFrameWindow::wmNextWindow() {
 
     int flags = fwfNext | fwfVisible | fwfCycle |
                 fwfFocusable | fwfWorkspace | fwfSame;
-    YFrameWindow *f = findWindow(flags);
+    YFrameWindow* f = findByFlags(flags);
     if (f && f != this) {
         wmLower();
         f->wmRaise();
