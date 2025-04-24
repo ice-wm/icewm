@@ -282,11 +282,14 @@ class DesktopFile {
         try {
             auto ret = new DesktopFile(path, lang);
             // matched conditions to hide the desktop entry?
-            if (ret->NoDisplay)
+            if (ret->NoDisplay) {
+                delete ret;
                 ret = nullptr;
+            }
             else if (!userFilter(ret->Name.c_str(), false) &&
                      !userFilter(ret->GetTranslatedName().c_str(), false) &&
                      !userFilter(ret->GetCommand().c_str(), false)) {
+                delete ret;
                 ret = nullptr;
             } else {
                 if (add_comments) {
@@ -604,6 +607,9 @@ struct MenuNode {
 
     // Second run, contains all deco information now
     void fixup2();
+
+    MenuNode() : deco(nullptr) { }
+    ~MenuNode() { delete deco; }
 
   private:
     struct t_menu_item {
@@ -1128,8 +1134,7 @@ int main(int argc, char **argv) {
     auto justLang = string(msglang ? msglang : "");
     justLang = justLang.substr(0, justLang.find('.'));
 
-    MenuNode *leaky = new MenuNode;
-    auto &root = *leaky;
+    MenuNode root;
     bool in_timeout = false;
 
     {
