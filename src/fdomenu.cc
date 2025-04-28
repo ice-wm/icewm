@@ -217,15 +217,52 @@ const char *rtls[] = {
     "ur", // urdu
 };
 
-const char *getCheckedExplicitLocale(bool lctype) {
-    auto loc = setlocale(lctype ? LC_CTYPE : LC_MESSAGES, NULL);
-    if (loc == NULL)
-        return NULL;
-    return (islower(*loc & 0xff) && islower(loc[1] & 0xff) &&
-            !isalpha(loc[2] & 0xff))
-               ? loc
-               : NULL;
+const char* getCheckedExplicitLocale() {
+    const char* loc = setlocale(LC_MESSAGES, nullptr);
+    if (loc) {
+        size_t pre = 0;
+        while (islower(loc[pre] & 0xff))
+            pre++;
+        if (pre < 2 || 3 < pre || isalpha(loc[pre] & 0xff))
+            loc = nullptr;
+    }
+    return Elvis(loc, "");
 }
+
+class Lang {
+public:
+    Lang(const char* loc) {
+        int i = 0;
+        while (islower(loc[i] & 0xff))
+            ++i;
+        if (2 <= i && i <= 3) {
+            lang.assign(loc, i);
+            if (loc[i] == '_') {
+                i++;
+                int t = i;
+                while (isalpha(loc[i] & 0xff))
+                    ++i;
+                terr.assign(loc + t, i - t);
+            }
+            while (loc[i] && loc[i] != '@')
+                ++i;
+            if (loc[i] == '@') {
+                i++;
+                int t = i;
+                while (isalpha(loc[i] & 0xff))
+                    ++i;
+                modi.assign(loc + t, i - t);
+            }
+        }
+    }
+    bool invalid() const {
+        return lang.empty();
+    }
+
+    string lang;
+    string terr;
+    string modi;
+};
 
 bool userFilter(const char *s, bool isSection) {
     if (match_in_section_only && !isSection)
@@ -256,7 +293,7 @@ class DesktopFile {
     string Icon, Categories;
     const string *comment = nullptr;
 
-    DesktopFile(string filePath, const string &langWanted);
+    DesktopFile(string filePath, const Lang& lang);
     DesktopFile(const string &_name, const string &_nameLoc,
                 const string &_icon)
         : Name(_name), NameLoc(_nameLoc), Icon(_icon) {}
@@ -278,7 +315,7 @@ class DesktopFile {
         return GenericNameLoc;
     }
 
-    static DesktopFilePtr load_visible(string &&path, const string &lang) {
+    static DesktopFilePtr load_visible(string &&path, const Lang& lang) {
         try {
             auto ret = new DesktopFile(path, lang);
             // matched conditions to hide the desktop entry?
@@ -338,7 +375,7 @@ const string &DesktopFile::GetCommand() {
     return Exec;
 }
 
-DesktopFile::DesktopFile(string filePath, const string &langWanted) {
+DesktopFile::DesktopFile(string filePath, const Lang& lang) {
 
     std::ifstream dfile;
     dfile.open(filePath);
@@ -375,14 +412,25 @@ DesktopFile::DesktopFile(string filePath, const string &langWanted) {
             return;
         }
         // translation found but not looking for localized version here?
-        if (langWanted.size() < 2)
+        if (lang.invalid())
             return;
         l++;
-        // the exact match always overrides, the short is considered optional
-        if (0 == line.compare(l, langWanted.size(), langWanted))
-            outLoc = line.substr(v, e - v);
-        else if (outLoc.empty() && 0 == line.compare(l, 2, langWanted, 0, 2))
-            outLoc = line.substr(v, e - v);
+        auto r = line.find(']', l);
+        if (r != string::npos &&
+            line.compare(l, 2, lang.lang, 0, 2) == 0) {
+            string lstr = line.substr(l, r - l);
+            Lang cand(lstr.c_str());
+            if (cand.lang == lang.lang && cand.modi == lang.modi) {
+                if (cand.terr == lang.terr) {
+                    // an exact match
+                    outLoc = line.substr(v, e - v);
+                }
+                else if (outLoc.empty()) {
+                    // a backup match
+                    outLoc = line.substr(v, e - v);
+                }
+            }
+        }
     };
 
     while (dfile) {
@@ -976,16 +1024,10 @@ int main(int argc, char **argv) {
 
     std::ios_base::sync_with_stdio(false);
 
-    const char* msglang = nullptr;
+    const char* msglang = "";
 #ifdef CONFIG_I18N
     setlocale(LC_ALL, "");
-
-    msglang = getCheckedExplicitLocale(false);
-    right_to_left =
-        msglang && *msglang &&
-        std::any_of(rtls, rtls + ACOUNT(rtls), [&](const char *rtl) {
-            return rtl[0] == msglang[0] && rtl[1] == msglang[1];
-        });
+    msglang = getCheckedExplicitLocale();
     bindtextdomain(PACKAGE, LOCDIR);
     textdomain(PACKAGE);
 #endif
@@ -1021,9 +1063,10 @@ int main(int argc, char **argv) {
     string desktop_file_to_start;
 
     for (auto pArg = argv + 1; pArg < argv + argc; ++pArg) {
+        char *value = nullptr;
         if (is_version_switch(*pArg)) {
             cout << "icewm-menu-fdo " VERSION ", Copyright 2015-2024 Eduard "
-                    "Bloch, 2017-2023 Bert Gijsbers."
+                    "Bloch, 2017-2025 Bert Gijsbers."
                  << endl;
             exit(0);
         } else if (is_copying_switch(*pArg))
@@ -1054,54 +1097,58 @@ int main(int argc, char **argv) {
             no_only_child = true;
         else if (is_switch(*pArg, "S", "no-lone-hint"))
             no_only_child = no_only_child_hint = true;
-        else {
-            char *value = nullptr, *expand = nullptr;
-            if (GetArgument(value, "o", "output", pArg, argv + argc)) {
-                if (*value == '~')
-                    value = expand = tilde_expansion(value);
-                else if (*value == '$')
-                    value = expand = dollar_expansion(value);
-                if (nonempty(value)) {
-                    if (freopen(value, "w", stdout) == nullptr)
-                        fflush(stdout);
-                }
-                if (expand)
-                    delete[] expand;
-            } else if (GetArgument(value, "m", "match", pArg, argv + argc))
-                substr_filter = value;
-            else if (GetArgument(value, "M", "imatch", pArg, argv + argc))
-                substr_filter_nocase = value;
-            else if (GetArgument(value, "F", "flat-sep", pArg, argv + argc))
-                flat_sep = value;
-            else if (GetArgument(value, "t", "terminal", pArg, argv + argc))
-                terminal_option = value;
-            else if (GetArgument(value, "L", "limit-max-len", pArg,
-                                 argv + argc))
-                prog_name_cut = atoi(value);
-            else if (GetArgument(value, "d", "deadline-apps", pArg,
-                                 argv + argc))
-                opt_deadline_apps = value;
-            else if (GetArgument(value, "D", "deadline-all", pArg, argv + argc))
-                opt_deadline_all = value;
-            else {
-                if (argc == 2 && !(desktop_file_to_start = argv[1]).empty() &&
-                    endsWithSzAr(desktop_file_to_start, ".desktop")) {
-                    DBGMSG("shall invoke: " << desktop_file_to_start);
-                } else // unknown option
-                    help(true, EXIT_FAILURE);
+        else if (GetArgument(value, "o", "output", pArg, argv + argc)) {
+            char *expand = nullptr;
+            if (*value == '~')
+                value = expand = tilde_expansion(value);
+            else if (*value == '$')
+                value = expand = dollar_expansion(value);
+            if (nonempty(value)) {
+                if (freopen(value, "w", stdout) == nullptr)
+                    fflush(stdout);
             }
+            if (expand)
+                delete[] expand;
         }
+        else if (GetArgument(value, "m", "match", pArg, argv + argc))
+            substr_filter = value;
+        else if (GetArgument(value, "M", "imatch", pArg, argv + argc))
+            substr_filter_nocase = value;
+        else if (GetArgument(value, "F", "flat-sep", pArg, argv + argc))
+            flat_sep = value;
+        else if (GetArgument(value, "t", "terminal", pArg, argv + argc))
+            terminal_option = value;
+        else if (GetArgument(value, "l", "lang", pArg, argv + argc)) {
+            if (islower(value[0] & 0xff) || isEmpty(value))
+                msglang = value;
+        }
+        else if (GetArgument(value, "L", "limit-max-len", pArg, argv + argc))
+            prog_name_cut = atoi(value);
+        else if (GetArgument(value, "d", "deadline-apps", pArg, argv + argc))
+            opt_deadline_apps = value;
+        else if (GetArgument(value, "D", "deadline-all", pArg, argv + argc))
+            opt_deadline_all = value;
+        else if (argc == 2 && !(desktop_file_to_start = argv[1]).empty() &&
+            endsWithSzAr(desktop_file_to_start, ".desktop")) {
+            DBGMSG("shall invoke: " << desktop_file_to_start);
+        } else // unknown option
+            help(true, EXIT_FAILURE);
     }
 
-    const char *terminals[] = {terminal_option, getenv("TERMINAL"), TERM,
-                               "urxvt",         "alacritty",        "roxterm",
-                               "xterm"};
+    const char *terminals[7] = {terminal_option, getenv("TERMINAL"), TERM,
+                                "urxvt", "alacritty", "roxterm", "xterm"};
     for (auto term : terminals)
         if (term && (terminal_command = path_lookup(term)) != nullptr)
             break;
 
+    Lang lang(msglang);
+
+    for (auto rtl : rtls)
+        if (lang.lang == rtl)
+            right_to_left = true;
+
     if (!desktop_file_to_start.empty()) {
-        DesktopFile df(argv[1], Elvis(msglang, ""));
+        DesktopFile df(desktop_file_to_start, lang);
         auto cmd = df.GetCommand();
         if (cmd.empty())
             return EXIT_FAILURE;
@@ -1131,9 +1178,6 @@ int main(int argc, char **argv) {
     for (const auto &p : *(valid_paths.end() - 1))
         valid_main_cats.insert(*p.begin());
 
-    auto justLang = string(msglang ? msglang : "");
-    justLang = justLang.substr(0, justLang.find('.'));
-
     MenuNode root;
     bool in_timeout = false;
 
@@ -1146,7 +1190,7 @@ int main(int argc, char **argv) {
                     return false;
                 }
 
-                auto df = DesktopFile::load_visible(std::move(fPath), justLang);
+                auto df = DesktopFile::load_visible(std::move(fPath), lang);
                 if (df)
                     root.sink_in(df);
 
@@ -1172,7 +1216,7 @@ int main(int argc, char **argv) {
                     return false;
                 }
 
-                auto df = DesktopFile::load_visible(std::move(fPath), justLang);
+                auto df = DesktopFile::load_visible(std::move(fPath), lang);
                 if (!df)
                     return true;
 
