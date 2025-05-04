@@ -97,6 +97,9 @@ YWindowManager::YWindowManager(
     fCreatedUpdated = true;
     fLayeredUpdated = true;
     fDefaultKeyboard = 0;
+    fKeyReleaseTime = None;
+    fKeyReleaseState = 0;
+    fKeyReleaseKCode = 0;
     fSwitchWindow = nullptr;
     fDockApp = nullptr;
 
@@ -394,13 +397,16 @@ bool YWindowManager::handleSwitchWorkspaceKey(const XKeyEvent& key) {
     return false;
 }
 
-bool YWindowManager::handleWMKey(const XKeyEvent& key) {
+bool YWindowManager::handleWMKey(const XKeyEvent& key, bool repeating) {
     YFrameWindow *frame = getFocus();
 
     for (KProgram* p : keyProgs) {
         if (p->isKey(key)) {
             XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-            p->open(key.state);
+            if (repeating && p->resource())
+                /*ignore*/;
+            else
+                p->open(key.state);
             return true;
         }
     }
@@ -590,8 +596,12 @@ bool YWindowManager::handleWMKey(const XKeyEvent& key) {
 
 bool YWindowManager::handleKey(const XKeyEvent &key) {
     if (key.type == KeyPress) {
-        MSG(("down key: %u, mod: 0x%02x", key.keycode, key.state));
-        bool handled = handleWMKey(key);
+        MSG(("key dn: %u, mod: 0x%02x, time: %lu",
+              key.keycode, key.state, key.time));
+        bool repeating = (fKeyReleaseTime == key.time
+                       && fKeyReleaseState == key.state
+                       && fKeyReleaseKCode == key.keycode);
+        bool handled = handleWMKey(key, repeating);
         if (handled == false && win95keys && xapp->WinMask) {
             KeySym k = keyCodeToKeySym(key.keycode);
             if (k == xapp->Win_L || k == xapp->Win_R) {
@@ -603,7 +613,11 @@ bool YWindowManager::handleKey(const XKeyEvent &key) {
         }
         return handled;
     } else if (key.type == KeyRelease) {
-        MSG(("up key: %u, mod: 0x%02x", key.keycode, key.state));
+        MSG(("key up: %u, mod: 0x%02x, time: %lu",
+              key.keycode, key.state, key.time));
+        fKeyReleaseTime = key.time;
+        fKeyReleaseState = key.state;
+        fKeyReleaseKCode = key.keycode;
         if (win95keys && xapp->WinMask) {
             KeySym k = keyCodeToKeySym(key.keycode);
             if (k == xapp->Win_L || k == xapp->Win_R) {
@@ -4043,7 +4057,7 @@ bool YTopWindow::handleKey(const XKeyEvent& key) {
         manager->netActiveWindow() == None &&
         hasbit(key.state, xapp->AltMask | ControlMask | ShiftMask))
     {
-        manager->handleWMKey(key);
+        manager->handleWMKey(key, false);
     }
     return true;
 }

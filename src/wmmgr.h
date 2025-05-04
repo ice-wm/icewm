@@ -312,7 +312,7 @@ public:
 
     const DesktopLayout& layout() const { return fLayout; }
     bool handleSwitchWorkspaceKey(const XKeyEvent& key);
-    bool handleWMKey(const XKeyEvent &key);
+    bool handleWMKey(const XKeyEvent &key, bool repeating);
 
     int getSwitchScreen();
     bool switchWindowVisible() const;
@@ -402,6 +402,9 @@ private:
     DesktopLayout fLayout;
     mstring fCurrentKeyboard;
     int fDefaultKeyboard;
+    Time fKeyReleaseTime;
+    unsigned fKeyReleaseState;
+    unsigned fKeyReleaseKCode;
     SwitchWindow* fSwitchWindow;
     lazy<YTimer> fSwitchDownTimer;
     lazy<YTimer> fLayoutTimer;

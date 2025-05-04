@@ -40,6 +40,9 @@ To bind the mouse, use C<Pointer_Button1> for button 1, and so on.
 This only works when the mouse is over the root window.
 See below for examples.
 
+Sometimes you may want to start an application just once. For this, use
+the C<runonce> keyword, which accepts an additional resource argument.
+
 The command C<icesh keys> instructs icewm to reload this file.
 
 =head2 FORMAT
@@ -79,6 +82,25 @@ I<program> is the name of the executable or its path.
 It may start with a tilde or an environment variable,
 which will be expanded.
 The I<options> are passed as arguments to the I<program>.
+
+=item B<runonce>
+
+Is an alternative to B<key>. Its syntax is:
+
+=over
+
+=over
+
+=item B<runonce> B<">I<hotkey>B<"> B<">I<wmclass>B<"> I<program> I<options>
+
+=back
+
+=back
+
+Here I<wmclass> is the resource name and/or class. The class must be
+prefixed by a dot. The program is only run when no other application
+window with the same I<wmclass> exists. Icewm ignores key repeat events
+for this hotkey.
 
 =item B<switchkey>
 
