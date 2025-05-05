@@ -1,9 +1,13 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
+#if __GNUC__
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+#if __clang__
 #pragma clang diagnostic ignored "-Wvla-cxx-extension"
+#endif
 
 #ifdef DEBUG
 extern bool debug;
