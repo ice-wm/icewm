@@ -1899,8 +1899,6 @@ int main(int argc, char **argv) {
 #ifdef DEBUG
             else if (is_long_switch(*arg, "debug"))
                 debug = true;
-            else if (is_long_switch(*arg, "debug-z"))
-                debug_z = true;
 #endif
             else
                 warn(_("Unrecognized option '%s'."), *arg);

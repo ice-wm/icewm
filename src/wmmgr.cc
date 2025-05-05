@@ -2254,9 +2254,6 @@ bool YWindowManager::setAbove(YFrameWindow* frame, YFrameWindow* above) {
         return false;
     }
 
-#ifdef DEBUG
-    if (debug_z) dumpZorder("before setAbove", frame, above);
-#endif
     bool change = false;
     if (above != frame->next() && above != frame) {
         fLayers[layer].remove(frame);
@@ -2266,9 +2263,6 @@ bool YWindowManager::setAbove(YFrameWindow* frame, YFrameWindow* above) {
         } else {
             fLayers[layer].append(frame);
         }
-#ifdef DEBUG
-        if (debug_z) dumpZorder("after setAbove", frame, above);
-#endif
         change = true;
     }
     return change;
@@ -3296,9 +3290,9 @@ void YWindowManager::removeClientFrame(YFrameWindow *frame) {
             if (fArrangeInfo[i].frame == frame)
                 fArrangeInfo[i].frame = nullptr;
     }
-    for (int w = 0; w < workspaceCount; w++) {
-        if (workspaces[w].focused == frame) {
-            workspaces[w].focused = nullptr;
+    for (Workspace* w : workspaces) {
+        if (w->focused == frame) {
+            w->focused = nullptr;
         }
     }
     if (wmState() == wmRUNNING) {
