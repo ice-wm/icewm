@@ -791,7 +791,8 @@ void WindowList::showFocused(int x, int y) {
 bool WindowList::handleTimer(YTimer* timer) {
     if (timer == &focusTimer) {
         if (visible()) {
-            manager->setFocus(getFrame());
+            // manager->setFocus(getFrame());
+            getFrame()->activateWindow(true, false);
         }
         return false;
     } else {
