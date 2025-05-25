@@ -197,7 +197,7 @@ public:
         fwfNotHidden  = 1 << 12 // not hidden
     };
 
-    YFrameWindow *findWindow(int flag);
+    YFrameWindow* findByFlags(int flags);
 
     void updateMenu();
     virtual void updateSubmenus();

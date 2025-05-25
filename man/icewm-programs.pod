@@ -35,10 +35,10 @@ Specifies a program to replace the window manager when the menu item is
 selected.  This is for launching other window managers from within
 L<icewm(1)>.
 
-=item B<runonce> [B<">]I<title>[B<">] I<icon> B<">[I<res_name>][B<.>I<res_class>]B<"> I<program> I<options>
+=item B<runonce> [B<">]I<title>[B<">] I<icon> B<">[I<name>][B<.>I<class>]B<"> I<program> I<options>
 
 Specifies a program to execute when the menu item is selected; however,
-if a window of the specified I<res_name> and I<res_class> is present,
+if a window of the specified I<name> and I<class> is present,
 the program will not be run again.
 
 =item B<menu> [B<">]I<title>[B<">] I<icon> B<{>
@@ -99,12 +99,12 @@ always be surrounded by double quotes if preferred.
 Is the name of the icon file (with or without extension) or the full
 path to an icon file.
 
-=item B<">[I<res_name>][B<.>I<res_class>]B<">
+=item B<">[I<name>][B<.>I<class>]B<">
 
-I<res_name> is the resource name of a window launched by I<program> and
-I<res_class> is the resource class of the window.  Only one of
-I<res_name> or I<res_class> need be specified.  This is used to identify
-whether the program is already running and is for use with the
+I<name> is the resource name of a window launched by I<program> and
+I<class> is the resource class of the window.  Only one of
+I<name> or I<class> need be specified.  This is used to determine
+whether the program is already running. It is used with the
 B<runonce> keyword.
 
 =item I<program> I<options>

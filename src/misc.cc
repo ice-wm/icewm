@@ -36,7 +36,6 @@ using namespace ASCII;
 
 #ifdef DEBUG
 bool debug = false;
-bool debug_z = false;
 #endif
 
 static void endMsg(const char *msg) {

@@ -3200,10 +3200,9 @@ void IceSh::setGeometry(Window window, const char* geometry) {
 
     use(window);
 
-    XSizeHints normal;
-    long supplied;
-    if (XGetWMNormalHints(display, window, &normal, &supplied) != True)
-        return;
+    XSizeHints normal = { None, };
+    long supplied = None;
+    XGetWMNormalHints(display, window, &normal, &supplied);
 
     Window root;
     int x, y;

@@ -81,6 +81,14 @@ public:
         add(name);
         return *this;
     }
+
+    Workspace* const* begin() {
+        return list.begin();
+    }
+
+    Workspace* const* end() {
+        return list.end();
+    }
 } workspaces;
 
 extern struct WorkspacesCount {

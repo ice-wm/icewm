@@ -1,5 +1,5 @@
-#ifndef __YRECT_H
-#define __YRECT_H
+#ifndef YRECT_H
+#define YRECT_H
 
 #ifndef INT_MAX
 #include <limits.h>
@@ -40,16 +40,22 @@ public:
         hh = h;
     }
 
-    // does the same as gdk_rectangle_union
+    // become the union of two rectangles.
     void unionRect(int x, int y, unsigned width, unsigned height) {
-        int mx = min(xx, x), w = int(max(xx + int(ww), x + int(width)));
-        int my = min(yy, y), h = int(max(yy + int(hh), y + int(height)));
+        int mx = min(xx, x), w = max(xx + int(ww), x + int(width));
+        int my = min(yy, y), h = max(yy + int(hh), y + int(height));
+        setRect(mx, my, unsigned(w - mx), unsigned(h - my));
+    }
+
+    void unionRect(const YRect& r) {
+        int mx = min(xx, r.xx), w = max(xx + int(ww), r.xx + int(r.ww));
+        int my = min(yy, r.yy), h = max(yy + int(hh), r.yy + int(r.hh));
         setRect(mx, my, unsigned(w - mx), unsigned(h - my));
     }
 
     YRect intersect(const YRect& r) const {
-        int x = max(xx, r.xx), w = int(min(xx + int(ww), r.xx + int(r.ww)));
-        int y = max(yy, r.yy), h = int(min(yy + int(hh), r.yy + int(r.hh)));
+        int x = max(xx, r.xx), w = min(xx + int(ww), r.xx + int(r.ww));
+        int y = max(yy, r.yy), h = min(yy + int(hh), r.yy + int(r.hh));
         if (x < w && y < h)
             return YRect(x, y, unsigned(w - x), unsigned(h - y));
         return YRect();

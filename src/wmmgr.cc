@@ -97,6 +97,9 @@ YWindowManager::YWindowManager(
     fCreatedUpdated = true;
     fLayeredUpdated = true;
     fDefaultKeyboard = 0;
+    fKeyReleaseTime = None;
+    fKeyReleaseState = 0;
+    fKeyReleaseKCode = 0;
     fSwitchWindow = nullptr;
     fDockApp = nullptr;
 
@@ -394,13 +397,16 @@ bool YWindowManager::handleSwitchWorkspaceKey(const XKeyEvent& key) {
     return false;
 }
 
-bool YWindowManager::handleWMKey(const XKeyEvent& key) {
+bool YWindowManager::handleWMKey(const XKeyEvent& key, bool repeating) {
     YFrameWindow *frame = getFocus();
 
     for (KProgram* p : keyProgs) {
         if (p->isKey(key)) {
             XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-            p->open(key.state);
+            if (repeating && p->resource())
+                /*ignore*/;
+            else
+                p->open(key.state);
             return true;
         }
     }
@@ -590,8 +596,12 @@ bool YWindowManager::handleWMKey(const XKeyEvent& key) {
 
 bool YWindowManager::handleKey(const XKeyEvent &key) {
     if (key.type == KeyPress) {
-        MSG(("down key: %u, mod: 0x%02x", key.keycode, key.state));
-        bool handled = handleWMKey(key);
+        MSG(("key dn: %u, mod: 0x%02x, time: %lu",
+              key.keycode, key.state, key.time));
+        bool repeating = (fKeyReleaseTime == key.time
+                       && fKeyReleaseState == key.state
+                       && fKeyReleaseKCode == key.keycode);
+        bool handled = handleWMKey(key, repeating);
         if (handled == false && win95keys && xapp->WinMask) {
             KeySym k = keyCodeToKeySym(key.keycode);
             if (k == xapp->Win_L || k == xapp->Win_R) {
@@ -603,7 +613,11 @@ bool YWindowManager::handleKey(const XKeyEvent &key) {
         }
         return handled;
     } else if (key.type == KeyRelease) {
-        MSG(("up key: %u, mod: 0x%02x", key.keycode, key.state));
+        MSG(("key up: %u, mod: 0x%02x, time: %lu",
+              key.keycode, key.state, key.time));
+        fKeyReleaseTime = key.time;
+        fKeyReleaseState = key.state;
+        fKeyReleaseKCode = key.keycode;
         if (win95keys && xapp->WinMask) {
             KeySym k = keyCodeToKeySym(key.keycode);
             if (k == xapp->Win_L || k == xapp->Win_R) {
@@ -2065,20 +2079,19 @@ void YWindowManager::focusTopWindow() {
         focusTop(topLayer());
 }
 
-bool YWindowManager::focusTop(YFrameWindow *f) {
-    if (!f)
-        return false;
-
-    f = f->findWindow(YFrameWindow::fwfVisible |
+bool YWindowManager::focusTop(YFrameWindow* frame) {
+    const int flags = YFrameWindow::fwfVisible |
                       YFrameWindow::fwfFocusable |
                       YFrameWindow::fwfNotHidden |
                       YFrameWindow::fwfWorkspace |
                       YFrameWindow::fwfSame |
                       YFrameWindow::fwfLayers |
-                      YFrameWindow::fwfCycle);
-    //msg("found focus %lX", f);
-    setFocus(f);
-    return f;
+                      YFrameWindow::fwfCycle;
+    if (frame) {
+        frame = frame->findByFlags(flags);
+        setFocus(frame);
+    }
+    return (frame != nullptr);
 }
 
 YFrameWindow *YWindowManager::getFrameUnderMouse(int workspace) {
@@ -2241,9 +2254,6 @@ bool YWindowManager::setAbove(YFrameWindow* frame, YFrameWindow* above) {
         return false;
     }
 
-#ifdef DEBUG
-    if (debug_z) dumpZorder("before setAbove", frame, above);
-#endif
     bool change = false;
     if (above != frame->next() && above != frame) {
         fLayers[layer].remove(frame);
@@ -2253,9 +2263,6 @@ bool YWindowManager::setAbove(YFrameWindow* frame, YFrameWindow* above) {
         } else {
             fLayers[layer].append(frame);
         }
-#ifdef DEBUG
-        if (debug_z) dumpZorder("after setAbove", frame, above);
-#endif
         change = true;
     }
     return change;
@@ -3283,9 +3290,9 @@ void YWindowManager::removeClientFrame(YFrameWindow *frame) {
             if (fArrangeInfo[i].frame == frame)
                 fArrangeInfo[i].frame = nullptr;
     }
-    for (int w = 0; w < workspaceCount; w++) {
-        if (workspaces[w].focused == frame) {
-            workspaces[w].focused = nullptr;
+    for (Workspace* w : workspaces) {
+        if (w->focused == frame) {
+            w->focused = nullptr;
         }
     }
     if (wmState() == wmRUNNING) {
@@ -4044,7 +4051,7 @@ bool YTopWindow::handleKey(const XKeyEvent& key) {
         manager->netActiveWindow() == None &&
         hasbit(key.state, xapp->AltMask | ControlMask | ShiftMask))
     {
-        manager->handleWMKey(key);
+        manager->handleWMKey(key, false);
     }
     return true;
 }
