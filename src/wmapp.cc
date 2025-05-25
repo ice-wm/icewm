@@ -1062,10 +1062,7 @@ void YWMApp::actionPerformed(YAction action, unsigned int /*modifiers*/) {
             ctrlAltDelete->activate();
     }
     else if (action == actionWindowList) {
-        if (windowList->visible())
-            windowList->handleClose();
-        else
-            windowList->showFocused(-1, -1);
+        toggleWindowList();
     } else if (action == actionWinOptions) {
         loadWinOptions(findConfigFile("winoptions"));
     } else if (action == actionReloadKeys) {
@@ -1088,6 +1085,28 @@ void YWMApp::actionPerformed(YAction action, unsigned int /*modifiers*/) {
             }
         }
     }
+}
+
+void YWMApp::toggleWindowList() {
+    bool vis = windowList->visible();
+    if (vis) {
+        YFrameWindow* fram = windowList->getFrame();
+        YRect clnt(windowList->geometry());
+        YRect dtop(clnt.intersect(desktop->geometry()));
+        unsigned long sum = 0;
+        for (YFrameWindow* p = fram->prevLayer(); p; p = p->prevLayer()) {
+            if (p->visible()) {
+                YRect rect(dtop.intersect(p->geometry()));
+                sum += rect.pixels();
+            }
+        }
+        if (dtop.pixels() < sum + clnt.pixels() / 2)
+            vis = false;
+    }
+    if (vis)
+        windowList->handleClose();
+    else
+        windowList->showFocused(-1, -1);
 }
 
 void YWMApp::initFocusCustom() {
