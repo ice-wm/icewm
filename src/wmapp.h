@@ -153,6 +153,7 @@ private:
     void initIcons();
     void initIconSize();
     void reparseKeyPrefs();
+    void toggleWindowList();
 };
 
 extern YWMApp * wmapp;

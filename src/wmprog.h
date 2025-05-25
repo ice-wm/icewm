@@ -60,6 +60,7 @@ public:
 
     const char* cmd() const { return fCmd; }
     YStringArray& args() { return fArgs; }
+    const char* resource() const { return fRes; }
 
 protected:
     DProgram(
@@ -177,6 +178,7 @@ public:
     bool isButton(const XButtonEvent& b) const { return wm == b; }
     void open(unsigned mods);
     void grab(int handle) { wm.grab(handle); }
+    const char* resource() const { return fProg->resource(); }
 
 private:
     WMKey wm;

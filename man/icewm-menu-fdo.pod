@@ -91,6 +91,10 @@ calculated so far, therefore the timeout should be set a certain time
 before the actual hard deadline by which the program should be
 terminated. The output may lack translations and icons.
 
+=item B<-l LANGUAGE>, B<--lang=LANGUAGE>
+
+Instead of the environment variable C<LANG> use LANGUAGE for the locale.
+
 =item B<-L MAX>, B<--limit-max-len=MAX>
 
 Cut the calculated program titles (after translation and adding

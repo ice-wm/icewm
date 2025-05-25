@@ -293,6 +293,7 @@ static bool hasImageExt(const char* name) {
             if (len == 4) {
                 if (strcmp(low, "jpeg") == 0 ||
                     (strcmp(low, "avif") == 0 && YImage::supportsFormat(low)) ||
+                    (strcmp(low, "svgz") == 0 && YImage::supportsFormat(low)) ||
                     (strcmp(low, "tiff") == 0 && YImage::supportsFormat(low)) ||
                     (strcmp(low, "webp") == 0 && YImage::supportsFormat(low)))
                     return true;

@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: icewm 1.2.23\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2024-05-10 00:56+0000\n"
-"Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
-"Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/nl/>\n"
+"PO-Revision-Date: 2025-05-17 23:59+0000\n"
+"Last-Translator: Feike Donia <feikedonia@proton.me>\n"
+"Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: src/aapm.cc:113
 #, c-format
@@ -31,7 +31,7 @@ msgstr "Kan geen ioctl uitvoeren op het APM-apparaat %s"
 #: src/aapm.cc:169
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
-msgstr "Onbekend formaat gebruikt door APM-apparaat %s (%d)."
+msgstr "Het APM-apparaat gebruikte een onbekend format %s (%d)."
 
 #: src/aapm.cc:201 src/aapm.cc:471 src/aapm.cc:630 src/aapm.cc:754
 msgid " - Power"
@@ -189,12 +189,12 @@ msgstr "Toetsenbord"
 #: src/amailbox.cc:64
 #, c-format
 msgid "Invalid mailbox protocol: \"%s\""
-msgstr "Ongeldig postvakprotocol: »%s«"
+msgstr "Ongeldig postvakprotocol: \"%s\""
 
 #: src/amailbox.cc:66
 #, c-format
 msgid "Invalid mailbox path: \"%s\""
-msgstr "Ongeldig postvakpad: »%s«"
+msgstr "Ongeldig postvakpad: \"%s\""
 
 #: src/amailbox.cc:140
 #, c-format
@@ -229,7 +229,7 @@ msgstr "Naar socket schrijven is mislukt: %s"
 #: src/amailbox.cc:694
 #, c-format
 msgid "Using MailBox \"%s\"\n"
-msgstr "Gebruikt postvak: »%s«\n"
+msgstr "Gebruikt postvak: \"%s\"\n"
 
 #: src/amailbox.cc:801
 msgid "Suspended"
@@ -391,15 +391,15 @@ msgstr "Audio"
 
 #: src/fdomenu.cc:1101
 msgid "Zarathustra"
-msgstr ""
+msgstr "Zaratoestra"
 
 #: src/fdomenu.cc:1201
 msgid "System too slow! Failed to load menu content!"
-msgstr ""
+msgstr "Het systeem is te langzaam! Kon het menu niet laden!"
 
 #: src/fdomenu.cc:1204
 msgid "Please push HERE and retry after some seconds."
-msgstr ""
+msgstr "Druk op HIER en probeer het na enkele seconden opnieuw."
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to manage printers
 #: src/fdospecgen.h:24
@@ -637,7 +637,6 @@ msgstr "Kunst"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Artificial Intelligence software
 #: src/fdospecgen.h:234 src/fdospecgen.h:240
-#, fuzzy
 msgid "Artificialtelligence"
 msgstr "Kunstmatige intelligentie"
 
@@ -737,7 +736,7 @@ msgstr "Klok"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application that only works inside a terminal (text-based or command line application)
 #: src/fdospecgen.h:366
 msgid "ConsoleOnly"
-msgstr ""
+msgstr "Werkt alleen in terminal"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside:  
 #: src/fdospecgen.h:372 src/fdospecgen.h:378
@@ -2496,7 +2495,7 @@ msgstr "Werkstation blo_kkeren"
 
 #: src/wmdialog.cc:87 src/ymsgbox.cc:51
 msgid "_Cancel"
-msgstr "Af_breken"
+msgstr "_Annuleren"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmdialog.cc:88 src/wmprog.cc:471 src/wmprog.cc:473 src/wmtaskbar.cc:243

@@ -1238,44 +1238,26 @@ bool YFrameWindow::handleTimer(YTimer *t) {
 }
 
 void YFrameWindow::raise() {
-    if (this != manager->top(getActiveLayer())) {
-        setAbove(manager->top(getActiveLayer()));
-        raiseTo(prevLayer());
-    }
+    // YWindow::raise doesn't apply to a frame
 }
 
 void YFrameWindow::lower() {
-    if (this != manager->bottom(getActiveLayer())) {
-        setAbove(nullptr);
-        beneath(nextLayer());
-    }
+    // YWindow::lower doesn't apply to a frame
 }
 
 void YFrameWindow::removeFrame() {
-#ifdef DEBUG
-    if (debug_z) dumpZorder("before removing", this);
-#endif
     manager->removeLayeredFrame(this);
-#ifdef DEBUG
-    if (debug_z) dumpZorder("after removing", this);
-#endif
 }
 
 void YFrameWindow::insertFrame(bool top) {
-#ifdef DEBUG
-    if (debug_z) dumpZorder("before inserting", this);
-#endif
     if (top) {
         manager->setTop(getActiveLayer(), this);
     } else {
         manager->setBottom(getActiveLayer(), this);
     }
-#ifdef DEBUG
-    if (debug_z) dumpZorder("after inserting", this);
-#endif
 }
 
-YFrameWindow *YFrameWindow::findWindow(int flags) {
+YFrameWindow* YFrameWindow::findByFlags(int flags) {
     YFrameWindow *p = this;
 
     if (flags & fwfNext)
@@ -1674,10 +1656,6 @@ void YFrameWindow::wmRestore() {
 }
 
 void YFrameWindow::wmMinimize() {
-#ifdef DEBUG_S
-    MSG(("wmMinimize - Frame: %d", visible()));
-    MSG(("wmMinimize - Client: %d", client()->visible()));
-#endif
     manager->lockFocus();
     if (isMinimized()) {
         wmapp->signalGuiEvent(geWindowRestore);
@@ -1863,9 +1841,6 @@ void YFrameWindow::wmRaise() {
 }
 
 void YFrameWindow::doRaise() {
-#ifdef DEBUG
-    if (debug_z) dumpZorder("wmRaise: ", this);
-#endif
     if (prev()) {
         YArray<YFrameWindow*> family;
         family += this;
@@ -1918,10 +1893,6 @@ void YFrameWindow::doRaise() {
                 manager->setAbove(raise[i], topmost);
             }
         }
-
-#ifdef DEBUG
-        if (debug_z) dumpZorder("wmRaise after raise: ", this);
-#endif
     }
 }
 
@@ -1996,7 +1967,7 @@ void YFrameWindow::wmPrevWindow() {
 
     int flags = fwfNext | fwfVisible | fwfCycle |
                 fwfFocusable | fwfWorkspace | fwfSame;
-    YFrameWindow *f = findWindow(flags | fwfBackward);
+    YFrameWindow* f = findByFlags(flags | fwfBackward);
     if (f && f != this) {
         f->wmRaise();
         manager->setFocus(f, true);
@@ -2017,7 +1988,7 @@ void YFrameWindow::wmNextWindow() {
 
     int flags = fwfNext | fwfVisible | fwfCycle |
                 fwfFocusable | fwfWorkspace | fwfSame;
-    YFrameWindow *f = findWindow(flags);
+    YFrameWindow* f = findByFlags(flags);
     if (f && f != this) {
         wmLower();
         f->wmRaise();
