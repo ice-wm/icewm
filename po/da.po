@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.4.2.1038\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-04-21 20:34+0200\n"
+"POT-Creation-Date: 2025-05-25 21:09+0200\n"
 "PO-Revision-Date: 2022-03-23 19:12+0000\n"
 "Last-Translator: Alexander Mortensen <Mortensen.alexander@gmail.com>\n"
 "Language-Team: Danish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -348,7 +348,7 @@ msgstr "Arbejdsområde: "
 msgid "Tabs"
 msgstr ""
 
-#: src/fdomenu.cc:928
+#: src/fdomenu.cc:976
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -384,22 +384,22 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1117 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1164 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "Lyd"
 
-#: src/fdomenu.cc:1118
+#: src/fdomenu.cc:1165
 msgid "Zarathustra"
 msgstr ""
 
-#: src/fdomenu.cc:1218
+#: src/fdomenu.cc:1261
 msgid "System too slow! Failed to load menu content!"
 msgstr ""
 
-#: src/fdomenu.cc:1221
+#: src/fdomenu.cc:1264
 msgid "Please push HERE and retry after some seconds."
 msgstr ""
 
@@ -1446,77 +1446,77 @@ msgstr "EWMH vinduestilstand"
 msgid "workspace #%d: `%s'\n"
 msgstr "arbejdsområde nr. %d: \"%s\"\n"
 
-#: src/icesh.cc:2817 src/icesh.cc:4702 src/icesh.cc:5302
+#: src/icesh.cc:2817 src/icesh.cc:4701 src/icesh.cc:5301
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Ugyldig tilstand: \"%s\"."
 
-#: src/icesh.cc:2848 src/icesh.cc:4271 src/icesh.cc:4321 src/icesh.cc:5623
+#: src/icesh.cc:2848 src/icesh.cc:4270 src/icesh.cc:4320 src/icesh.cc:5622
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Ugyldigt argument: \"%s\""
 
-#: src/icesh.cc:3891
+#: src/icesh.cc:3890
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Kan ikke hente geometrien af vinduet 0x%lx"
 
-#: src/icesh.cc:3916
+#: src/icesh.cc:3915
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Ugyldigt Xinerama: \"%s\"."
 
-#: src/icesh.cc:4048 src/icesh.cc:4056 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:4047 src/icesh.cc:4055 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Kan ikke skrive til %s"
 
-#: src/icesh.cc:4287
+#: src/icesh.cc:4286
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Handlingen \"%s\" kræver mindst %d argumenter."
 
-#: src/icesh.cc:4296
+#: src/icesh.cc:4295
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Ugyldigt udtryk: \"%s\""
 
-#: src/icesh.cc:4307 src/icesound.cc:800 src/icewmbg.cc:1088
-#: src/icewmhint.cc:37 src/wmapp.cc:1298 src/yxapp.cc:1049
+#: src/icesh.cc:4306 src/icesound.cc:800 src/icewmbg.cc:1089
+#: src/icewmhint.cc:37 src/wmapp.cc:1317 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Kan ikke åbne skærm: %s. X skal køre og $DISPLAY sat."
 
-#: src/icesh.cc:4423
+#: src/icesh.cc:4422
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Uventet menunøgleord: '%s'."
 
-#: src/icesh.cc:4455
+#: src/icesh.cc:4454
 msgid "No windows found."
 msgstr "Ingen vinduer fundet."
 
-#: src/icesh.cc:4471
+#: src/icesh.cc:4470
 msgid "No actions specified."
 msgstr "Ingen handlinger anført."
 
-#: src/icesh.cc:4626
+#: src/icesh.cc:4625
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Ugyldig vinduesidentifikator: \"%s\""
 
-#: src/icesh.cc:4642
+#: src/icesh.cc:4641
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Ugyldig PID: \"%s\""
 
-#: src/icesh.cc:4675
+#: src/icesh.cc:4674
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Ugyldigt lag: \"%s\"."
 
-#: src/icesh.cc:5762
+#: src/icesh.cc:5761
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Ukendt handling: \"%s\""
@@ -1851,12 +1851,12 @@ msgstr "Udvid faneblade"
 msgid "Wrap Lines"
 msgstr "Ombryd linjer"
 
-#: src/icewmbg.cc:35 src/icewmbg.cc:373
+#: src/icewmbg.cc:35 src/icewmbg.cc:374
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "Kunne ikke indlæse billede \"%s\"."
 
-#: src/icewmbg.cc:970
+#: src/icewmbg.cc:971
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1957,12 +1957,12 @@ msgstr ""
 "forhold\n"
 "\n"
 
-#: src/icewmbg.cc:1249 src/wmapp.cc:1906
+#: src/icewmbg.cc:1250 src/wmapp.cc:1923
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Ugenkendeligt tilvalg \"%s\"."
 
-#: src/icewmbg.cc:1336
+#: src/icewmbg.cc:1337
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Kan ikke starte eftersom en anden icewmbg stadig kører."
 
@@ -1975,11 +1975,11 @@ msgstr "Anvendelse: icewmhint klasse.instans tilvalg arg\n"
 msgid "Out of memory (len=%d)."
 msgstr "Ikke mere ledig hukommelse (len=%d)."
 
-#: src/misc.cc:71 src/misc.cc:83
+#: src/misc.cc:70 src/misc.cc:82
 msgid "Warning: "
 msgstr "Advarsel: "
 
-#: src/misc.cc:394
+#: src/misc.cc:393
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2296,18 +2296,18 @@ msgstr ""
 "Afstyr alle applikationer og genstart\n"
 "som terminal. Forsæt?"
 
-#: src/wmapp.cc:1299 src/yxapp.cc:1050
+#: src/wmapp.cc:1318 src/yxapp.cc:1050
 msgid "<none>"
 msgstr "<ingen>"
 
-#: src/wmapp.cc:1627
+#: src/wmapp.cc:1646
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Klient-id som skal bruges når sessionshåndteringen "
 "kontaktes.\n"
 
-#: src/wmapp.cc:1633
+#: src/wmapp.cc:1652
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2318,7 +2318,7 @@ msgstr ""
 "  --debug-z           Udskriv fejlsøgningsmeddelelser vedrørende "
 "vinduesstakning.\n"
 
-#: src/wmapp.cc:1641
+#: src/wmapp.cc:1660
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2339,15 +2339,15 @@ msgstr ""
 "  --trace=konf,ikon   Spor stier som blev brugt til at indlæse "
 "konfiguration.\n"
 
-#: src/wmapp.cc:1652
+#: src/wmapp.cc:1671
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr ""
 
-#: src/wmapp.cc:1658
+#: src/wmapp.cc:1677
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr ""
 
-#: src/wmapp.cc:1661
+#: src/wmapp.cc:1680
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2408,21 +2408,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1727
+#: src/wmapp.cc:1746
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s konfigurationsmapper:\n"
 
-#: src/wmapp.cc:1815
+#: src/wmapp.cc:1834
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s konfigurerede tilvalg:%s\n"
 
-#: src/wmapp.cc:1956
+#: src/wmapp.cc:1973
 msgid "Confirm Logout"
 msgstr "Bekræft udlogning"
 
-#: src/wmapp.cc:1957
+#: src/wmapp.cc:1974
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2518,15 +2518,15 @@ msgstr ""
 msgid "_About"
 msgstr "O_m"
 
-#: src/wmframe.cc:1454
+#: src/wmframe.cc:1436
 msgid "Rename"
 msgstr ""
 
-#: src/wmframe.cc:1455
+#: src/wmframe.cc:1437
 msgid "Rename the window title"
 msgstr ""
 
-#: src/wmframe.cc:1962
+#: src/wmframe.cc:1933
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2534,7 +2534,7 @@ msgstr ""
 "ADVARSEL! Alle ændringer som ikke er gemt, vil gå tabt, når\n"
 "denne klient dræbes. Vil du fortsætte?"
 
-#: src/wmframe.cc:1967
+#: src/wmframe.cc:1938
 msgid "Kill Client: "
 msgstr "Dræb klient: "
 
@@ -2605,11 +2605,11 @@ msgstr "'%s' udløb!"
 msgid "'%s' produces no output"
 msgstr "\"%s\" producerer intet output"
 
-#: src/wmmgr.cc:3681
+#: src/wmmgr.cc:3688
 msgid "Missing program setxkbmap"
 msgstr "Manglende program setxkbmap"
 
-#: src/wmmgr.cc:3682
+#: src/wmmgr.cc:3689
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "For tastatur skift, installer setxkbmap."
 

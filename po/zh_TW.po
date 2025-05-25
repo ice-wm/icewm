@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.30\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-04-21 20:34+0200\n"
+"POT-Creation-Date: 2025-05-25 21:09+0200\n"
 "PO-Revision-Date: 2025-04-08 10:56+0000\n"
 "Last-Translator: Emily Dong <Emily.Dong@excel-gits.com>\n"
 "Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/icewm/"
@@ -348,7 +348,7 @@ msgstr "工作區："
 msgid "Tabs"
 msgstr "索引標籤"
 
-#: src/fdomenu.cc:928
+#: src/fdomenu.cc:976
 msgid ""
 "USAGE: icewm-menu-fdo [OPTIONS] [FILENAME]\n"
 "OPTIONS:\n"
@@ -414,22 +414,22 @@ msgstr ""
 "此程式還會監聽 XDG 基本目錄規格定義的環境變數：\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
-#: src/fdomenu.cc:1117 src/fdospecgen.h:64 src/fdospecgen.h:72
+#: src/fdomenu.cc:1164 src/fdospecgen.h:64 src/fdospecgen.h:72
 #: src/fdospecgen.h:128 src/fdospecgen.h:144 src/fdospecgen.h:260
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
 msgstr "音訊"
 
-#: src/fdomenu.cc:1118
+#: src/fdomenu.cc:1165
 msgid "Zarathustra"
 msgstr "Zarathustra"
 
-#: src/fdomenu.cc:1218
+#: src/fdomenu.cc:1261
 msgid "System too slow! Failed to load menu content!"
 msgstr "系統太慢！無法載入功能表內容！"
 
-#: src/fdomenu.cc:1221
+#: src/fdomenu.cc:1264
 msgid "Please push HERE and retry after some seconds."
 msgstr "請按一下此處，稍後再試。"
 
@@ -1471,77 +1471,77 @@ msgstr "EWMH 視窗狀態"
 msgid "workspace #%d: `%s'\n"
 msgstr "工作區 #%d：「%s」\n"
 
-#: src/icesh.cc:2817 src/icesh.cc:4702 src/icesh.cc:5302
+#: src/icesh.cc:2817 src/icesh.cc:4701 src/icesh.cc:5301
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "無效狀態：`%s'。"
 
-#: src/icesh.cc:2848 src/icesh.cc:4271 src/icesh.cc:4321 src/icesh.cc:5623
+#: src/icesh.cc:2848 src/icesh.cc:4270 src/icesh.cc:4320 src/icesh.cc:5622
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "引數無效：「%s」"
 
-#: src/icesh.cc:3891
+#: src/icesh.cc:3890
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "無法獲取視窗 0x%lx 的記憶體"
 
-#: src/icesh.cc:3916
+#: src/icesh.cc:3915
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "無效 Xinerama：`%s'。"
 
-#: src/icesh.cc:4048 src/icesh.cc:4056 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:4047 src/icesh.cc:4055 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "無法寫入 %s"
 
-#: src/icesh.cc:4287
+#: src/icesh.cc:4286
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "動作「%s」需要至少 %d 個引數。"
 
-#: src/icesh.cc:4296
+#: src/icesh.cc:4295
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "表示式無效：「%s」"
 
-#: src/icesh.cc:4307 src/icesound.cc:800 src/icewmbg.cc:1088
-#: src/icewmhint.cc:37 src/wmapp.cc:1298 src/yxapp.cc:1049
+#: src/icesh.cc:4306 src/icesound.cc:800 src/icewmbg.cc:1089
+#: src/icewmhint.cc:37 src/wmapp.cc:1317 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "無法開啟顯示：%s。X 必須正在執行且需設定 $DISPLAY。"
 
-#: src/icesh.cc:4423
+#: src/icesh.cc:4422
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "非預期：`%s'。"
 
-#: src/icesh.cc:4455
+#: src/icesh.cc:4454
 msgid "No windows found."
 msgstr "找不到視窗。"
 
-#: src/icesh.cc:4471
+#: src/icesh.cc:4470
 msgid "No actions specified."
 msgstr "未指定動作。"
 
-#: src/icesh.cc:4626
+#: src/icesh.cc:4625
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "無效的視窗識別碼：「%s」"
 
-#: src/icesh.cc:4642
+#: src/icesh.cc:4641
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "無效 PID：`%s'"
 
-#: src/icesh.cc:4675
+#: src/icesh.cc:4674
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "無效層：`%s'。"
 
-#: src/icesh.cc:5762
+#: src/icesh.cc:5761
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "未知動作：「%s」"
@@ -1874,12 +1874,12 @@ msgstr "展開 Tab"
 msgid "Wrap Lines"
 msgstr "換列"
 
-#: src/icewmbg.cc:35 src/icewmbg.cc:373
+#: src/icewmbg.cc:35 src/icewmbg.cc:374
 #, c-format
 msgid "Failed to load image '%s'."
 msgstr "載入影像「%s」失敗。"
 
-#: src/icewmbg.cc:970
+#: src/icewmbg.cc:971
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1977,12 +1977,12 @@ msgstr ""
 " center:1 scaled:1 = 沿兩個方向填充並保持長寬比率\n"
 "\n"
 
-#: src/icewmbg.cc:1249 src/wmapp.cc:1906
+#: src/icewmbg.cc:1250 src/wmapp.cc:1923
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "無法識別選項「%s」。"
 
-#: src/icewmbg.cc:1336
+#: src/icewmbg.cc:1337
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "無法啟動，因為另一個 icewmbg 仍在執行中。"
 
@@ -1995,11 +1995,11 @@ msgstr "用法：icewmhint 類別.實體 選項 引數\n"
 msgid "Out of memory (len=%d)."
 msgstr "記憶體不足（長度＝%d）。"
 
-#: src/misc.cc:71 src/misc.cc:83
+#: src/misc.cc:70 src/misc.cc:82
 msgid "Warning: "
 msgstr "警告："
 
-#: src/misc.cc:394
+#: src/misc.cc:393
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2314,16 +2314,16 @@ msgstr ""
 "取消管理所有應用程式并做為\n"
 "終端機重新啟動。是否繼續？"
 
-#: src/wmapp.cc:1299 src/yxapp.cc:1050
+#: src/wmapp.cc:1318 src/yxapp.cc:1050
 msgid "<none>"
 msgstr "<無>"
 
-#: src/wmapp.cc:1627
+#: src/wmapp.cc:1646
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr "  --client-id=ID      聯絡工作階段管理程式時要使用的用戶端 ID。\n"
 
-#: src/wmapp.cc:1633
+#: src/wmapp.cc:1652
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2333,7 +2333,7 @@ msgstr ""
 "  --debug             列印一般除錯訊息。\n"
 "  --debug-z           列印有關視窗堆疊的除錯訊息。\n"
 
-#: src/wmapp.cc:1641
+#: src/wmapp.cc:1660
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2353,15 +2353,15 @@ msgstr ""
 "  --rewrite-preferences  更新現有優先設定檔案。\n"
 "  --trace=conf,icon   追蹤用於載入組態的路徑。\n"
 
-#: src/wmapp.cc:1652
+#: src/wmapp.cc:1671
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr "  -o、--output=FILE   將所有輸出重新導向至 FILE。\n"
 
-#: src/wmapp.cc:1658
+#: src/wmapp.cc:1677
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr "  -i、--install=THEME 從 extra 或 'list' 安裝 THEME。\n"
 
-#: src/wmapp.cc:1661
+#: src/wmapp.cc:1680
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2420,21 +2420,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1727
+#: src/wmapp.cc:1746
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s 組態目錄︰\n"
 
-#: src/wmapp.cc:1815
+#: src/wmapp.cc:1834
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s 設定的選項：%s\n"
 
-#: src/wmapp.cc:1956
+#: src/wmapp.cc:1973
 msgid "Confirm Logout"
 msgstr "確定登出"
 
-#: src/wmapp.cc:1957
+#: src/wmapp.cc:1974
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2531,15 +2531,15 @@ msgstr "重新載入視窗選項(_O)"
 msgid "_About"
 msgstr "關於(_A)"
 
-#: src/wmframe.cc:1454
+#: src/wmframe.cc:1436
 msgid "Rename"
 msgstr "重新命名"
 
-#: src/wmframe.cc:1455
+#: src/wmframe.cc:1437
 msgid "Rename the window title"
 msgstr "重新命名視窗標題"
 
-#: src/wmframe.cc:1962
+#: src/wmframe.cc:1933
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
@@ -2547,7 +2547,7 @@ msgstr ""
 "【警告】！當這個客戶端程式被砍掉時，將會失去所有未儲存的變更。\n"
 "您希望繼續進行嗎？"
 
-#: src/wmframe.cc:1967
+#: src/wmframe.cc:1938
 msgid "Kill Client: "
 msgstr "砍掉客戶端："
 
@@ -2618,11 +2618,11 @@ msgstr "\"%s\" 已逾時！"
 msgid "'%s' produces no output"
 msgstr "「%s」未產生任何輸出"
 
-#: src/wmmgr.cc:3681
+#: src/wmmgr.cc:3688
 msgid "Missing program setxkbmap"
 msgstr "缺少程式 setxkbmap"
 
-#: src/wmmgr.cc:3682
+#: src/wmmgr.cc:3689
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "若要進行鍵盤切換，請安裝 setxkbmap。"
 

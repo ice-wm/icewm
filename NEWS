@@ -1,11 +1,46 @@
-icewm -- history of user-visible changes.  2025-04-21
+icewm -- history of user-visible changes.  2025-05-25
+
+Release icewm-3.7.5 released 2025-05-25
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.4...3.7.5
+
+Bert Gijsbers <gijsbers@science.uva.nl> (14):
+      Silence Clang about VLAs.
+      Add support for svgz to icewmbg.
+      Rename findWindow(int) to findByFlags.
+      Plug a few leaks in icewm-menu-fdo.
+      Fix comparing language codes for issue #800. Support three-letter language
+        codes.
+      Document the new -l,--lang option for icewm-menu-fdo.
+      Revert "Plug a few leaks in icewm-menu-fdo." and closes #801. This reverts
+        commit a0c98f2f95ba8a363830165b1a593f1108636217.
+      Allow setGeometry for windows without a WM_NORMAL_HINTS property in icesh.
+      Ignore key repeats in the runonce command for keys for issue
+        ice-wm/icewm#175. Document the runonce command for keys.
+      Silence compiler on unknown pragmas.
+      Drop the "--debug-z" option. For each over workspaces. For frames the
+        lower and raise should be empty.
+      Add unionRect for a YRect parameter.
+      Prefer activateWindow over setFocus for the WindowList.
+      When toggling the WindowList, raise the WindowList if it is overlapped.
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Feike Donia <feikedonia@proton.me> (1):
+      Translated using Weblate (Dutch)
+
+Саша Петровић <salepetronije@gmail.com> (1):
+      Added translation using Weblate (Serbian)
+
 
 Release icewm-3.7.4 released 2025-04-21
 ---------------------------------------
 
 git shortlog --no-merges -e -n -w80,6,8 3.7.3...3.7.4
 
-Bert Gijsbers <gijsbers@science.uva.nl> (25):
+Bert Gijsbers <gijsbers@science.uva.nl> (26):
       Lower minimum required CMake version to 3.5.
       Fix CMake LTO build.
       Remove obsolete CMake warning for SVG library.
@@ -33,6 +68,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (25):
       Restack the windows after a QuickSwitch has ended.
       Fix typo.
       Permit some global keys in case the global keybinds are not active.
+      Prepare 3.7.4 release
 
 Dmitriy Khanzhin <jinn@altlinux.org> (2):
       Translated using Weblate (Russian)
@@ -432,42 +468,4 @@ Baurzhan Muftakhidinov <baurthefirst@gmail.com> (3):
 
 Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
       Translated using Weblate (Georgian)
-
-
-Release icewm-3.5.1 released 2024-06-06
----------------------------------------
-
-git shortlog --no-merges -e -n -w80,6,8 3.5.0...3.5.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (24):
-      Drop obsolete AC_HEADERs from configure.
-      MailBoxPath is a list separated by spaces.
-      MailBoxPath is a list separated by spaces.
-      Replace duplicate code in getsesfile with getPrivConfFile.
-      Add ensureDirectory to upath.
-      Use 'space' instead of 'Space' in default key bindings.
-      Extra test on upath expansion.
-      Check for path existence in rewritePrefs.
-      Use ensureDirectory in getPrivConfDir.
-      Always create directory in getPrivConfFile.
-      Add minute as a time unit.
-      Add Tab completion on usernames and on environment variables.
-      Add a permanent history of commands to the address bar.
-      Update new address bar features.
-      Tab-complete a leading environment variable in the address bar.
-      Don't arrange, but only limit the position on screen dimension changes.
-      Warn if DESKTOP_SESSION is icewm instead of icewm-session.
-      Update icewm manpage description.
-      Also expand a leading tilde username prefix.
-      Update INSTALL.cmakebuild from INSTALL-cmakebuild.md.
-      Drop empty si.po.
-      Fix test -nt for NetBSD and closes ice-wm/icewm#168.
-      Add percentage to icesh move for ice-wm/icewm#169
-      Prepare 3.5.1 release
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Rodrigo Macedo <sottomaiormacedotec@sottomaiormacedo.tech> (1):
-      Translated using Weblate (Portuguese (Brazil))
 

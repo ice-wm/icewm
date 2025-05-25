@@ -1,5 +1,256 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit fbb697f9c0e9d7dfde1fd566546896821549e42a
+Merge: 1034f2cf fcb3dc08
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 25 21:08:20 2025 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit fcb3dc08b2134016f58be18b55c06cf3a5b28e13
+Merge: cd1d2c05 7dfd5177
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 25 21:07:49 2025 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 7dfd5177173bdfa6287400c9e0bb7f6b313da943
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 25 19:44:13 2025 +0200
+
+    When toggling the WindowList, raise the WindowList if it is overlapped.
+
+ src/wmapp.cc | 27 +++++++++++++++++++++++----
+ src/wmapp.h  |  1 +
+ 2 files changed, 24 insertions(+), 4 deletions(-)
+
+commit 6fa77beb63078ce871449158fd652c0aa3ac027d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 25 19:43:37 2025 +0200
+
+    Prefer activateWindow over setFocus for the WindowList.
+
+ src/wmwinlist.cc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit c4ed5cd3511fea1ec5031e5b29180b0f3a781f94
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 25 19:43:10 2025 +0200
+
+    Add unionRect for a YRect parameter.
+
+ src/yrect.h | 20 +++++++++++++-------
+ 1 file changed, 13 insertions(+), 7 deletions(-)
+
+commit c18b775b91d1a7966f55d20d49ddc91fe7797d58
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Tue May 20 17:20:41 2025 +0000
+
+    Added translation using Weblate (Serbian)
+
+ po/sr.po | 2710 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 2710 insertions(+)
+
+commit 6a63c3f4736f5ecf7475392c4edd91969024100a
+Author: Feike Donia <feikedonia@proton.me>
+Date:   Sat May 17 21:14:29 2025 +0000
+
+    Translated using Weblate (Dutch)
+
+    Currently translated at 99.8% (524 of 525 strings)
+
+ po/nl.po | 29 ++++++++++++++---------------
+ 1 file changed, 14 insertions(+), 15 deletions(-)
+
+commit 14897b2f168f9c640345409b96672867fb2c3877
+Author: David Medina <medipas@gmail.com>
+Date:   Fri May 9 07:45:54 2025 +0000
+
+    Translated using Weblate (Catalan)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/ca.po | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 9de6c5ec172f35e55b63a7482691d37be0c371f2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 5 23:41:57 2025 +0200
+
+    Drop the "--debug-z" option. For each over workspaces. For frames the
+    lower and raise should be empty.
+
+ src/debug.h      |  1 -
+ src/misc.cc      |  1 -
+ src/wmapp.cc     |  2 --
+ src/wmframe.cc   | 33 ++-------------------------------
+ src/wmmgr.cc     | 12 +++---------
+ src/workspaces.h |  8 ++++++++
+ 6 files changed, 13 insertions(+), 44 deletions(-)
+
+commit 1a62314d672fbb72aa0dd4e9d16f23e2048fd340
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon May 5 23:40:28 2025 +0200
+
+    Silence compiler on unknown pragmas.
+
+ src/debug.h | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 249c0c8b2b8a8c58bb9af6622d05e4244f0f637b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 4 09:05:36 2025 +0200
+
+    Ignore key repeats in the runonce command for keys for issue
+    ice-wm/icewm#175. Document the runonce command for keys.
+
+ man/icewm-keys.pod     | 22 ++++++++++++++++++++++
+ man/icewm-menu.pod     | 14 +++++++-------
+ man/icewm-programs.pod | 14 +++++++-------
+ src/wmmgr.cc           | 26 ++++++++++++++++++++------
+ src/wmmgr.h            |  5 ++++-
+ src/wmprog.h           |  2 ++
+ 6 files changed, 62 insertions(+), 21 deletions(-)
+
+commit cb9eb28c02d64f400f1c464a925ba90e90430a52
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 4 08:56:48 2025 +0200
+
+    Allow setGeometry for windows without a WM_NORMAL_HINTS property in icesh.
+
+ src/icesh.cc | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+commit 4603a667999d81b2e88a51dedd1b9e761d384b74
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Apr 29 08:24:12 2025 +0200
+
+    Revert "Plug a few leaks in icewm-menu-fdo." and closes #801.
+    This reverts commit a0c98f2f95ba8a363830165b1a593f1108636217.
+
+ src/fdomenu.cc | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+commit b011d3650b82501bc2a47b081d1978bb7bbbe2a7
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 28 21:38:25 2025 +0200
+
+    Document the new -l,--lang option for icewm-menu-fdo.
+
+ man/icewm-menu-fdo.pod | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit d58ee6d84a5f654c812f2992e464f79fc371b316
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 28 21:34:29 2025 +0200
+
+    Fix comparing language codes for issue #800. Support three-letter
+    language codes.
+
+ src/fdomenu.cc | 184 +++++++++++++++++++++++++++++++++--------------------
+ 1 file changed, 114 insertions(+), 70 deletions(-)
+
+commit a0c98f2f95ba8a363830165b1a593f1108636217
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Apr 24 22:29:06 2025 +0200
+
+    Plug a few leaks in icewm-menu-fdo.
+
+ src/fdomenu.cc | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+commit b2bf52f1426bbebcad90d88e8edab0f3ade55caa
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Apr 24 20:59:18 2025 +0200
+
+    Rename findWindow(int) to findByFlags.
+
+ src/wmframe.cc |  6 +++---
+ src/wmframe.h  |  2 +-
+ src/wmmgr.cc   | 17 ++++++++---------
+ 3 files changed, 12 insertions(+), 13 deletions(-)
+
+commit 3544d192c645ae95a0742c3d243ee4cd272e5a65
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Apr 24 20:51:13 2025 +0200
+
+    Add support for svgz to icewmbg.
+
+ src/icewmbg.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2601cc57a1c59e2bee8f77f7dfaa1a90cf7ff852
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 21 22:06:32 2025 +0200
+
+    Silence Clang about VLAs.
+
+ src/debug.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1034f2cfa99ed1ea6ceb63bb7787752adffd0ac2
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Apr 21 20:43:35 2025 +0200
+
+    Prepare 3.7.4 release
+
+ AUTHORS      |   16 +-
+ ChangeLog    | 1045 ++++++++++++++++++++++++------------------------------
+ NEWS         |  139 ++++----
+ README.md    |   16 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |  138 +++----
+ po/ast.po    |  132 +++----
+ po/be.po     |  134 +++----
+ po/bg.po     |  134 +++----
+ po/ca.po     |  138 +++----
+ po/cs.po     |  138 +++----
+ po/da.po     |  138 +++----
+ po/de.po     |  250 ++++++-------
+ po/el.po     |  138 +++----
+ po/en.po     |  132 +++----
+ po/eo.po     |  132 +++----
+ po/es.po     |  250 ++++++-------
+ po/fa.po     |  132 +++----
+ po/fi.po     |  138 +++----
+ po/fr.po     |  250 ++++++-------
+ po/he.po     |  134 +++----
+ po/hi.po     |  132 +++----
+ po/hr.po     |  134 +++----
+ po/hu.po     |  140 ++++----
+ po/icewm.pot |  134 +++----
+ po/id.po     |  138 +++----
+ po/ie.po     |  137 +++----
+ po/it.po     |  254 ++++++-------
+ po/ja.po     |  138 +++----
+ po/ka.po     |  134 +++----
+ po/kk.po     |  136 +++----
+ po/ko.po     |  134 +++----
+ po/lt.po     |  134 +++----
+ po/lv.po     |  134 +++----
+ po/mk.po     |  134 +++----
+ po/nb.po     |  134 +++----
+ po/nl.po     |  138 +++----
+ po/nn.po     |  137 +++----
+ po/no.po     |  134 +++----
+ po/pl.po     |  138 +++----
+ po/pt.po     |  138 +++----
+ po/pt_BR.po  |  246 ++++++-------
+ po/ro.po     |  134 +++----
+ po/ru.po     |  258 +++++++-------
+ po/sk.po     |  138 +++----
+ po/sl.po     |  134 +++----
+ po/sv.po     |  138 +++----
+ po/tr.po     |  138 +++----
+ po/uk.po     |  138 +++----
+ po/vi.po     |  134 +++----
+ po/zh_CN.po  |  250 ++++++-------
+ po/zh_TW.po  |  250 ++++++-------
+ 54 files changed, 4314 insertions(+), 4214 deletions(-)
+
 commit 7f5125295fed8fb7130097490fc5de27c21cffa0
 Merge: 1c8850f8 cd1d2c05
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5634,235 +5885,4 @@ Date:   Tue Sep 5 04:34:40 2023 +0200
     Bump actions/checkout from 3 to 4 (#745)
 
  .github/workflows/cmake.yml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 30be0d266176dea33870ffb36986704796d5424b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Sep 4 22:33:34 2023 +0200
-
-    Always update the Window List Menu action handler for ice-wm/icewm#144.
-
- src/wmwinmenu.cc | 1 +
- 1 file changed, 1 insertion(+)
-
-commit 6acb3f018074989e9589bb17288f565ef50211f6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Aug 19 23:49:12 2023 +0200
-
-    Prefer 'that' over 'which' when restrictive.
-
- src/WinMgr.h        | 2 +-
- src/default.h       | 6 +++---
- src/icehelp.cc      | 2 +-
- src/themes.cc       | 2 +-
- src/upath.cc        | 4 ++++
- src/upath.h         | 1 +
- src/wmconfig.h      | 2 +-
- src/wmmenu.cc       | 2 +-
- src/wmprog.h        | 2 +-
- src/ycollections.cc | 2 +-
- src/ycollections.h  | 2 +-
- src/yicon.cc        | 4 ++--
- src/ypointer.h      | 4 ++--
- src/yxtray.cc       | 2 +-
- 14 files changed, 21 insertions(+), 16 deletions(-)
-
-commit 2c8244e4b01c1c0923522f4c8ca7fef54806c9c0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Aug 19 19:02:04 2023 +0200
-
-    Prefer 'that' over 'which' when restrictive.
-
- man/icesh.pod              | 42 ++++++++++++-------------
- man/icesound.pod           |  5 ++-
- man/icewm-env.pod          |  2 +-
- man/icewm-menu-xrandr.pod  |  4 +--
- man/icewm-menu.pod         |  2 +-
- man/icewm-preferences.pod  | 16 +++++-----
- man/icewm-prefoverride.pod |  4 +--
- man/icewm-programs.pod     |  2 +-
- man/icewm-session.pod      |  2 +-
- man/icewm-set-gnomewm.pod  |  2 +-
- man/icewm-startup.pod      |  2 +-
- man/icewm-toolbar.pod      |  2 +-
- man/icewm-winoptions.pod   |  2 +-
- man/icewm.pod              | 70 ++++++++++++++++++++----------------------
- man/icewmtray.pod          |  2 +-
- 15 files changed, 78 insertions(+), 81 deletions(-)
-
-commit 7fbd3db2ec3ee9e346b6de02b2ef83adcd6c99bc
-Author: Gustavs Kivlenieks <kivlenieksgustavs@proton.me>
-Date:   Fri Aug 18 12:12:36 2023 +0000
-
-    Translated using Weblate (Latvian)
-
-    Currently translated at 31.1% (164 of 526 strings)
-
- po/lv.po | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
-
-commit 2d5f3e706f732aef013656a75ccdfd18c1fd7c25
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Aug 18 13:01:21 2023 +0200
-
-    Prefer 'that' over 'which' when restrictive.
-
- man/icewm-menu-fdo.pod | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit ca951c124a1cfbe865d5e4be3f8e75013a198356
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Aug 12 16:28:43 2023 +0200
-
-    Add a --terminal option to icewm-menu-fdo to define the preferred
-    terminal. Otherwise examine the TERMINAL environment variable for a
-    possible terminal. If the given terminal cannot be found, see if other
-    supported terminals can be run instead.
-
- man/icewm-menu-fdo.pod |  6 ++++++
- src/fdomenu.cc         | 23 +++++++++++++++--------
- 2 files changed, 21 insertions(+), 8 deletions(-)
-
-commit f53bf5f649b6e4abca84123b2061c76d8aa200e0
-Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
-Date:   Tue Aug 8 12:59:18 2023 +0000
-
-    Translated using Weblate (Indonesian)
-
-    Currently translated at 100.0% (526 of 526 strings)
-
- po/id.po | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit 6a950883baea970ad01913a722b533321f64c709
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 31 13:42:31 2023 +0200
-
-    Android Termux.
-
- src/misc.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit af59afcd026aeae095d4ccdbc27d163f19178bd6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Jul 25 21:47:20 2023 +0200
-
-    If only the base dimensions of WM_NORMAL_HINTS has changed, continue
-    with normal processing in updateMwmHints, for issue ice-wm/icewm#141.
-    This fixes restoring from fullscreen with F11 in chromium.
-
- src/wmframe.cc | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-commit 32df579651ad6575eb7001f42253c79b763c2575
-Author: Mehmet Akif 9oglu <madanadam@gmail.com>
-Date:   Tue Jul 25 07:13:47 2023 +0000
-
-    Translated using Weblate (Turkish)
-
-    Currently translated at 100.0% (526 of 526 strings)
-
- po/tr.po | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit 766cd7386de6b82375d5485f7818eab872e946c0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Jul 24 20:49:21 2023 +0200
-
-    Center icerun and add -r option.
-
- src/icerun.cc | 96 ++++++++++++-------------------------------------------
- 1 file changed, 20 insertions(+), 76 deletions(-)
-
-commit 5b042b2f402571d5300bc35a09daa2f642801a6a
-Author: Hugo Carvalho <hugokarvalho@hotmail.com>
-Date:   Sun Jul 23 09:32:04 2023 +0000
-
-    Translated using Weblate (Portuguese)
-
-    Currently translated at 100.0% (526 of 526 strings)
-
- po/pt.po | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit b52d6139395e96df181a611a3cfd9c7ed7e41cf3
-Author: Dmitriy Khanzhin <jinn@altlinux.org>
-Date:   Sat Jul 22 15:36:52 2023 +0000
-
-    Translated using Weblate (Russian)
-
-    Currently translated at 100.0% (526 of 526 strings)
-
- po/ru.po | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
-
-commit 14cd34dc2ff19bec167ff9c1ee1eed2081ca9a9a
-Author: Freek de Kruijf <freek@opensuse.org>
-Date:   Fri Jul 21 20:20:14 2023 +0000
-
-    Translated using Weblate (Dutch)
-
-    Currently translated at 100.0% (526 of 526 strings)
-
- po/nl.po | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit ff2fd45442ef06a82682262061712c223ba73a1e
-Author: Ferdinand Galko <galko.ferdinand@gmail.com>
-Date:   Fri Jul 21 14:28:50 2023 +0000
-
-    Translated using Weblate (Slovak)
-
-    Currently translated at 100.0% (526 of 526 strings)
-
- po/sk.po | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit a6dc4ad18f1b4f5400548c124e1d551700f5b4c0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 21 16:17:35 2023 +0200
-
-    Prepare 3.4.1 release
-
- AUTHORS      |   9 +-
- ChangeLog    | 725 +++++++++++++++++++++++++++++--------------------------
- NEWS         |  86 ++++---
- README.md    |  38 +--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- 7 files changed, 460 insertions(+), 412 deletions(-)
-
-commit 02feebb509b3368985e61618e9c5fa6db8a872cd
-Merge: c1a5c682 6ff46c17
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 21 16:07:21 2023 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 6ff46c17bae503f8c805f338456e5cc0204bf340
-Merge: ad29458d cc2ca371
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 21 16:06:13 2023 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit cc2ca3710152eb721f53711c33a44dc1d44c1806
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 21 14:45:15 2023 +0200
-
-    Fix constness for object arrays in begin+end member functions.
-
- src/aclock.h |  4 ++--
- src/yarray.h | 14 ++++++++++----
- 2 files changed, 12 insertions(+), 6 deletions(-)
-
-commit 2890bfd56863eeeae32eb6dd91e7cafcd3ab751c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Jul 21 12:37:09 2023 +0200
-
-    Include algorithm first for portability to GCC-4.8.2.
-
- src/yicon.cc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
