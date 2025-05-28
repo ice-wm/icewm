@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: sl\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2025-05-28 02:59+0000\n"
+"PO-Revision-Date: 2025-05-28 05:59+0000\n"
 "Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <https://l10n.opensuse.org/projects/icewm/"
 "icewm-1-4-branch/sl/>\n"
@@ -251,12 +251,12 @@ msgstr "Suspendirano"
 
 #: src/amailbox.cc:805
 msgid "Error checking mailbox."
-msgstr "Napaka pri preverjanju elektronske pošte."
+msgstr "Napaka preverjanja poštnega predala."
 
 #: src/amailbox.cc:812
 #, c-format
 msgid "%ld mail message, %ld unread."
-msgstr "Sporočilo je %ld , neprebranih je %ld."
+msgstr "Sporočil je %ld , neprebranih je %ld."
 
 #: src/amailbox.cc:813
 #, c-format
@@ -266,7 +266,7 @@ msgstr "Sporočil je %ld , neprebranih je %ld."
 #: src/amailbox.cc:819
 #, c-format
 msgid "%ld mail message."
-msgstr "%ld sporočilo."
+msgstr "%ld sporočil."
 
 #: src/amailbox.cc:820
 #, c-format
@@ -354,7 +354,7 @@ msgstr "MREŽA"
 
 #: src/aworkspaces.cc:685 src/wmstatus.cc:204
 msgid "Workspace: "
-msgstr "Delovna površina: "
+msgstr "Delovni prostor: "
 
 #: src/decorate.cc:132
 msgid "Tabs"
@@ -501,7 +501,7 @@ msgstr "Upravljalnik datotek"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A file tool utility
 #: src/fdospecgen.h:56 src/fdospecgen.h:528 src/fdospecgen.h:534
 msgid "FileTools"
-msgstr "Datotečno orodje"
+msgstr "Datotečna orodja"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: System application, "System Tools" such as say a log viewer or network monitor
 #: src/fdospecgen.h:58 src/fdospecgen.h:506 src/fdospecgen.h:536
@@ -570,12 +570,12 @@ msgstr "Znanost"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Optical character recognition application
 #: src/fdospecgen.h:94
 msgid "OCR"
-msgstr "Optično branje"
+msgstr "Optično prepoznavanje znakov"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Tool to scan a file/text
 #: src/fdospecgen.h:96 src/fdospecgen.h:930
 msgid "Scanning"
-msgstr "Skeniranje"
+msgstr "Optično branje"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application for viewing, creating, or processing graphics
 #: src/fdospecgen.h:98 src/fdospecgen.h:122 src/fdospecgen.h:154
@@ -727,7 +727,7 @@ msgstr "Razvoj"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A calculator
 #: src/fdospecgen.h:306
 msgid "Calculator"
-msgstr "Kalkulator"
+msgstr "Računalo"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Calendar application
 #: src/fdospecgen.h:312
@@ -807,7 +807,7 @@ msgstr "Prikaz podatkov"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to manage a database
 #: src/fdospecgen.h:408 src/fdospecgen.h:414 src/fdospecgen.h:420
 msgid "Database"
-msgstr "Podatkovna baza"
+msgstr "Podatkovna zbirka"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to debug applications
 #: src/fdospecgen.h:426
@@ -927,12 +927,12 @@ msgstr "Družboslovje"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: IDE application
 #: src/fdospecgen.h:648
 msgid "IDE"
-msgstr "Integrirano razvojno okolje IDE"
+msgstr "Integrirano razvojno okolje"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An IRC client
 #: src/fdospecgen.h:654
 msgid "IRCClient"
-msgstr "IRC odjemalec"
+msgstr "Odjemalec IRC"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Image Processing software
 #: src/fdospecgen.h:660 src/fdospecgen.h:666
@@ -977,7 +977,7 @@ msgstr "Medicina"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Monitor application/applet that monitors some resource or activity
 #: src/fdospecgen.h:756 src/fdospecgen.h:762
 msgid "Monitor"
-msgstr "Zaslon"
+msgstr "Nadzorovanje"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Musical software
 #: src/fdospecgen.h:768 src/fdospecgen.h:774
@@ -1127,7 +1127,7 @@ msgstr "Urejevalnik besedila"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A translation tool
 #: src/fdospecgen.h:1038
 msgid "Translation"
-msgstr "Prevod"
+msgstr "Prevajanje"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Video Conference software
 #: src/fdospecgen.h:1044
@@ -1137,7 +1137,7 @@ msgstr "Video konferenca"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Tool to view e.g. a graphic or pdf file
 #: src/fdospecgen.h:1050 src/fdospecgen.h:1056
 msgid "Viewer"
-msgstr "Prikazovalnik"
+msgstr "Pregledovalnik"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A web browser
 #: src/fdospecgen.h:1062
@@ -1188,7 +1188,7 @@ msgstr "Stvarno kazalo"
 
 #: src/icehelp.cc:1359
 msgid "Find..."
-msgstr "Najdi..."
+msgstr "Najdi …"
 
 #: src/icehelp.cc:1359
 msgid "Ctrl+F"
@@ -1276,7 +1276,7 @@ msgstr "Ctrl+W"
 
 #: src/icehelp.cc:1386
 msgid "Github"
-msgstr "Github"
+msgstr "Izvorna koda"
 
 #: src/icehelp.cc:1390 src/yinputline.cc:43
 msgid "Ctrl+X"
@@ -1405,11 +1405,11 @@ msgstr "Možnost »%s« bo prezrta"
 
 #: src/icelist.cc:60
 msgid "List View"
-msgstr "Seznamski pogled"
+msgstr "Prikaz seznama"
 
 #: src/icelist.cc:61
 msgid "Icon View"
-msgstr "Ikonski pogled"
+msgstr "Prikaz ikon"
 
 #: src/icelist.cc:65
 msgid "Open"
@@ -1421,11 +1421,11 @@ msgstr "Prekliči"
 
 #: src/icesame.cc:57
 msgid "Ctrl+Z"
-msgstr "Ctrl+z"
+msgstr "Ctrl+Z"
 
 #: src/icesame.cc:59
 msgid "New"
-msgstr "Nov"
+msgstr "Nova"
 
 #: src/icesame.cc:59
 msgid "Ctrl+N"
@@ -1446,7 +1446,7 @@ msgstr "Za pomoč si oglejte priročnik icesh(1).\n"
 #: src/icesh.cc:1689
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
-msgstr "Poimenovani simboli domene `%s' (številski razpon: %ld-%ld):\n"
+msgstr "Poimenovani simboli domene »%s« (številski razpon: %ld–%ld):\n"
 
 #: src/icesh.cc:1758
 #, c-format
@@ -1456,15 +1456,15 @@ msgstr "Delovni prostor je izven obsega: %ld"
 #: src/icesh.cc:1779
 #, c-format
 msgid "Invalid workspace name: `%s'"
-msgstr "Neveljavno ime delovne površine: `%s'"
+msgstr "Neveljavno ime delovnega prostora: »%s«"
 
 #: src/icesh.cc:2290
 msgid "GNOME window layer"
-msgstr "sloj Gnomovega okna"
+msgstr "Sloj oken GNOME"
 
 #: src/icesh.cc:2291
 msgid "IceWM tray option"
-msgstr "izbira IceWM-ovegapladnja"
+msgstr "Možnost pladnja IceWM"
 
 #: src/icesh.cc:2292
 msgid "Gravity symbols"
@@ -1480,12 +1480,12 @@ msgstr "Okraski Motif"
 
 #: src/icesh.cc:2295
 msgid "EWMH window state"
-msgstr "Stanje okna EWMH"
+msgstr "Stanje oken EWMH"
 
 #: src/icesh.cc:2377 src/icesh.cc:2450
 #, c-format
 msgid "workspace #%d: `%s'\n"
-msgstr "delovna površina #%d: `%s'\n"
+msgstr "delovni prostor št. %d: »%s«\n"
 
 #: src/icesh.cc:2701 src/icesh.cc:4577 src/icesh.cc:5177
 #, c-format
@@ -1516,12 +1516,12 @@ msgstr "Ni moč pisati v %s"
 #: src/icesh.cc:4167
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
-msgstr "Dejanje `%s' zahteva vsaj %d argumentov."
+msgstr "Dejanje »%s« zahteva vsaj %d argumentov."
 
 #: src/icesh.cc:4176
 #, c-format
 msgid "Invalid expression: `%s'"
-msgstr "Neveljaven izraz: `%s'"
+msgstr "Neveljaven izraz: »%s«"
 
 #: src/icesh.cc:4187 src/icesound.cc:800 src/icewmbg.cc:1088
 #: src/icewmhint.cc:37 src/wmapp.cc:1296 src/yxapp.cc:1042
@@ -1546,7 +1546,7 @@ msgstr "Nobeno dejanje ni določeno."
 #: src/icesh.cc:4501
 #, c-format
 msgid "Invalid window identifier: `%s'"
-msgstr "Neveljaven identifikator okna: `%s'"
+msgstr "Neveljaven določilnik okna: »%s«"
 
 #: src/icesh.cc:4517
 #, c-format
@@ -1556,17 +1556,17 @@ msgstr "Neveljaven PID: »%s«"
 #: src/icesh.cc:4550
 #, c-format
 msgid "Invalid layer: `%s'."
-msgstr "Neveljavna plast: »%s«."
+msgstr "Neveljaven sloj: »%s«."
 
 #: src/icesh.cc:5629
 #, c-format
 msgid "Unknown action: `%s'"
-msgstr "Neznano dejanje: `%s'"
+msgstr "Neznano dejanje: »%s«"
 
 #: src/iceskt.cc:41
 #, c-format
 msgid "Socket error: %d"
-msgstr "Napaka priključka :%d"
+msgstr "Napaka vtiča: %d"
 
 #: src/icesm.cc:69
 msgid ""
@@ -1637,7 +1637,7 @@ msgstr ""
 " Ali želite:\n"
 "\n"
 "\t1: Znova zagnati IceWM?\n"
-"\t2: Prekinit to sejo?\n"
+"\t2: Prekiniti to sejo?\n"
 "\t3: Zagnati terminal?\n"
 
 #: src/icesm.cc:519
@@ -1647,7 +1647,7 @@ msgstr "Odziv na sesutje IceWM"
 #: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
 #, c-format
 msgid "Playing sample #%d (%s)"
-msgstr "Predvajam vzorec #%d (%s)"
+msgstr "Predvajam vzorec št. %d (%s)"
 
 #: src/icesound.cc:329
 #, c-format
@@ -1881,7 +1881,7 @@ msgstr ""
 
 #: src/iceview.cc:59
 msgid "Hex View"
-msgstr "Pogled v šestnajstiškem načinu"
+msgstr "Prikaz v šestnajstiškem načinu"
 
 #: src/iceview.cc:59
 msgid "Ctrl+H"
@@ -1889,7 +1889,7 @@ msgstr "Ctrl+H"
 
 #: src/iceview.cc:60
 msgid "Expand Tabs"
-msgstr "Razširi uhlje"
+msgstr "Razširi zavihke"
 
 #: src/iceview.cc:61
 msgid "Wrap Lines"
@@ -2031,7 +2031,7 @@ msgid ""
 "  -h, --help          Prints this usage screen and exits.\n"
 "\n"
 msgstr ""
-"Uporaba: %s [MOŽNOSTI]\n"
+"Uporaba: %s [MOŽNOST]\n"
 "Možnosti:\n"
 "%s\n"
 "  -C, --copying       Izpiše podatek o avtorskih pravicah.\n"
@@ -2042,7 +2042,7 @@ msgstr ""
 #: src/movesize.cc:864
 #, c-format
 msgid "Unknown direction in move/resize request: %d"
-msgstr "Neznana smer pri zhtevi premika/spremembe velikosti: %d"
+msgstr "Neznana smer pri zahtevi premika/spremembe velikosti: %d"
 
 #: src/upath.cc:172
 #, c-format
@@ -2051,7 +2051,7 @@ msgstr "Ni moč ustvariti mape %s"
 
 #: src/wmabout.cc:29
 msgid "(C)"
-msgstr "(C)"
+msgstr "©"
 
 #: src/wmabout.cc:45
 msgid "Theme:"
@@ -2150,11 +2150,11 @@ msgstr "_Meni"
 
 #: src/wmapp.cc:548
 msgid "_Above Dock"
-msgstr "Nad sid_rom"
+msgstr "Nad sid_riščem"
 
 #: src/wmapp.cc:549
 msgid "_Dock"
-msgstr "_Zasidraj"
+msgstr "Si_drišče"
 
 #: src/wmapp.cc:550
 msgid "_OnTop"
@@ -2230,7 +2230,7 @@ msgstr "O_bnovi"
 
 #: src/wmapp.cc:634
 msgid "_Move"
-msgstr "P_restavi"
+msgstr "P_remakni"
 
 #: src/wmapp.cc:636
 msgid "_Size"
@@ -2282,7 +2282,7 @@ msgstr "Razpostavi"
 
 #: src/wmapp.cc:668 src/wmwinlist.cc:450
 msgid "Move _To"
-msgstr "Prestavi _v"
+msgstr "Premakni _v"
 
 #: src/wmapp.cc:669 src/wmwinlist.cc:451
 msgid "Occupy _All"
@@ -2314,7 +2314,7 @@ msgstr "_Seznam oken"
 
 #: src/wmapp.cc:733
 msgid "Another window manager already running, exiting..."
-msgstr "Drug upravljalnik oken že teče, končujem..."
+msgstr "Drug upravljalnik oken že teče, končujem …"
 
 #: src/wmapp.cc:808
 #, c-format
@@ -2466,11 +2466,11 @@ msgid ""
 "Proceed?"
 msgstr ""
 "Ob odjavi se bodo zaprli vsi aktivni programi.\n"
-"Naj nadaljujem?"
+"Ali želite nadaljevati?"
 
 #: src/wmbutton.cc:124
 msgid "Raise/Lower"
-msgstr "Spusti/Znižaj"
+msgstr "Dvigni/Spusti"
 
 #: src/wmbutton.cc:127
 msgid "Hide"
@@ -2532,7 +2532,7 @@ msgstr "_Prekliči"
 #: src/wmdialog.cc:88 src/wmprog.cc:471 src/wmprog.cc:473 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
-msgstr "_Odjava..."
+msgstr "_Odjava …"
 
 #: src/wmdialog.cc:93
 msgid "_Restart icewm"
@@ -2564,7 +2564,7 @@ msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
 msgstr ""
-"OPOZORILO! Vse neshranjene spremebe se bodo ob prekinitvi\n"
+"OPOZORILO! Vse neshranjene spremembe se bodo ob prekinitvi\n"
 "tega odjemalca izgubile. Ali želite nadaljevati?"
 
 #: src/wmframe.cc:1972
@@ -2649,7 +2649,7 @@ msgstr "Za preklapljanje tipkovnice namestite program setxkbmap."
 #: src/wmoption.cc:285
 #, c-format
 msgid "Unknown window option: %s"
-msgstr "Neznana okenska izbira: %s"
+msgstr "Neznana okenska možnost: %s"
 
 #: src/wmoption.cc:357
 #, c-format
@@ -2711,7 +2711,7 @@ msgstr "Programi"
 
 #: src/wmprog.cc:429
 msgid "_Run..."
-msgstr "P_oženi..."
+msgstr "Z_aženi …"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmprog.cc:433 src/wmtaskbar.cc:233
@@ -2800,7 +2800,7 @@ msgstr "Prikaži opravilno vrstico"
 
 #: src/wmwinlist.cc:83
 msgid "All Workspaces"
-msgstr "Vse delovne površine"
+msgstr "Vsi delovni prostori"
 
 #: src/wmwinlist.cc:442
 msgid "_Show"
@@ -2829,7 +2829,7 @@ msgstr "Seznam oken"
 #: src/wmwinmenu.cc:100
 #, c-format
 msgid "%lu. Workspace %-.32s"
-msgstr "%lu. Delovna površina %-.32s"
+msgstr "%lu. Delovni prostor %-.32s"
 
 #: src/wpixres.cc:93 src/wpixres.cc:100
 #, c-format
@@ -2849,7 +2849,7 @@ msgstr "Barve »%s« ni bilo moč razčleniti"
 #: src/yconfig.cc:83
 #, c-format
 msgid "Unknown key name %s in %s"
-msgstr "Nezano ključno ime %s v %s"
+msgstr "Neznano ime tipke %s v %s"
 
 #: src/yconfig.cc:170 src/yconfig.cc:181 src/yconfig.cc:193
 #, c-format
@@ -2859,29 +2859,28 @@ msgstr "Neveljaven argument: %s za %s [%d,%d]"
 #: src/ycursor.cc:110
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
-msgstr "Nalaganje bitne slike \"%s\" ni uspelo: %s"
+msgstr "Nalaganje bitne slike »%s« je spodletelo: %s"
 
 #: src/ycursor.cc:135
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
-msgstr "Nalaganje slike \"%s\" ni uspelo"
+msgstr "Nalaganje bitne slike »%s« je spodletelo"
 
 #: src/ycursor.cc:179
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
-msgstr "Hrošč? Imlib je lahko prebral \"%s\""
+msgstr "Napaka? Imlib je lahko prebral »%s«"
 
 #: src/ycursor.cc:204
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
-msgstr "Hrošč? Popačeno zaglavje XPM, vendar je Imlib lahko razčlenil \"%s\""
+msgstr "Napaka? Popačeno zaglavje XPM, vendar je Imlib lahko razčlenil »%s«"
 
 #: src/ycursor.cc:212
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
-"Hrošč? Nepričakovan konec datoteke XPM, vendar je Imlib lahko razčlenil "
-"\"%s\""
+"Napaka? Nepričakovan konec datoteke XPM, vendar je Imlib lahko razčlenil »%s«"
 
 #: src/ycursor.cc:215
 #, c-format
@@ -2891,21 +2890,21 @@ msgstr "Napaka? Nepričakovan znak, vendar je Imlib lahko razčlenil »%s«"
 #: src/yfontcore.cc:121 src/yfontxft.cc:137
 #, c-format
 msgid "Could not load font \"%s\"."
-msgstr "Nisem mogel naložiti pisave \"%s\"."
+msgstr "Ni bilo moč naložiti pisave »%s«."
 
 #: src/yfontcore.cc:233
 #, c-format
 msgid "Missing codesets for fontset \"%s\":"
-msgstr "Manjkajoči nabori znakov za nabor pisav \"%s\":"
+msgstr "Manjkajoči nabori znakov za nabor pisav »%s«:"
 
 #: src/yfontcore.cc:261
 #, c-format
 msgid "Could not load fontset \"%s\"."
-msgstr "Ne morem naložiti nabora pisav \"%s\"."
+msgstr "Ni bilo moč naložiti nabora pisav »%s«."
 
 #: src/yinputline.cc:42
 msgid "_Copy"
-msgstr "Pr_epiši"
+msgstr "S_kopiraj"
 
 #: src/yinputline.cc:42
 msgid "Ctrl+C"
@@ -2945,8 +2944,8 @@ msgstr ""
 msgid ""
 "Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
 msgstr ""
-"Določitev nabora znakov za trenutni locale ni uspela. Predpostavljam, da je "
-"ISO-8859-1.\n"
+"Določitev nabora znakov za trenutno jezikovno okolje ni uspela. "
+"Predpostavljam, da je ISO-8859-1.\n"
 
 #: src/ylocale.cc:126 src/ylocale.cc:134
 #, c-format
@@ -2956,7 +2955,7 @@ msgstr "iconv ne zagotavlja (zadostnega) %s za pretvornike %s."
 #: src/ylocale.cc:239
 #, c-format
 msgid "Invalid multibyte string \"%s\": %s"
-msgstr "Neveljaven večzložni niz \"%s\": %s"
+msgstr "Neveljaven več-bajtni niz »%s«: %s"
 
 #: src/ymsgbox.cc:48
 msgid "_OK"
@@ -2987,7 +2986,7 @@ msgid ""
 "  --sync              Synchronize X11 commands.\n"
 msgstr ""
 "  -d, --display=IME  IME uporabljenega strežnika X.\n"
-"  --sync              Usklajevanje ukazov X11.\n"
+"  --sync              Usklajevanje ukazov X.\n"
 
 #: src/yximage.cc:173
 msgid "Support for PNG images was not enabled"
