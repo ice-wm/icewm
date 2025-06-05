@@ -992,6 +992,7 @@ static const char* get_help_text() {
     "  -m, --multi=0/1      Disable/Enable multihead background.\n"
     "  -y, --cycle=SECONDS  Cycle backgrounds every SECONDS.\n"
     "\n"
+    "  --postpreferences    Print preferences after all processing.\n"
     "  --display=NAME       Use NAME to connect to the X server.\n"
     "  --sync               Synchronize communication with X11 server.\n"
     "\n"
