@@ -55,6 +55,8 @@ private:
     YColorName color[IWM_STATES];
     CPUStatusHandler *fHandler;
     YStat* fStat;
+    YRect fGeometry;
+    Pixmap fBackground;
     YColorName fTempColor;
 
     bool picture();
