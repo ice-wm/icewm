@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: icewm 3.6.0.193\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2025-05-26 21:59+0000\n"
+"PO-Revision-Date: 2025-06-09 21:59+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian <https://l10n.opensuse.org/projects/icewm/"
 "icewm-1-4-branch/sr/>\n"
@@ -28,7 +28,7 @@ msgstr "Нисам успео да отворим уређај АПМ-а %s"
 #: src/aapm.cc:121 src/aapm.cc:139
 #, c-format
 msgid "Can't ioctl the APM device %s"
-msgstr ""
+msgstr "Нисам успео да управљам улазом/излазом напредном уређају напајања %s"
 
 #: src/aapm.cc:169
 #, c-format
@@ -1349,6 +1349,36 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
+"Употреба: %s [МОГУЋНОСТИ] [ИМЕДАТОТЕКЕ | УРИ]\n"
+"\n"
+"ИцеХелп је врло једноставан прегледник ХТЛМ-а АјсВМ управника прозора.\n"
+"Може приказивати документ ХТМЛ-а из датотеке, или прегледати странице мреже."
+"\n"
+"Памти посећене странице у повести, кроз коју се може водити\n"
+"пречицама дугмади и приручним изборником (десни клик миша).\n"
+"Не подржава редендринг!!! слика нити скрипта јаве.\n"
+"Уколико није приложена датотека или адреса, приказаће\n"
+" упутство АјсВМ-а из %s.\n"
+"\n"
+"Могућности\n"
+"  -d, --display=ИМЕ ИМЕ служитеља Икс за употребу.\n"
+"  --sync              Усклади наредбе Икс11.\n"
+"\n"
+"  -B                  Приказуј упутство icewmbg АјсВМ-а.\n"
+"  -b, --bugs          Приказуј страницу Гитхаба АјсВМ-а.\n"
+"-i, --icewm         Приказуј упутство icewm АјсВМ-а.\n"
+"  -m, --manual        \n"
+" Приказуј упутство АјсВМ-а.\n"
+" -s                  Приказуј упутство icesound АјсВМ-а.\n"
+" -t, --theme         Приказуј упутство за предмете АјсВМ-а.\n"
+"  -w, --website      Приказуј мрежне странице АјсВМ-а.\n"
+"\n"
+"Променљиве окружења:\n"
+"  DISPLAY=ИМЕ       Име служитеља Икс за употребу.\n"
+"\n"
+"Ради пријаве грешака, захтева за подршку, напомене, молим, посетите:\n"
+"%s\n"
+"\n"
 
 #: src/icehelp.cc:2592
 #, c-format
@@ -1537,6 +1567,19 @@ msgid ""
 "  -n, --notray        Do not start icewmtray.\n"
 "  -s, --sound         Also start icesound.\n"
 msgstr ""
+"  -c, --config=ДАТОТЕКА   Нека АјсВМ учита поставке из ДАТОТЕКЕ.\n"
+"  -t, --theme=ДАТОТЕКА   Нека АјсВМ учита поставке из ДАТОТЕКЕ.\n"
+"\n"
+"  -d, --display=ИМЕ     Користи ИМЕ ради повезивања на служитеља Икса.\n"
+"  -a, --alpha                   Користи 32-битни приказ ради прозирности.\n"
+"  --sync              Усклади општење са служитељем Икс11.\n"
+"\n"
+"  -i, --icewm=ДАТОТЕКА   Користи ДАТОТЕКУ као управника прозора АјсВМ-а.\n"
+"  -o, --output=ДАТОТЕКА  Преусмери сав излаз у ДАТОТЕКУ.\n"
+"\n"
+"  -b, --nobg          Не покрећи icewmbg.\n"
+"  -n, --notray        Не покрећи icewmtray.\n"
+"  -s, --sound         Такође покрени icesound.\n"
 
 #: src/icesm.cc:85
 msgid ""
@@ -1567,6 +1610,12 @@ msgid ""
 "\t2: Abort this session?\n"
 "\t3: Run a terminal?\n"
 msgstr ""
+" АјсВМ се срушио други пут у последњих 10 секунди.\n"
+" Да ли желите да:\n"
+"\n"
+"\t1: Препокренете АјсВМ?\n"
+"\t2: Напустите седницу?\n"
+"\t3: Покренете терминал?\n"
 
 #: src/icesm.cc:519
 msgid "IceWM crash response"
@@ -1623,11 +1672,11 @@ msgstr "Нисам успео да поставим облик ОСС"
 #: src/icesound.cc:499
 #, c-format
 msgid "ao_open_live failed with %d"
-msgstr ""
+msgstr "ао_опен_ливе је омануо са %d"
 
 #: src/icesound.cc:510
 msgid "ao_play failed"
-msgstr ""
+msgstr "ао_плај је омануо"
 
 #: src/icesound.cc:680
 #, c-format
@@ -1690,6 +1739,52 @@ msgid ""
 "  3    Subsystems error (ie cannot connect to server).\n"
 "\n"
 msgstr ""
+"Употреба: %s [МОГУЋНОСТИ]...\n"
+"\n"
+"Свира звучне датотеке приликом догађаја сликовног сучеља покренутих АјсВМ-ом."
+"\n"
+"Тренутно подешена звучна сучеља јесу: %s.\n"
+"Icesound ће одабрати првог употребљивог од доступних.\n"
+"\n"
+"Могућности:\n"
+"\n"
+" -d, --display=DISPLAY Заслон Иск11 коришћен од АјсВМ-а (подразумевно: "
+"$DISPLAY).\n"
+"\n"
+" -s, --sample-dir=DIR Одређује упутницу са звучним датотекама.\n"
+"                           Подразумевано је $HOME/.config/icewm/sounds.\n"
+"\n"
+" -i, --interface=LIST    Одређује сучеље звучног излаза. Један или више од:\n"
+"                         %s раздвојених запетама.\n"
+"\n"
+" -D, --device=DEVICE  Само сагласност са претходним: подразумевани уређај. \n"
+"                         Молим, изаберите једну од могућности-A/-O/-S. \n"
+"\n"
+" -O, --oss=DEVICE Одређује уређај ОСС-а (подразумевано: „%s“).\n"
+"\n"
+" -A, --alsa=DEVICE       Одређује уређај АЛСА-е (подразумевано: „%s“).\n"
+" -z, --snooze=millisecs  Одређује међувреме одлагања између звучних "
+"догађаја\n"
+"                               у милисекундама. подразумевано је 500 "
+"милисекунди.\n"
+"\n"
+" -p, --play=sound        Свира дати звук (име или број) и излази.\n"
+"\n"
+"-l, --list-files      Листа доступне путање звучних датотека и излази.\n"
+"\n"
+"     --list-interfaces   Листа подржана звучна сучеља и излази.\n"
+"\n"
+" -v, --versbose        Буди опшира и испиши сваки звучни догађај. \n"
+"\n"
+" -V, --version           Исписује податке о издању и излази.\n"
+"\n"
+"Враћа вредности:\n"
+"\n"
+" 0    Успех.\n"
+" 1    Општа грешка.\n"
+" 2    Грешка наредбене линије.\n"
+" 3    Грешка подсклопа (нпр. нисам успео да се повежем са служитељем).\n"
+"\n"
 
 #: src/icesound.cc:785
 #, c-format
@@ -1749,6 +1844,12 @@ msgid ""
 "  -c, --config=FILE   Load preferences from FILE.\n"
 "  -t, --theme=FILE    Load the theme from FILE.\n"
 msgstr ""
+"  -n, --notify        Обавести родитељску обраду шаљући знак УСР1.\n"
+"  --display=ИМЕ     Користи ИМЕ ради повезивања са служитељем Икса.\n"
+"  --sync              Усклади општење са служитељем Икса.\n"
+"\n"
+"  -c, --config=ДАТОТЕКА   Учитај поставке из ДАТОТЕКЕ.\n"
+"  -t, --theme=ДАТОТЕКА   Учитај предмет из ТЕМЕ.\n"
 
 #: src/iceview.cc:59
 msgid "Hex View"
@@ -2166,7 +2267,7 @@ msgstr "<ништа>"
 #: src/wmapp.cc:1627
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
-msgstr ""
+msgstr "  --client-id=ID Лични број странке при додиру са управником седнице.\n"
 
 #: src/wmapp.cc:1633
 msgid ""
@@ -2174,6 +2275,10 @@ msgid ""
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
+"\n"
+"  --debug         Исписује опште поруке исправки грешака.\n"
+"  --debug-z      Исписује поруке исправки грешака у односу на слагање "
+"прозора.\n"
 
 #: src/wmapp.cc:1641
 msgid ""
@@ -2186,14 +2291,24 @@ msgid ""
 "  --rewrite-preferences  Update an existing preferences file.\n"
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
+"\n"
+"  -a, --alpha                      Користи 32-битну представу за прозирност."
+"\n"
+"  -c, --config=ДАТОТЕКА  Учитава поставке из ДАТОТЕКЕ.\n"
+"  -t, --theme=ДАТОТЕКА  Учитава предмет из ДАТОТЕКЕ.\n"
+"  -s, --splash=СЛИКА       Кратко приказује СЛИКУ при покретању.\n"
+"  -p, --postpreferences     Исписује постакве након свих обрада.\n"
+"  --rewrite-preferences     Освежава постојећу датотеку поставки.\n"
+"  --trace=conf,icon          Прати путање употребљене за учитавање поставки."
+"\n"
 
 #: src/wmapp.cc:1652
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
-msgstr ""
+msgstr "  -o, --output=ДАТОТЕКА   Преусмерава сав излаз у ДАТОТЕКУ.\n"
 
 #: src/wmapp.cc:1658
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
-msgstr ""
+msgstr "  -i, --install=ПРЕДМЕТ Уграђује ПРЕДМЕТ од споља или са „списка“.\n"
 
 #: src/wmapp.cc:1661
 #, c-format
@@ -2354,51 +2469,51 @@ msgstr "Убиј стрнку: "
 
 #: src/wmmenu.cc:37
 msgid "Missing command argument"
-msgstr ""
+msgstr "Недостаје наредбена одредница"
 
 #: src/wmmenu.cc:55
 #, c-format
 msgid "Bad argument %d to command '%s'"
-msgstr ""
+msgstr "Лоша тврдња %d за наредбу „%s“"
 
 #: src/wmmenu.cc:110
 #, c-format
 msgid "Error at keyword '%s' for %s"
-msgstr ""
+msgstr "Грешка кључне речи „%s“ за %s"
 
 #: src/wmmenu.cc:160
 #, c-format
 msgid "Error at %s '%s'"
-msgstr ""
+msgstr "Грешка при %s „%s“."
 
 #: src/wmmenu.cc:226
 #, c-format
 msgid "Unexepected menu keyword: '%s'"
-msgstr ""
+msgstr "Неочекивана кључна реч изборника „%s“"
 
 #: src/wmmenu.cc:280
 #, c-format
 msgid "Error at menuprog '%s'"
-msgstr ""
+msgstr "Грешка изборника програма „%s“"
 
 #: src/wmmenu.cc:324
 #, c-format
 msgid "Error at menuprogreload: '%s'"
-msgstr ""
+msgstr "Грешка при поновном учитавању изборника програма „%s“"
 
 #: src/wmmenu.cc:351
 msgid "Missing filename argument to include statement"
-msgstr ""
+msgstr "Недостаје одредница имена датотеке ради обухватања тврдње"
 
 #: src/wmmenu.cc:369
 #, c-format
 msgid "Error at includeprog '%s'"
-msgstr ""
+msgstr "Грешка у обухваћеним програмима „%s“"
 
 #: src/wmmenu.cc:412
 #, c-format
 msgid "Unknown keyword '%s'"
-msgstr ""
+msgstr "Непозната кључна реч „%s“"
 
 #: src/wmmenu.cc:423
 #, c-format
@@ -2406,24 +2521,26 @@ msgid ""
 "Unknown keyword for a non-container: '%s'.\n"
 "Expected either 'key' or 'runonce' here.\n"
 msgstr ""
+"Непозната кључна реч за несадржалац: „%s“.\n"
+"Овде очекивано је или „key“ или „runonce“.\n"
 
 #: src/wmmenu.cc:502
 #, c-format
 msgid "'%s' timed out!"
-msgstr ""
+msgstr "Истек времена „%s“!"
 
 #: src/wmmenu.cc:516
 #, c-format
 msgid "'%s' produces no output"
-msgstr ""
+msgstr "„%s“ не производи излаз"
 
 #: src/wmmgr.cc:3686
 msgid "Missing program setxkbmap"
-msgstr ""
+msgstr "Недостаје програм setxkbmap"
 
 #: src/wmmgr.cc:3687
 msgid "For keyboard switching, please install setxkbmap."
-msgstr ""
+msgstr "Ради промене распореда тастатуре, молим, уградите setxkbmap."
 
 #: src/wmoption.cc:285
 #, c-format
