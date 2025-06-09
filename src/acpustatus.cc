@@ -677,8 +677,7 @@ void CPUStatus::handleClick(const XButtonEvent &up, int count) {
 }
 
 void CPUStatus::updateStatus() {
-    for (int i = 1; i < taskBarCPUSamples; i++)
-        cpu.copyTo(i, i - 1);
+    cpu.shiftLeft();
     getStatus();
     repaint();
 }
@@ -734,31 +733,23 @@ float CPUStatus::getCpuFreq(int cpu) {
 
 void CPUStatus::getStatusLinux() {
 #ifdef __linux__
-    char *p = fStat->cpustatus(fCpuID);
-    if (p == nullptr)
+    char* line = fStat->cpustatus(fCpuID);
+    if (line == nullptr)
         return;
 
     cpubytes cur[IWM_STATES];
-    int s = sscanf(p, "%llu %llu %llu %llu %llu %llu %llu %llu",
-                   &cur[IWM_USER],    &cur[IWM_NICE],
-                   &cur[IWM_SYS],     &cur[IWM_IDLE],
-                   &cur[IWM_IOWAIT],  &cur[IWM_INTR],
-                   &cur[IWM_SOFTIRQ], &cur[IWM_STEAL]);
-    switch (s) {
-    case 4:
-        /* Linux 2.4 */
-        cur[IWM_INTR]    =
-        cur[IWM_IOWAIT]  =
-        cur[IWM_SOFTIRQ] = 0;
-        /* FALL THROUGH */
-    case 7:
-        /* Linux < 2.6.11 */
-        cur[IWM_STEAL] = 0;
-        /* FALL THROUGH */
-    case 8:
-        break;
-    default:
-        return;
+    char* p = line;
+    for (int i = 0; i < IWM_STATES; ++i) {
+        cur[i] = 0;
+        while (*p == ' ' || *p == '\t')
+            ++p;
+        if (*p == '+')
+            ++p;
+        if ('0' <= *p && *p <= '9') {
+            cur[i] = (*p++ - '0');
+            while ('0' <= *p && *p <= '9')
+                cur[i] = (10 * cur[i]) + (*p++ - '0');
+        }
     }
     for (int i = 0; i < IWM_STATES; i++) {
         cpu[taskBarCPUSamples - 1][i] = cur[i] - last_cpu[i];
@@ -805,10 +796,10 @@ void CPUStatus::getStatusPlatform() {
     cur[IWM_USER]    = cp_time[CP_USER];
     cur[IWM_NICE]    = cp_time[CP_NICE];
     cur[IWM_SYS]     = cp_time[CP_SYS];
-    cur[IWM_INTR]    = cp_time[CP_INTR];
-    cur[IWM_IOWAIT]  = 0;
-    cur[IWM_SOFTIRQ] = 0;
     cur[IWM_IDLE]    = cp_time[CP_IDLE];
+    cur[IWM_IOWAIT]  = 0;
+    cur[IWM_INTR]    = cp_time[CP_INTR];
+    cur[IWM_SOFTIRQ] = 0;
     cur[IWM_STEAL]   = 0;
 
     for (int i = 0; i < IWM_STATES; i++) {

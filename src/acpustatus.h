@@ -4,14 +4,14 @@
 #define IWM_STATES  8
 
 enum IwmState {
-    IWM_USER,
-    IWM_NICE,
-    IWM_SYS,
-    IWM_INTR,
-    IWM_IOWAIT,
-    IWM_SOFTIRQ,
-    IWM_IDLE,
-    IWM_STEAL,
+    IWM_USER,       // normal processes in user mode
+    IWM_NICE,       // niced processes in user mode
+    IWM_SYS,        // executing in kernel mode
+    IWM_IDLE,       // not doing anything useful
+    IWM_IOWAIT,     // waiting for I/O
+    IWM_INTR,       // servicing interrupts
+    IWM_SOFTIRQ,    // servicing softirqs
+    IWM_STEAL,      // executing virtual hosts
 };
 
 class YSMListener;
