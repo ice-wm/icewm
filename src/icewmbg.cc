@@ -992,7 +992,6 @@ static const char* get_help_text() {
     "  -m, --multi=0/1      Disable/Enable multihead background.\n"
     "  -y, --cycle=SECONDS  Cycle backgrounds every SECONDS.\n"
     "\n"
-    "  --postpreferences    Print preferences after all processing.\n"
     "  --display=NAME       Use NAME to connect to the X server.\n"
     "  --sync               Synchronize communication with X11 server.\n"
     "\n"
@@ -1016,6 +1015,8 @@ static const char* get_help_text() {
     " center:1 scaled:1 = fill one dimension and keep aspect ratio\n"
     " center:0 scaled:1 = fill both dimensions and keep aspect ratio\n"
     "\n");
+    /* avoid work for translators for now:
+    "  --postpreferences    Print preferences after all processing.\n" */
 }
 
 static void print_help_xit() {
