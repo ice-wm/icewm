@@ -302,8 +302,8 @@ ref<YPixmap> YImage2::renderToPixmap(unsigned depth, bool premult) {
         depth = xapp->depth();
     }
     if (depth == 32 || depth == 24) {
-        int width = int(this->width());
-        int height = int(this->height());
+        const int width = int(this->width());
+        const int height = int(this->height());
         Visual* visual = xapp->visualForDepth(depth);
         XImage* image = XCreateImage(xapp->display(), visual, depth,
                                      ZPixmap, 0, nullptr, width, height, 8, 0);
@@ -319,6 +319,8 @@ ref<YPixmap> YImage2::renderToPixmap(unsigned depth, bool premult) {
             DATA32* data = imlib_image_get_data_for_reading_only();
 
             for (int row = 0; row < height; row++) {
+                unsigned char* addr = (unsigned char *) image->data
+                                      + row * image->bytes_per_line;
                 for (int col = 0; col < width; col++) {
                     DATA32 pixel = data[col + row * width];
                     unsigned char red = ((pixel >> 16) & 0xFF);
@@ -331,13 +333,28 @@ ref<YPixmap> YImage2::renderToPixmap(unsigned depth, bool premult) {
                         grn = (grn * (alp + 1)) >> 8;
                         blu = (blu * (alp + 1)) >> 8;
                     }
-                    XPutPixel(image, col, row,
-                              (red << 16) |
-                              (grn << 8) |
-                              (blu << 0) |
-                              (alp << 24));
-                    bool bit = (alp >= ATH);
-                    XPutPixel(imask, col, row, bit);
+
+                    if (image->byte_order == MSBFirst) {
+                        if (image->bits_per_pixel == 32)
+                            *addr++ = alp;
+                        *addr++ = red;
+                        *addr++ = grn;
+                        *addr++ = blu;
+                    } else {
+                        *addr++ = blu;
+                        *addr++ = grn;
+                        *addr++ = red;
+                        if (image->bits_per_pixel == 32)
+                            *addr++ = alp;
+                    }
+
+                    unsigned char bit =
+                        (imask->bitmap_bit_order == MSBFirst) ?
+                        (0x80 >> (col & 7)) : (1 << (col & 7));
+                    int off = row * imask->bytes_per_line + (col >> 3);
+                    if (alp >= ATH) {
+                        imask->data[off] |= bit;
+                    }
                 }
             }
 
