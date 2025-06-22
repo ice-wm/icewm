@@ -1,5 +1,372 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 2712e0f71307d474b252fbf47067b02076ee567b
+Merge: 59417d76 af1850fb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 23:52:11 2025 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit af1850fb417d5c1522795a385cc19089117a8021
+Merge: fcb3dc08 9f4e0157
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 23:42:25 2025 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 9f4e015746997ec395d8b0513f7c30cdc9ce3798
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 21:57:33 2025 +0200
+
+    Prefer gtar to install themes on OpenSolaris/OpenIndiana.
+
+ src/theminst.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6f7c900189fcb364aab10e72746d7a1d80f4b4db
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 16:59:07 2025 +0200
+
+    Remove surplus right-square-bracket.
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 75412aa77977cf390d162c7d65ed8c8ea1973b4e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 16:50:56 2025 +0200
+
+    Prefer a non-deterministic random number generator.
+
+ configure.ac       |  3 ++-
+ src/CMakeLists.txt |  1 +
+ src/icesh.cc       | 15 ++++++++++++---
+ src/icewmbg.cc     |  6 ++++++
+ 4 files changed, 21 insertions(+), 4 deletions(-)
+
+commit 1b7299944c459c4948dda0460d52a2c172b9c0ec
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 12:35:24 2025 +0200
+
+    Silence clang warnings on OpenBSD.
+
+ src/debug.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit c9438477c66768a36d36a5e446cd37a395b5cb1d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:59:25 2025 +0200
+
+    Optimize the Themes menu. First popup the Themes menu and only then look
+    for theme alternatives. Provide a theme button preview to the themes
+    Menu. Extend the Help menu.
+
+ src/themes.cc | 441 ++++++++++++++++++++++++++++++++++++++----------------
+ src/themes.h  |  74 ++++-----
+ src/wmprog.cc |  55 ++-----
+ src/wmprog.h  |   6 +-
+ 4 files changed, 362 insertions(+), 214 deletions(-)
+
+commit bd5bdcab08b9db993a463d0292daa32bc72df8d0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:59:03 2025 +0200
+
+    Drop the obsolete toUpper from ASCII.
+
+ src/ascii.h | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit 5e2ebd42c52e27b94eea4a44f32718c90ee4da41
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:58:19 2025 +0200
+
+    Add discard declaration to the ObjectMenu.
+
+ src/objmenu.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 875f52cf4092a11c32cb6b131a8658121c80eb7a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:57:49 2025 +0200
+
+    Clear array in ObjectMenu discard.
+
+ src/objmenu.cc | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit 1fd2ab97bda921a826a2871e541fc9e4f48fe9b5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:57:14 2025 +0200
+
+    Convert case in mstrings with respect to the current locale.
+
+ src/mstring.cc | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit a8b52388a098b85dbf750dc58a5744f9f3a5372d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:56:30 2025 +0200
+
+    Plus the launhHelp declaration.
+
+ src/wmapp.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f74f515711dbabb158b4ccff866552fb235522a3
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:55:55 2025 +0200
+
+    Add Help actions.
+
+ src/wmaction.h | 12 ++++++++++++
+ src/wmapp.cc   | 30 ++++++++++++++++++++++++++++++
+ 2 files changed, 42 insertions(+)
+
+commit 4ebd1e782b4e3bcb43036ff2824aba340b789f32
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:54:58 2025 +0200
+
+    Use the taskbar parameters consistently.
+
+ src/wmtaskbar.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1860ff0e113aa64ab54407b881f444e7f67ba422
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:54:01 2025 +0200
+
+    Convert button hotkeys to uppercase with respect for the current locale.
+
+ src/ybutton.cc | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 6b6ad5428324a9ad2ecd006dc95dd1076754370a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:52:53 2025 +0200
+
+    Convert HotChars in a menu to uppercase with respect for the current
+    locale.
+
+ src/ymenu.cc | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+commit 3c7c4b2bc5700253698e871d1a55fc9edaa60f28
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:52:03 2025 +0200
+
+    YMenuItem doesn't need to be virtual.
+
+ src/ymenuitem.cc | 11 +----------
+ src/ymenuitem.h  | 10 ++++------
+ 2 files changed, 5 insertions(+), 16 deletions(-)
+
+commit cc0f21d82b86ba58b8e4bee6222e3000f71ad823
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 11:50:50 2025 +0200
+
+    Convert a hotkey to uppercase with respect for the current locale.
+
+ src/ywindow.cc | 20 ++++++++------------
+ src/ywindow.h  |  2 ++
+ 2 files changed, 10 insertions(+), 12 deletions(-)
+
+commit 8dd3448f72564649df516f8d3100ce3ca8a09c02
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Sat Jun 21 20:05:21 2025 +0000
+
+    Translated using Weblate (Serbian)
+
+    Currently translated at 96.3% (506 of 525 strings)
+
+ po/sr.po | 21 ++++++++++++++-------
+ 1 file changed, 14 insertions(+), 7 deletions(-)
+
+commit e5d3880f5bdbc1fa7f37f5f73c57dd0e07df09e4
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jun 14 19:32:16 2025 +0200
+
+    Optimize renderToPixmap for the imlib2 layer.
+
+ src/yimage2.cc | 35 ++++++++++++++++++++++++++---------
+ 1 file changed, 26 insertions(+), 9 deletions(-)
+
+commit eed6dfeeb64d9c27fcb643196a85de1f3ec48262
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jun 14 19:31:18 2025 +0200
+
+    Optimize the MEM graph to reduce the background load of icewm.
+
+ src/amemstatus.cc | 174 ++++++++++++++++++++++++++++++--------------------
+ src/amemstatus.h  |  59 ++++++++++++-----
+ 2 files changed, 150 insertions(+), 83 deletions(-)
+
+commit 162ad9e1580d74a15f1f2cd9194403c5d47d48e1
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jun 14 19:30:55 2025 +0200
+
+    Avoid work for translators for now.
+
+ src/icewmbg.cc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit a694c720a6f390c38906fffd9c04a98187b6f2db
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Mon Jun 9 19:03:58 2025 +0000
+
+    Translated using Weblate (Serbian)
+
+    Currently translated at 96.3% (506 of 525 strings)
+
+ po/sr.po | 159 +++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 138 insertions(+), 21 deletions(-)
+
+commit 71bc70a93e5e79cb057f7575732f9ae7a226d2a1
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jun 9 21:09:35 2025 +0200
+
+    Optimization of the CPU graph.
+
+ src/acpustatus.cc | 43 +++++++++++++++++--------------------------
+ src/acpustatus.h  | 16 ++++++++--------
+ src/yarray.h      |  5 +++++
+ 3 files changed, 30 insertions(+), 34 deletions(-)
+
+commit 0169af02b789273a3e8ddc014fc392d3f5baf635
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jun 9 00:26:14 2025 +0200
+
+    Optimize the CPU graph when taskbarbg.xpm is a gradient and
+    ColorCPUStatusIdle is the empty string.
+
+ src/acpustatus.cc | 80 +++++++++++++++++++++++++++------------------------
+ src/acpustatus.h  |  2 ++
+ 2 files changed, 45 insertions(+), 37 deletions(-)
+
+commit 9fdc9b504a2969dd8e2c6ecf61e36fb25dbba0f6
+Author: Eduard Bloch <blade@debian.org>
+Date:   Thu Jun 5 12:50:31 2025 +0200
+
+    Mention --postpreferences in usage info
+
+ src/icewmbg.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 9cdad0a1dfc4d52442382fc9d7a176224cd21687
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu May 29 23:42:40 2025 +0200
+
+    Include sr in LINGUAS.
+
+ po/LINGUAS | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b26e4c72ef75c5f47a9869c82b72ec81c6708a96
+Author: Jure Repinc <jlp@holodeck1.com>
+Date:   Wed May 28 03:49:51 2025 +0000
+
+    Translated using Weblate (Slovenian)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/sl.po | 135 +++++++++++++++++++++++++++++------------------------------
+ 1 file changed, 67 insertions(+), 68 deletions(-)
+
+commit 54612824196372e22f084bb816830315339e7e10
+Author: Jure Repinc <jlp@holodeck1.com>
+Date:   Wed May 28 02:53:50 2025 +0000
+
+    Translated using Weblate (Slovenian)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/sl.po | 308 ++++++++++++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 218 insertions(+), 90 deletions(-)
+
+commit 3340693394616b25ae03f0978e185630dd0623e9
+Author: Jure Repinc <jlp@holodeck1.com>
+Date:   Tue May 27 22:16:36 2025 +0000
+
+    Translated using Weblate (Slovenian)
+
+    Currently translated at 98.0% (515 of 525 strings)
+
+ po/sl.po | 432 +++++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 227 insertions(+), 205 deletions(-)
+
+commit 5de02bba6e05f186b9df28064883492773091b2b
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Mon May 26 19:48:11 2025 +0000
+
+    Translated using Weblate (Serbian)
+
+    Currently translated at 91.0% (478 of 525 strings)
+
+ po/sr.po | 1003 +++++++++++++++++++++++++++++++---------------------------
+ 1 file changed, 537 insertions(+), 466 deletions(-)
+
+commit 59417d768ba7b2b755ed988f222636e9a8a7cee8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun May 25 21:15:21 2025 +0200
+
+    Prepare 3.7.5 release
+
+ AUTHORS      |   6 +-
+ ChangeLog    | 482 +++++++++++++++++++++++++++++--------------------------
+ NEWS         |  78 +++++----
+ README.md    |  16 +-
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     |  90 +++++------
+ po/ast.po    |  90 +++++------
+ po/be.po     |  90 +++++------
+ po/bg.po     |  90 +++++------
+ po/ca.po     | 274 +++++++++++++++----------------
+ po/cs.po     |  90 +++++------
+ po/da.po     |  90 +++++------
+ po/de.po     |  90 +++++------
+ po/el.po     |  90 +++++------
+ po/en.po     |  90 +++++------
+ po/eo.po     |  90 +++++------
+ po/es.po     |  90 +++++------
+ po/fa.po     |  90 +++++------
+ po/fi.po     |  90 +++++------
+ po/fr.po     |  90 +++++------
+ po/he.po     |  90 +++++------
+ po/hi.po     |  90 +++++------
+ po/hr.po     |  90 +++++------
+ po/hu.po     |  90 +++++------
+ po/icewm.pot |  92 +++++------
+ po/id.po     |  90 +++++------
+ po/ie.po     |  90 +++++------
+ po/it.po     |  90 +++++------
+ po/ja.po     |  90 +++++------
+ po/ka.po     |  90 +++++------
+ po/kk.po     |  90 +++++------
+ po/ko.po     |  90 +++++------
+ po/lt.po     |  90 +++++------
+ po/lv.po     |  90 +++++------
+ po/mk.po     |  90 +++++------
+ po/nb.po     |  90 +++++------
+ po/nl.po     | 274 +++++++++++++++----------------
+ po/nn.po     |  90 +++++------
+ po/no.po     |  90 +++++------
+ po/pl.po     |  90 +++++------
+ po/pt.po     |  90 +++++------
+ po/pt_BR.po  |  90 +++++------
+ po/ro.po     |  90 +++++------
+ po/ru.po     |  90 +++++------
+ po/sk.po     |  90 +++++------
+ po/sl.po     |  90 +++++------
+ po/sv.po     |  90 +++++------
+ po/tr.po     |  90 +++++------
+ po/uk.po     |  90 +++++------
+ po/vi.po     |  90 +++++------
+ po/zh_CN.po  |  90 +++++------
+ po/zh_TW.po  |  90 +++++------
+ 54 files changed, 2614 insertions(+), 2582 deletions(-)
+
 commit fbb697f9c0e9d7dfde1fd566546896821549e42a
 Merge: 1034f2cf fcb3dc08
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5550,339 +5917,3 @@ Date:   Wed Nov 1 12:01:15 2023 +0100
 
  src/icewmbg.cc | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 61ff479a8fe7e3ff69fcaf779c10478a8594d26c
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 30 19:55:37 2023 +0100
-
-    Fix a crash when a ping timeout dialog is destroyed for issue #729.
-
- src/wmmgr.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 6d6e359e623879301471d6173075e591b6fec81d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 30 17:58:48 2023 +0100
-
-    Brighten the color of inactive preview icons for dark themes for issue
-    #715.
-
- src/aworkspaces.cc | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-commit 6d5d516abf7ec41971834bc1ef54613f306b1d77
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 30 17:54:00 2023 +0100
-
-    Test if a color can be considered dark for issue #715.
-
- src/ycolor.cc | 13 +++++++++++++
- src/ycolor.h  |  1 +
- 2 files changed, 14 insertions(+)
-
-commit 56f4701c0bdd764d22757e9887f8db3ba140f8f1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 26 18:34:38 2023 +0200
-
-    Support JXL, JP2, RAW, SVG, TGA image formats in icewmbg.
-
- src/icewmbg.cc | 45 +++++++++++++++++++++++++++++----------------
- 1 file changed, 29 insertions(+), 16 deletions(-)
-
-commit 6866ef82bac864a1fb45fc7868804ceb350a94bb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 26 18:33:44 2023 +0200
-
-    Add `supportsFormat` to check for support of additional image formats.
-
- src/yimage.h      |  1 +
- src/yimage2.cc    | 28 ++++++++++++++++++++++++++++
- src/yimage_gdk.cc | 21 +++++++++++++++++++++
- src/yximage.cc    | 16 ++++++++++++++++
- 4 files changed, 66 insertions(+)
-
-commit 5b5632fb077b39d7311bd078bf8e797709c9f6d6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 26 18:31:48 2023 +0200
-
-    Use --disable-librsvg instead of --disable-rsvg.
-
- configure.ac | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 1f12404f2c4c1626e4f8ebbd27ab46be744270ac
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sun Oct 15 10:15:49 2023 +0200
-
-    Fix minor warnings from recent CMake and GCC
-
- doc/CMakeLists.txt | 2 +-
- lib/CMakeLists.txt | 2 +-
- po/CMakeLists.txt  | 2 +-
- src/wmmgr.cc       | 2 +-
- 4 files changed, 4 insertions(+), 4 deletions(-)
-
-commit baa4e6b9722568d184bb7fc9212cc347d72585b4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 12 19:37:33 2023 +0200
-
-    Remove obsolete winoption examples and add one for plank.
-
- lib/winoptions.in | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
-
-commit 8b8e8bb37c6d0c956da7f6a3e580c57b1bcb42e0
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 12 19:36:37 2023 +0200
-
-    More permissive parsing of a PAM image header in icesh.
-
- src/icesh.cc | 32 +++++++++++++++++++++-----------
- 1 file changed, 21 insertions(+), 11 deletions(-)
-
-commit 5dc24b7686ec3a069ab16a3f9ede4883b280fea6
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 12 19:36:04 2023 +0200
-
-    Support TIFF and WEBP in icewmbg.
-
- src/icewmbg.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 4f8ccbb057577d33328869d80d71291428e41e75
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Oct 12 18:56:10 2023 +0200
-
-    Use fcsmart for capturing loadText data.
-
- src/iceview.cc | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-commit 9980833dde56423aa3d6d3f178474bb21332dd12
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sun Apr 16 21:54:28 2023 +0200
-
-    Fix ordering in the 4th configuration
-
-    Also stop throwing warnings with AMDGPU where no explicit configuration
-    was created.
-
- contrib/icewm-menu-xrandr | 51 +++++++++++++++++++++++++++++++------------
- 1 file changed, 37 insertions(+), 14 deletions(-)
-
-commit ec8f8f2f52aa160817073fbe2d06d6cdc9c1d7ea
-Author: Luiz Fernando Ranghetti <elchevive68@gmail.com>
-Date:   Wed Oct 4 20:47:03 2023 +0000
-
-    Translated using Weblate (Portuguese (Brazil))
-
-    Currently translated at 100.0% (526 of 526 strings)
-
- po/pt_BR.po | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-commit 2784c09f1d348fd5ca93076c495263bf04f94725
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 2 20:16:22 2023 +0200
-
-    Prepare 3.4.3 release
-
- AUTHORS      |   3 +-
- ChangeLog    | 250 ++++++++++++++++++++++++++-----------------------------
- NEWS         | 122 +++++++--------------------
- README.md    |  38 ++++-----
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +--
- 7 files changed, 174 insertions(+), 253 deletions(-)
-
-commit 5fa4e90d2d5c3343f26128c9d4d4613e4e9ca300
-Merge: 8bd5d4de bb673f56
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 2 20:05:52 2023 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit bb673f56971e08c887c00aa5617ba23a811dfa4d
-Merge: b56c0559 f837124a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Oct 2 20:05:24 2023 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit f837124ab1c018791994ce44d3389aac047355f2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Sep 28 19:04:26 2023 +0200
-
-    After daemonizing reopen the output file.
-
- src/icewmbg.cc | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
-
-commit 11868632e80ca5498af953e720447575a3547bbe
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Sep 27 23:44:19 2023 +0200
-
-    Let icewmbg interpret command-line arguments relative to the current
-    working directory for issue #497. Let icewmbg accept additional
-    arguments as images or directories. Add -f,--fork option to icewmbg. Add
-    --postpreferences option to icewmbg.
-
- man/icesh.pod      |   1 +
- man/icewm-menu.pod |   8 +--
- man/icewmbg.pod    |  23 ++++++---
- src/icewmbg.cc     | 133 +++++++++++++++++++++++++++++++++++++++----------
- 4 files changed, 128 insertions(+), 37 deletions(-)
-
-commit 210fff6a39d24c34432f822a0c24629ef1964fba
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Sep 21 00:00:42 2023 +0200
-
-    Add DoNotManage winoption for issues #653 and ice-wm/icewm#136.
-
- man/icewm-winoptions.pod |  1 +
- man/icewmhint.pod        |  1 +
- src/wmframe.h            |  1 +
- src/wmmgr.cc             | 26 ++++++++++++++++++++++++--
- src/wmmgr.h              |  1 +
- src/wmoption.cc          |  1 +
- 6 files changed, 29 insertions(+), 2 deletions(-)
-
-commit 23f4fb3fa506039f436df14f30313878036cb926
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Sep 19 18:10:13 2023 +0200
-
-    Document new pref "TaskBarShowWindowTitles".
-
- man/icewm-preferences.pod | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
-
-commit 84d26eb3f35c977765c4b025f22cc3682115859f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Sep 18 20:59:23 2023 +0200
-
-    Add pref "TaskBarShowTransientWindows" to only show window titles on
-    task buttons when it is true, which is the default, for issue 633.
-
- src/atasks.cc | 8 +++++---
- src/default.h | 4 +++-
- 2 files changed, 8 insertions(+), 4 deletions(-)
-
-commit 6f4a7b4762a9539aa18f00a3acf63c33b953a42d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Sep 18 00:12:56 2023 +0200
-
-    When cascading, include the border size for bbidulock/icewm#747.
-
- src/wmmgr.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 130e835a90a0a44ee11c95749828fcab5621436b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Sep 12 18:25:02 2023 +0200
-
-    Simplify APM file handling with class SysFS for bbidulock/icewm#746.
-
- src/aapm.cc | 231 ++++++++++++++++++++++++--------------------------------
- src/aapm.h  |  11 +++
- 2 files changed, 109 insertions(+), 133 deletions(-)
-
-commit 0458282fd8337ef8614766039619302513aa4717
-Author: diego roversi <diegor@tiscali.it>
-Date:   Tue Sep 12 11:24:29 2023 +0200
-
-    Use capacity when battery doesn't have information about full
-    charge. (#746)
-
- src/aapm.cc | 33 ++++++++++++++++++++++++++++++++-
- 1 file changed, 32 insertions(+), 1 deletion(-)
-
-commit 8bd5d4de14d7ab64a46b8dcaaa077f653712ab69
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Sep 11 04:46:39 2023 +0200
-
-    Prepare 3.4.2 release
-
- AUTHORS      |  21 ++-
- ChangeLog    | 553 +++++++++++++++++++++++++++----------------------------
- NEWS         | 127 ++++++-------
- README.md    |  38 ++--
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- 7 files changed, 367 insertions(+), 386 deletions(-)
-
-commit 40600c375fb7dec0cab827445fadfe2749b0efb9
-Merge: 147e4cfe b56c0559
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Sep 11 04:41:43 2023 +0200
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit b56c0559fe4afab83d0316480229b7ecb3cfb769
-Merge: 6ff46c17 0de955ce
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Sep 11 04:40:41 2023 +0200
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 147e4cfebf50dfb4260bb93e9b171ce8cc7111e5
-Merge: a6dc4ad1 ec3ddbe5
-Author: gijsbers <gijsbers@users.noreply.github.com>
-Date:   Mon Sep 11 03:28:24 2023 +0200
-
-    Merge pull request #145 from ice-wm/dependabot
-
-commit ec3ddbe54c5ffebdf539e6f6ef873ff6b3c2a0c7
-Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
-Date:   Mon Sep 11 01:18:59 2023 +0000
-
-    Bump actions/checkout from 3 to 4
-
-    Bumps [actions/checkout](https://github.com/actions/checkout) from 3 to 4.
-    - [Release notes](https://github.com/actions/checkout/releases)
-    - [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
-    - [Commits](https://github.com/actions/checkout/compare/v3...v4)
-
-    ---
-    updated-dependencies:
-    - dependency-name: actions/checkout
-      dependency-type: direct:production
-      update-type: version-update:semver-major
-    ...
-
-    Signed-off-by: dependabot[bot] <support@github.com>
-
- .github/workflows/cmake.yml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit 0de955ce6eb1b61c286d19ab388e67c4b0b77563
-Author: Luna  Jernberg <bittin@opensuse.org>
-Date:   Sat Sep 9 02:51:11 2023 +0000
-
-    Translated using Weblate (Swedish)
-
-    Currently translated at 100.0% (526 of 526 strings)
-
- po/sv.po | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-commit abe473b48b3d2dcdb2dde0ee2b86d9004cc2996a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Sep 5 04:35:39 2023 +0200
-
-    Support tabs in the window list menu.
-
- src/wmwinmenu.cc | 41 ++++++++++++++++++++++++-----------------
- 1 file changed, 24 insertions(+), 17 deletions(-)
-
-commit e998895c2aa9b2460d28f39b73a2daa456653bee
-Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
-Date:   Tue Sep 5 04:34:40 2023 +0200
-
-    Bump actions/checkout from 3 to 4 (#745)
-
- .github/workflows/cmake.yml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)

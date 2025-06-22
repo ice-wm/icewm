@@ -1,11 +1,58 @@
-icewm -- history of user-visible changes.  2025-05-25
+icewm -- history of user-visible changes.  2025-06-22
+
+Release icewm-3.8.0 released 2025-06-22
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.5...3.8.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (22):
+      Include sr in LINGUAS.
+      Optimize the CPU graph when taskbarbg.xpm is a gradient and
+        ColorCPUStatusIdle is the empty string.
+      Optimization of the CPU graph.
+      Avoid work for translators for now.
+      Optimize the MEM graph to reduce the background load of icewm.
+      Optimize renderToPixmap for the imlib2 layer.
+      Convert a hotkey to uppercase with respect for the current locale.
+      YMenuItem doesn't need to be virtual.
+      Convert HotChars in a menu to uppercase with respect for the current
+        locale.
+      Convert button hotkeys to uppercase with respect for the current locale.
+      Use the taskbar parameters consistently.
+      Add Help actions.
+      Plus the launhHelp declaration.
+      Convert case in mstrings with respect to the current locale.
+      Clear array in ObjectMenu discard.
+      Add discard declaration to the ObjectMenu.
+      Drop the obsolete toUpper from ASCII.
+      Optimize the Themes menu. First popup the Themes menu and only then look
+        for theme alternatives. Provide a theme button preview to the themes
+        Menu. Extend the Help menu.
+      Silence clang warnings on OpenBSD.
+      Prefer a non-deterministic random number generator.
+      Remove surplus right-square-bracket.
+      Prefer gtar to install themes on OpenSolaris/OpenIndiana.
+
+Jure Repinc <jlp@holodeck1.com> (3):
+      Translated using Weblate (Slovenian)
+      Translated using Weblate (Slovenian)
+      Translated using Weblate (Slovenian)
+
+Саша Петровић <salepetronije@gmail.com> (3):
+      Translated using Weblate (Serbian)
+      Translated using Weblate (Serbian)
+      Translated using Weblate (Serbian)
+
+Eduard Bloch <blade@debian.org> (1):
+      Mention --postpreferences in usage info
+
 
 Release icewm-3.7.5 released 2025-05-25
 ---------------------------------------
 
 git shortlog --no-merges -e -n -w80,6,8 3.7.4...3.7.5
 
-Bert Gijsbers <gijsbers@science.uva.nl> (14):
+Bert Gijsbers <gijsbers@science.uva.nl> (15):
       Silence Clang about VLAs.
       Add support for svgz to icewmbg.
       Rename findWindow(int) to findByFlags.
@@ -24,6 +71,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (14):
       Add unionRect for a YRect parameter.
       Prefer activateWindow over setFocus for the WindowList.
       When toggling the WindowList, raise the WindowList if it is overlapped.
+      Prepare 3.7.5 release
 
 David Medina <medipas@gmail.com> (1):
       Translated using Weblate (Catalan)
@@ -431,41 +479,4 @@ Virinas code <alexcode228@gmail.com> (1):
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
-
-
-Release icewm-3.6.0 released 2024-06-16
----------------------------------------
-
-git shortlog --no-merges -e -n -w80,6,8 3.5.1...3.6.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
-      Double-click the border to maximize just that side for ice-wm/icewm#163.
-        Repeat to restore that side. Also for corners.
-      Restore moving windows by dragging with the right button down.
-      Double-clicking on the border can undo a maximization.
-      Support composing characters in the address bar with X input method.
-      Fix checking for mkdir success in ensureDirectory.
-      Provide for the case when XCreateIC fails.
-      Convert to wchar_t using YWideString.
-      Only compare icewm-extra tar file against ctime.
-      Ignore moving/sizing requests, when a moving or sizing is already in
-        progress.
-      Don't create Window handle when destroyed or without a parent.
-      Don't install mouse bindings when the frame is being destroyed.
-      Don't dispatch events to destroyed windows.
-      Fix length calculation after getCharFromEvent.
-      Log key events.
-      Avoid constructing invalid work areas.
-      Do XFilterEvent globally.
-      Mention the requirements for the --install option.
-      Update pot files.
-      Prepare 3.6.0 release
-
-Baurzhan Muftakhidinov <baurthefirst@gmail.com> (3):
-      Translated using Weblate (Kazakh)
-      Translated using Weblate (Kazakh)
-      Translated using Weblate (Kazakh)
-
-Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
-      Translated using Weblate (Georgian)
 

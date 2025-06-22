@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.4.2.1038\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-05-25 21:09+0200\n"
+"POT-Creation-Date: 2025-06-22 23:55+0200\n"
 "PO-Revision-Date: 2022-03-23 19:12+0000\n"
 "Last-Translator: Alexander Mortensen <Mortensen.alexander@gmail.com>\n"
 "Language-Team: Danish <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -67,12 +67,12 @@ msgstr "UR"
 msgid "Date"
 msgstr "Dato"
 
-#: src/aclock.cc:206 src/themes.cc:83
+#: src/aclock.cc:206 src/themes.cc:91
 msgid "Default"
 msgstr "Standard"
 
-#: src/aclock.cc:207 src/acpustatus.cc:912 src/amailbox.cc:964
-#: src/amemstatus.cc:264
+#: src/aclock.cc:207 src/acpustatus.cc:909 src/amailbox.cc:964
+#: src/amemstatus.cc:302
 msgid "_Disable"
 msgstr "_Deaktivér"
 
@@ -82,16 +82,16 @@ msgstr "_UTC"
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:348
+#: src/acpustatus.cc:357
 msgid "°C"
 msgstr "°C"
 
-#: src/acpustatus.cc:552
+#: src/acpustatus.cc:561
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "CPU %s-belastning: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:558
+#: src/acpustatus.cc:567
 #, c-format
 msgid ""
 "\n"
@@ -100,7 +100,7 @@ msgstr ""
 "\n"
 "Ram (ledig): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:563
+#: src/acpustatus.cc:572
 #, c-format
 msgid ""
 "\n"
@@ -109,7 +109,7 @@ msgstr ""
 "\n"
 "Swap (ledig): %.3f (%.3f) G"
 
-#: src/acpustatus.cc:571
+#: src/acpustatus.cc:580
 #, c-format
 msgid ""
 "\n"
@@ -118,7 +118,7 @@ msgstr ""
 "\n"
 "ACPI-temperatur: "
 
-#: src/acpustatus.cc:592 src/acpustatus.cc:630
+#: src/acpustatus.cc:601 src/acpustatus.cc:639
 #, c-format
 msgid ""
 "\n"
@@ -127,15 +127,15 @@ msgstr ""
 "\n"
 "CPU-frekvens: %.3fGHz"
 
-#: src/acpustatus.cc:607 src/acpustatus.cc:907
+#: src/acpustatus.cc:616 src/acpustatus.cc:904
 msgid "CPU"
 msgstr "CPU"
 
-#: src/acpustatus.cc:607
+#: src/acpustatus.cc:616
 msgid "Load: "
 msgstr "Belastning: "
 
-#: src/acpustatus.cc:622
+#: src/acpustatus.cc:631
 #, c-format
 msgid ""
 "\n"
@@ -144,16 +144,16 @@ msgstr ""
 "\n"
 "Ram (bruger): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:908
+#: src/acpustatus.cc:905
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:914
+#: src/acpustatus.cc:911
 msgid "_Combine"
 msgstr "_Kombiner"
 
-#: src/acpustatus.cc:916
+#: src/acpustatus.cc:913
 msgid "_Separate"
 msgstr "_Separer"
 
@@ -272,43 +272,43 @@ msgstr "_Tjek"
 msgid "_Suspend"
 msgstr "_Hvile"
 
-#: src/amemstatus.cc:144
+#: src/amemstatus.cc:188
 msgid "GB"
 msgstr "GB"
 
-#: src/amemstatus.cc:148
+#: src/amemstatus.cc:193
 msgid "MB"
 msgstr "MB"
 
-#: src/amemstatus.cc:152
+#: src/amemstatus.cc:198
 msgid "kB"
 msgstr "kB"
 
-#: src/amemstatus.cc:156
+#: src/amemstatus.cc:202
 msgid "bytes"
 msgstr "bytes"
 
-#: src/amemstatus.cc:176
+#: src/amemstatus.cc:222
 msgid "Memory Total: "
 msgstr "Hukommelse i alt: "
 
-#: src/amemstatus.cc:177
+#: src/amemstatus.cc:223
 msgid "Free: "
 msgstr "Ledig: "
 
-#: src/amemstatus.cc:178
+#: src/amemstatus.cc:224
 msgid "Cached: "
 msgstr "Mellemlagret: "
 
-#: src/amemstatus.cc:179
+#: src/amemstatus.cc:225
 msgid "Buffers: "
 msgstr "Buffere: "
 
-#: src/amemstatus.cc:180
+#: src/amemstatus.cc:226
 msgid "User: "
 msgstr "Bruger: "
 
-#: src/amemstatus.cc:262
+#: src/amemstatus.cc:300
 msgid "MEM"
 msgstr "HUK"
 
@@ -1446,12 +1446,12 @@ msgstr "EWMH vinduestilstand"
 msgid "workspace #%d: `%s'\n"
 msgstr "arbejdsområde nr. %d: \"%s\"\n"
 
-#: src/icesh.cc:2817 src/icesh.cc:4701 src/icesh.cc:5301
+#: src/icesh.cc:2817 src/icesh.cc:4710 src/icesh.cc:5310
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Ugyldig tilstand: \"%s\"."
 
-#: src/icesh.cc:2848 src/icesh.cc:4270 src/icesh.cc:4320 src/icesh.cc:5622
+#: src/icesh.cc:2848 src/icesh.cc:4279 src/icesh.cc:4329 src/icesh.cc:5631
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Ugyldigt argument: \"%s\""
@@ -1466,57 +1466,57 @@ msgstr "Kan ikke hente geometrien af vinduet 0x%lx"
 msgid "Invalid Xinerama: `%s'."
 msgstr "Ugyldigt Xinerama: \"%s\"."
 
-#: src/icesh.cc:4047 src/icesh.cc:4055 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:4056 src/icesh.cc:4064 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Kan ikke skrive til %s"
 
-#: src/icesh.cc:4286
+#: src/icesh.cc:4295
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Handlingen \"%s\" kræver mindst %d argumenter."
 
-#: src/icesh.cc:4295
+#: src/icesh.cc:4304
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Ugyldigt udtryk: \"%s\""
 
-#: src/icesh.cc:4306 src/icesound.cc:800 src/icewmbg.cc:1089
-#: src/icewmhint.cc:37 src/wmapp.cc:1317 src/yxapp.cc:1049
+#: src/icesh.cc:4315 src/icesound.cc:800 src/icewmbg.cc:1097
+#: src/icewmhint.cc:37 src/wmapp.cc:1347 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr "Kan ikke åbne skærm: %s. X skal køre og $DISPLAY sat."
 
-#: src/icesh.cc:4422
+#: src/icesh.cc:4431
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Uventet menunøgleord: '%s'."
 
-#: src/icesh.cc:4454
+#: src/icesh.cc:4463
 msgid "No windows found."
 msgstr "Ingen vinduer fundet."
 
-#: src/icesh.cc:4470
+#: src/icesh.cc:4479
 msgid "No actions specified."
 msgstr "Ingen handlinger anført."
 
-#: src/icesh.cc:4625
+#: src/icesh.cc:4634
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Ugyldig vinduesidentifikator: \"%s\""
 
-#: src/icesh.cc:4641
+#: src/icesh.cc:4650
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Ugyldig PID: \"%s\""
 
-#: src/icesh.cc:4674
+#: src/icesh.cc:4683
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Ugyldigt lag: \"%s\"."
 
-#: src/icesh.cc:5761
+#: src/icesh.cc:5770
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Ukendt handling: \"%s\""
@@ -1856,7 +1856,7 @@ msgstr "Ombryd linjer"
 msgid "Failed to load image '%s'."
 msgstr "Kunne ikke indlæse billede \"%s\"."
 
-#: src/icewmbg.cc:971
+#: src/icewmbg.cc:977
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1957,12 +1957,12 @@ msgstr ""
 "forhold\n"
 "\n"
 
-#: src/icewmbg.cc:1250 src/wmapp.cc:1923
+#: src/icewmbg.cc:1258 src/wmapp.cc:1953
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Ugenkendeligt tilvalg \"%s\"."
 
-#: src/icewmbg.cc:1337
+#: src/icewmbg.cc:1345
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Kan ikke starte eftersom en anden icewmbg stadig kører."
 
@@ -2284,11 +2284,11 @@ msgstr ""
 "Kunne ikke genstarte: %s\n"
 "Leder $PATH til %s?"
 
-#: src/wmapp.cc:996
+#: src/wmapp.cc:1006
 msgid "Confirm Restart as Terminal"
 msgstr "Bekræft Genstart som Terminal"
 
-#: src/wmapp.cc:997
+#: src/wmapp.cc:1007
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
@@ -2296,18 +2296,18 @@ msgstr ""
 "Afstyr alle applikationer og genstart\n"
 "som terminal. Forsæt?"
 
-#: src/wmapp.cc:1318 src/yxapp.cc:1050
+#: src/wmapp.cc:1348 src/yxapp.cc:1050
 msgid "<none>"
 msgstr "<ingen>"
 
-#: src/wmapp.cc:1646
+#: src/wmapp.cc:1676
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Klient-id som skal bruges når sessionshåndteringen "
 "kontaktes.\n"
 
-#: src/wmapp.cc:1652
+#: src/wmapp.cc:1682
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2318,7 +2318,7 @@ msgstr ""
 "  --debug-z           Udskriv fejlsøgningsmeddelelser vedrørende "
 "vinduesstakning.\n"
 
-#: src/wmapp.cc:1660
+#: src/wmapp.cc:1690
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2339,15 +2339,15 @@ msgstr ""
 "  --trace=konf,ikon   Spor stier som blev brugt til at indlæse "
 "konfiguration.\n"
 
-#: src/wmapp.cc:1671
+#: src/wmapp.cc:1701
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr ""
 
-#: src/wmapp.cc:1677
+#: src/wmapp.cc:1707
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr ""
 
-#: src/wmapp.cc:1680
+#: src/wmapp.cc:1710
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2408,21 +2408,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1746
+#: src/wmapp.cc:1776
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s konfigurationsmapper:\n"
 
-#: src/wmapp.cc:1834
+#: src/wmapp.cc:1864
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s konfigurerede tilvalg:%s\n"
 
-#: src/wmapp.cc:1973
+#: src/wmapp.cc:2003
 msgid "Confirm Logout"
 msgstr "Bekræft udlogning"
 
-#: src/wmapp.cc:1974
+#: src/wmapp.cc:2004
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2491,7 +2491,7 @@ msgid "_Cancel"
 msgstr "_Annuller"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:88 src/wmprog.cc:466 src/wmprog.cc:468 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:88 src/wmprog.cc:437 src/wmprog.cc:439 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "Log _ud..."
@@ -2514,7 +2514,7 @@ msgid "Reload win_options"
 msgstr ""
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:97 src/wmprog.cc:434 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:97 src/wmprog.cc:405 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "O_m"
 
@@ -2656,52 +2656,52 @@ msgstr "_Stille sløset fokus"
 msgid "Custo_m"
 msgstr "_Tilpasset"
 
-#: src/wmprog.cc:368
+#: src/wmprog.cc:358
 msgid "_Manual"
 msgstr "_Manuelt"
 
-#: src/wmprog.cc:369
+#: src/wmprog.cc:359
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:370
+#: src/wmprog.cc:360
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:371
+#: src/wmprog.cc:361
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:420
+#: src/wmprog.cc:391
 msgid "Programs"
 msgstr "Programmer"
 
-#: src/wmprog.cc:424
+#: src/wmprog.cc:395
 msgid "_Run..."
 msgstr "_Kør..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:428 src/wmtaskbar.cc:233
+#: src/wmprog.cc:399 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "Vin_duer"
 
-#: src/wmprog.cc:439
+#: src/wmprog.cc:410
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: src/wmprog.cc:444
+#: src/wmprog.cc:415
 msgid "_Focus"
 msgstr "_Fokus"
 
-#: src/wmprog.cc:449
+#: src/wmprog.cc:420
 msgid "_Preferences"
 msgstr "_Præferencer"
 
-#: src/wmprog.cc:454
+#: src/wmprog.cc:425
 msgid "_Themes"
 msgstr "_Temaer"
 
-#: src/wmprog.cc:458
+#: src/wmprog.cc:429
 msgid "Se_ttings"
 msgstr "_Indstillinger"
 

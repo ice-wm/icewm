@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.2.23\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-05-25 21:09+0200\n"
+"POT-Creation-Date: 2025-06-22 23:55+0200\n"
 "PO-Revision-Date: 2025-05-17 23:59+0000\n"
 "Last-Translator: Feike Donia <feikedonia@proton.me>\n"
 "Language-Team: Dutch <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -66,12 +66,12 @@ msgstr "KLOK"
 msgid "Date"
 msgstr "Datum"
 
-#: src/aclock.cc:206 src/themes.cc:83
+#: src/aclock.cc:206 src/themes.cc:91
 msgid "Default"
 msgstr "Standaard"
 
-#: src/aclock.cc:207 src/acpustatus.cc:912 src/amailbox.cc:964
-#: src/amemstatus.cc:264
+#: src/aclock.cc:207 src/acpustatus.cc:909 src/amailbox.cc:964
+#: src/amemstatus.cc:302
 msgid "_Disable"
 msgstr "_Uitschakelen"
 
@@ -81,16 +81,16 @@ msgstr "_UTC"
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
-#: src/acpustatus.cc:348
+#: src/acpustatus.cc:357
 msgid "°C"
 msgstr "°C"
 
-#: src/acpustatus.cc:552
+#: src/acpustatus.cc:561
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
 msgstr "CPU-belasting %s: %3.2f %3.2f %3.2f, %u"
 
-#: src/acpustatus.cc:558
+#: src/acpustatus.cc:567
 #, c-format
 msgid ""
 "\n"
@@ -99,7 +99,7 @@ msgstr ""
 "\n"
 "RAM (vrij): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:563
+#: src/acpustatus.cc:572
 #, c-format
 msgid ""
 "\n"
@@ -108,7 +108,7 @@ msgstr ""
 "\n"
 "Swap (vrij): %.3f (%.3f) G"
 
-#: src/acpustatus.cc:571
+#: src/acpustatus.cc:580
 #, c-format
 msgid ""
 "\n"
@@ -117,7 +117,7 @@ msgstr ""
 "\n"
 "ACPI-temp: "
 
-#: src/acpustatus.cc:592 src/acpustatus.cc:630
+#: src/acpustatus.cc:601 src/acpustatus.cc:639
 #, c-format
 msgid ""
 "\n"
@@ -126,15 +126,15 @@ msgstr ""
 "\n"
 "CPU-freq: %.3fGHz"
 
-#: src/acpustatus.cc:607 src/acpustatus.cc:907
+#: src/acpustatus.cc:616 src/acpustatus.cc:904
 msgid "CPU"
 msgstr "CPU"
 
-#: src/acpustatus.cc:607
+#: src/acpustatus.cc:616
 msgid "Load: "
 msgstr "Belasting: "
 
-#: src/acpustatus.cc:622
+#: src/acpustatus.cc:631
 #, c-format
 msgid ""
 "\n"
@@ -143,16 +143,16 @@ msgstr ""
 "\n"
 "Ram (gebruiker): %5.3f (%.3f) G"
 
-#: src/acpustatus.cc:908
+#: src/acpustatus.cc:905
 #, c-format
 msgid "CPU%d"
 msgstr "CPU%d"
 
-#: src/acpustatus.cc:914
+#: src/acpustatus.cc:911
 msgid "_Combine"
 msgstr "_Combineren"
 
-#: src/acpustatus.cc:916
+#: src/acpustatus.cc:913
 msgid "_Separate"
 msgstr "Ge_scheiden"
 
@@ -271,43 +271,43 @@ msgstr "_Controleren"
 msgid "_Suspend"
 msgstr "_Onderbreken"
 
-#: src/amemstatus.cc:144
+#: src/amemstatus.cc:188
 msgid "GB"
 msgstr "GB"
 
-#: src/amemstatus.cc:148
+#: src/amemstatus.cc:193
 msgid "MB"
 msgstr "MB"
 
-#: src/amemstatus.cc:152
+#: src/amemstatus.cc:198
 msgid "kB"
 msgstr "kB"
 
-#: src/amemstatus.cc:156
+#: src/amemstatus.cc:202
 msgid "bytes"
 msgstr "bytes"
 
-#: src/amemstatus.cc:176
+#: src/amemstatus.cc:222
 msgid "Memory Total: "
 msgstr "Totaal geheugen: "
 
-#: src/amemstatus.cc:177
+#: src/amemstatus.cc:223
 msgid "Free: "
 msgstr "Vrij: "
 
-#: src/amemstatus.cc:178
+#: src/amemstatus.cc:224
 msgid "Cached: "
 msgstr "Cache: "
 
-#: src/amemstatus.cc:179
+#: src/amemstatus.cc:225
 msgid "Buffers: "
 msgstr "Buffers: "
 
-#: src/amemstatus.cc:180
+#: src/amemstatus.cc:226
 msgid "User: "
 msgstr "Gebruiker: "
 
-#: src/amemstatus.cc:262
+#: src/amemstatus.cc:300
 msgid "MEM"
 msgstr "GEH"
 
@@ -1445,12 +1445,12 @@ msgstr "EWMH-vensterstatus"
 msgid "workspace #%d: `%s'\n"
 msgstr "Werkruimte #%d: »%s«\n"
 
-#: src/icesh.cc:2817 src/icesh.cc:4701 src/icesh.cc:5301
+#: src/icesh.cc:2817 src/icesh.cc:4710 src/icesh.cc:5310
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Ongeldige status: `%s'."
 
-#: src/icesh.cc:2848 src/icesh.cc:4270 src/icesh.cc:4320 src/icesh.cc:5622
+#: src/icesh.cc:2848 src/icesh.cc:4279 src/icesh.cc:4329 src/icesh.cc:5631
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Ongeldig argument: '%s'"
@@ -1465,59 +1465,59 @@ msgstr "Kan geometrie van venster 0x%lx niet ophalen"
 msgid "Invalid Xinerama: `%s'."
 msgstr "Ongeldig Xinerama: `%s'."
 
-#: src/icesh.cc:4047 src/icesh.cc:4055 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:4056 src/icesh.cc:4064 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Schrijven naar %s lukt niet"
 
-#: src/icesh.cc:4286
+#: src/icesh.cc:4295
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Actie `%s' heeft minimaal %d argumenten nodig."
 
-#: src/icesh.cc:4295
+#: src/icesh.cc:4304
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Ongeldige expressie: »%s«"
 
-#: src/icesh.cc:4306 src/icesound.cc:800 src/icewmbg.cc:1089
-#: src/icewmhint.cc:37 src/wmapp.cc:1317 src/yxapp.cc:1049
+#: src/icesh.cc:4315 src/icesound.cc:800 src/icewmbg.cc:1097
+#: src/icewmhint.cc:37 src/wmapp.cc:1347 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Kan het display %s niet openen. De X-Server moet werken en de "
 "omgevingsvariabele $DISPLAY moet hiernaar verwijzen."
 
-#: src/icesh.cc:4422
+#: src/icesh.cc:4431
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Onverwacht: '%s'."
 
-#: src/icesh.cc:4454
+#: src/icesh.cc:4463
 msgid "No windows found."
 msgstr "Geen vensters gevonden."
 
-#: src/icesh.cc:4470
+#: src/icesh.cc:4479
 msgid "No actions specified."
 msgstr "Geen aktie aangegeven."
 
-#: src/icesh.cc:4625
+#: src/icesh.cc:4634
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Ongeldige venster identificatie: »%s«"
 
-#: src/icesh.cc:4641
+#: src/icesh.cc:4650
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Ongeldige PID: `%s'"
 
-#: src/icesh.cc:4674
+#: src/icesh.cc:4683
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Ongeldige laag: `%s'."
 
-#: src/icesh.cc:5761
+#: src/icesh.cc:5770
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Onbekende actie: »%s«"
@@ -1864,7 +1864,7 @@ msgstr "Lange regels afbreken"
 msgid "Failed to load image '%s'."
 msgstr "Het laden van afbeelding '%s' is mislukt."
 
-#: src/icewmbg.cc:971
+#: src/icewmbg.cc:977
 msgid ""
 "Usage: icewmbg [OPTIONS]\n"
 "Where multiple values can be given they are separated by commas.\n"
@@ -1966,12 +1966,12 @@ msgstr ""
 " center:0 scaled:1 = beide dimensies vullen en beeldverhouding behouden\n"
 "\n"
 
-#: src/icewmbg.cc:1250 src/wmapp.cc:1923
+#: src/icewmbg.cc:1258 src/wmapp.cc:1953
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Onbekende optie: '%s'."
 
-#: src/icewmbg.cc:1337
+#: src/icewmbg.cc:1345
 msgid "Cannot start, because another icewmbg is still running."
 msgstr "Kan niet worden gestart, omdat een andere icewmbg wordt uitgevoerd."
 
@@ -2294,11 +2294,11 @@ msgstr ""
 "De herstart is mislukt: %s\n"
 "Verwijst de »PATH« variable naar de programma directory »%s«?"
 
-#: src/wmapp.cc:996
+#: src/wmapp.cc:1006
 msgid "Confirm Restart as Terminal"
 msgstr "Herstart als terminal bevestigen"
 
-#: src/wmapp.cc:997
+#: src/wmapp.cc:1007
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
@@ -2306,18 +2306,18 @@ msgstr ""
 "Hef beheer van alle toepassing op en herstart\n"
 "als een terminal. Doorgaan?"
 
-#: src/wmapp.cc:1318 src/yxapp.cc:1050
+#: src/wmapp.cc:1348 src/yxapp.cc:1050
 msgid "<none>"
 msgstr "<geen>"
 
-#: src/wmapp.cc:1646
+#: src/wmapp.cc:1676
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID      Te gebruiken client-id bij contact maken met de "
 "sessiemanager.\n"
 
-#: src/wmapp.cc:1652
+#: src/wmapp.cc:1682
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2327,7 +2327,7 @@ msgstr ""
 "  --debug             Algemene debugberichten afdrukken.\n"
 "  --debug-z           Debugberichten over stapelen van vensters afdrukken.\n"
 
-#: src/wmapp.cc:1660
+#: src/wmapp.cc:1690
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2347,15 +2347,15 @@ msgstr ""
 "--rewrite-preferences  Een bestaand bestand met voorkeuren bijwerken.\n"
 "  --trace=conf,icon   Paden volgen gebruiken om configuratie te laden.\n"
 
-#: src/wmapp.cc:1671
+#: src/wmapp.cc:1701
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr "  -o, --output=BESTAND   Stuur alle uitvoer naar FILE.\n"
 
-#: src/wmapp.cc:1677
+#: src/wmapp.cc:1707
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr "  -i, --install=THEMA Installeer THEMA uit extra of 'lijst'.\n"
 
-#: src/wmapp.cc:1680
+#: src/wmapp.cc:1710
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2414,21 +2414,21 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/wmapp.cc:1746
+#: src/wmapp.cc:1776
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s configuratiemappen:\n"
 
-#: src/wmapp.cc:1834
+#: src/wmapp.cc:1864
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s geconfigureerde opties:%s\n"
 
-#: src/wmapp.cc:1973
+#: src/wmapp.cc:2003
 msgid "Confirm Logout"
 msgstr "Afmelden bevestigen"
 
-#: src/wmapp.cc:1974
+#: src/wmapp.cc:2004
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2498,7 +2498,7 @@ msgid "_Cancel"
 msgstr "_Annuleren"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:88 src/wmprog.cc:466 src/wmprog.cc:468 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:88 src/wmprog.cc:437 src/wmprog.cc:439 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Afmelden..."
@@ -2522,7 +2522,7 @@ msgid "Reload win_options"
 msgstr "Win_opties opnieuw laden"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:97 src/wmprog.cc:434 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:97 src/wmprog.cc:405 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Over"
 
@@ -2665,52 +2665,52 @@ msgstr "_Stille slordige muisfocus"
 msgid "Custo_m"
 msgstr "Aa_ngepast"
 
-#: src/wmprog.cc:368
+#: src/wmprog.cc:358
 msgid "_Manual"
 msgstr "_Handmatig"
 
-#: src/wmprog.cc:369
+#: src/wmprog.cc:359
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:370
+#: src/wmprog.cc:360
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:371
+#: src/wmprog.cc:361
 msgid "Ice_Sound(1)"
 msgstr "Ice_Geluid(1)"
 
-#: src/wmprog.cc:420
+#: src/wmprog.cc:391
 msgid "Programs"
 msgstr "Programma's"
 
-#: src/wmprog.cc:424
+#: src/wmprog.cc:395
 msgid "_Run..."
 msgstr "Uit_voeren..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:428 src/wmtaskbar.cc:233
+#: src/wmprog.cc:399 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Windows"
 
-#: src/wmprog.cc:439
+#: src/wmprog.cc:410
 msgid "_Help"
 msgstr "_Help"
 
-#: src/wmprog.cc:444
+#: src/wmprog.cc:415
 msgid "_Focus"
 msgstr "_Focus"
 
-#: src/wmprog.cc:449
+#: src/wmprog.cc:420
 msgid "_Preferences"
 msgstr "_Voorkeuren"
 
-#: src/wmprog.cc:454
+#: src/wmprog.cc:425
 msgid "_Themes"
 msgstr "_Thema's"
 
-#: src/wmprog.cc:458
+#: src/wmprog.cc:429
 msgid "Se_ttings"
 msgstr "Ins_tellingen"
 
