@@ -11,7 +11,7 @@ public:
     YMenuItem(const mstring &name, int hotCharPos, const mstring &param, YAction action, YMenu *submenu);
     YMenuItem(const mstring &name);
     YMenuItem();
-    virtual ~YMenuItem();
+    ~YMenuItem();
 
     mstring& getName() { return fName; }
     mstring& getParam() { return fParam; }
@@ -24,12 +24,10 @@ public:
         return (fName != null && fHotCharPos >= 0) ? fName.charAt(fHotCharPos) : -1;
     }
 
-    int getHotCharPos() const {
-        return fHotCharPos;
-    }
+    int getHotCharPos() const { return fHotCharPos; }
 
     ref<YIcon> getIcon() const { return fIcon; }
-    void setChecked(bool c);
+    void setChecked(bool c) { fChecked = c; }
     int isChecked() const { return fChecked; }
     int isEnabled() const { return fEnabled; }
     void setEnabled(bool e) { fEnabled = e; }
@@ -43,7 +41,7 @@ public:
 
     bool isSeparator() { return getName() == null && getSubmenu() == nullptr; }
 
-    void setIcon(ref<YIcon> icon);
+    void setIcon(ref<YIcon> icon) { fIcon = icon; }
 private:
     mstring fName;
     mstring fParam;
