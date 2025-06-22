@@ -9,6 +9,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 #include <regex.h>
 #include <new>
 #include "base.h"
@@ -280,7 +281,7 @@ mstring mstring::searchAndReplaceAll(const mstring& s, const mstring& r) const {
 mstring mstring::lower() const {
     mstring mstr(nullptr, fCount);
     for (size_t i = 0; i < fCount; ++i) {
-        mstr.fRef[i] = ASCII::toLower(data()[i]);
+        mstr.fRef[i] = tolower((unsigned char) data()[i]);
     }
     return mstr;
 }
@@ -288,7 +289,7 @@ mstring mstring::lower() const {
 mstring mstring::upper() const {
     mstring mstr(nullptr, fCount);
     for (size_t i = 0; i < fCount; ++i) {
-        mstr.fRef[i] = ASCII::toUpper(data()[i]);
+        mstr.fRef[i] = toupper((unsigned char) data()[i]);
     }
     return mstr;
 }

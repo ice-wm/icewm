@@ -18,6 +18,7 @@
 #include "wmtaskbar.h"
 
 #include <string.h>
+#include <ctype.h>
 
 #include "intl.h"
 
@@ -208,7 +209,7 @@ void YButton::setArmed(bool armed, bool mouseDown) {
 bool YButton::handleKey(const XKeyEvent &key) {
     KeySym k = keyCodeToKeySym(key.keycode);
     unsigned m = KEY_MODMASK(key.state);
-    int uk = (k < 256) ? ASCII::toUpper((char)k) : k;
+    int uk = (k < 256) ? toupper((unsigned char) k) : k;
 
     if (fEnabled) {
         if (key.type == KeyPress) {
@@ -421,7 +422,7 @@ void YButton::setText(const mstring &str, int hotChar) {
 
         hotKey = (fHotCharPos >= 0) ? fText.charAt(fHotCharPos) : -1;
         if (hotKey != -1) {
-            hotKey = ASCII::toUpper(hotKey);
+            hotKey = toupper((unsigned char) hotKey);
 
             installAccelerator(hotKey, 0, this);
             if (xapp->AltMask != 0)

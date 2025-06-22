@@ -44,11 +44,6 @@ namespace ASCII {
     }
 
     template<class T>
-    T toUpper(T c) {
-        return isLower(c) ? (c - ' ') : c;
-    }
-
-    template<class T>
     T toLower(T c) {
         return isUpper(c) ? (c + ' ') : c;
     }

@@ -3924,12 +3924,22 @@ void IceSh::flush()
 }
 
 static void randomSetup() {
+#ifndef HAVE_ARC4RANDOM_UNIFORM
     static unsigned seed;
     if (seed == 0) {
         timeval now = walltime();
         seed = unsigned((getpid() * now.tv_usec) ^ now.tv_sec);
         srand(seed);
     }
+#endif
+}
+
+static unsigned randomLimit(unsigned limit) {
+#ifdef HAVE_ARC4RANDOM_UNIFORM
+    return arc4random_uniform(limit);
+#else
+    return rand() / (RAND_MAX / limit + 1);
+#endif
 }
 
 static char* randomLabel() {
@@ -3939,9 +3949,8 @@ static char* randomLabel() {
     const int length = 7;
     static char label[length + 1];
     randomSetup();
-    for (int i = 0, r = 0; i < length; ++i) {
-        if (r < 32)
-            r = rand();
+    for (int i = 0; i < length; ++i) {
+        unsigned r = randomLimit(64);
         label[i] = data[r & 63];
         r >>= 6;
     }

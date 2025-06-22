@@ -9,9 +9,14 @@ ObjectMenu::ObjectMenu(YActionListener* actionListener, YWindow* parent):
 }
 
 ObjectMenu::~ObjectMenu() {
+    discard();
+}
+
+void ObjectMenu::discard() {
     for (const ObjectAction& obj : fArray) {
         delete obj.object;
     }
+    fArray.clear();
 }
 
 void ObjectMenu::actionPerformed(YAction action, unsigned modifiers) {
@@ -21,7 +26,7 @@ void ObjectMenu::actionPerformed(YAction action, unsigned modifiers) {
             return;
         }
     }
-    if (wmActionListener) {
+    if (wmActionListener && wmActionListener != this) {
         wmActionListener->actionPerformed(action, modifiers);
     }
 }

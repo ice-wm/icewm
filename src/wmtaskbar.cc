@@ -322,7 +322,7 @@ void TaskBar::initApplets() {
         fMailBoxControl = nullptr;
 
     if (configKeyboards.nonempty()) {
-        fKeyboardStatus = new KeyboardStatus(wmapp, this, this);
+        fKeyboardStatus = new KeyboardStatus(app, this, this);
     } else
         fKeyboardStatus = nullptr;
 
@@ -357,7 +357,7 @@ void TaskBar::initApplets() {
         fShowDesktop = new ObjectButton(this, actionShowDesktop);
         fShowDesktop->setText("__");
         fShowDesktop->setImage(taskbarShowDesktopImage);
-        fShowDesktop->setActionListener(wmActionListener);
+        fShowDesktop->setActionListener(this);
         fShowDesktop->setToolTip(_("Show Desktop"));
         fShowDesktop->setTitle("ShowDesktop");
         fShowDesktop->realize();

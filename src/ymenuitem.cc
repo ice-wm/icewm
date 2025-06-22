@@ -57,14 +57,6 @@ YMenuItem::~YMenuItem() {
     fSubmenu = nullptr;
 }
 
-void YMenuItem::setChecked(bool c) {
-    fChecked = c;
-}
-
-void YMenuItem::setIcon(ref<YIcon> icon) {
-    fIcon = icon;
-}
-
 int YMenuItem::queryHeight(int &top, int &bottom, int &pad) {
     int height;
     if (isSeparator()) {
@@ -99,8 +91,7 @@ int YMenuItem::queryHeight(int &top, int &bottom, int &pad) {
 }
 
 int YMenuItem::getIconWidth() const {
-    ref<YIcon> icon = getIcon();
-    return icon != null ? YIcon::menuSize(): 0;
+    return fIcon != null ? YIcon::menuSize(): 0;
 }
 
 int YMenuItem::getNameWidth() {
