@@ -126,6 +126,18 @@ enum EAction {
     actionIcewmbg            = 261,
     actionHibernate          = 263,
     actionToolbar            = 265,
+
+    actionHelpManual         = 267,
+    actionHelpIcewm          = 269,
+    actionHelpIcewmbg        = 271,
+    actionHelpIcesound       = 273,
+    actionHelpIcesh          = 275,
+    actionHelpEnv            = 277,
+    actionHelpKeys           = 279,
+    actionHelpStartup        = 281,
+    actionHelpToolbar        = 283,
+    actionHelpWinoptions     = 285,
+
 };
 
 bool canShutdown(RebootShutdown reboot);

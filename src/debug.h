@@ -6,6 +6,8 @@
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 #endif
 #if __clang__
+#pragma clang diagnostic ignored "-Wunknown-warning-option"
+#pragma clang diagnostic ignored "-Wno-unknown-pragmas"
 #pragma clang diagnostic ignored "-Wvla-cxx-extension"
 #endif
 

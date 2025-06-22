@@ -629,6 +629,11 @@ public:
         while (++ptr < end) total += *ptr;
         return total;
     }
+
+    void shiftLeft() {
+        if (1 < rows)
+            memmove(data, data + cols, sizeof(DataType) * (rows - 1) * cols);
+    }
 };
 
 /*******************************************************************************

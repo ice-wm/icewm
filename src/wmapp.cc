@@ -957,6 +957,16 @@ void YWMApp::setFocusMode(FocusModel mode) {
     WMConfig::setDefaultFocus(mode);
 }
 
+void YWMApp::launchHelp(const char* file) {
+    const char* args[] = { ICEHELPEXE, file, nullptr };
+    upath path;
+    if (strchr(file, '/') == nullptr) {
+        path = upath(ICEHELPIDX).parent() + file;
+        args[1] = path.string();
+    }
+    runProgram(ICEHELPEXE, args);
+}
+
 void YWMApp::actionPerformed(YAction action, unsigned int /*modifiers*/) {
     if (action == actionLogout) {
         doLogout(Logout);
@@ -1016,6 +1026,26 @@ void YWMApp::actionPerformed(YAction action, unsigned int /*modifiers*/) {
         setFocusMode(FocusCustom);
     } else if (action == actionRefresh) {
         refreshDesktop();
+    } else if (action == actionHelpManual) {
+        launchHelp(ICEHELPIDX);
+    } else if (action == actionHelpIcewm) {
+        launchHelp("icewm.1.html");
+    } else if (action == actionHelpIcewmbg) {
+        launchHelp("icewmbg.1.html");
+    } else if (action == actionHelpIcesound) {
+        launchHelp("icesound.1.html");
+    } else if (action == actionHelpIcesh) {
+        launchHelp("icesh.1.html");
+    } else if (action == actionHelpEnv) {
+        launchHelp("icewm-env.5.html");
+    } else if (action == actionHelpKeys) {
+        launchHelp("icewm-keys.5.html");
+    } else if (action == actionHelpStartup) {
+        launchHelp("icewm-startup.5.html");
+    } else if (action == actionHelpToolbar) {
+        launchHelp("icewm-toolbar.5.html");
+    } else if (action == actionHelpWinoptions) {
+        launchHelp("icewm-winoptions.5.html");
     } else if (action == actionAbout) {
         if (aboutDlg == nullptr)
             aboutDlg = new AboutDlg(this);

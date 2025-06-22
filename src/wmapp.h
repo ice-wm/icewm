@@ -140,6 +140,7 @@ private:
     virtual int handleError(XErrorEvent *xev);
     virtual void keyboardRemap();
     void runRestart(const char *path, char *const *args);
+    void launchHelp(const char* file);
 
     FocusModel focusMode;
     Window managerWindow;

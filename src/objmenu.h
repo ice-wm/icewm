@@ -33,6 +33,9 @@ public:
         return const_cast<ObjectMenu*>(this);
     }
 
+protected:
+    void discard();
+
 private:
     struct ObjectAction {
         DObject* object;

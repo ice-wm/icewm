@@ -158,10 +158,11 @@ CPUStatus::CPUStatus(YWindow* parent, CPUStatusHandler* handler,
     cpu(taskBarCPUSamples, IWM_STATES),
     fHandler(handler),
     fStat(stat),
+    fBackground(None),
     fTempColor(&clrCpuTemp)
 {
     cpu.clear();
-    for (int a(0); a < taskBarCPUSamples; a++) {
+    for (int a = 0; a < taskBarCPUSamples; a++) {
         cpu[a][IWM_IDLE] = 1;
     }
     memset(last_cpu, 0, sizeof(last_cpu));
@@ -177,18 +178,19 @@ CPUStatus::CPUStatus(YWindow* parent, CPUStatusHandler* handler,
     setSize(taskBarCPUSamples, taskBarGraphHeight);
     getStatus();
     updateStatus();
-    char buf[99];
-    snprintf(buf, 99, "CPU%d", cpuid);
+    char buf[48];
+    snprintf(buf, 48, "CPU%d", cpuid);
     setTitle(buf);
 }
 
 CPUStatus::~CPUStatus() {
+    if (fBackground) {
+        XFreePixmap(xapp->display(), fBackground);
+    }
 }
 
 bool CPUStatus::picture() {
     bool change = (hasPixmap() == false);
-
-    Graphics G(getPixmap(), width(), height(), depth());
 
 #if __linux__
     if (cpustatusShowAcpiTempInGraph) {
@@ -196,6 +198,29 @@ bool CPUStatus::picture() {
         statusUpdateCount = taskBarCPUSamples;
     }
 #endif
+
+    if (color[IWM_IDLE] == false) {
+        if (fGeometry != geometry()) {
+            if (fBackground) {
+                XFreePixmap(xapp->display(), fBackground);
+            }
+            fBackground = createPixmap();
+            fGeometry = geometry();
+
+            Graphics gfx(fBackground, width(), height(), depth());
+            ref<YImage> gradient(getGradient());
+            if (gradient != null)
+                gfx.drawImage(gradient,
+                              x(), y(), width(), height(), 0, 0);
+            else if (taskbackPixmap != null)
+                gfx.fillPixmap(taskbackPixmap,
+                               0, 0, width(), height(), x(), y());
+            else
+                gfx.clear();
+        }
+    }
+
+    Graphics G(getPixmap(), width(), height(), depth());
 
     if (change) {
         unchanged = 0;
@@ -221,15 +246,7 @@ void CPUStatus::fill(Graphics& g) {
         g.setColor(color[IWM_IDLE]);
         g.fillRect(0, 0, width(), height());
     } else {
-        ref<YImage> gradient(getGradient());
-
-        if (gradient != null)
-            g.drawImage(gradient,
-                        x(), y(), width(), height(), 0, 0);
-        else
-            if (taskbackPixmap != null)
-                g.fillPixmap(taskbackPixmap,
-                             0, 0, width(), height(), x(), y());
+        g.copyDrawable(fBackground, 0, 0, width(), height(), 0, 0);
     }
 }
 
@@ -243,7 +260,7 @@ void CPUStatus::draw(Graphics& g) {
     statusUpdateCount = 0;
 
     for (int i = first; i < limit; i++) {
-        unsigned long long
+        cpubytes
             user    = cpu[i][IWM_USER],
             nice    = cpu[i][IWM_NICE],
             sys     = cpu[i][IWM_SYS],
@@ -257,7 +274,7 @@ void CPUStatus::draw(Graphics& g) {
         int y = height() - 1;
 
         if (total > 1) { /* better show 0 % CPU than nonsense on startup */
-            unsigned long long
+            cpubytes
                 intrbar, sysbar, nicebar, userbar,
                 iowaitbar, softirqbar, stealbar, totalbar = 0,
                 round = total / h / 2;  /* compute also with rounding errs */
@@ -325,15 +342,7 @@ void CPUStatus::draw(Graphics& g) {
                 g.setColor(color[IWM_IDLE]);
                 g.drawLine(i, 0, i, y);
             } else {
-                ref<YImage> gradient(getGradient());
-
-                if (gradient != null)
-                    g.drawImage(gradient,
-                                 this->x() + i, this->y(), width(), y + 1, i, 0);
-                else
-                    if (taskbackPixmap != null)
-                        g.fillPixmap(taskbackPixmap,
-                                     i, 0, width(), y + 1, this->x() + i, this->y());
+                g.copyDrawable(fBackground, i, 0, width() - i, y + 1, i, 0);
             }
         }
     }
@@ -668,8 +677,7 @@ void CPUStatus::handleClick(const XButtonEvent &up, int count) {
 }
 
 void CPUStatus::updateStatus() {
-    for (int i(1); i < taskBarCPUSamples; i++)
-        cpu.copyTo(i, i - 1);
+    cpu.shiftLeft();
     getStatus();
     repaint();
 }
@@ -725,36 +733,25 @@ float CPUStatus::getCpuFreq(int cpu) {
 
 void CPUStatus::getStatusLinux() {
 #ifdef __linux__
-    char *p = fStat->cpustatus(fCpuID);
-    unsigned long long cur[IWM_STATES];
-    int s;
-
-    if (p == nullptr)
+    char* line = fStat->cpustatus(fCpuID);
+    if (line == nullptr)
         return;
 
-    s = sscanf(p, "%llu %llu %llu %llu %llu %llu %llu %llu",
-               &cur[IWM_USER],    &cur[IWM_NICE],
-               &cur[IWM_SYS],     &cur[IWM_IDLE],
-               &cur[IWM_IOWAIT],  &cur[IWM_INTR],
-               &cur[IWM_SOFTIRQ], &cur[IWM_STEAL]);
-    switch (s) {
-    case 4:
-        /* Linux 2.4 */
-        cur[IWM_INTR]    =
-        cur[IWM_IOWAIT]  =
-        cur[IWM_SOFTIRQ] = 0;
-        /* FALL THROUGH */
-    case 7:
-        /* Linux < 2.6.11 */
-        cur[IWM_STEAL] = 0;
-        /* FALL THROUGH */
-    case 8:
-        break;
-    default:
-        return;
+    cpubytes cur[IWM_STATES];
+    char* p = line;
+    for (int i = 0; i < IWM_STATES; ++i) {
+        cur[i] = 0;
+        while (*p == ' ' || *p == '\t')
+            ++p;
+        if (*p == '+')
+            ++p;
+        if ('0' <= *p && *p <= '9') {
+            cur[i] = (*p++ - '0');
+            while ('0' <= *p && *p <= '9')
+                cur[i] = (10 * cur[i]) + (*p++ - '0');
+        }
     }
-    int i = 0;
-    for (i = 0; i < IWM_STATES; i++) {
+    for (int i = 0; i < IWM_STATES; i++) {
         cpu[taskBarCPUSamples - 1][i] = cur[i] - last_cpu[i];
         last_cpu[i] = cur[i];
     }
@@ -795,14 +792,14 @@ void CPUStatus::getStatusPlatform() {
     }
 #endif
 
-    unsigned long long cur[IWM_STATES];
+    cpubytes cur[IWM_STATES];
     cur[IWM_USER]    = cp_time[CP_USER];
     cur[IWM_NICE]    = cp_time[CP_NICE];
     cur[IWM_SYS]     = cp_time[CP_SYS];
-    cur[IWM_INTR]    = cp_time[CP_INTR];
-    cur[IWM_IOWAIT]  = 0;
-    cur[IWM_SOFTIRQ] = 0;
     cur[IWM_IDLE]    = cp_time[CP_IDLE];
+    cur[IWM_IOWAIT]  = 0;
+    cur[IWM_INTR]    = cp_time[CP_INTR];
+    cur[IWM_SOFTIRQ] = 0;
     cur[IWM_STEAL]   = 0;
 
     for (int i = 0; i < IWM_STATES; i++) {

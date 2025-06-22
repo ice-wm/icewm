@@ -25,7 +25,7 @@ int remove_directory_tree(const char* path) {
 }
 
 static char* get_tar() {
-#if __OpenBSD__ || __NetBSD__ || __FreeBSD__
+#if __OpenBSD__ || __NetBSD__ || __FreeBSD__ || __sun__
     char* gtar = path_lookup("gtar");
     if (gtar) return gtar;
 #endif

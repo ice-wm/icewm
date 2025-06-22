@@ -8,85 +8,89 @@ msgstr ""
 "Project-Id-Version: icewm 3.6.0.193\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-21 21:59+0000\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
+"Language-Team: Serbian <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #: src/aapm.cc:113
 #, c-format
 msgid "Can't open the APM device %s"
-msgstr ""
+msgstr "Нисам успео да отворим уређај АПМ-а %s"
 
 #: src/aapm.cc:121 src/aapm.cc:139
 #, c-format
 msgid "Can't ioctl the APM device %s"
-msgstr ""
+msgstr "Нисам успео да управљам улазом/излазом напредном уређају напајања %s"
 
 #: src/aapm.cc:169
 #, c-format
 msgid "Unknown format used by APM device %s (%d)."
-msgstr ""
+msgstr "Употребљен је непознати облик уређаја АПМ-а %s (%d)."
 
 #: src/aapm.cc:201 src/aapm.cc:471 src/aapm.cc:630 src/aapm.cc:754
 msgid " - Power"
-msgstr ""
+msgstr " - Напајање"
 
 #: src/aapm.cc:203 src/aapm.cc:474 src/aapm.cc:633
 msgid "P"
-msgstr ""
+msgstr "Н"
 
 #: src/aapm.cc:207 src/aapm.cc:448 src/aapm.cc:613 src/aapm.cc:722
 msgid " - Charging"
-msgstr ""
+msgstr " - Пуњење"
 
 #: src/aapm.cc:209 src/aapm.cc:450 src/aapm.cc:615
 msgid "C"
-msgstr ""
+msgstr "П"
 
 #: src/aapm.cc:452
 msgid " - Full"
-msgstr ""
+msgstr " - Напуњено"
 
 #: src/aapm.cc:936
 #, c-format
 msgid "power:\t%s"
-msgstr ""
+msgstr "напајање:\t%s"
 
 #: src/aclock.cc:199
 msgid "CLOCK"
-msgstr ""
+msgstr "Часовник"
 
 #: src/aclock.cc:205
 msgid "Date"
-msgstr ""
+msgstr "Датум"
 
 #: src/aclock.cc:206 src/themes.cc:83
 msgid "Default"
-msgstr ""
+msgstr "Подразумевано"
 
 #: src/aclock.cc:207 src/acpustatus.cc:912 src/amailbox.cc:964
 #: src/amemstatus.cc:264
 msgid "_Disable"
-msgstr ""
+msgstr "_Онемогући"
 
 #: src/aclock.cc:208
 msgid "_UTC"
-msgstr ""
+msgstr "_УТЦ"
 
 #. TRANSLATORS: Please translate the string "C" into "Celsius Temperature" in your language.
 #. TRANSLATORS: Please make sure the translated string could be shown in your non-utf8 locale.
 #: src/acpustatus.cc:348
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
 #: src/acpustatus.cc:552
 #, c-format
 msgid "CPU %s Load: %3.2f %3.2f %3.2f, %u"
-msgstr ""
+msgstr "ЦПУ %s Оптерећење: %3.2f %3.2f %3.2f, %u"
 
 #: src/acpustatus.cc:558
 #, c-format
@@ -94,6 +98,8 @@ msgid ""
 "\n"
 "Ram (free): %5.3f (%.3f) G"
 msgstr ""
+"\n"
+"Рам (слободан): %5.3f (%.3f) Г"
 
 #: src/acpustatus.cc:563
 #, c-format
@@ -101,6 +107,8 @@ msgid ""
 "\n"
 "Swap (free): %.3f (%.3f) G"
 msgstr ""
+"\n"
+"Смена (слободно): %.3f (%.3f) Г"
 
 #: src/acpustatus.cc:571
 #, c-format
@@ -108,6 +116,8 @@ msgid ""
 "\n"
 "ACPI Temp: "
 msgstr ""
+"\n"
+"Топлота АЦПИ: "
 
 #: src/acpustatus.cc:592 src/acpustatus.cc:630
 #, c-format
@@ -115,14 +125,16 @@ msgid ""
 "\n"
 "CPU Freq: %.3fGHz"
 msgstr ""
+"\n"
+"Учесталост ЦПУ: %.3fГХз"
 
 #: src/acpustatus.cc:607 src/acpustatus.cc:907
 msgid "CPU"
-msgstr ""
+msgstr "ЦПУ"
 
 #: src/acpustatus.cc:607
 msgid "Load: "
-msgstr ""
+msgstr "Оптерећење: "
 
 #: src/acpustatus.cc:622
 #, c-format
@@ -130,174 +142,176 @@ msgid ""
 "\n"
 "Ram (user): %5.3f (%.3f) G"
 msgstr ""
+"\n"
+"Рам (кориснички): %5.3f (%.3f) Г"
 
 #: src/acpustatus.cc:908
 #, c-format
 msgid "CPU%d"
-msgstr ""
+msgstr "ЦПУ%d"
 
 #: src/acpustatus.cc:914
 msgid "_Combine"
-msgstr ""
+msgstr "_Упореди"
 
 #: src/acpustatus.cc:916
 msgid "_Separate"
-msgstr ""
+msgstr "_Раздвоји"
 
 #: src/akeyboard.cc:78 src/icesm.cc:468 src/wmmenu.cc:507
 #, c-format
 msgid "%s exited with status %d."
-msgstr ""
+msgstr "%s се је окончао са стањем %d."
 
 #: src/akeyboard.cc:81 src/icesm.cc:474 src/icesm.cc:628 src/wmmenu.cc:510
 #, c-format
 msgid "%s was killed by signal %d."
-msgstr ""
+msgstr "%s је убијен знаком %d."
 
 #: src/akeyboard.cc:94
 msgid "rules:"
-msgstr ""
+msgstr "правила:"
 
 #: src/akeyboard.cc:95
 msgid "model:"
-msgstr ""
+msgstr "модел:"
 
 #: src/akeyboard.cc:96
 msgid "layout:"
-msgstr ""
+msgstr "распоред:"
 
 #: src/akeyboard.cc:97
 msgid "options:"
-msgstr ""
+msgstr "могућности:"
 
 #: src/akeyboard.cc:153
 msgid "Keyboard"
-msgstr ""
+msgstr "Тастатура"
 
 #: src/amailbox.cc:64
 #, c-format
 msgid "Invalid mailbox protocol: \"%s\""
-msgstr ""
+msgstr "Невредећи правилник поштанске кутије: „%s“"
 
 #: src/amailbox.cc:66
 #, c-format
 msgid "Invalid mailbox path: \"%s\""
-msgstr ""
+msgstr "Невредећа путања поштанске кутије: „%s“"
 
 #: src/amailbox.cc:140
 #, c-format
 msgid "DNS name lookup failed for %s"
-msgstr ""
+msgstr "Нисам успео да пронађем име ДНС-а за %s"
 
 #: src/amailbox.cc:156
 #, c-format
 msgid "Invalid mailbox port: \"%s\""
-msgstr ""
+msgstr "Невредећи прикључник поштанске кутије: „%s“"
 
 #: src/amailbox.cc:314
 #, c-format
 msgid "Could not connect to %s: %s"
-msgstr ""
+msgstr "Нисам успео да се повежем са %s: %s"
 
 #: src/amailbox.cc:334
 #, c-format
 msgid "Failed to find %s command"
-msgstr ""
+msgstr "Нисам успео да пронађем наредбу %s"
 
 #: src/amailbox.cc:363 src/wmmenu.cc:475 src/wmmenu.cc:492 src/yapp.cc:436
 #, c-format
 msgid "Failed to execute %s"
-msgstr ""
+msgstr "Нисам успео да извршим %s"
 
 #: src/amailbox.cc:447
 #, c-format
 msgid "Write to socket failed: %s"
-msgstr ""
+msgstr "Нисам успео да упишем у утичницу: %s"
 
 #: src/amailbox.cc:694
 #, c-format
 msgid "Using MailBox \"%s\"\n"
-msgstr ""
+msgstr "Користим поштанску кутију „%s“\n"
 
 #: src/amailbox.cc:801
 msgid "Suspended"
-msgstr ""
+msgstr "Обустављено"
 
 #: src/amailbox.cc:805
 msgid "Error checking mailbox."
-msgstr ""
+msgstr "Десила се грешка провере поштанске кутије."
 
 #: src/amailbox.cc:812
 #, c-format
 msgid "%ld mail message, %ld unread."
-msgstr ""
+msgstr "%ld порука е-поште, %ld непрочитаних."
 
 #: src/amailbox.cc:813
 #, c-format
 msgid "%ld mail messages, %ld unread."
-msgstr ""
+msgstr "%ld порука е-поште, %ld непрочитаних."
 
 #: src/amailbox.cc:819
 #, c-format
 msgid "%ld mail message."
-msgstr ""
+msgstr "%ld порука е-поште."
 
 #: src/amailbox.cc:820
 #, c-format
 msgid "%ld mail messages."
-msgstr ""
+msgstr "%ld порука е-поште."
 
 #: src/amailbox.cc:961
 msgid "MAIL"
-msgstr ""
+msgstr "ПОШТА"
 
 #: src/amailbox.cc:963
 msgid "_Check"
-msgstr ""
+msgstr "_Провери"
 
 #: src/amailbox.cc:965
 msgid "_Suspend"
-msgstr ""
+msgstr "_Обустави"
 
 #: src/amemstatus.cc:144
 msgid "GB"
-msgstr ""
+msgstr "ГБ"
 
 #: src/amemstatus.cc:148
 msgid "MB"
-msgstr ""
+msgstr "МБ"
 
 #: src/amemstatus.cc:152
 msgid "kB"
-msgstr ""
+msgstr "кБ"
 
 #: src/amemstatus.cc:156
 msgid "bytes"
-msgstr ""
+msgstr "бајта"
 
 #: src/amemstatus.cc:176
 msgid "Memory Total: "
-msgstr ""
+msgstr "Укупно памети: "
 
 #: src/amemstatus.cc:177
 msgid "Free: "
-msgstr ""
+msgstr "Слободно: "
 
 #: src/amemstatus.cc:178
 msgid "Cached: "
-msgstr ""
+msgstr "Захваћено: "
 
 #: src/amemstatus.cc:179
 msgid "Buffers: "
-msgstr ""
+msgstr "Спремника: "
 
 #: src/amemstatus.cc:180
 msgid "User: "
-msgstr ""
+msgstr "Корисник: "
 
 #: src/amemstatus.cc:262
 msgid "MEM"
-msgstr ""
+msgstr "ПАМ"
 
 #: src/apppstatus.cc:268
 #, c-format
@@ -308,26 +322,31 @@ msgid ""
 "  Transferred (in/out):\t%lli %s/%lli %s\n"
 "  Online time:\t%ld:%02ld:%02ld%s%s"
 msgstr ""
+"Сучеље %s:\n"
+"  Тренутна учесталост (у/ван):\t%li %s/%li %s\n"
+"  Тренутни просек (у/ван):\t%lli %s/%lli %s\n"
+"  Пренесено (у/ван):\t%lli %s/%lli %s\n"
+"  Време на мрежи:\t%ld:%02ld:%02ld%s%s"
 
 #: src/apppstatus.cc:284
 msgid "disconnected"
-msgstr ""
+msgstr "неповезано"
 
 #: src/apppstatus.cc:284
 msgid "down"
-msgstr ""
+msgstr "доле"
 
 #: src/apppstatus.cc:705
 msgid "NET"
-msgstr ""
+msgstr "МРЖ"
 
 #: src/aworkspaces.cc:685 src/wmstatus.cc:204
 msgid "Workspace: "
-msgstr ""
+msgstr "Радни простор: "
 
 #: src/decorate.cc:132
 msgid "Tabs"
-msgstr ""
+msgstr "Листови"
 
 #: src/fdomenu.cc:911
 msgid ""
@@ -363,6 +382,38 @@ msgid ""
 "This program also listens to environment variables defined by\n"
 "the XDG Base Directory Specification:\n"
 msgstr ""
+"Употреба: icewm-menu-fdo [МОГУЋНОСТИ] [ИМЕДАТОТЕКЕ]\n"
+"МОГУЋНОСТИ:\n"
+"-g, generic\t\tОбухвати ОпштеИме у родитељству програма\n"
+"-o, --output=ДАТОТЕКА\tИспиши излаз у ДАТОТЕКУ\n"
+"-t, --terminal=ИМЕ\tКористи ИМЕ за терминал који има „-e“\n"
+"-s, --no-lone-app\tПремести везујуће чиниоце у родитељски изборник\n"
+"-S, --no-lone-hint\tКао -s али надовезује изворне подизборнике\n"
+"-d, --deadline-all\tЗаустави учитавање података програма након Н мс\n"
+"-D, --deadkube-all=N\tЗаустави сва учитавања и испиши шта имамо до сада\n"
+"-m, --match=ПУТАЊА\t\tПриказуј само програме са насловом који садржи ПУТАЊУ\n"
+"-M, --imatch=ПУТАЊА\tКао --match али занемарује величину слова\n"
+"-L, --limit-max-len=N\tОпсеци наслове програма на дужину Н, додај ...\n"
+"--seps  \tИсписуј раздвојник пре и након садржаја\n"
+"--sep-before\tИсписуј раздвојник пре садржаја\n"
+"--sep-after\tИсписуј раздвојник само након садржаја\n"
+"--no-sep-others\tЗаоставштина, нема учинка\n"
+"--no-sub-cats\tНема додатних подврста, само један ниво изборника\n"
+"--flat\t\tПриказује све програме у једном слоју са наговештавањем врста\n"
+"--flat-sep=STR\tНиска раздвајања врста коришћених у равном приказу "
+"(подразумевано: „/“)\n"
+"--match-sec\tПримењуј --match или --imatch у програмима и одсечцима\n"
+"--match-osec\\Примењуј --match или --imatch само у одсечцима\n"
+"--orig-comment\tИсписуј извор датотеке .десктоп као напомену\n"
+"-C, --copying\tИспиши податке о правима умножавања\n"
+"-V, --version\tИсписује овај заслон упутства и излази\n"
+"-h, --help\tИсписује овај заслон помоћи и излази.\n"
+"\n"
+"ИМЕДАТОТЕКЕ\tБило која датотека .десктоп за покретање њеног програма "
+"наредбом Exec\n"
+"\n"
+"Овај програм такође слуша променљиве окружења одређене\n"
+"уредбама основних упутница ИксДГ:\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
 #: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
@@ -370,46 +421,46 @@ msgstr ""
 #: src/fdospecgen.h:614 src/fdospecgen.h:830 src/fdospecgen.h:884
 #: src/fdospecgen.h:1090
 msgid "Audio"
-msgstr ""
+msgstr "Звук"
 
 #: src/fdomenu.cc:1101
 msgid "Zarathustra"
-msgstr ""
+msgstr "Заратрустра"
 
 #: src/fdomenu.cc:1201
 msgid "System too slow! Failed to load menu content!"
-msgstr ""
+msgstr "Склоп је превише спор! Нисам успео да учитам садржај изборника!"
 
 #: src/fdomenu.cc:1204
 msgid "Please push HERE and retry after some seconds."
-msgstr ""
+msgstr "Молим, притисните ОВДЕ и покушајте након неколико секунди."
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to manage printers
 #: src/fdospecgen.h:24
 msgid "Printing"
-msgstr ""
+msgstr "Тискање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Settings applications
 #: src/fdospecgen.h:26 src/fdospecgen.h:30 src/fdospecgen.h:176
 #: src/fdospecgen.h:434 src/fdospecgen.h:620 src/fdospecgen.h:800
 #: src/fdospecgen.h:938 src/fdospecgen.h:1126
 msgid "Settings"
-msgstr ""
+msgstr "Поставке"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to manage hardware components, like sound cards, video cards or printers
 #: src/fdospecgen.h:28 src/fdospecgen.h:618
 msgid "HardwareSettings"
-msgstr ""
+msgstr "ПоставкеМекотворина"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to manage compressed data/archives
 #: src/fdospecgen.h:38
 msgid "Compression"
-msgstr ""
+msgstr "Сажимање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to archive/backup data
 #: src/fdospecgen.h:40 src/fdospecgen.h:216
 msgid "Archiving"
-msgstr ""
+msgstr "Складиштење"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Small utility application, "Accessories"
 #: src/fdospecgen.h:42 src/fdospecgen.h:50 src/fdospecgen.h:182
@@ -418,39 +469,39 @@ msgstr ""
 #: src/fdospecgen.h:1016 src/fdospecgen.h:1028 src/fdospecgen.h:1034
 #: src/fdospecgen.h:1134
 msgid "Utility"
-msgstr ""
+msgstr "Прибор"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A dictionary
 #: src/fdospecgen.h:46 src/fdospecgen.h:444
 msgid "Dictionary"
-msgstr ""
+msgstr "Речник"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A text tool utility
 #: src/fdospecgen.h:48 src/fdospecgen.h:1032
 msgid "TextTools"
-msgstr ""
+msgstr "ПисаћиПрибор"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A file manager
 #: src/fdospecgen.h:54
 msgid "FileManager"
-msgstr ""
+msgstr "УправникДатотека"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A file tool utility
 #: src/fdospecgen.h:56 src/fdospecgen.h:528 src/fdospecgen.h:534
 msgid "FileTools"
-msgstr ""
+msgstr "ПриборДатототека"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: System application, "System Tools" such as say a log viewer or network monitor
 #: src/fdospecgen.h:58 src/fdospecgen.h:506 src/fdospecgen.h:536
 #: src/fdospecgen.h:548 src/fdospecgen.h:758 src/fdospecgen.h:944
 #: src/fdospecgen.h:1022 src/fdospecgen.h:1130
 msgid "System"
-msgstr ""
+msgstr "Склоп"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An app related to MIDI
 #: src/fdospecgen.h:62
 msgid "Midi"
-msgstr ""
+msgstr "Миди"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application for presenting, creating, or processing multimedia (audio/video)
 #: src/fdospecgen.h:66 src/fdospecgen.h:74 src/fdospecgen.h:130
@@ -458,23 +509,23 @@ msgstr ""
 #: src/fdospecgen.h:422 src/fdospecgen.h:452 src/fdospecgen.h:770
 #: src/fdospecgen.h:842 src/fdospecgen.h:896 src/fdospecgen.h:1094
 msgid "AudioVideo"
-msgstr ""
+msgstr "ЗвукВидео"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Just a mixer
 #: src/fdospecgen.h:70
 msgid "Mixer"
-msgstr ""
+msgstr "Мешач"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Numerical analysis software
 #: src/fdospecgen.h:78 src/fdospecgen.h:86
 msgid "NumericalAnalysis"
-msgstr ""
+msgstr "БројачаноРашчлањивање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Math software
 #: src/fdospecgen.h:80 src/fdospecgen.h:88 src/fdospecgen.h:732
 #: src/fdospecgen.h:738
 msgid "Math"
-msgstr ""
+msgstr "Математика"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Educational software
 #: src/fdospecgen.h:82 src/fdospecgen.h:106 src/fdospecgen.h:224
@@ -488,7 +539,7 @@ msgstr ""
 #: src/fdospecgen.h:818 src/fdospecgen.h:914 src/fdospecgen.h:962
 #: src/fdospecgen.h:980 src/fdospecgen.h:1102
 msgid "Education"
-msgstr ""
+msgstr "Образовање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Scientific software
 #: src/fdospecgen.h:90 src/fdospecgen.h:114 src/fdospecgen.h:230
@@ -502,17 +553,17 @@ msgstr ""
 #: src/fdospecgen.h:920 src/fdospecgen.h:968 src/fdospecgen.h:986
 #: src/fdospecgen.h:1122
 msgid "Science"
-msgstr ""
+msgstr "Наука"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Optical character recognition application
 #: src/fdospecgen.h:94
 msgid "OCR"
-msgstr ""
+msgstr "ОЦР"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Tool to scan a file/text
 #: src/fdospecgen.h:96 src/fdospecgen.h:930
 msgid "Scanning"
-msgstr ""
+msgstr "Скенирање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application for viewing, creating, or processing graphics
 #: src/fdospecgen.h:98 src/fdospecgen.h:122 src/fdospecgen.h:154
@@ -520,69 +571,69 @@ msgstr ""
 #: src/fdospecgen.h:872 src/fdospecgen.h:932 src/fdospecgen.h:1052
 #: src/fdospecgen.h:1110
 msgid "Graphics"
-msgstr ""
+msgstr "Цртање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Parallel computing software
 #: src/fdospecgen.h:102 src/fdospecgen.h:110
 msgid "ParallelComputing"
-msgstr ""
+msgstr "УпоредноРачунарство"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Computer Science software
 #: src/fdospecgen.h:104 src/fdospecgen.h:112 src/fdospecgen.h:354
 #: src/fdospecgen.h:360
 msgid "ComputerScience"
-msgstr ""
+msgstr "РачунарскаНаука"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application for viewing, creating, or processing raster (bitmap) graphics
 #: src/fdospecgen.h:118
 msgid "RasterGraphics"
-msgstr ""
+msgstr "РастерскоЦртање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: 2D based graphical application
 #: src/fdospecgen.h:120 src/fdospecgen.h:152 src/fdospecgen.h:162
 msgid "2DGraphics"
-msgstr ""
+msgstr "Цртање2Д"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A sequencer
 #: src/fdospecgen.h:126
 msgid "Sequencer"
-msgstr ""
+msgstr "Секвенцер"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A TV application
 #: src/fdospecgen.h:134
 msgid "TV"
-msgstr ""
+msgstr "ТВ"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A video application
 #: src/fdospecgen.h:136 src/fdospecgen.h:266 src/fdospecgen.h:836
 #: src/fdospecgen.h:890 src/fdospecgen.h:1138
 msgid "Video"
-msgstr ""
+msgstr "Снимци"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tuner
 #: src/fdospecgen.h:142
 msgid "Tuner"
-msgstr ""
+msgstr "Штимер"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application for viewing, creating, or processing vector graphics
 #: src/fdospecgen.h:150
 msgid "VectorGraphics"
-msgstr ""
+msgstr "ВекторскоЦртање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application for viewing, creating, or processing 3-D graphics
 #: src/fdospecgen.h:168
 msgid "3DGraphics"
-msgstr ""
+msgstr "Цртање3Д"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Accessibility
 #: src/fdospecgen.h:174 src/fdospecgen.h:180
 msgid "Accessibility"
-msgstr ""
+msgstr "Приступачност"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An action game
 #: src/fdospecgen.h:186
 msgid "ActionGame"
-msgstr ""
+msgstr "ИгреЈачине"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A game
 #: src/fdospecgen.h:188 src/fdospecgen.h:200 src/fdospecgen.h:212
@@ -591,67 +642,67 @@ msgstr ""
 #: src/fdospecgen.h:926 src/fdospecgen.h:950 src/fdospecgen.h:956
 #: src/fdospecgen.h:992 src/fdospecgen.h:1004 src/fdospecgen.h:1106
 msgid "Game"
-msgstr ""
+msgstr "Игра"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application handles adult or explicit material
 #: src/fdospecgen.h:192
 msgid "Adult"
-msgstr ""
+msgstr "Одрасли"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Adventure style game
 #: src/fdospecgen.h:198
 msgid "AdventureGame"
-msgstr ""
+msgstr "ПустоловнеИгре"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A simple amusement
 #: src/fdospecgen.h:204
 msgid "Amusement"
-msgstr ""
+msgstr "Забава"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Arcade style game
 #: src/fdospecgen.h:210
 msgid "ArcadeGame"
-msgstr ""
+msgstr "ИграПрепрека"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Software to teach arts
 #: src/fdospecgen.h:222 src/fdospecgen.h:228
 msgid "Art"
-msgstr ""
+msgstr "Уметност"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Artificial Intelligence software
 #: src/fdospecgen.h:234 src/fdospecgen.h:240
 msgid "Artificialtelligence"
-msgstr ""
+msgstr "ВештачкаПамет"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Astronomy software
 #: src/fdospecgen.h:246 src/fdospecgen.h:252
 msgid "Astronomy"
-msgstr ""
+msgstr "Астрономија"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to edit audio/video files
 #: src/fdospecgen.h:258 src/fdospecgen.h:264 src/fdospecgen.h:270
 msgid "AudioVideoEditing"
-msgstr ""
+msgstr "УређивањеЗвукаВидеа"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Biology software
 #: src/fdospecgen.h:276 src/fdospecgen.h:282
 msgid "Biology"
-msgstr ""
+msgstr "Биологија"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Falling blocks game
 #: src/fdospecgen.h:288
 msgid "BlocksGame"
-msgstr ""
+msgstr "ИграСлагања"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A board game
 #: src/fdospecgen.h:294
 msgid "BoardGame"
-msgstr ""
+msgstr "ИгреНаТабли"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to build applications
 #: src/fdospecgen.h:300
 msgid "Building"
-msgstr ""
+msgstr "Слагалице"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An application for development
 #: src/fdospecgen.h:302 src/fdospecgen.h:416 src/fdospecgen.h:428
@@ -659,17 +710,17 @@ msgstr ""
 #: src/fdospecgen.h:866 src/fdospecgen.h:908 src/fdospecgen.h:1040
 #: src/fdospecgen.h:1076 src/fdospecgen.h:1098
 msgid "Development"
-msgstr ""
+msgstr "Развој"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A calculator
 #: src/fdospecgen.h:306
 msgid "Calculator"
-msgstr ""
+msgstr "Рачунар"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Calendar application
 #: src/fdospecgen.h:312
 msgid "Calendar"
-msgstr ""
+msgstr "Календар"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An office type application
 #: src/fdospecgen.h:314 src/fdospecgen.h:326 src/fdospecgen.h:386
@@ -679,22 +730,22 @@ msgstr ""
 #: src/fdospecgen.h:878 src/fdospecgen.h:998 src/fdospecgen.h:1058
 #: src/fdospecgen.h:1082 src/fdospecgen.h:1118
 msgid "Office"
-msgstr ""
+msgstr "Уред"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A card game
 #: src/fdospecgen.h:318
 msgid "CardGame"
-msgstr ""
+msgstr "ИгреКартама"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Chart application
 #: src/fdospecgen.h:324
 msgid "Chart"
-msgstr ""
+msgstr "Таблица"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A chat client
 #: src/fdospecgen.h:330
 msgid "Chat"
-msgstr ""
+msgstr "Ћаскање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Network application such as a web browser
 #: src/fdospecgen.h:332 src/fdospecgen.h:440 src/fdospecgen.h:500
@@ -704,563 +755,563 @@ msgstr ""
 #: src/fdospecgen.h:1010 src/fdospecgen.h:1046 src/fdospecgen.h:1064
 #: src/fdospecgen.h:1070 src/fdospecgen.h:1114
 msgid "Network"
-msgstr ""
+msgstr "Мрежа"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Chemistry software
 #: src/fdospecgen.h:336 src/fdospecgen.h:342
 msgid "Chemistry"
-msgstr ""
+msgstr "Хемија"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A clock application/applet
 #: src/fdospecgen.h:348
 msgid "Clock"
-msgstr ""
+msgstr "Часовник"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application that only works inside a terminal (text-based or command line application)
 #: src/fdospecgen.h:366
 msgid "ConsoleOnly"
-msgstr ""
+msgstr "СамоКонзола"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside:  
 #: src/fdospecgen.h:372 src/fdospecgen.h:378
 msgid "Construction"
-msgstr ""
+msgstr "Изградња"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: E.g. an address book
 #: src/fdospecgen.h:384
 msgid "ContactManagement"
-msgstr ""
+msgstr "УправљањеПознаницима"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Important application, core to the desktop such as a file manager or a help browser
 #: src/fdospecgen.h:390
 msgid "Core"
-msgstr ""
+msgstr "Језгро"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Data visualization software
 #: src/fdospecgen.h:396 src/fdospecgen.h:402
 msgid "DataVisualization"
-msgstr ""
+msgstr "Приказивање података"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to manage a database
 #: src/fdospecgen.h:408 src/fdospecgen.h:414 src/fdospecgen.h:420
 msgid "Database"
-msgstr ""
+msgstr "БазаПодатака"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to debug applications
 #: src/fdospecgen.h:426
 msgid "Debugger"
-msgstr ""
+msgstr "ИсправљачГрешака"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Configuration tool for the GUI
 #: src/fdospecgen.h:432
 msgid "DesktopSettings"
-msgstr ""
+msgstr "ПоставкеРаднеПоврши"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A dial-up program
 #: src/fdospecgen.h:438
 msgid "Dialup"
-msgstr ""
+msgstr "Откуцавање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to burn a disc
 #: src/fdospecgen.h:450
 msgid "DiscBurning"
-msgstr ""
+msgstr "РезањеДискова"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Help or documentation
 #: src/fdospecgen.h:456
 msgid "Documentation"
-msgstr ""
+msgstr "Документација"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Economy software
 #: src/fdospecgen.h:462 src/fdospecgen.h:468
 msgid "Economy"
-msgstr ""
+msgstr "Економија"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Electricity software
 #: src/fdospecgen.h:474 src/fdospecgen.h:480
 msgid "Electricity"
-msgstr ""
+msgstr "Струја"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Electronics software, e.g. a circuit designer
 #: src/fdospecgen.h:486
 msgid "Electronics"
-msgstr ""
+msgstr "Електроника"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Email application
 #: src/fdospecgen.h:492 src/fdospecgen.h:498
 msgid "Email"
-msgstr ""
+msgstr "Е-пошта"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Emulator of another platform, such as a DOS emulator
 #: src/fdospecgen.h:504 src/fdospecgen.h:510
 msgid "Emulator"
-msgstr ""
+msgstr "Опонашач"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Engineering software, e.g. CAD programs
 #: src/fdospecgen.h:516
 msgid "Engineering"
-msgstr ""
+msgstr "Инжењерско"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: RSS, podcast and other subscription based contents
 #: src/fdospecgen.h:522
 msgid "Feed"
-msgstr ""
+msgstr "Довод"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Tools like FTP or P2P programs
 #: src/fdospecgen.h:540
 msgid "FileTransfer"
-msgstr ""
+msgstr "ПреносДатотека"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A file system tool
 #: src/fdospecgen.h:546
 msgid "Filesystem"
-msgstr ""
+msgstr "СклопДатотека"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to manage your finance
 #: src/fdospecgen.h:552
 msgid "Finance"
-msgstr ""
+msgstr "Новац"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A flowchart application
 #: src/fdospecgen.h:558
 msgid "FlowChart"
-msgstr ""
+msgstr "КартаТока"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A GUI designer application
 #: src/fdospecgen.h:564
 msgid "GUIDesigner"
-msgstr ""
+msgstr "ОсмишљачКорисничкогСучеља"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Geography software
 #: src/fdospecgen.h:570 src/fdospecgen.h:576
 msgid "Geography"
-msgstr ""
+msgstr "Географија"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Geology software
 #: src/fdospecgen.h:582 src/fdospecgen.h:588
 msgid "Geology"
-msgstr ""
+msgstr "Геологија"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Geoscience software, GIS
 #: src/fdospecgen.h:594 src/fdospecgen.h:600
 msgid "Geoscience"
-msgstr ""
+msgstr "НаукаоЗемљи"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: HAM radio software
 #: src/fdospecgen.h:606 src/fdospecgen.h:612
 msgid "HamRadio"
-msgstr ""
+msgstr "ХамРадио"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: History software
 #: src/fdospecgen.h:624 src/fdospecgen.h:630
 msgid "History"
-msgstr ""
+msgstr "Повест"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Software for philosophy, psychology and other humanities
 #: src/fdospecgen.h:636 src/fdospecgen.h:642
 msgid "Humanities"
-msgstr ""
+msgstr "Човечност"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: IDE application
 #: src/fdospecgen.h:648
 msgid "IDE"
-msgstr ""
+msgstr "ИДЕ"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An IRC client
 #: src/fdospecgen.h:654
 msgid "IRCClient"
-msgstr ""
+msgstr "СтранкаИРЦ-а"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Image Processing software
 #: src/fdospecgen.h:660 src/fdospecgen.h:666
 msgid "ImageProcessing"
-msgstr ""
+msgstr "ОбрадаСлика"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An instant messaging client
 #: src/fdospecgen.h:672
 msgid "InstantMessaging"
-msgstr ""
+msgstr "БрзеПоруке"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A game for kids
 #: src/fdospecgen.h:678
 msgid "KidsGame"
-msgstr ""
+msgstr "ДечјеИгре"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Software to learn foreign languages
 #: src/fdospecgen.h:684 src/fdospecgen.h:690
 msgid "Languages"
-msgstr ""
+msgstr "Језици"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Literature software
 #: src/fdospecgen.h:696 src/fdospecgen.h:702
 msgid "Literature"
-msgstr ""
+msgstr "Штиво"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Logic games like puzzles, etc
 #: src/fdospecgen.h:708
 msgid "LogicGame"
-msgstr ""
+msgstr "ИграРазума"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Software for viewing maps, navigation, mapping, GPS
 #: src/fdospecgen.h:714 src/fdospecgen.h:720 src/fdospecgen.h:726
 msgid "Maps"
-msgstr ""
+msgstr "Карте"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Medical software
 #: src/fdospecgen.h:744 src/fdospecgen.h:750
 msgid "MedicalSoftware"
-msgstr ""
+msgstr "ПрограмиЛечења"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Monitor application/applet that monitors some resource or activity
 #: src/fdospecgen.h:756 src/fdospecgen.h:762
 msgid "Monitor"
-msgstr ""
+msgstr "Надгледање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Musical software
 #: src/fdospecgen.h:768 src/fdospecgen.h:774
 msgid "Music"
-msgstr ""
+msgstr "Музика"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A news reader or a news ticker
 #: src/fdospecgen.h:780
 msgid "News"
-msgstr ""
+msgstr "Вести"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A P2P program
 #: src/fdospecgen.h:786
 msgid "P2P"
-msgstr ""
+msgstr "П2П"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Tool to manage your PDA
 #: src/fdospecgen.h:792
 msgid "PDA"
-msgstr ""
+msgstr "ПДА"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A package manager application
 #: src/fdospecgen.h:798
 msgid "PackageManager"
-msgstr ""
+msgstr "УправникПакета"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Camera tools, etc.
 #: src/fdospecgen.h:804 src/fdospecgen.h:810
 msgid "Photography"
-msgstr ""
+msgstr "Сликање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Physics software
 #: src/fdospecgen.h:816 src/fdospecgen.h:822
 msgid "Physics"
-msgstr ""
+msgstr "Физика"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to play audio/video files
 #: src/fdospecgen.h:828 src/fdospecgen.h:834 src/fdospecgen.h:840
 msgid "Player"
-msgstr ""
+msgstr "Играч"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Presentation software
 #: src/fdospecgen.h:846
 msgid "Presentation"
-msgstr ""
+msgstr "Излагање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A profiling tool
 #: src/fdospecgen.h:852
 msgid "Profiling"
-msgstr ""
+msgstr "Попуњавање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Project management application
 #: src/fdospecgen.h:858 src/fdospecgen.h:864
 msgid "ProjectManagement"
-msgstr ""
+msgstr "УправљањеЗадатком"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Desktop Publishing applications and Color Management tools
 #: src/fdospecgen.h:870 src/fdospecgen.h:876
 msgid "Publishing"
-msgstr ""
+msgstr "Издаваштво"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application to record audio/video files
 #: src/fdospecgen.h:882 src/fdospecgen.h:888 src/fdospecgen.h:894
 msgid "Recorder"
-msgstr ""
+msgstr "Снимач"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to remotely manage your PC
 #: src/fdospecgen.h:900
 msgid "RemoteAccess"
-msgstr ""
+msgstr "ДаљинскиПриступ"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Applications like cvs or subversion
 #: src/fdospecgen.h:906
 msgid "RevisionControl"
-msgstr ""
+msgstr "НадзорИздања"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Robotics software
 #: src/fdospecgen.h:912 src/fdospecgen.h:918
 msgid "Robotics"
-msgstr ""
+msgstr "Роботика"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A role playing game
 #: src/fdospecgen.h:924
 msgid "RolePlaying"
-msgstr ""
+msgstr "ИграњеУлога"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A security tool
 #: src/fdospecgen.h:936 src/fdospecgen.h:942
 msgid "Security"
-msgstr ""
+msgstr "Безбедност"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A shooter game
 #: src/fdospecgen.h:948
 msgid "Shooter"
-msgstr ""
+msgstr "Пуцачина"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A simulation game
 #: src/fdospecgen.h:954
 msgid "Simulation"
-msgstr ""
+msgstr "Опонашање"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Religious and spiritual software, theology
 #: src/fdospecgen.h:960 src/fdospecgen.h:966 src/fdospecgen.h:972
 msgid "Spirituality"
-msgstr ""
+msgstr "Духовност"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Sports software
 #: src/fdospecgen.h:978 src/fdospecgen.h:984
 msgid "Sports"
-msgstr ""
+msgstr "Спортови"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A sports game
 #: src/fdospecgen.h:990
 msgid "SportsGame"
-msgstr ""
+msgstr "СпортскеИгре"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A spreadsheet
 #: src/fdospecgen.h:996
 msgid "Spreadsheet"
-msgstr ""
+msgstr "Табелица"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A strategy game
 #: src/fdospecgen.h:1002
 msgid "StrategyGame"
-msgstr ""
+msgstr "ИграСтратегије"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Telephony via PC
 #: src/fdospecgen.h:1008
 msgid "Telephony"
-msgstr ""
+msgstr "Телефонија"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Telephony tools, to dial a number, manage PBX, ...
 #: src/fdospecgen.h:1014
 msgid "TelephonyTools"
-msgstr ""
+msgstr "ПроборТелефоније"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A terminal emulator application
 #: src/fdospecgen.h:1020
 msgid "TerminalEmulator"
-msgstr ""
+msgstr "ОпонашачТерминала"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A text editor
 #: src/fdospecgen.h:1026
 msgid "TextEditor"
-msgstr ""
+msgstr "УредникПисма"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A translation tool
 #: src/fdospecgen.h:1038
 msgid "Translation"
-msgstr ""
+msgstr "Превод"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Video Conference software
 #: src/fdospecgen.h:1044
 msgid "VideoConference"
-msgstr ""
+msgstr "ПозивањеВидеом"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Tool to view e.g. a graphic or pdf file
 #: src/fdospecgen.h:1050 src/fdospecgen.h:1056
 msgid "Viewer"
-msgstr ""
+msgstr "Разгледник"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A web browser
 #: src/fdospecgen.h:1062
 msgid "WebBrowser"
-msgstr ""
+msgstr "МрежниПрегледник"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool for web developers
 #: src/fdospecgen.h:1068 src/fdospecgen.h:1074
 msgid "WebDevelopment"
-msgstr ""
+msgstr "РазвојВеба"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A word processor
 #: src/fdospecgen.h:1080
 msgid "WordProcessor"
-msgstr ""
+msgstr "ОбрадаПисма"
 
 #: src/icehelp.cc:1348
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: src/icehelp.cc:1348
 msgid "Alt+Left"
-msgstr ""
+msgstr "Алт+Лево"
 
 #: src/icehelp.cc:1350
 msgid "Forward"
-msgstr ""
+msgstr "Напред"
 
 #: src/icehelp.cc:1350
 msgid "Alt+Right"
-msgstr ""
+msgstr "Алт+Десно"
 
 #: src/icehelp.cc:1353
 msgid "Previous"
-msgstr ""
+msgstr "Претходно"
 
 #: src/icehelp.cc:1354
 msgid "Next"
-msgstr ""
+msgstr "Следеће"
 
 #: src/icehelp.cc:1356
 msgid "Contents"
-msgstr ""
+msgstr "Садржај"
 
 #: src/icehelp.cc:1357
 msgid "Index"
-msgstr ""
+msgstr "Садржина"
 
 #: src/icehelp.cc:1359
 msgid "Find..."
-msgstr ""
+msgstr "Нађи..."
 
 #: src/icehelp.cc:1359
 msgid "Ctrl+F"
-msgstr ""
+msgstr "Ктрл+Ф"
 
 #: src/icehelp.cc:1360
 msgid "Find next"
-msgstr ""
+msgstr "Нађи следеће"
 
 #: src/icehelp.cc:1360
 msgid "F3"
-msgstr ""
+msgstr "Ф3"
 
 #: src/icehelp.cc:1362
 msgid "Open in Browser"
-msgstr ""
+msgstr "Отвори у прегледнику"
 
 #: src/icehelp.cc:1362
 msgid "Ctrl+B"
-msgstr ""
+msgstr "Ктрл+Б"
 
 #: src/icehelp.cc:1364
 msgid "Reload"
-msgstr ""
+msgstr "Поново учитај"
 
 #: src/icehelp.cc:1364 src/icesame.cc:60
 msgid "Ctrl+R"
-msgstr ""
+msgstr "Ктрл+Р"
 
 #: src/icehelp.cc:1365 src/icesame.cc:62 src/iceview.cc:63 src/wmbutton.cc:147
 msgid "Close"
-msgstr ""
+msgstr "Затвори"
 
 #: src/icehelp.cc:1365 src/icesame.cc:62 src/iceview.cc:63
 msgid "Ctrl+Q"
-msgstr ""
+msgstr "Ктрл+Ку"
 
 #: src/icehelp.cc:1370
 msgid "Icewm(1)"
-msgstr ""
+msgstr "Icewm(1)"
 
 #: src/icehelp.cc:1370
 msgid "Ctrl+I"
-msgstr ""
+msgstr "Ктрл+Л"
 
 #: src/icehelp.cc:1372
 msgid "Icewmbg(1)"
-msgstr ""
+msgstr "Icewmbg(1)"
 
 #: src/icehelp.cc:1374
 msgid "Icesound(1)"
-msgstr ""
+msgstr "Icesound(1)"
 
 #: src/icehelp.cc:1376
 msgid "FAQ"
-msgstr ""
+msgstr "ЧПП"
 
 #: src/icehelp.cc:1378
 msgid "Manual"
-msgstr ""
+msgstr "Приручник"
 
 #: src/icehelp.cc:1378
 msgid "Ctrl+M"
-msgstr ""
+msgstr "Ктрл+М"
 
 #: src/icehelp.cc:1380
 msgid "Support"
-msgstr ""
+msgstr "Подршка"
 
 #: src/icehelp.cc:1382
 msgid "Theme Howto"
-msgstr ""
+msgstr "Упутство за поставке предмета приказа"
 
 #: src/icehelp.cc:1382 src/iceview.cc:60
 msgid "Ctrl+T"
-msgstr ""
+msgstr "Ктрл+Т"
 
 #: src/icehelp.cc:1384
 msgid "Website"
-msgstr ""
+msgstr "Страница веба"
 
 #: src/icehelp.cc:1384 src/iceview.cc:61
 msgid "Ctrl+W"
-msgstr ""
+msgstr "Ктрл+W"
 
 #: src/icehelp.cc:1386
 msgid "Github"
-msgstr ""
+msgstr "Гитхаб"
 
 #: src/icehelp.cc:1390 src/yinputline.cc:43
 msgid "Ctrl+X"
-msgstr ""
+msgstr "Ктрл+Џ"
 
 #: src/icehelp.cc:1395 src/yinputline.cc:44
 msgid "Ctrl+V"
-msgstr ""
+msgstr "Ктрл+В"
 
 #: src/icehelp.cc:2204
 msgid "Unsupported protocol."
-msgstr ""
+msgstr "Неподржани правилник."
 
 #: src/icehelp.cc:2283
 #, c-format
 msgid "Invalid path: %s\n"
-msgstr ""
+msgstr "Неисправна путања: %s\n"
 
 #: src/icehelp.cc:2307
 msgid "Path does not refer to a file."
-msgstr ""
+msgstr "Путања се не односи на датотеку."
 
 #: src/icehelp.cc:2312
 msgid "Failed to open file for reading."
-msgstr ""
+msgstr "Нисам успео да отворим датотеку за читање."
 
 #: src/icehelp.cc:2341
 msgid "Failed to create a temporary file"
-msgstr ""
+msgstr "Нисам успео да створим привремену датотеку"
 
 #: src/icehelp.cc:2431
 #, c-format
 msgid "Failed to execute system(%s) (%d)"
-msgstr ""
+msgstr "Нисам успео да извршим склоп(%s) (%d)"
 
 #: src/icehelp.cc:2453
 #, c-format
 msgid "Failed to decompress %s"
-msgstr ""
+msgstr "Нисам успео да распашем %s"
 
 #: src/icehelp.cc:2461
 msgid "Could not locate curl or wget in PATH"
-msgstr ""
+msgstr "Нисам успео да пронађем curl или wget у путањи PATH"
 
 #: src/icehelp.cc:2465
 msgid "Unsafe characters in URL"
-msgstr ""
+msgstr "Небезбедни знакови су у адреси"
 
 #: src/icehelp.cc:2502
 #, c-format
@@ -1299,175 +1350,211 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
+"Употреба: %s [МОГУЋНОСТИ] [ИМЕДАТОТЕКЕ | УРИ]\n"
+"\n"
+"ИцеХелп је врло једноставан прегледник ХТЛМ-а АјсВМ управника прозора.\n"
+"Може приказивати документ ХТМЛ-а из датотеке, или прегледати странице мреже."
+"\n"
+"Памти посећене странице у повести, кроз коју се може водити\n"
+"пречицама дугмади и приручним изборником (десни клик миша).\n"
+"Не подржава редендринг!!! слика нити скрипта јаве.\n"
+"Уколико није приложена датотека или адреса, приказаће\n"
+" упутство АјсВМ-а из %s.\n"
+"\n"
+"Могућности\n"
+"  -d, --display=ИМЕ ИМЕ служитеља Икс за употребу.\n"
+"  --sync              Усклади наредбе Икс11.\n"
+"\n"
+"  -B                  Приказуј упутство icewmbg АјсВМ-а.\n"
+"  -b, --bugs          Приказуј страницу Гитхаба АјсВМ-а.\n"
+"  -f, --faq           Исписује ЧПП и упутсво АјсВМ-а.\n"
+"  -g                  Приказује страницу веба гитхаба АјсВМ-а.\n"
+"  -i, --icewm         Приказуј упутство icewm АјсВМ-а.\n"
+"  -m, --manual         Приказуј упутство АјсВМ-а.\n"
+" -s                  Приказуј упутство icesound АјсВМ-а.\n"
+" -t, --theme         Приказуј упутство за предмете АјсВМ-а.\n"
+"  -w, --website      Приказуј мрежне странице АјсВМ-а.\n"
+"\n"
+"  -V, --version      Исписује податке о издању и излази.\n"
+"  -h, --help          Исписује овај приказ помоћи и излази.\n"
+" \n"
+"Променљиве окружења:\n"
+"  DISPLAY=ИМЕ       Име служитеља Икс за употребу.\n"
+"\n"
+"Ради пријаве грешака, захтева за подршку, напомене, молим, посетите:\n"
+"%s\n"
+"\n"
 
 #: src/icehelp.cc:2592
 #, c-format
 msgid "Ignoring option '%s'"
-msgstr ""
+msgstr "Занемарујем могућност „%s“"
 
 #: src/icelist.cc:60
 msgid "List View"
-msgstr ""
+msgstr "Преглед списка"
 
 #: src/icelist.cc:61
 msgid "Icon View"
-msgstr ""
+msgstr "Преглед сличица"
 
 #: src/icelist.cc:65
 msgid "Open"
-msgstr ""
+msgstr "Отвори"
 
 #: src/icesame.cc:57
 msgid "Undo"
-msgstr ""
+msgstr "Опозови"
 
 #: src/icesame.cc:57
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ктрл+З"
 
 #: src/icesame.cc:59
 msgid "New"
-msgstr ""
+msgstr "Ново"
 
 #: src/icesame.cc:59
 msgid "Ctrl+N"
-msgstr ""
+msgstr "Ctrl+Н"
 
 #: src/icesame.cc:60
 msgid "Restart"
-msgstr ""
+msgstr "Поново покрени"
 
 #: src/icesame.cc:65
 msgid "Same Game"
-msgstr ""
+msgstr "Иста игра"
 
 #: src/icesh.cc:76
 msgid "For help please consult the man page icesh(1).\n"
-msgstr ""
+msgstr "Ради помоћи, молим, погледајте странице упутства icesh(1).\n"
 
 #: src/icesh.cc:1689
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
-msgstr ""
+msgstr "Именовани знаци домена „%s“ (бројчани опсег: %ld-%ld):\n"
 
 #: src/icesh.cc:1758
 #, c-format
 msgid "Workspace out of range: %ld"
-msgstr ""
+msgstr "Радни простор је ван опсега: %ld"
 
 #: src/icesh.cc:1779
 #, c-format
 msgid "Invalid workspace name: `%s'"
-msgstr ""
+msgstr "Неисправно је име радног простора: „%s“"
 
 #: src/icesh.cc:2290
 msgid "GNOME window layer"
-msgstr ""
+msgstr "Слој прозора ГНОМА"
 
 #: src/icesh.cc:2291
 msgid "IceWM tray option"
-msgstr ""
+msgstr "Могућности ладице АјсВМ"
 
 #: src/icesh.cc:2292
 msgid "Gravity symbols"
-msgstr ""
+msgstr "Знаци тежње"
 
 #: src/icesh.cc:2293
 msgid "Motif functions"
-msgstr ""
+msgstr "Дејства Мотива"
 
 #: src/icesh.cc:2294
 msgid "Motif decorations"
-msgstr ""
+msgstr "Украшавања Мотива"
 
 #: src/icesh.cc:2295
 msgid "EWMH window state"
-msgstr ""
+msgstr "Стање прозора ЕВВМХ"
 
 #: src/icesh.cc:2377 src/icesh.cc:2450
 #, c-format
 msgid "workspace #%d: `%s'\n"
-msgstr ""
+msgstr "радни простор#%d: `%s'\n"
 
 #: src/icesh.cc:2701 src/icesh.cc:4577 src/icesh.cc:5177
 #, c-format
 msgid "Invalid state: `%s'."
-msgstr ""
+msgstr "Неисправно стање: „%s“."
 
 #: src/icesh.cc:2730 src/icesh.cc:4151 src/icesh.cc:4201 src/icesh.cc:5498
 #, c-format
 msgid "Invalid argument: `%s'"
-msgstr ""
+msgstr "Неисправна је одредница: „%s“"
 
 #: src/icesh.cc:3771
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
-msgstr ""
+msgstr "Нисам успео да задобијем размеру прозора 0x%lx"
 
 #: src/icesh.cc:3796
 #, c-format
 msgid "Invalid Xinerama: `%s'."
-msgstr ""
+msgstr "Неисправна је Ксинерама: „%s“."
 
 #: src/icesh.cc:3928 src/icesh.cc:3936 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
-msgstr ""
+msgstr "Нисам успео да упишем у %s"
 
 #: src/icesh.cc:4167
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
-msgstr ""
+msgstr "Дејство „%s“ захтева најмање %d одредница."
 
 #: src/icesh.cc:4176
 #, c-format
 msgid "Invalid expression: `%s'"
-msgstr ""
+msgstr "Неисправан је израз: „%s“"
 
 #: src/icesh.cc:4187 src/icesound.cc:800 src/icewmbg.cc:1088
 #: src/icewmhint.cc:37 src/wmapp.cc:1296 src/yxapp.cc:1042
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
+"Нисам успео да отворим заслон: %s. Икс мора да ради и да буде постављен "
+"$DISPLAY."
 
 #: src/icesh.cc:4303
 #, c-format
 msgid "Unexpected: `%s'."
-msgstr ""
+msgstr "Неочекивано: „%s“."
 
 #: src/icesh.cc:4335
 msgid "No windows found."
-msgstr ""
+msgstr "Нисам пронашао прозоре."
 
 #: src/icesh.cc:4351
 msgid "No actions specified."
-msgstr ""
+msgstr "Није одређено дејство."
 
 #: src/icesh.cc:4501
 #, c-format
 msgid "Invalid window identifier: `%s'"
-msgstr ""
+msgstr "Неисправна је одредница прозора: „%s“"
 
 #: src/icesh.cc:4517
 #, c-format
 msgid "Invalid PID: `%s'"
-msgstr ""
+msgstr "Неисправан је ЛБ процеса: „%s“"
 
 #: src/icesh.cc:4550
 #, c-format
 msgid "Invalid layer: `%s'."
-msgstr ""
+msgstr "Неважећи слој: „%s“."
 
 #: src/icesh.cc:5629
 #, c-format
 msgid "Unknown action: `%s'"
-msgstr ""
+msgstr "Непознато дејство: „%s“"
 
 #: src/iceskt.cc:41
 #, c-format
 msgid "Socket error: %d"
-msgstr ""
+msgstr "Грешка утичнице: %d"
 
 #: src/icesm.cc:69
 msgid ""
@@ -1485,6 +1572,19 @@ msgid ""
 "  -n, --notray        Do not start icewmtray.\n"
 "  -s, --sound         Also start icesound.\n"
 msgstr ""
+"  -c, --config=ДАТОТЕКА   Нека АјсВМ учита поставке из ДАТОТЕКЕ.\n"
+"  -t, --theme=ДАТОТЕКА   Нека АјсВМ учита поставке из ДАТОТЕКЕ.\n"
+"\n"
+"  -d, --display=ИМЕ     Користи ИМЕ ради повезивања на служитеља Икса.\n"
+"  -a, --alpha                   Користи 32-битни приказ ради прозирности.\n"
+"  --sync              Усклади општење са служитељем Икс11.\n"
+"\n"
+"  -i, --icewm=ДАТОТЕКА   Користи ДАТОТЕКУ као управника прозора АјсВМ-а.\n"
+"  -o, --output=ДАТОТЕКА  Преусмери сав излаз у ДАТОТЕКУ.\n"
+"\n"
+"  -b, --nobg          Не покрећи icewmbg.\n"
+"  -n, --notray        Не покрећи icewmtray.\n"
+"  -s, --sound         Такође покрени icesound.\n"
 
 #: src/icesm.cc:85
 msgid ""
@@ -1499,12 +1599,12 @@ msgstr ""
 #: src/icesm.cc:188
 #, c-format
 msgid "Unknown option '%s'"
-msgstr ""
+msgstr "Непозната могућност „%s“"
 
 #: src/icesm.cc:462 src/icesm.cc:622
 #, c-format
 msgid "restart %s."
-msgstr ""
+msgstr "препокрени %s."
 
 #: src/icesm.cc:513
 msgid ""
@@ -1515,77 +1615,83 @@ msgid ""
 "\t2: Abort this session?\n"
 "\t3: Run a terminal?\n"
 msgstr ""
+" АјсВМ се срушио други пут у последњих 10 секунди.\n"
+" Да ли желите да:\n"
+"\n"
+"\t1: Препокренете АјсВМ?\n"
+"\t2: Напустите седницу?\n"
+"\t3: Покренете терминал?\n"
 
 #: src/icesm.cc:519
 msgid "IceWM crash response"
-msgstr ""
+msgstr "Одзив рушења ИцеВМ"
 
 #: src/icesound.cc:211 src/icesound.cc:319 src/icesound.cc:479
 #, c-format
 msgid "Playing sample #%d (%s)"
-msgstr ""
+msgstr "Узорак извођења #%d (%s)"
 
 #: src/icesound.cc:329
 #, c-format
 msgid "%s: Invalid number of channels"
-msgstr ""
+msgstr "%s: невредећи број канала"
 
 #: src/icesound.cc:335 src/icesound.cc:340
 msgid "Could not set OSS channels"
-msgstr ""
+msgstr "Нисам успео да поставим канале ОСС"
 
 #: src/icesound.cc:345 src/icesound.cc:373
 msgid "Could not sync OSS"
-msgstr ""
+msgstr "Нисам успео да ускладим ОСС"
 
 #: src/icesound.cc:357
 msgid "OSS write failed"
-msgstr ""
+msgstr "Нисам успео да упишем ОСС"
 
 #: src/icesound.cc:361
 #, c-format
 msgid "OSS incomplete write (%d/%d)"
-msgstr ""
+msgstr "Непотпуни упис ОСС (%d/%d)"
 
 #: src/icesound.cc:368
 msgid "Could not post OSS"
-msgstr ""
+msgstr "Нисам успео да истакнем ОСС"
 
 #: src/icesound.cc:397
 #, c-format
 msgid "Could not open OSS device %s"
-msgstr ""
+msgstr "Нисам успео да отворим уређај ОСС %s"
 
 #: src/icesound.cc:402
 msgid "Could not set OSS stereo"
-msgstr ""
+msgstr "Нисам успео да поставим стерео Осс"
 
 #: src/icesound.cc:407
 msgid "Could not reset OSS DSP"
-msgstr ""
+msgstr "Нисам успео да вратим на подразумевано ДСП ОСС"
 
 #: src/icesound.cc:412
 msgid "Could not set OSS format"
-msgstr ""
+msgstr "Нисам успео да поставим облик ОСС"
 
 #: src/icesound.cc:499
 #, c-format
 msgid "ao_open_live failed with %d"
-msgstr ""
+msgstr "ао_опен_ливе је омануо са %d"
 
 #: src/icesound.cc:510
 msgid "ao_play failed"
-msgstr ""
+msgstr "ао_плај је омануо"
 
 #: src/icesound.cc:680
 #, c-format
 msgid "Unrecognized option: %s\n"
-msgstr ""
+msgstr "Није препозната могућност: %s\n"
 
 #: src/icesound.cc:683 src/icesound.cc:978
 #, c-format
 msgid "Unrecognized argument: %s\n"
-msgstr ""
+msgstr "Није препозната тврдња: %s\n"
 
 #: src/icesound.cc:694
 #, c-format
@@ -1638,55 +1744,103 @@ msgid ""
 "  3    Subsystems error (ie cannot connect to server).\n"
 "\n"
 msgstr ""
+"Употреба: %s [МОГУЋНОСТИ]...\n"
+"\n"
+"Свира звучне датотеке приликом догађаја сликовног сучеља покренутих АјсВМ-ом."
+"\n"
+"Тренутно подешена звучна сучеља јесу: %s.\n"
+"Icesound ће одабрати првог употребљивог од доступних.\n"
+"\n"
+"Могућности:\n"
+"\n"
+" -d, --display=DISPLAY Заслон Иск11 коришћен од АјсВМ-а (подразумевно: "
+"$DISPLAY).\n"
+"\n"
+" -s, --sample-dir=DIR Одређује упутницу са звучним датотекама.\n"
+"                           Подразумевано је $HOME/.config/icewm/sounds.\n"
+"\n"
+" -i, --interface=LIST    Одређује сучеље звучног излаза. Један или више од:\n"
+"                         %s раздвојених запетама.\n"
+"\n"
+" -D, --device=DEVICE  Само сагласност са претходним: подразумевани уређај. \n"
+"                         Молим, изаберите једну од могућности-A/-O/-S. \n"
+"\n"
+" -O, --oss=DEVICE Одређује уређај ОСС-а (подразумевано: „%s“).\n"
+"\n"
+" -A, --alsa=DEVICE       Одређује уређај АЛСА-е (подразумевано: „%s“).\n"
+" -z, --snooze=millisecs  Одређује међувреме одлагања између звучних "
+"догађаја\n"
+"                               у милисекундама. подразумевано је 500 "
+"милисекунди.\n"
+"\n"
+" -p, --play=sound        Свира дати звук (име или број) и излази.\n"
+"\n"
+"-l, --list-files      Листа доступне путање звучних датотека и излази.\n"
+"\n"
+"     --list-sounds       Исписује имена одржаних звучних датотека и излази.\n"
+"\n"
+"     --list-interfaces   Листа подржана звучна сучеља и излази.\n"
+"\n"
+" -v, --versbose        Буди опшира и испиши сваки звучни догађај. \n"
+"\n"
+" -V, --version           Исписује податке о издању и излази.\n"
+"\n"
+"Враћа вредности:\n"
+"\n"
+" 0    Успех.\n"
+" 1    Општа грешка.\n"
+" 2    Грешка наредбене линије.\n"
+" 3    Грешка подсклопа (нпр. нисам успео да се повежем са служитељем).\n"
+"\n"
 
 #: src/icesound.cc:785
 #, c-format
 msgid "No audio for %s"
-msgstr ""
+msgstr "Нема звука за %s"
 
 #: src/icesound.cc:862
 msgid "Could not get GUI event property"
-msgstr ""
+msgstr "Нисам успео да задобијем ваљано догађај сликовног сучеља"
 
 #: src/icesound.cc:866
 #, c-format
 msgid "Received invalid GUI event %d"
-msgstr ""
+msgstr "Примио сам неважећи догађај сликовног сучеља %d"
 
 #: src/icesound.cc:870
 #, c-format
 msgid "Received GUI event %s"
-msgstr ""
+msgstr "Примио сам догађај сликовног сучеља %s"
 
 #: src/icesound.cc:884
 #, c-format
 msgid "Too quick; ignoring %s."
-msgstr ""
+msgstr "Пребрзо; занемарујем %s."
 
 #: src/icesound.cc:888
 #, c-format
 msgid "Support for the %s interface not compiled."
-msgstr ""
+msgstr "Подршка за сучеље %s није сагласна."
 
 #: src/icesound.cc:921
 #, c-format
 msgid "Unsupported interface: %s."
-msgstr ""
+msgstr "Није подржано сучеље: %s."
 
 #: src/icesound.cc:930
 #, c-format
 msgid "Using %s audio."
-msgstr ""
+msgstr "Користим звук %s."
 
 #: src/icesound.cc:934
 #, c-format
 msgid "Failed to connect to audio interfaces %s."
-msgstr ""
+msgstr "Нисам успео да се повежем на звучно сучеље %s."
 
 #: src/icesound.cc:946
 #, c-format
 msgid "Received signal %s: Terminating..."
-msgstr ""
+msgstr "Добијен је знамен %s: Окончавам..."
 
 #: src/icetray.cc:220
 msgid ""
@@ -1697,27 +1851,33 @@ msgid ""
 "  -c, --config=FILE   Load preferences from FILE.\n"
 "  -t, --theme=FILE    Load the theme from FILE.\n"
 msgstr ""
+"  -n, --notify        Обавести родитељску обраду шаљући знак УСР1.\n"
+"  --display=ИМЕ     Користи ИМЕ ради повезивања са служитељем Икса.\n"
+"  --sync              Усклади општење са служитељем Икса.\n"
+"\n"
+"  -c, --config=ДАТОТЕКА   Учитај поставке из ДАТОТЕКЕ.\n"
+"  -t, --theme=ДАТОТЕКА   Учитај предмет из ТЕМЕ.\n"
 
 #: src/iceview.cc:59
 msgid "Hex View"
-msgstr ""
+msgstr "Хексадецимални преглед"
 
 #: src/iceview.cc:59
 msgid "Ctrl+H"
-msgstr ""
+msgstr "Ктрл+Х"
 
 #: src/iceview.cc:60
 msgid "Expand Tabs"
-msgstr ""
+msgstr "Прошири листове"
 
 #: src/iceview.cc:61
 msgid "Wrap Lines"
-msgstr ""
+msgstr "Преломи линије"
 
 #: src/icewmbg.cc:35 src/icewmbg.cc:373
 #, c-format
 msgid "Failed to load image '%s'."
-msgstr ""
+msgstr "Нисам успео да учитам слику „%s“."
 
 #: src/icewmbg.cc:970
 msgid ""
@@ -1773,24 +1933,24 @@ msgstr ""
 #: src/icewmbg.cc:1249 src/wmapp.cc:1903
 #, c-format
 msgid "Unrecognized option '%s'."
-msgstr ""
+msgstr "Непрепозната могућност „%s“."
 
 #: src/icewmbg.cc:1336
 msgid "Cannot start, because another icewmbg is still running."
-msgstr ""
+msgstr "Нисам успео да покренем, јер још један примерак ајсвмбг дејствује."
 
 #: src/icewmhint.cc:20
 msgid "Usage: icewmhint class.instance option arg\n"
-msgstr ""
+msgstr "Употреба: icewmhint class.instance option arg\n"
 
 #: src/icewmhint.cc:57
 #, c-format
 msgid "Out of memory (len=%d)."
-msgstr ""
+msgstr "Ван памети (len=%d)."
 
 #: src/misc.cc:71 src/misc.cc:83
 msgid "Warning: "
-msgstr ""
+msgstr "Упозорење: "
 
 #: src/misc.cc:394
 #, c-format
@@ -1803,44 +1963,51 @@ msgid ""
 "  -h, --help          Prints this usage screen and exits.\n"
 "\n"
 msgstr ""
+"Употреба: %s [МОГУЋНОСТИ]\n"
+"МОГУЋНОСТИ:\n"
+"%s\n"
+"  -C, --copying              Исписује податке о дозволи и излази.\n"
+"  -V, --version       Исписује податке о издању и излази.\n"
+"  -h, help       Исписује овај заслон упутства и излази.\n"
+"\n"
 
 #: src/movesize.cc:864
 #, c-format
 msgid "Unknown direction in move/resize request: %d"
-msgstr ""
+msgstr "Непознат је правац у захтеву премести/промени величину: %d"
 
 #: src/upath.cc:172
 #, c-format
 msgid "Unable to create directory %s"
-msgstr ""
+msgstr "Нисам успео да створим директоријум %s"
 
 #: src/wmabout.cc:29
 msgid "(C)"
-msgstr ""
+msgstr "(C)"
 
 #: src/wmabout.cc:45
 msgid "Theme:"
-msgstr ""
+msgstr "Предмет:"
 
 #: src/wmabout.cc:46
 msgid "Theme Description:"
-msgstr ""
+msgstr "Опис предмета:"
 
 #: src/wmabout.cc:47
 msgid "Theme Author:"
-msgstr ""
+msgstr "Творац предмета:"
 
 #: src/wmabout.cc:56
 msgid "CodeSet:"
-msgstr ""
+msgstr "Поставка кодирања:"
 
 #: src/wmabout.cc:57
 msgid "Language:"
-msgstr ""
+msgstr "Језик:"
 
 #: src/wmabout.cc:61
 msgid "DoubleBuffer"
-msgstr ""
+msgstr "Двоспремиште"
 
 #: src/wmabout.cc:62
 msgid "AlphaBlending"
@@ -1848,236 +2015,236 @@ msgstr ""
 
 #: src/wmabout.cc:63
 msgid "Renderer:"
-msgstr ""
+msgstr "Редендер:"
 
 #: src/wmabout.cc:71
 msgid "icewm - About"
-msgstr ""
+msgstr "ајсвм - О програму"
 
 #: src/wmapp.cc:91
 msgid "A window manager is already running, use --replace to replace it"
-msgstr ""
+msgstr "Управник прозора већ дејствује, употребите --replace ради замене"
 
 #: src/wmapp.cc:107
 #, c-format
 msgid "Failed to become the owner of the %s selection"
-msgstr ""
+msgstr "Нисам успео да постанем власник одабира %s"
 
 #: src/wmapp.cc:111
 msgid "Waiting to replace the old window manager"
-msgstr ""
+msgstr "Чекам да заменим старог управника прозора"
 
 #: src/wmapp.cc:116
 msgid "done."
-msgstr ""
+msgstr "учињено."
 
 #: src/wmapp.cc:516
 msgid "_Logout"
-msgstr ""
+msgstr "_Одјава"
 
 #: src/wmapp.cc:517
 msgid "_Cancel logout"
-msgstr ""
+msgstr "_Откажи одјаву"
 
 #: src/wmapp.cc:523
 msgid "Lock _Workstation"
-msgstr ""
+msgstr "Закључај _радну станицу"
 
 #: src/wmapp.cc:525 src/wmdialog.cc:89
 msgid "Re_boot"
-msgstr ""
+msgstr "Пре_покрени"
 
 #: src/wmapp.cc:527 src/wmdialog.cc:90
 msgid "Shut_down"
-msgstr ""
+msgstr "Ис_кључи"
 
 #: src/wmapp.cc:529 src/wmdialog.cc:86
 msgid "_Sleep mode"
-msgstr ""
+msgstr "_Успавај"
 
 #: src/wmapp.cc:531 src/wmdialog.cc:91
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Замрзни"
 
 #: src/wmapp.cc:535
 msgid "Restart _Icewm"
-msgstr ""
+msgstr "Препокрени _Ајсвм"
 
 #: src/wmapp.cc:537
 msgid "Restart _Xterm"
-msgstr ""
+msgstr "Препокрени _Икстерм"
 
 #: src/wmapp.cc:547
 msgid "_Menu"
-msgstr ""
+msgstr "_Изборник"
 
 #: src/wmapp.cc:548
 msgid "_Above Dock"
-msgstr ""
+msgstr "_Изнад дока"
 
 #: src/wmapp.cc:549
 msgid "_Dock"
-msgstr ""
+msgstr "_Док"
 
 #: src/wmapp.cc:550
 msgid "_OnTop"
-msgstr ""
+msgstr "_На врху"
 
 #: src/wmapp.cc:551
 msgid "_Normal"
-msgstr ""
+msgstr "_Обично"
 
 #: src/wmapp.cc:552
 msgid "_Below"
-msgstr ""
+msgstr "_Испод"
 
 #: src/wmapp.cc:553
 msgid "D_esktop"
-msgstr ""
+msgstr "Радна _површ"
 
 #: src/wmapp.cc:597 src/wmwinlist.cc:369
 msgid "Move to New _Window"
-msgstr ""
+msgstr "Пређи на следећи _прозор"
 
 #: src/wmapp.cc:607
 msgid "Left Half"
-msgstr ""
+msgstr "Лева половина"
 
 #: src/wmapp.cc:608
 msgid "Right Half"
-msgstr ""
+msgstr "Десна половина"
 
 #: src/wmapp.cc:609
 msgid "Top Half"
-msgstr ""
+msgstr "Горња половина"
 
 #: src/wmapp.cc:610
 msgid "Bottom Half"
-msgstr ""
+msgstr "Доња половина"
 
 #: src/wmapp.cc:612
 msgid "Top Left"
-msgstr ""
+msgstr "Горе лево"
 
 #: src/wmapp.cc:613
 msgid "Top Right"
-msgstr ""
+msgstr "Горе десно"
 
 #: src/wmapp.cc:614
 msgid "Bottom Left"
-msgstr ""
+msgstr "Доле лево"
 
 #: src/wmapp.cc:615
 msgid "Bottom Right"
-msgstr ""
+msgstr "Доле десно"
 
 #: src/wmapp.cc:616
 msgid "Center"
-msgstr ""
+msgstr "По средини"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmapp.cc:618 src/wmtaskbar.cc:217 src/wmwinlist.cc:456
 #: src/wmwinlist.cc:489
 msgid "T_ile Horizontally"
-msgstr ""
+msgstr "П_оплочај водоравно"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmapp.cc:620 src/wmtaskbar.cc:215 src/wmwinlist.cc:455
 #: src/wmwinlist.cc:488
 msgid "Tile _Vertically"
-msgstr ""
+msgstr "Поплочај успра_вно"
 
 #: src/wmapp.cc:632 src/wmwinlist.cc:436
 msgid "_Restore"
-msgstr ""
+msgstr "Поврати"
 
 #: src/wmapp.cc:634
 msgid "_Move"
-msgstr ""
+msgstr "_Премести"
 
 #: src/wmapp.cc:636
 msgid "_Size"
-msgstr ""
+msgstr "_Величина"
 
 #: src/wmapp.cc:638 src/wmwinlist.cc:437
 msgid "Mi_nimize"
-msgstr ""
+msgstr "У_мањи"
 
 #: src/wmapp.cc:640 src/wmwinlist.cc:438
 msgid "Ma_ximize"
-msgstr ""
+msgstr "У_већај"
 
 #: src/wmapp.cc:641 src/wmwinlist.cc:439
 msgid "Maximize_Vert"
-msgstr ""
+msgstr "Увећај усправно_"
 
 #: src/wmapp.cc:642 src/wmwinlist.cc:440
 msgid "MaximizeHori_z"
-msgstr ""
+msgstr "Увећај_Водоравно"
 
 #: src/wmapp.cc:645 src/wmwinlist.cc:441
 msgid "_Fullscreen"
-msgstr ""
+msgstr "Пуни приказ"
 
 #: src/wmapp.cc:648 src/wmwinlist.cc:443
 msgid "_Hide"
-msgstr ""
+msgstr "_Сакриј"
 
 #: src/wmapp.cc:650 src/wmwinlist.cc:444
 msgid "Roll_up"
-msgstr ""
+msgstr "Смотај_"
 
 #: src/wmapp.cc:657
 msgid "R_aise"
-msgstr ""
+msgstr "Из_дигни"
 
 #: src/wmapp.cc:659 src/wmwinlist.cc:446
 msgid "_Lower"
-msgstr ""
+msgstr "_Спусти"
 
 #: src/wmapp.cc:661 src/wmwinlist.cc:447
 msgid "La_yer"
-msgstr ""
+msgstr "Сло_ј"
 
 #: src/wmapp.cc:664 src/wmwinlist.cc:448
 msgid "Tile"
-msgstr ""
+msgstr "Поплочај"
 
 #: src/wmapp.cc:668 src/wmwinlist.cc:450
 msgid "Move _To"
-msgstr ""
+msgstr "Премести на_"
 
 #: src/wmapp.cc:669 src/wmwinlist.cc:451
 msgid "Occupy _All"
-msgstr ""
+msgstr "Заузми _све"
 
 #: src/wmapp.cc:675
 msgid "Limit _Workarea"
-msgstr ""
+msgstr "Ограничи радни простор"
 
 #: src/wmapp.cc:679 src/wmwinlist.cc:452
 msgid "Tray _icon"
-msgstr ""
+msgstr "Сличица _ладице"
 
 #: src/wmapp.cc:681 src/wmwinlist.cc:453
 msgid "R_ename title"
-msgstr ""
+msgstr "Пре_именуј наслов"
 
 #: src/wmapp.cc:686 src/wmwinlist.cc:468 src/wmwinlist.cc:476
 msgid "_Close"
-msgstr ""
+msgstr "_Затвори"
 
 #: src/wmapp.cc:688 src/wmwinlist.cc:470
 msgid "_Kill Client"
-msgstr ""
+msgstr "_Убиј странку"
 
 #: src/wmapp.cc:691 src/wmdialog.cc:92 src/wmwinmenu.cc:141
 msgid "_Window list"
-msgstr ""
+msgstr "_Списак прозора"
 
 #: src/wmapp.cc:733
 msgid "Another window manager already running, exiting..."
-msgstr ""
+msgstr "Неки други управник прозора већ дејствује, излазим..."
 
 #: src/wmapp.cc:808
 #, c-format
@@ -2085,25 +2252,29 @@ msgid ""
 "Could not restart: %s\n"
 "Does $PATH lead to %s?"
 msgstr ""
+"Нисам успео да поново покренем: %s\n"
+"Да ли путања $PATH води ка %s?"
 
 #: src/wmapp.cc:996
 msgid "Confirm Restart as Terminal"
-msgstr ""
+msgstr "Потврди препокретање у терминал"
 
 #: src/wmapp.cc:997
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
 msgstr ""
+"Да ли препустити руковање свим програмима и препокренути\n"
+"у терминал. Наставити?"
 
 #: src/wmapp.cc:1297 src/yxapp.cc:1043
 msgid "<none>"
-msgstr ""
+msgstr "<ништа>"
 
 #: src/wmapp.cc:1627
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
-msgstr ""
+msgstr "  --client-id=ID Лични број странке при додиру са управником седнице.\n"
 
 #: src/wmapp.cc:1633
 msgid ""
@@ -2111,6 +2282,10 @@ msgid ""
 "  --debug             Print generic debug messages.\n"
 "  --debug-z           Print debug messages regarding window stacking.\n"
 msgstr ""
+"\n"
+"  --debug         Исписује опште поруке исправки грешака.\n"
+"  --debug-z      Исписује поруке исправки грешака у односу на слагање "
+"прозора.\n"
 
 #: src/wmapp.cc:1641
 msgid ""
@@ -2123,14 +2298,24 @@ msgid ""
 "  --rewrite-preferences  Update an existing preferences file.\n"
 "  --trace=conf,icon   Trace paths used to load configuration.\n"
 msgstr ""
+"\n"
+"  -a, --alpha                      Користи 32-битну представу за прозирност."
+"\n"
+"  -c, --config=ДАТОТЕКА  Учитава поставке из ДАТОТЕКЕ.\n"
+"  -t, --theme=ДАТОТЕКА  Учитава предмет из ДАТОТЕКЕ.\n"
+"  -s, --splash=СЛИКА       Кратко приказује СЛИКУ при покретању.\n"
+"  -p, --postpreferences     Исписује постакве након свих обрада.\n"
+"  --rewrite-preferences     Освежава постојећу датотеку поставки.\n"
+"  --trace=conf,icon          Прати путање употребљене за учитавање поставки."
+"\n"
 
 #: src/wmapp.cc:1652
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
-msgstr ""
+msgstr "  -o, --output=ДАТОТЕКА   Преусмерава сав излаз у ДАТОТЕКУ.\n"
 
 #: src/wmapp.cc:1658
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
-msgstr ""
+msgstr "  -i, --install=ПРЕДМЕТ Уграђује ПРЕДМЕТ од споља или са „списка“.\n"
 
 #: src/wmapp.cc:1661
 #, c-format
@@ -2167,50 +2352,52 @@ msgstr ""
 #: src/wmapp.cc:1727
 #, c-format
 msgid "%s configuration directories:\n"
-msgstr ""
+msgstr "%s директоријуми поставки:\n"
 
 #: src/wmapp.cc:1812
 #, c-format
 msgid "%s configured options:%s\n"
-msgstr ""
+msgstr "%s постављене могућности:%s\n"
 
 #: src/wmapp.cc:1953
 msgid "Confirm Logout"
-msgstr ""
+msgstr "Потврди одјаву"
 
 #: src/wmapp.cc:1954
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
 msgstr ""
+"Одјава ће убити све делујуће програме.\n"
+"Наставити?"
 
 #: src/wmbutton.cc:124
 msgid "Raise/Lower"
-msgstr ""
+msgstr "Издигни/спусти"
 
 #: src/wmbutton.cc:127
 msgid "Hide"
-msgstr ""
+msgstr "Сакриј"
 
 #: src/wmbutton.cc:131
 msgid "Restore"
-msgstr ""
+msgstr "Поврати"
 
 #: src/wmbutton.cc:133
 msgid "Maximize"
-msgstr ""
+msgstr "Увећај"
 
 #: src/wmbutton.cc:137
 msgid "Minimize"
-msgstr ""
+msgstr "Умањи"
 
 #: src/wmbutton.cc:141
 msgid "Rolldown"
-msgstr ""
+msgstr "Размотај"
 
 #: src/wmbutton.cc:143
 msgid "Rollup"
-msgstr ""
+msgstr "Смотај"
 
 #: src/wmclient.cc:470
 #, c-format
@@ -2218,118 +2405,122 @@ msgid ""
 "Client %s with PID %ld fails to respond.\n"
 "Do you wish to terminate this client?\n"
 msgstr ""
+"Странка %s са ПИД %ld није одговорила.\n"
+"Да ли желите окончати ову странку?\n"
 
 #: src/wmconfig.cc:35 src/wmconfig.cc:40 src/wmconfig.cc:46
 #, c-format
 msgid "Failed to load theme %s"
-msgstr ""
+msgstr "Нисам успео да учитам предмет %s"
 
 #: src/wmconfig.cc:113
 #, c-format
 msgid "Unknown value '%s' for option '%s'."
-msgstr ""
+msgstr "Непозната вредност „%s“ за могућност „%s“."
 
 #: src/wmconfig.cc:175 src/wmsave.cc:306
 #, c-format
 msgid "Unable to rename %s to %s"
-msgstr ""
+msgstr "Нисам успео да преименујем %s у %s"
 
 #: src/wmdialog.cc:85
 msgid "Loc_k Workstation"
-msgstr ""
+msgstr "Зак_ључај радну станицу"
 
 #: src/wmdialog.cc:87 src/ymsgbox.cc:51
 msgid "_Cancel"
-msgstr ""
+msgstr "_Откажи"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmdialog.cc:88 src/wmprog.cc:471 src/wmprog.cc:473 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
-msgstr ""
+msgstr "_Одјава..."
 
 #: src/wmdialog.cc:93
 msgid "_Restart icewm"
-msgstr ""
+msgstr "_Препокрени ајсвм"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmdialog.cc:94 src/wmprog.cc:439 src/wmtaskbar.cc:238
 msgid "_About"
-msgstr ""
+msgstr "_О програму"
 
 #: src/wmdialog.cc:95
 msgid "Reload win_options"
-msgstr ""
+msgstr "Поново учитај могућности прозора"
 
 #: src/wmdialog.cc:96
 msgid "Reload ke_ys"
-msgstr ""
+msgstr "Поново учитај дугмад"
 
 #: src/wmframe.cc:1459
 msgid "Rename"
-msgstr ""
+msgstr "Преименуј"
 
 #: src/wmframe.cc:1460
 msgid "Rename the window title"
-msgstr ""
+msgstr "Преименуј наслов прозора"
 
 #: src/wmframe.cc:1967
 msgid ""
 "WARNING! All unsaved changes will be lost when\n"
 "this client is killed. Do you wish to proceed?"
 msgstr ""
+"УПОЗОРЕЊЕ! Све несачуване измене ће бити изгубљене када\n"
+"се ова странка убије. Да ли желите наставити?"
 
 #: src/wmframe.cc:1972
 msgid "Kill Client: "
-msgstr ""
+msgstr "Убиј стрнку: "
 
 #: src/wmmenu.cc:37
 msgid "Missing command argument"
-msgstr ""
+msgstr "Недостаје наредбена одредница"
 
 #: src/wmmenu.cc:55
 #, c-format
 msgid "Bad argument %d to command '%s'"
-msgstr ""
+msgstr "Лоша тврдња %d за наредбу „%s“"
 
 #: src/wmmenu.cc:110
 #, c-format
 msgid "Error at keyword '%s' for %s"
-msgstr ""
+msgstr "Грешка кључне речи „%s“ за %s"
 
 #: src/wmmenu.cc:160
 #, c-format
 msgid "Error at %s '%s'"
-msgstr ""
+msgstr "Грешка при %s „%s“."
 
 #: src/wmmenu.cc:226
 #, c-format
 msgid "Unexepected menu keyword: '%s'"
-msgstr ""
+msgstr "Неочекивана кључна реч изборника „%s“"
 
 #: src/wmmenu.cc:280
 #, c-format
 msgid "Error at menuprog '%s'"
-msgstr ""
+msgstr "Грешка изборника програма „%s“"
 
 #: src/wmmenu.cc:324
 #, c-format
 msgid "Error at menuprogreload: '%s'"
-msgstr ""
+msgstr "Грешка при поновном учитавању изборника програма „%s“"
 
 #: src/wmmenu.cc:351
 msgid "Missing filename argument to include statement"
-msgstr ""
+msgstr "Недостаје одредница имена датотеке ради обухватања тврдње"
 
 #: src/wmmenu.cc:369
 #, c-format
 msgid "Error at includeprog '%s'"
-msgstr ""
+msgstr "Грешка у обухваћеним програмима „%s“"
 
 #: src/wmmenu.cc:412
 #, c-format
 msgid "Unknown keyword '%s'"
-msgstr ""
+msgstr "Непозната кључна реч „%s“"
 
 #: src/wmmenu.cc:423
 #, c-format
@@ -2337,24 +2528,26 @@ msgid ""
 "Unknown keyword for a non-container: '%s'.\n"
 "Expected either 'key' or 'runonce' here.\n"
 msgstr ""
+"Непозната кључна реч за несадржалац: „%s“.\n"
+"Овде очекивано је или „key“ или „runonce“.\n"
 
 #: src/wmmenu.cc:502
 #, c-format
 msgid "'%s' timed out!"
-msgstr ""
+msgstr "Истек времена „%s“!"
 
 #: src/wmmenu.cc:516
 #, c-format
 msgid "'%s' produces no output"
-msgstr ""
+msgstr "„%s“ не производи излаз"
 
 #: src/wmmgr.cc:3686
 msgid "Missing program setxkbmap"
-msgstr ""
+msgstr "Недостаје програм setxkbmap"
 
 #: src/wmmgr.cc:3687
 msgid "For keyboard switching, please install setxkbmap."
-msgstr ""
+msgstr "Ради промене распореда тастатуре, молим, уградите setxkbmap."
 
 #: src/wmoption.cc:285
 #, c-format
@@ -2368,40 +2561,40 @@ msgstr ""
 
 #: src/wmpref.cc:101
 msgid "Save Modifications"
-msgstr ""
+msgstr "Сачувај измене"
 
 #: src/wmpref.cc:179
 #, c-format
 msgid "Enter a new value for %s: "
-msgstr ""
+msgstr "Унеси нову вредност за %s: "
 
 #: src/wmprog.cc:346
 msgid "_Click to focus"
-msgstr ""
+msgstr "_Клик за жижу"
 
 #: src/wmprog.cc:347
 msgid "_Explicit focus"
-msgstr ""
+msgstr "Изражајна _жижа"
 
 #: src/wmprog.cc:348
 msgid "_Sloppy mouse focus"
-msgstr ""
+msgstr "_Немарна жижа мишем"
 
 #: src/wmprog.cc:349
 msgid "S_trict mouse focus"
-msgstr ""
+msgstr "С_трога жижа мишем"
 
 #: src/wmprog.cc:350
 msgid "_Quiet sloppy focus"
-msgstr ""
+msgstr "_Мирна немарна жижа"
 
 #: src/wmprog.cc:351
 msgid "Custo_m"
-msgstr ""
+msgstr "Произвољно_"
 
 #: src/wmprog.cc:373
 msgid "_Manual"
-msgstr ""
+msgstr "Упутство_"
 
 #: src/wmprog.cc:374
 msgid "_Icewm(1)"
@@ -2417,164 +2610,164 @@ msgstr ""
 
 #: src/wmprog.cc:425
 msgid "Programs"
-msgstr ""
+msgstr "Програми"
 
 #: src/wmprog.cc:429
 msgid "_Run..."
-msgstr ""
+msgstr "_Покрени..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmprog.cc:433 src/wmtaskbar.cc:233
 msgid "_Windows"
-msgstr ""
+msgstr "_Прозори"
 
 #: src/wmprog.cc:444
 msgid "_Help"
-msgstr ""
+msgstr "_Помоћ"
 
 #: src/wmprog.cc:449
 msgid "_Focus"
-msgstr ""
+msgstr "_Жижа"
 
 #: src/wmprog.cc:454
 msgid "_Preferences"
-msgstr ""
+msgstr "_Својства"
 
 #: src/wmprog.cc:459
 msgid "_Themes"
-msgstr ""
+msgstr "_Предмети"
 
 #: src/wmprog.cc:463
 msgid "Se_ttings"
-msgstr ""
+msgstr "Поставке_"
 
 #: src/wmsession.cc:214 src/wmsession.cc:230 src/wmsession.cc:240
 #, c-format
 msgid "Session Manager: Unknown line %s"
-msgstr ""
+msgstr "Управник седнице: непозната линија %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:219 src/wmwinlist.cc:457 src/wmwinlist.cc:490
 msgid "Ca_scade"
-msgstr ""
+msgstr "Кас_када"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:221 src/wmwinlist.cc:458 src/wmwinlist.cc:491
 msgid "_Arrange"
-msgstr ""
+msgstr "_Распореди"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:223 src/wmwinlist.cc:460 src/wmwinlist.cc:492
 msgid "_Minimize All"
-msgstr ""
+msgstr "_Умањи све"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:225 src/wmwinlist.cc:461 src/wmwinlist.cc:493
 msgid "_Hide All"
-msgstr ""
+msgstr "_Сакриј све"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:227 src/wmwinlist.cc:462 src/wmwinlist.cc:494
 msgid "_Undo"
-msgstr ""
+msgstr "_Опозови"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:230
 msgid "Arrange _Icons"
-msgstr ""
+msgstr "Уреди _сличице"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
 #: src/wmtaskbar.cc:236
 msgid "_Refresh"
-msgstr ""
+msgstr "_Освежи"
 
 #: src/wmtaskbar.cc:313 src/wmtaskbar.cc:1030
 msgid "Hide Taskbar"
-msgstr ""
+msgstr "Сакриј траку прибора"
 
 #: src/wmtaskbar.cc:336
 msgid "Favorite Applications"
-msgstr ""
+msgstr "Омиљени програми"
 
 #: src/wmtaskbar.cc:362
 msgid "Window List Menu"
-msgstr ""
+msgstr "Изборник списка прозора"
 
 #: src/wmtaskbar.cc:372
 msgid "Show Desktop"
-msgstr ""
+msgstr "Приказуј радну површ"
 
 #: src/wmtaskbar.cc:1030
 msgid "Show Taskbar"
-msgstr ""
+msgstr "Приказуј траку прибора"
 
 #: src/wmwinlist.cc:83
 msgid "All Workspaces"
-msgstr ""
+msgstr "Све радне површи"
 
 #: src/wmwinlist.cc:442
 msgid "_Show"
-msgstr ""
+msgstr "_Приказуј"
 
 #: src/wmwinlist.cc:445
 msgid "_Raise"
-msgstr ""
+msgstr "_Издигни"
 
 #: src/wmwinlist.cc:468
 msgid "Del"
-msgstr ""
+msgstr "Бриши"
 
 #: src/wmwinlist.cc:472
 msgid "_Terminate Process"
-msgstr ""
+msgstr "_Окончај обраду"
 
 #: src/wmwinlist.cc:473
 msgid "Kill _Process"
-msgstr ""
+msgstr "Убиј обраду"
 
 #: src/wmwinlist.cc:508 src/wmwinlist.cc:509
 msgid "Window list"
-msgstr ""
+msgstr "Списак прозора"
 
 #: src/wmwinmenu.cc:100
 #, c-format
 msgid "%lu. Workspace %-.32s"
-msgstr ""
+msgstr "%lu. Радни простор %-.32s"
 
 #: src/wpixres.cc:93 src/wpixres.cc:100
 #, c-format
 msgid "Image not readable: %s"
-msgstr ""
+msgstr "Није читљива слика: %s"
 
 #: src/yapp.cc:299
 #, c-format
 msgid "%s: select failed"
-msgstr ""
+msgstr "%s: неуспех одабирања"
 
 #: src/ycolor.cc:229 src/ycolor.cc:240
 #, c-format
 msgid "Could not parse color \"%s\""
-msgstr ""
+msgstr "Нисам успео да рашчланим боју „%s“"
 
 #: src/yconfig.cc:83
 #, c-format
 msgid "Unknown key name %s in %s"
-msgstr ""
+msgstr "Непознато име кључа %s у %s"
 
 #: src/yconfig.cc:170 src/yconfig.cc:181 src/yconfig.cc:193
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
-msgstr ""
+msgstr "Лоша тврдња: %s за %s [%d,%d]"
 
 #: src/ycursor.cc:110
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
-msgstr ""
+msgstr "Нисам успео да учитам карту тачака „%s“: %s"
 
 #: src/ycursor.cc:135
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
-msgstr ""
+msgstr "Нисам успео да учитам карту тачака „%s“"
 
 #: src/ycursor.cc:179
 #, c-format
@@ -2599,58 +2792,60 @@ msgstr ""
 #: src/yfontcore.cc:121 src/yfontxft.cc:137
 #, c-format
 msgid "Could not load font \"%s\"."
-msgstr ""
+msgstr "Нисам успео да учитам словолик „%s“."
 
 #: src/yfontcore.cc:233
 #, c-format
 msgid "Missing codesets for fontset \"%s\":"
-msgstr ""
+msgstr "Недостаје поставка кодова за словолик „%s“:"
 
 #: src/yfontcore.cc:261
 #, c-format
 msgid "Could not load fontset \"%s\"."
-msgstr ""
+msgstr "Нисам успео да учитам словолик „%s“."
 
 #: src/yinputline.cc:42
 msgid "_Copy"
-msgstr ""
+msgstr "Умножи_"
 
 #: src/yinputline.cc:42
 msgid "Ctrl+C"
-msgstr ""
+msgstr "Ктрл+Ц"
 
 #: src/yinputline.cc:43
 msgid "Cu_t"
-msgstr ""
+msgstr "Исец_и"
 
 #: src/yinputline.cc:44
 msgid "_Paste"
-msgstr ""
+msgstr "_Налепи"
 
 #: src/yinputline.cc:45
 msgid "Paste _Selection"
-msgstr ""
+msgstr "Налепи избор_"
 
 #: src/yinputline.cc:45
 msgid "Ctrl+P"
-msgstr ""
+msgstr "Ктрл+П"
 
 #: src/yinputline.cc:47
 msgid "Select _All"
-msgstr ""
+msgstr "Изабери _све"
 
 #: src/yinputline.cc:47
 msgid "Ctrl+A"
-msgstr ""
+msgstr "Ктрл+А"
 
 #: src/ylocale.cc:59
 msgid "Locale not supported by C library or Xlib. Falling back to 'C' locale'."
-msgstr ""
+msgstr "Језик није подржан по књижници Ц или Икслиб. Враћам назад на језик „Ц“."
 
 #: src/ylocale.cc:93
 msgid ""
 "Failed to determinate the current locale's codeset. Assuming ISO-8859-1.\n"
 msgstr ""
+"Нисам успео да препознам тренутне поставке језичког кода. Претпостављам "
+"ISO-8859-1.\n"
 
 #: src/ylocale.cc:126 src/ylocale.cc:134
 #, c-format
@@ -2664,7 +2859,7 @@ msgstr ""
 
 #: src/ymsgbox.cc:48
 msgid "_OK"
-msgstr ""
+msgstr "_У реду"
 
 #: src/ysmapp.cc:95
 msgid "$USER or $LOGNAME not set?"
@@ -2673,7 +2868,7 @@ msgstr ""
 #: src/yurl.cc:145
 #, c-format
 msgid "Failed to parse URL \"%s\"."
-msgstr ""
+msgstr "Нисам успео да рашчланим адресу „%s“."
 
 #: src/yurl.cc:161
 #, c-format
@@ -2693,18 +2888,18 @@ msgstr ""
 
 #: src/yximage.cc:173
 msgid "Support for PNG images was not enabled"
-msgstr ""
+msgstr "Подршка за слика облика ПНГ није била омогућена"
 
 #: src/yximage.cc:181
 msgid "Support for JPEG images was not enabled"
-msgstr ""
+msgstr "Подршка за слике облика ЈПЕГ није била омогућена"
 
 #: src/yximage.cc:187
 #, c-format
 msgid "Unsupported file format: %s"
-msgstr ""
+msgstr "Неподржан облик датотеке: %s"
 
 #: src/yximage.cc:191 src/yximage.cc:214
 #, c-format
 msgid "Could not load image \"%s\""
-msgstr ""
+msgstr "Нисам успео да учитам слику „%s“"

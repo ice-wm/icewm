@@ -19,6 +19,7 @@
 #include "ytimer.h"
 #include "ypopup.h"
 #include "yxcontext.h"
+#include <ctype.h>
 #include <typeinfo>
 
 #ifdef XINERAMA
@@ -814,8 +815,8 @@ bool YWindow::handleKey(const XKeyEvent &key) {
                     if (a->win->handleKey(key))
                         return true;
             }
-            if (ASCII::isLower(char(k))) {
-                k = ASCII::toUpper(char(k));
+            if (islower((unsigned char) k)) {
+                k = toupper((unsigned char) k);
                 for (a = accel; a; a = a->next)
                     if (m == a->mod && k == a->key)
                         if (a->win->handleKey(key))
@@ -1388,8 +1389,8 @@ void YWindow::lostFocus() {
 }
 
 void YWindow::installAccelerator(unsigned int key, unsigned int mod, YWindow *win) {
-    if (key < 128)
-        key = ASCII::toUpper(char(key));
+    if (key < 255)
+        key = toupper((unsigned char) key);
     if (isToplevel() || fParent == nullptr) {
         YAccelerator **pa = &accel, *a;
 
@@ -1405,21 +1406,16 @@ void YWindow::installAccelerator(unsigned int key, unsigned int mod, YWindow *wi
                 pa = &(a->next);
         }
 
-        a = new YAccelerator;
+        a = new YAccelerator(key, mod, win, accel);
         if (a == nullptr)
             return ;
-
-        a->key = key;
-        a->mod = mod;
-        a->win = win;
-        a->next = accel;
         accel = a;
     } else parent()->installAccelerator(key, mod, win);
 }
 
 void YWindow::removeAccelerator(unsigned int key, unsigned int mod, YWindow *win) {
-    if (key < 128)
-        key = ASCII::toUpper(char(key));
+    if (key < 255)
+        key = toupper((unsigned char) key);
     if (isToplevel() || fParent == nullptr) {
         YAccelerator **pa = &accel, *a;
 
