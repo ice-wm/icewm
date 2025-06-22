@@ -11,6 +11,7 @@
 #include "yprefs.h"
 #include "ascii.h"
 #include <string.h>
+#include <ctype.h>
 
 static YColorName menuBg(&clrNormalMenu);
 static YColorName menuItemFg(&clrNormalMenuItemText);
@@ -282,7 +283,7 @@ int YMenu::findHotItem(char k) {
         if (mitem->getAction() != actionNull ||
             mitem->getSubmenu())
         {
-            if (hot != -1 && ASCII::toUpper(hot) == k)
+            if (hot != -1 && toupper((unsigned char) hot) == k)
                 count++;
         }
     }
@@ -303,7 +304,7 @@ int YMenu::findHotItem(char k) {
         {
             int hot = mitem->getHotChar();
 
-            if (hot != -1 && ASCII::toUpper(hot) == k) {
+            if (hot != -1 && toupper((unsigned char) hot) == k) {
                 focusItem(c);
                 break;
             }
@@ -369,7 +370,7 @@ bool YMenu::handleKey(const XKeyEvent &key) {
                         return true;
                     }
                 } else if (k < 256) {
-                    if (findHotItem(ASCII::toUpper((char)k)) == 1) {
+                    if (findHotItem(toupper((unsigned char)k)) == 1) {
                         activateItem(key.state, false);
                     }
                     return true;
@@ -795,13 +796,13 @@ YMenuItem *YMenu::findName(const mstring &name, const int first) {
 
 int YMenu::findFirstLetRef(char firstLetter, int first, bool ignoreCase) {
     if (ignoreCase)
-        firstLetter = ASCII::toUpper(firstLetter);
+        firstLetter = toupper((unsigned char) firstLetter);
     for (int i = first; i < itemCount(); i++) {
         YMenuItem *item = getItem(i);
         if (item->haveName()) {
             int iLetter = item->getName().charAt(0);
             if (ignoreCase)
-                iLetter = ASCII::toUpper(iLetter);
+                iLetter = toupper((unsigned char) iLetter);
             if (iLetter == firstLetter)
                 return i;
         }
