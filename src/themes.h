@@ -1,59 +1,63 @@
 #ifndef THEMES_H
 #define THEMES_H
 
-#include "objmenu.h"
 #include "obj.h"
+#include "ymenu.h"
+#include "yaction.h"
 
-class YMenu;
 class YSMListener;
-class YActionListener;
 
 class DTheme: public DObject {
 public:
-    DTheme(IApp* app, YSMListener* listener, mstring label, mstring theme);
+    DTheme(IApp* app, YSMListener* listener, mstring label, mstring theme, int top);
     virtual ~DTheme();
 
-    virtual void open();
+    void open() override;
+    mstring theme() const { return fTheme; }
+    int topdir() const { return fTop; }
+    YAction action() const { return fAction; }
 private:
     YSMListener *smActionListener;
     mstring fTheme;
+    int fTop;
+    YAction fAction;
 };
 
-class ThemesMenu: public ObjectMenu {
+class ThemesMenu: public YMenu, private YActionListener {
 public:
-    ThemesMenu(IApp *app, YSMListener *smListener, YActionListener *wmListener);
+    ThemesMenu(IApp *app, YSMListener *smListener);
     virtual ~ThemesMenu();
 
-    virtual void updatePopup();
-    virtual void refresh();
-
 private:
-    void findThemes(upath path, ObjectMenu* container);
+    void updatePopup() override;
+    void deactivatePopup() override;
+    void actionPerformed(YAction action, unsigned modifiers) override;
+    void cleanup();
+    upath themesTop(int top);
+    void scanThemes(int top);
+    void makeMenus();
 
-    YMenuItem *newThemeItem(
-        IApp *app,
-        YSMListener *smActionListener,
-        mstring label,
-        mstring relThemeName,
-        ObjectMenu* container);
+    YMenuItem* newThemeItem(mstring label, mstring theme, int top);
+    YMenuItem* addThemeToMenu(DTheme* dtheme, YMenu* menu);
 
-    void findThemeAlternatives(
-        IApp *app,
-        YSMListener *smActionListener,
-        upath path,
-        mstring relName,
-        YMenuItem *item,
-        ObjectMenu* container);
+    bool findThemeAlternatives(upath path, mstring name,
+                               YMenuItem* item, int top);
 
-    // this solution isn't nice. Saving it globaly somewhere would be
-    // much better, we would have a themeCound from the last refresh
-    // cycle and update it after menu construction, counting themes that
-    // are actually added to menues
-    int countThemes(upath path);
-    int themeCount;
+    bool handleTimer(YTimer* timer) override;
+    bool updateItem(YMenuItem* item);
+    bool createIcon(YMenuItem* item, DTheme* dtheme);
 
-    YSMListener *smActionListener;
-    IApp *app;
+    IApp* app;
+    YSMListener* smActionListener;
+    int iconIndex;
+    int nestIndex;
+    lazy<YTimer> iconTimer;
+    lazy<YTimer> cleanupTimer;
+    typedef DTheme* ArrayElmt;
+    typedef YArray<ArrayElmt> ArrayType;
+    ArrayType themeArray, alternatives;
+
+    upath libThemes, cfgThemes, prvThemes;
 };
 
 #endif

@@ -354,46 +354,17 @@ FocusMenu::FocusMenu() {
     }
 }
 
-HelpMenu::HelpMenu(
-    IApp *app,
-    YSMListener *smActionListener,
-    YActionListener *wmActionListener)
-    : ObjectMenu(wmActionListener)
-{
-    struct HelpMenuItem {
-        const char *name;
-        const char *menu;
-        const char *clas;
-    } help[] = {
-        { ICEHELPIDX, _("_Manual"), "browser.Manual" },
-        { "icewm.1.html", _("_Icewm(1)"), "browser.IceWM" },
-        { "icewmbg.1.html", _("Icewm_Bg(1)"), "browser.IcewmBg" },
-        { "icesound.1.html", _("Ice_Sound(1)"), "browser.IceSound" },
-    };
-    for (size_t k = 0; k < ACOUNT(help); ++k) {
-        YStringArray args(3);
-        args.append(ICEHELPEXE);
-        if (k == 0) {
-            args.append(help[k].name);
-        } else {
-            upath path = upath(ICEHELPIDX).parent() + help[k].name;
-            args.append(path.string());
-        }
-        args.append(nullptr);
-
-        DProgram *prog = DProgram::newProgram(
-            app,
-            smActionListener,
-            help[k].menu,
-            null,
-            false,
-            help[k].clas,
-            ICEHELPEXE,
-            args);
-
-        if (prog)
-            addObject(prog, "help");
-    }
+HelpMenu::HelpMenu() {
+    addItem(_("_Manual"), -2, null, actionHelpManual, "help");
+    addItem(_("_Icewm(1)"), -2, null, actionHelpIcewm, "help");
+    addItem(_("Icewm_Bg(1)"), -2, null, actionHelpIcewmbg, "help");
+    addItem(_("Ice_Sound(1)"), -2, null, actionHelpIcesound, "help");
+    addItem("icesh", -2, null, actionHelpIcesh, "help");
+    addItem("icewm-env", -2, null, actionHelpEnv, "help");
+    addItem("icewm-keys", -2, null, actionHelpKeys, "help");
+    addItem("icewm-startup", -2, null, actionHelpStartup, "help");
+    addItem("icewm-toolbar", -2, null, actionHelpToolbar, "help");
+    addItem("icewm-winoptions", -2, null, actionHelpWinoptions, "help");
 }
 
 void StartMenu::refresh() {
@@ -435,7 +406,7 @@ void StartMenu::refresh() {
     }
 
     if (showHelp) {
-        HelpMenu* help = new HelpMenu(app, smActionListener, wmActionListener);
+        HelpMenu* help = new HelpMenu();
         settings->addSubmenu(_("_Help"), -2, help, "help");
     }
 
@@ -450,7 +421,7 @@ void StartMenu::refresh() {
     }
 
     if (showThemesMenu) {
-        YMenu *themes = new ThemesMenu(app, smActionListener, wmActionListener);
+        YMenu* themes = new ThemesMenu(app, smActionListener);
         settings->addSubmenu(_("_Themes"), -2, themes, "themes");
     }
 
