@@ -166,6 +166,7 @@ CHECK_FUNCTION_EXISTS(strlcat HAVE_STRLCAT)
 CHECK_FUNCTION_EXISTS(strlcpy HAVE_STRLCPY)
 CHECK_FUNCTION_EXISTS(sysctl HAVE_SYSCTL)
 CHECK_FUNCTION_EXISTS(sysctlbyname HAVE_SYSCTLBYNAME)
+CHECK_FUNCTION_EXISTS(arc4random_uniform HAVE_ARC4RANDOM_UNIFORM)
 
 # perl -e 'do { s/\.|\//_/g; $_=uc $_;  print "#cmakedefine HAVE_$_\n"} for @ARGV' `cat headersDa`
 # perl -e 'do {my $orig=$_; s/\.|\//_/g; $_=uc $_; print "CHECK_INCLUDE_FILE_CXX($orig HAVE_$_)\n"} for @ARGV' `cat headersDa`
