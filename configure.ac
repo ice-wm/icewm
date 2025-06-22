@@ -148,7 +148,7 @@ if test x$cross_compling != xyes ; then :; AC_FUNC_FORK fi
 if test x$cross_compling != xyes ; then :; AC_FUNC_MALLOC fi
 if test x$cross_compling != xyes ; then :; AC_FUNC_REALLOC fi
 AC_CHECK_FUNCS([backtrace_symbols_fd memrchr sysctl sysctlbyname \
-                arc4random_uniform]])
+                arc4random_uniform])
 AC_FUNC_SELECT_ARGTYPES
 
 AC_MSG_CHECKING([for strlcpy])
