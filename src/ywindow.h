@@ -328,6 +328,8 @@ private:
         unsigned mod;
         YWindow *win;
         YAccelerator *next;
+        YAccelerator(unsigned k, unsigned m, YWindow* w, YAccelerator* n) :
+                     key(k), mod(m), win(w), next(n) { }
     };
 
     YAccelerator *accel;
