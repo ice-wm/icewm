@@ -19,27 +19,12 @@
 const unsigned utf32ellipsis = 0x2026;
 extern YFont menuFont;
 
-DTheme::DTheme(IApp* app, YSMListener* listener,
-               mstring label, mstring theme, int top)
-    : DObject(app, label, null)
-    , smActionListener(listener)
-    , fTheme(theme)
-    , fTop(top)
-{
-}
-
-DTheme::~DTheme() {
-}
-
-void DTheme::open() {
-    if (fTheme == null)
-        return;
-
-    WMConfig::setDefaultTheme(fTheme);
+void ThemesMenu::open(DTheme* dtheme) {
+    WMConfig::setDefaultTheme(dtheme->theme());
 
     const char *bg[] = { ICEWMBGEXE, "-r", nullptr };
-    int pid = app()->runProgram(bg[0], bg);
-    app()->waitProgram(pid);
+    int pid = app->runProgram(bg[0], bg);
+    app->waitProgram(pid);
 
     smActionListener->handleSMAction(ICEWM_ACTION_RESTARTWM);
 }
@@ -69,12 +54,12 @@ void ThemesMenu::deactivatePopup() {
 void ThemesMenu::actionPerformed(YAction action, unsigned modifiers) {
     for (DTheme* dtheme : themeArray) {
         if (action == dtheme->action()) {
-            return dtheme->open();
+            return open(dtheme);
         }
     }
     for (DTheme* dtheme : alternatives) {
         if (action == dtheme->action()) {
-            return dtheme->open();
+            return open(dtheme);
         }
     }
 }
@@ -161,7 +146,7 @@ void ThemesMenu::scanThemes(int top) {
                 }
             }
             if (found == false) {
-                DTheme* thm = new DTheme(app, smActionListener, name, name, top);
+                DTheme* thm = new DTheme(name, top);
                 if (thm) {
                     themeArray.insert((col < 0) ? hi : lo, thm);
                 }
@@ -180,7 +165,7 @@ YMenuItem* ThemesMenu::newThemeItem(
     int top)
 {
     YMenuItem* item = nullptr;
-    DTheme* dtheme = new DTheme(app, smActionListener, label, theme, top);
+    DTheme* dtheme = new DTheme(theme, top);
     if (dtheme) {
         item = new YMenuItem(label, -3, null, dtheme->action(), nullptr);
         if (item) {
