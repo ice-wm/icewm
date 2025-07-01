@@ -156,11 +156,11 @@ void CtrlAltDelete::paint(Graphics &g, const YRect &/*r*/) {
     g.draw3DRect(0, 0, width() - 1, height() - 1, true);
 }
 
-void CtrlAltDelete::actionPerformed(YAction action, unsigned int /*modifiers*/) {
+void CtrlAltDelete::actionPerformed(YAction action, unsigned /*modifiers*/) {
     deactivate();
     for (int i = 0; i < Count; ++i) {
         if (action == *buttons[i]) {
-            if (inrange<int>(buttons[i]->wmAction, 2, 14))
+            if (inrange<int>(buttons[i]->wmAction, 2, LAST_ICEWM_ACTION))
                 manager->doWMAction(buttons[i]->wmAction);
             else if (action == actionLock && canLock())
                 app->runCommand(lockCommand);

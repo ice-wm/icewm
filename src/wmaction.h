@@ -20,6 +20,7 @@ enum WMAction {
     ICEWM_ACTION_REFRESH = 13,
     ICEWM_ACTION_HIBERNATE = 14,
     ICEWM_ACTION_TOOLBAR = 15,
+    LAST_ICEWM_ACTION = 15,
 };
 
 enum RebootShutdown {
