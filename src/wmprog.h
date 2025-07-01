@@ -32,8 +32,9 @@ private:
     char* parseMenuFile(char *data, ObjectContainer *container);
     char* parseMenuProg(char *data, ObjectContainer *container);
     char* parseMenuProgReload(char *data, ObjectContainer *container);
-    char* parseAKey(char *word, char *p);
-    char* parseProgram(char *word, char *p, ObjectContainer *container);
+    char* parseAKey(char *word, char *p, bool runonce, bool switchkey);
+    char* parseProgram(char *word, char *p, bool restart,
+                       bool runonce, ObjectContainer *container);
     char* parseWord(char *word, char *p, ObjectContainer *container);
 
     IApp *app;
@@ -41,37 +42,21 @@ private:
     YActionListener *wmActionListener;
 };
 
-class DProgram: public DObject {
+class AProgram {
 public:
-    virtual ~DProgram();
+    virtual void open(YSMListener* smActionListener, unsigned mods = 0) = 0;
+};
 
-    virtual void open();
-
-    static char *fullname(const char *exe);
-    static DProgram *newProgram(
-        IApp *app,
-        YSMListener *smActionListener,
-        const char *name,
-        ref<YIcon> icon,
-        const bool restart,
-        const char *wmclass,
-        const char *exe,
-        YStringArray &args);
+class RProgram : public AProgram {
+public:
+    RProgram(bool restart, const char* resource,
+             const char* command, YStringArray &args);
+    virtual ~RProgram();
+    void open(YSMListener* smActionListener, unsigned mods = 0) override;
 
     const char* cmd() const { return fCmd; }
     YStringArray& args() { return fArgs; }
     const char* resource() const { return fRes; }
-
-protected:
-    DProgram(
-        IApp *app,
-        YSMListener *smActionListener,
-        const mstring &name,
-        ref<YIcon> icon,
-        const bool restart,
-        const char *wmclass,
-        const char *exe,
-        YStringArray &args);
 
 private:
     const bool fRestart;
@@ -79,12 +64,57 @@ private:
     long fPid;
     const char* fCmd;
     YStringArray fArgs;
-    YSMListener *smActionListener;
+};
+
+class KProgram : public RProgram {
+public:
+    KProgram(const char* key, const char* resource,
+             const char* command, YStringArray &args);
+    ~KProgram();
+
+    void parse() { wm.parse(); }
+    bool isKey(const XKeyEvent& x) const { return wm == x; }
+    bool isButton(const XButtonEvent& b) const { return wm == b; }
+    void grab(int handle) { wm.grab(handle); }
+
+protected:
+    WMKey wm;
+};
+
+class SProgram : public KProgram {
+public:
+    SProgram(const char* key, const char* resource,
+             const char* command, YStringArray &args);
+    ~SProgram();
+
+    void open(YSMListener* smActionListener, unsigned mods = 0) override;
+
+private:
+    // Keep the persistent handler window until it is destroyed.
+    // The instance is NOT deleted because there is apparently
+    // interference with ywindows cleanup sequence and this
+    // object here is cached over process lifetime anyway.
+    SwitchWindow *pSwitchWindow;
+};
+
+class DProgram: public DObject, public RProgram {
+public:
+    DProgram(IApp* app,
+             YSMListener* smActionListener,
+             const char* name,
+             ref<YIcon> icon,
+             bool restart,
+             const char* wmclass,
+             const char* command,
+             YStringArray& args);
+    void open() override;
+private:
+    YSMListener* smActionListener;
 };
 
 class DFile: public DObject {
 public:
-    DFile(IApp *app, const mstring &name, ref<YIcon> icon, upath path);
+    DFile(IApp *app, mstring name, ref<YIcon> icon, upath path);
     virtual ~DFile();
 
     virtual void open();
@@ -161,34 +191,6 @@ public:
 private:
     YSMListener *smActionListener;
     YActionListener *wmActionListener;
-};
-
-/**
- * Management item that wraps DProgram and holds the trigger key information.
- */
-class KProgram {
-public:
-    KProgram(const char *key, DProgram *prog, bool bIsDynSwitchMenuProg);
-    ~KProgram();
-
-    void parse() { wm.parse(); }
-    bool isKey(const XKeyEvent& x) const { return wm == x; }
-    bool isButton(const XButtonEvent& b) const { return wm == b; }
-    void open(unsigned mods);
-    void grab(int handle) { wm.grab(handle); }
-    const char* resource() const { return fProg->resource(); }
-
-private:
-    WMKey wm;
-
-    // not a program starter but custom switch menu
-    // use as bool to fit into memory wasted wit 64bit alignment
-    unsigned int bIsDynSwitchMenu;
-    DProgram *fProg;
-    // For dynswitch mode, keep the persistent handler window until its destroyed.
-    // The instance is NOT deleted because there is apparently interference with ywindows cleanup
-    // sequence and this object here is cached over process lifetime anyway.
-    SwitchWindow *pSwitchWindow;
 };
 
 #endif

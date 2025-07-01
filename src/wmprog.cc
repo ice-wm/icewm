@@ -18,7 +18,7 @@
 #include <sys/stat.h>
 #include <time.h>
 
-DFile::DFile(IApp *app, const mstring &name, ref<YIcon> icon, upath path):
+DFile::DFile(IApp *app, mstring name, ref<YIcon> icon, upath path):
     DObject(app, name, icon), fPath(path)
 {
 }
@@ -31,80 +31,63 @@ void DFile::open() {
     app()->runProgram(openCommand, args);
 }
 
-DProgram::DProgram(
-    IApp *app,
-    YSMListener *smActionListener,
-    const mstring &name,
-    ref<YIcon> icon,
-    const bool restart,
-    const char *wmclass,
-    const char *exe,
-    YStringArray &args)
-    : DObject(app, name, icon),
-    fRestart(restart),
-    fRes(newstr(wmclass)),
-    fPid(0),
-    fCmd(exe),
-    fArgs(args),
-    smActionListener(smActionListener)
+RProgram::RProgram(bool restart, const char* resource,
+                   const char* command, YStringArray& args)
+    : fRestart(restart)
+    , fRes(resource)
+    , fPid(None)
+    , fCmd(command)
+    , fArgs(args)
 {
     if (fArgs.isEmpty() || fArgs.getString(fArgs.getCount() - 1))
         fArgs.append(nullptr);
 }
 
-DProgram::~DProgram() {
+RProgram::~RProgram() {
     delete[] fCmd;
     delete[] fRes;
 }
 
-void DProgram::open() {
+void RProgram::open(YSMListener* smActionListener, unsigned mods) {
     if (fRestart)
         smActionListener->restartClient(fCmd, fArgs.getCArray());
     else if (fRes)
         smActionListener->runOnce(fRes, &fPid, fCmd, fArgs.getCArray());
     else
-        app()->runProgram(fCmd, fArgs.getCArray());
+        smActionListener->runProgram(fCmd, fArgs.getCArray(), -1);
 }
 
-DProgram *DProgram::newProgram(
-    IApp *app,
-    YSMListener *smActionListener,
-    const char *name,
+DProgram::DProgram(
+    IApp* app,
+    YSMListener* smActionListener,
+    const char* name,
     ref<YIcon> icon,
-    const bool restart,
-    const char *wmclass,
-    const char *exestr,
-    YStringArray &args)
+    bool restart,
+    const char* wmclass,
+    const char* command,
+    YStringArray& args)
+    : DObject(app, name, icon)
+    , RProgram(restart, wmclass, command, args)
+    , smActionListener(smActionListener)
 {
-    DProgram* program = nullptr;
-    if (nonempty(exestr)) {
-        MSG(("LOOKING FOR: %s\n", exestr));
-        char* path = path_lookup(exestr);
-        if (path) {
-            program = new DProgram(app, smActionListener, name, icon,
-                                   restart, wmclass, path, args);
-        } else {
-            MSG(("Program %s (%s) not found.", name, exestr));
-        }
-    }
-    return program;
+}
+
+void DProgram::open() {
+    RProgram::open(smActionListener, None);
 }
 
 KProgramArrayType keyProgs;
 
-KProgram::KProgram(const char *key, DProgram *prog, bool bIsDynSwitchMenuProg) :
-    wm(newstr(key)),
-    bIsDynSwitchMenu(bIsDynSwitchMenuProg),
-    fProg(prog),
-    pSwitchWindow(nullptr)
+KProgram::KProgram(const char* key, const char* resource,
+                   const char* command, YStringArray& args)
+    : RProgram(false, resource, command, args)
+    , wm(newstr(key))
 {
 }
 
 KProgram::~KProgram() {
-    delete fProg;
     if (wm.initial == false)
         delete[] const_cast<char *>(wm.name);
-    delete pSwitchWindow;
 }
 
 class MenuProgSwitchItems: public ISwitchItems {
@@ -113,10 +96,12 @@ class MenuProgSwitchItems: public ISwitchItems {
     const WMKey* wmkey;
 
 public:
-    MenuProgSwitchItems(DProgram* prog, const WMKey* wmkey) :
+    MenuProgSwitchItems(RProgram* prog, const WMKey* wmkey) :
         ISwitchItems(), zTarget(0), wmkey(wmkey) {
-        menu = new MenuProgMenu(wmapp, wmapp, nullptr /* no wmaction handling*/,
-                "switch popup internal menu", prog->cmd(), prog->args());
+        menu = new MenuProgMenu(wmapp, wmapp,
+                                nullptr /* no wmaction handling*/,
+                                "switch popup internal menu",
+                                prog->cmd(), prog->args());
     }
     ~MenuProgSwitchItems() {
         delete menu;
@@ -189,18 +174,23 @@ public:
     }
 };
 
-void KProgram::open(unsigned mods) {
-    if (!fProg) return;
+SProgram::SProgram(const char* key, const char* resource,
+                   const char* command, YStringArray& args)
+    : KProgram(key, resource, command, args)
+    , pSwitchWindow(nullptr)
+{
+}
 
-    if (bIsDynSwitchMenu) {
-        if (!pSwitchWindow) {
-            ISwitchItems* items = new MenuProgSwitchItems(fProg, &wm);
-            pSwitchWindow = new SwitchWindow(desktop, items, quickSwitchVertical);
-        }
-        pSwitchWindow->begin(true, mods);
+SProgram::~SProgram() {
+    delete pSwitchWindow;
+}
+
+void SProgram::open(YSMListener* smActionListener, unsigned mods) {
+    if (pSwitchWindow == nullptr) {
+        ISwitchItems* items = new MenuProgSwitchItems(this, &wm);
+        pSwitchWindow = new SwitchWindow(desktop, items, quickSwitchVertical);
     }
-    else
-        fProg->open();
+    pSwitchWindow->begin(true, mods);
 }
 
 MenuFileMenu::MenuFileMenu(

@@ -8,7 +8,7 @@ class YIcon;
 
 class DObject {
 public:
-    DObject(IApp *app, const mstring &name, ref<YIcon> icon) :
+    DObject(IApp *app, mstring name, ref<YIcon> icon) :
         fName(name), fIcon(icon), fApp(app) { }
     virtual ~DObject() { }
 

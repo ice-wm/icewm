@@ -85,21 +85,19 @@ static mstring guessIconNameFromExe(const char* exe)
     return "-";
 }
 
-char* MenuLoader::parseAKey(char *word, char *p)
-{
-    bool runonce = !strcmp(word, "runonce");
-    bool switchkey = !strcmp(word, "switchkey");
-
+char* MenuLoader::parseAKey(char *word, char *p, bool runonce, bool switchkey) {
     Argument key;
 
     p = YConfig::getArgument(&key, p);
     if (p == nullptr) return p;
 
-    Argument wmclass;
-
+    const char* resource = nullptr;
     if (runonce) {
+        Argument wmclass;
         p = YConfig::getArgument(&wmclass, p);
-        if (p == nullptr) return p;
+        if (p == nullptr)
+            return p;
+        resource = newstr(wmclass);
     }
 
     Argument command;
@@ -111,18 +109,10 @@ char* MenuLoader::parseAKey(char *word, char *p)
         return p;
     }
 
-    DProgram *prog = DProgram::newProgram(
-        app,
-        smActionListener,
-        key,
-        null,
-        false,
-        runonce ? wmclass.cstr() : nullptr,
-        command.cstr(),
-        args);
-
-    if (prog) {
-        KProgram* kp = new KProgram(key, prog, switchkey);
+    char* path = path_lookup(command);
+    if (path) {
+        KProgram* kp = switchkey ? new SProgram(key, resource, path, args)
+                                 : new KProgram(key, resource, path, args);
         if (kp)
             keyProgs += kp;
     }
@@ -130,11 +120,9 @@ char* MenuLoader::parseAKey(char *word, char *p)
     return p;
 }
 
-char* MenuLoader::parseProgram(char *word, char *p, ObjectContainer *container)
+char* MenuLoader::parseProgram(char *word, char *p, bool restart,
+                               bool runonce, ObjectContainer *container)
 {
-    bool runonce = !strcmp(word, "runonce");
-    bool restart = !strcmp(word, "restart");
-
     Argument name;
 
     p = YConfig::getArgument(&name, p);
@@ -145,11 +133,13 @@ char* MenuLoader::parseProgram(char *word, char *p, ObjectContainer *container)
     p = YConfig::getArgument(&icons, p);
     if (p == nullptr) return p;
 
-    Argument wmclass;
-
+    const char* resource = nullptr;
     if (runonce) {
+        Argument wmclass;
         p = YConfig::getArgument(&wmclass, p);
-        if (p == nullptr) return p;
+        if (p == nullptr)
+            return p;
+        resource = newstr(wmclass);
     }
 
     Argument command;
@@ -173,17 +163,13 @@ char* MenuLoader::parseProgram(char *word, char *p, ObjectContainer *container)
     else if (icons[0] != '-')
         icon = YIcon::getIcon(icons);
 
-    DProgram * prog = DProgram::newProgram(
-        app,
-        smActionListener,
-        name,
-        icon,
-        restart,
-        runonce ? wmclass.cstr() : nullptr,
-        command.cstr(),
-        args);
-
-    if (prog) container->addObject(prog);
+    char* path = path_lookup(command);
+    if (path) {
+        DProgram* prog = new DProgram(app, smActionListener, name, icon,
+                                      restart, resource, path, args);
+        if (prog)
+            container->addObject(prog);
+    }
 
     return p;
 }
@@ -381,11 +367,14 @@ char* MenuLoader::parseWord(char *word, char *p, ObjectContainer *container)
         if (!strcmp(word, "separator")) {
             container->addSeparator();
         }
-        else if (!(strcmp(word, "prog") &&
-                   strcmp(word, "restart") &&
-                   strcmp(word, "runonce")))
-        {
-            p = parseProgram(word, p, container);
+        else if (!strcmp(word, "prog")) {
+            p = parseProgram(word, p, false, false, container);
+        }
+        else if (!strcmp(word, "restart")) {
+            p = parseProgram(word, p, true, false, container);
+        }
+        else if (!strcmp(word, "runonce")) {
+            p = parseProgram(word, p, false, true, container);
         }
         else if (!strcmp(word, "menu")) {
             p = parseAMenu(p, container);
@@ -413,11 +402,14 @@ char* MenuLoader::parseWord(char *word, char *p, ObjectContainer *container)
             return nullptr;
         }
     }
-    else if (!strcmp(word, "key")
-          || !strcmp(word, "runonce")
-          || !strcmp(word, "switchkey"))
-    {
-        p = parseAKey(word, p);
+    else if (!strcmp(word, "key")) {
+        p = parseAKey(word, p, false, false);
+    }
+    else if (!strcmp(word, "runonce")) {
+        p = parseAKey(word, p, true, false);
+    }
+    else if (!strcmp(word, "switchkey")) {
+        p = parseAKey(word, p, false, true);
     }
     else {
         msg(_("Unknown keyword for a non-container: '%s'.\n"
