@@ -18,19 +18,6 @@
 #include <sys/stat.h>
 #include <time.h>
 
-DFile::DFile(IApp *app, mstring name, ref<YIcon> icon, upath path):
-    DObject(app, name, icon), fPath(path)
-{
-}
-
-DFile::~DFile() {
-}
-
-void DFile::open() {
-    const char *args[] = { openCommand, fPath.string(), nullptr };
-    app()->runProgram(openCommand, args);
-}
-
 RProgram::RProgram(bool restart, const char* resource,
                    const char* command, YStringArray& args)
     : fRestart(restart)
@@ -362,14 +349,12 @@ void StartMenu::refresh() {
 
     addSeparator();
 
-/// TODO #warning "make this into a menuprog (ala gnome.cc), and use mime"
+    // "make this into a menuprog (ala gnome.cc), and use mime"
     if (nonempty(openCommand)) {
         upath path[] = { upath::root(), YApplication::getHomeDir() };
-        ObjectMenu* sub;
-        for (const upath& p : path) {
-            sub = new BrowseMenu(app, smActionListener, wmActionListener, p);
-            DFile *file = new DFile(app, p, null, p);
-            addObject(file, "folder", sub, false);
+        for (upath& p : path) {
+            YMenu* sub = new BrowseMenu(app, p);
+            addItem(p.path(), -2, actionNull, sub, "folder");
         }
         addSeparator();
     }

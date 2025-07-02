@@ -112,16 +112,6 @@ private:
     YSMListener* smActionListener;
 };
 
-class DFile: public DObject {
-public:
-    DFile(IApp *app, mstring name, ref<YIcon> icon, upath path);
-    virtual ~DFile();
-
-    virtual void open();
-private:
-    upath fPath;
-};
-
 class MenuFileMenu: public ObjectMenu, private MenuLoader {
 public:
     MenuFileMenu(

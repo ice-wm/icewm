@@ -7,28 +7,40 @@
 #include "config.h"
 #include "obj.h"
 #include "objmenu.h"
+#include "default.h"
 #include "browse.h"
 #include "wmmgr.h"
 #include "wmprog.h"
 #include "yicon.h"
-#include "sysdep.h"
+#include "wmapp.h"
 #include "base.h"
-#include "udir.h"
+#include <dirent.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 
-BrowseMenu::BrowseMenu(
-    IApp *app,
-    YSMListener *smActionListener,
-    YActionListener *wmActionListener,
-    upath path,
-    YWindow *parent): ObjectMenu(wmActionListener, parent)
+BrowseMenu::BrowseMenu(IApp* app, upath path)
+    : app(app)
+    , fPath(path)
+    , fModTime(None)
 {
-    this->app = app;
-    this->smActionListener = smActionListener;
-    fPath = path;
-    fModTime = 0;
+    setActionListener(this);
 }
 
 BrowseMenu::~BrowseMenu() {
+    for (const ActionName& an : names) {
+        delete[] an.name;
+    }
+}
+
+void BrowseMenu::actionPerformed(YAction action, unsigned) {
+    for (const ActionName& an : names) {
+        if (action == an.action) {
+            upath target(fPath + an.name);
+            const char *args[] = { openCommand, target.string(), nullptr };
+            app->runProgram(openCommand, args);
+            break;
+        }
+    }
 }
 
 void BrowseMenu::updatePopup() {
@@ -44,14 +56,62 @@ void BrowseMenu::updatePopup() {
 
 void BrowseMenu::loadItems() {
     removeAll();
-    for (sdir dir(fPath); dir.next(); ) {
-        upath npath(fPath + dir.entry());
-        ObjectMenu *sub = nullptr;
-        if (npath.dirExists())
-            sub = new BrowseMenu(app, smActionListener,
-                                 getActionListener(), npath);
-        DFile *pfile = new DFile(app, dir.entry(), null, npath);
-        addObject(pfile, sub ? "folder" : "file", sub);
+
+    DIR* dir = opendir(fPath.string());
+    if (dir == nullptr) {
+        return;
+    }
+
+    YStringArray dirs, fils;
+    struct stat st;
+
+    for (struct dirent* ent; (ent = readdir(dir)) != nullptr; ) {
+        if (ent->d_name[0] == '.') {
+            continue;
+        }
+#if DT_DIR
+        else if (ent->d_type != DT_UNKNOWN) {
+            if (ent->d_type == DT_DIR) {
+                dirs.append(ent->d_name);
+            } else if (ent->d_type == DT_REG) {
+                fils.append(ent->d_name);
+            }
+        }
+#endif
+        else if (fstatat(dirfd(dir), ent->d_name, &st, AT_SYMLINK_NOFOLLOW) == 0) {
+            if (S_ISDIR(st.st_mode)) {
+                dirs.append(ent->d_name);
+            } else if (S_ISREG(st.st_mode)) {
+                fils.append(ent->d_name);
+            }
+        }
+    }
+    closedir(dir);
+
+    if (dirs.nonempty()) {
+        ref<YIcon> icon = YIcon::getIcon("folder");
+        dirs.sort();
+        for (const char* name: dirs) {
+            upath npath(fPath + name);
+            ActionName an;
+            an.name = newstr(name);
+            YMenu* sub = new BrowseMenu(app, npath);
+            YMenuItem *item = addItem(an.name, -1, an.action, sub);
+            item->setIcon(icon);
+            names.append(an);
+        }
+    }
+    if (fils.nonempty()) {
+        ref<YIcon> icon = YIcon::getIcon("file");
+        fils.sort();
+        for (const char* name: fils) {
+            upath npath(fPath + name);
+            ActionName an;
+            an.name = newstr(name);
+            YMenuItem *item = addItem(an.name, -1, an.action, nullptr);
+            item->setIcon(icon);
+            names.append(an);
+        }
     }
 }
 
