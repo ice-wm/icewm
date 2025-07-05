@@ -2062,25 +2062,8 @@ void YWMApp::handleMsgBox(YMsgBox *msgbox, int operation) {
 }
 
 void YWMApp::handleSMAction(WMAction message) {
-    static const pair<WMAction, EAction> pairs[] = {
-        { ICEWM_ACTION_LOGOUT,        actionLogout },
-        { ICEWM_ACTION_CANCEL_LOGOUT, actionCancelLogout },
-        { ICEWM_ACTION_REBOOT,        actionReboot },
-        { ICEWM_ACTION_SHUTDOWN,      actionShutdown },
-        { ICEWM_ACTION_ABOUT,         actionAbout },
-        { ICEWM_ACTION_WINDOWLIST,    actionWindowList },
-        { ICEWM_ACTION_RESTARTWM,     actionRestart },
-        { ICEWM_ACTION_SUSPEND,       actionSuspend },
-        { ICEWM_ACTION_WINOPTIONS,    actionWinOptions },
-        { ICEWM_ACTION_RELOADKEYS,    actionReloadKeys },
-        { ICEWM_ACTION_ICEWMBG,       actionIcewmbg },
-        { ICEWM_ACTION_REFRESH,       actionRefresh },
-        { ICEWM_ACTION_HIBERNATE,     actionHibernate },
-        { ICEWM_ACTION_TOOLBAR,       actionToolbar },
-    };
-    for (auto p : pairs)
-        if (message == p.left)
-            return actionPerformed(p.right);
+    if (inrange<int>(message, 2, LAST_ICEWM_ACTION))
+        actionPerformed(YAction(EAction(message)));
 }
 
 void YWMApp::refreshDesktop() {
