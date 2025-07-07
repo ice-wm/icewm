@@ -8,8 +8,8 @@ class YIcon;
 
 class DObject {
 public:
-    DObject(IApp *app, mstring name, ref<YIcon> icon) :
-        fName(name), fIcon(icon), fApp(app) { }
+    DObject(mstring name, ref<YIcon> icon) :
+        fName(name), fIcon(icon) { }
     virtual ~DObject() { }
 
     mstring getName() const { return fName; }
@@ -17,13 +17,9 @@ public:
 
     virtual void open() = 0;
 
-protected:
-    IApp* app() const { return fApp; }
-
 private:
     mstring fName;
     ref<YIcon> fIcon;
-    IApp *fApp;
 };
 
 class ObjectMenu;

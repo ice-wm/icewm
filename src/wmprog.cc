@@ -45,7 +45,6 @@ void RProgram::open(YSMListener* smActionListener, unsigned mods) {
 }
 
 DProgram::DProgram(
-    IApp* app,
     YSMListener* smActionListener,
     const char* name,
     ref<YIcon> icon,
@@ -53,7 +52,7 @@ DProgram::DProgram(
     const char* wmclass,
     const char* command,
     YStringArray& args)
-    : DObject(app, name, icon)
+    : DObject(name, icon)
     , RProgram(restart, wmclass, command, args)
     , smActionListener(smActionListener)
 {

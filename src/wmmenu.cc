@@ -165,7 +165,7 @@ char* MenuLoader::parseProgram(char *word, char *p, bool restart,
 
     char* path = path_lookup(command);
     if (path) {
-        DProgram* prog = new DProgram(app, smActionListener, name, icon,
+        DProgram* prog = new DProgram(smActionListener, name, icon,
                                       restart, resource, path, args);
         if (prog)
             container->addObject(prog);

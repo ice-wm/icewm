@@ -99,8 +99,7 @@ private:
 
 class DProgram: public DObject, public RProgram {
 public:
-    DProgram(IApp* app,
-             YSMListener* smActionListener,
+    DProgram(YSMListener* smActionListener,
              const char* name,
              ref<YIcon> icon,
              bool restart,
