@@ -253,7 +253,7 @@ bool udir::nextDir() {
     return false;
 }
 
-bool udir::nextExt(const mstring& extension) {
+bool udir::nextExt(const char* extension) {
     while (next()) {
         if (fEntry.endsWith(extension)) {
             return true;
@@ -302,7 +302,7 @@ bool sdir::next() {
     return 1 + fLast < count() && ++fLast >= 0;
 }
 
-bool sdir::nextExt(const mstring& extension) {
+bool sdir::nextExt(const char* extension) {
     while (next()) {
         if (entry().endsWith(extension)) {
             return true;
