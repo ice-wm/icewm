@@ -122,9 +122,10 @@ public:
     bool operator<(const mstring& other) const { return compareTo(other) < 0; }
     bool copyTo(char *dst, size_t len) const;
 
-    bool startsWith(const mstring &s) const;
-    bool endsWith(const mstring &s) const;
-    int find(const mstring &s) const;
+    bool startsWith(const char* s) const;
+    bool endsWith(const char* s) const;
+    int find(const mstring& s) const;
+    int find(const char* s) const;
 
     bool split(unsigned char token, mstring *left, mstring *remain) const;
     bool splitall(unsigned char token, mstring *left, mstring *remain) const;

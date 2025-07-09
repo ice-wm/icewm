@@ -178,14 +178,24 @@ int mstring::charAt(int pos) const {
     return size_t(pos) < length() ? data()[pos] : -1;
 }
 
-bool mstring::startsWith(const mstring &s) const {
-    return s.isEmpty() || (s.length() <= length()
-        && 0 == memcmp(data(), s.data(), s.length()));
+bool mstring::startsWith(const char* s) const {
+    size_t slen = strlen(s);
+    return slen == 0 || (slen <= length()
+        && 0 == memcmp(data(), s, slen));
 }
 
-bool mstring::endsWith(const mstring &s) const {
-    return s.isEmpty() || (s.length() <= length()
-        && 0 == memcmp(data() + length() - s.length(), s.data(), s.length()));
+bool mstring::endsWith(const char* s) const {
+    size_t slen = strlen(s);
+    return slen == 0 || (slen <= length()
+        && 0 == memcmp(data() + length() - slen, s, slen));
+}
+
+int mstring::find(const char* str) const {
+    size_t len = strlen(str);
+    const char* found = (len == 0 || isEmpty()) ? nullptr :
+        static_cast<const char*>(memmem(
+                data(), length(), str, len));
+    return found ? int(found - data()) : (len ? -1 : 0);
 }
 
 int mstring::find(const mstring &str) const {
