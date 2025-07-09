@@ -356,8 +356,8 @@ void YWMApp::subdirs(const char* subdir, bool themeOnly, MStringArray& paths) {
         upath confDir(YApplication::getConfigDir());
         upath libsDir(YApplication::getLibDir());
         upath themeFile(themeName);
-        upath themeDir(themeFile.getExtension().isEmpty()
-                       ? themeFile : themeFile.parent());
+        upath themeDir(themeFile.path().endsWith(".theme")
+                       ? themeFile.parent() : themeFile);
 
         if (themeDir.isAbsolute()) {
             if (privDir.dirExists()) {
