@@ -35,14 +35,16 @@ void MStringRef::create(const char* str, size_t len) {
 
 mstring::mstring(const MStringRef& str, size_t offset, size_t count):
     fRef(str),
-    fOffset(offset),
     fCount(count)
 {
+    if (offset && fRef) {
+        fRef.create(&str[offset], count);
+    }
     acquire();
 }
 
 mstring::mstring(const char* str1, size_t len1, const char* str2, size_t len2):
-    fRef(len1 + len2), fOffset(0), fCount(len1 + len2)
+    fRef(len1 + len2), fCount(len1 + len2)
 {
     if (fRef) {
         if (len1)
@@ -60,7 +62,7 @@ mstring::mstring(const char* str):
 }
 
 mstring::mstring(const char* str, size_t len):
-    fRef(str, len), fOffset(0), fCount(len)
+    fRef(str, len), fCount(len)
 {
     acquire();
 }
@@ -74,7 +76,6 @@ mstring::mstring(const char *str1, const char *str2, const char *str3) {
     size_t len1 = str1 ? strlen(str1) : 0;
     size_t len2 = str2 ? strlen(str2) : 0;
     size_t len3 = str3 ? strlen(str3) : 0;
-    fOffset = 0;
     fCount = len1 + len2 + len3;
     fRef.alloc(fCount);
     if (len1) memcpy(fRef->fStr, str1, len1);
@@ -94,7 +95,6 @@ mstring::mstring(const char *str1, const char *str2, const char *str3,
     for (int i = 0; i < count; ++i) {
         total += length[i] = (string[i] ? strlen(string[i]) : 0);
     }
-    fOffset = 0;
     fCount = total;
     fRef.alloc(fCount);
     size_t build = 0;
@@ -109,7 +109,7 @@ mstring::mstring(const char *str1, const char *str2, const char *str3,
 }
 
 mstring::mstring(long n):
-    fRef(size_t(23)), fOffset(0), fCount(0)
+    fRef(size_t(23)), fCount(0)
 {
     snprintf(fRef->fStr, 23, "%ld", n);
     fCount = strlen(fRef->fStr);
@@ -131,20 +131,19 @@ mstring& mstring::operator=(const mstring& rv) {
         fRef = rv.fRef;
         acquire();
     }
-    fOffset = rv.fOffset;
     fCount = rv.fCount;
     return *this;
 }
 
 mstring mstring::substring(size_t pos) const {
     return pos <= length()
-        ? mstring(fRef, fOffset + pos, fCount - pos)
+        ? mstring(fRef, pos, fCount - pos)
         : null;
 }
 
 mstring mstring::substring(size_t pos, size_t len) const {
     return pos <= length()
-        ? mstring(fRef, fOffset + pos, min(len, fCount - pos))
+        ? mstring(fRef, pos, min(len, fCount - pos))
         : null;
 }
 
@@ -322,13 +321,12 @@ const char* mstring::c_str()
     }
     else if (data()[fCount]) {
         if (fRef->fRefCount == 1) {
-            fRef[fOffset + fCount] = '\0';
+            fRef[fCount] = '\0';
         } else {
             const char* str = data();
             fRef.release();
             fRef.create(str, fCount);
             fRef.acquire();
-            fOffset = 0;
         }
     }
     return data();
@@ -415,7 +413,6 @@ void mstring::fmt(const char* fmt, ...) {
     va_end(ap);
     release();
     fRef = ref;
-    fOffset = 0;
     fCount = i;
     acquire();
 }

@@ -50,7 +50,6 @@ private:
     friend mstring operator+(const char* s, const mstring& m);
 
     MStringRef fRef;
-    size_t fOffset;
     size_t fCount;
 
     void acquire() {
@@ -61,7 +60,7 @@ private:
     }
     mstring(const MStringRef& str, size_t offset, size_t count);
     mstring(const char* str1, size_t len1, const char* str2, size_t len2);
-    const char* data() const { return &fRef[fOffset]; }
+    const char* data() const { return &fRef[0]; }
 
 public:
     mstring(const char *str);
@@ -73,12 +72,11 @@ public:
     mstring(const char *str, size_t len);
     explicit mstring(long);
 
-    mstring(null_ref &): fRef(nullptr), fOffset(0), fCount(0) { }
-    mstring():           fRef(nullptr), fOffset(0), fCount(0) { }
+    mstring(null_ref &): fRef(nullptr), fCount(0) { }
+    mstring():           fRef(nullptr), fCount(0) { }
 
     mstring(const mstring &r):
         fRef(r.fRef),
-        fOffset(r.fOffset),
         fCount(r.fCount)
     {
         acquire();
@@ -88,7 +86,6 @@ public:
     }
 
     size_t length() const { return fCount; }
-    size_t offset() const { return fOffset; }
     bool isEmpty() const { return 0 == fCount; }
     bool nonempty() const { return 0 < fCount; }
 
