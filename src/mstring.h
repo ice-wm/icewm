@@ -16,6 +16,7 @@ public:
     MStringData() : fRefCount(0) {}
 
     int fRefCount;
+    unsigned fLen;
     char fStr[];
 };
 
@@ -35,6 +36,7 @@ public:
     void operator=(MStringData* data) { fStr = data; }
     void acquire() const { fStr->fRefCount++; }
     void release() const { if (fStr->fRefCount-- == 1) free(fStr); }
+    unsigned len() const { return fStr ? fStr->fLen : 0; }
 
 private:
 
@@ -50,8 +52,6 @@ private:
     friend mstring operator+(const char* s, const mstring& m);
 
     MStringRef fRef;
-    size_t fOffset;
-    size_t fCount;
 
     void acquire() {
         if (fRef) { fRef.acquire(); }
@@ -61,7 +61,7 @@ private:
     }
     mstring(const MStringRef& str, size_t offset, size_t count);
     mstring(const char* str1, size_t len1, const char* str2, size_t len2);
-    const char* data() const { return &fRef[fOffset]; }
+    const char* data() const { return &fRef[0]; }
 
 public:
     mstring(const char *str);
@@ -73,13 +73,11 @@ public:
     mstring(const char *str, size_t len);
     explicit mstring(long);
 
-    mstring(null_ref &): fRef(nullptr), fOffset(0), fCount(0) { }
-    mstring():           fRef(nullptr), fOffset(0), fCount(0) { }
+    mstring(null_ref &): fRef(nullptr) { }
+    mstring():           fRef(nullptr) { }
 
     mstring(const mstring &r):
-        fRef(r.fRef),
-        fOffset(r.fOffset),
-        fCount(r.fCount)
+        fRef(r.fRef)
     {
         acquire();
     }
@@ -87,10 +85,9 @@ public:
         release();
     }
 
-    size_t length() const { return fCount; }
-    size_t offset() const { return fOffset; }
-    bool isEmpty() const { return 0 == fCount; }
-    bool nonempty() const { return 0 < fCount; }
+    size_t length() const { return fRef.len(); }
+    bool isEmpty() const { return 0 == length(); }
+    bool nonempty() const { return 0 < length(); }
 
     mstring& operator=(const mstring& rv);
     void operator+=(const mstring& rv);
@@ -122,9 +119,10 @@ public:
     bool operator<(const mstring& other) const { return compareTo(other) < 0; }
     bool copyTo(char *dst, size_t len) const;
 
-    bool startsWith(const mstring &s) const;
-    bool endsWith(const mstring &s) const;
-    int find(const mstring &s) const;
+    bool startsWith(const char* s) const;
+    bool endsWith(const char* s) const;
+    int find(const mstring& s) const;
+    int find(const char* s) const;
 
     bool split(unsigned char token, mstring *left, mstring *remain) const;
     bool splitall(unsigned char token, mstring *left, mstring *remain) const;

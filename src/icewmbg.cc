@@ -513,13 +513,13 @@ YColor Background::getTransparencyColor() {
 }
 
 void Background::randinit(long seed) {
-#ifndef HAVE_ARC4RANDOM_UNIFORM
     if (randInited == false) {
+#ifndef HAVE_ARC4RANDOM_UNIFORM
         timeval now = walltime();
         srand(unsigned((seed + mypid) * now.tv_sec + now.tv_usec));
         randInited = true;
-    }
 #endif
+    }
 }
 
 int Background::randmax(int upper) {

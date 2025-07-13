@@ -272,10 +272,11 @@ void MEMStatus::getStatus() {
         membytes total = fMemInfo->parseField("MemTotal:");
         if (total < 1)
             total = 1;
-        if (total >= cur[MEM_BUFFERS] + cur[MEM_CACHED] + cur[MEM_FREE])
-           cur[MEM_USER] = cur[MEM_BUFFERS] + cur[MEM_CACHED] + cur[MEM_FREE];
-        else
-           cur[MEM_USER] = 0;
+        membytes user = total;
+        for (int j = 0; j < MEM_STATES; j++) {
+            user -= cur[j];
+        }
+        cur[MEM_USER] = user;
     }
     fMemInfo->discard();
 

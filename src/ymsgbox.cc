@@ -62,7 +62,7 @@ YMsgBox::YMsgBox(int buttons,
         }
     }
     autoSize();
-    setLayerHint(WinLayerAboveDock);
+    setLayerHint(WinLayerAboveDock + 1);
     setWorkspaceHint(AllWorkspaces);
     setWinHintsHint(WinHintsSkipWindowMenu);
     setNetWindowType(_XA_NET_WM_WINDOW_TYPE_DIALOG);

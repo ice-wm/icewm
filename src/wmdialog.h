@@ -12,13 +12,13 @@ public:
     CtrlAltDelete(IApp *app, YWindow *parent);
     virtual ~CtrlAltDelete();
 
-    virtual void paint(Graphics &g, const YRect &r);
-    virtual bool handleKey(const XKeyEvent &key);
-    virtual void actionPerformed(YAction action, unsigned int modifiers);
-    virtual void configure(const YRect2& rect);
-    virtual void repaint();
-    virtual void handleVisibility(const XVisibilityEvent&);
-    virtual void handleButton(const XButtonEvent &button);
+    void paint(Graphics& g, const YRect& r) override;
+    bool handleKey(const XKeyEvent& key) override;
+    void actionPerformed(YAction action, unsigned) override;
+    void configure(const YRect2& rect) override;
+    void repaint() override;
+    void handleVisibility(const XVisibilityEvent&) override;
+    void handleButton(const XButtonEvent& button) override;
 
     void activate();
     void deactivate();

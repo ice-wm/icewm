@@ -20,6 +20,7 @@ enum WMAction {
     ICEWM_ACTION_REFRESH = 13,
     ICEWM_ACTION_HIBERNATE = 14,
     ICEWM_ACTION_TOOLBAR = 15,
+    LAST_ICEWM_ACTION = 15,
 };
 
 enum RebootShutdown {
@@ -30,6 +31,22 @@ enum RebootShutdown {
 
 enum EAction {
     actionNull               = 0,
+
+    actionLock               = ICEWM_ACTION_LOCK,
+    actionLogout             = ICEWM_ACTION_LOGOUT,
+    actionCancelLogout       = ICEWM_ACTION_CANCEL_LOGOUT,
+    actionReboot             = ICEWM_ACTION_REBOOT,
+    actionShutdown           = ICEWM_ACTION_SHUTDOWN,
+    actionAbout              = ICEWM_ACTION_ABOUT,
+    actionWindowList         = ICEWM_ACTION_WINDOWLIST,
+    actionRestart            = ICEWM_ACTION_RESTARTWM,
+    actionSuspend            = ICEWM_ACTION_SUSPEND,
+    actionWinOptions         = ICEWM_ACTION_WINOPTIONS,
+    actionReloadKeys         = ICEWM_ACTION_RELOADKEYS,
+    actionIcewmbg            = ICEWM_ACTION_ICEWMBG,
+    actionRefresh            = ICEWM_ACTION_REFRESH,
+    actionHibernate          = ICEWM_ACTION_HIBERNATE,
+    actionToolbar            = ICEWM_ACTION_TOOLBAR,
 
     actionCascade            = 101,
     actionArrange            = 103,
@@ -63,17 +80,7 @@ enum EAction {
     actionToggleTray         = 153,
     actionCollapseTaskbar    = 155,
 
-    actionWindowList         = 157,
-    actionLogout             = 159,
-    actionCancelLogout       = 161,
-    actionLock               = 163,
-    actionReboot             = 165,
-    actionRestart            = 167,
     actionRestartXterm       = 169,
-    actionShutdown           = 171,
-    actionSuspend            = 173,
-    actionRefresh            = 175,
-    actionAbout              = 177,
     actionRun                = 179,
     actionExit               = 181,
 
@@ -85,8 +92,6 @@ enum EAction {
     actionFocusCustom        = 193,
 
     actionMaximizeHoriz      = 195,
-    actionWinOptions         = 197,
-    actionReloadKeys         = 199,
     actionCut                = 201,
     actionCopy               = 203,
     actionPaste              = 205,
@@ -123,9 +128,6 @@ enum EAction {
     actionUntab              = 255,
     actionRename             = 257,
     actionSysDialog          = 259,
-    actionIcewmbg            = 261,
-    actionHibernate          = 263,
-    actionToolbar            = 265,
 
     actionHelpManual         = 267,
     actionHelpIcewm          = 269,

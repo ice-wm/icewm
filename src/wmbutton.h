@@ -1,7 +1,7 @@
-#ifndef __WMBUTTON_H
-#define __WMBUTTON_H
+#ifndef WMBUTTON_H
+#define WMBUTTON_H
 
-#include "yactionbutton.h"
+#include "ybutton.h"
 
 class YFrameWindow;
 class YFrameTitleBar;

@@ -1023,7 +1023,7 @@ Command to select and run a program.
 
 =item B<OpenCommand>=""
 
-Open command.
+Command to open a file or directory from the Start menu.
 
 =item B<TerminalCommand>="xterm"
 
