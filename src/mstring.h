@@ -16,6 +16,7 @@ public:
     MStringData() : fRefCount(0) {}
 
     int fRefCount;
+    unsigned fLen;
     char fStr[];
 };
 
@@ -35,6 +36,7 @@ public:
     void operator=(MStringData* data) { fStr = data; }
     void acquire() const { fStr->fRefCount++; }
     void release() const { if (fStr->fRefCount-- == 1) free(fStr); }
+    unsigned len() const { return fStr ? fStr->fLen : 0; }
 
 private:
 
@@ -50,7 +52,6 @@ private:
     friend mstring operator+(const char* s, const mstring& m);
 
     MStringRef fRef;
-    size_t fCount;
 
     void acquire() {
         if (fRef) { fRef.acquire(); }
@@ -72,12 +73,11 @@ public:
     mstring(const char *str, size_t len);
     explicit mstring(long);
 
-    mstring(null_ref &): fRef(nullptr), fCount(0) { }
-    mstring():           fRef(nullptr), fCount(0) { }
+    mstring(null_ref &): fRef(nullptr) { }
+    mstring():           fRef(nullptr) { }
 
     mstring(const mstring &r):
-        fRef(r.fRef),
-        fCount(r.fCount)
+        fRef(r.fRef)
     {
         acquire();
     }
@@ -85,9 +85,9 @@ public:
         release();
     }
 
-    size_t length() const { return fCount; }
-    bool isEmpty() const { return 0 == fCount; }
-    bool nonempty() const { return 0 < fCount; }
+    size_t length() const { return fRef.len(); }
+    bool isEmpty() const { return 0 == length(); }
+    bool nonempty() const { return 0 < length(); }
 
     mstring& operator=(const mstring& rv);
     void operator+=(const mstring& rv);

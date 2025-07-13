@@ -17,6 +17,7 @@
 
 void MStringRef::alloc(size_t len) {
     fStr = new (malloc(sizeof(MStringData) + len + 1)) MStringData();
+    fStr->fLen = unsigned(len);
 }
 
 void MStringRef::create(const char* str, size_t len) {
@@ -34,24 +35,23 @@ void MStringRef::create(const char* str, size_t len) {
 }
 
 mstring::mstring(const MStringRef& str, size_t offset, size_t count):
-    fRef(str),
-    fCount(count)
+    fRef(str)
 {
-    if (offset && fRef) {
+    if (fRef && (offset || count < length())) {
         fRef.create(&str[offset], count);
     }
     acquire();
 }
 
 mstring::mstring(const char* str1, size_t len1, const char* str2, size_t len2):
-    fRef(len1 + len2), fCount(len1 + len2)
+    fRef(len1 + len2)
 {
     if (fRef) {
         if (len1)
             strncpy(fRef->fStr, str1, len1);
         if (len2)
             strncpy(fRef->fStr + len1, str2, len2);
-        fRef[fCount] = 0;
+        fRef[len1 + len2] = 0;
         fRef.acquire();
     }
 }
@@ -62,7 +62,7 @@ mstring::mstring(const char* str):
 }
 
 mstring::mstring(const char* str, size_t len):
-    fRef(str, len), fCount(len)
+    fRef(str, len)
 {
     acquire();
 }
@@ -76,12 +76,12 @@ mstring::mstring(const char *str1, const char *str2, const char *str3) {
     size_t len1 = str1 ? strlen(str1) : 0;
     size_t len2 = str2 ? strlen(str2) : 0;
     size_t len3 = str3 ? strlen(str3) : 0;
-    fCount = len1 + len2 + len3;
-    fRef.alloc(fCount);
+    size_t count = len1 + len2 + len3;
+    fRef.alloc(count);
     if (len1) memcpy(fRef->fStr, str1, len1);
     if (len2) memcpy(fRef->fStr + len1, str2, len2);
     if (len3) memcpy(fRef->fStr + len1 + len2, str3, len3);
-    fRef[fCount] = 0;
+    fRef[count] = 0;
     fRef.acquire();
 }
 
@@ -95,8 +95,7 @@ mstring::mstring(const char *str1, const char *str2, const char *str3,
     for (int i = 0; i < count; ++i) {
         total += length[i] = (string[i] ? strlen(string[i]) : 0);
     }
-    fCount = total;
-    fRef.alloc(fCount);
+    fRef.alloc(total);
     size_t build = 0;
     for (int i = 0; i < count; ++i) {
         if (length[i]) {
@@ -104,15 +103,14 @@ mstring::mstring(const char *str1, const char *str2, const char *str3,
             build += length[i];
         }
     }
-    fRef[fCount] = 0;
+    fRef[total] = 0;
     fRef.acquire();
 }
 
 mstring::mstring(long n):
-    fRef(size_t(23)), fCount(0)
+    fRef(size_t(23))
 {
     snprintf(fRef->fStr, 23, "%ld", n);
-    fCount = strlen(fRef->fStr);
     fRef.acquire();
 }
 
@@ -131,19 +129,18 @@ mstring& mstring::operator=(const mstring& rv) {
         fRef = rv.fRef;
         acquire();
     }
-    fCount = rv.fCount;
     return *this;
 }
 
 mstring mstring::substring(size_t pos) const {
-    return pos <= length()
-        ? mstring(fRef, pos, fCount - pos)
+    return pos < length()
+        ? mstring(fRef, pos, length() - pos)
         : null;
 }
 
 mstring mstring::substring(size_t pos, size_t len) const {
-    return pos <= length()
-        ? mstring(fRef, pos, min(len, fCount - pos))
+    return pos < length() && len
+        ? mstring(fRef, pos, min(len, length() - pos))
         : null;
 }
 
@@ -206,13 +203,13 @@ int mstring::find(const mstring &str) const {
 
 int mstring::indexOf(char ch) const {
     const char *str = isEmpty() ? nullptr :
-        static_cast<const char *>(memchr(data(), ch, fCount));
+        static_cast<const char *>(memchr(data(), ch, length()));
     return str ? int(str - data()) : -1;
 }
 
 int mstring::lastIndexOf(char ch) const {
     const char *str = isEmpty() ? nullptr :
-        static_cast<const char *>(memrchr(data(), ch, fCount));
+        static_cast<const char *>(memrchr(data(), ch, length()));
     return str ? int(str - data()) : -1;
 }
 
@@ -254,11 +251,11 @@ int mstring::compareTo(const mstring &s) const {
 
 bool mstring::copyTo(char *dst, size_t len) const {
     if (len > 0) {
-        size_t copy = min(len - 1, fCount);
+        size_t copy = min(len - 1, length());
         if (copy) memcpy(dst, data(), copy);
         dst[copy] = 0;
     }
-    return fCount < len;
+    return length() < len;
 }
 
 mstring mstring::replace(int pos, int len, const mstring &insert) const {
@@ -288,16 +285,18 @@ mstring mstring::searchAndReplaceAll(const mstring& s, const mstring& r) const {
 }
 
 mstring mstring::lower() const {
-    mstring mstr(nullptr, fCount);
-    for (size_t i = 0; i < fCount; ++i) {
+    const size_t len = length();
+    mstring mstr(nullptr, len);
+    for (size_t i = 0; i < len; ++i) {
         mstr.fRef[i] = tolower((unsigned char) data()[i]);
     }
     return mstr;
 }
 
 mstring mstring::upper() const {
-    mstring mstr(nullptr, fCount);
-    for (size_t i = 0; i < fCount; ++i) {
+    const size_t len = length();
+    mstring mstr(nullptr, len);
+    for (size_t i = 0; i < len; ++i) {
         mstr.fRef[i] = toupper((unsigned char) data()[i]);
     }
     return mstr;
@@ -319,13 +318,13 @@ const char* mstring::c_str()
     if (isEmpty()) {
         return "";
     }
-    else if (data()[fCount]) {
+    else if (data()[length()]) {
         if (fRef->fRefCount == 1) {
-            fRef[fCount] = '\0';
+            fRef[length()] = '\0';
         } else {
             const char* str = data();
             fRef.release();
-            fRef.create(str, fCount);
+            fRef.create(str, length());
             fRef.acquire();
         }
     }
@@ -378,10 +377,10 @@ void mstring::fmt(const char* fmt, ...) {
         if (*s == '%' && s[1]) {
             s++;
             if (*s == 's') {
-                len += strlen(va_arg(ap, const char *));
+                len = len + strlen(va_arg(ap, const char *)) - 2;
             }
             if (*s == 'm') {
-                len += strlen(strerror(en));
+                len = len + strlen(strerror(en)) - 2;
             }
         }
     }
@@ -413,7 +412,6 @@ void mstring::fmt(const char* fmt, ...) {
     va_end(ap);
     release();
     fRef = ref;
-    fCount = i;
     acquire();
 }
 
