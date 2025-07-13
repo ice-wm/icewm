@@ -72,6 +72,9 @@ Options and arguments that are passed to I<program>.
 Lines beginning with a hash (C<#>) are comment lines.  Comment lines and
 blank lines are ignored.
 
+Please note that all keywords from L<icewm-menu(5)> are permitted here
+as well.
+
 =head2 EXAMPLES
 
 Following is an example that places a number of toolbar buttons on the

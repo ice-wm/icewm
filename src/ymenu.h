@@ -61,6 +61,7 @@ public:
 
     int itemCount() const { return fItems.getCount(); }
     int getSelectedItem() const { return selectedItem; }
+    void setSelectedItem(int index) { selectedItem = index; }
     int findItem(YMenuItem* item) const { return find(fItems, item); }
     bool lastIsSeparator() const;
     YMenuItem *lastItem() const;

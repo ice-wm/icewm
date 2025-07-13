@@ -1,23 +1,19 @@
 #ifndef THEMES_H
 #define THEMES_H
 
-#include "obj.h"
 #include "ymenu.h"
 #include "yaction.h"
 
+class IApp;
 class YSMListener;
 
-class DTheme: public DObject {
+class DTheme {
 public:
-    DTheme(IApp* app, YSMListener* listener, mstring label, mstring theme, int top);
-    virtual ~DTheme();
-
-    void open() override;
+    DTheme(mstring theme, int top) : fTheme(theme), fTop(top) { }
     mstring theme() const { return fTheme; }
     int topdir() const { return fTop; }
     YAction action() const { return fAction; }
 private:
-    YSMListener *smActionListener;
     mstring fTheme;
     int fTop;
     YAction fAction;
@@ -36,6 +32,7 @@ private:
     upath themesTop(int top);
     void scanThemes(int top);
     void makeMenus();
+    void open(DTheme* dtheme);
 
     YMenuItem* newThemeItem(mstring label, mstring theme, int top);
     YMenuItem* addThemeToMenu(DTheme* dtheme, YMenu* menu);

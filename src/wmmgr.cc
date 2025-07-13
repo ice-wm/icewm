@@ -406,7 +406,7 @@ bool YWindowManager::handleWMKey(const XKeyEvent& key, bool repeating) {
             if (repeating && p->resource())
                 /*ignore*/;
             else
-                p->open(key.state);
+                p->open(smActionListener, key.state);
             return true;
         }
     }
@@ -667,7 +667,7 @@ void YWindowManager::handleButton(const XButtonEvent &button) {
             // allow buttons to trigger actions from "keys" for #333.
             for (KProgram* p : keyProgs) {
                 if (p->isButton(button)) {
-                    p->open(KEY_MODMASK(button.state));
+                    p->open(smActionListener, KEY_MODMASK(button.state));
                     break;
                 }
             }

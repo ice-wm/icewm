@@ -79,7 +79,7 @@ public:
     bool isLink() const;
     bool next();
     bool nextDir();
-    bool nextExt(const mstring& extension);
+    bool nextExt(const char* extension);
     bool nextFile();
 
 private:
@@ -102,7 +102,7 @@ public:
     bool open(upath path);
     bool isOpen() const { return count(); }
     bool next();
-    bool nextExt(const mstring& extension);
+    bool nextExt(const char* extension);
     void rewind() { fLast = -1; }
     int count() const { return fName.getCount(); }
 

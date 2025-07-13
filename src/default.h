@@ -449,7 +449,7 @@ cfoption icewm_preferences[] = {
     OSV("ClockCommand",                         &clockCommand,                  "Command to run on clock"),
     OSV("ClockClassHint",                       &clockClassHint,                "WM_CLASS to allow runonce for ClockCommand"),
     OSV("RunCommand",                           &runDlgCommand,                 "Command to select and run a program"),
-    OSV("OpenCommand",                          &openCommand,                   "Command to select and run a program."),
+    OSV("OpenCommand",                          &openCommand,                   "Command to open a file or directory from the Start menu."),
     OSV("TerminalCommand",                      &terminalCommand,               "Terminal emulator must accept -e option."),
     OSV("LogoutCommand",                        &logoutCommand,                 "Command to start logout"),
     OSV("LogoutCancelCommand",                  &logoutCancelCommand,           "Command to cancel logout"),

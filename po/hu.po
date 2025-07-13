@@ -10,22 +10,22 @@ msgstr ""
 "Project-Id-Version: icewm 1.2.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2023-03-28 22:14+0000\n"
+"PO-Revision-Date: 2025-06-30 12:59+0000\n"
 "Last-Translator: Kempelen <lion@cmsbazar.hu>\n"
-"Language-Team: Hungarian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
-"branch/hu/>\n"
+"Language-Team: Hungarian <https://l10n.opensuse.org/projects/icewm/"
+"icewm-1-4-branch/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 5.12.2\n"
 
 # ../src/icons.cc:220
 #: src/aapm.cc:113
 #, c-format
 msgid "Can't open the APM device %s"
-msgstr "Nem sikerült megnyitni a APM-eszközt: %s"
+msgstr "Nem sikerült megnyitni az APM-eszközt: %s"
 
 #: src/aapm.cc:121 src/aapm.cc:139
 #, c-format
@@ -401,6 +401,41 @@ msgid ""
 "This program also listens to environment variables defined by\n"
 "the XDG Base Directory Specification:\n"
 msgstr ""
+"HASZNÁLAT: icewm-menu-fdo [KAPCSOLÓK] [FÁJLNÉV]\n"
+"KAPCSOLÓK:\n"
+"-g, --generic\t\tKerüljön bele a program általános neve, zárójelben\n"
+"-o, --output=FÁJL\tKimenet írása a FÁJL-ba\n"
+"-t, --terminal=NÉV\tNÉV használata a terminálhoz amely rendelkezik '-e' "
+"kapcsolóval\n"
+"-s, --no-lone-app\tHelyezze át a magányos elemeket a tartalmazó menübe\n"
+"-S, --no-lone-hint\tMint -s, de fűzze hozzá az eredeti almenü nevét\n"
+"-d, --deadline-apps=N\tAlkalmazásadatok betöltésének megszakítása N ms után\n"
+"-D, --deadline-all=N\tMinden betöltés megszakítása és az eddig összegyűjtött "
+"kiírása\n"
+"-m, --match=MINTA\t\tCsak a MINTÁT tartalmazó címek megjelenítése\n"
+"-M, --imatch=MINTA\tMint --match, de kis- és nagybetűk különböznek\n"
+"-L, --limit-max-len=N\tCímek vágása N karakternél, majd ... hozzáfűzése\n"
+"--seps  \tElválasztók kiírása a tartalom előtt és után\n"
+"--sep-before\tElválasztó kiírása a tartalom előtt\n"
+"--sep-after\tElválasztó kiírása csak a tartalom után\n"
+"--no-sep-others\tElavult, nincs hatása\n"
+"--no-sub-cats\tNe legyenek további alkategóriák, csak egy menüszint\n"
+"--flat\t\tMinden alkalmazás egy szinten jelenjen meg, kategória tippel\n"
+"--flat-sep=ELV\tKategória elválasztó egy szintű módban (alapértelmezés: ' / "
+"')\n"
+"--match-sec\tA --match vagy --imatch alkalmazása a programokra és szekciókra "
+"is\n"
+"--match-osec\tA --match vagy --imatch alkalmazása kizárólag a szekciókra\n"
+"--orig-comment\tForrás .desktop fájl hozzáadása megjegyzésként\n"
+"-C, --copying\tCopyright információk megjelenítése\n"
+"-V, --version\tVerzió információk megjelenítése\n"
+"-h, --help\tEzen súgó megjelenítése és kilépés.\n"
+"\n"
+"FÁJLNÉV\tEgy tetszőleges .desktop fájl, az alkalmazásindító Exec parancsának "
+"lefuttatásához.\n"
+"\n"
+"Ez a program az XDG Alapkönyvtár Specifikáció által meghatározott\n"
+"környezeti változókat is figyelembe veszi.\n"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: An audio application
 #: src/fdomenu.cc:1100 src/fdospecgen.h:64 src/fdospecgen.h:72
@@ -412,15 +447,15 @@ msgstr "Hang"
 
 #: src/fdomenu.cc:1101
 msgid "Zarathustra"
-msgstr ""
+msgstr "Zarathustra"
 
 #: src/fdomenu.cc:1201
 msgid "System too slow! Failed to load menu content!"
-msgstr ""
+msgstr "A rendszer túl lassú! A menü tartalmának betöltése nem sikerült!"
 
 #: src/fdomenu.cc:1204
 msgid "Please push HERE and retry after some seconds."
-msgstr ""
+msgstr "Kattintson IDE és próbálja újra pár másodperc múlva."
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: A tool to manage printers
 #: src/fdospecgen.h:24
@@ -659,7 +694,6 @@ msgstr "Művészet"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Artificial Intelligence software
 #: src/fdospecgen.h:234 src/fdospecgen.h:240
-#, fuzzy
 msgid "Artificialtelligence"
 msgstr "Mesterséges intelligencia"
 
@@ -759,7 +793,7 @@ msgstr "Óra"
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside: Application that only works inside a terminal (text-based or command line application)
 #: src/fdospecgen.h:366
 msgid "ConsoleOnly"
-msgstr ""
+msgstr "Terminál alapú"
 
 #. TRANSLATORS: This is a SHORT category menu name from freedesktop.org. Please add compact punctuation if needed but no double-quotes! Hint for the content inside:  
 #: src/fdospecgen.h:372 src/fdospecgen.h:378
@@ -2202,7 +2236,7 @@ msgstr "_Alvó mód"
 
 #: src/wmapp.cc:531 src/wmdialog.cc:91
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Hibernálás"
 
 # ../src/wmapp.cc:468
 #: src/wmapp.cc:535
@@ -2483,11 +2517,11 @@ msgstr ""
 
 #: src/wmapp.cc:1652
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
-msgstr ""
+msgstr "  -o, --output=FÁJL   Minden kimenet átirányítása a FÁJL-ba.\n"
 
 #: src/wmapp.cc:1658
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
-msgstr ""
+msgstr "  -i, --install=TÉMA A TÉMA telepítése az extrákból vagy 'listából'.\n"
 
 #: src/wmapp.cc:1661
 #, c-format

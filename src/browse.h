@@ -1,26 +1,28 @@
-#ifndef __BROWSE_H
-#define __BROWSE_H
+#ifndef BROWSE_H
+#define BROWSE_H
 
 class YSMListener;
 
-class BrowseMenu: public ObjectMenu {
+class BrowseMenu: public YMenu, private YActionListener {
 public:
-    BrowseMenu(
-        IApp *app,
-        YSMListener *smActionListener,
-        YActionListener *wmActionListener,
-        upath path,
-        YWindow *parent = nullptr);
-    virtual ~BrowseMenu();
-    virtual void updatePopup();
+    BrowseMenu(IApp *app, upath path);
+    ~BrowseMenu();
+
+    void updatePopup() override;
 
 private:
+    void actionPerformed(YAction action, unsigned modifiers = 0) override;
     void loadItems();
 
+    IApp *app;
     upath fPath;
     time_t fModTime;
-    YSMListener *smActionListener;
-    IApp *app;
+
+    typedef struct {
+        YAction action;
+        const char* name;
+    } ActionName;
+    YArray<ActionName> names;
 };
 
 #endif

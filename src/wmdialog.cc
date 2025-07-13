@@ -80,26 +80,24 @@ CtrlAltDelete::CtrlAltDelete(IApp* app, YWindow* parent)
     struct {
         const char* text;
         EAction act;
-        WMAction wma;
     } data[Count] = {
-        { _("Loc_k Workstation"), actionLock, ICEWM_ACTION_LOCK },
-        { _("_Sleep mode"), actionSuspend, ICEWM_ACTION_SUSPEND },
-        { _("_Cancel"), actionCancelLogout, ICEWM_ACTION_CANCEL_LOGOUT },
-        { _("_Logout..."), actionLogout, ICEWM_ACTION_LOGOUT },
-        { _("Re_boot"), actionReboot, ICEWM_ACTION_REBOOT },
-        { _("Shut_down"), actionShutdown, ICEWM_ACTION_SHUTDOWN },
-        { _("_Hibernate"), actionHibernate, ICEWM_ACTION_HIBERNATE },
-        { _("_Window list"), actionWindowList, ICEWM_ACTION_WINDOWLIST },
-        { _("_Restart icewm"), actionRestart, ICEWM_ACTION_RESTARTWM },
-        { _("Reload ke_ys"), actionReloadKeys, ICEWM_ACTION_RELOADKEYS },
-        { _("Reload _toolbar"), actionToolbar, ICEWM_ACTION_TOOLBAR },
-        { _("Reload win_options"), actionWinOptions, ICEWM_ACTION_WINOPTIONS },
-        { _("_About"), actionAbout, ICEWM_ACTION_ABOUT },
-        // { _("Clos_e"), actionClose, ICEWM_ACTION_NOP },
+        { _("Loc_k Workstation"), actionLock },
+        { _("_Sleep mode"), actionSuspend },
+        { _("_Cancel"), actionCancelLogout },
+        { _("_Logout..."), actionLogout },
+        { _("Re_boot"), actionReboot },
+        { _("Shut_down"), actionShutdown },
+        { _("_Hibernate"), actionHibernate },
+        { _("_Window list"), actionWindowList },
+        { _("_Restart icewm"), actionRestart },
+        { _("Reload ke_ys"), actionReloadKeys },
+        { _("Reload _toolbar"), actionToolbar },
+        { _("Reload win_options"), actionWinOptions },
+        { _("_About"), actionAbout },
     };
     for (int i = 0; i < Count; ++i) {
         buttons[i] = new YActionButton(this, data[i].text, -2,
-                                       this, data[i].act, data[i].wma);
+                                       this, data[i].act);
         if (w < buttons[i]->width())
             w = buttons[i]->width();
         if (h < buttons[i]->height() + 2)
@@ -156,16 +154,14 @@ void CtrlAltDelete::paint(Graphics &g, const YRect &/*r*/) {
     g.draw3DRect(0, 0, width() - 1, height() - 1, true);
 }
 
-void CtrlAltDelete::actionPerformed(YAction action, unsigned int /*modifiers*/) {
+void CtrlAltDelete::actionPerformed(YAction action, unsigned /*modifiers*/) {
     deactivate();
-    for (int i = 0; i < Count; ++i) {
-        if (action == *buttons[i]) {
-            if (inrange<int>(buttons[i]->wmAction, 2, 14))
-                manager->doWMAction(buttons[i]->wmAction);
-            else if (action == actionLock && canLock())
-                app->runCommand(lockCommand);
-            break;
-        }
+    if (action == actionLock) {
+        if (canLock())
+            app->runCommand(lockCommand);
+    }
+    else if (inrange<int>(action.ident(), 2, LAST_ICEWM_ACTION)) {
+        manager->doWMAction(WMAction(action.ident()));
     }
 }
 
@@ -316,10 +312,8 @@ void CtrlAltDelete::handleButton(const XButtonEvent &button) {
 }
 
 YActionButton::YActionButton(YWindow* parent, const mstring& text, int hotkey,
-                             YActionListener* listener, EAction action,
-                             WMAction wmAction):
-    YButton(parent, action ? action : YAction()),
-    wmAction(wmAction)
+                             YActionListener* listener, EAction action):
+    YButton(parent, action ? action : YAction())
 {
     addStyle(wsNoExpose);
     setText(text, hotkey);
