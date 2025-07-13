@@ -108,6 +108,7 @@ public:
              YStringArray& args);
     void open() override;
 private:
+    using RProgram::open;
     YSMListener* smActionListener;
 };
 
