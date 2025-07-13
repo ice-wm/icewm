@@ -1,5 +1,298 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 0c19629f1a69caa8b68875a3f2933a6099b33adc
+Merge: a172c86e 79323150
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 14 00:17:24 2025 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 79323150ea5893b3f5d38a87e40e1c735451f7ff
+Merge: 4a421679 65ffef70
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 14 00:16:57 2025 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 65ffef704b4a6a2eb3d70799a35d2c2164e154fe
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 14 00:15:36 2025 +0200
+
+    Prevent 2 Clang warnings.
+
+ src/icewmbg.cc | 4 ++--
+ src/wmprog.h   | 1 +
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 4a4216792c917504c1e58cbb184fdfdca3184802
+Merge: af1850fb bb8f7de0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jul 13 22:19:35 2025 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit bb8f7de08e5a002f2d22aa0655b75eddd4f07c6f
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jul 13 17:00:24 2025 +0200
+
+    Use the precise buffer length for a mstring of long.
+
+ src/mstring.cc | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 2e3a94a6c33721fc99feb940c6e1969fb243adeb
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jul 13 16:44:55 2025 +0200
+
+    Always keep message dialogs above the WindowList.
+
+ src/ymsgbox.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1f08de4f733d8c922c49219fe8225aa3bea3f8ad
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jul 13 16:40:00 2025 +0200
+
+    Drop the fCount field from mstring to save 8 bytes per mstring.
+
+ src/mstring.cc | 64 ++++++++++++++++++++++++++----------------------------
+ src/mstring.h  | 16 +++++++-------
+ 2 files changed, 39 insertions(+), 41 deletions(-)
+
+commit 2129c9c9f80792da48678066b6f9fd77b5d9cbea
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jul 12 16:24:53 2025 +0200
+
+    Drop unused offset from mstring to save 8 bytes per mstring.
+
+ src/mstring.cc | 21 +++++++++------------
+ src/mstring.h  |  9 +++------
+ src/yurl.cc    |  6 ++----
+ 3 files changed, 14 insertions(+), 22 deletions(-)
+
+commit 98114a34cb4424ef3720af03221571177ec20126
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Fri Jul 11 17:39:37 2025 +0200
+
+    Restore previous code for calculating the amount of User Memory and
+    closes ice-wm/icewm#199.
+
+ src/amemstatus.cc | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit a52f5e363c18e9d2b292746f6297e9a059506ca5
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 9 21:05:18 2025 +0200
+
+    Document that a toolbar is a also a menu.
+
+ man/icewm-toolbar.pod | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 6f37ed86f222bd0e6a05965aacb5544d4920873b
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 9 21:04:18 2025 +0200
+
+    Only use C strings in endsWith and startsWith.
+
+ src/mstring.cc | 22 ++++++++++++++++------
+ src/mstring.h  |  7 ++++---
+ 2 files changed, 20 insertions(+), 9 deletions(-)
+
+commit 8bfe499bf979e31f29251d13022692e355183a08
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 9 21:03:22 2025 +0200
+
+    Only use C strings in nextExt.
+
+ src/udir.cc | 4 ++--
+ src/udir.h  | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 98fbfae34edd0d37f484a3faf3ed4a96cc72cd0e
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 9 21:02:37 2025 +0200
+
+    Permit dots in theme directory names.
+
+ src/wmapp.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 55a0e2ee9e76af6ad443d634dd87f3fd0f9b1dd4
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jul 7 21:45:29 2025 +0200
+
+    Remove the IApp from DObject and DProgram to save some memory.
+
+ src/obj.h     | 8 ++------
+ src/wmmenu.cc | 2 +-
+ src/wmprog.cc | 3 +--
+ src/wmprog.h  | 3 +--
+ 4 files changed, 5 insertions(+), 11 deletions(-)
+
+commit bb0ab488f6ea4b4d17596c2ac1090d09c901cfcc
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jul 5 09:24:42 2025 +0200
+
+    Simplify handleSMAction where WMAction equals YAction.
+
+ src/wmapp.cc | 21 ++-------------------
+ 1 file changed, 2 insertions(+), 19 deletions(-)
+
+commit 4dd1c1ca286d61383ae3d6b3cefb739aa788099c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Jul 5 09:21:51 2025 +0200
+
+    Simplify icewm actions.
+
+ src/wmaction.h      | 31 +++++++++++++++---------------
+ src/wmbutton.h      |  6 +++---
+ src/wmdialog.cc     | 50 ++++++++++++++++++++++---------------------------
+ src/yactionbutton.h |  5 +----
+ 4 files changed, 42 insertions(+), 50 deletions(-)
+
+commit a53bb64b07d5fb4718ed8602a5e86e8aa7e6dd82
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jul 3 20:06:47 2025 +0200
+
+    Focus the first item in a browse menu.
+
+ src/browse.cc | 1 +
+ src/ymenu.h   | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 8eb74987324103060b80285d6a46c90afbed0b50
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 2 22:25:28 2025 +0200
+
+    Make the BrowseMenu much faster and use less memory. Drop the DFile.
+
+ src/browse.cc | 102 +++++++++++++++++++++++++++++++++++++++++++-----------
+ src/browse.h  |  28 ++++++++-------
+ src/wmprog.cc |  23 +++---------
+ src/wmprog.h  |  10 ------
+ 4 files changed, 100 insertions(+), 63 deletions(-)
+
+commit e172479483005126775cc1e38b2891143870385c
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jul 2 22:24:24 2025 +0200
+
+    Document that the OpenCommand is for the Start menu.
+
+ man/icewm-preferences.pod | 2 +-
+ src/default.h             | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit bce145ad87794a422722e516c11e770c7739a83d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 1 22:38:50 2025 +0200
+
+    Allow to reload the toolbar from the dialog.
+
+ src/wmaction.h  |  1 +
+ src/wmdialog.cc |  4 ++--
+ src/wmdialog.h  | 14 +++++++-------
+ 3 files changed, 10 insertions(+), 9 deletions(-)
+
+commit 41dadef179eab5be34bb609d878f4f519003c658
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Jul 1 04:16:50 2025 +0200
+
+    Reduce the amount of memory needed for keybindings from the "keys" file.
+
+ src/obj.h     |   2 +-
+ src/wmmenu.cc |  88 +++++++++++++++++++----------------------
+ src/wmmgr.cc  |   4 +-
+ src/wmprog.cc | 110 +++++++++++++++++++++++----------------------------
+ src/wmprog.h  | 116 +++++++++++++++++++++++++++---------------------------
+ 5 files changed, 152 insertions(+), 168 deletions(-)
+
+commit 5d5691c24f9943c3e2c7f9cb4d33b1faa3be7fc9
+Author: Kempelen <lion@cmsbazar.hu>
+Date:   Mon Jun 30 10:16:48 2025 +0000
+
+    Translated using Weblate (Hungarian)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/hu.po | 60 +++++++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 file changed, 47 insertions(+), 13 deletions(-)
+
+commit cd99717b1e6f31a70ddcda19f54a9374203aa3ef
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Jun 30 02:11:56 2025 +0200
+
+    Reduce the size of a DTheme from 88 bytes to 32 bytes.
+
+ src/themes.cc | 31 ++++++++-----------------------
+ src/themes.h  | 11 ++++-------
+ 2 files changed, 12 insertions(+), 30 deletions(-)
+
+commit a172c86efae4080f6a76f837f62d016d4fdac48d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Jun 22 23:57:30 2025 +0200
+
+    Prepare 3.8.0 release
+
+ AUTHORS      |   5 +-
+ ChangeLog    | 703 +++++++++++++++++++++++++++++--------------------------
+ NEWS         |  89 ++++---
+ README.md    |  16 +-
+ RELEASE.md   |   2 +-
+ VERSION      |   2 +-
+ configure.ac |  10 +-
+ po/ar.po     | 140 +++++------
+ po/ast.po    | 140 +++++------
+ po/be.po     | 140 +++++------
+ po/bg.po     | 140 +++++------
+ po/ca.po     | 140 +++++------
+ po/cs.po     | 140 +++++------
+ po/da.po     | 140 +++++------
+ po/de.po     | 140 +++++------
+ po/el.po     | 140 +++++------
+ po/en.po     | 140 +++++------
+ po/eo.po     | 140 +++++------
+ po/es.po     | 140 +++++------
+ po/fa.po     | 140 +++++------
+ po/fi.po     | 140 +++++------
+ po/fr.po     | 140 +++++------
+ po/he.po     | 140 +++++------
+ po/hi.po     | 140 +++++------
+ po/hr.po     | 140 +++++------
+ po/hu.po     | 140 +++++------
+ po/icewm.pot | 142 +++++------
+ po/id.po     | 140 +++++------
+ po/ie.po     | 140 +++++------
+ po/it.po     | 140 +++++------
+ po/ja.po     | 140 +++++------
+ po/ka.po     | 140 +++++------
+ po/kk.po     | 140 +++++------
+ po/ko.po     | 140 +++++------
+ po/lt.po     | 140 +++++------
+ po/lv.po     | 140 +++++------
+ po/mk.po     | 140 +++++------
+ po/nb.po     | 140 +++++------
+ po/nl.po     | 140 +++++------
+ po/nn.po     | 140 +++++------
+ po/no.po     | 140 +++++------
+ po/pl.po     | 140 +++++------
+ po/pt.po     | 140 +++++------
+ po/pt_BR.po  | 140 +++++------
+ po/ro.po     | 140 +++++------
+ po/ru.po     | 140 +++++------
+ po/sk.po     | 140 +++++------
+ po/sl.po     | 347 +++++++++++++--------------
+ po/sr.po     | 350 +++++++++++++--------------
+ po/sv.po     | 140 +++++------
+ po/tr.po     | 140 +++++------
+ po/uk.po     | 140 +++++------
+ po/vi.po     | 140 +++++------
+ po/zh_CN.po  | 140 +++++------
+ po/zh_TW.po  | 140 +++++------
+ 55 files changed, 4012 insertions(+), 3954 deletions(-)
+
 commit 2712e0f71307d474b252fbf47067b02076ee567b
 Merge: 59417d76 af1850fb
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5573,347 +5866,3 @@ Date:   Wed Jan 10 21:26:47 2024 +0100
 
  src/wmmgr.cc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit d84954333363811ef81f5cdd0c5c3051738ba372
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jan 10 21:24:39 2024 +0100
-
-    Add shutdown command for BSD and closes #761.
-
- src/default.h | 5 +++++
- 1 file changed, 5 insertions(+)
-
-commit abb221498496560474fb83ff2a6ad81a61be7be7
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 28 19:33:02 2023 +0100
-
-    Prepare 3.4.5 release
-
- AUTHORS      |   6 +-
- ChangeLog    | 478 +++++++++++++++++++++++++++++++------------------------
- NEWS         |  90 ++++-------
- README.md    |  38 ++---
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- 7 files changed, 328 insertions(+), 298 deletions(-)
-
-commit 121b0f94a6868c5e0c87e0029310a925e9f830c4
-Merge: 8e2c69a6 467f07b7
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 28 19:27:43 2023 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit 467f07b740b4ef623b1b03c543f193dd84a07ae6
-Merge: b921aae2 7c432f92
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 28 19:27:16 2023 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit 7c432f9210d427619e3b07f97fabd8afa4fc91a9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 28 19:23:18 2023 +0100
-
-    Update the POT files.
-
- po/ar.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/ast.po    | 166 ++++++++++++++++++++++++++--------------------------
- po/be.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/bg.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/ca.po     | 170 +++++++++++++++++++++++++++---------------------------
- po/cs.po     | 170 +++++++++++++++++++++++++++---------------------------
- po/da.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/de.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/el.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/en.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/eo.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/es.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/fa.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/fi.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/fr.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/he.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/hi.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/hr.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/hu.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/icewm.pot | 168 ++++++++++++++++++++++++++---------------------------
- po/id.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/ie.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/it.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/ja.po     | 173 ++++++++++++++++++++++++++++---------------------------
- po/ka.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/kk.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/ko.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/lt.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/lv.po     | 170 +++++++++++++++++++++++++++---------------------------
- po/mk.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/nb.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/nl.po     | 170 +++++++++++++++++++++++++++---------------------------
- po/nn.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/no.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/pl.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/pt.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/pt_BR.po  | 166 ++++++++++++++++++++++++++--------------------------
- po/ro.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/ru.po     | 170 +++++++++++++++++++++++++++---------------------------
- po/si.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/sk.po     | 170 +++++++++++++++++++++++++++---------------------------
- po/sl.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/sv.po     | 170 +++++++++++++++++++++++++++---------------------------
- po/tr.po     | 170 +++++++++++++++++++++++++++---------------------------
- po/uk.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/vi.po     | 166 ++++++++++++++++++++++++++--------------------------
- po/zh_CN.po  | 166 ++++++++++++++++++++++++++--------------------------
- po/zh_TW.po  | 166 ++++++++++++++++++++++++++--------------------------
- 48 files changed, 4005 insertions(+), 4004 deletions(-)
-
-commit 31c7346eec9a2f3d881366412e2bf8ab0f2ffde9
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Dec 28 18:59:12 2023 +0100
-
-    Update copyright.
-
- src/wmabout.cc | 13 +++++++++----
- src/ylabel.cc  | 11 ++++++++---
- src/ylabel.h   |  2 ++
- 3 files changed, 19 insertions(+), 7 deletions(-)
-
-commit 07eb3001df56249f26a8d7f0e6820e5df275fa1e
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 24 21:24:56 2023 +0100
-
-    Fix workspace buttons for right-to-left languages.
-
- src/aworkspaces.cc | 20 ++++++++++++++++----
- src/aworkspaces.h  |  4 +++-
- 2 files changed, 19 insertions(+), 5 deletions(-)
-
-commit 8e3daf9c8913baef227e80cea90f1a2fb43e7fad
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 24 14:23:24 2023 +0100
-
-    When pasting into the addressbar, replace newlines with spaces.
-
- src/yinputline.cc | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
-
-commit c680ce814bbc6f6ca780edd2f95e2f81f97bf28a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 24 12:08:11 2023 +0100
-
-    After raising a focused window, release its button grab for issue #759.
-
- src/wmframe.cc | 2 ++
- 1 file changed, 2 insertions(+)
-
-commit bde6bb544e4b87296ed533980d3415722c38c9cb
-Author: Petteri Aimonen <jpa@git.mail.kapsi.fi>
-Date:   Sun Dec 24 12:54:21 2023 +0200
-
-    When focusing and RaiseOnFocus, release button grab for issue #759.
-
-    Related to issue #742: Strange Firefox Behavior in IceWM. Icewm retains
-    a button grab after focusing. This is problematic for Firefox and Chrome
-    with hover elements on webpages. Data used by canRaise() and overlapped()
-    functions is only updated after YFrameWindow::setWinFocus() ends. When
-    RaiseOnFocus is true we know that the focused window will eventually
-    be raised and it is unnecessary to retain the button grab. This issue
-    remains for RaiseOnClickClient when RaiseOnFocus is false.
-
- src/wmframe.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit d633b37ddd69ea88ec67e1178a8263a44695cc86
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Dec 17 20:20:29 2023 +0100
-
-    Fix KeyWinTile commands for multi-monitor for issue ice-wm/icewm#154.
-
- src/wmframe.cc | 29 +++++++++++++++++++----------
- 1 file changed, 19 insertions(+), 10 deletions(-)
-
-commit 659d185f624224e1c36eb4e8d8689566ce3451cb
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 12 00:43:31 2023 +0100
-
-    Let KeySysTile only tile the active monitor for issue ice-wm/icewm#152.
-
- src/wmmgr.cc | 11 ++++++++++-
- src/wmmgr.h  |  5 +++++
- 2 files changed, 15 insertions(+), 1 deletion(-)
-
-commit b748bdeebd6d6c5b6cbb9ecf5afdde530d0ec75b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 11 12:53:39 2023 +0100
-
-    Drop binascii.h. Add spanLower and spanUpper.
-
- src/Makefile.am |  2 --
- src/ascii.h     | 51 +++++++++++++++++++++++++++++++++------------------
- src/binascii.h  | 15 ---------------
- src/yconfig.cc  |  1 -
- src/yurl.cc     |  6 +++---
- 5 files changed, 36 insertions(+), 39 deletions(-)
-
-commit dae7b1ab49d0d6739c588e1495f3800e70ec0ccd
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Mon Dec 11 01:35:28 2023 +0100
-
-    Avoid calls to fstat to circumvent glibc inefficiency.
-
- src/akeyboard.cc |  3 ++-
- src/icehelp.cc   | 12 ++++--------
- src/upath.cc     |  6 +++---
- src/yfileio.cc   | 44 +++++++++++++++++---------------------------
- src/yfileio.h    | 21 ++++-----------------
- 5 files changed, 30 insertions(+), 56 deletions(-)
-
-commit 747a401c65637dfb4b39bf198c2847c73ae19838
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Dec 6 23:14:14 2023 +0100
-
-    Prefer localtime_r over localtime to circumvent glibc inefficiency.
-
- src/aclock.cc | 12 +++++++++---
- src/icesh.cc  |  4 +++-
- src/misc.cc   |  5 +++--
- 3 files changed, 15 insertions(+), 6 deletions(-)
-
-commit b97f65679904286ce557b9e71f8b1af6dad52321
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Tue Dec 5 19:59:48 2023 +0100
-
-    Center the clock leds vertically for issue ice-wm/icewm#151.
-
- src/aclock.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 8e107ce2474a0cd7991d1aa50d0f5c797b0b785b
-Author: Dmitriy Khanzhin <jinn@altlinux.org>
-Date:   Mon Dec 4 20:15:07 2023 +0300
-
-    Update the 'Hibernate' command and add hibernate icons.
-
- lib/Makefile.am               |  2 ++
- lib/icons/hibernate_16x16.xpm | 44 +++++++++++++++++++++++++++++++++++++++
- lib/icons/hibernate_32x32.xpm | 38 +++++++++++++++++++++++++++++++++
- man/icewm-preferences.pod     | 10 ++++-----
- src/default.h                 |  2 +-
- 5 files changed, 90 insertions(+), 6 deletions(-)
-
-commit 8e2c69a61b587c06942494431273e196cf523c26
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 2 12:51:36 2023 +0100
-
-    Prepare 3.4.4 release
-
- AUTHORS      |   6 +-
- ChangeLog    | 463 +++++++++++++++++++++++--------------------------------
- NEWS         | 120 +++++---------
- README.md    |  38 ++---
- RELEASE.md   |   2 +-
- VERSION      |   2 +-
- configure.ac |  10 +-
- po/ar.po     | 100 ++++++------
- po/ast.po    | 100 ++++++------
- po/be.po     | 100 ++++++------
- po/bg.po     | 100 ++++++------
- po/ca.po     | 104 ++++++-------
- po/cs.po     | 104 ++++++-------
- po/da.po     | 100 ++++++------
- po/de.po     | 100 ++++++------
- po/el.po     | 100 ++++++------
- po/en.po     | 100 ++++++------
- po/eo.po     | 100 ++++++------
- po/es.po     | 100 ++++++------
- po/fa.po     | 100 ++++++------
- po/fi.po     | 100 ++++++------
- po/fr.po     | 100 ++++++------
- po/he.po     | 100 ++++++------
- po/hi.po     | 100 ++++++------
- po/hr.po     | 100 ++++++------
- po/hu.po     | 100 ++++++------
- po/icewm.pot | 102 ++++++------
- po/id.po     | 100 ++++++------
- po/ie.po     | 100 ++++++------
- po/it.po     | 100 ++++++------
- po/ja.po     | 107 ++++++-------
- po/ka.po     | 100 ++++++------
- po/kk.po     | 100 ++++++------
- po/ko.po     | 100 ++++++------
- po/lt.po     | 100 ++++++------
- po/lv.po     | 104 ++++++-------
- po/mk.po     | 100 ++++++------
- po/nb.po     | 100 ++++++------
- po/nl.po     | 104 ++++++-------
- po/nn.po     | 100 ++++++------
- po/no.po     | 100 ++++++------
- po/pl.po     | 100 ++++++------
- po/pt.po     | 100 ++++++------
- po/pt_BR.po  | 100 ++++++------
- po/ro.po     | 100 ++++++------
- po/ru.po     | 104 ++++++-------
- po/si.po     | 100 ++++++------
- po/sk.po     | 104 ++++++-------
- po/sl.po     | 100 ++++++------
- po/sv.po     | 104 ++++++-------
- po/tr.po     | 104 ++++++-------
- po/uk.po     | 100 ++++++------
- po/vi.po     | 100 ++++++------
- po/zh_CN.po  | 100 ++++++------
- po/zh_TW.po  | 100 ++++++------
- 55 files changed, 2684 insertions(+), 2798 deletions(-)
-
-commit 0e056cb15ab8df9ae5a2e2e59f86f32eee451171
-Merge: 2784c09f b921aae2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 2 12:45:15 2023 +0100
-
-    Merge branch 'icewm-1-4-BRANCH'
-
-commit b921aae22b2c8371ba82fb512a48d5a871f7ac8c
-Merge: bb673f56 ca1e2f0b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Nov 2 12:44:59 2023 +0100
-
-    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-    icewm-1-4-BRANCH
-
-commit ca1e2f0b075c64307270ee285ba95a31d8095927
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 1 22:20:16 2023 +0100
-
-    Don't enforce the use of clang++ in the debug build.
-
- rebuild.sh | 2 --
- 1 file changed, 2 deletions(-)
-
-commit a38b65c0a8ef12f9fb54d323eb0c7e122172363b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 1 22:16:59 2023 +0100
-
-    When mapping a client by PID, search for the best match.
-
- src/wmapp.cc | 34 +++++++++++++++++++++++++---------
- 1 file changed, 25 insertions(+), 9 deletions(-)
-
-commit e615ca78fb009221f889266f716d6478f566cda1
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 1 21:28:05 2023 +0100
-
-    Clarify prefoverride and closes #750
-
- man/icewm-prefoverride.pod | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
-
-commit 1c54bba3e82709175bea58fe98080a060d4f6e47
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Nov 1 12:01:15 2023 +0100
-
-    Let icewmbg interpret command-line arguments relative to the current
-    working directory.
-
- src/icewmbg.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)

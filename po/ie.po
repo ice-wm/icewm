@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 1.4.2.1830\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-06-22 23:55+0200\n"
+"POT-Creation-Date: 2025-07-14 00:18+0200\n"
 "PO-Revision-Date: 2019-06-15 19:49+0000\n"
 "Last-Translator: Olga Smirnova <mistresssilvara@hotmail.com>\n"
 "Language-Team: Occidental <https://l10n.opensuse.org/projects/icewm/"
@@ -67,12 +67,12 @@ msgstr "HORLOGE"
 msgid "Date"
 msgstr "Date"
 
-#: src/aclock.cc:206 src/themes.cc:91
+#: src/aclock.cc:206 src/themes.cc:76
 msgid "Default"
 msgstr "Predefinit"
 
 #: src/aclock.cc:207 src/acpustatus.cc:909 src/amailbox.cc:964
-#: src/amemstatus.cc:302
+#: src/amemstatus.cc:303
 msgid "_Disable"
 msgstr "_Depermisser"
 
@@ -157,12 +157,12 @@ msgstr "_Unir"
 msgid "_Separate"
 msgstr "_Separar"
 
-#: src/akeyboard.cc:78 src/icesm.cc:476 src/wmmenu.cc:507
+#: src/akeyboard.cc:78 src/icesm.cc:476 src/wmmenu.cc:499
 #, c-format
 msgid "%s exited with status %d."
 msgstr ""
 
-#: src/akeyboard.cc:81 src/icesm.cc:482 src/icesm.cc:636 src/wmmenu.cc:510
+#: src/akeyboard.cc:81 src/icesm.cc:482 src/icesm.cc:636 src/wmmenu.cc:502
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr ""
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Failed to find %s command"
 msgstr ""
 
-#: src/amailbox.cc:363 src/wmmenu.cc:475 src/wmmenu.cc:492 src/yapp.cc:437
+#: src/amailbox.cc:363 src/wmmenu.cc:467 src/wmmenu.cc:484 src/yapp.cc:437
 #, c-format
 msgid "Failed to execute %s"
 msgstr ""
@@ -309,7 +309,7 @@ msgstr "Buffres: "
 msgid "User: "
 msgstr "Usator: "
 
-#: src/amemstatus.cc:300
+#: src/amemstatus.cc:301
 msgid "MEM"
 msgstr "MEM"
 
@@ -1923,19 +1923,19 @@ msgstr "A_nullar clusion de session"
 msgid "Lock _Workstation"
 msgstr "Serrar li _ecran"
 
-#: src/wmapp.cc:525 src/wmdialog.cc:89
+#: src/wmapp.cc:525 src/wmdialog.cc:88
 msgid "Re_boot"
 msgstr "Re_initiar"
 
-#: src/wmapp.cc:527 src/wmdialog.cc:90
+#: src/wmapp.cc:527 src/wmdialog.cc:89
 msgid "Shut_down"
 msgstr "E_xtinter"
 
-#: src/wmapp.cc:529 src/wmdialog.cc:86
+#: src/wmapp.cc:529 src/wmdialog.cc:85
 msgid "_Sleep mode"
 msgstr "_Somnie"
 
-#: src/wmapp.cc:531 src/wmdialog.cc:91
+#: src/wmapp.cc:531 src/wmdialog.cc:90
 msgid "_Hibernate"
 msgstr ""
 
@@ -2111,7 +2111,7 @@ msgstr "_Cluder"
 msgid "_Kill Client"
 msgstr "_Terminar li client"
 
-#: src/wmapp.cc:691 src/wmdialog.cc:92 src/wmwinmenu.cc:141
+#: src/wmapp.cc:691 src/wmdialog.cc:91 src/wmwinmenu.cc:141
 msgid "_Window list"
 msgstr "Liste de _fenestres"
 
@@ -2276,40 +2276,40 @@ msgstr ""
 msgid "Unable to rename %s to %s"
 msgstr ""
 
-#: src/wmdialog.cc:85
+#: src/wmdialog.cc:84
 msgid "Loc_k Workstation"
 msgstr "S_errar li ecran"
 
-#: src/wmdialog.cc:87 src/ymsgbox.cc:51
+#: src/wmdialog.cc:86 src/ymsgbox.cc:51
 msgid "_Cancel"
 msgstr "_Anullar"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:88 src/wmprog.cc:437 src/wmprog.cc:439 src/wmtaskbar.cc:243
+#: src/wmdialog.cc:87 src/wmprog.cc:411 src/wmprog.cc:413 src/wmtaskbar.cc:243
 #: src/wmtaskbar.cc:245
 msgid "_Logout..."
 msgstr "_Cluder li session..."
 
-#: src/wmdialog.cc:93
+#: src/wmdialog.cc:92
 msgid "_Restart icewm"
 msgstr "_Restartar IceWM"
 
-#: src/wmdialog.cc:94
+#: src/wmdialog.cc:93
 msgid "Reload ke_ys"
 msgstr ""
 
-#: src/wmdialog.cc:95
+#: src/wmdialog.cc:94
 #, fuzzy
 msgid "Reload _toolbar"
 msgstr "Ínvalid option: %s"
 
-#: src/wmdialog.cc:96
+#: src/wmdialog.cc:95
 #, fuzzy
 msgid "Reload win_options"
 msgstr "Ínvalid option: %s"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmdialog.cc:97 src/wmprog.cc:405 src/wmtaskbar.cc:238
+#: src/wmdialog.cc:96 src/wmprog.cc:379 src/wmtaskbar.cc:238
 msgid "_About"
 msgstr "_Pri"
 
@@ -2340,58 +2340,58 @@ msgstr ""
 msgid "Bad argument %d to command '%s'"
 msgstr ""
 
-#: src/wmmenu.cc:110
+#: src/wmmenu.cc:108
 #, c-format
 msgid "Error at keyword '%s' for %s"
 msgstr ""
 
-#: src/wmmenu.cc:160
+#: src/wmmenu.cc:150
 #, c-format
 msgid "Error at %s '%s'"
 msgstr ""
 
-#: src/wmmenu.cc:226
+#: src/wmmenu.cc:212
 #, c-format
 msgid "Unexepected menu keyword: '%s'"
 msgstr ""
 
-#: src/wmmenu.cc:280
+#: src/wmmenu.cc:266
 #, c-format
 msgid "Error at menuprog '%s'"
 msgstr ""
 
-#: src/wmmenu.cc:324
+#: src/wmmenu.cc:310
 #, c-format
 msgid "Error at menuprogreload: '%s'"
 msgstr ""
 
-#: src/wmmenu.cc:351
+#: src/wmmenu.cc:337
 msgid "Missing filename argument to include statement"
 msgstr ""
 
-#: src/wmmenu.cc:369
+#: src/wmmenu.cc:355
 #, c-format
 msgid "Error at includeprog '%s'"
 msgstr ""
 
-#: src/wmmenu.cc:412
+#: src/wmmenu.cc:401
 #, fuzzy, c-format
 msgid "Unknown keyword '%s'"
 msgstr "Ínconosset option '%s'"
 
-#: src/wmmenu.cc:423
+#: src/wmmenu.cc:415
 #, c-format
 msgid ""
 "Unknown keyword for a non-container: '%s'.\n"
 "Expected either 'key' or 'runonce' here.\n"
 msgstr ""
 
-#: src/wmmenu.cc:502
+#: src/wmmenu.cc:494
 #, c-format
 msgid "'%s' timed out!"
 msgstr ""
 
-#: src/wmmenu.cc:516
+#: src/wmmenu.cc:508
 #, c-format
 msgid "'%s' produces no output"
 msgstr ""
@@ -2423,76 +2423,76 @@ msgstr "Gardar li modificationes"
 msgid "Enter a new value for %s: "
 msgstr ""
 
-#: src/wmprog.cc:341
+#: src/wmprog.cc:317
 msgid "_Click to focus"
 msgstr "_Clic por foco"
 
-#: src/wmprog.cc:342
+#: src/wmprog.cc:318
 msgid "_Explicit focus"
 msgstr "Foco _explicit"
 
-#: src/wmprog.cc:343
+#: src/wmprog.cc:319
 msgid "_Sloppy mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:344
+#: src/wmprog.cc:320
 msgid "S_trict mouse focus"
 msgstr ""
 
-#: src/wmprog.cc:345
+#: src/wmprog.cc:321
 msgid "_Quiet sloppy focus"
 msgstr ""
 
-#: src/wmprog.cc:346
+#: src/wmprog.cc:322
 msgid "Custo_m"
 msgstr "P_ersonalisat"
 
-#: src/wmprog.cc:358
+#: src/wmprog.cc:334
 msgid "_Manual"
 msgstr "_Manual"
 
-#: src/wmprog.cc:359
+#: src/wmprog.cc:335
 msgid "_Icewm(1)"
 msgstr "_Icewm(1)"
 
-#: src/wmprog.cc:360
+#: src/wmprog.cc:336
 msgid "Icewm_Bg(1)"
 msgstr "Icewm_Bg(1)"
 
-#: src/wmprog.cc:361
+#: src/wmprog.cc:337
 msgid "Ice_Sound(1)"
 msgstr "Ice_Sound(1)"
 
-#: src/wmprog.cc:391
+#: src/wmprog.cc:365
 msgid "Programs"
 msgstr "Programmas"
 
-#: src/wmprog.cc:395
+#: src/wmprog.cc:369
 msgid "_Run..."
 msgstr "_Executer..."
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmprog.cc:399 src/wmtaskbar.cc:233
+#: src/wmprog.cc:373 src/wmtaskbar.cc:233
 msgid "_Windows"
 msgstr "_Fenestres"
 
-#: src/wmprog.cc:410
+#: src/wmprog.cc:384
 msgid "_Help"
 msgstr "Au_xilie"
 
-#: src/wmprog.cc:415
+#: src/wmprog.cc:389
 msgid "_Focus"
 msgstr "_Foco"
 
-#: src/wmprog.cc:420
+#: src/wmprog.cc:394
 msgid "_Preferences"
 msgstr "_Preferenties"
 
-#: src/wmprog.cc:425
+#: src/wmprog.cc:399
 msgid "_Themes"
 msgstr "_Temas"
 
-#: src/wmprog.cc:429
+#: src/wmprog.cc:403
 msgid "Se_ttings"
 msgstr "Para_metres"
 
@@ -2729,7 +2729,7 @@ msgstr ""
 msgid "Incomplete hex escape in URL at position %d."
 msgstr ""
 
-#: src/yurl.cc:168
+#: src/yurl.cc:167
 #, c-format
 msgid "Invalid hex escape in URL at position %d."
 msgstr ""

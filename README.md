@@ -19,7 +19,7 @@ list, and various other GitHub forks.
 Release
 -------
 
-This is the `icewm-3.8.0` package, released 2025-06-22.  This release, and
+This is the `icewm-3.8.1` package, released 2025-07-14.  This release, and
 the latest version, can be obtained from [GitHub][1], using a command such as:
 
     $> git clone https://github.com/bbidulock/icewm.git
@@ -174,13 +174,13 @@ translations.  If you have difficulties using the tools, just send me the update
 
 [1]: https://github.com/bbidulock/icewm
 [2]: https://github.com/bbidulock/icewm/issues
-[3]: https://github.com/ice-wm/icewm/blob/3.8.0/NEWS
-[4]: https://github.com/ice-wm/icewm/blob/3.8.0/ChangeLog
-[5]: https://github.com/ice-wm/icewm/blob/3.8.0/TODO
-[6]: https://github.com/ice-wm/icewm/blob/3.8.0/COMPLIANCE
-[7]: https://github.com/ice-wm/icewm/blob/3.8.0/INSTALL
-[8]: https://github.com/ice-wm/icewm/blob/3.8.0/BUGS
-[9]: https://github.com/ice-wm/icewm/blob/3.8.0/COPYING
+[3]: https://github.com/ice-wm/icewm/blob/3.8.1/NEWS
+[4]: https://github.com/ice-wm/icewm/blob/3.8.1/ChangeLog
+[5]: https://github.com/ice-wm/icewm/blob/3.8.1/TODO
+[6]: https://github.com/ice-wm/icewm/blob/3.8.1/COMPLIANCE
+[7]: https://github.com/ice-wm/icewm/blob/3.8.1/INSTALL
+[8]: https://github.com/ice-wm/icewm/blob/3.8.1/BUGS
+[9]: https://github.com/ice-wm/icewm/blob/3.8.1/COPYING
 [10]: https://github.com/
 [11]: https://l10n.opensuse.org/projects/icewm/icewm-1-4-branch/
 [12]: https://sourceforge.net/projects/icewm/
