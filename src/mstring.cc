@@ -107,10 +107,10 @@ mstring::mstring(const char *str1, const char *str2, const char *str3,
     fRef.acquire();
 }
 
-mstring::mstring(long n):
-    fRef(size_t(23))
-{
-    snprintf(fRef->fStr, 23, "%ld", n);
+mstring::mstring(long n) {
+    char buf[24];
+    snprintf(buf, 24, "%ld", n);
+    fRef.create(buf, strlen(buf));
     fRef.acquire();
 }
 
