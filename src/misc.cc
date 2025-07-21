@@ -245,6 +245,18 @@ char *newstr(char const *str, int len) {
     return s;
 }
 
+void foldspaces(char* str) {
+    if (str) {
+        char* dst = str;
+        for (const char* src = dst; *src; ++src) {
+            if (*src != ' ' || (dst > str && dst[-1] != ' ')) {
+                *dst++ = *src;
+            }
+        }
+        *dst = '\0';
+    }
+}
+
 char* demangle(const char* str) {
 #ifdef HAVE_GCC_ABI_DEMANGLE
     int status = 0;
