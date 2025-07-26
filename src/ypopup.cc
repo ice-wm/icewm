@@ -194,7 +194,8 @@ bool YPopupWindow::popup(YWindow *owner,
                 parent->mapToGlobal(tx, ty);
                 int tw = int(parent->width());
                 if (x + int(width()) > tx + tw &&
-                    tx + tw - int(width()) < dx + int(uw))
+                    tx + int(width()) <= dx + dw &&
+                    tx + tw - int(width()) < dx + dw)
                     x = max(dx, max(tx, tx + tw - int(width())));
             }
             XFree(title);
