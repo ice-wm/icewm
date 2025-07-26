@@ -1014,6 +1014,7 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
     if (focusLocked())
         return;
     MSG(("SET FOCUS f=%p", f));
+    lockWorkArea();
 
     if (f == nullptr || (fFocusWin && fFocusWin->visible() == false)) {
         switchFocusFrom(fFocusWin);
@@ -1109,6 +1110,7 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
         setKeyboard(fDefaultKeyboard);
     }
 
+    unlockWorkArea();
     MSG(("SET FOCUS END"));
 }
 
@@ -2541,44 +2543,35 @@ bool YWindowManager::updateWorkAreaInner() {
                 updateArea(ws, s, l, t, r, b);
         }
 
-        if ((w->doNotCover() ||
-            (limitByDockLayer && w->getActiveLayer() == WinLayerDock))
+        if (w->doNotCover()
             && (w->client() != taskBar || taskBar->hidden() == false))
         {
             int ws = w->getWorkspace();
             int s = w->getScreen();
-            int sx = xiInfo[s].x_org;
-            int sy = xiInfo[s].y_org;
-            int sw = xiInfo[s].width;
-            int sh = xiInfo[s].height;
 
-            int lowX = sx + sw / 4;
-            int lowY = sy + sh / 4;
-            int hiX = sx + 3 * sw / 4;
-            int hiY = sy + 3 * sh / 4;
-            bool const isHoriz(w->width() > w->height());
-
-            int l = sx;
-            int t = sy;
-            int r = sx + sw;
-            int b = sy + sh;
-
-            if (isHoriz) {
-                if (w->y() + (int) w->height() < lowY) {
-                    t = w->y() + w->height();
-                } else if (w->y() + (int) height() > hiY) {
-                    b = w->y();
-                }
-            } else {
-                if (w->x() + (int) w->width() < lowX) {
-                    l = w->x() + w->width();
-                } else if (w->x() + (int) width() > hiX) {
-                    r = w->x();
-                }
+            YRect wa(fWorkArea[ws >= 0 ? ws : activeWorkspace()][s]);
+            YRect wg(wa.intersect(w->geometry()));
+            if (wg.ww && wg.hh) {
+                unsigned ls = 0, rs = 0, ts = 0, bs = 0;
+                if (wg.xx > wa.xx)
+                    ls = (wg.xx - wa.xx) * wa.hh;
+                if (wg.xx + int(wg.ww) < wa.xx + int(wa.ww))
+                    rs = (wa.xx + int(wa.ww) - (wg.xx + int(wg.ww))) * wa.hh;
+                if (wg.yy > wa.yy)
+                    ts = (wg.yy - wa.yy) * wa.ww;
+                if (wg.yy + int(wg.hh) < wa.yy + int(wa.hh))
+                    bs = (wa.yy + int(wa.hh) - (wg.yy + int(wg.hh))) * wa.ww;
+                if (ls > rs && ls > ts && ls > bs)
+                    updateArea(ws, s, wa.xx, wa.yy, wg.xx, wa.yy + wa.hh);
+                if (rs > ls && rs > ts && rs > bs)
+                    updateArea(ws, s, wg.xx + wg.ww, wa.yy,
+                               wa.xx + wa.ww, wa.yy + wa.hh);
+                if (ts > ls && ts > rs && ts > bs)
+                    updateArea(ws, s, wa.xx, wa.yy, wa.xx + wa.ww, wg.yy);
+                if (bs > ls && bs > rs && bs > ts)
+                    updateArea(ws, s, wa.xx, wg.yy + wg.hh,
+                               wa.xx + wa.xx, wa.yy + wa.hh);
             }
-            MSG(("dock limit %d %d %d %d", l, t, r, b));
-            if (l < r && t < b)
-                updateArea(ws, s, l, t, r, b);
         }
         debugWorkArea("updated");
     }

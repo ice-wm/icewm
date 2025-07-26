@@ -669,12 +669,6 @@ YMenu* YWMApp::getWindowMenu() {
         windowMenu->addItem(_("Occupy _All"), -2, gKeyWinOccupyAll.name, actionOccupyAllOrCurrent);
     }
 
-    /// this should probably go away, cause fullscreen will do mostly the same thing
-#if DO_NOT_COVER_OLD
-    if (!limitByDockLayer)
-        windowMenu->addItem(_("Limit _Workarea"), -2, null, actionDoNotCover);
-#endif
-
     if (strchr(winMenuItems, 'i') && taskBarShowTray)
         windowMenu->addItem(_("Tray _icon"), -2, null, actionToggleTray);
     if (strchr(winMenuItems, 'e'))

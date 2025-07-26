@@ -970,6 +970,10 @@ void YFrameWindow::endMoveSize() {
         if (!raiseOnClickClient || !canRaise() || !overlapped())
             container()->releaseButtons();
     }
+    if (doNotCover() && isManaged() &&
+        YRect(origX, origY, origW, origH) != geometry()) {
+        manager->updateWorkArea();
+    }
 
     if (taskBar) {
         taskBar->workspacesRepaint(getWorkspace());
@@ -1035,19 +1039,6 @@ bool YFrameWindow::handleBeginDrag(const XButtonEvent &down, const XMotionEvent 
 }
 
 void YFrameWindow::moveWindow(int newX, int newY) {
-/// TODO #warning "reevaluate if this is legacy"
-#if 0
-    if (!doNotCover()) {
-        int mx, my, Mx, My;
-        manager->getWorkArea(this, &mx, &my, &Mx, &My);
-
-        newX = clamp(newX, (int)(mx + borderX() - width()),
-                           (int)(Mx - borderX()));
-        newY = clamp(newY, (int)(my + borderY() - height()),
-                           (int)(My - borderY()));
-    }
-#endif
-
     if (opaqueMove)
         drawMoveSizeFX(x(), y(), width(), height());
 
