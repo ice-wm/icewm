@@ -215,7 +215,7 @@ public:
     bool updateWorkAreaInner();
     void debugWorkArea(const char* prefix);
     void workAreaUpdated();
-    void resizeWindows();
+    void resizeWindows(bool all = true);
 
     void getIconPosition(MiniIcon* iw, int *iconX, int *iconY);
 

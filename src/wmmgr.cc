@@ -2649,11 +2649,11 @@ bool YWindowManager::updateWorkAreaInner() {
         delete [] oldWorkArea[0];
         delete [] oldWorkArea;
     }
-    if (resize) {
+    if (changed) {
         MSG(("resizeWindows"));
-        resizeWindows();
+        resizeWindows(resize);
     }
-    return resize | changed;
+    return changed;
 }
 
 void YWindowManager::announceWorkArea() {
@@ -2717,12 +2717,13 @@ void YWindowManager::announceWorkArea() {
     delete [] area;
 }
 
-void YWindowManager::resizeWindows() {
+void YWindowManager::resizeWindows(bool all) {
     for (YFrameWindow * f = topLayer(); f; f = f->nextLayer()) {
         if (f->visibleNow() && f->inWorkArea() && !f->client()->destroyed()) {
             if (f->isMaximized())
                 f->updateDerivedSize(WinStateMaximizedBoth);
-            f->updateLayout();
+            if (all || f->isMaximized())
+                f->updateLayout();
         }
     }
 }

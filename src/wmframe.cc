@@ -186,8 +186,8 @@ YFrameWindow::~YFrameWindow() {
         delete fContainer; fContainer = nullptr;
         delete fTitleBar; fTitleBar = nullptr;
 
-        if (doNotCover())
-            manager->requestWorkAreaUpdate();
+        if (affectsWorkArea())
+            manager->updateWorkArea();
         manager->unlockWorkArea();
         manager->updateClientList();
     }
