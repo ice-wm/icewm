@@ -840,13 +840,6 @@ bool Background::filterEvent(const XEvent &xev) {
                 checkTimer->setTimer(100L, this, true);
             }
         }
-        else if (xev.xproperty.atom == _XA_NET_WORKAREA) {
-            if (desktop->updateXineramaInfo(desktopWidth, desktopHeight)) {
-                if (verbose) tlog("desktop change by workarea property: %ux%u",
-                                  desktopWidth, desktopHeight);
-                checkTimer->setTimer(100L, this, true);
-            }
-        }
         else if (xev.xproperty.atom == _XA_ICEWMBG_PID) {
             int pid = getBgPid();
             if (pid > 0 && pid != mypid) {
