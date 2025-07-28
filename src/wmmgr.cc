@@ -2570,7 +2570,7 @@ bool YWindowManager::updateWorkAreaInner() {
                     updateArea(ws, s, wa.xx, wa.yy, wa.xx + wa.ww, wg.yy);
                 if (bs > ls && bs > rs && bs > ts)
                     updateArea(ws, s, wa.xx, wg.yy + wg.hh,
-                               wa.xx + wa.xx, wa.yy + wa.hh);
+                               wa.xx + wa.ww, wa.yy + wa.hh);
             }
         }
         debugWorkArea("updated");
