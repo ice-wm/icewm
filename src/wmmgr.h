@@ -136,7 +136,7 @@ public:
     void removeClientFrame(YFrameWindow *frame);
 
     void updateScreenSize(XEvent *event);
-    void getWorkArea(int *mx, int *my, int *Mx, int *My);
+    void getWorkArea(int *mx, int *my, int *Mx, int *My, int ws);
     void getWorkArea(const YFrameWindow *frame, int *mx, int *my, int *Mx, int *My, int xiscreen = -1);
     void getWorkAreaSize(YFrameWindow *frame, int *Mw,int *Mh);
 

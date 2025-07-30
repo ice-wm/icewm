@@ -2350,13 +2350,14 @@ void YWindowManager::restackWindows() {
     }
 }
 
-void YWindowManager::getWorkArea(int *mx, int *my, int *Mx, int *My) {
-    int s = max(0, min(xineramaPrimaryScreen, getScreenCount() - 1));
-    if (fWorkArea && 0 < fWorkAreaWorkspaceCount) {
-        *mx = fWorkArea[0][s].fMinX;
-        *my = fWorkArea[0][s].fMinY;
-        *Mx = fWorkArea[0][s].fMaxX;
-        *My = fWorkArea[0][s].fMaxY;
+void YWindowManager::getWorkArea(int *mx, int *my, int *Mx, int *My, int ws) {
+    int s = inrange(xineramaPrimaryScreen, 0, getScreenCount() - 1)
+                  ? xineramaPrimaryScreen : 0;
+    if (fWorkArea && inrange(ws, 0,  fWorkAreaWorkspaceCount - 1)) {
+        *mx = fWorkArea[ws][s].fMinX;
+        *my = fWorkArea[ws][s].fMinY;
+        *Mx = fWorkArea[ws][s].fMaxX;
+        *My = fWorkArea[ws][s].fMaxY;
     } else {
         unsigned dw, dh;
         getScreenGeometry(mx, my, &dw, &dh, s);
@@ -2725,6 +2726,8 @@ void YWindowManager::resizeWindows(bool all) {
             if (all || f->isMaximized())
                 f->updateLayout();
         }
+        else if (all && f->isIconic())
+            f->getMiniIcon()->show();
     }
 }
 
@@ -3078,8 +3081,6 @@ void YWindowManager::getIconPosition(MiniIcon* iw, int *iconX, int *iconY) {
         return;
     }
 
-    YFrameWindow* frame = iw->getFrame();
-
     int mrow, mcol, Mrow, Mcol; /* Minimum and maximum for rows and columns */
     int width, height; /* column width and row height */
     int drow, dcol; /* row and column directions */
@@ -3087,7 +3088,7 @@ void YWindowManager::getIconPosition(MiniIcon* iw, int *iconX, int *iconY) {
     const int margin = 4;
 
     if (miniIconsPlaceHorizontal) {
-        getWorkArea(frame, &mcol, &mrow, &Mcol, &Mrow);
+        getWorkArea(&mcol, &mrow, &Mcol, &Mrow, activeWorkspace());
         width = iw->width() + 2 * margin;
         height = iw->height() + 2 * margin;
         drow = miniIconsBottomToTop ? -1 : +1;
@@ -3095,7 +3096,7 @@ void YWindowManager::getIconPosition(MiniIcon* iw, int *iconX, int *iconY) {
         iconRow = iconY;
         iconCol = iconX;
     } else {
-        getWorkArea(frame, &mrow, &mcol, &Mrow, &Mcol);
+        getWorkArea(&mrow, &mcol, &Mrow, &Mcol, activeWorkspace());
         width = iw->height() + 2 * margin;
         height = iw->width() + 2 * margin;
         drow = miniIconsRightToLeft ? -1 : +1;
