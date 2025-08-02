@@ -2551,28 +2551,19 @@ bool YWindowManager::updateWorkAreaInner() {
             int s = w->getScreen();
 
             YRect wa(fWorkArea[ws >= 0 ? ws : activeWorkspace()][s]);
-            YRect wg(wa.intersect(w->geometry()));
-            if (wg.ww && wg.hh) {
-                unsigned ls = 0, rs = 0, ts = 0, bs = 0;
-                if (wg.xx > wa.xx)
-                    ls = (wg.xx - wa.xx) * wa.hh;
-                if (wg.xx + int(wg.ww) < wa.xx + int(wa.ww))
-                    rs = (wa.xx + int(wa.ww) - (wg.xx + int(wg.ww))) * wa.hh;
-                if (wg.yy > wa.yy)
-                    ts = (wg.yy - wa.yy) * wa.ww;
-                if (wg.yy + int(wg.hh) < wa.yy + int(wa.hh))
-                    bs = (wa.yy + int(wa.hh) - (wg.yy + int(wg.hh))) * wa.ww;
-                if (ls > rs && ls > ts && ls > bs)
-                    updateArea(ws, s, wa.xx, wa.yy, wg.xx, wa.yy + wa.hh);
-                if (rs > ls && rs > ts && rs > bs)
-                    updateArea(ws, s, wg.xx + wg.ww, wa.yy,
-                               wa.xx + wa.ww, wa.yy + wa.hh);
-                if (ts > ls && ts > rs && ts > bs)
-                    updateArea(ws, s, wa.xx, wa.yy, wa.xx + wa.ww, wg.yy);
-                if (bs > ls && bs > rs && bs > ts)
-                    updateArea(ws, s, wa.xx, wg.yy + wg.hh,
-                               wa.xx + wa.ww, wa.yy + wa.hh);
-            }
+            YRect wg(w->geometry());
+            YRect ls(wa.leftOf(wg));
+            YRect rs(wa.rightOf(wg));
+            YRect ts(wa.aboveOf(wg));
+            YRect bs(wa.belowOf(wg));
+            if (ls > rs && ls > ts && ls > bs)
+                updateArea(ws, s, ls.xx, ls.yy, ls.right(), ls.bottom());
+            if (rs > ls && rs > ts && rs > bs)
+                updateArea(ws, s, rs.xx, rs.yy, rs.right(), rs.bottom());
+            if (ts > ls && ts > rs && ts > bs)
+                updateArea(ws, s, ts.xx, ts.yy, ts.right(), ts.bottom());
+            if (bs > ls && bs > rs && bs > ts)
+                updateArea(ws, s, bs.xx, bs.yy, bs.right(), bs.bottom());
         }
         debugWorkArea("updated");
     }
