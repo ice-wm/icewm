@@ -435,6 +435,12 @@ or above most others. Icewm menus appear in the I<Menu> layer and the
 I<Fullscreen> layer is reserved for windows in the fullscreen mode. The
 default layer for each application can be set with a I<winoption>.
 
+Windows placed in the I<Dock> layer can be set to be always visible by
+setting the C<LimitByDockLayer> preference to 1. Then other windows are
+preferably not placed over such windows, unless they have explicit
+positioning information to do so. Maximized windows also don't overlap
+with these I<DockLayer> windows. The I<DoNotCover> winoption is similar.
+
 =head2 DOCKED APPLICATIONS
 
 Icewm has native support for L<Window Maker dockapps|https://dockapps.net>.
