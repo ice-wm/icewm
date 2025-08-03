@@ -108,6 +108,18 @@ class YClassHint : public XClassHint {
 public:
     YClassHint() { res_name = res_class = nullptr; }
     ~YClassHint() { XFree(res_name); XFree(res_class); }
+    YClassHint(const YClassHint& h) {
+        res_name = h.res_name ? strdup(h.res_name) : nullptr;
+        res_class = h.res_class ? strdup(h.res_class) : nullptr;
+    }
+    void operator=(const YClassHint& h) {
+        if (&h != this) {
+            if (res_name) { XFree(res_name); res_name = nullptr; }
+            if (res_class) { XFree(res_class); res_class = nullptr; }
+            if (h.res_name) { res_name = strdup(h.res_name); }
+            if (h.res_class) { res_class = strdup(h.res_class); }
+        }
+    }
     const char* name() const { return res_name ? res_name : ""; }
     const char* klas() const { return res_class ? res_class : ""; }
     bool get(Window win) { return XGetClassHint(display, win, this); }
@@ -1334,6 +1346,7 @@ public:
         fChildren = keep;
     }
 
+#if __linux__
     static bool isShell(const char* path) {
         int fd = open("/etc/shells", O_RDONLY);
         if (fd >= 0) {
@@ -1391,9 +1404,69 @@ public:
         }
         return false;
     }
+#endif
+
+    static bool terminalClass(Window window) {
+        YClassHint hint;
+        if (hint.get(window) && hint.res_name && hint.res_class) {
+            struct { const char* n, *c; } terminals[] = {
+                { "Alacritty", "Alacritty" },
+                { "LilyTerm", "LilyTerm" },
+                { "byobu", "Byobu" },
+                { "deepin-terminal", "deepin-terminal" },
+                { "gnome-terminal-server", "Gnome-terminal" },
+                { "guake", "Guake" },
+                { "kitty", "kitty" },
+                { "konsole", "konsole" },
+                { "kterm", "KTerm" },
+                { "lilyterm", "Lilyterm" },
+                { "lxterminal", "Lxterminal" },
+                { "main", "terminology" },
+                { "mate-terminal", "Mate-terminal" },
+                { "pterm", "Pterm" },
+                { "putty", "Putty" },
+                { "qterminal", "qterminal" },
+                { "roxterm", "Roxterm" },
+                { "rxvt", "URxvt" },
+                { "sakura", "Sakura" },
+                { "st-256color", "st-256color" },
+                { "stterm-256color", "stterm-256color" },
+                { "term", "Term" },
+                { "terminator", "Terminator" },
+                { "termit", "Termit" },
+                { "tilda", "Tilda" },
+                { "tilix", "Tilix" },
+                { "urxvt", "URxvt" },
+                { "vala-terminal", "Vala-terminal" },
+                { "xfce4-terminal", "Xfce4-terminal" },
+                { "xiterm+thai", "XTerm" },
+                { "xterm", "XTerm" },
+                { "xterm", "mlterm" },
+                { "xvt", "xterm" },
+                { "yakuake", "yakuake" },
+            };
+            const int count = int ACOUNT(terminals);
+            int lo = 0, hi = count;
+            while (lo < hi) {
+                const int pv = (lo + hi) / 2;
+                auto t = terminals[pv];
+                int c = strcmp(t.n, hint.res_name);
+                if (c == 0)
+                    c = strcmp(t.c, hint.res_class);
+                if (c < 0)
+                    lo = pv + 1;
+                else if (c > 0)
+                    hi = pv;
+                else
+                    return true;
+            }
+        }
+        return false;
+    }
 
     void filterByTerminal() {
         vector<Window> keep;
+#if __linux__
         char solve[PATH_MAX];
         char* shell = getenv("SHELL");
         if (shell) {
@@ -1403,7 +1476,15 @@ public:
             int pid = int(getClientPID(client));
             if (pid > 1 && isTerminal(pid, shell))
                 keep.push_back(client);
+            else if (terminalClass(client))
+                keep.push_back(client);
         }
+#else
+        for (YTreeIter client(*this); client; ++client) {
+            if (terminalClass(client))
+                keep.push_back(client);
+        }
+#endif
         fChildren = keep;
     }
 
@@ -4347,7 +4428,7 @@ void IceSh::extendClass()
 {
     pickingWindow();
     if (windowList) {
-        vector<XClassHint> classes;
+        vector<YClassHint> classes;
         FOREACH_WINDOW(window) {
             YClassHint hint;
             if (hint.get(window)) {
