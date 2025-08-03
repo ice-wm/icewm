@@ -73,9 +73,6 @@ enum EAction {
     actionClose              = 143,
     actionKill               = 145,
     actionOccupyAllOrCurrent = 147,
-#if DO_NOT_COVER_OLD
-    actionDoNotCover         = 149,
-#endif
     actionFullscreen         = 151,
     actionToggleTray         = 153,
     actionCollapseTaskbar    = 155,

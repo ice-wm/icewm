@@ -105,9 +105,6 @@ public:
     void wmSetTrayOption(int option);
     void wmTile(YAction action);
     void wmToggleTray();
-#if DO_NOT_COVER_OLD
-    void wmToggleDoNotCover();
-#endif
     void wmToggleFullscreen();
 
     void minimizeTransients();
@@ -354,7 +351,6 @@ public:
     int getRequestedLayer() const { return fWinRequestedLayer; }
     int getTrayOption() const { return fWinTrayOption; }
     void setTrayOption(int option);
-    void setDoNotCover(bool flag);
     unsigned getFrameName() const { return fFrameName; }
     void setFrameName(unsigned name);
     bool isMaximized() const { return hasState(WinStateMaximizedBoth); }
@@ -395,7 +391,7 @@ public:
 
     bool inWorkArea() const;
     bool affectsWorkArea() const;
-    bool doNotCover() const { return frameOption(foDoNotCover); }
+    bool doNotCover() const;
 
     virtual ref<YIcon> getIcon() const;
     virtual mstring getTitle() const { return client()->windowTitle(); }

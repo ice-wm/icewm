@@ -274,7 +274,7 @@ void DockApp::adapt() {
         unsigned sw, sh;
         desktop->getScreenGeometry(&sx, &sy, &sw, &sh);
         int mx, my, Mx, My;
-        manager->getWorkArea(&mx, &my, &Mx, &My);
+        manager->getWorkArea(&mx, &my, &Mx, &My, manager->activeWorkspace());
         int rows = min(docks.getCount(), (My - my) / 64);
         int cols = (docks.getCount() + (rows - 1)) / rows;
         rows = (docks.getCount() + (cols - 1)) / cols;

@@ -61,6 +61,7 @@ AboutDlg::AboutDlg(YActionListener* al):
              YImage::renderName(), doubleBuffer ? _("DoubleBuffer") : "",
              xapp->alpha() ? _("AlphaBlending") : "",
              YIcon::supportSVG() ? "SVG" : "");
+    foldspaces(text);
     *table += new Row(label(_("Renderer:")), label(text));
     if (rightToLeft)
         table->swapColumns();
