@@ -25,46 +25,46 @@ The format of the file contains one of the following line syntax:
 
 =over
 
-=item B<prog> [B<">]I<title>[B<">] I<icon> I<program> I<options>
+=item B<prog> B<">I<title>B<"> I<icon> I<program> I<options>
 
 Specifies a program to execute when the menu item is selected.
 
-=item B<restart> [B<">]I<title>[B<">] I<icon> I<program> I<options>
+=item B<restart> B<">I<title>B<"> I<icon> I<program> I<options>
 
 Specifies a program to replace the window manager when the menu item is
 selected.  This is for launching other window managers from within
 L<icewm(1)>.
 
-=item B<runonce> [B<">]I<title>[B<">] I<icon> B<">[I<name>][B<.>I<class>]B<"> I<program> I<options>
+=item B<runonce> B<">I<title>B<"> I<icon> B<">[I<name>][B<.>I<class>]B<"> I<program> I<options>
 
 Specifies a program to execute when the menu item is selected; however,
 if a window of the specified I<name> and I<class> is present,
 the program will not be run again.
 
-=item B<menu> [B<">]I<title>[B<">] I<icon> B<{>
+=item B<menu> B<">I<title>B<"> I<icon> B<{>
  # contained items
  B<}>
 
 Specifies a sub-menu.  The lines that appear between the braces can be
 any menu item described here.
 
-=item B<menufile> [B<">]I<title>[B<">] I<icon> [B<">]I<filename>[B<">]
+=item B<menufile> B<">I<title>B<"> I<icon> B<">I<filename>B<">
 
 Specifies a file from which to collect sub-menu items (lines) and place
 them at this point in the menu.
 
-=item B<menuprog> [B<">]I<title>[B<">] I<icon> I<program> I<options>
+=item B<menuprog> B<">I<title>B<"> I<icon> I<program> I<options>
 
 Specifies a program that will print sub-menu items on standard output
 and will be collected and placed in the sub-menu at this point.
 
-=item B<menuprogreload> [B<">]I<title>[B<">] I<icon> I<timeout>
+=item B<menuprogreload> B<">I<title>B<"> I<icon> I<timeout>
 I<program> I<options>
 
 Similar to B<menuprog>, but after at least I<timeout> seconds
 the menu is regenerated.
 
-=item B<include> [B<">]I<filename>[B<">]
+=item B<include> B<">I<filename>B<">
 
 Read additional entries from the file I<filename>
 
@@ -87,12 +87,11 @@ B<menuprog>, B<menuprogreload>, B<include>, B<includeprog>, B<separator>
 
 These are literal string keywords.
 
-=item [B<">]I<title>[B<">]
+=item B<">I<title>B<">
 
 This is the I<title> string associated with the menu item that is
 displayed in the menu.  When the I<title> contains spaces, the title
-must be surrounded by double quotes (C<">), although the I<title> may
-always be surrounded by double quotes if preferred.
+must be surrounded by double quotes (C<">).
 
 =item I<icon>
 
@@ -109,7 +108,8 @@ B<runonce> keyword.
 
 =item I<program> I<options>
 
-I<program> is the name of the executable or full path to the executable file that will
+I<program> is the name of the executable or full path to the executable
+file that will
 be run in response to selecting the menu item.  When used with the
 B<menuprog> keyword, the I<program> must print on standard output the
 contents of the menu and is used for dynamic menus.

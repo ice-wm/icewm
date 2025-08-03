@@ -32,10 +32,9 @@ MiniIcon::MiniIcon(YFrameWindow *frame):
     fIconWindow(client()->iconWindowHint())
 {
     setStyle(wsOverrideRedirect | wsBackingMapped);
-    setSize(YIcon::hugeSize(), YIcon::hugeSize());
+    setGeometry(YRect(-1, -1, YIcon::hugeSize(), YIcon::hugeSize()));
     setNetWindowType(_XA_NET_WM_WINDOW_TYPE_DESKTOP);
     setTitle("MiniIcon");
-    setPosition(-1, -1);
 
     if (fIconWindow) {
         Window root, parent;

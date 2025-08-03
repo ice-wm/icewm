@@ -158,6 +158,9 @@ public:
         return inrange(idx, 0, getCount() - 1) ?
             menu->getItem(idx)->getIcon() : null;
     }
+    virtual int getWorkspace(int idx) override {
+        return idx;
+    }
 };
 
 SProgram::SProgram(const char* key, const char* resource,

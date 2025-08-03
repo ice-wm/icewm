@@ -187,20 +187,20 @@ Feature options enable/disable (1/0) additional features of the window.
 The normal default for all options is disabled (0) unless overridden by
 the application:
 
-  allWorkspaces:            {1|0}  on all workspaces.
-  appTakesFocus:            {1|0}  let application take focus.
-  doNotCover:               {1|0}  limits workspace if sticky.
-  doNotFocus:               {1|0}  do not focus.
-  doNotManage:              {1|0}  do not manage.
+  allWorkspaces:            {1|0}  show it on all workspaces.
+  appTakesFocus:            {1|0}  let the application take focus.
+  doNotCover:               {1|0}  don't place other windows over it.
+  doNotFocus:               {1|0}  do not give it focus.
+  doNotManage:              {1|0}  do not manage at all.
   forcedClose:              {1|0}  no close confirmation dialog.
   fullKeys:                 {1|0}  don't install icewm key bindings.
   ignoreNoFocusHint:        {1|0}  focus even when no-input is set.
   ignorePagerPreview:       {1|0}  do not show in pager preview.
   ignorePositionHint:       {1|0}  always let icewm place the window.
-  ignoreQuickSwitch:        {1|0}  not on quick switch.
-  ignoreTaskBar:            {1|0}  not on task bar.
+  ignoreQuickSwitch:        {1|0}  not on the quick switch.
+  ignoreTaskBar:            {1|0}  not on the task bar.
   ignoreUrgentHint:         {1|0}  ignore urgent hints.
-  ignoreWinList:            {1|0}  not on window list.
+  ignoreWinList:            {1|0}  not on the window list.
   ignoreActivationMessages: {1|0}  only user can focus window.
   ignoreOverrideRedirect:   {1|0}  ignore the override redirect flag.
   noFocusOnAppRaise:        {1|0}  no automatic focus on raise.

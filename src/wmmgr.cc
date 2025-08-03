@@ -1014,6 +1014,7 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
     if (focusLocked())
         return;
     MSG(("SET FOCUS f=%p", f));
+    lockWorkArea();
 
     if (f == nullptr || (fFocusWin && fFocusWin->visible() == false)) {
         switchFocusFrom(fFocusWin);
@@ -1109,6 +1110,7 @@ void YWindowManager::setFocus(YFrameWindow *f, bool canWarp, bool reorder) {
         setKeyboard(fDefaultKeyboard);
     }
 
+    unlockWorkArea();
     MSG(("SET FOCUS END"));
 }
 
@@ -2348,13 +2350,14 @@ void YWindowManager::restackWindows() {
     }
 }
 
-void YWindowManager::getWorkArea(int *mx, int *my, int *Mx, int *My) {
-    int s = max(0, min(xineramaPrimaryScreen, getScreenCount() - 1));
-    if (fWorkArea && 0 < fWorkAreaWorkspaceCount) {
-        *mx = fWorkArea[0][s].fMinX;
-        *my = fWorkArea[0][s].fMinY;
-        *Mx = fWorkArea[0][s].fMaxX;
-        *My = fWorkArea[0][s].fMaxY;
+void YWindowManager::getWorkArea(int *mx, int *my, int *Mx, int *My, int ws) {
+    int s = inrange(xineramaPrimaryScreen, 0, getScreenCount() - 1)
+                  ? xineramaPrimaryScreen : 0;
+    if (fWorkArea && inrange(ws, 0,  fWorkAreaWorkspaceCount - 1)) {
+        *mx = fWorkArea[ws][s].fMinX;
+        *my = fWorkArea[ws][s].fMinY;
+        *Mx = fWorkArea[ws][s].fMaxX;
+        *My = fWorkArea[ws][s].fMaxY;
     } else {
         unsigned dw, dh;
         getScreenGeometry(mx, my, &dw, &dh, s);
@@ -2541,44 +2544,26 @@ bool YWindowManager::updateWorkAreaInner() {
                 updateArea(ws, s, l, t, r, b);
         }
 
-        if ((w->doNotCover() ||
-            (limitByDockLayer && w->getActiveLayer() == WinLayerDock))
+        if (w->doNotCover()
             && (w->client() != taskBar || taskBar->hidden() == false))
         {
             int ws = w->getWorkspace();
             int s = w->getScreen();
-            int sx = xiInfo[s].x_org;
-            int sy = xiInfo[s].y_org;
-            int sw = xiInfo[s].width;
-            int sh = xiInfo[s].height;
 
-            int lowX = sx + sw / 4;
-            int lowY = sy + sh / 4;
-            int hiX = sx + 3 * sw / 4;
-            int hiY = sy + 3 * sh / 4;
-            bool const isHoriz(w->width() > w->height());
-
-            int l = sx;
-            int t = sy;
-            int r = sx + sw;
-            int b = sy + sh;
-
-            if (isHoriz) {
-                if (w->y() + (int) w->height() < lowY) {
-                    t = w->y() + w->height();
-                } else if (w->y() + (int) height() > hiY) {
-                    b = w->y();
-                }
-            } else {
-                if (w->x() + (int) w->width() < lowX) {
-                    l = w->x() + w->width();
-                } else if (w->x() + (int) width() > hiX) {
-                    r = w->x();
-                }
-            }
-            MSG(("dock limit %d %d %d %d", l, t, r, b));
-            if (l < r && t < b)
-                updateArea(ws, s, l, t, r, b);
+            YRect wa(fWorkArea[ws >= 0 ? ws : activeWorkspace()][s]);
+            YRect wg(w->geometry());
+            YRect ls(wa.leftOf(wg));
+            YRect rs(wa.rightOf(wg));
+            YRect ts(wa.aboveOf(wg));
+            YRect bs(wa.belowOf(wg));
+            if (ls > rs && ls > ts && ls > bs)
+                updateArea(ws, s, ls.xx, ls.yy, ls.right(), ls.bottom());
+            if (rs > ls && rs > ts && rs > bs)
+                updateArea(ws, s, rs.xx, rs.yy, rs.right(), rs.bottom());
+            if (ts > ls && ts > rs && ts > bs)
+                updateArea(ws, s, ts.xx, ts.yy, ts.right(), ts.bottom());
+            if (bs > ls && bs > rs && bs > ts)
+                updateArea(ws, s, bs.xx, bs.yy, bs.right(), bs.bottom());
         }
         debugWorkArea("updated");
     }
@@ -2656,11 +2641,11 @@ bool YWindowManager::updateWorkAreaInner() {
         delete [] oldWorkArea[0];
         delete [] oldWorkArea;
     }
-    if (resize) {
+    if (changed) {
         MSG(("resizeWindows"));
-        resizeWindows();
+        resizeWindows(resize);
     }
-    return resize | changed;
+    return changed;
 }
 
 void YWindowManager::announceWorkArea() {
@@ -2724,13 +2709,16 @@ void YWindowManager::announceWorkArea() {
     delete [] area;
 }
 
-void YWindowManager::resizeWindows() {
+void YWindowManager::resizeWindows(bool all) {
     for (YFrameWindow * f = topLayer(); f; f = f->nextLayer()) {
         if (f->visibleNow() && f->inWorkArea() && !f->client()->destroyed()) {
             if (f->isMaximized())
                 f->updateDerivedSize(WinStateMaximizedBoth);
-            f->updateLayout();
+            if (all || f->isMaximized())
+                f->updateLayout();
         }
+        else if (all && f->isIconic())
+            f->getMiniIcon()->show();
     }
 }
 
@@ -3084,8 +3072,6 @@ void YWindowManager::getIconPosition(MiniIcon* iw, int *iconX, int *iconY) {
         return;
     }
 
-    YFrameWindow* frame = iw->getFrame();
-
     int mrow, mcol, Mrow, Mcol; /* Minimum and maximum for rows and columns */
     int width, height; /* column width and row height */
     int drow, dcol; /* row and column directions */
@@ -3093,7 +3079,7 @@ void YWindowManager::getIconPosition(MiniIcon* iw, int *iconX, int *iconY) {
     const int margin = 4;
 
     if (miniIconsPlaceHorizontal) {
-        getWorkArea(frame, &mcol, &mrow, &Mcol, &Mrow);
+        getWorkArea(&mcol, &mrow, &Mcol, &Mrow, activeWorkspace());
         width = iw->width() + 2 * margin;
         height = iw->height() + 2 * margin;
         drow = miniIconsBottomToTop ? -1 : +1;
@@ -3101,7 +3087,7 @@ void YWindowManager::getIconPosition(MiniIcon* iw, int *iconX, int *iconY) {
         iconRow = iconY;
         iconCol = iconX;
     } else {
-        getWorkArea(frame, &mrow, &mcol, &Mrow, &Mcol);
+        getWorkArea(&mrow, &mcol, &Mrow, &Mcol, activeWorkspace());
         width = iw->height() + 2 * margin;
         height = iw->width() + 2 * margin;
         drow = miniIconsRightToLeft ? -1 : +1;

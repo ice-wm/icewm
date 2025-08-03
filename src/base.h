@@ -114,6 +114,7 @@ char *newstr(char const *str, int len);
 char *newstr(char const *str, char const *delim);
 char *cstrJoin(char const *str, ...);
 
+void foldspaces(char* str);
 char* demangle(const char* str);
 unsigned long strhash(const char* str);
 

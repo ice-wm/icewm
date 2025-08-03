@@ -31,6 +31,8 @@ public:
     int y() const { return yy; }
     unsigned width() const { return ww; }
     unsigned height() const { return hh; }
+    unsigned right() const { return xx + ww; }
+    unsigned bottom() const { return yy + hh; }
     unsigned pixels() const { return ww * hh; }
 
     void setRect(int x, int y, unsigned w, unsigned h) {
@@ -65,6 +67,9 @@ public:
         return intersect(r).pixels();
     }
 
+    bool nonempty() const {
+        return ww && hh;
+    }
     bool contains(const YRect& r) const {
         return overlap(r) == r.pixels();
     }
@@ -84,6 +89,38 @@ public:
         int mx = min(xx, r.xx), mw = int(max(xx + int(ww), r.xx + int(r.ww)));
         int my = min(yy, r.yy), mh = int(max(yy + int(hh), r.yy + int(r.hh)));
         setRect(mx, my, unsigned(mw - mx), unsigned(mh - my));
+    }
+    bool operator>(const YRect& r) const {
+        return ww * hh > r.ww * r.hh;
+    }
+
+    YRect leftOf(const YRect& r) const {
+        return r.xx > xx
+            ? r.xx < xx + int(ww)
+                ? YRect(xx, yy, unsigned(r.xx - xx), hh)
+                : *this
+            : YRect();
+    }
+    YRect rightOf(const YRect& r) const {
+        return r.xx + r.ww < xx + ww
+            ? r.xx + int(r.ww) > xx
+                ? YRect(r.xx + int(r.ww), yy, ww - r.ww - r.xx, hh)
+                : *this
+            : YRect();
+    }
+    YRect aboveOf(const YRect& r) const {
+        return r.yy > yy
+            ? r.yy < yy + int(hh)
+                ? YRect(xx, yy, ww, unsigned(r.yy - yy))
+                : *this
+            : YRect();
+    }
+    YRect belowOf(const YRect& r) const {
+        return r.yy + r.hh < yy + hh
+            ? r.yy + int(r.hh) > yy
+                ? YRect(xx, r.yy + int(r.hh), ww, hh - r.hh - r.yy)
+                : *this
+            : YRect();
     }
 
     int xx, yy;

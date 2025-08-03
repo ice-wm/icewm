@@ -186,6 +186,8 @@ YFrameWindow::~YFrameWindow() {
         delete fContainer; fContainer = nullptr;
         delete fTitleBar; fTitleBar = nullptr;
 
+        if (affectsWorkArea())
+            manager->updateWorkArea();
         manager->unlockWorkArea();
         manager->updateClientList();
     }
@@ -1418,11 +1420,6 @@ void YFrameWindow::actionPerformed(YAction action, unsigned int modifiers) {
     case actionOccupyAllOrCurrent:
         wmOccupyAllOrCurrent();
         break;
-#if DO_NOT_COVER_OLD
-    case actionDoNotCover:
-        wmToggleDoNotCover();
-        break;
-#endif
     case actionFullscreen:
         if (canFullscreen())
             wmToggleFullscreen();
@@ -1587,12 +1584,6 @@ void YFrameWindow::wmSetLayer(int layer) {
 void YFrameWindow::wmSetTrayOption(int option) {
     setTrayOption(option);
 }
-
-#if DO_NOT_COVER_OLD
-void YFrameWindow::wmToggleDoNotCover() {
-    setDoNotCover(!doNotCover());
-}
-#endif
 
 void YFrameWindow::wmToggleFullscreen() {
     if (isFullscreen()) {
@@ -3134,7 +3125,7 @@ void YFrameWindow::updateLayer(bool restack) {
         if (limitByDockLayer &&
            (newLayer == WinLayerDock || oldLayer == WinLayerDock) &&
             client() != taskBar)
-            manager->requestWorkAreaUpdate();
+            manager->updateWorkArea();
 
         for (YFrameClient* w = transient(); w; w = w->nextTransient()) {
             if (w->getFrame())
@@ -3190,11 +3181,13 @@ void YFrameWindow::updateState() {
     }
 }
 
+bool YFrameWindow::doNotCover() const {
+    return frameOption(foDoNotCover) ||
+          (limitByDockLayer && fWinActiveLayer == WinLayerDock);
+}
+
 bool YFrameWindow::affectsWorkArea() const {
-    bool affects = ((fHaveStruts || doNotCover() ||
-                     getActiveLayer() == WinLayerDock) &&
-                    client() != taskBar);
-    return affects;
+    return (fHaveStruts || doNotCover()) && client() != taskBar;
 }
 
 bool YFrameWindow::inWorkArea() const {
@@ -3628,19 +3621,6 @@ bool YFrameWindow::visibleNow() const {
     return visibleOn(manager->activeWorkspace());
 }
 
-#if DO_NOT_COVER_OLD
-void YFrameWindow::setDoNotCover(bool doNotCover) {
-    fWinOptionMask &= ~foDoNotCover;
-
-    if (doNotCover) {
-        fFrameOptions |= foDoNotCover;
-    } else {
-        fFrameOptions &= ~foDoNotCover;
-    }
-    manager->updateWorkArea();
-}
-#endif
-
 void YFrameWindow::updateMwmHints(XSizeHints* sh) {
     // when client adjusts normal hints base and increment:
     XSizeHints* xs = client()->sizeHints();
@@ -3811,7 +3791,8 @@ void YFrameWindow::updateNetWMStrut() {
         fStrutBottom = b;
         fHaveStruts = l | r | t | b;
         MSG(("strut: %d %d %d %d", l, r, t, b));
-        manager->updateWorkArea();
+        if (isManaged())
+            manager->updateWorkArea();
     }
 }
 
@@ -3832,7 +3813,8 @@ void YFrameWindow::updateNetWMStrutPartial() {
         fStrutBottom = b;
         fHaveStruts = l | r | t | b;
         MSG(("strut: %d %d %d %d", l, r, t, b));
-        manager->updateWorkArea();
+        if (isManaged())
+            manager->updateWorkArea();
     }
 }
 

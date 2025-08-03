@@ -748,7 +748,9 @@ void TaskButton::handleButton(const XButtonEvent& button) {
         if (button.button == Button1 && selected == 2 && fActive) {
             if (fMenu) {
             }
-            else if (getFrame()->focused() && getFrame()->visibleNow() &&
+            else if (getFrame()->visibleNow() && (getFrame()->focused() ||
+                    (getFrame()->isFullscreen() && taskBarFullscreenAutoShow)) &&
+                     getFrame()->canMinimize() && !getFrame()->isMinimized() &&
                 (!getFrame()->canRaise(true) || (button.state & ControlMask)))
             {
                 getFrame()->wmMinimize();

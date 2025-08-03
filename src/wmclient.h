@@ -116,9 +116,11 @@ public:
     virtual mstring getTitle() const = 0;
     virtual mstring getIconTitle() const = 0;
     virtual void activateWindow(bool raise, bool curWork) = 0;
+    virtual bool isFullscreen() const = 0;
     virtual bool isMinimized() const = 0;
     virtual bool focused() const = 0;
     virtual bool visibleNow() const = 0;
+    virtual bool canMinimize() const = 0;
     virtual bool canRaise(bool ignoreTaskBar = false) const = 0;
     virtual void wmClose() = 0;
     virtual void wmRaise() = 0;

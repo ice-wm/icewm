@@ -663,6 +663,76 @@ Sort the list of windows from topmost to bottom-most.
 
 Reverse the order of the list of windows.
 
+=item B<switchmenu>
+
+Output the list as a menu for icewm's QuickSwitch. This action is to be
+used in a B<switchkey> directive in the C<keys> file.
+
+=item B<print> I<format>
+
+For each window in the selection, print a line according to I<format>.
+Here common backslash-escapes are recognized as well as the following
+percent formatting options:
+
+=over
+
+=item B<%>
+
+A literal percent sign.
+
+=item B<h>
+
+The window height.
+
+=item B<w>
+
+The window width.
+
+=item B<x>
+
+The window x-position.
+
+=item B<y>
+
+The window y-position.
+
+=item B<g>
+
+The window geometry.
+
+=item B<i>
+
+The window identifying handle.
+
+=item B<o>
+
+An icon name.
+
+=item B<p>
+
+The process-ID of the window application.
+
+=item B<c>
+
+The WM_CLASS property of the window.
+
+=item B<m>
+
+The WM_CLIENT_MACHINE property of the window.
+
+=item B<t>
+
+The window title.
+
+=item B<W>
+
+The current workspace of the window.
+
+=back
+
+Each percent format option may start with a minus sign for
+left-alignment and have a numeric field width.
+
 =back
 
 =head2 MANAGER ACTIONS

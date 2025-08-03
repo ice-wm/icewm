@@ -25,6 +25,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <ctype.h>
 #include <sys/stat.h>
 #include <vector>
 #include <algorithm>
@@ -102,6 +103,27 @@ bool contains(vector<T>& v, T t) {
 }
 
 /******************************************************************************/
+
+class YClassHint : public XClassHint {
+public:
+    YClassHint() { res_name = res_class = nullptr; }
+    ~YClassHint() { XFree(res_name); XFree(res_class); }
+    YClassHint(const YClassHint& h) {
+        res_name = h.res_name ? strdup(h.res_name) : nullptr;
+        res_class = h.res_class ? strdup(h.res_class) : nullptr;
+    }
+    void operator=(const YClassHint& h) {
+        if (&h != this) {
+            if (res_name) { XFree(res_name); res_name = nullptr; }
+            if (res_class) { XFree(res_class); res_class = nullptr; }
+            if (h.res_name) { res_name = strdup(h.res_name); }
+            if (h.res_class) { res_class = strdup(h.res_class); }
+        }
+    }
+    const char* name() const { return res_name ? res_name : ""; }
+    const char* klas() const { return res_class ? res_class : ""; }
+    bool get(Window win) { return XGetClassHint(display, win, this); }
+};
 
 class NAtom {
     const char* fName;
@@ -279,6 +301,11 @@ const int netStateAtomCount = int ACOUNT(netStateAtoms);
 
 static inline void newline() {
     putchar('\n');
+}
+
+static void removefrom(char* data, char bad) {
+    for (char* d = data; (d = strchr(d, bad)) != nullptr; )
+        memmove(d, d + 1, strlen(d + 1) + 1);
 }
 
 static Time serverTime()
@@ -1296,32 +1323,30 @@ public:
         vector<Window> keep;
         for (YTreeIter client(*this); client; ++client) {
             Window window = client;
-            XClassHint hint;
-            if (XGetClassHint(display, window, &hint)) {
+            YClassHint hint;
+            if (hint.get(window)) {
                 if (wmclass) {
-                    if (strcmp(hint.res_name, wmname) ||
-                        strcmp(hint.res_class, wmclass))
+                    if (strcmp(hint.name(), wmname) ||
+                        strcmp(hint.klas(), wmclass))
                         window = None;
                 }
                 else if (wmname) {
-                    if (strcmp(hint.res_name, wmname) &&
-                        strcmp(hint.res_class, wmname))
+                    if (strcmp(hint.name(), wmname) &&
+                        strcmp(hint.klas(), wmname))
                         window = None;
                 }
 
                 if (window) {
                     MSG(("selected window 0x%lx: `%s.%s'", window,
-                         hint.res_name, hint.res_class));
+                         hint.name(), hint.klas()));
                     keep.push_back(window);
                 }
-
-                XFree(hint.res_name);
-                XFree(hint.res_class);
             }
         }
         fChildren = keep;
     }
 
+#if __linux__
     static bool isShell(const char* path) {
         int fd = open("/etc/shells", O_RDONLY);
         if (fd >= 0) {
@@ -1379,9 +1404,70 @@ public:
         }
         return false;
     }
+#endif
+
+    static bool terminalClass(Window window) {
+        YClassHint hint;
+        if (hint.get(window) && hint.res_name && hint.res_class) {
+            struct { const char* n, *c; } terminals[] = {
+                { "Alacritty", "Alacritty" },
+                { "LilyTerm", "LilyTerm" },
+                { "byobu", "Byobu" },
+                { "deepin-terminal", "deepin-terminal" },
+                { "gnome-terminal-server", "Gnome-terminal" },
+                { "guake", "Guake" },
+                { "kitty", "kitty" },
+                { "konsole", "konsole" },
+                { "kterm", "KTerm" },
+                { "lilyterm", "Lilyterm" },
+                { "lxterminal", "Lxterminal" },
+                { "main", "terminology" },
+                { "mate-terminal", "Mate-terminal" },
+                { "mlterm", "mlterm" },
+                { "pterm", "Pterm" },
+                { "putty", "Putty" },
+                { "qterminal", "qterminal" },
+                { "roxterm", "Roxterm" },
+                { "rxvt", "URxvt" },
+                { "sakura", "Sakura" },
+                { "st-256color", "st-256color" },
+                { "stterm-256color", "stterm-256color" },
+                { "term", "Term" },
+                { "terminator", "Terminator" },
+                { "termit", "Termit" },
+                { "tilda", "Tilda" },
+                { "tilix", "Tilix" },
+                { "urxvt", "URxvt" },
+                { "vala-terminal", "Vala-terminal" },
+                { "xfce4-terminal", "Xfce4-terminal" },
+                { "xiterm+thai", "XTerm" },
+                { "xterm", "XTerm" },
+                { "xterm", "mlterm" },
+                { "xvt", "xterm" },
+                { "yakuake", "yakuake" },
+            };
+            const int count = int ACOUNT(terminals);
+            int lo = 0, hi = count;
+            while (lo < hi) {
+                const int pv = (lo + hi) / 2;
+                auto t = terminals[pv];
+                int c = strcmp(t.n, hint.res_name);
+                if (c == 0)
+                    c = strcmp(t.c, hint.res_class);
+                if (c < 0)
+                    lo = pv + 1;
+                else if (c > 0)
+                    hi = pv;
+                else
+                    return true;
+            }
+        }
+        return false;
+    }
 
     void filterByTerminal() {
         vector<Window> keep;
+#if __linux__
         char solve[PATH_MAX];
         char* shell = getenv("SHELL");
         if (shell) {
@@ -1391,8 +1477,27 @@ public:
             int pid = int(getClientPID(client));
             if (pid > 1 && isTerminal(pid, shell))
                 keep.push_back(client);
+            else if (terminalClass(client))
+                keep.push_back(client);
         }
+#else
+        for (YTreeIter client(*this); client; ++client) {
+            if (terminalClass(client))
+                keep.push_back(client);
+        }
+#endif
         fChildren = keep;
+    }
+
+    void activeFirst() {
+        YClient client(root, ATOM_NET_ACTIVE_WINDOW);
+        if (client) {
+            Window focus = *client;
+            auto index = find(fChildren.begin(), fChildren.end(), focus);
+            if (index != fChildren.end() && index != fChildren.begin()) {
+                iter_swap(index, fChildren.begin());
+            }
+        }
     }
 
     void release() {
@@ -1535,8 +1640,10 @@ private:
     void pickingWindow();
     void selectWindows();
     void xinit();
+    void print(const char* format);
     void motif(Window window, char** args, int count);
     void setBorderTitle(int border, int title);
+    void switchmenu();
     void sizeto();
     void sizeby();
     void moveto();
@@ -1545,6 +1652,7 @@ private:
     void details(Window window);
     void setWindow(Window window);
     void addWindow(Window window);
+    void iconname(Window window, char* icon, size_t size);
     void showProperty(Window window, Atom atom, const char* prefix);
     void parseAction();
     void confine(const char* str);
@@ -2099,6 +2207,194 @@ void IceSh::detail()
     FOREACH_WINDOW(window) {
         use(window);
         details(window);
+    }
+}
+
+void IceSh::iconname(Window window, char* icon, size_t size) {
+    *icon = '\0';
+    YClassHint hint;
+    if (hint.get(window)) {
+        if (nonempty(hint.klas()))
+            strlcpy(icon, hint.klas(), size);
+        else if (nonempty(hint.name()))
+            strlcpy(icon, hint.name(), size);
+    }
+    if (*icon == '\0') {
+        YStringProperty com(window, XA_WM_COMMAND);
+        if (com) {
+            strlcpy(icon, my_basename(&com), size);
+        }
+    }
+#if __linux__
+    if (*icon == '\0') {
+        long pid = getClientPID(window);
+        if (pid) {
+            const int fix = 123;
+            char exe[fix];
+            snprintf(exe, fix, "/proc/%ld/exe", pid);
+            char path[fix] = "";
+            ssize_t count = readlink(exe, path, fix - 1);
+            if (1 < count && count < fix) {
+                path[count] = '\0';
+                strlcpy(icon, my_basename(path), size);
+            }
+        }
+    }
+#endif
+    if (*icon == '\0') {
+        strlcpy(icon, "icewm", size);
+    }
+    for (unsigned char* s = (unsigned char *) icon; *s; ++s) {
+        *s = tolower(*s);
+    }
+    removefrom(icon, '"');
+}
+
+void IceSh::print(const char* format)
+{
+    FOREACH_WINDOW(window) {
+        use(window);
+        int x = 0, y = 0, width = 0, height = 0;
+        if (::getGeometry(window, x, y, width, height) == false) {
+            window.discard();
+            continue;
+        }
+        for (const char* s = format; *s; ++s) {
+            switch (*s) {
+                case '\\': {
+                    if (s[1]) {
+                        s++;
+                        switch (*s) {
+                            case '\\': putchar('\\'); break;
+                            case 'a': putchar('\a'); break;
+                            case 'b': putchar('\b'); break;
+                            case 'e': putchar('\033'); break;
+                            case 'f': putchar('\f'); break;
+                            case 'n': putchar('\n'); break;
+                            case 'r': putchar('\r'); break;
+                            case 't': putchar('\t'); break;
+                            case 'v': putchar('\v'); break;
+                            default:
+                                if (isprint((unsigned char) *s)) {
+                                    putchar(*s); }
+                        }
+                    }
+                    break;
+                }
+                case '%': {
+                    const int len = 200;
+                    char buf[len] = "";
+                    bool minus = false;
+                    if (s[1] == '-') {
+                        minus = true;
+                        s++;
+                    }
+                    int field = 0;
+                    while (isDigit(s[1])) {
+                        field = 10 * field + (s[1] - '0');
+                        s++;
+                    }
+                    if (field >= len) {
+                        field = len - 2;
+                    }
+                    if (s[1]) {
+                        s++;
+                        switch (*s) {
+                            case '%': strlcpy(buf, "%", len);
+                                      break;
+                            case 'h': snprintf(buf, len, "%d", height);
+                                      break;
+                            case 'w': snprintf(buf, len, "%d", width);
+                                      break;
+                            case 'x': snprintf(buf, len, "%d", x);
+                                      break;
+                            case 'y': snprintf(buf, len, "%d", y);
+                                      break;
+                            case 'g': snprintf(buf, len, "%dx%d+%d+%d",
+                                               width, height, x, y); break;
+                            case 'i': snprintf(buf, len, "0x%lx",
+                                               Window(window)); break;
+                            case 'p': snprintf(buf, len, "%ld",
+                                               getClientPID(window));
+                                      break;
+                            case 'c': {
+                                YClassHint hint;
+                                if (hint.get(window)) {
+                                    snprintf(buf, len, "%s.%s",
+                                             hint.name(), hint.klas());
+                                } else {
+                                    strlcpy(buf, ".", len);
+                                }
+                                break;
+                            }
+                            case 'm': {
+                                YStringProperty mac(window,
+                                                    XA_WM_CLIENT_MACHINE);
+                                snprintf(buf, len, "%s", mac ? &mac : "_");
+                                break;
+                            }
+                            case 'o':
+                                iconname(window, buf, len);
+                                break;
+                            case 't': {
+                                csmart title(newstr(&window->netName()));
+                                if (isEmpty(title))
+                                    title = newstr(&window->wmName());
+                                snprintf(buf, len, "%s", title.data());
+                                removefrom(buf, '"');
+                                break;
+                            }
+                            case 'W': {
+                                long ws = getWorkspace(window);
+                                /* if (ws == -1)
+                                    ws = currentWorkspace(); */
+                                snprintf(buf, len, "%ld", ws);
+                                break;
+                            }
+                            default: break;
+                        }
+                        const int size = 32;
+                        char spec[size] = "%";
+                        if (minus) {
+                            strlcat(spec, "-", size);
+                        }
+                        if (field) {
+                            size_t len = strlen(spec);
+                            snprintf(spec + len, size - len, "%d", field);
+                        }
+                        if (strlcat(spec, "s", size) < size) {
+                            printf(spec, buf);
+                        }
+                    }
+                    break;
+                }
+                default:
+                    if (isprint((unsigned char) *s)) {
+                        putchar(*s); }
+            }
+        }
+        putchar('\n');
+    }
+}
+
+void IceSh::switchmenu()
+{
+    windowList.activeFirst();
+    // print("prog \"%t\" \"%o\" icesh -w %i activate");
+    FOREACH_WINDOW(window) {
+        use(window);
+
+        csmart title(newstr(&window->netName()));
+        if (isEmpty(title))
+            title = newstr(&window->wmName());
+
+        const int size = 200;
+        char icon[size] = "";
+        iconname(window, icon, size);
+
+        removefrom(title.data(), '"');
+        printf("prog \"%s\" \"%s\" icesh -w 0x%lx activate\n",
+                title.data(), icon, Window(window));
     }
 }
 
@@ -3246,11 +3542,9 @@ void IceSh::setGeometry(Window window, const char* geometry) {
 }
 
 void IceSh::getClass(Window window) {
-    XClassHint hint;
-    if (XGetClassHint(display, window, &hint)) {
-        printf("0x%07lx %s.%s\n", window, hint.res_name, hint.res_class);
-        XFree(hint.res_name);
-        XFree(hint.res_class);
+    YClassHint hint;
+    if (hint.get(window)) {
+        printf("0x%07lx %s.%s\n", window, hint.name(), hint.klas());
     }
 }
 
@@ -3260,16 +3554,12 @@ void IceSh::setClass(Window window, const char* title) {
     char* dot = strchr(name, '.');
     char* klas = dot ? dot + 1 : &nil;
     if (dot) *dot = '\0';
-    XClassHint hint = { nullptr, nullptr };
-    bool have = strchr(title, '%') && XGetClassHint(display, window, &hint);
+    YClassHint hint;
+    bool have = strchr(title, '%') && hint.get(window);
     XClassHint repl;
     repl.res_name = strcmp(name, "%") ? name : have ? hint.res_name : &nil;
     repl.res_class = strcmp(klas, "%") ? klas : have ? hint.res_class : &nil;
     XSetClassHint(display, window, &repl);
-    if (have) {
-        XFree(hint.res_name);
-        XFree(hint.res_class);
-    }
     free(name);
 }
 
@@ -3952,7 +4242,6 @@ static char* randomLabel() {
     for (int i = 0; i < length; ++i) {
         unsigned r = randomLimit(64);
         label[i] = data[r & 63];
-        r >>= 6;
     }
     label[length] = '\0';
     return label;
@@ -4079,14 +4368,14 @@ void IceSh::tabTo(char* defaultLabel)
         if (defaultLabel == nullptr && isTabbed(window) == false)
             continue;
 
-        XClassHint h = { nullptr, nullptr };
-        bool xgot = (XGetClassHint(display, window, &h) == True);
+        YClassHint hint;
+        bool xgot = hint.get(window);
         YStringProperty role(window, ATOM_WM_WINDOW_ROLE);
         const char* str1 = nullptr, *str2 = nullptr;
-        if (xgot && h.res_class)
-            str1 = h.res_class, str2 = h.res_name;
-        else if (xgot && h.res_name)
-            str1 = h.res_name, str2 = role ? &role : nullptr;
+        if (xgot && hint.res_class)
+            str1 = hint.res_class, str2 = hint.res_name;
+        else if (xgot && hint.res_name)
+            str1 = hint.res_name, str2 = role ? &role : nullptr;
         else if (role)
             str1 = &role;
         size_t length = (str1 ? strlen(str1) : 0)
@@ -4133,8 +4422,6 @@ void IceSh::tabTo(char* defaultLabel)
                 delete[] buf;
             }
         }
-        XFree(h.res_name);
-        XFree(h.res_class);
     }
 }
 
@@ -4142,46 +4429,40 @@ void IceSh::extendClass()
 {
     pickingWindow();
     if (windowList) {
-        vector<XClassHint> classes;
+        vector<YClassHint> classes;
         FOREACH_WINDOW(window) {
-            XClassHint h = { nullptr, nullptr };
-            if (XGetClassHint(display, window, &h) == True) {
-                classes.push_back(h);
+            YClassHint hint;
+            if (hint.get(window)) {
+                classes.push_back(hint);
             }
         }
         YWindowTree clients;
         clients.getClientList();
         for (YTreeIter window(clients); window; ++window) {
             if (windowList.have(window) == false) {
-                XClassHint h = { nullptr, nullptr };
-                if (XGetClassHint(display, window, &h) == True) {
-                    if (nonempty(h.res_class)) {
+                YClassHint hint;
+                if (hint.get(window)) {
+                    if (nonempty(hint.res_class)) {
                         for (XClassHint c : classes) {
                             if (nonempty(c.res_class)
-                                && !strcmp(c.res_class, h.res_class)) {
+                                && !strcmp(c.res_class, hint.res_class)) {
                                 addWindow(window);
                                 break;
                             }
                         }
                     }
-                    else if (nonempty(h.res_name)) {
+                    else if (nonempty(hint.res_name)) {
                         for (XClassHint c : classes) {
                             if (isEmpty(c.res_class)
                                 && nonempty(c.res_name)
-                                && !strcmp(c.res_name, h.res_name)) {
+                                && !strcmp(c.res_name, hint.res_name)) {
                                 addWindow(window);
                                 break;
                             }
                         }
                     }
                 }
-                XFree(h.res_name);
-                XFree(h.res_class);
             }
-        }
-        for (XClassHint h : classes) {
-            XFree(h.res_name);
-            XFree(h.res_class);
         }
         classes.clear();
     }
@@ -5465,6 +5746,12 @@ void IceSh::parseAction()
         }
         else if (isAction("list", 0)) {
             detail();
+        }
+        else if (isAction("print", 1)) {
+            print(getArg());
+        }
+        else if (isAction("switchmenu", 0)) {
+            switchmenu();
         }
         else if (isAction("extents", 0)) {
             extents();

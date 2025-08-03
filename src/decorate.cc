@@ -58,9 +58,6 @@ void YFrameWindow::updateMenu() {
     windowMenu->checkCommand(actionHide, isHidden());
     windowMenu->checkCommand(actionRollup, isRollup());
     windowMenu->checkCommand(actionOccupyAllOrCurrent, isAllWorkspaces());
-#if DO_NOT_COVER_OLD
-    windowMenu->checkCommand(actionDoNotCover, doNotCover());
-#endif
     updateSubmenus();
 }
 
