@@ -1423,6 +1423,7 @@ public:
                 { "lxterminal", "Lxterminal" },
                 { "main", "terminology" },
                 { "mate-terminal", "Mate-terminal" },
+                { "mlterm", "mlterm" },
                 { "pterm", "Pterm" },
                 { "putty", "Putty" },
                 { "qterminal", "qterminal" },
