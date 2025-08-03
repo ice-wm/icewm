@@ -1,11 +1,39 @@
-icewm -- history of user-visible changes.  2025-07-14
+icewm -- history of user-visible changes.  2025-08-03
+
+Release icewm-3.8.2 released 2025-08-03
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.8.1...3.8.2
+
+Bert Gijsbers <gijsbers@science.uva.nl> (14):
+      Use foldspaces to remove extraneous spaces.
+      Also minimize fullscreen windows when clicking on a task button. Document
+        the minimization feature of task buttons and the Ctrl modifier.
+      Fix for keeping a menu inside the screen area.
+      Fixes for adjusting the workarea when moving/sizing a do-not-cover window
+        for issue #356.
+      Fix to resize maximized windows when workarea grows and fix to recompute
+        the workarea when a dock exits for issue #356.
+      Don't synchronize with icewm after _NET_WORKAREA changes as it slows icewm
+        down.
+      Fix typo for issue #356.
+      When the workarea changes, adjust the positions of all desktop icons.
+      Drop excessive use of square brackets around double quotes.
+      Improve the abstractions for the doNotCover computation inside
+        updateWorkAreaInner.
+      Add new "switchmenu" and "print" actions to icesh to use icesh in a
+        "switchkey" definition in the "keys" file.
+      Make the -Z filter work on non-Linux.
+      Add mlterm for OpenBSD.
+      Explain Dock layer.
+
 
 Release icewm-3.8.1 released 2025-07-14
 ---------------------------------------
 
 git shortlog --no-merges -e -n -w80,6,8 3.8.0...3.8.1
 
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
       Reduce the size of a DTheme from 88 bytes to 32 bytes.
       Reduce the amount of memory needed for keybindings from the "keys" file.
       Allow to reload the toolbar from the dialog.
@@ -26,6 +54,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (19):
       Always keep message dialogs above the WindowList.
       Use the precise buffer length for a mstring of long.
       Prevent 2 Clang warnings.
+      Prepare 3.8.1 release
 
 Kempelen <lion@cmsbazar.hu> (1):
       Translated using Weblate (Hungarian)
@@ -229,29 +258,4 @@ Bert Gijsbers <gijsbers@science.uva.nl> (15):
       Ignore key releases and modifier presses in the top window key handler.
       Remove the incompatible cmake_path from the po CMakefile.
       Prepare 3.7.2 release
-
-
-Release icewm-3.7.1 released 2025-02-27
----------------------------------------
-
-git shortlog --no-merges -e -n -w80,6,8 3.7.0...3.7.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (11):
-      Link against NLS libs for icewm-menu-fdo and closes ice-wm/icewm#185.
-      Fix broken modSuperIsCtrlAlt for issue #791.
-      Simplify key handling in MenuProgSwitchItems.
-      Skip past carriage-returns in getArgument for ice-wm/icewm#186.
-      Remove trailing carriage-returns from each input line in icewm-menu-fdo
-        for ice-wm/icewm#186.
-      Let QuickSwitch select the proper client tab, before activating a frame.
-      Fix toolbar addButton for issue ice-wm/icewm#186.
-      Wait for the Return key-release event before accepting the address bar
-        input line to avoid stray Return key-release events in applications.
-      Improve focusing xterms by first updating our notion of the server time
-        from xproperty events for issue ice-wm/icewm#188.
-      Update the event time strictly increasing.
-      Prepare 3.7.1 release
-
-Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
-      Translated using Weblate (Georgian)
 
