@@ -810,11 +810,6 @@ public:
     }
 };
 
-class NetName : public YUtf8Property {
-public:
-    NetName(Window window) : YUtf8Property(window, XA_WM_NAME) { }
-};
-
 enum YTextKind {
     YText,
     YEmby,
@@ -928,6 +923,16 @@ static long getWorkspace(Window window) {
     return *YCardinal(window, ATOM_NET_WM_DESKTOP);
 }
 
+static char* getWindowTitle(Window window) {
+    YUtf8Property net(window, ATOM_NET_WM_NAME);
+    if (net)
+        return newstr(&net);
+    YStringProperty name(window, XA_WM_NAME);
+    if (name)
+        return newstr(&name);
+    return nullptr;
+}
+
 static void setWindowGravity(Window window, long gravity) {
     unsigned long mask = CWWinGravity;
     XSetWindowAttributes attr = {};
@@ -1009,7 +1014,7 @@ public:
     YTreeLeaf& operator=(Window win) { leaf = win; return *this; }
 
     WmName wmName() { return WmName(leaf); }
-    NetName netName() { return NetName(leaf); }
+    char* title() { return getWindowTitle(leaf); }
     YStringProperty wmRole() { return YStringProperty(leaf, ATOM_WM_WINDOW_ROLE); }
 };
 
@@ -1302,9 +1307,7 @@ public:
 
         vector<Window> keep;
         for (YTreeIter client(*this); client; ++client) {
-            csmart title(newstr(&client->netName()));
-            if (isEmpty(title))
-                title = newstr(&client->wmName());
+            csmart title(client->title());
             if (nonempty(title)) {
                 const char* find = strstr(title, name);
                 if (find) {
@@ -2173,23 +2176,34 @@ void IceSh::modified(Window window)
 
 void IceSh::details(Window w)
 {
-    YTreeLeaf leaf(w);
-    csmart name(newstr(&leaf.netName()));
-    if (isEmpty(name))
-        name = newstr(Elvis(&leaf.wmName(), ""));
+    csmart name(getWindowTitle(w));
+    const int size = 54;
+    int len = int(strlen(name));
+    if (len > size - 4) {
+        len = size - 4;
+        int cp = 0;
+        while (cp > -3 && utf0(name[len + cp])) {
+            cp--;
+        }
+        if (utf1(name[len + cp]) ||
+            utf2(name[len + cp]) ||
+            utf3(name[len + cp])) {
+            len += cp;
+        }
+        name[len] = '\0';
+    }
+    char title[size] = "";
+    snprintf(title, sizeof title, "\"%.*s\"", len, (char *) name);
 
-    char title[54] = "";
-    snprintf(title, sizeof title, "\"%.*s\"", 50, (char *) name);
-
-    char c = 0, *wmname = &c;
+    char c = 0, *klas = &c;
     YTextProperty text(w, XA_WM_CLASS);
     if (text) {
-        wmname = text[0];
-        wmname[strlen(wmname)] = '.';
+        klas = text[0];
+        klas[strlen(klas)] = '.';
     }
 
-    char wmtitle[54] = "";
-    snprintf(wmtitle, sizeof wmtitle, "(%.*s)", 50, wmname);
+    char wmtitle[size] = "";
+    snprintf(wmtitle, sizeof wmtitle, "(%.*s)", 50, klas);
 
     int x = 0, y = 0, width = 0, height = 0;
     ::getGeometry(w, x, y, width, height);
@@ -2337,9 +2351,7 @@ void IceSh::print(const char* format)
                                 iconname(window, buf, len);
                                 break;
                             case 't': {
-                                csmart title(newstr(&window->netName()));
-                                if (isEmpty(title))
-                                    title = newstr(&window->wmName());
+                                csmart title(window->title());
                                 snprintf(buf, len, "%s", title.data());
                                 removefrom(buf, '"');
                                 break;
@@ -2384,9 +2396,7 @@ void IceSh::switchmenu()
     FOREACH_WINDOW(window) {
         use(window);
 
-        csmart title(newstr(&window->netName()));
-        if (isEmpty(title))
-            title = newstr(&window->wmName());
+        csmart title(window->title());
 
         const int size = 200;
         char icon[size] = "";
@@ -2928,10 +2938,9 @@ bool IceSh::wmcheck()
 
     YClient check(root, ATOM_NET_SUPPORTING_WM_CHECK);
     if (check) {
-        NetName netName(*check);
-        WmName name(*check);
-        if (netName || name) {
-            printf("Name: %s\n", netName ? &netName : &name);
+        csmart name(getWindowTitle(*check));
+        if (name) {
+            printf("Name: %s\n", name.data());
         }
         YStringProperty cls(*check, XA_WM_CLASS);
         if (cls) {
@@ -3574,16 +3583,10 @@ static void setWindowTitle(Window window, const char* title) {
         net.replace(title);
 }
 
-static void getWindowTitle(Window window) {
-    YUtf8Property net(window, ATOM_NET_WM_NAME);
-    if (net)
-        puts(&net);
-    else {
-        YStringProperty name(window, XA_WM_NAME);
-        if (name) {
-            puts(&name);
-        }
-    }
+static void putWindowTitle(Window window) {
+    csmart title(getWindowTitle(window));
+    if (nonempty(title))
+        puts(title);
 }
 
 static void getIconTitle(Window window) {
@@ -5417,7 +5420,7 @@ void IceSh::parseAction()
         }
         else if (isAction("getWindowTitle", 0)) {
             FOREACH_WINDOW(window)
-                getWindowTitle(window);
+                putWindowTitle(window);
         }
         else if (isAction("getIconTitle", 0)) {
             FOREACH_WINDOW(window)

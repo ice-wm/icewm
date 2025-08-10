@@ -117,18 +117,16 @@ unsigned YConfig::parseKeySym(const char* arg) {
     } else {
         int ch = 0;
         if (arg[2] == 0) {
-            if ((*arg & 0xe0) == 0xc0 && (arg[1] & 0xc0) == 0x80) {
+            if (ASCII::utf1(*arg, arg[1])) {
                 ch = ((*arg & 0x1f) << 6) | (arg[1] & 0x3f);
             }
         } else if (arg[3] == 0) {
-            if ((*arg & 0xf0) == 0xe0 && (arg[1] & 0xc0) == 0x80 &&
-                (arg[2] & 0xc0) == 0x80) {
+            if (ASCII::utf2(*arg, arg[1], arg[2])) {
                 ch = ((*arg & 0xf) << 12) | (arg[1] & 0x3f) << 6 |
                          (arg[2] & 0x3f);
             }
         } else if (arg[4] == 0) {
-            if ((*arg & 0xf8) == 0xf0 && (arg[1] & 0xc0) == 0x80 &&
-                (arg[2] & 0xc0) == 0x80 && (arg[3] & 0xc0) == 0x80) {
+            if (ASCII::utf3(*arg, arg[1], arg[2], arg[3])) {
                 ch = ((*arg & 0x7) << 18) | (arg[1] & 0x3f) << 12 |
                          (arg[2] & 0x3f) << 6 | (arg[3] & 0x3f);
             }
