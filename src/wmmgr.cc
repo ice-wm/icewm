@@ -297,6 +297,9 @@ bool YWindowManager::handleTimer(YTimer* timer) {
             taskBar->keyboardUpdate(null);
         }
     }
+    if (timer == fUpdateTimer) {
+        updateClientList();
+    }
     return false;
 }
 
@@ -1149,6 +1152,7 @@ YFrameWindow *YWindowManager::top(int layer) const {
 void YWindowManager::setTop(int layer, YFrameWindow *top) {
     fLayers[layer].prepend(top);
     fLayeredUpdated = true;
+    fUpdateTimer->setTimer(0L, this, true);
     if (top->container()->buttoned() && top->focused())
         top->container()->releaseButtons();
     else
@@ -1162,6 +1166,7 @@ YFrameWindow *YWindowManager::bottom(int layer) const {
 void YWindowManager::setBottom(int layer, YFrameWindow *bottom) {
     fLayers[layer].append(bottom);
     fLayeredUpdated = true;
+    fUpdateTimer->setTimer(0L, this, true);
 }
 
 void YWindowManager::installColormap(Colormap cmap) {
@@ -1273,6 +1278,7 @@ void YWindowManager::manageClients() {
                             ++num;
                         }
                         fCreatedUpdated = fLayeredUpdated = true;
+                        fUpdateTimer->setTimer(0L, this, true);
                         res->frame->createTab(client, pos);
                         if (fSwitchWindow)
                             fSwitchWindow->createdClient(res->frame, client);
@@ -1784,6 +1790,7 @@ bool YWindowManager::tabbingClient(YFrameClient* client) {
             for (YFrameWindow* frame : YFrameWindow::fnaming()) {
                 if (wo->frame == frame->getFrameName()) {
                     fCreatedUpdated = fLayeredUpdated = true;
+                    fUpdateTimer->setTimer(0L, this, true);
                     frame->createTab(client, frame->tabCount());
                     if (client->activateOnMap() && isRunning())
                         frame->selectTab(client);
@@ -2064,9 +2071,10 @@ void YWindowManager::clientDestroyed(YFrameClient* client) {
 }
 
 void YWindowManager::clientTransfered(YFrameClient* client, YFrameWindow* frame) {
-    fLayeredUpdated = true;
     if (fSwitchWindow)
         fSwitchWindow->transfer(client, frame);
+    fLayeredUpdated = true;
+    fUpdateTimer->setTimer(0L, this, true);
 }
 
 void YWindowManager::focusTopWindow() {
@@ -2260,6 +2268,7 @@ bool YWindowManager::setAbove(YFrameWindow* frame, YFrameWindow* above) {
     if (above != frame->next() && above != frame) {
         fLayers[layer].remove(frame);
         fLayeredUpdated = true;
+        fUpdateTimer->setTimer(0L, this, true);
         if (above) {
             fLayers[layer].insertBefore(frame, above);
         } else {
@@ -2289,6 +2298,7 @@ void YWindowManager::removeLayeredFrame(YFrameWindow *frame) {
     PRECONDITION(validLayer(layer));
     fLayers[layer].remove(frame);
     fLayeredUpdated = true;
+    fUpdateTimer->setTimer(0L, this, true);
 }
 
 void YWindowManager::restackWindows() {
@@ -3210,6 +3220,7 @@ void YWindowManager::updateClientList() {
     YArray<XID> ids;
     if (fLayeredUpdated || fCreatedUpdated) {
         ids.setCapacity(fCreationOrder.count());
+        fUpdateTimer = null;
     }
 
     if (fLayeredUpdated) {
