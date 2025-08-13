@@ -773,13 +773,7 @@ bool YFrameWindow::handleKey(const XKeyEvent &key) {
             } else if (gKeyWinTileCenter == key) {
                 wmTile(actionTileCenter);
             } else if (gKeyWinSmartPlace == key) {
-                if (canMove()) {
-                    int newX = x();
-                    int newY = y();
-                    if (manager->getSmartPlace(true, this, newX, newY, width(), height(), getScreen())) {
-                        setCurrentPositionOuter(newX, newY);
-                    }
-                }
+                wmSmartPlace();
             } else if (isIconic() || isRollup()) {
                 KeySym k = keyCodeToKeySym(key.keycode);
                 unsigned m = KEY_MODMASK(key.state);
