@@ -70,6 +70,10 @@ using std::find;
 
 /******************************************************************************/
 
+static Window getClientWindow(Window frame);
+static Window getFrameWindow(Window window);
+static Window getParent(Window window);
+
 using namespace ASCII;
 const long SourceIndication = 1L;
 const long Sticky = long(0xFFFFFFFF);
@@ -1003,6 +1007,13 @@ static long getClientPID(Window window) {
     return (pid > 1L) ? pid : None;
 }
 
+/******************************************************************************/
+
+#define FOREACH_WINDOW(W) \
+    for (YTreeIter W(windowList); W; ++W)
+#define CHANGES_WINDOW(W) \
+    for (YTreeIter W(windowList); use(W); modified(W), ++W)
+
 class YWindowTree;
 
 class YTreeLeaf {
@@ -1103,6 +1114,79 @@ public:
             XWindowAttributes attr = {};
             if (XGetWindowAttributes(display, client, &attr)
                 && attr.map_state == state) {
+                keep.push_back(client);
+            }
+        }
+        fChildren = keep;
+    }
+
+    static bool isCovered(Window client, Window parent, Window grandp,
+                          int x, int y, int w, int h) {
+        bool covered = false;
+
+        YWindowTree stack;
+        stack.getWindowList(ATOM_NET_CLIENT_LIST_STACKING);
+        stack.reverse();
+        YWindowTree frames;
+        for (YTreeIter window(stack); window; ++window) {
+            Window frame = getFrameWindow(window);
+            frames += frame;
+        }
+
+        Window* data = nullptr, rootp, rootw;
+        unsigned num = 0;
+        if (XQueryTree(display, root, &rootw, &rootp, &data, &num)) {
+            for (unsigned i = num; i-- > 0 &&
+                 data[i] != grandp && data[i] != parent; )
+            {
+                int index = frames.findIndex(data[i]);
+                if (index >= 0) {
+                    XWindowAttributes attr = {};
+                    if (XGetWindowAttributes(display, data[i], &attr) &&
+                        attr.map_state == IsViewable &&
+                        attr.c_class == InputOutput &&
+                        attr.x < x + w && x < attr.x + attr.width &&
+                        attr.y < y + h && y < attr.y + attr.height)
+                    {
+                        covered = true;
+                        break;
+                    }
+                }
+            }
+            XFree(data);
+        }
+        return covered;
+    }
+
+    static bool isCovered(Window client) {
+        bool covered = false;
+        XWindowAttributes attr = {};
+        if (XGetWindowAttributes(display, client, &attr) &&
+            attr.map_state == IsViewable) {
+            int x = attr.x, y = attr.y, w = attr.width, h = attr.height;
+            Window parent = getParent(client);
+            if (parent && parent != root &&
+                XGetWindowAttributes(display, parent, &attr)) {
+                x += attr.x, y += attr.y;
+            }
+            Window grandp = getParent(parent);
+            if (grandp && grandp != root &&
+                XGetWindowAttributes(display, grandp, &attr)) {
+                x += attr.x, y += attr.y;
+            }
+            if (attr.map_state == IsViewable) {
+                if (isCovered(client, parent, grandp, x, y, w, h)) {
+                    covered = true;
+                }
+            }
+        }
+        return covered;
+    }
+
+    void filterByCovered() {
+        vector<Window> keep;
+        for (YTreeIter client(*this); client; ++client) {
+            if (isCovered(client)) {
                 keep.push_back(client);
             }
         }
@@ -1554,6 +1638,12 @@ public:
             fChildren.erase(it);
     }
 
+    void operator+=(Window window) {
+        if (have(window) == false) {
+            fChildren.push_back(window);
+        }
+    }
+
     void operator+=(const YWindowTree& other) {
         for (Window w : other.fChildren) {
             if (have(w) == false) {
@@ -1581,6 +1671,14 @@ public:
         std::reverse(fChildren.begin(), fChildren.end());
     }
 
+    int findIndex(Window window) {
+        for (int i = 0; i < int(count()); ++i) {
+            if (fChildren[i] == window)
+                return i;
+        }
+        return -1;
+    }
+
 private:
     Confine fConfine;
     Window fParent;
@@ -1592,13 +1690,6 @@ YWindowTree YWindowTree::lastClientList;
 YTreeIter::operator Window() const { return fTree[fIndex]; }
 YTreeLeaf* YTreeIter::operator->() { return fTree.leaf(fIndex); }
 void YTreeIter::discard() { fTree.remove(fTree[fIndex]); --fIndex; }
-
-/******************************************************************************/
-
-#define FOREACH_WINDOW(W) \
-    for (YTreeIter W(windowList); W; ++W)
-#define CHANGES_WINDOW(W) \
-    for (YTreeIter W(windowList); use(W); modified(W), ++W)
 
 /******************************************************************************/
 
@@ -2178,7 +2269,7 @@ void IceSh::details(Window w)
 {
     csmart name(getWindowTitle(w));
     const int size = 54;
-    int len = int(strlen(name));
+    int len = name ? int(strlen(name)) : 0;
     if (len > size - 4) {
         len = size - 4;
         int cp = 0;
@@ -4865,6 +4956,11 @@ void IceSh::flag(char* arg)
     if (isOptArg(arg, "-viewable", "")) {
         selectWindows();
         windowList.filterByMapState(IsViewable);
+        return;
+    }
+    if (isOptArg(arg, "-kovered", "")) {
+        selectWindows();
+        windowList.filterByCovered();
         return;
     }
     if (isOptArg(arg, "-T", "")) {
