@@ -4374,7 +4374,10 @@ void IceSh::loadIcon(Window window, char* file)
                 read(fd, data, size) == ssize_t(size)) {
                 Atom* card = new Atom[2 + width * height];
                 for (int i = 0; i < width * height; ++i) {
-                    card[i + 2] = data[i];
+                    unsigned src = data[i];
+                    card[i + 2] = (src & 0xFF) << 16
+                                | (src & 0xFF0000) >> 16
+                                | (src & 0xFF00FF00);
                 }
                 card[0] = width;
                 card[1] = height;
@@ -4441,7 +4444,10 @@ void IceSh::saveIcon(Window window, char* file)
                         const int size = bestW * bestH;
                         unsigned* data = new unsigned[size];
                         for (int i = 0; i < size; ++i) {
-                            data[i] = unsigned(icon[bestI + 2 + i]);
+                            unsigned src = unsigned(icon[bestI + 2 + i]);
+                            data[i] = (src & 0xFF) << 16
+                                    | (src & 0xFF0000) >> 16
+                                    | (src & 0xFF00FF00);
                         }
                         if (write(fd, data, size * sizeof(unsigned)) == -1)
                             warn(_("Unable to write to %s"), file);
