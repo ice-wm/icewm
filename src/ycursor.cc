@@ -16,6 +16,9 @@
 #elif defined CONFIG_IMLIB2
 #include <Imlib2.h>
 typedef Imlib_Image Image;
+#elif defined CONFIG_GDK_PIXBUF_XLIB
+#include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
+typedef GdkPixbuf* Image;
 #else
 #error "Need either XPM or Imlib2 for cursors."
 #endif
@@ -43,25 +46,22 @@ public:
 #elif defined CONFIG_IMLIB2
 
     bool isValid() { return fImage && fPixmap; }
-    void release();
     void context() const { imlib_context_set_image(fImage);
                            imlib_context_set_drawable(xapp->root()); }
-    unsigned int width() const {
-        return fImage ? context(), imlib_image_get_width() : 0;
-    }
-    unsigned int height() const {
-        return fImage ? context(), imlib_image_get_height() : 0;
-    }
+    unsigned int width() const { return fWidth; }
+    unsigned int height() const { return fHeight; }
     unsigned int hotspotX() const { return fHotspotX; }
     unsigned int hotspotY() const { return fHotspotY; }
+    void readHotspot(const char* path);
 
 #elif defined CONFIG_GDK_PIXBUF_XLIB
 
-    bool isValid() { return false; }
-    unsigned int width() const { return 0; }
-    unsigned int height() const { return 0; }
+    bool isValid() { return fImage && fPixmap; }
+    unsigned int width() const { return fWidth; }
+    unsigned int height() const { return fHeight; }
     unsigned int hotspotX() const { return fHotspotX; }
     unsigned int hotspotY() const { return fHotspotY; }
+    void readHotspot(const char* path);
 
 #endif
 
@@ -76,13 +76,15 @@ private:
 
 #elif defined CONFIG_IMLIB2
 
+    unsigned int fWidth, fHeight;
     unsigned int fHotspotX, fHotspotY;
-    Imlib_Image fImage;
+    Image fImage;
 
 #elif defined CONFIG_GDK_PIXBUF_XLIB
 
-    bool fValid;
+    unsigned int fWidth, fHeight;
     unsigned int fHotspotX, fHotspotY;
+    Image fImage;
 
 #endif
 };
@@ -91,16 +93,21 @@ private:
 //
 // === use libXpm to load the cursor pixmap ===
 //
-YCursorPixmap::YCursorPixmap(const char* path): fValid(false) {
+YCursorPixmap::YCursorPixmap(const char* path):
+    fPixmap(None), fMask(None),
+    fValid(false)
+{
+    fAttributes.valuemask = XpmVisual|XpmColormap|XpmCloseness|XpmColorKey|
+                            XpmReturnPixels|XpmSize|XpmHotspot|XpmDepth;
+    fAttributes.visual    = xapp->visual();
     fAttributes.colormap  = xapp->colormap();
+    fAttributes.depth     = xapp->depth();
     fAttributes.closeness = 65535;
-    fAttributes.valuemask = XpmColormap|XpmCloseness|
-                            XpmReturnPixels|XpmSize|XpmHotspot;
     fAttributes.x_hotspot = 0;
     fAttributes.y_hotspot = 0;
-    fAttributes.depth = 0;
     fAttributes.width = 0;
     fAttributes.height = 0;
+    fAttributes.color_key = XPM_COLOR;
 
     int const rc(XpmReadFileToPixmap(xapp->display(), desktop->handle(),
                                      path,
@@ -128,6 +135,8 @@ YCursorPixmap::YCursorPixmap(const char* path): fValid(false) {
 // === use Imlib to load the cursor pixmap ===
 //
 YCursorPixmap::YCursorPixmap(const char* path):
+    fPixmap(None), fMask(None),
+    fWidth(0), fHeight(0),
     fHotspotX(0), fHotspotY(0)
 {
     fImage = imlib_load_image_immediately_without_cache(path);
@@ -136,7 +145,8 @@ YCursorPixmap::YCursorPixmap(const char* path):
         return;
     }
     context();
-    imlib_render_pixmaps_for_whole_image(&fPixmap, &fMask);
+    fWidth = imlib_image_get_width();
+    fHeight = imlib_image_get_height();
 
     unsigned inback = 0;
     unsigned infore = 0;
@@ -151,28 +161,107 @@ YCursorPixmap::YCursorPixmap(const char* path):
         unsigned char g = (unsigned char)((*p >> 8) & 0xFF);
         unsigned char b = (unsigned char)(*p & 0xFF);
         unsigned intens = r + g + b;
-        if (alpha == 0 || 0 < a) {
-            if (inback == 0 || intens < inback) {
-                inback = intens;
+        if (alpha == 0 || 100 < a) {
+            if (inback == 0 || (intens << 8) / a < inback) {
+                inback = (intens << 8) / a;
                 backgrnd = *p;
             }
-            if (infore == 0 || intens > infore) {
-                infore = intens;
+            if (infore == 0 || a * intens > infore) {
+                infore = a * intens;
                 foregrnd = *p;
             }
         }
     }
 
+    fForeground.pixel = None;
     fForeground.red = (unsigned short)(((foregrnd >> 16) & 0xFF) << 8);
     fForeground.green = (unsigned short)(((foregrnd >> 8) & 0xFF) << 8);
     fForeground.blue = (unsigned short)((foregrnd & 0xFF) << 8);
     XAllocColor(xapp->display(), xapp->colormap(), &fForeground);
 
+    fBackground.pixel = None;
     fBackground.red = (unsigned short)(((backgrnd >> 16) & 0xFF) << 8);
     fBackground.green = (unsigned short)(((backgrnd >> 8) & 0xFF) << 8);
     fBackground.blue = (unsigned short)((backgrnd & 0xFF) << 8);
     XAllocColor(xapp->display(), xapp->colormap(), &fBackground);
 
+    readHotspot(path);
+
+    imlib_render_pixmaps_for_whole_image(&fPixmap, &fMask);
+}
+
+#elif defined CONFIG_GDK_PIXBUF_XLIB
+
+YCursorPixmap::YCursorPixmap(const char* path):
+    fPixmap(None), fMask(None),
+    fWidth(0), fHeight(0),
+    fHotspotX(0), fHotspotY(0),
+    fImage(nullptr)
+{
+    fImage = gdk_pixbuf_new_from_file(path, NULL);
+    if (fImage == nullptr) {
+        warn(_("Loading of pixmap \"%s\" failed"), path);
+        return;
+    }
+
+    fWidth = unsigned(gdk_pixbuf_get_width(fImage));
+    fHeight = unsigned(gdk_pixbuf_get_height(fImage));
+    int chans = gdk_pixbuf_get_n_channels(fImage);
+    bool alpha = gdk_pixbuf_get_has_alpha(fImage);
+    int rowstride = gdk_pixbuf_get_rowstride(fImage);
+    guchar* data = gdk_pixbuf_get_pixels(fImage);
+
+    unsigned inback = 0;
+    unsigned infore = 0;
+    struct { unsigned char r, g, b; }
+        backgrnd = { 0, 0, 0 },
+        foregrnd = { 0, 0, 0 };
+    for (unsigned row = 0; row < fHeight; ++row) {
+        guchar* p = data + row * rowstride;
+        for (unsigned col = 0; col < fWidth; ++col, p += chans) {
+            unsigned char a = alpha ? p[3] : 255;
+            unsigned char r = p[0];
+            unsigned char g = p[1];
+            unsigned char b = p[2];
+            unsigned intens = r + g + b;
+            if (100 < a) {
+                if (inback == 0 || (intens << 8) / a < inback) {
+                    inback = (intens << 8) / a;
+                    backgrnd.r = r;
+                    backgrnd.g = g;
+                    backgrnd.b = b;
+                }
+                if (infore == 0 || a * intens > infore) {
+                    infore = a * intens;
+                    foregrnd.r = r;
+                    foregrnd.g = g;
+                    foregrnd.b = b;
+                }
+            }
+        }
+    }
+
+    fForeground.pixel = None;
+    fForeground.red = (unsigned short)(foregrnd.r << 8);
+    fForeground.green = (unsigned short)(foregrnd.g << 8);
+    fForeground.blue = (unsigned short)(foregrnd.b << 8);
+    XAllocColor(xapp->display(), xapp->colormap(), &fForeground);
+
+    fBackground.pixel = None;
+    fBackground.red = (unsigned short)(backgrnd.r << 8);
+    fBackground.green = (unsigned short)(backgrnd.g << 8);
+    fBackground.blue = (unsigned short)(backgrnd.b << 8);
+    XAllocColor(xapp->display(), xapp->colormap(), &fBackground);
+
+    readHotspot(path);
+
+    gdk_pixbuf_xlib_render_pixmap_and_mask(fImage, &fPixmap, &fMask, 10);
+}
+#endif
+
+#ifndef CONFIG_XPM
+#if defined CONFIG_IMLIB2 || defined CONFIG_GDK_PIXBUF_XLIB
+void YCursorPixmap::readHotspot(const char* path) {
     // --- find the hotspot by reading the xpm header manually ---
     FILE* xpm = fopen(path, "rb");
     if (xpm == nullptr)
@@ -220,30 +309,26 @@ YCursorPixmap::YCursorPixmap(const char* path):
         }
     }
 }
-
-#elif defined CONFIG_GDK_PIXBUF_XLIB
-
-YCursorPixmap::YCursorPixmap(const char* /*path*/):
-    fPixmap(None), fMask(None),
-    fHotspotX(0), fHotspotY(0)
-{
-}
+#endif
 #endif
 
 YCursorPixmap::~YCursorPixmap() {
+
 #ifdef CONFIG_XPM
-    if (fPixmap)
+    if (fPixmap && xapp) {
         XFreePixmap(xapp->display(), fPixmap);
-    if (fMask)
+        fPixmap = None;
+    }
+    if (fMask && xapp) {
         XFreePixmap(xapp->display(), fMask);
-    if (fValid)
+        fMask = None;
+    }
+    if (fValid) {
         XpmFreeAttributes(&fAttributes);
+        fValid = false;
+    }
 
 #elif defined CONFIG_IMLIB2
-    release();
-}
-
-void YCursorPixmap::release() {
     if (fImage) {
         context();
         if (fPixmap) {
@@ -253,6 +338,21 @@ void YCursorPixmap::release() {
         imlib_free_image();
         fImage = nullptr;
     }
+
+#elif defined CONFIG_GDK_PIXBUF_XLIB
+    if (fPixmap && xapp) {
+        XFreePixmap(xapp->display(), fPixmap);
+        fPixmap = None;
+    }
+    if (fMask && xapp) {
+        XFreePixmap(xapp->display(), fMask);
+        fMask = None;
+    }
+    if (fImage) {
+        g_object_unref(G_OBJECT(fImage));
+        fImage = nullptr;
+    }
+
 #endif
 }
 

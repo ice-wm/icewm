@@ -379,6 +379,9 @@ AC_ARG_ENABLE([nanosvg],
 AC_ARG_ENABLE([gdk-pixbuf],
     AS_HELP_STRING([--enable-gdk-pixbuf],[Enable gdk-pixbuf rendering.
 	@<:@default=disabled@:>@]))
+AC_ARG_ENABLE([xpm],
+    AS_HELP_STRING([--enable-xpm],[Enable libXpm monochrome cursors.
+        @<:@default=disabled@:>@]))
 
 image_library=
 if test "x$enable_gdk_pixbuf" = xyes
@@ -444,12 +447,14 @@ then
             [AC_MSG_WARN([Package librsvg is missing. SVG is not supported.])])
     fi
 
-    PKG_CHECK_MODULES([XPM],[xpm],[
-	IMAGE_CFLAGS="$IMAGE_CFLAGS $XPM_CFLAGS"
-	IMAGE_LIBS="$IMAGE_LIBS $XPM_LIBS"
-	AC_DEFINE([CONFIG_XPM],[1],[Define to enable libxpm rendering.])
-	image_library="$image_library libxpm"],
-	[AC_MSG_ERROR([Package libXpm is required for themable cursors.])])
+    if test "x$enable_xpm" = xyes
+    then
+        PKG_CHECK_MODULES([XPM],[xpm],[
+            IMAGE_CFLAGS="$IMAGE_CFLAGS $XPM_CFLAGS"
+            IMAGE_LIBS="$IMAGE_LIBS $XPM_LIBS"
+            AC_DEFINE([CONFIG_XPM],[1],[Enable libXpm monochrome-cursors.])
+            image_library="$image_library libxpm"])
+    fi
 fi
 
 if test "x$enable_gdk_pixbuf" != xyes &&

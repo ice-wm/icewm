@@ -110,7 +110,7 @@ option(CONFIG_LIBJPEG "JPEGLIB image loader" off)
 option(CONFIG_GDK_PIXBUF_XLIB "GDK-PIXBUF image loader" off)
 option(CONFIG_LIBRSVG "Support SVG icons using librsvg" off)
 option(CONFIG_NANOSVG "Support SVG icons using nanosvg" off)
-option(CONFIG_XPM "XPM image loader" on)
+option(CONFIG_XPM "XPM image loader" off)
 option(CONFIG_I18N "Define to enable internationalization" on)
 option(CONFIG_XRANDR "Define to enable XRANDR extension" on)
 option(CONFIG_SESSION "Define to enable X session management" on)
@@ -195,11 +195,6 @@ set(icewm_img_libs ${xrender_LDFLAGS} ${xcomposite_LDFLAGS} ${xdamage_LDFLAGS} $
 # It would be a good idea to use different names for the image options and do the
 # logics here.  For now, this self-adapting code modifies the option variables.
 
-set(HINT_CURSORS
-[=[
- Cursor support requires either -DCONFIG_XPM=on or -DCONFIG_IMLIB2=on.
-]=])
-
 set(HINT_IMG_LOADERS
 [=[
  There is a choice to be made between two image loaders.
@@ -208,7 +203,7 @@ set(HINT_IMG_LOADERS
  or else 'yximage' must be enabled by -DCONFIG_LIBPNG=on.
  The latter requires -DCONFIG_XPM=on, while -DCONFIG_LIBJPEG=on is recommended.
  Support SVG icons with either -DCONFIG_LIBRSVG=on or -DCONFIG_NANOSVG=on.
- ]=] ${HINT_CURSORS})
+ ]=])
 
 # image configuration error check
 if(CONFIG_IMLIB2 OR CONFIG_GDK_PIXBUF_XLIB)
@@ -277,15 +272,6 @@ if (CONFIG_NANOSVG)
             endif()
         endif()
     endforeach()
-endif()
-
-# cursor configuration error check
-if(CONFIG_XPM)
-    #ok
-elseif(CONFIG_IMLIB2)
-    #ok
-else()
-    MESSAGE(FATAL_ERROR ${HINT_CURSORS})
 endif()
 
 if(CONFIG_XPM)
