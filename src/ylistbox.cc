@@ -558,7 +558,7 @@ void YListBox::paintItem(Graphics &g, int n) {
 
     ref<YIcon> icon = a->getIcon();
     if (icon != null) {
-        ref<YImage> scaled = icon->getScaledIcon(getIconSize());
+        ref<YImage> scaled = icon->small();
         if (scaled != null) {
             int dx = xpos + x - fOffsetX;
             int dy = y - fOffsetY + 1;
