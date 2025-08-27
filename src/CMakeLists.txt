@@ -183,6 +183,7 @@ CHECK_INCLUDE_FILE_CXX(uvm/uvm_param.h HAVE_UVM_UVM_PARAM_H)
 pkg_check_modules(fontconfig fontconfig)
 pkg_check_modules(xrender REQUIRED xrender)
 pkg_check_modules(xcomposite REQUIRED xcomposite)
+pkg_check_modules(xcursor REQUIRED xcursor)
 pkg_check_modules(xdamage REQUIRED xdamage)
 pkg_check_modules(xfixes REQUIRED xfixes)
 pkg_check_modules(xext REQUIRED xext)
@@ -190,7 +191,8 @@ pkg_check_modules(x11 REQUIRED x11)
 
 CHECK_LIBRARY_EXISTS(X11 XInternAtoms ${x11_LIBDIR} HAVE_XINTERNATOMS)
 
-set(icewm_img_libs ${xrender_LDFLAGS} ${xcomposite_LDFLAGS} ${xdamage_LDFLAGS} ${xfixes_LDFLAGS})
+set(icewm_img_libs ${xrender_LDFLAGS} ${xcomposite_LDFLAGS}
+                   ${xcursor_LDFLAGS} ${xdamage_LDFLAGS} ${xfixes_LDFLAGS})
 
 # It would be a good idea to use different names for the image options and do the
 # logics here.  For now, this self-adapting code modifies the option variables.
@@ -482,6 +484,9 @@ concat_dedup(icewm_libs itk ice ${sm_LIBS} ${fontconfig_LDFLAGS}
 
 ADD_EXECUTABLE(icewm${EXEEXT} ${ICEWM_SRCS})
 TARGET_LINK_LIBRARIES(icewm${EXEEXT} ${icewm_libs})
+
+ADD_EXECUTABLE(icecursor${EXEEXT} icecursor.cc)
+TARGET_LINK_LIBRARIES(icecursor${EXEEXT} ice ${x11_LDFLAGS} ${icewm_img_libs})
 
 ADD_EXECUTABLE(genpref${EXEEXT} genpref.cc)
 TARGET_LINK_LIBRARIES(genpref${EXEEXT} ice ${x11_LDFLAGS} ${nls_LIBS})

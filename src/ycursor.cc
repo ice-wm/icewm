@@ -20,8 +20,9 @@ typedef Imlib_Image Image;
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
 typedef GdkPixbuf* Image;
 #else
-#error "Need either XPM or Imlib2 for cursors."
+#error "Cursors require XPM, Imlib2 or GdkPixbuf."
 #endif
+#include <X11/Xcursor/Xcursor.h>
 
 #include "intl.h"
 
@@ -32,113 +33,104 @@ public:
 
     Pixmap pixmap() const { return fPixmap; }
     Pixmap mask() const { return fMask; }
+    unsigned width() const { return fWidth; }
+    unsigned height() const { return fHeight; }
+    unsigned hotspotX() const { return fHotspotX; }
+    unsigned hotspotY() const { return fHotspotY; }
     const XColor& background() const { return fBackground; }
     const XColor& foreground() const { return fForeground; }
+    void readHotspot(const char* path);
+    void guessHotspot(const char* path);
+    bool isValid() { return fValid; }
 
 #ifdef CONFIG_XPM
 
-    bool isValid() { return fValid; }
-    unsigned int width() const { return fAttributes.width; }
-    unsigned int height() const { return fAttributes.height; }
-    unsigned int hotspotX() const { return fAttributes.x_hotspot; }
-    unsigned int hotspotY() const { return fAttributes.y_hotspot; }
 
 #elif defined CONFIG_IMLIB2
 
-    bool isValid() { return fImage && fPixmap; }
     void context() const { imlib_context_set_image(fImage);
                            imlib_context_set_drawable(xapp->root()); }
-    unsigned int width() const { return fWidth; }
-    unsigned int height() const { return fHeight; }
-    unsigned int hotspotX() const { return fHotspotX; }
-    unsigned int hotspotY() const { return fHotspotY; }
-    void readHotspot(const char* path);
 
 #elif defined CONFIG_GDK_PIXBUF_XLIB
 
-    bool isValid() { return fImage && fPixmap; }
-    unsigned int width() const { return fWidth; }
-    unsigned int height() const { return fHeight; }
-    unsigned int hotspotX() const { return fHotspotX; }
-    unsigned int hotspotY() const { return fHotspotY; }
-    void readHotspot(const char* path);
 
 #endif
 
 private:
     Pixmap fPixmap, fMask;
     XColor fForeground, fBackground;
+    unsigned fWidth, fHeight;
+    unsigned fHotspotX, fHotspotY;
+    bool fValid;
+
+    void loadXpm(const char* path);
 
 #ifdef CONFIG_XPM
 
-    bool fValid;
-    XpmAttributes fAttributes;
-
 #elif defined CONFIG_IMLIB2
 
-    unsigned int fWidth, fHeight;
-    unsigned int fHotspotX, fHotspotY;
     Image fImage;
 
 #elif defined CONFIG_GDK_PIXBUF_XLIB
 
-    unsigned int fWidth, fHeight;
-    unsigned int fHotspotX, fHotspotY;
     Image fImage;
 
 #endif
 };
 
-#ifdef CONFIG_XPM
-//
-// === use libXpm to load the cursor pixmap ===
-//
 YCursorPixmap::YCursorPixmap(const char* path):
     fPixmap(None), fMask(None),
+    fWidth(0), fHeight(0),
+    fHotspotX(-1U), fHotspotY(-1U),
     fValid(false)
 {
+    loadXpm(path);
+}
+
+void YCursorPixmap::loadXpm(const char* path) {
+#ifdef CONFIG_XPM
+    //
+    // === use libXpm to load the cursor pixmap ===
+    //
+    XpmAttributes fAttributes;
+
     fAttributes.valuemask = XpmVisual|XpmColormap|XpmCloseness|XpmColorKey|
                             XpmReturnPixels|XpmSize|XpmHotspot|XpmDepth;
     fAttributes.visual    = xapp->visual();
     fAttributes.colormap  = xapp->colormap();
     fAttributes.depth     = xapp->depth();
+    fAttributes.width     = fWidth;
+    fAttributes.height    = fHeight;
+    fAttributes.x_hotspot = fHotspotX;
+    fAttributes.y_hotspot = fHotspotY;
     fAttributes.closeness = 65535;
-    fAttributes.x_hotspot = 0;
-    fAttributes.y_hotspot = 0;
-    fAttributes.width = 0;
-    fAttributes.height = 0;
     fAttributes.color_key = XPM_COLOR;
 
-    int const rc(XpmReadFileToPixmap(xapp->display(), desktop->handle(),
-                                     path,
-                                     &fPixmap, &fMask, &fAttributes));
-
-    if (rc != XpmSuccess)
+    int rc = XpmReadFileToPixmap(xapp->display(), xapp->root(),
+                                 path, &fPixmap, &fMask, &fAttributes);
+    if (rc != XpmSuccess) {
         warn(_("Loading of pixmap \"%s\" failed: %s"),
                path, XpmGetErrorString(rc));
-    /*else if (fAttributes.npixels != 2)
-        warn("Invalid cursor pixmap: \"%s\" contains too many unique colors",
-               path);*/
-    else {
-        fBackground.pixel = fAttributes.pixels[0];
-        fForeground.pixel = fAttributes.pixels[1];
-
-        XQueryColor(xapp->display(), xapp->colormap(), &fBackground);
-        XQueryColor(xapp->display(), xapp->colormap(), &fForeground);
-
-        fValid = true;
+        return;
     }
-}
+
+    fWidth = fAttributes.width;
+    fHeight = fAttributes.height;
+    fHotspotX = fAttributes.x_hotspot;
+    fHotspotY = fAttributes.y_hotspot;
+    fBackground.pixel = fAttributes.pixels[0];
+    fForeground.pixel = fAttributes.pixels[1];
+
+    XQueryColor(xapp->display(), xapp->colormap(), &fBackground);
+    XQueryColor(xapp->display(), xapp->colormap(), &fForeground);
+
+    XpmFreeAttributes(&fAttributes);
 
 #elif defined CONFIG_IMLIB2
-//
-// === use Imlib to load the cursor pixmap ===
-//
-YCursorPixmap::YCursorPixmap(const char* path):
-    fPixmap(None), fMask(None),
-    fWidth(0), fHeight(0),
-    fHotspotX(0), fHotspotY(0)
-{
+    //
+    // === use Imlib to load the cursor pixmap ===
+    //
+
     fImage = imlib_load_image_immediately_without_cache(path);
     if (fImage == nullptr) {
         warn(_("Loading of pixmap \"%s\" failed"), path);
@@ -185,19 +177,13 @@ YCursorPixmap::YCursorPixmap(const char* path):
     fBackground.blue = (unsigned short)((backgrnd & 0xFF) << 8);
     XAllocColor(xapp->display(), xapp->colormap(), &fBackground);
 
-    readHotspot(path);
-
     imlib_render_pixmaps_for_whole_image(&fPixmap, &fMask);
-}
 
 #elif defined CONFIG_GDK_PIXBUF_XLIB
+    //
+    // === use Imlib to load the cursor pixmap ===
+    //
 
-YCursorPixmap::YCursorPixmap(const char* path):
-    fPixmap(None), fMask(None),
-    fWidth(0), fHeight(0),
-    fHotspotX(0), fHotspotY(0),
-    fImage(nullptr)
-{
     fImage = gdk_pixbuf_new_from_file(path, NULL);
     if (fImage == nullptr) {
         warn(_("Loading of pixmap \"%s\" failed"), path);
@@ -253,64 +239,128 @@ YCursorPixmap::YCursorPixmap(const char* path):
     fBackground.blue = (unsigned short)(backgrnd.b << 8);
     XAllocColor(xapp->display(), xapp->colormap(), &fBackground);
 
-    readHotspot(path);
-
     gdk_pixbuf_xlib_render_pixmap_and_mask(fImage, &fPixmap, &fMask, 10);
-}
+
 #endif
+
+#ifndef CONFIG_XPM
+    readHotspot(path);
+#endif
+
+    if (int(fHotspotX) < 0 || fHotspotX >= fWidth ||
+        int(fHotspotY) < 0 || fHotspotY >= fHeight) {
+        fHotspotX = fHotspotY = 0;
+        guessHotspot(path);
+    }
+    fValid = true;
+}
 
 #ifndef CONFIG_XPM
 #if defined CONFIG_IMLIB2 || defined CONFIG_GDK_PIXBUF_XLIB
 void YCursorPixmap::readHotspot(const char* path) {
     // --- find the hotspot by reading the xpm header manually ---
     FILE* xpm = fopen(path, "rb");
-    if (xpm == nullptr)
+    if (xpm == nullptr) {
         warn(_("BUG? Imlib was able to read \"%s\""), path);
-    else {
-        while (fgetc(xpm) != '{'); // --- that's safe since imlib accepted ---
+        return;
+    }
 
-        for (int c;;) switch (c = fgetc(xpm)) {
-            case '/':
-                if ((c = fgetc(xpm)) == '/') // --- eat C++ line comment ---
-                    while (fgetc(xpm) != '\n');
-                else { // --- eat block comment ---
-                   int pc; do { pc = c; c = fgetc(xpm); }
-                   while (c != '/' && pc != '*');
-                }
-                break;
+    char header[10] = "";
+    if (fread(header, 1, 9, xpm) != 9 ||
+        strncmp(header, "/* XPM */", 9))
+    {
+        fclose(xpm);
+        return;
+    }
 
-            case ' ': case '\t': case '\r': case '\n': // --- whitespace ---
-                break;
+    while (fgetc(xpm) != '{'); // --- that's safe since imlib accepted ---
 
-            case '"': { // --- the XPM header ---
-                unsigned foo; int x = 0, y = 0;
-                int tokens = fscanf(xpm, "%u %u %u %u %d %d",
-                    &foo, &foo, &foo, &foo, &x, &y);
-                if (tokens == 6) {
-                    fHotspotX = (x < 0 ? 0 : x);
-                    fHotspotY = (y < 0 ? 0 : y);
-                } else if (tokens != 4)
-                    warn(_("BUG? Malformed XPM header but Imlib "
-                           "was able to parse \"%s\""), path);
-
-                fclose(xpm);
-                return;
+    while (xpm) {
+        int c = fgetc(xpm);
+        switch (c) {
+        case '/':
+            if ((c = fgetc(xpm)) == '/') // --- eat C++ line comment ---
+                while (fgetc(xpm) != '\n');
+            else { // --- eat block comment ---
+               int pc; do { pc = c; c = fgetc(xpm); }
+               while (c != '/' && pc != '*');
             }
-            default:
-                if (c == EOF)
-                    warn(_("BUG? Unexpected end of XPM file but Imlib "
-                           "was able to parse \"%s\""), path);
-                else
-                    warn(_("BUG? Unexpected character but Imlib "
-                           "was able to parse \"%s\""), path);
+            break;
 
-                fclose(xpm);
-                return;
+        case ' ': case '\t': case '\r': case '\n': // --- whitespace ---
+            break;
+
+        case '"': { // --- the XPM header ---
+            unsigned foo; int x = 0, y = 0;
+            int tokens = fscanf(xpm, "%u %u %u %u %d %d",
+                &foo, &foo, &foo, &foo, &x, &y);
+            if (tokens == 6) {
+                fHotspotX = (x < 0 ? 0 : x);
+                fHotspotY = (y < 0 ? 0 : y);
+            } else if (tokens != 4)
+                warn(_("BUG? Malformed XPM header but Imlib "
+                       "was able to parse \"%s\""), path);
+
+            fclose(xpm);
+            xpm = nullptr;
+            break;
+        }
+        default:
+            if (c == EOF)
+                warn(_("BUG? Unexpected end of XPM file but Imlib "
+                       "was able to parse \"%s\""), path);
+            else
+                warn(_("BUG? Unexpected character but Imlib "
+                       "was able to parse \"%s\""), path);
+
+            fclose(xpm);
+            xpm = nullptr;
         }
     }
 }
 #endif
 #endif
+
+void YCursorPixmap::guessHotspot(const char* path) {
+    const char* base = my_basename(path);
+    size_t len = strspn(base, "BDLRTUcefghilmorstvz");
+    if (!strncmp(base, "scroll", 5)) {
+        if (!strncmp(base, "scrollL", len))
+            fHotspotX = 0, fHotspotY = fHeight / 2;
+        else if (!strncmp(base, "scrollR", len))
+            fHotspotX = fWidth - 1, fHotspotY = fHeight / 2;
+        else if (!strncmp(base, "scrollU", len))
+            fHotspotX = fWidth / 2, fHotspotY = 0;
+        else if (!strncmp(base, "scrollD", len))
+            fHotspotX = fWidth / 2, fHotspotY = fHeight - 1;
+    }
+    else if (!strncmp(base, "size", 4)) {
+        if (!strncmp(base, "sizeR", len))
+            fHotspotX = fWidth - 1, fHotspotY = fHeight / 2;
+        else if (!strncmp(base, "sizeTR", len))
+            fHotspotX = fWidth - 1, fHotspotY = 0;
+        else if (!strncmp(base, "sizeT", len))
+            fHotspotX = fWidth / 2, fHotspotY = 0;
+        else if (!strncmp(base, "sizeTL", len))
+            fHotspotX = 0, fHotspotY = 0;
+        else if (!strncmp(base, "sizeL", len))
+            fHotspotX = 0, fHotspotY = fHeight / 2;
+        else if (!strncmp(base, "sizeBL", len))
+            fHotspotX = 0, fHotspotY = fHeight - 1;
+        else if (!strncmp(base, "sizeB", len))
+            fHotspotX = fWidth / 2, fHotspotY = fHeight - 1;
+        else if (!strncmp(base, "sizeBR", len))
+            fHotspotX = fWidth - 1, fHotspotY = fHeight - 1;
+    }
+    else {
+        if (!strncmp(base, "left", len))
+            fHotspotX = fHotspotY = 0;
+        else if (!strncmp(base, "move", len))
+            fHotspotX = fWidth / 2, fHotspotY = fHeight / 2;
+        else if (!strncmp(base, "right", len))
+            fHotspotX = fWidth - 1, fHotspotY = 0;
+    }
+}
 
 YCursorPixmap::~YCursorPixmap() {
 
@@ -322,10 +372,6 @@ YCursorPixmap::~YCursorPixmap() {
     if (fMask && xapp) {
         XFreePixmap(xapp->display(), fMask);
         fMask = None;
-    }
-    if (fValid) {
-        XpmFreeAttributes(&fAttributes);
-        fValid = false;
     }
 
 #elif defined CONFIG_IMLIB2
@@ -407,7 +453,17 @@ Cursor YCursor::load(const char* path) {
 
 Cursor YCursor::load() {
     if (path) {
-        cursor = unsigned(load(path));
+        const char* base = my_basename(path);
+        const char* extn = strrchr(base, '.');
+        if (extn == nullptr) {
+            cursor = XcursorFilenameLoadCursor(xapp->display(), path);
+            if (cursor == None) {
+                tlog("Failed to load cursor \"%s\"", path);
+            }
+        }
+        else if (strcmp(extn, ".xpm") == 0) {
+            cursor = unsigned(load(path));
+        }
         delete[] path; path = nullptr;
     }
     if (glyph && !cursor) {

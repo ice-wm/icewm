@@ -198,7 +198,8 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[#include <regex>]],[[
                              ])
               ])
 
-PKG_CHECK_MODULES([CORE],[fontconfig xrender xcomposite xdamage xfixes xext x11])
+PKG_CHECK_MODULES([CORE],[fontconfig xrender xcomposite
+                          xcursor xdamage xfixes xext x11])
 AC_SUBST([CORE_CFLAGS])
 AC_SUBST([CORE_LIBS])
 

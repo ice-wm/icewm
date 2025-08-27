@@ -436,26 +436,36 @@ void YWMApp::freePointers() {
 }
 
 void YWMApp::initPointers() {
-    struct {
-        YCursor* curp;
+    struct Work {
         const char* name;
-        unsigned fallback;
+        YCursor* curp;
+        unsigned glyph;
+        int compare(const char *s) {
+            const char* p = name;
+            while (*p && *s && *p == *s)
+                ++p, ++s;
+            if (*p == *s)
+                return 0;
+            if (*p == '\0' && *s == '.')
+                return 0;
+            return int(*p) - int(*s);
+        }
     } work[] = {
-        { &leftPointer           , "left.xpm",    XC_left_ptr },
-        { &rightPointer          , "right.xpm",   XC_right_ptr },
-        { &movePointer           , "move.xpm",    XC_fleur },
-        { &sizeRightPointer      , "sizeR.xpm",   XC_right_side },
-        { &sizeTopRightPointer   , "sizeTR.xpm",  XC_top_right_corner },
-        { &sizeTopPointer        , "sizeT.xpm",   XC_top_side },
-        { &sizeTopLeftPointer    , "sizeTL.xpm",  XC_top_left_corner },
-        { &sizeLeftPointer       , "sizeL.xpm",   XC_left_side },
-        { &sizeBottomLeftPointer , "sizeBL.xpm",  XC_bottom_left_corner },
-        { &sizeBottomPointer     , "sizeB.xpm",   XC_bottom_side },
-        { &sizeBottomRightPointer, "sizeBR.xpm",  XC_bottom_right_corner },
-        { &scrollLeftPointer     , "scrollL.xpm", XC_sb_left_arrow },
-        { &scrollRightPointer    , "scrollR.xpm", XC_sb_right_arrow },
-        { &scrollUpPointer       , "scrollU.xpm", XC_sb_up_arrow },
-        { &scrollDownPointer     , "scrollD.xpm", XC_sb_down_arrow },
+        { "left",    &leftPointer            , XC_left_ptr },
+        { "move",    &movePointer            , XC_fleur },
+        { "right",   &rightPointer           , XC_right_ptr },
+        { "scrollD", &scrollDownPointer      , XC_sb_down_arrow },
+        { "scrollL", &scrollLeftPointer      , XC_sb_left_arrow },
+        { "scrollR", &scrollRightPointer     , XC_sb_right_arrow },
+        { "scrollU", &scrollUpPointer        , XC_sb_up_arrow },
+        { "sizeB",   &sizeBottomPointer      , XC_bottom_side },
+        { "sizeBL",  &sizeBottomLeftPointer  , XC_bottom_left_corner },
+        { "sizeBR",  &sizeBottomRightPointer , XC_bottom_right_corner },
+        { "sizeL",   &sizeLeftPointer        , XC_left_side },
+        { "sizeR",   &sizeRightPointer       , XC_right_side },
+        { "sizeT",   &sizeTopPointer         , XC_top_side },
+        { "sizeTL",  &sizeTopLeftPointer     , XC_top_left_corner },
+        { "sizeTR",  &sizeTopRightPointer    , XC_top_right_corner },
     };
     unsigned size = ACOUNT(work);
     unsigned mask = 0;
@@ -464,25 +474,44 @@ void YWMApp::initPointers() {
     subdirs("cursors", false, dirs);
     for (mstring& basedir : dirs) {
         mstring cursors(basedir + "/cursors");
-        for (cdir dir(cursors); dir.nextExt(".xpm"); ) {
+        for (adir dir(cursors); dir.next(); ) {
             const char* nam = dir.entry();
-            for (unsigned i = 0; i < size; ++i) {
-                if ((mask & (1 << i)) == 0 && strcmp(work[i].name, nam) == 0) {
-                    size_t len = cursors.length() + 2 + strlen(nam);
-                    char* path = new char[len];
-                    if (path)
-                        snprintf(path, len, "%s/%s", cursors.c_str(), nam);
-                    work[i].curp->init(path, work[i].fallback);
-                    mask |= (1 << i);
-                    if (++done == size)
-                        return;
+            const char* ext = strchr(nam, '.');
+            if (nonempty(ext) && strcmp(ext, ".xpm")) {
+                continue;
+            }
+            unsigned index = size;
+            unsigned lo = 0, hi = size;
+            while (lo < hi) {
+                unsigned pv = (lo + hi) / 2;
+                int cmp = work[pv].compare(nam);
+                if (cmp < 0)
+                    lo = pv + 1;
+                else if (cmp > 0)
+                    hi = pv;
+                else {
+                    index = pv;
+                    break;
                 }
+            }
+            if (lo == hi && work[lo].compare(nam) == 0) {
+                index = lo;
+            }
+            if (index < size && (mask & (1 << index)) == 0) {
+                size_t len = cursors.length() + 2 + strlen(nam);
+                char* path = new char[len];
+                if (path)
+                    snprintf(path, len, "%s/%s", cursors.c_str(), nam);
+                work[index].curp->init(path, work[index].glyph);
+                mask |= (1 << index);
+                if (++done == size)
+                    return;
             }
         }
     }
     for (unsigned i = 0; i < size; ++i) {
         if ((mask & (1 << i)) == 0) {
-            work[i].curp->init(nullptr, work[i].fallback);
+            work[i].curp->init(nullptr, work[i].glyph);
         }
     }
 }
