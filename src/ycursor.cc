@@ -466,7 +466,10 @@ Cursor YCursor::load() {
         }
         delete[] path; path = nullptr;
     }
-    if (glyph && !cursor) {
+    if (cursor == None && xname) {
+        cursor = unsigned(XcursorLibraryLoadCursor(xapp->display(), xname));
+    }
+    if (cursor == None && glyph) {
         cursor = unsigned(XCreateFontCursor(xapp->display(), glyph));
     }
     return Cursor(cursor);

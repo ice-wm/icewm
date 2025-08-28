@@ -439,6 +439,7 @@ void YWMApp::initPointers() {
     struct Work {
         const char* name;
         YCursor* curp;
+        const char* xname;
         unsigned glyph;
         int compare(const char *s) {
             const char* p = name;
@@ -451,21 +452,23 @@ void YWMApp::initPointers() {
             return int(*p) - int(*s);
         }
     } work[] = {
-        { "left",    &leftPointer            , XC_left_ptr },
-        { "move",    &movePointer            , XC_fleur },
-        { "right",   &rightPointer           , XC_right_ptr },
-        { "scrollD", &scrollDownPointer      , XC_sb_down_arrow },
-        { "scrollL", &scrollLeftPointer      , XC_sb_left_arrow },
-        { "scrollR", &scrollRightPointer     , XC_sb_right_arrow },
-        { "scrollU", &scrollUpPointer        , XC_sb_up_arrow },
-        { "sizeB",   &sizeBottomPointer      , XC_bottom_side },
-        { "sizeBL",  &sizeBottomLeftPointer  , XC_bottom_left_corner },
-        { "sizeBR",  &sizeBottomRightPointer , XC_bottom_right_corner },
-        { "sizeL",   &sizeLeftPointer        , XC_left_side },
-        { "sizeR",   &sizeRightPointer       , XC_right_side },
-        { "sizeT",   &sizeTopPointer         , XC_top_side },
-        { "sizeTL",  &sizeTopLeftPointer     , XC_top_left_corner },
-        { "sizeTR",  &sizeTopRightPointer    , XC_top_right_corner },
+        #define XC(cursor)   #cursor, XC_##cursor
+        { "left",    &leftPointer            , XC(left_ptr) },
+        { "move",    &movePointer            , XC(fleur) },
+        { "right",   &rightPointer           , XC(right_ptr) },
+        { "scrollD", &scrollDownPointer      , XC(sb_down_arrow) },
+        { "scrollL", &scrollLeftPointer      , XC(sb_left_arrow) },
+        { "scrollR", &scrollRightPointer     , XC(sb_right_arrow) },
+        { "scrollU", &scrollUpPointer        , XC(sb_up_arrow) },
+        { "sizeB",   &sizeBottomPointer      , XC(bottom_side) },
+        { "sizeBL",  &sizeBottomLeftPointer  , XC(bottom_left_corner) },
+        { "sizeBR",  &sizeBottomRightPointer , XC(bottom_right_corner) },
+        { "sizeL",   &sizeLeftPointer        , XC(left_side) },
+        { "sizeR",   &sizeRightPointer       , XC(right_side) },
+        { "sizeT",   &sizeTopPointer         , XC(top_side) },
+        { "sizeTL",  &sizeTopLeftPointer     , XC(top_left_corner) },
+        { "sizeTR",  &sizeTopRightPointer    , XC(top_right_corner) },
+        #undef XC
     };
     unsigned size = ACOUNT(work);
     unsigned mask = 0;
@@ -502,7 +505,8 @@ void YWMApp::initPointers() {
                 char* path = new char[len];
                 if (path)
                     snprintf(path, len, "%s/%s", cursors.c_str(), nam);
-                work[index].curp->init(path, work[index].glyph);
+                work[index].curp->init(path, work[index].glyph,
+                                       work[index].xname);
                 mask |= (1 << index);
                 if (++done == size)
                     return;
@@ -511,7 +515,7 @@ void YWMApp::initPointers() {
     }
     for (unsigned i = 0; i < size; ++i) {
         if ((mask & (1 << i)) == 0) {
-            work[i].curp->init(nullptr, work[i].glyph);
+            work[i].curp->init(nullptr, work[i].glyph, work[i].xname);
         }
     }
 }
