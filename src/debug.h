@@ -4,6 +4,7 @@
 #if __GNUC__
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
+#if __GNUC__ >= 8
 #pragma GCC diagnostic ignored "-Wstringop-truncation"
 #endif
 #if __clang__
