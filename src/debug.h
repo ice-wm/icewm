@@ -7,6 +7,7 @@
 #if __GNUC__ >= 8
 #pragma GCC diagnostic ignored "-Wstringop-truncation"
 #endif
+#endif
 #if __clang__
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wno-unknown-pragmas"
