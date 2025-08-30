@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
+#include <libgen.h>
 // #include <X11/Xlib.h>
 #include <X11/Xcursor/Xcursor.h>
 #if CONFIG_IMLIB2
