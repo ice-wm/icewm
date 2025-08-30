@@ -133,7 +133,7 @@ static int read_hotspot(const char* prog, const char* path, int* xhot, int* yhot
                 while (fgetc(xpm) != '\n');
             else { // --- eat block comment ---
                int pc; do { pc = c; c = fgetc(xpm); }
-               while (c != '/' && pc != '*');
+               while (c != '/' || pc != '*');
             }
             break;
 
@@ -159,7 +159,8 @@ static int read_hotspot(const char* prog, const char* path, int* xhot, int* yhot
             if (c == EOF)
                 fprintf(stderr, "%s: Unexpected end of XPM %s\n", prog, path);
             else
-                fprintf(stderr, "%s: Unexpected character %s\n", prog, path);
+                fprintf(stderr, "%s: Unexpected character %d at %ld in %s\n",
+                        prog, c, ftell(xpm), path);
 
             fclose(xpm);
             xpm = nullptr;

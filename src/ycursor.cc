@@ -283,7 +283,7 @@ void YCursorPixmap::readHotspot(const char* path) {
                 while (fgetc(xpm) != '\n');
             else { // --- eat block comment ---
                int pc; do { pc = c; c = fgetc(xpm); }
-               while (c != '/' && pc != '*');
+               while (c != '/' || pc != '*');
             }
             break;
 
