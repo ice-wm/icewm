@@ -86,6 +86,7 @@ private:
 #if __linux__
     void linuxUpdate();
     bool readNetDev(char* data, size_t size);
+    bool fSeekFails = false;
 #endif
     int fNetDev;
 
