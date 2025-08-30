@@ -169,7 +169,8 @@ static int read_hotspot(const char* prog, const char* path, int* xhot, int* yhot
 }
 
 static void guess_hotspot(const char* path, int* xhot, int* yhot, int width, int height) {
-    const char* base = basename(path);
+    char* copy = strdup(path);
+    const char* base = basename(copy);
     size_t len = strspn(base, "BDLRTUcefghilmorstvz");
     if (len >= 4) {
         if (!strncmp(base, "scroll", 5)) {
@@ -209,6 +210,7 @@ static void guess_hotspot(const char* path, int* xhot, int* yhot, int width, int
                 *xhot = width - 1, *yhot = 0;
         }
     }
+    free(copy);
 }
 
 static void icecur_help(int code, const char* prog)
