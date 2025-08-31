@@ -1,11 +1,52 @@
-icewm -- history of user-visible changes.  2025-08-03
+icewm -- history of user-visible changes.  2025-08-31
+
+Release icewm-3.9.0 released 2025-08-31
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.8.2...3.9.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
+      When truncating a title in icesh, respect UTF-8 codepoint boundaries.
+      Ensure that _NET_CLIENT_LIST_STACKING remains up-to-date.
+      Add wmSmartPlace method for KeyWinSmartPlace.
+      Add new -kovered filter to icesh to test if client is covered.
+      Correct red and blue in icesh commands loadicon and saveicon.
+      Ignore warning stringop-truncation for mstring.h.
+      Make inheritance of YApplication private.
+      Preserve the image mask as alpha when loading 24-bits images with Imlib2.
+      YListBox only uses small icons.
+      When scaling an YPixmap prefer to do it using libXrender.
+      Add support for themed cursors for gdk-pixbuf without libXpm.
+      Smart guess the cursor x/y-hotspot when absent. Add support for Xcursor.
+      Use the system cursor themes, when an icewm theme doesn't define a cursor.
+      Document Xcursor.
+      When lseek on /proc/net/dev fails, then avoid it. Closes #806.
+      Only warn for stringop-truncation when GCC is at least 8.0.
+      Fix missing endif.
+      Include libgen.h for basename on non-linux.
+      Argument to basename is non-const.
+      Fix parsing block comments in XPM headers.
+
+dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (2):
+      Bump actions/checkout from 4 to 5
+      Bump actions/checkout from 4 to 5 (#805)
+
+Javier Llorente <javier@opensuse.org> (1):
+      Translated using Weblate (Spanish)
+
+Kempelen <lion@cmsbazar.hu> (1):
+      Translated using Weblate (Hungarian)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
 
 Release icewm-3.8.2 released 2025-08-03
 ---------------------------------------
 
 git shortlog --no-merges -e -n -w80,6,8 3.8.1...3.8.2
 
-Bert Gijsbers <gijsbers@science.uva.nl> (14):
+Bert Gijsbers <gijsbers@science.uva.nl> (15):
       Use foldspaces to remove extraneous spaces.
       Also minimize fullscreen windows when clicking on a task button. Document
         the minimization feature of task buttons and the Ctrl modifier.
@@ -26,6 +67,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (14):
       Make the -Z filter work on non-Linux.
       Add mlterm for OpenBSD.
       Explain Dock layer.
+      Prepare 3.8.2 release
 
 
 Release icewm-3.8.1 released 2025-07-14
@@ -234,28 +276,4 @@ Eduard Bloch <blade@debian.org> (5):
 
 Mehmet Akif 9oglu <madanadam@gmail.com> (1):
       Translated using Weblate (Turkish)
-
-
-Release icewm-3.7.2 released 2025-03-09
----------------------------------------
-
-git shortlog --no-merges -e -n -w80,6,8 3.7.1...3.7.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (15):
-      Always print icons double-quoted for issue #794.
-      Also support SVG icons when the image library supports it natively.
-      Mark the WindowList as a toplevel and redirect its input to the listbox.
-      Fix compiling without internationalization for icewm-menu-fdo.
-      Also update the server time before setting focus to the topWindow.
-      Try not to go backwards in our notion of the X server time.
-      Only save event time when it is non-zero.
-      Add updateServerTime to class declaration in header.
-      Use the window handle when retrieving the user time.
-      Fix off-by-one errors in the QuickSwitch bottom right border for
-        ice-wm/icewm#174.
-      Log the keycode as a decimal.
-      Improve readability in SwitchWindow::resize.
-      Ignore key releases and modifier presses in the top window key handler.
-      Remove the incompatible cmake_path from the po CMakefile.
-      Prepare 3.7.2 release
 

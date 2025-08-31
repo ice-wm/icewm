@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: icewm 3.6.0.193\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
-"POT-Creation-Date: 2025-08-03 19:35+0200\n"
+"POT-Creation-Date: 2025-08-31 03:36+0200\n"
 "PO-Revision-Date: 2025-06-21 21:59+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian <https://l10n.opensuse.org/projects/icewm/icewm-1-4-"
@@ -158,12 +158,12 @@ msgstr "_Упореди"
 msgid "_Separate"
 msgstr "_Раздвоји"
 
-#: src/akeyboard.cc:78 src/icesm.cc:476 src/wmmenu.cc:499
+#: src/akeyboard.cc:78 src/icesm.cc:478 src/wmmenu.cc:499
 #, c-format
 msgid "%s exited with status %d."
 msgstr "%s се је окончао са стањем %d."
 
-#: src/akeyboard.cc:81 src/icesm.cc:482 src/icesm.cc:636 src/wmmenu.cc:502
+#: src/akeyboard.cc:81 src/icesm.cc:484 src/icesm.cc:638 src/wmmenu.cc:502
 #, c-format
 msgid "%s was killed by signal %d."
 msgstr "%s је убијен знаком %d."
@@ -1426,127 +1426,127 @@ msgstr "Поново покрени"
 msgid "Same Game"
 msgstr "Иста игра"
 
-#: src/icesh.cc:81
+#: src/icesh.cc:85
 msgid "For help please consult the man page icesh(1).\n"
 msgstr "Ради помоћи, молим, погледајте странице упутства icesh(1).\n"
 
-#: src/icesh.cc:1902
+#: src/icesh.cc:1996
 #, c-format
 msgid "Named symbols of the domain `%s' (numeric range: %ld-%ld):\n"
 msgstr "Именовани знаци домена „%s“ (бројчани опсег: %ld-%ld):\n"
 
-#: src/icesh.cc:1971
+#: src/icesh.cc:2065
 #, c-format
 msgid "Workspace out of range: %ld"
 msgstr "Радни простор је ван опсега: %ld"
 
-#: src/icesh.cc:1992
+#: src/icesh.cc:2086
 #, c-format
 msgid "Invalid workspace name: `%s'"
 msgstr "Неисправно је име радног простора: „%s“"
 
-#: src/icesh.cc:2693
+#: src/icesh.cc:2794
 msgid "GNOME window layer"
 msgstr "Слој прозора ГНОМА"
 
-#: src/icesh.cc:2694
+#: src/icesh.cc:2795
 msgid "IceWM tray option"
 msgstr "Могућности ладице АјсВМ"
 
-#: src/icesh.cc:2695
+#: src/icesh.cc:2796
 msgid "Gravity symbols"
 msgstr "Знаци тежње"
 
-#: src/icesh.cc:2696
+#: src/icesh.cc:2797
 msgid "Motif functions"
 msgstr "Дејства Мотива"
 
-#: src/icesh.cc:2697
+#: src/icesh.cc:2798
 msgid "Motif decorations"
 msgstr "Украшавања Мотива"
 
-#: src/icesh.cc:2698
+#: src/icesh.cc:2799
 msgid "EWMH window state"
 msgstr "Стање прозора ЕВВМХ"
 
-#: src/icesh.cc:2789 src/icesh.cc:2862
+#: src/icesh.cc:2890 src/icesh.cc:2963
 #, c-format
 msgid "workspace #%d: `%s'\n"
 msgstr "радни простор#%d: `%s'\n"
 
-#: src/icesh.cc:3113 src/icesh.cc:4991 src/icesh.cc:5591
+#: src/icesh.cc:3213 src/icesh.cc:5096 src/icesh.cc:5696
 #, c-format
 msgid "Invalid state: `%s'."
 msgstr "Неисправно стање: „%s“."
 
-#: src/icesh.cc:3144 src/icesh.cc:4560 src/icesh.cc:4610 src/icesh.cc:5918
+#: src/icesh.cc:3244 src/icesh.cc:4660 src/icesh.cc:4710 src/icesh.cc:6023
 #, c-format
 msgid "Invalid argument: `%s'"
 msgstr "Неисправна је одредница: „%s“"
 
-#: src/icesh.cc:4180
+#: src/icesh.cc:4274
 #, c-format
 msgid "Cannot get geometry of window 0x%lx"
 msgstr "Нисам успео да задобијем размеру прозора 0x%lx"
 
-#: src/icesh.cc:4205
+#: src/icesh.cc:4299
 #, c-format
 msgid "Invalid Xinerama: `%s'."
 msgstr "Неисправна је Ксинерама: „%s“."
 
-#: src/icesh.cc:4345 src/icesh.cc:4353 src/wmconfig.cc:139 src/wmsave.cc:65
+#: src/icesh.cc:4442 src/icesh.cc:4453 src/wmconfig.cc:139 src/wmsave.cc:65
 #: src/wmsave.cc:298 src/wmsave.cc:301
 #, c-format
 msgid "Unable to write to %s"
 msgstr "Нисам успео да упишем у %s"
 
-#: src/icesh.cc:4576
+#: src/icesh.cc:4676
 #, c-format
 msgid "Action `%s' requires at least %d arguments."
 msgstr "Дејство „%s“ захтева најмање %d одредница."
 
-#: src/icesh.cc:4585
+#: src/icesh.cc:4685
 #, c-format
 msgid "Invalid expression: `%s'"
 msgstr "Неисправан је израз: „%s“"
 
-#: src/icesh.cc:4596 src/icesound.cc:800 src/icewmbg.cc:1090
-#: src/icewmhint.cc:37 src/wmapp.cc:1341 src/yxapp.cc:1049
+#: src/icesh.cc:4696 src/icesound.cc:800 src/icewmbg.cc:1090
+#: src/icewmhint.cc:37 src/wmapp.cc:1374 src/yxapp.cc:1049
 #, c-format
 msgid "Can't open display: %s. X must be running and $DISPLAY set."
 msgstr ""
 "Нисам успео да отворим заслон: %s. Икс мора да ради и да буде постављен "
 "$DISPLAY."
 
-#: src/icesh.cc:4712
+#: src/icesh.cc:4812
 #, c-format
 msgid "Unexpected: `%s'."
 msgstr "Неочекивано: „%s“."
 
-#: src/icesh.cc:4744
+#: src/icesh.cc:4844
 msgid "No windows found."
 msgstr "Нисам пронашао прозоре."
 
-#: src/icesh.cc:4760
+#: src/icesh.cc:4860
 msgid "No actions specified."
 msgstr "Није одређено дејство."
 
-#: src/icesh.cc:4915
+#: src/icesh.cc:5020
 #, c-format
 msgid "Invalid window identifier: `%s'"
 msgstr "Неисправна је одредница прозора: „%s“"
 
-#: src/icesh.cc:4931
+#: src/icesh.cc:5036
 #, c-format
 msgid "Invalid PID: `%s'"
 msgstr "Неисправан је ЛБ процеса: „%s“"
 
-#: src/icesh.cc:4964
+#: src/icesh.cc:5069
 #, c-format
 msgid "Invalid layer: `%s'."
 msgstr "Неважећи слој: „%s“."
 
-#: src/icesh.cc:6057
+#: src/icesh.cc:6162
 #, c-format
 msgid "Unknown action: `%s'"
 msgstr "Непознато дејство: „%s“"
@@ -1601,12 +1601,12 @@ msgstr ""
 msgid "Unknown option '%s'"
 msgstr "Непозната могућност „%s“"
 
-#: src/icesm.cc:470 src/icesm.cc:630
+#: src/icesm.cc:472 src/icesm.cc:632
 #, c-format
 msgid "restart %s."
 msgstr "препокрени %s."
 
-#: src/icesm.cc:521
+#: src/icesm.cc:523
 msgid ""
 " IceWM crashed for the second time in 10 seconds. \n"
 " Do you wish to:\n"
@@ -1622,7 +1622,7 @@ msgstr ""
 "\t2: Напустите седницу?\n"
 "\t3: Покренете терминал?\n"
 
-#: src/icesm.cc:527
+#: src/icesm.cc:529
 msgid "IceWM crash response"
 msgstr "Одзив рушења ИцеВМ"
 
@@ -1930,7 +1930,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/icewmbg.cc:1251 src/wmapp.cc:1947
+#: src/icewmbg.cc:1251 src/wmapp.cc:1980
 #, c-format
 msgid "Unrecognized option '%s'."
 msgstr "Непрепозната могућност „%s“."
@@ -1971,7 +1971,7 @@ msgstr ""
 "  -h, help       Исписује овај заслон упутства и излази.\n"
 "\n"
 
-#: src/movesize.cc:864
+#: src/movesize.cc:858
 #, c-format
 msgid "Unknown direction in move/resize request: %d"
 msgstr "Непознат је правац у захтеву премести/промени величину: %d"
@@ -2038,211 +2038,211 @@ msgstr "Чекам да заменим старог управника проз�
 msgid "done."
 msgstr "учињено."
 
-#: src/wmapp.cc:516
+#: src/wmapp.cc:549
 msgid "_Logout"
 msgstr "_Одјава"
 
-#: src/wmapp.cc:517
+#: src/wmapp.cc:550
 msgid "_Cancel logout"
 msgstr "_Откажи одјаву"
 
-#: src/wmapp.cc:523
+#: src/wmapp.cc:556
 msgid "Lock _Workstation"
 msgstr "Закључај _радну станицу"
 
-#: src/wmapp.cc:525 src/wmdialog.cc:88
+#: src/wmapp.cc:558 src/wmdialog.cc:88
 msgid "Re_boot"
 msgstr "Пре_покрени"
 
-#: src/wmapp.cc:527 src/wmdialog.cc:89
+#: src/wmapp.cc:560 src/wmdialog.cc:89
 msgid "Shut_down"
 msgstr "Ис_кључи"
 
-#: src/wmapp.cc:529 src/wmdialog.cc:85
+#: src/wmapp.cc:562 src/wmdialog.cc:85
 msgid "_Sleep mode"
 msgstr "_Успавај"
 
-#: src/wmapp.cc:531 src/wmdialog.cc:90
+#: src/wmapp.cc:564 src/wmdialog.cc:90
 msgid "_Hibernate"
 msgstr "_Замрзни"
 
-#: src/wmapp.cc:535
+#: src/wmapp.cc:568
 msgid "Restart _Icewm"
 msgstr "Препокрени _Ајсвм"
 
-#: src/wmapp.cc:537
+#: src/wmapp.cc:570
 msgid "Restart _Xterm"
 msgstr "Препокрени _Икстерм"
 
-#: src/wmapp.cc:547
+#: src/wmapp.cc:580
 msgid "_Menu"
 msgstr "_Изборник"
 
-#: src/wmapp.cc:548
+#: src/wmapp.cc:581
 msgid "_Above Dock"
 msgstr "_Изнад дока"
 
-#: src/wmapp.cc:549
+#: src/wmapp.cc:582
 msgid "_Dock"
 msgstr "_Док"
 
-#: src/wmapp.cc:550
+#: src/wmapp.cc:583
 msgid "_OnTop"
 msgstr "_На врху"
 
-#: src/wmapp.cc:551
+#: src/wmapp.cc:584
 msgid "_Normal"
 msgstr "_Обично"
 
-#: src/wmapp.cc:552
+#: src/wmapp.cc:585
 msgid "_Below"
 msgstr "_Испод"
 
-#: src/wmapp.cc:553
+#: src/wmapp.cc:586
 msgid "D_esktop"
 msgstr "Радна _површ"
 
-#: src/wmapp.cc:597 src/wmwinlist.cc:369
+#: src/wmapp.cc:630 src/wmwinlist.cc:369
 msgid "Move to New _Window"
 msgstr "Пређи на следећи _прозор"
 
-#: src/wmapp.cc:607
+#: src/wmapp.cc:640
 msgid "Left Half"
 msgstr "Лева половина"
 
-#: src/wmapp.cc:608
+#: src/wmapp.cc:641
 msgid "Right Half"
 msgstr "Десна половина"
 
-#: src/wmapp.cc:609
+#: src/wmapp.cc:642
 msgid "Top Half"
 msgstr "Горња половина"
 
-#: src/wmapp.cc:610
+#: src/wmapp.cc:643
 msgid "Bottom Half"
 msgstr "Доња половина"
 
-#: src/wmapp.cc:612
+#: src/wmapp.cc:645
 msgid "Top Left"
 msgstr "Горе лево"
 
-#: src/wmapp.cc:613
+#: src/wmapp.cc:646
 msgid "Top Right"
 msgstr "Горе десно"
 
-#: src/wmapp.cc:614
+#: src/wmapp.cc:647
 msgid "Bottom Left"
 msgstr "Доле лево"
 
-#: src/wmapp.cc:615
+#: src/wmapp.cc:648
 msgid "Bottom Right"
 msgstr "Доле десно"
 
-#: src/wmapp.cc:616
+#: src/wmapp.cc:649
 msgid "Center"
 msgstr "По средини"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:618 src/wmtaskbar.cc:217 src/wmwinlist.cc:457
+#: src/wmapp.cc:651 src/wmtaskbar.cc:217 src/wmwinlist.cc:457
 #: src/wmwinlist.cc:490
 msgid "T_ile Horizontally"
 msgstr "П_оплочај водоравно"
 
 #. TRANSLATORS: This appears in a group with others items, so please make the hotkeys unique in the set: # T_ile Horizontally, Ca_scade, _Arrange, _Minimize All, _Hide All, _Undo, Arrange _Icons, _Windows, _Refresh, _About, _Logout
-#: src/wmapp.cc:620 src/wmtaskbar.cc:215 src/wmwinlist.cc:456
+#: src/wmapp.cc:653 src/wmtaskbar.cc:215 src/wmwinlist.cc:456
 #: src/wmwinlist.cc:489
 msgid "Tile _Vertically"
 msgstr "Поплочај успра_вно"
 
-#: src/wmapp.cc:632 src/wmwinlist.cc:437
+#: src/wmapp.cc:665 src/wmwinlist.cc:437
 msgid "_Restore"
 msgstr "Поврати"
 
-#: src/wmapp.cc:634
+#: src/wmapp.cc:667
 msgid "_Move"
 msgstr "_Премести"
 
-#: src/wmapp.cc:636
+#: src/wmapp.cc:669
 msgid "_Size"
 msgstr "_Величина"
 
-#: src/wmapp.cc:638 src/wmwinlist.cc:438
+#: src/wmapp.cc:671 src/wmwinlist.cc:438
 msgid "Mi_nimize"
 msgstr "У_мањи"
 
-#: src/wmapp.cc:640 src/wmwinlist.cc:439
+#: src/wmapp.cc:673 src/wmwinlist.cc:439
 msgid "Ma_ximize"
 msgstr "У_већај"
 
-#: src/wmapp.cc:641 src/wmwinlist.cc:440
+#: src/wmapp.cc:674 src/wmwinlist.cc:440
 msgid "Maximize_Vert"
 msgstr "Увећај усправно_"
 
-#: src/wmapp.cc:642 src/wmwinlist.cc:441
+#: src/wmapp.cc:675 src/wmwinlist.cc:441
 msgid "MaximizeHori_z"
 msgstr "Увећај_Водоравно"
 
-#: src/wmapp.cc:645 src/wmwinlist.cc:442
+#: src/wmapp.cc:678 src/wmwinlist.cc:442
 msgid "_Fullscreen"
 msgstr "Пуни приказ"
 
-#: src/wmapp.cc:648 src/wmwinlist.cc:444
+#: src/wmapp.cc:681 src/wmwinlist.cc:444
 msgid "_Hide"
 msgstr "_Сакриј"
 
-#: src/wmapp.cc:650 src/wmwinlist.cc:445
+#: src/wmapp.cc:683 src/wmwinlist.cc:445
 msgid "Roll_up"
 msgstr "Смотај_"
 
-#: src/wmapp.cc:657
+#: src/wmapp.cc:690
 msgid "R_aise"
 msgstr "Из_дигни"
 
-#: src/wmapp.cc:659 src/wmwinlist.cc:447
+#: src/wmapp.cc:692 src/wmwinlist.cc:447
 msgid "_Lower"
 msgstr "_Спусти"
 
-#: src/wmapp.cc:661 src/wmwinlist.cc:448
+#: src/wmapp.cc:694 src/wmwinlist.cc:448
 msgid "La_yer"
 msgstr "Сло_ј"
 
-#: src/wmapp.cc:664 src/wmwinlist.cc:449
+#: src/wmapp.cc:697 src/wmwinlist.cc:449
 msgid "Tile"
 msgstr "Поплочај"
 
-#: src/wmapp.cc:668 src/wmwinlist.cc:451
+#: src/wmapp.cc:701 src/wmwinlist.cc:451
 msgid "Move _To"
 msgstr "Премести на_"
 
-#: src/wmapp.cc:669 src/wmwinlist.cc:452
+#: src/wmapp.cc:702 src/wmwinlist.cc:452
 msgid "Occupy _All"
 msgstr "Заузми _све"
 
-#: src/wmapp.cc:673 src/wmwinlist.cc:453
+#: src/wmapp.cc:706 src/wmwinlist.cc:453
 msgid "Tray _icon"
 msgstr "Сличица _ладице"
 
-#: src/wmapp.cc:675 src/wmwinlist.cc:454
+#: src/wmapp.cc:708 src/wmwinlist.cc:454
 msgid "R_ename title"
 msgstr "Пре_именуј наслов"
 
-#: src/wmapp.cc:680 src/wmwinlist.cc:469 src/wmwinlist.cc:477
+#: src/wmapp.cc:713 src/wmwinlist.cc:469 src/wmwinlist.cc:477
 msgid "_Close"
 msgstr "_Затвори"
 
-#: src/wmapp.cc:682 src/wmwinlist.cc:471
+#: src/wmapp.cc:715 src/wmwinlist.cc:471
 msgid "_Kill Client"
 msgstr "_Убиј странку"
 
-#: src/wmapp.cc:685 src/wmdialog.cc:91 src/wmwinmenu.cc:141
+#: src/wmapp.cc:718 src/wmdialog.cc:91 src/wmwinmenu.cc:141
 msgid "_Window list"
 msgstr "_Списак прозора"
 
-#: src/wmapp.cc:727
+#: src/wmapp.cc:760
 msgid "Another window manager already running, exiting..."
 msgstr "Неки други управник прозора већ дејствује, излазим..."
 
-#: src/wmapp.cc:802
+#: src/wmapp.cc:835
 #, c-format
 msgid ""
 "Could not restart: %s\n"
@@ -2251,11 +2251,11 @@ msgstr ""
 "Нисам успео да поново покренем: %s\n"
 "Да ли путања $PATH води ка %s?"
 
-#: src/wmapp.cc:1000
+#: src/wmapp.cc:1033
 msgid "Confirm Restart as Terminal"
 msgstr "Потврди препокретање у терминал"
 
-#: src/wmapp.cc:1001
+#: src/wmapp.cc:1034
 msgid ""
 "Unmanage all applications and restart\n"
 "as a terminal. Proceed?"
@@ -2263,17 +2263,17 @@ msgstr ""
 "Да ли препустити руковање свим програмима и препокренути\n"
 "у терминал. Наставити?"
 
-#: src/wmapp.cc:1342 src/yxapp.cc:1050
+#: src/wmapp.cc:1375 src/yxapp.cc:1050
 msgid "<none>"
 msgstr "<ништа>"
 
-#: src/wmapp.cc:1670
+#: src/wmapp.cc:1703
 msgid ""
 "  --client-id=ID      Client id to use when contacting session manager.\n"
 msgstr ""
 "  --client-id=ID Лични број странке при додиру са управником седнице.\n"
 
-#: src/wmapp.cc:1676
+#: src/wmapp.cc:1709
 msgid ""
 "\n"
 "  --debug             Print generic debug messages.\n"
@@ -2284,7 +2284,7 @@ msgstr ""
 "  --debug-z      Исписује поруке исправки грешака у односу на слагање "
 "прозора.\n"
 
-#: src/wmapp.cc:1684
+#: src/wmapp.cc:1717
 msgid ""
 "\n"
 "  -a, --alpha         Use a 32-bit visual for translucency.\n"
@@ -2306,15 +2306,15 @@ msgstr ""
 "  --trace=conf,icon          Прати путање употребљене за учитавање "
 "поставки.\n"
 
-#: src/wmapp.cc:1695
+#: src/wmapp.cc:1728
 msgid "  -o, --output=FILE   Redirect all output to FILE.\n"
 msgstr "  -o, --output=ДАТОТЕКА   Преусмерава сав излаз у ДАТОТЕКУ.\n"
 
-#: src/wmapp.cc:1701
+#: src/wmapp.cc:1734
 msgid "  -i, --install=THEME Install THEME from extra or 'list'.\n"
 msgstr "  -i, --install=ПРЕДМЕТ Уграђује ПРЕДМЕТ од споља или са „списка“.\n"
 
-#: src/wmapp.cc:1704
+#: src/wmapp.cc:1737
 #, c-format
 msgid ""
 "Usage: %s [OPTIONS]\n"
@@ -2346,21 +2346,21 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/wmapp.cc:1770
+#: src/wmapp.cc:1803
 #, c-format
 msgid "%s configuration directories:\n"
 msgstr "%s директоријуми поставки:\n"
 
-#: src/wmapp.cc:1858
+#: src/wmapp.cc:1891
 #, c-format
 msgid "%s configured options:%s\n"
 msgstr "%s постављене могућности:%s\n"
 
-#: src/wmapp.cc:1997
+#: src/wmapp.cc:2030
 msgid "Confirm Logout"
 msgstr "Потврди одјаву"
 
-#: src/wmapp.cc:1998
+#: src/wmapp.cc:2031
 msgid ""
 "Logout will close all active applications.\n"
 "Proceed?"
@@ -2544,11 +2544,11 @@ msgstr "Истек времена „%s“!"
 msgid "'%s' produces no output"
 msgstr "„%s“ не производи излаз"
 
-#: src/wmmgr.cc:3674
+#: src/wmmgr.cc:3685
 msgid "Missing program setxkbmap"
 msgstr "Недостаје програм setxkbmap"
 
-#: src/wmmgr.cc:3675
+#: src/wmmgr.cc:3686
 msgid "For keyboard switching, please install setxkbmap."
 msgstr "Ради промене распореда тастатуре, молим, уградите setxkbmap."
 
@@ -2757,37 +2757,37 @@ msgstr "Нисам успео да рашчланим боју „%s“"
 msgid "Unknown key name %s in %s"
 msgstr "Непознато име кључа %s у %s"
 
-#: src/yconfig.cc:174 src/yconfig.cc:185 src/yconfig.cc:197
+#: src/yconfig.cc:172 src/yconfig.cc:183 src/yconfig.cc:195
 #, c-format
 msgid "Bad argument: %s for %s [%d,%d]"
 msgstr "Лоша тврдња: %s за %s [%d,%d]"
 
-#: src/ycursor.cc:110
+#: src/ycursor.cc:112
 #, c-format
 msgid "Loading of pixmap \"%s\" failed: %s"
 msgstr "Нисам успео да учитам карту тачака „%s“: %s"
 
-#: src/ycursor.cc:135
+#: src/ycursor.cc:136 src/ycursor.cc:189
 #, c-format
 msgid "Loading of pixmap \"%s\" failed"
 msgstr "Нисам успео да учитам карту тачака „%s“"
 
-#: src/ycursor.cc:179
+#: src/ycursor.cc:264
 #, c-format
 msgid "BUG? Imlib was able to read \"%s\""
 msgstr ""
 
-#: src/ycursor.cc:204
+#: src/ycursor.cc:301
 #, c-format
 msgid "BUG? Malformed XPM header but Imlib was able to parse \"%s\""
 msgstr ""
 
-#: src/ycursor.cc:212
+#: src/ycursor.cc:310
 #, c-format
 msgid "BUG? Unexpected end of XPM file but Imlib was able to parse \"%s\""
 msgstr ""
 
-#: src/ycursor.cc:215
+#: src/ycursor.cc:313
 #, c-format
 msgid "BUG? Unexpected character but Imlib was able to parse \"%s\""
 msgstr ""

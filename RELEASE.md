@@ -1,6 +1,6 @@
 [icewm -- release notes.  2021-07-08]: #
 
-Release 3.8.2
+Release 3.9.0
 =============
 
 Included in the release is an autoconf tarball for building the package
