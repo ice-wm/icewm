@@ -13,7 +13,6 @@ class YPixmap: public virtual refcounted {
 public:
     static ref<YPixmap> create(unsigned w, unsigned h, unsigned depth, bool mask = false);
     static ref<YPixmap> load(upath filename);
-//    static ref<YPixmap> scale(ref<YPixmap> source, int width, int height);
     static ref<YPixmap> createFromImage(ref<YImage> image, unsigned depth);
     static ref<YPixmap> createFromPixmapAndMask(Pixmap pixmap,
                                                 Pixmap mask,
@@ -42,8 +41,8 @@ public:
 
 private:
     YPixmap(Pixmap pixmap, Pixmap mask,
-            unsigned width, unsigned height,
-            unsigned depth, ref<YImage> image);
+            unsigned width, unsigned height, unsigned depth,
+            ref<YImage> image, Picture pict = None);
     virtual ~YPixmap();
 
     friend class YImage;

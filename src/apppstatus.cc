@@ -753,7 +753,7 @@ bool NetStatusControl::readNetDev(char* data, size_t size) {
     const char path[] = "/proc/net/dev";
 
     if (fNetDev >= 0 && lseek(fNetDev, 0, SEEK_SET) < 0) {
-        fail("seek %s", path);
+        fSeekFails = true;
         close(fNetDev);
         fNetDev = -1;
     }
@@ -772,6 +772,10 @@ bool NetStatusControl::readNetDev(char* data, size_t size) {
         close(fNetDev);
         fNetDev = -1;
         return false;
+    }
+    if (fSeekFails) {
+        close(fNetDev);
+        fNetDev = -1;
     }
 
     data[len] = '\0';

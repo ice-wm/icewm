@@ -70,6 +70,10 @@ using std::find;
 
 /******************************************************************************/
 
+static Window getClientWindow(Window frame);
+static Window getFrameWindow(Window window);
+static Window getParent(Window window);
+
 using namespace ASCII;
 const long SourceIndication = 1L;
 const long Sticky = long(0xFFFFFFFF);
@@ -810,11 +814,6 @@ public:
     }
 };
 
-class NetName : public YUtf8Property {
-public:
-    NetName(Window window) : YUtf8Property(window, XA_WM_NAME) { }
-};
-
 enum YTextKind {
     YText,
     YEmby,
@@ -928,6 +927,16 @@ static long getWorkspace(Window window) {
     return *YCardinal(window, ATOM_NET_WM_DESKTOP);
 }
 
+static char* getWindowTitle(Window window) {
+    YUtf8Property net(window, ATOM_NET_WM_NAME);
+    if (net)
+        return newstr(&net);
+    YStringProperty name(window, XA_WM_NAME);
+    if (name)
+        return newstr(&name);
+    return nullptr;
+}
+
 static void setWindowGravity(Window window, long gravity) {
     unsigned long mask = CWWinGravity;
     XSetWindowAttributes attr = {};
@@ -998,6 +1007,13 @@ static long getClientPID(Window window) {
     return (pid > 1L) ? pid : None;
 }
 
+/******************************************************************************/
+
+#define FOREACH_WINDOW(W) \
+    for (YTreeIter W(windowList); W; ++W)
+#define CHANGES_WINDOW(W) \
+    for (YTreeIter W(windowList); use(W); modified(W), ++W)
+
 class YWindowTree;
 
 class YTreeLeaf {
@@ -1009,7 +1025,7 @@ public:
     YTreeLeaf& operator=(Window win) { leaf = win; return *this; }
 
     WmName wmName() { return WmName(leaf); }
-    NetName netName() { return NetName(leaf); }
+    char* title() { return getWindowTitle(leaf); }
     YStringProperty wmRole() { return YStringProperty(leaf, ATOM_WM_WINDOW_ROLE); }
 };
 
@@ -1098,6 +1114,79 @@ public:
             XWindowAttributes attr = {};
             if (XGetWindowAttributes(display, client, &attr)
                 && attr.map_state == state) {
+                keep.push_back(client);
+            }
+        }
+        fChildren = keep;
+    }
+
+    static bool isCovered(Window client, Window parent, Window grandp,
+                          int x, int y, int w, int h) {
+        bool covered = false;
+
+        YWindowTree stack;
+        stack.getWindowList(ATOM_NET_CLIENT_LIST_STACKING);
+        stack.reverse();
+        YWindowTree frames;
+        for (YTreeIter window(stack); window; ++window) {
+            Window frame = getFrameWindow(window);
+            frames += frame;
+        }
+
+        Window* data = nullptr, rootp, rootw;
+        unsigned num = 0;
+        if (XQueryTree(display, root, &rootw, &rootp, &data, &num)) {
+            for (unsigned i = num; i-- > 0 &&
+                 data[i] != grandp && data[i] != parent; )
+            {
+                int index = frames.findIndex(data[i]);
+                if (index >= 0) {
+                    XWindowAttributes attr = {};
+                    if (XGetWindowAttributes(display, data[i], &attr) &&
+                        attr.map_state == IsViewable &&
+                        attr.c_class == InputOutput &&
+                        attr.x < x + w && x < attr.x + attr.width &&
+                        attr.y < y + h && y < attr.y + attr.height)
+                    {
+                        covered = true;
+                        break;
+                    }
+                }
+            }
+            XFree(data);
+        }
+        return covered;
+    }
+
+    static bool isCovered(Window client) {
+        bool covered = false;
+        XWindowAttributes attr = {};
+        if (XGetWindowAttributes(display, client, &attr) &&
+            attr.map_state == IsViewable) {
+            int x = attr.x, y = attr.y, w = attr.width, h = attr.height;
+            Window parent = getParent(client);
+            if (parent && parent != root &&
+                XGetWindowAttributes(display, parent, &attr)) {
+                x += attr.x, y += attr.y;
+            }
+            Window grandp = getParent(parent);
+            if (grandp && grandp != root &&
+                XGetWindowAttributes(display, grandp, &attr)) {
+                x += attr.x, y += attr.y;
+            }
+            if (attr.map_state == IsViewable) {
+                if (isCovered(client, parent, grandp, x, y, w, h)) {
+                    covered = true;
+                }
+            }
+        }
+        return covered;
+    }
+
+    void filterByCovered() {
+        vector<Window> keep;
+        for (YTreeIter client(*this); client; ++client) {
+            if (isCovered(client)) {
                 keep.push_back(client);
             }
         }
@@ -1302,9 +1391,7 @@ public:
 
         vector<Window> keep;
         for (YTreeIter client(*this); client; ++client) {
-            csmart title(newstr(&client->netName()));
-            if (isEmpty(title))
-                title = newstr(&client->wmName());
+            csmart title(client->title());
             if (nonempty(title)) {
                 const char* find = strstr(title, name);
                 if (find) {
@@ -1551,6 +1638,12 @@ public:
             fChildren.erase(it);
     }
 
+    void operator+=(Window window) {
+        if (have(window) == false) {
+            fChildren.push_back(window);
+        }
+    }
+
     void operator+=(const YWindowTree& other) {
         for (Window w : other.fChildren) {
             if (have(w) == false) {
@@ -1578,6 +1671,14 @@ public:
         std::reverse(fChildren.begin(), fChildren.end());
     }
 
+    int findIndex(Window window) {
+        for (int i = 0; i < int(count()); ++i) {
+            if (fChildren[i] == window)
+                return i;
+        }
+        return -1;
+    }
+
 private:
     Confine fConfine;
     Window fParent;
@@ -1589,13 +1690,6 @@ YWindowTree YWindowTree::lastClientList;
 YTreeIter::operator Window() const { return fTree[fIndex]; }
 YTreeLeaf* YTreeIter::operator->() { return fTree.leaf(fIndex); }
 void YTreeIter::discard() { fTree.remove(fTree[fIndex]); --fIndex; }
-
-/******************************************************************************/
-
-#define FOREACH_WINDOW(W) \
-    for (YTreeIter W(windowList); W; ++W)
-#define CHANGES_WINDOW(W) \
-    for (YTreeIter W(windowList); use(W); modified(W), ++W)
 
 /******************************************************************************/
 
@@ -2173,23 +2267,34 @@ void IceSh::modified(Window window)
 
 void IceSh::details(Window w)
 {
-    YTreeLeaf leaf(w);
-    csmart name(newstr(&leaf.netName()));
-    if (isEmpty(name))
-        name = newstr(Elvis(&leaf.wmName(), ""));
+    csmart name(getWindowTitle(w));
+    const int size = 54;
+    int len = name ? int(strlen(name)) : 0;
+    if (len > size - 4) {
+        len = size - 4;
+        int cp = 0;
+        while (cp > -3 && utf0(name[len + cp])) {
+            cp--;
+        }
+        if (utf1(name[len + cp]) ||
+            utf2(name[len + cp]) ||
+            utf3(name[len + cp])) {
+            len += cp;
+        }
+        name[len] = '\0';
+    }
+    char title[size] = "";
+    snprintf(title, sizeof title, "\"%.*s\"", len, (char *) name);
 
-    char title[54] = "";
-    snprintf(title, sizeof title, "\"%.*s\"", 50, (char *) name);
-
-    char c = 0, *wmname = &c;
+    char c = 0, *klas = &c;
     YTextProperty text(w, XA_WM_CLASS);
     if (text) {
-        wmname = text[0];
-        wmname[strlen(wmname)] = '.';
+        klas = text[0];
+        klas[strlen(klas)] = '.';
     }
 
-    char wmtitle[54] = "";
-    snprintf(wmtitle, sizeof wmtitle, "(%.*s)", 50, wmname);
+    char wmtitle[size] = "";
+    snprintf(wmtitle, sizeof wmtitle, "(%.*s)", 50, klas);
 
     int x = 0, y = 0, width = 0, height = 0;
     ::getGeometry(w, x, y, width, height);
@@ -2337,9 +2442,7 @@ void IceSh::print(const char* format)
                                 iconname(window, buf, len);
                                 break;
                             case 't': {
-                                csmart title(newstr(&window->netName()));
-                                if (isEmpty(title))
-                                    title = newstr(&window->wmName());
+                                csmart title(window->title());
                                 snprintf(buf, len, "%s", title.data());
                                 removefrom(buf, '"');
                                 break;
@@ -2384,9 +2487,7 @@ void IceSh::switchmenu()
     FOREACH_WINDOW(window) {
         use(window);
 
-        csmart title(newstr(&window->netName()));
-        if (isEmpty(title))
-            title = newstr(&window->wmName());
+        csmart title(window->title());
 
         const int size = 200;
         char icon[size] = "";
@@ -2928,10 +3029,9 @@ bool IceSh::wmcheck()
 
     YClient check(root, ATOM_NET_SUPPORTING_WM_CHECK);
     if (check) {
-        NetName netName(*check);
-        WmName name(*check);
-        if (netName || name) {
-            printf("Name: %s\n", netName ? &netName : &name);
+        csmart name(getWindowTitle(*check));
+        if (name) {
+            printf("Name: %s\n", name.data());
         }
         YStringProperty cls(*check, XA_WM_CLASS);
         if (cls) {
@@ -3574,16 +3674,10 @@ static void setWindowTitle(Window window, const char* title) {
         net.replace(title);
 }
 
-static void getWindowTitle(Window window) {
-    YUtf8Property net(window, ATOM_NET_WM_NAME);
-    if (net)
-        puts(&net);
-    else {
-        YStringProperty name(window, XA_WM_NAME);
-        if (name) {
-            puts(&name);
-        }
-    }
+static void putWindowTitle(Window window) {
+    csmart title(getWindowTitle(window));
+    if (nonempty(title))
+        puts(title);
 }
 
 static void getIconTitle(Window window) {
@@ -4280,7 +4374,10 @@ void IceSh::loadIcon(Window window, char* file)
                 read(fd, data, size) == ssize_t(size)) {
                 Atom* card = new Atom[2 + width * height];
                 for (int i = 0; i < width * height; ++i) {
-                    card[i + 2] = data[i];
+                    unsigned src = data[i];
+                    card[i + 2] = (src & 0xFF) << 16
+                                | (src & 0xFF0000) >> 16
+                                | (src & 0xFF00FF00);
                 }
                 card[0] = width;
                 card[1] = height;
@@ -4347,7 +4444,10 @@ void IceSh::saveIcon(Window window, char* file)
                         const int size = bestW * bestH;
                         unsigned* data = new unsigned[size];
                         for (int i = 0; i < size; ++i) {
-                            data[i] = unsigned(icon[bestI + 2 + i]);
+                            unsigned src = unsigned(icon[bestI + 2 + i]);
+                            data[i] = (src & 0xFF) << 16
+                                    | (src & 0xFF0000) >> 16
+                                    | (src & 0xFF00FF00);
                         }
                         if (write(fd, data, size * sizeof(unsigned)) == -1)
                             warn(_("Unable to write to %s"), file);
@@ -4862,6 +4962,11 @@ void IceSh::flag(char* arg)
     if (isOptArg(arg, "-viewable", "")) {
         selectWindows();
         windowList.filterByMapState(IsViewable);
+        return;
+    }
+    if (isOptArg(arg, "-kovered", "")) {
+        selectWindows();
+        windowList.filterByCovered();
         return;
     }
     if (isOptArg(arg, "-T", "")) {
@@ -5417,7 +5522,7 @@ void IceSh::parseAction()
         }
         else if (isAction("getWindowTitle", 0)) {
             FOREACH_WINDOW(window)
-                getWindowTitle(window);
+                putWindowTitle(window);
         }
         else if (isAction("getIconTitle", 0)) {
             FOREACH_WINDOW(window)

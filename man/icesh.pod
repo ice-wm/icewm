@@ -202,6 +202,11 @@ These are hidden, minimized, rolled-up, or on another workspace.
 Filter clients and keep only those that are currently viewable.
 These clients are mapped on the current workspace.
 
+=item B<-k>, B<-kovered>
+
+Filter clients and keep only those that are currently viewable and
+that are at least partially covered by another viewable window.
+
 =item B<-G>, B<-Gravity> I<GRAVITY>
 
 Filters clients by the window gravity field of the WM_NORMAL_HINTS

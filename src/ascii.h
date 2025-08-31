@@ -103,6 +103,26 @@ namespace ASCII {
             ++i;
         return i;
     }
+
+    inline bool utf0(char c) { return (c & 0xC0) == 0x80; }
+
+    inline bool utf1(char c) { return (c & 0xE0) == 0xC0; }
+
+    inline bool utf2(char c) { return (c & 0xF0) == 0xE0; }
+
+    inline bool utf3(char c) { return (c & 0xF8) == 0xF0; }
+
+    inline bool utf1(char c, char d) {
+        return utf1(c) && utf0(d);
+    }
+
+    inline bool utf2(char c, char d, char e) {
+        return utf2(c) && utf0(d) && utf0(e);
+    }
+
+    inline bool utf3(char c, char d, char e, char f) {
+        return utf3(c) && utf0(d) && utf0(e) && utf0(f);
+    }
 }
 
 #endif

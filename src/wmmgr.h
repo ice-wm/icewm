@@ -408,6 +408,7 @@ private:
     SwitchWindow* fSwitchWindow;
     lazy<YTimer> fSwitchDownTimer;
     lazy<YTimer> fLayoutTimer;
+    lazy<YTimer> fUpdateTimer;
     DockApp* fDockApp;
 };
 

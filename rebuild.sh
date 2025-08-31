@@ -139,7 +139,7 @@ fi
 # check the dependencies
 if [[ -v DEPEN ]]; then
     for p in \
-        x11 xext xcomposite xdamage xfixes \
+        x11 xext xcomposite xcursor xdamage xfixes \
         xrender xrandr xinerama xft xres \
         fontconfig sm ice \
         sndfile alsa ao \
