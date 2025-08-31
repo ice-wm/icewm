@@ -19,7 +19,7 @@ using namespace ASCII;
 
 char const *ApplicationName = ICESMEXE;
 
-class SessionManager: public YApplication {
+class SessionManager: private YApplication {
 private:
     char* trim(char *line) {
         size_t len = strlen(line);
@@ -201,6 +201,8 @@ private:
     }
 
 public:
+    using YApplication::mainLoop;
+
     SessionManager(int *argc, char ***argv): YApplication(argc, argv) {
         setup();
         options(argc, argv);

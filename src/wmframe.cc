@@ -3902,6 +3902,17 @@ void YFrameWindow::wmArrange(int tcb, int lcr) {
     setCurrentPositionOuter(newX, newY);
 }
 
+void YFrameWindow::wmSmartPlace() {
+    if (canMove()) {
+        int newX = x();
+        int newY = y();
+        if (manager->getSmartPlace(true, this, newX, newY,
+                                   width(), height(), getScreen())) {
+            setCurrentPositionOuter(newX, newY);
+        }
+    }
+}
+
 void YFrameWindow::wmSnapMove(int tcb, int lcr) {
    int mx, my, Mx, My, newX = 0, newY = 0;
 

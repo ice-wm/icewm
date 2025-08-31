@@ -92,8 +92,33 @@ ref<YImage> YImage::load(upath filename) {
                 }
             }
         } else {
-            for (DATA32* p = data; p < stop; ++p) {
-                *p |= 0xFF000000;
+            Pixmap pixmask = imlib_context_get_mask();
+            XImage* mask = None;
+            if (pixmask) {
+                mask = XGetImage(xapp->display(), pixmask,
+                                 0, 0, w, h, 1, XYPixmap);
+            }
+            if (mask) {
+                for (int row = 0; row < h; row++) {
+                    unsigned char* bits = (unsigned char *) mask->data
+                                          + row * mask->bytes_per_line;
+                    DATA32* p = data + row * w;
+                    for (int col = 0; col < w; col++, p++) {
+                        int off = bits[col >> 3];
+                        unsigned char bit =
+                            (mask->bitmap_bit_order == MSBFirst) ?
+                            (0x80 >> (col & 7)) : (1 << (col & 7));
+                        if (bits[off] & bit)
+                            *p |= 0xFF000000;
+                        else
+                            *p &= 0x00FFFFFF;
+                    }
+                }
+                XDestroyImage(mask);
+            } else {
+                for (DATA32* p = data; p < stop; ++p) {
+                    *p |= 0xFF000000;
+                }
             }
             imlib_image_set_has_alpha(1);
         }
@@ -348,11 +373,11 @@ ref<YPixmap> YImage2::renderToPixmap(unsigned depth, bool premult) {
                             *addr++ = alp;
                     }
 
-                    unsigned char bit =
-                        (imask->bitmap_bit_order == MSBFirst) ?
-                        (0x80 >> (col & 7)) : (1 << (col & 7));
-                    int off = row * imask->bytes_per_line + (col >> 3);
                     if (alp >= ATH) {
+                        unsigned char bit =
+                            (imask->bitmap_bit_order == MSBFirst) ?
+                            (0x80 >> (col & 7)) : (1 << (col & 7));
+                        int off = row * imask->bytes_per_line + (col >> 3);
                         imask->data[off] |= bit;
                     }
                 }

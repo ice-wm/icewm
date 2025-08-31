@@ -525,6 +525,7 @@ private:
         waRight
     };
 
+    void wmSmartPlace();
     void wmArrange(int tcb, int lcr);
     void wmSnapMove(int tcb, int lcr);
     int getTopCoord(int my, YFrameWindow **w, int count);

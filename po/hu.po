@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: icewm 1.2.7\n"
 "Report-Msgid-Bugs-To: https://github.com/bbidulock/icewm/issues\n"
 "POT-Creation-Date: 2025-02-22 16:19+0100\n"
-"PO-Revision-Date: 2025-06-30 12:59+0000\n"
+"PO-Revision-Date: 2025-08-21 20:59+0000\n"
 "Last-Translator: Kempelen <lion@cmsbazar.hu>\n"
 "Language-Team: Hungarian <https://l10n.opensuse.org/projects/icewm/"
 "icewm-1-4-branch/hu/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 5.13\n"
 
 # ../src/icons.cc:220
 #: src/aapm.cc:113
@@ -365,7 +365,7 @@ msgstr "Munkaterület: "
 
 #: src/decorate.cc:132
 msgid "Tabs"
-msgstr "Fülek"
+msgstr "Lapok"
 
 #: src/fdomenu.cc:911
 msgid ""

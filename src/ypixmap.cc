@@ -11,6 +11,22 @@ static Pixmap createMask(unsigned w, unsigned h) {
     return XCreatePixmap(xapp->display(), desktop->handle(), w, h, 1);
 }
 
+static Picture createPicture(Pixmap pixmap, unsigned depth, Pixmap mask) {
+    XRenderPictFormat* format = xapp->formatForDepth(depth);
+    if (format) {
+        XRenderPictureAttributes attr;
+        unsigned long flags = CPComponentAlpha;
+        attr.component_alpha = (depth == 32);
+        if (mask) {
+            flags |= CPClipMask;
+            attr.clip_mask = mask;
+        }
+        return XRenderCreatePicture(xapp->display(), pixmap,
+                                    format, flags, &attr);
+    }
+    return None;
+}
+
 void YPixmap::replicate(bool horiz, bool copyMask) {
     if (pixmap() == None || (fMask == None && copyMask))
         return;
@@ -52,14 +68,14 @@ void YPixmap::replicate(bool horiz, bool copyMask) {
 }
 
 YPixmap::YPixmap(Pixmap pixmap, Pixmap mask,
-        unsigned width, unsigned height,
-        unsigned depth, ref<YImage> image):
+                 unsigned width, unsigned height, unsigned depth,
+                 ref<YImage> image, Picture pict):
     fWidth(width),
     fHeight(height),
     fDepth(depth),
     fPixmap(pixmap),
     fMask(mask),
-    fPicture(None),
+    fPicture(pict),
     fImage(image)
 {
 }
@@ -80,16 +96,7 @@ YPixmap::~YPixmap() {
 
 Picture YPixmap::picture() {
     if (fPicture == None) {
-        XRenderPictFormat* format = xapp->formatForDepth(fDepth);
-        if (format) {
-            XRenderPictureAttributes attr;
-            unsigned long mask = fMask ? CPClipMask : None;
-            attr.clip_mask = fMask;
-            attr.component_alpha = (fDepth == 32);
-            mask |= CPComponentAlpha;
-            fPicture = XRenderCreatePicture(xapp->display(), fPixmap,
-                                            format, mask, &attr);
-        }
+        fPicture = createPicture(fPixmap, fDepth, fMask);
     }
     return fPicture;
 }
@@ -102,7 +109,8 @@ void YPixmap::forgetImage() {
 
 void YPixmap::freePicture() {
     if (fPicture) {
-        XRenderFreePicture(xapp->display(), fPicture);
+        if (xapp != nullptr)
+            XRenderFreePicture(xapp->display(), fPicture);
         fPicture = None;
     }
 }
@@ -147,6 +155,35 @@ Pixmap YPixmap::pixmap(unsigned depth) {
 ref<YPixmap> YPixmap::scale(unsigned const w, unsigned const h) {
     if (w == width() && h == height())
         return ref<YPixmap>(this);
+
+    if ((fMask == None || depth() == 32) && picture()) {
+        Pixmap dest = createPixmap(w, h, depth());
+        if (dest) {
+            Picture dpic = createPicture(dest, depth(), None);
+            XRenderColor trans = { 0, 0, 0, 0 };
+            XRenderFillRectangle(xapp->display(), PictOpSrc, dpic,
+                                 &trans, 0, 0, w, h);
+            XTransform transform = { {
+                { XDoubleToFixed(double(fWidth) / w), 0, 0 },
+                { 0, XDoubleToFixed(double(fHeight) / h), 0 },
+                { 0, 0, XDoubleToFixed(1) }
+            } };
+            XRenderSetPictureTransform(xapp->display(), picture(), &transform);
+            XRenderSetPictureFilter(xapp->display(), picture(),
+                                    FilterBilinear, NULL, 0);
+            XRenderComposite(xapp->display(), PictOpSrc,
+                             picture(), None, dpic,
+                             0, 0, 0, 0,  // source x, y, mask x, y
+                             0, 0, w, h); // destination x, y, w, h
+            XTransform identity = { {
+                { XDoubleToFixed(1), 0, 0 },
+                { 0, XDoubleToFixed(1), 0 },
+                { 0, 0, XDoubleToFixed(1) }
+            } };
+            XRenderSetPictureTransform(xapp->display(), picture(), &identity);
+            return ref<YPixmap>(new YPixmap(dest, None, w, h, depth(), null, dpic));
+        }
+    }
 
     if (image() != null) {
         ref<YImage> scaled(image()->scale(w, h));

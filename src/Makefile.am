@@ -45,6 +45,7 @@ bin_PROGRAMS = \
 	icewmbg
 
 noinst_PROGRAMS = \
+	icecursor \
 	genpref
 
 TESTS = strtest testpointer testarray
@@ -276,6 +277,9 @@ genpref_SOURCES = \
 	icewmbg_prefs.h \
 	genpref.cc
 genpref_LDADD = libice.la @LIBINTL@ @LIBICONV@
+
+icecursor_SOURCES = icecursor.cc
+icecursor_LDADD = $(IMAGE_LIBS) $(CORE_LIBS)
 
 icewm_SOURCES = \
 	intl.h \

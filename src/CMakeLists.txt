@@ -110,7 +110,7 @@ option(CONFIG_LIBJPEG "JPEGLIB image loader" off)
 option(CONFIG_GDK_PIXBUF_XLIB "GDK-PIXBUF image loader" off)
 option(CONFIG_LIBRSVG "Support SVG icons using librsvg" off)
 option(CONFIG_NANOSVG "Support SVG icons using nanosvg" off)
-option(CONFIG_XPM "XPM image loader" on)
+option(CONFIG_XPM "XPM image loader" off)
 option(CONFIG_I18N "Define to enable internationalization" on)
 option(CONFIG_XRANDR "Define to enable XRANDR extension" on)
 option(CONFIG_SESSION "Define to enable X session management" on)
@@ -183,6 +183,7 @@ CHECK_INCLUDE_FILE_CXX(uvm/uvm_param.h HAVE_UVM_UVM_PARAM_H)
 pkg_check_modules(fontconfig fontconfig)
 pkg_check_modules(xrender REQUIRED xrender)
 pkg_check_modules(xcomposite REQUIRED xcomposite)
+pkg_check_modules(xcursor REQUIRED xcursor)
 pkg_check_modules(xdamage REQUIRED xdamage)
 pkg_check_modules(xfixes REQUIRED xfixes)
 pkg_check_modules(xext REQUIRED xext)
@@ -190,15 +191,11 @@ pkg_check_modules(x11 REQUIRED x11)
 
 CHECK_LIBRARY_EXISTS(X11 XInternAtoms ${x11_LIBDIR} HAVE_XINTERNATOMS)
 
-set(icewm_img_libs ${xrender_LDFLAGS} ${xcomposite_LDFLAGS} ${xdamage_LDFLAGS} ${xfixes_LDFLAGS})
+set(icewm_img_libs ${xrender_LDFLAGS} ${xcomposite_LDFLAGS}
+                   ${xcursor_LDFLAGS} ${xdamage_LDFLAGS} ${xfixes_LDFLAGS})
 
 # It would be a good idea to use different names for the image options and do the
 # logics here.  For now, this self-adapting code modifies the option variables.
-
-set(HINT_CURSORS
-[=[
- Cursor support requires either -DCONFIG_XPM=on or -DCONFIG_IMLIB2=on.
-]=])
 
 set(HINT_IMG_LOADERS
 [=[
@@ -208,7 +205,7 @@ set(HINT_IMG_LOADERS
  or else 'yximage' must be enabled by -DCONFIG_LIBPNG=on.
  The latter requires -DCONFIG_XPM=on, while -DCONFIG_LIBJPEG=on is recommended.
  Support SVG icons with either -DCONFIG_LIBRSVG=on or -DCONFIG_NANOSVG=on.
- ]=] ${HINT_CURSORS})
+ ]=])
 
 # image configuration error check
 if(CONFIG_IMLIB2 OR CONFIG_GDK_PIXBUF_XLIB)
@@ -277,15 +274,6 @@ if (CONFIG_NANOSVG)
             endif()
         endif()
     endforeach()
-endif()
-
-# cursor configuration error check
-if(CONFIG_XPM)
-    #ok
-elseif(CONFIG_IMLIB2)
-    #ok
-else()
-    MESSAGE(FATAL_ERROR ${HINT_CURSORS})
 endif()
 
 if(CONFIG_XPM)
@@ -496,6 +484,9 @@ concat_dedup(icewm_libs itk ice ${sm_LIBS} ${fontconfig_LDFLAGS}
 
 ADD_EXECUTABLE(icewm${EXEEXT} ${ICEWM_SRCS})
 TARGET_LINK_LIBRARIES(icewm${EXEEXT} ${icewm_libs})
+
+ADD_EXECUTABLE(icecursor${EXEEXT} icecursor.cc)
+TARGET_LINK_LIBRARIES(icecursor${EXEEXT} ice ${x11_LDFLAGS} ${icewm_img_libs})
 
 ADD_EXECUTABLE(genpref${EXEEXT} genpref.cc)
 TARGET_LINK_LIBRARIES(genpref${EXEEXT} ice ${x11_LDFLAGS} ${nls_LIBS})

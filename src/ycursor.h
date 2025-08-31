@@ -3,7 +3,8 @@
 
 class YCursor {
 public:
-    void init(const char* p, unsigned g) { cursor = 0; glyph = g; path = p; }
+    void init(const char* p, unsigned g, const char* x) {
+        cursor = 0; glyph = g; path = p; xname = x; }
     operator Cursor() { return cursor ? Cursor(cursor) : load(); }
     void discard();
     ~YCursor() { discard(); }
@@ -14,6 +15,7 @@ private:
     unsigned cursor;
     unsigned glyph;
     const char* path;
+    const char* xname;
     Cursor load();
 };
 
