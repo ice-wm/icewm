@@ -1,4 +1,4 @@
-[icewm -- read me first file.  2025-03-09]: #
+[icewm -- read me first file. 2025-03-09]: #
 
 Ice Window Manager (IceWM)
 ==========================
@@ -7,10 +7,10 @@ IceWM is a window manager for the X Window System. The features of IceWM are
 speed, simplicity, and not getting in the user's way.
 
 > The name was decided on a very hot day... (and Marko started writing it in
-> winter ;-)  The aim of IceWM is to have good 'Feel' and decent 'Look'. 'Feel'
+> winter ;-) The aim of IceWM is to have good 'Feel' and decent 'Look'. 'Feel'
 > is much more important than 'Look' ...
 
-This is a fork of the IceWM CVS on [sourceforge][12].  It includes all changes
+This is a fork of the IceWM CVS on [Sourceforge][12]. It includes all changes
 from the `icewm-1-3-BRANCH` branch, greatly enhanced EWMH/ICCCM compliance, as
 well as patches collected from Arch Linux, Debian, pld-linux, the IceWM bug
 list, and various other GitHub forks.
@@ -19,29 +19,29 @@ list, and various other GitHub forks.
 Release
 -------
 
-This is the `icewm-3.9.0` package, released 2025-08-31.  This release, and
+This is the `icewm-3.9.0` package, released 2025-08-31. This release, and
 the latest version, can be obtained from [GitHub][1], using a command such as:
 
     $> git clone https://github.com/bbidulock/icewm.git
 
 Please see the [NEWS][3] file for release notes and history of user visible
 changes for the current version, and the [ChangeLog][4] file for a more
-detailed history of implementation changes.  The [TODO][5] file lists features
+detailed history of implementation changes. The [TODO][5] file lists features
 not yet implemented and other outstanding items.
 
 Please see the [INSTALL][7] file for installation instructions.
 
-When working from `git(1)`, please use this file.  An abbreviated
+When working from `git(1)`, please use this file. An abbreviated
 installation procedure that works for most applications appears below.
 
-This release is published under LGPL.  Please see the license
+This release is published under LGPL. Please see the license
 in the file [COPYING][9].
 
 
 Quick Start
 -----------
 
-The quickest and easiest way to get icewm up and running is to run the
+The quickest and easiest way to get IceWM up and running is to run the
 following commands:
 
     $> git clone https://github.com/bbidulock/icewm.git
@@ -51,7 +51,7 @@ following commands:
     $> make
     $> make DESTDIR="$pkgdir" install
 
-This will configure, compile and install icewm the quickest.  For those who
+This will configure, compile, and install icewm the quickest. For those who
 like to spend the extra 15 seconds reading `./configure --help`, some compile
 time options can be turned on and off before the build.
 
@@ -135,13 +135,13 @@ For additional utilities see the [IceWM FAQ][14].
 Bug Reports
 -----------
 
-Issues can be reported on [GitHub][2].  Please try to submit short patches or
-pull requests if you can.  If you would like to perform regular maintenance
+Issues can be reported on [GitHub][2]. Please try to submit short patches or
+pull requests if you can. If you would like to perform regular maintenance
 activities (e.g. if you are a maintainer of an IceWM package for a
 distribution), contact me for push access.
 
 I normally like to have the issuers of problem reports close the report once
-it has been resolved.  I do not want you to think that we are being dismissive,
+it has been resolved. I do not want you to think that we are being dismissive,
 because I welcome all reports.
 
 Bug reports, feedback, and suggestions pertaining to the original CVS version
@@ -158,7 +158,7 @@ Development
 
 If you would like to develop against this fork, the easiest way is to obtain a
 [GitHub account][10], fork the [repository][1] and perform your development.
-Send me a pull request when you have something stable.  If you submit regular
+Send me a pull request when you have something stable. If you submit regular
 pull requests that get accepted, I will just give to push access to save time.
 
 
@@ -168,7 +168,7 @@ Translations
 You can provide translations by using the [openSUSE weblate tool][11].
 There are two XDG files,
 [icewm.desktop][17] and [icewm-session.desktop][18] which may need manual
-translations.  If you have difficulties using the tools, just send me the updated
+translations. If you have difficulties using the tools, just send me the updated
 `.po` file or a patch to apply.
 
 
