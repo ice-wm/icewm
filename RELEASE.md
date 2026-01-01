@@ -1,6 +1,6 @@
 [icewm -- release notes.  2025-08-31]: #
 
-Release 3.9.0
+Release 4.0.0
 =============
 
 Included in the release is an autoconf tarball for building the package

@@ -1,11 +1,162 @@
-icewm -- history of user-visible changes.  2025-08-31
+icewm -- history of user-visible changes.  2026-01-01
+
+Release icewm-4.0.0 released 2026-01-01
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.9.0...HEAD
+
+Bert Gijsbers <gijsbers@science.uva.nl> (74):
+      3.9.0
+      Drop XPM from rebuild.sh.
+      Report failure on /proc/net/dev at most once.
+      Resolve warning on USHRT_MAX for Android.
+      Decode UTF-8 codepoints and recognize combining_marks.
+      When truncating a title in icesh, ignore combining_marks.
+      Limit window titles to 128 bytes.
+      Let the Alt+Tab quick switch handle very large numbers of application
+        windows.
+      Navigate the Alt+Tab ten times faster with PageUp/PageDown. Support
+        navigating the quick switch with keypad keys.
+      The third button on Alt+Tab opens the system menu for that frame.
+      Also support the keypad keys in the WindowList window.
+      Add missing include.
+      Update new quick switch features.
+      When a clock led pixmap is missing, construct it using the clock font.
+      In Alt+Tab, pressing the first letter of the application class name,
+        selects the next such application window.
+      QuickSwitch support for very many application windows in both modes.
+      Improve QuickSwitch hinting in horizontal mode.
+      Add workspace separators to QuickSwitch in horizontal mode.
+      Put accellerator on O in OccupyAll menu entry and closes ice-wm/icewm#204.
+      Update the potfiles after the _OccupyAll accellerator change.
+      Trim trailing whitespace from window titles.
+      Lock the work area when unmanaging a client.
+      Prevent a crash when a dock layer window exits.
+      Mark nextKey as override.
+      Speedup icon drawing by caching its Pictures server side.
+      Improve PagerShowPreview positions and icon drawing.
+      Simplify icon drawing in WindowList.
+      On startup force icon sizes to be standard icon sizes.
+      Change minimum icon size from 8 to 16.
+      Set the default value for Alpha blending to 1. Drop DoubleBuffer.
+      Correct that YDesktop has defaults for depth/visual/colormap.
+      Remove getGraphics from YWindow to save 16 bytes. Add createPixmap with
+        sizes.
+      Add createPicture to YXApplication.
+      Add clang pragma "-Wc++11-narrowing" for issue ice-wm/icewm#206.
+      Print diagnostic messages for icesh loadicon and saveicon for #814. Also
+        show the win_gravity of WM_NORMAL_HINTS in icesh. State that icesh
+        loadicon requires a window to have a _NET_WM_ICON property.
+      Clock text leds should use the same font within a word.
+      Fix off by one error in string list for #812.
+      In icesh addWorkspace first add the workspace before setting the desktop
+        count for #812.
+      Read extra workspace names from the desktop on startup for #812.
+      Fix bug where the tasks pane overlaps with the workspaces pane. This may
+        happen when the taskbar is higher, when big fonts are used.
+      Limit the loading extra workspace names from the desktop, limit that by
+        the total number of desktops.
+      Update workspace name on taskbar when changed externally for #812.
+      Add getWorkspaceName and getWorkspaceNames to icesh for issue #813.
+      enable sponsoring
+      Improve the handling of systray icons with a depth of 24 when the icewm
+        system tray has a depth of 32 for issue #818.
+      Prefer a gradient background for systray icons.
+      Only use composing for a systray icon when its depth is 32 for issue #818.
+      Fix keyboard layout switching for OpenBSD which lacks wordexp and closes
+        #810 and ice-wm/icewm#215.
+      Add isUp() and setPointerMotion() to YPopup.
+      Add easy createPixmap. Register the property name before a
+        XGetTextProperty.
+      Delete the taskbar menu after popdown and track it with fMenuShown.
+      Automatically convert a YColor to XRenderColor.
+      Fix spelling of WM_WINDOW_ROLE.
+      Revert "Make menu arrow size relative to icon size". Not 'roughly similar
+        size' but _exactly_. Unclear what means 'afac'?  Don't repeat the same
+        calculation in the next paragraph. Lacks cast from float to int.
+      Don't manage plank.
+      Track the use of nanosvg in image_library.
+      Increase the maximum icon size to 256 for LargeIconSize and HugeIconSize.
+      Add QuickSwitchPreview for a new quick switch with application previews.
+      Add switcher.h.
+      Add QuickSwitchPreview. Drop DoubleBuffer.
+      Consistently use the work area of the frame for the desktop mini icon for
+        issue #823.
+      Adjust the size of the submenu indicator triangle with MenuIconSize.
+      Use placed() instead of priority when testing for active previews for
+        issue #823.
+      Adjust WM_ICON_SIZE to announce support for high-resolution icons 128x128.
+      Preferably use high-resolution icons in preview.
+      Use override consistently in Switcher.
+      Fix empty active color. Fix multi-screen setup. Handle very wide/tall
+        monitors. Try to get at least two rows.
+      For clients without WM_CLASS use WM_COMMAND.
+      Check for an empty YPixel in XRenderColor.
+      Accept minimal margin in order to get at least two rows of previews.
+      Prefer the organisational repository for new issues.
+      Add preview.h to distributable files.
+      Update the preferred issues location to the ice-wm organisation.
+      Update pot files.
+
+Eduard Bloch <blade@debian.org> (3):
+      Avoid autoreconf failure on existence of nasty tags
+      Eliminate dead code
+      Make menu arrow size relative to icon size
+
+dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (2):
+      Bump actions/checkout from 5 to 6
+      Bump actions/checkout from 5 to 6 (#819)
+
+openSUSE Weblate <weblate-noreply@opensuse.org> (2):
+      Update translation files
+      Update translation files
+
+Aleksey Fedorov <Aleksejfedorov963@gmail.com> (1):
+      Translated using Weblate (Russian)
+
+Arif Budiman <arifpedia@gmail.com> (1):
+      Translated using Weblate (Indonesian)
+
+Balló György <ballogyor@gmail.com> (1):
+      fdomenu: Initialize loc variable with user's default system locale
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Ferdinand Galko <galko.ferdinand@gmail.com> (1):
+      Translated using Weblate (Slovak)
+
+Freek de Kruijf <freek@opensuse.org> (1):
+      Translated using Weblate (Dutch)
+
+Hugo Carvalho <hugokarvalho@hotmail.com> (1):
+      Translated using Weblate (Portuguese)
+
+Jure Repinc <jlp@holodeck1.com> (1):
+      Translated using Weblate (Slovenian)
+
+Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Luna  Jernberg <bittin@opensuse.org> (1):
+      Translated using Weblate (Swedish)
+
+Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
+      Translated using Weblate (Georgian)
+
+Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
+      Translated using Weblate (Japanese)
+
+gijsbers <gijsbers@users.noreply.github.com> (1):
+      enable sponsoring
+
 
 Release icewm-3.9.0 released 2025-08-31
 ---------------------------------------
 
 git shortlog --no-merges -e -n -w80,6,8 3.8.2...3.9.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (20):
+Bert Gijsbers <gijsbers@science.uva.nl> (21):
       When truncating a title in icesh, respect UTF-8 codepoint boundaries.
       Ensure that _NET_CLIENT_LIST_STACKING remains up-to-date.
       Add wmSmartPlace method for KeyWinSmartPlace.
@@ -26,6 +177,7 @@ Bert Gijsbers <gijsbers@science.uva.nl> (20):
       Include libgen.h for basename on non-linux.
       Argument to basename is non-const.
       Fix parsing block comments in XPM headers.
+      Prepare 3.9.0 release
 
 dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (2):
       Bump actions/checkout from 4 to 5
