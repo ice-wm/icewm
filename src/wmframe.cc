@@ -213,6 +213,8 @@ void YFrameWindow::mergeTabs(YFrameWindow* frame) {
     bool focus = frame->focused();
     if (focus)
         manager->switchFocusFrom(frame);
+    manager->aboutToHide(client());
+
     if (1 < frame->tabCount())
         findRemove(tabbedFrames, frame);
     for (YFrameClient* client : frame->fTabs) {
@@ -280,6 +282,8 @@ void YFrameWindow::selectTab(YFrameClient* tab) {
         fWinState &= ~WinStateFocused;
         client()->setStateHint(getState());
     }
+
+    manager->aboutToHide(client());
     YClientContainer* formerConter = container();
     formerConter->lower();
     YFrameClient* formerClient = client();
@@ -2252,7 +2256,10 @@ void YFrameWindow::refresh() {
 
 void YFrameWindow::repaint() {
     if (hasBorders()) {
-        paint(getGraphics(), geometry());
+        XGCValues gcv = { GXclear, };
+        gcv.graphics_exposures = False;
+        Graphics g(*this, GCGraphicsExposures, &gcv);
+        paint(g, geometry());
     }
 }
 
@@ -3150,8 +3157,6 @@ void YFrameWindow::updateState() {
     if (!isManaged() || !client() || client()->destroyed())
         return ;
 
-    client()->setStateHint(getState());
-
     // some code is probably against the ICCCM.
     // some applications misbehave either way.
     // (some hide windows on iconize, this is bad when switching workspaces
@@ -3160,8 +3165,12 @@ void YFrameWindow::updateState() {
     bool iconic = isHidden() || isMinimized();
     bool hidden = iconic || isRollup() || !visibleNow();
 
+    if (hidden && visible())
+        manager->aboutToHide(client());
+
     MSG(("updateState: winState=0x%X, client=%d", fWinState, !hidden));
 
+    client()->setStateHint(getState());
     client()->setFrameState(iconic ? IconicState : NormalState);
 
     if (hidden) {
@@ -3191,6 +3200,8 @@ bool YFrameWindow::affectsWorkArea() const {
 }
 
 bool YFrameWindow::inWorkArea() const {
+    if (client() == nullptr)
+        return false;
     if (doNotCover())
         return false;
     if (isFullscreen())
@@ -3203,11 +3214,14 @@ bool YFrameWindow::inWorkArea() const {
 }
 
 void YFrameWindow::getNormalGeometryInner(int *x, int *y, int *w, int *h) const {
-    XSizeHints *sh = client()->sizeHints();
-    *x = normalX;
-    *y = normalY;
-    *w = sh ? normalW * max(1, sh->width_inc) + sh->base_width : normalW;
-    *h = sh ? normalH * max(1, sh->height_inc) + sh->base_height : normalH;
+    *x = normalX; *y = normalY; *w = normalW; *h = normalH;
+    if (client()) {
+        XSizeHints* sh = client()->sizeHints();
+        if (sh) {
+            *w = normalW * max(1, sh->width_inc) + sh->base_width;
+            *h = normalH * max(1, sh->height_inc) + sh->base_height;
+        }
+    }
 }
 
 void YFrameWindow::setNormalGeometryOuter(int ox, int oy, int ow, int oh) {

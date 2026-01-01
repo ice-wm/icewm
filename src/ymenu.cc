@@ -1197,28 +1197,21 @@ void YMenu::paintItem(Graphics &g, const int i, const int l, const int t,
     else if (mitem->getSubmenu() != nullptr) {
         if (mitem->getAction() != actionNull) {
             g.setColor(menuBg);
-            if (false) {
-                drawBackground(g, width() - r - 1 -ih - pad, t + top + pad, ih, ih);
-                g.drawBorderW(width() - r - 1 - ih - pad, t + top + pad, ih - 1, ih - 1,
-                              active ? false : true);
-            } else {
-                g.setColor(menuBg->darker());
-                g.drawLine(cascadePos, t + top + pad,
-                           cascadePos, t + top + pad + ih);
-                g.setColor(menuBg->brighter());
-                g.drawLine(cascadePos + 1, t + top + pad,
-                           cascadePos + 1, t + top + pad + ih);
-            }
+            g.setColor(menuBg->darker());
+            g.drawLine(cascadePos, t + top + pad,
+                        cascadePos, t + top + pad + ih);
+            g.setColor(menuBg->brighter());
+            g.drawLine(cascadePos + 1, t + top + pad,
+                        cascadePos + 1, t + top + pad + ih);
             delta = (delta && active);
         }
+        int asize = (9 * menuIconSize) >> 4;
         if (wmLook == lookGtk || wmLook == lookMotif) {
-            int asize = 9;
             int ax = delta + width() - r - 1 - asize * 3 / 2;
             int ay = delta + t + top + pad + (ih - asize) / 2;
             g.setColor(menuBg);
             g.drawArrow(Right, ax, ay, asize, active);
         } else {
-            int asize = 9;
             int ax = width() - r - 1 - asize;
             int ay = delta + t + top + pad + (ih - asize) / 2;
             g.setColor(fg);

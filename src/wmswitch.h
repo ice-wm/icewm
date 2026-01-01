@@ -1,5 +1,6 @@
-#ifndef SWITCH_H
-#define SWITCH_H
+#ifndef WMSWITCH_H
+#define WMSWITCH_H
+#include "switcher.h"
 
 class YFrameWindow;
 class YWindowManager;
@@ -42,6 +43,7 @@ public:
 
     virtual bool isKey(const XKeyEvent& key) = 0;
     virtual unsigned modifiers() = 0;
+    virtual int nextKey(KeySym key) { return -1; }
 
     // Filter items by WM_CLASS
     virtual bool setWMClass(char* wmclass) = 0;
@@ -51,7 +53,7 @@ public:
     virtual void sort() { }
 };
 
-class SwitchWindow: public YPopupWindow {
+class SwitchWindow: public Switcher {
 public:
     SwitchWindow(YWindow* parent, ISwitchItems* items, bool verticalStyle);
     ~SwitchWindow();
@@ -59,7 +61,7 @@ public:
     virtual void paint(Graphics& g, const YRect& r) override;
     virtual void repaint() override;
 
-    void begin(bool zdown, unsigned mods, char* wmclass = nullptr);
+    void begin(bool zdown, unsigned mods, char* wmclass = nullptr) override;
 
     virtual void activatePopup(int flags) override;
     virtual void deactivatePopup() override;
@@ -68,22 +70,23 @@ public:
     virtual bool handleKey(const XKeyEvent& key) override;
     virtual void handleButton(const XButtonEvent& button) override;
     virtual void handleMotion(const XMotionEvent& motion) override;
-    void destroyedClient(YFrameClient* client);
-    void destroyedFrame(YFrameWindow* frame);
-    void createdFrame(YFrameWindow* frame);
-    void createdClient(YFrameWindow* frame, YFrameClient* client);
-    void transfer(YFrameClient* client, YFrameWindow* frame);
-    YFrameWindow* current();
+    void destroyedClient(YFrameClient* client) override;
+    void destroyedFrame(YFrameWindow* frame) override;
+    void createdFrame(YFrameWindow* frame) override;
+    void createdClient(YFrameWindow* frame, YFrameClient* client) override;
+    void transfer(YFrameClient* client, YFrameWindow* frame) override;
+    YFrameWindow* current() override;
 
 private:
     ISwitchItems* zItems;
     bool m_verticalStyle;
-    // backup of user's config, needs to be enforced temporarily
-    bool m_oldMenuMouseTracking;
     // remember what was highlighted by mouse tracking
     int m_hlItemFromMotion;
     // hints for fast identification of the entry under the cursor
     int m_hintAreaStart, m_hintAreaStep;
+    int m_hintAreaFirst, m_hintAreaLimit;
+    int m_hintAreaBanks, m_hintFirstBank;
+    int m_hintAreaOther, m_hintOtherEnds;
 
     int fWorkspace;
     ref<YImage> fGradient;

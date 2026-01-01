@@ -165,6 +165,7 @@ public:
     virtual void handleUnmap(const XUnmapEvent &unmap);
     virtual void handleDestroyWindow(const XDestroyWindowEvent &destroyWindow);
     virtual void handleClientMessage(const XClientMessageEvent &message);
+    virtual void handleDamageNotify(const XDamageNotifyEvent& damage);
 #ifdef CONFIG_SHAPE
     virtual void handleShapeNotify(const XShapeEvent &shape);
 #endif
@@ -263,6 +264,8 @@ public:
     void refreshIcon();
     void obtainIcon();
     ref<YIcon> getIcon();
+    bool haveMetaIcon() const { return fMetaIcon; }
+    ref<YImage> getMetaIcon();
 
     void setWorkspaceHint(int workspace);
 
@@ -349,6 +352,7 @@ private:
     bool fTimedOut;
     bool fFixedTitle;
     bool fIconize;
+    bool fMetaIcon;
     bool fPinging;
     long fPingTime;
     long fPid;
@@ -413,6 +417,7 @@ private:
         bool win_icons : 1;
         bool xembed_info : 1;
     } prop;
+
 private: // not-used
     YFrameClient(const YFrameClient &);
     YFrameClient &operator=(const YFrameClient &);

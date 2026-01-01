@@ -13,6 +13,7 @@
 #include "yicon.h"
 #include "wpixmaps.h"
 #include "yscrollview.h"
+#include "keysyms.h"
 
 #include "yxapp.h"
 #include "prefs.h"
@@ -246,18 +247,11 @@ void YListBox::repaint() {
 bool YListBox::handleKey(const XKeyEvent &key) {
     if (key.type == KeyPress) {
         KeySym k = keyCodeToKeySym(key.keycode);
+        k = mapKeypad(k);
         int m = KEY_MODMASK(key.state);
 
         bool clear = notbit(m, ControlMask);
         bool extend = hasbit(m, ShiftMask);
-
-        //int SelPos, OldPos = fFocusedItem, count = getItemCount();
-
-        //if (m & ShiftMask) {
-        //    SelPos = fFocusedItem;
-        //} else {
-        //    SelPos = -1;
-        //}
 
         switch (k) {
         case XK_Return:
@@ -558,12 +552,9 @@ void YListBox::paintItem(Graphics &g, int n) {
 
     ref<YIcon> icon = a->getIcon();
     if (icon != null) {
-        ref<YImage> scaled = icon->small();
-        if (scaled != null) {
-            int dx = xpos + x - fOffsetX;
-            int dy = y - fOffsetY + 1;
-            g.drawImage(scaled, dx, dy);
-        }
+        int dx = xpos + x - fOffsetX;
+        int dy = y - fOffsetY + 1;
+        icon->draw(g, dx, dy, getIconSize());
     }
 
     mstring title(a->getText());

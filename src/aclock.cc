@@ -16,6 +16,7 @@
 #include "wmapp.h"
 #include "prefs.h"
 #include "ymenuitem.h"
+#include <ctype.h>
 #include "intl.h"
 
 static const char AppletClockTimeFmt[] = "%T";
@@ -300,7 +301,7 @@ bool YClock::draw(Graphics& g) {
         memcpy(lastTime, str, TimeSize);
         drawn = prettyClock
              ? paintPretty(g, str, len)
-             : paintPlain(g, str, len);
+             : paintPlain(g, str, len, 2);
     }
 
     timezone(restore);
@@ -367,14 +368,14 @@ bool YClock::paintPretty(Graphics& g, const char* str, int len) {
     bool paint = false;
     if (prettyClock) {
         bool const mustFill = hasTransparency();
-        ref<YPixmap> z = getPixmap('8');
+        ref<YPixmap> z = getPixmap("8", 0, 1);
         int x = int(width());
         int y = (z != null && z->height() < height())
                 ? int(height() - z->height()) / 2 : 0;
 
         ++paintCount;
         for (int i = len - 1; x >= 0; i--) {
-            ref<YPixmap> pix(i >= 0 ? getPixmap(str[i]) : ledPixSpace);
+            ref<YPixmap> pix(i >= 0 ? getPixmap(str, i, len) : ledPixSpace);
             if (pix != null)
                 x -= pix->width();
 
@@ -408,13 +409,13 @@ bool YClock::paintPretty(Graphics& g, const char* str, int len) {
     return paint;
 }
 
-bool YClock::paintPlain(Graphics& g, const char* str, int len) {
+bool YClock::paintPlain(Graphics& g, const char* str, int len, int x) {
     fill(g);
     if (!prettyClock && (clockFont || (clockFont = clockFontName) != null)) {
         int y = clockFont->ascent() + (height() - 1 - clockFont->height()) / 2;
         g.setColor(clockFg);
         g.setFont(clockFont);
-        g.drawChars(str, 0, len, 2, y);
+        g.drawChars(str, 0, len, x, y);
     }
     return true;
 }
@@ -430,8 +431,10 @@ bool YClock::handleTimer(YTimer *t) {
     return false;
 }
 
-ref<YPixmap> YClock::getPixmap(char c) {
+ref<YPixmap> YClock::getPixmap(const char* str, int i, int len) {
     ref<YPixmap> pix;
+    bool alpha = false;
+    const char c = str[i];
     switch (c) {
     case '0':
     case '1':
@@ -460,32 +463,62 @@ ref<YPixmap> YClock::getPixmap(char c) {
     case 'p':
     case 'P':
         pix = ledPixP;
+        alpha = true;
         break;
     case 'a':
     case 'A':
         pix = ledPixA;
+        alpha = true;
         break;
     case 'm':
     case 'M':
         pix = ledPixM;
+        alpha = true;
         break;
     }
-    return pix;
+    if (alpha && pix != null) {
+        for (int k = i; --k >= 0 && isalpha((unsigned char) str[k]); ) {
+            if (strchr("AMPamp", str[k]) == nullptr) {
+                pix = null;
+                break;
+            }
+        }
+        for (int k = i; ++k < len && isalpha((unsigned char) str[k]); ) {
+            if (strchr("AMPamp", str[k]) == nullptr) {
+                pix = null;
+                break;
+            }
+        }
+    }
+    return pix != null ? pix : makePixmap(c);
 }
 
-int YClock::calcWidth(const char* str, int count) {
-    int len = 0;
+ref<YPixmap> YClock::makePixmap(char c) {
+    prettyClock = false;
+    ref<YPixmap> pix;
+    unsigned w = calcWidth(&c, 1);
+    if (w && ledPixNum[8] != null) {
+        pix = YPixmap::create(w, ledPixNum[8]->height(), depth());
+        Graphics g(pix);
+        paintPlain(g, &c, 1, 0);
+    }
+    prettyClock = true;
+    return pix != null ? pix : ledPixSpace;
+}
+
+int YClock::calcWidth(const char* str, int len) {
+    int width = 0;
     if (prettyClock) {
-        for (char c : YRange<const char>(str, count)) {
-            ref<YPixmap> pix = getPixmap(c);
+        for (int i = 0; i < len; ++i) {
+            ref<YPixmap> pix = getPixmap(str, i, len);
             if (pix != null)
-                len += pix->width();
+                width += pix->width();
         }
     }
     else if (clockFont || (clockFont = clockFontName) != null) {
-        len = clockFont->textWidth(str, count);
+        width = clockFont->textWidth(str, len);
     }
-    return len;
+    return width;
 }
 
 bool YClock::hasTransparency() {

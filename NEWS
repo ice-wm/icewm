@@ -1,407 +1,279 @@
-icewm -- history of user-visible changes.  2021-01-24
+icewm -- history of user-visible changes.  2025-08-31
 
-Release icewm-2.1.1 released 2021-01-24
+Release icewm-3.9.0 released 2025-08-31
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 2.1.0...2.1.1
+git shortlog --no-merges -e -n -w80,6,8 3.8.2...3.9.0
 
-Bert Gijsbers <gijsbers@science.uva.nl> (51):
-      Prepare 1.5.3 release
-      1.5.3
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.5.4 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.5.5 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.1 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.2 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.3 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.4 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.5 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.6.6 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.7.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.1 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.2 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.3 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.8.3 release bis
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.1 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.2 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.0.0 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.0.1 release
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.1.0 release
-      Provide drawable context when creating pixmap cursors with Imlib2 for
-        issue #541.
-      Don't unarm menu popup buttons for issue #527.
-      Fix issue #542 for texturing background of task pane.
-      Improve the isValid test for Imlib2 custom cursors.
-      Detail.
-      Moving towards 2.1.1.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
+      When truncating a title in icesh, respect UTF-8 codepoint boundaries.
+      Ensure that _NET_CLIENT_LIST_STACKING remains up-to-date.
+      Add wmSmartPlace method for KeyWinSmartPlace.
+      Add new -kovered filter to icesh to test if client is covered.
+      Correct red and blue in icesh commands loadicon and saveicon.
+      Ignore warning stringop-truncation for mstring.h.
+      Make inheritance of YApplication private.
+      Preserve the image mask as alpha when loading 24-bits images with Imlib2.
+      YListBox only uses small icons.
+      When scaling an YPixmap prefer to do it using libXrender.
+      Add support for themed cursors for gdk-pixbuf without libXpm.
+      Smart guess the cursor x/y-hotspot when absent. Add support for Xcursor.
+      Use the system cursor themes, when an icewm theme doesn't define a cursor.
+      Document Xcursor.
+      When lseek on /proc/net/dev fails, then avoid it. Closes #806.
+      Only warn for stringop-truncation when GCC is at least 8.0.
+      Fix missing endif.
+      Include libgen.h for basename on non-linux.
+      Argument to basename is non-const.
+      Fix parsing block comments in XPM headers.
 
-Nathan <ndowens04@gmail.com> (1):
-      Missing ytimer link
+dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (2):
+      Bump actions/checkout from 4 to 5
+      Bump actions/checkout from 4 to 5 (#805)
 
-gijsbers <gijsbers@users.noreply.github.com> (1):
-      Merge pull request #7 from ndowens/patch-1
+Javier Llorente <javier@opensuse.org> (1):
+      Translated using Weblate (Spanish)
 
-
-Release icewm-2.1.0 released 2021-01-23
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.0.1...2.1.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (9):
-      Revert "Clarify startMoveSize." to fix issue #540.
-      Split the TaskBarApp class in a button class and an app class for issue
-        #198.
-      Restore icesh setTrayOption and getTrayOption for issue #537. Make support
-        for "_NET_WM_FULLSCREEN_MONITORS" better conformant to EWMH spec. Add
-        "monitors", "frame", "properties" commands to icesh. Make preference
-        FullscreenUseAllMonitors use just all the monitors.
-      Fix dragging task buttons.
-      Disarm button on release of mouse for issue #527.
-      Remember maximized when fullscreen for issues #538 and #533.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.1.0 release
-
-Eduard Bloch <blade@debian.org> (3):
-      Option for Alt-F4ing windows in quick-switch
-      Restore the old position in quickswitch on window destruction
-      Option to move the ShowDesktop button to the right side
-
-
-Release icewm-2.0.1 released 2021-01-02
----------------------------------------
-
-git shortlog -e -n -w80,6,8 2.0.0...2.0.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (16):
-      Handle horizontal scroll keys in window list window.
-      Search for icewm icon for internal windows.
-      Fix setting option values for #535.
-      Allow to set background opacity for QuickSwitch background for #534.
-      Clarify startMoveSize.
-      Communicate the window ID of the icon window in WM_STATE when iconifying
-        to desktop.
-      Make isUrgent a member of ClientData.
-      Reset horizontal scrolling when using the Home and End keys for the window
-        list.
-      Add IceVM explanation to README for ice-wm/icewm#35
-      Update to 2.0.0.
-      Note that support was added for icon_pixmap and icon_window fields of
-        WM_HINTS property in 2.0.0.
-      Improve getting icon window for WM_STATE.
-      Fix spelling of Gerenciador for pt_BR.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.0.1 release
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
+Kempelen <lion@cmsbazar.hu> (1):
+      Translated using Weblate (Hungarian)
 
 Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
       Translated using Weblate (Portuguese (Brazil))
 
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
 
-
-Release icewm-2.0.0 released 2020-12-14
+Release icewm-3.8.2 released 2025-08-03
 ---------------------------------------
 
-git shortlog -e -n -w80,6,8 1.9.2...2.0.0
+git shortlog --no-merges -e -n -w80,6,8 3.8.1...3.8.2
 
-Bert Gijsbers <gijsbers@science.uva.nl> (58):
-      Fix positioning of window list title for non-standard SmallIconSize
-        settings for issue #514.
-      Remove wmmgr.h from wmframe.h. Add classHint() to ClientData.
-      Remove loseFocus().
-      Prefer actionPerformed().
-      Set task title.
-      Add support for Imlib2 as a possible replacement for gdk-pixbuf for issue
-        #513.
-      Improve alpha blending for Imlib2 support for issue #513.
-      Convert last IMLIB to IMLIB2.
-      Prevent unsigned overflow.
-      Add imlib2 to dependencies.
-      Improve rendering quality for MiniIcons for issue #513.
-      Free fAutoScroll when its YWindow is destroyed.
-      Improve alpha thresholding for Imlib2 support for issue #513.
-      Instead of render.h include Xrender.h for dependency checking for issue
-        #516.
-      Report errors if enabled packages are missing for issue #516.
-      Only change a schema key if it exists for issue ice-wm/man#1.
-      Don't resize when trying to move when dragging at y=0 for issue #520.
-      Add errno_string.
-      YLabel and YMsgBox use cstrings.
-      Add layouts for dialogs.
-      Add ylayout.h
-      Better MiniIcons for Imlib2. Support SVG in Imlib2.  Add renderName.
-      Show render engine in About. Use layout classes.
-      Support SVG in Imlib2. Make Imlib2 the default render engine.
-      Add libimlib2-dev dependency.
-      If Imlib2 then disable GdkPixbuf.
-      Fix for showing the icon_pixmap from WM_HINTS, which fixes the icon for
-        NEdit and xmgrace.
-      XGetGeometry returns True.
-      Center MiniIcon.
-      Remove superfluous.
-      Fixes for showing the icon_pixmap from WM_HINTS for timidity and
-        fontforge.
-      Check for destroyed when reparenting.
-      Add more WM_HINTS accessor functions. Check if WM_HINTS update actually
-        changes anything.
-      In unmanage first delete MiniIcon.
-      Add support for WM_HINTS icon_window in MiniIcons.
-      Prevent deprecated warnings for librsvg.
-      Simplify call to nl_langinfo and improve readability.
-      Remove unwanted space and separator in taskbar if toolbar is empty for
-        issue #524.
-      Fix typo for yorigin in composite.
-      Drop const from parameters.
-      Fix for drawing TitleAB and TitleIB pixmaps when they are gradients for
-        issue #523.
-      Don't blend MiniIcon when not in 32-bit mode.
-      Don't unroll on button press for issue #525.
-      Remove support for _WIN_PROTOCOL properties.
-      Update man.
-      Subtract border from icon_window position in MiniIcon.
-      Update 4.1.9 Icons for icon_pixmap and icon_window.
-      Tests for ypointer.h.
-      Use _NET_WM_STATE_HIDDEN instead of IconicState for minimize.
-      Ignore graphics exposures when in scrollWindow.
-      Optimize scrollbars.
-      Fix horizontal scrolling in icehelp.
-      Optimize scrolling images in iceview.
-      Reposition window list if it got offscreen.
-      make update-po
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 2.0.0 release
+Bert Gijsbers <gijsbers@science.uva.nl> (15):
+      Use foldspaces to remove extraneous spaces.
+      Also minimize fullscreen windows when clicking on a task button. Document
+        the minimization feature of task buttons and the Ctrl modifier.
+      Fix for keeping a menu inside the screen area.
+      Fixes for adjusting the workarea when moving/sizing a do-not-cover window
+        for issue #356.
+      Fix to resize maximized windows when workarea grows and fix to recompute
+        the workarea when a dock exits for issue #356.
+      Don't synchronize with icewm after _NET_WORKAREA changes as it slows icewm
+        down.
+      Fix typo for issue #356.
+      When the workarea changes, adjust the positions of all desktop icons.
+      Drop excessive use of square brackets around double quotes.
+      Improve the abstractions for the doNotCover computation inside
+        updateWorkAreaInner.
+      Add new "switchmenu" and "print" actions to icesh to use icesh in a
+        "switchkey" definition in the "keys" file.
+      Make the -Z filter work on non-Linux.
+      Add mlterm for OpenBSD.
+      Explain Dock layer.
+      Prepare 3.8.2 release
+
+
+Release icewm-3.8.1 released 2025-07-14
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.8.0...3.8.1
+
+Bert Gijsbers <gijsbers@science.uva.nl> (20):
+      Reduce the size of a DTheme from 88 bytes to 32 bytes.
+      Reduce the amount of memory needed for keybindings from the "keys" file.
+      Allow to reload the toolbar from the dialog.
+      Document that the OpenCommand is for the Start menu.
+      Make the BrowseMenu much faster and use less memory. Drop the DFile.
+      Focus the first item in a browse menu.
+      Simplify icewm actions.
+      Simplify handleSMAction where WMAction equals YAction.
+      Remove the IApp from DObject and DProgram to save some memory.
+      Permit dots in theme directory names.
+      Only use C strings in nextExt.
+      Only use C strings in endsWith and startsWith.
+      Document that a toolbar is a also a menu.
+      Restore previous code for calculating the amount of User Memory and closes
+        ice-wm/icewm#199.
+      Drop unused offset from mstring to save 8 bytes per mstring.
+      Drop the fCount field from mstring to save 8 bytes per mstring.
+      Always keep message dialogs above the WindowList.
+      Use the precise buffer length for a mstring of long.
+      Prevent 2 Clang warnings.
+      Prepare 3.8.1 release
+
+Kempelen <lion@cmsbazar.hu> (1):
+      Translated using Weblate (Hungarian)
+
+
+Release icewm-3.8.0 released 2025-06-22
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.5...3.8.0
+
+Bert Gijsbers <gijsbers@science.uva.nl> (23):
+      Include sr in LINGUAS.
+      Optimize the CPU graph when taskbarbg.xpm is a gradient and
+        ColorCPUStatusIdle is the empty string.
+      Optimization of the CPU graph.
+      Avoid work for translators for now.
+      Optimize the MEM graph to reduce the background load of icewm.
+      Optimize renderToPixmap for the imlib2 layer.
+      Convert a hotkey to uppercase with respect for the current locale.
+      YMenuItem doesn't need to be virtual.
+      Convert HotChars in a menu to uppercase with respect for the current
+        locale.
+      Convert button hotkeys to uppercase with respect for the current locale.
+      Use the taskbar parameters consistently.
+      Add Help actions.
+      Plus the launhHelp declaration.
+      Convert case in mstrings with respect to the current locale.
+      Clear array in ObjectMenu discard.
+      Add discard declaration to the ObjectMenu.
+      Drop the obsolete toUpper from ASCII.
+      Optimize the Themes menu. First popup the Themes menu and only then look
+        for theme alternatives. Provide a theme button preview to the themes
+        Menu. Extend the Help menu.
+      Silence clang warnings on OpenBSD.
+      Prefer a non-deterministic random number generator.
+      Remove surplus right-square-bracket.
+      Prefer gtar to install themes on OpenSolaris/OpenIndiana.
+      Prepare 3.8.0 release
+
+Jure Repinc <jlp@holodeck1.com> (3):
+      Translated using Weblate (Slovenian)
+      Translated using Weblate (Slovenian)
+      Translated using Weblate (Slovenian)
+
+Саша Петровић <salepetronije@gmail.com> (3):
+      Translated using Weblate (Serbian)
+      Translated using Weblate (Serbian)
+      Translated using Weblate (Serbian)
+
+Eduard Bloch <blade@debian.org> (1):
+      Mention --postpreferences in usage info
+
+
+Release icewm-3.7.5 released 2025-05-25
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.4...3.7.5
+
+Bert Gijsbers <gijsbers@science.uva.nl> (15):
+      Silence Clang about VLAs.
+      Add support for svgz to icewmbg.
+      Rename findWindow(int) to findByFlags.
+      Plug a few leaks in icewm-menu-fdo.
+      Fix comparing language codes for issue #800. Support three-letter language
+        codes.
+      Document the new -l,--lang option for icewm-menu-fdo.
+      Revert "Plug a few leaks in icewm-menu-fdo." and closes #801. This reverts
+        commit a0c98f2f95ba8a363830165b1a593f1108636217.
+      Allow setGeometry for windows without a WM_NORMAL_HINTS property in icesh.
+      Ignore key repeats in the runonce command for keys for issue
+        ice-wm/icewm#175. Document the runonce command for keys.
+      Silence compiler on unknown pragmas.
+      Drop the "--debug-z" option. For each over workspaces. For frames the
+        lower and raise should be empty.
+      Add unionRect for a YRect parameter.
+      Prefer activateWindow over setFocus for the WindowList.
+      When toggling the WindowList, raise the WindowList if it is overlapped.
+      Prepare 3.7.5 release
+
+David Medina <medipas@gmail.com> (1):
+      Translated using Weblate (Catalan)
+
+Feike Donia <feikedonia@proton.me> (1):
+      Translated using Weblate (Dutch)
+
+Саша Петровић <salepetronije@gmail.com> (1):
+      Added translation using Weblate (Serbian)
+
+
+Release icewm-3.7.4 released 2025-04-21
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.3...3.7.4
+
+Bert Gijsbers <gijsbers@science.uva.nl> (26):
+      Lower minimum required CMake version to 3.5.
+      Fix CMake LTO build.
+      Remove obsolete CMake warning for SVG library.
+      Let icesh don't loop when interrupted.
+      Use X-resource library 1.2 to reliably obtain process identifiers of
+        client windows. Add the "toolbar" command to icesh to let icewm reload
+        the toolbar configuration.
+      Add xres_LDFLAGS to icewm_libs for CMake.
+      Add a toolbar button to the CAD-dialog.
+      Return first found PID in getNetWMPid.
+      Better fix for getNetWMPid sorry.
+      Add xres to dependencies.
+      Make XRes disableable in configure. Up version to 3.7.3.
+      Make XRes disableable in the CMake build.
+      Give which a backup in rebuild.sh.
+      Remove debugging statements.
+      Add a --replace option to icewm-session.
+      Add -Z filter to icesh to select only terminals.
+      Drop old obsolete icons.
+      Change default theme to icedesert.
+      Fix the stacking order when a QuickSwitch ends.
+      Replace -lXRes with $(XRES_LIBS) for icesh.
+      Improve CAD-dialog up-down traversal.
+      In getLastFocus, ignore unmanaged frames.
+      Restack the windows after a QuickSwitch has ended.
+      Fix typo.
+      Permit some global keys in case the global keybinds are not active.
+      Prepare 3.7.4 release
+
+Dmitriy Khanzhin <jinn@altlinux.org> (2):
+      Translated using Weblate (Russian)
+      Translated using Weblate (Russian)
+
+Gemineo <vistatec@gemineo.de> (2):
+      Translated using Weblate (German)
+      Translated using Weblate (German)
+
+Davide Aiello <davide.aiello@novilingulists.com> (1):
+      Translated using Weblate (Italian)
+
+Emily Dong <Emily.Dong@excel-gits.com> (1):
+      Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+Fran Serrador <serrador@proton.me> (1):
+      Translated using Weblate (Spanish)
+
+Grace Yu <grace.yu@excel-gits.com> (1):
+      Translated using Weblate (Chinese (China) (zh_CN))
+
+Samanta Magalhaes <samanta_texttrans@outlook.com> (1):
+      Translated using Weblate (Portuguese (Brazil))
+
+Sophie Leroy <sophie@stoquart.com> (1):
+      Translated using Weblate (French)
+
+
+Release icewm-3.7.3 released 2025-03-30
+---------------------------------------
+
+git shortlog --no-merges -e -n -w80,6,8 3.7.2...3.7.3
+
+Bert Gijsbers <gijsbers@science.uva.nl> (10):
+      Fix --disable-librsvg. Don't barf when --without-icesound. Update READMEs.
+      Set a title to the dock window.
+      Add the usertime and x11time commands to icesh.
+      Remove the remnants of the root proxy window. Only set focus to the icewm
+        top window when it hasn't focus yet.
+      Remove DESKTOP_AUTOSTART_ID, DESKTOP_STARTUP_ID, XDG_ACTIVATION_TOKEN
+        variables from the environment.
+      Improve support for _NET_WM_USER_TIME and _NET_STARTUP_ID for issue #799.
+      Fix typo for fUserTimeWindow in getUserTime.
+      Startup notification says to always accept updates to _NET_STARTUP_ID.
+      Fix compiler error on missing include errno.h.
+      Prepare 3.7.3 release
 
 Eduard Bloch <blade@debian.org> (5):
-      Revert "Revert "Stop overpainting clock every second when not needed""
-      [cmake] Print CONFIG_IMLIB2 variable status
-      No attempt to draw Unicode in non-UTF-8 environment
-      Check CONFIG_I18N prior to calling nl_langinfo
-      If-case formating fix
+      Make location of nanosvg header customizable
+      By default, try fallback to non-specific Sans or non-bold
+      Fix cmake warning about wrong COMMENT arguments
+      Upgrade min.req. of CMake to version 3.10
+      App name filter shall consider the command line too
 
-Claudio Cesar de Sá <ccs1664@gmail.com> (1):
-      support BR_Portuguese language in 2 files /lib (#522)
-
-
-Release icewm-1.9.2 released 2020-11-10
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.9.1...1.9.2
-
-Bert Gijsbers <gijsbers@science.uva.nl> (12):
-      Remove setDND.
-      Move DND to subclass YDndWindow.
-      Show toolbar button titles.
-      Simplify use of XClassHint.
-      Do XAllowEvents first.
-      Prevent inadvertent growing of windows in issue #512.
-      Improve logConfigureNotify details.
-      Use just one set of XSizeHints for issue ice-wm/icewm#28.
-      make update-po
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.2 release
-
-
-Release icewm-1.9.1 released 2020-11-05
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.9.0...1.9.1
-
-Bert Gijsbers <gijsbers@science.uva.nl> (19):
-      Update to 1.9.0.
-      Define colors at top and lighten up the grey a bit.
-      Catch changes in width_inc and height_inc for #510.
-      Only direct focus if frame is mapped.
-      Handle _WIN_LAYER messages via actionPerformed.
-      Fix for changing layers when ABOVE or BELOW bit is set.
-      Use a minimum delay of 10 ms for taskbar delays to avoid #508.
-      Explain where delays are in milliseconds.
-      Apply SKIP_PAGER for PagerShowPreview.
-      Remove unused frame members.
-      Add actionLayers. Switch on action in actionPerformed.
-      Remove unused.
-      Update XDND version from 3 to 5.
-      make update-po
-      Update XDND protocol implementation.
-      Fix compilation on OpenBSD.
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.1 release
-
-
-Release icewm-1.9.0 released 2020-10-29
----------------------------------------
-
-git shortlog -e -n -w80,6,8 1.8.3...1.9.0
-
-Bert Gijsbers <gijsbers@science.uva.nl> (52):
-      Update to 1.8.3
-      Properly handle name lookup failure for mailboxes for issue #493.
-      Don't reconfigure the taskbar if unnecessary.
-      Allow 'Above' as a synonym for 'OnTop'.
-      Add --valgrind and --catchsegv options to icewm-session for debugging.
-      Add setType and getType to icesh for _NET_WM_WINDOW_TYPE.
-      Only test subwindow if indicators are created.
-      Always send one synthetic ConfigureNotify on initial window map for issue
-        #492. Remove resize indicators when unneeded. Reduce redraws in title
-        bar. Support incomplete _MOTIF_WM_HINTS property for mlterm.
-      Add missing getProtocols to message dialog to fix issue #494.
-      Help on debugging options.
-      Restore Motif hints functionality.
-      Workaround for the MWM ALL hack.
-      Print property details for WM_STATE and _WIN_STATE.  Show Fullscreen in
-        symbols.
-      Avoid compiler warning for chdir.
-      Make YProperty iterable.
-      Simplify and reduce LOC. Optimize frame doManage to eliminate a call to
-        updateMwmHints. In updateMwmHints try without configureClient. Add
-        FULLSCREEN to _NET_WM_ACTIONs. Benefit from iterable YProperty.
-      make update-po
-      Benefit from iterable YProperty.
-      Improved response to changes in Motif hint property which avoids resizing
-        client when border toggles.
-      Add pseudo state WinStateUnmapped
-      Check only one menu entry for fullscreen or maximized. Fix minimize check.
-      Several fixes for correct PagerShowPreview updates for #496. Fix desktop
-        mini icon for fullscreen windows. Allow at most one of fullscreen or
-        maximized. Allow at most one of rollup, minimized, hidden. Don't
-        activate fullscreen window on startup when it is unmapped. Handle
-        _NET_WM_STATE change requests via the frame wm functions.
-      Add sticky, unsticky, borderless, bordered.
-      More succinct.
-      Typo
-      Prefer to handle client message requests via actionPerformed for
-        consistency. Make AllWorkspaces consistent with Sticky.
-      Use isAllWorkspaces instead of isSticky, because the latter was unused by
-        icewm.
-      Set check flag for AllWorkspaces.
-      Add missing spaces.
-      Assume the _NET_RESTACK_WINDOW support from 1.8.3.
-      Fix requests switching between different maximizations. Move
-        _NET_RESTACK_WINDOW request to its dedicated function.
-      Eliminate some preprocessor checks.
-      Fixes for TaskBarAutoHide for #499. Don't hide when taskbar is collapsed.
-      Handle requests for layer changes via actionPerformed to improve
-        consistency.
-      Optimize loading of configuration.
-      Simplify introductions.
-      Fix compilation warnings. Fix iteration errors.
-      Update logevents.
-      In progpath insist on a regular file.
-      Prefer actionPerformed on window key bindings.
-      Workaround for non-standard behavior of xnec2c in issue #503. Simplify
-        mapClient.
-      Prefer actionPerformed on window key bindings.
-      Record and size resizes when fullscreen to saved size hints. Permit size
-        hints width_inc and height_inc to be zero to disable maximization.
-      Revert "Stop overpainting clock every second when not needed" Because it
-        causes valgrind errors like: "Conditional jump or move depends on
-        uninitialised value(s)". It also changes lines for which there is no
-        justification to change them. This reverts commit
-        54f8e02959e73f5a7fce7ab6a84a45943bd46a90.
-      Use accessors. Fix for Xmgrace in #506. Simplify manageClient.
-      Improve meaning of taskbar edge trigger timer.
-      Prevent a frame without a client.
-      Use default parameter of unmanage.
-      make update-po
-      Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      Merge branch 'icewm-1-4-BRANCH'
-      Prepare 1.9.0 release
-
-Eduard Bloch <blade@debian.org> (15):
-      Add recent icons to AM
-      Fix invalid application type
-      Also drop the menu category from session description
-      Inline an external data fetching function
-      Drop extra functionality for ISDN status display
-      Compacting the network colleting classes even further
-      Work around compiler warnings on PowerPC
-      Improve Graphics::drawStringEllipsis
-      Revival of Unicode Ellipsis integration
-      Stop overpainting clock every second when not needed
-      Set override flags consistently in YXftFont
-      Merge remote-tracking branch 'bbidulock/icewm-1-4-BRANCH' into
-        icewm-1-4-BRANCH
-      More use of unicode ellipsis
-      Apply icon theme blacklisting also to private dirs
-      Simplify basename extraction
-
-Aleš Kastner <alkas@volny.cz> (1):
-      Translated using Weblate (Czech)
-
-David Medina <medipas@gmail.com> (1):
-      Translated using Weblate (Catalan)
-
-Ferdinand Galko <galko.ferdinand@gmail.com> (1):
-      Translated using Weblate (Slovak)
-
-Freek de Kruijf <freek@opensuse.org> (1):
-      Translated using Weblate (Dutch)
-
-Hugo Carvalho <hugokarvalho@hotmail.com> (1):
-      Translated using Weblate (Portuguese)
-
-Kukuh Syafaat <syafaatkukuh@gmail.com> (1):
-      Translated using Weblate (Indonesian)
-
-Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
-      Translated using Weblate (Portuguese (Brazil))
-
-Panwar <caspian7pena@gmail.com> (1):
-      Translated using Weblate (Hindi)
-
-Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
-      Translated using Weblate (Japanese)
+Mehmet Akif 9oglu <madanadam@gmail.com> (1):
+      Translated using Weblate (Turkish)
 

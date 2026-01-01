@@ -636,6 +636,7 @@ with dimensions at most 256, a depth of 4, and type I<RGB_ALPHA>.
 
 Save an icon to a new file in the PAM image format. Digits are
 increased to generate a unique new filename for each window.
+The window must have a I<_NET_WM_ICON> property.
 
 =item B<usertime>
 
@@ -764,6 +765,15 @@ subsequent workspace or C<prev> for the preceding workspace.
 
 Print the number of workspaces if I<COUNT> is not given,
 otherwise set the number of workspaces to I<COUNT>.
+
+=item B<getWorkspaceName> I<INDEX>
+
+Print the name of workspace I<INDEX>, where I<INDEX> is
+a workspace number starting from zero.
+
+=item B<getWorkspaceNames>
+
+Print the name of all workspaces, one per line of output.
 
 =item B<setWorkspaceName> I<INDEX> I<NAME>
 
@@ -1093,8 +1103,8 @@ Here is a different solution using conditionals.
 
     icesh -f if -P _NET_FRAME_EXTENTS=0 then bordered else borderless
 
-Here is a conditional to either toggle the visibility of a roxterm
-that has a WM_ROLE value of C<special> or start it with B<runonce>.
+Here is a conditional to either toggle the visibility of a roxterm that
+has a WM_WINDOW_ROLE value of C<special> or start it with B<runonce>.
 
     icesh if -c roxterm.Roxterm -R special then \
         if -v then hide \
@@ -1159,7 +1169,7 @@ L<xwininfo(1)>, L<XParseGeometry(3)>.
 
 =head2 BUGS
 
-Please report bugs at L<https://github.com/bbidulock/icewm/issues>.
+Please report bugs at L<https://github.com/ice-wm/icewm/issues>.
 
 =head2 AUTHOR
 

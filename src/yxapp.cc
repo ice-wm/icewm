@@ -8,8 +8,10 @@
 #include "yxcontext.h"
 #include "yconfig.h"
 #include "guievent.h"
+#include "ascii.h"
 #include "intl.h"
 #undef override
+#include <ctype.h>
 #include <X11/Xproto.h>
 #ifdef XINERAMA
 #include <X11/extensions/Xinerama.h>
@@ -1460,6 +1462,23 @@ bool YXApplication::windowExists(Window handle) const {
     return XGetWindowAttributes(display(), handle, &attributes);
 }
 
+Picture YXApplication::createPicture(Pixmap pixmap, XRenderPictFormat* format)
+    const {
+    return XRenderCreatePicture(display(), pixmap, format, None, nullptr);
+}
+
+void YXApplication::freePicture(Picture picture) const {
+    XRenderFreePicture(display(), picture);
+}
+
+Pixmap YXApplication::createPixmap(unsigned wid, unsigned hei, unsigned dep) {
+    return XCreatePixmap(display(), root(), wid, hei, dep);
+}
+
+void YXApplication::freePixmap(Pixmap pixmap) const {
+    XFreePixmap(xapp->display(), pixmap);
+}
+
 void YXPoll::notifyRead() {
     owner()->handleXEvents();
 }
@@ -1490,6 +1509,7 @@ YTextProperty::YTextProperty(const char* str) {
 YTextProperty::YTextProperty(Window handle, Atom property) {
     nitems = 0;
     value = nullptr;
+    YProperty::fRequest = property;
     if (XGetTextProperty(xapp->display(), handle, this, property)) {
         if (encoding == _XA_COMPOUND_TEXT) {
             char** list = nullptr;
@@ -1500,8 +1520,30 @@ YTextProperty::YTextProperty(Window handle, Atom property) {
                 XFreeStringList(list);
                 XFree(value);
                 value = (unsigned char *) copy;
+                nitems = copy ? int(strlen(copy)) : 0;
                 encoding = XA_STRING;
+                format = 8;
             }
+        }
+        const int limit = 128;
+        if (nitems > limit) {
+            using namespace ASCII;
+            unsigned char* s = value + limit;
+            while (s > value && (utf0(*s) ||
+                   is_combining_mark(codepoint(s)))) {
+                --s;
+            }
+            *s = '\0';
+            nitems = s - value;
+            value = (unsigned char *) realloc(value, nitems + 1);
+        }
+        if (nitems > 0 && isspace(value[nitems - 1])) {
+            unsigned char* s = value + nitems;
+            while (s > value && isspace(s[-1])) {
+                *--s = '\0';
+            }
+            nitems = s - value;
+            value = (unsigned char *) realloc(value, nitems + 1);
         }
     }
 }

@@ -106,9 +106,9 @@ XIV(bool, quickSwitchAllIcons,                  true)
 XIV(bool, quickSwitchTextFirst,                 false)
 XIV(bool, quickSwitchVertical,                  true)
 XIV(bool, quickSwitchSmallWindow,               false)
-XIV(bool, quickSwitchMaxWidth,                  false)
 XIV(bool, quickSwitchHugeIcon,                  false)
 XIV(bool, quickSwitchFillSelection,             false)
+XIV(bool, quickSwitchPreview,                   false)
 XIV(bool, countMailMessages,                    false)
 XIV(bool, strongPointerFocus,                   false)
 XIV(bool, snapMove,                             true)
@@ -302,14 +302,14 @@ cfoption icewm_preferences[] = {
     OBV("QuickSwitchToAllWorkspaces",           &quickSwitchToAllWorkspaces,    "Include windows from all workspaces in Alt+Tab"),
     OBV("QuickSwitchGroupWorkspaces",           &quickSwitchGroupWorkspaces,    "Group windows by workspace together in Alt+Tab"),
     OIV("QuickSwitchPersistence",               &quickSwitchPersistence, 0, 86400, "Time in seconds to remember the state of Alt+Tab"),
-    OBV("QuickSwitchRaiseCandidate",            &quickSwitchRaiseCandidate,     "Raise a selected window while Alt+Tabbing in the QuickSwitch"),
+    OBV("QuickSwitchRaiseCandidate",            &quickSwitchRaiseCandidate,     "Raise a selected window while Alt+Tabbing"),
     OBV("QuickSwitchAllIcons",                  &quickSwitchAllIcons,           "Show all reachable icons when quick switching"),
     OBV("QuickSwitchTextFirst",                 &quickSwitchTextFirst,          "Show the window title above (all reachable) icons"),
     OBV("QuickSwitchSmallWindow",               &quickSwitchSmallWindow,        "Create a smaller QuickSwitch window of 1/3 screen width"),
-    OBV("QuickSwitchMaxWidth",                  &quickSwitchMaxWidth,           "Go trough all window titles and choose width of the longest one"),
     OBV("QuickSwitchVertical",                  &quickSwitchVertical,           "Place the icons and titles vertical instead of horizontal"),
-    OBV("QuickSwitchHugeIcon",                  &quickSwitchHugeIcon,           "Show the huge (48x48) of the window icon for the active window"),
+    OBV("QuickSwitchHugeIcon",                  &quickSwitchHugeIcon,           "Show the huge window icon for the active window"),
     OBV("QuickSwitchFillSelection",             &quickSwitchFillSelection,      "Fill the rectangle highlighting the current icon"),
+    OBV("QuickSwitchPreview",                   &quickSwitchPreview,            "Use a QuickSwitch that shows previews of applications"),
     OBV("GrabRootWindow",                       &grabRootWindow,                "Manage root window (EXPERIMENTAL - normally enabled!)"),
     OBV("SnapMove",                             &snapMove,                      "Snap to nearest screen edge/window when moving windows"),
     OBV("EdgeSwitch",                           &edgeHorzWorkspaceSwitching,    "Workspace switches by moving mouse to left/right screen edge"),
@@ -390,7 +390,6 @@ cfoption icewm_preferences[] = {
 #ifdef CONFIG_SHAPE
     OBV("ShapesProtectClientWindow",            &protectClientWindow,           "Don't cut client windows by shapes set trough frame corner pixmap"),
 #endif
-    OBV("DoubleBuffer",                         &doubleBuffer,                  "Use double buffering when redrawing the display"),
     OBV("XRRDisable",                           &xrrDisable,                    "Disable use of new XRANDR API for dual head (nvidia workaround)"),
     OBV("PreferFreetypeFonts",                  &fontPreferFreetype,            "Favour Xft fonts over core X11 fonts where possible"),
     OIV("DelayFuzziness",                       &DelayFuzziness, 0, 100,        "Delay fuzziness in ms, to allow merging of multiple timer timeouts into one for notebook power saving"),
@@ -581,7 +580,7 @@ cfoption icewm_preferences[] = {
 
 #if defined(GENPREF) || defined(WMAPP)
 
-static bool alphaBlending;
+static bool alphaBlending = true;
 static bool synchronizeX11;
 static const char* outputFile;
 static const char* splashFile(ICESPLASH);

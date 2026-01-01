@@ -2,10 +2,10 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([icewm],[3.7.3],
-        [https://github.com/bbidulock/icewm/issues],
+AC_INIT([icewm],[3.9.0],
+        [https://github.com/ice-wm/icewm/issues],
         [icewm],[https://ice-wm.org])
-AC_REVISION([3.7.3])
+AC_REVISION([3.9.0])
 
 # set better defaults
 AC_PREFIX_DEFAULT([/usr])
@@ -22,10 +22,10 @@ AC_CONFIG_AUX_DIR([scripts])
 AC_USE_SYSTEM_EXTENSIONS
 AC_CANONICAL_TARGET
 
-DATE='2025-03-30'
+DATE='2025-08-31'
 AC_SUBST([DATE])
 
-MDOCDATE='March 30, 2025'
+MDOCDATE='August 31, 2025'
 AC_SUBST([MDOCDATE])
 
 BRANCH='icewm-1-4-BRANCH'
@@ -432,6 +432,7 @@ then
            test -s src/nanosvgrast.h
         then
             AC_DEFINE([CONFIG_NANOSVG],[1],[Define to enable nanosvg rendering.])
+            image_library="$image_library nanosvg"
         else
             AC_MSG_WARN([Nanosvg includes are missing. SVG is not supported.])
         fi
