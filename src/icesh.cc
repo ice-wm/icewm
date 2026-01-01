@@ -861,7 +861,7 @@ public:
                 for (int i = 0; i < num; ++i) {
                     size += 1 + strlen(i == index ? name : fList[i]);
                 }
-                char* data = (char *) malloc(size);
+                char* data = (char *) malloc(size + 1);
                 char* copy = data;
                 if (copy) {
                     copy[size] = '\0';
@@ -1779,6 +1779,8 @@ private:
     void setWindowType(const char* arg);
     bool addWorkspace();
     bool listWorkspaces();
+    bool getWorkspaceName();
+    bool getWorkspaceNames();
     bool setWorkspaceName();
     bool setWorkspaceNames();
     void changeState(const char* arg);
@@ -2024,7 +2026,9 @@ public:
 
     long count() const { return max(*fCount, 1L); }
     operator bool() const { return fCount && fNames; }
-    bool valid(long i) const { return inrange(i, 0L, count() - 1L); }
+    bool valid(long i) const {
+        return inrange(i, 0L, count() - 1L) && i < fNames.count();
+    }
     const char* operator[](int i) const {
         return valid(i) ? fNames[i] : (i == -1) ? "All" : "";
     }
@@ -2273,14 +2277,11 @@ void IceSh::details(Window w)
     if (len > size - 4) {
         len = size - 4;
         int cp = 0;
-        while (cp > -3 && utf0(name[len + cp])) {
+        while (len + cp > 0 && (utf0(name[len + cp]) ||
+               is_combining_mark(codepoint(&name[len + cp])))) {
             cp--;
         }
-        if (utf1(name[len + cp]) ||
-            utf2(name[len + cp]) ||
-            utf3(name[len + cp])) {
-            len += cp;
-        }
+        len += cp;
         name[len] = '\0';
     }
     char title[size] = "";
@@ -2973,22 +2974,44 @@ bool IceSh::addWorkspace()
     char* name = getArg();
     YCardinal prop(root, ATOM_NET_NUMBER_OF_DESKTOPS);
     if (prop) {
-        long workspace = *prop;
-        if (inrange(workspace, 0L, 1233L)) {
-            send(ATOM_NET_NUMBER_OF_DESKTOPS, root, workspace + 1L, 0L);
-            for (int i = 0; i < 3; ++i) {
-                doSync();
-                prop.update();
-                if (prop && workspace < *prop) {
-                    YTextProperty names(root, ATOM_NET_DESKTOP_NAMES, YEmby);
-                    names.set(int(workspace), name);
-                    names.commit();
-                    doSync();
-                    break;
-                }
-            }
+        long count = *prop;
+        if (inrange(count, None, 1233L)) {
+            YTextProperty names(root, ATOM_NET_DESKTOP_NAMES, YEmby);
+            names.set(int(count), name);
+            names.commit();
+            doSync();
+            send(ATOM_NET_NUMBER_OF_DESKTOPS, root, count + 1L, 0L);
         }
     }
+    return true;
+}
+
+bool IceSh::getWorkspaceName()
+{
+    if ( !isAction("getWorkspaceName", 1))
+        return false;
+
+    char* id = getArg();
+    long ws;
+    if (id && tolong(id, ws) && inrange(ws, None, 1233L)) {
+        YTextProperty names(root, ATOM_NET_DESKTOP_NAMES, YEmby);
+        if (ws < names.count()) {
+            puts(names[ws]);
+        }
+    }
+    return true;
+}
+
+bool IceSh::getWorkspaceNames()
+{
+    if ( !isAction("getWorkspaceNames", 0))
+        return false;
+
+    YTextProperty names(root, ATOM_NET_DESKTOP_NAMES, YEmby);
+    for (int i = 0; i < names.count(); ++i) {
+        puts(names[i]);
+    }
+
     return true;
 }
 
@@ -3000,7 +3023,7 @@ bool IceSh::setWorkspaceName()
     char* id = getArg();
     char* nm = getArg();
     long ws;
-    if (id && nm && tolong(id, ws)) {
+    if (id && nm && tolong(id, ws) && inrange(ws, None, 1233L)) {
         YTextProperty names(root, ATOM_NET_DESKTOP_NAMES, YEmby);
         names.set(int(ws), nm);
         names.commit();
@@ -3465,6 +3488,8 @@ bool IceSh::icewmAction()
     return guiEvents()
         || setWorkspaceNames()
         || setWorkspaceName()
+        || getWorkspaceNames()
+        || getWorkspaceName()
         || listWorkspaces()
         || addWorkspace()
         || listScreens()
@@ -4110,6 +4135,12 @@ void IceSh::showProperty(Window window, Atom atom, const char* prefix) {
             if (h.flags & PBaseSize) {
                 printf(" Base(%d,%d)", h.base_width, h.base_height);
             }
+            if (h.flags & PWinGravity) {
+                const char* name = nullptr;
+                if (gravities.lookup(h.win_gravity, &name)) {
+                    printf(" %s", name);
+                }
+            }
             newline();
         }
         return;
@@ -4384,10 +4415,18 @@ void IceSh::loadIcon(Window window, char* file)
                 setProp(window, ATOM_NET_WM_ICON, XA_CARDINAL,
                         card, 2 + width * height);
                 delete[] card;
+                if ( !quietude)
+                    printf("Loaded icon from %s to window 0x%lx\n", file, window);
+            } else {
+                warn("Insufficient icon data in file %s", file);
             }
             delete[] data;
+        } else {
+            warn("Unsuitable icon header in file %s", file);
         }
         close(fd);
+    } else {
+        fail("Could not load icon from %s", file);
     }
 }
 
@@ -4417,7 +4456,9 @@ void IceSh::saveIcon(Window window, char* file)
             }
         }
         if (bestW && bestH) {
-            for (int i = 0; i <= 100; ++i) {
+            bool nomore = false;
+            int loop = -1;
+            while (++loop <= 100) {
                 const int flags = O_WRONLY | O_CREAT | O_EXCL | O_NOFOLLOW;
                 const int fd = open(file, flags, 0600);
                 if (fd == -1 && errno == EEXIST) {
@@ -4425,14 +4466,18 @@ void IceSh::saveIcon(Window window, char* file)
                     while (k >= 0 && file[k] != '/' &&
                             (file[k] < '0' || '8' < file[k]))
                         --k;
-                    if (k < 0 || file[k] < '0' || '8' < file[k])
+                    if (k < 0 || file[k] < '0' || '8' < file[k]) {
+                        nomore = true;
                         break;
+                    }
                     ++file[k];
                     while (file[k + 1] == '9')
                         file[++k] = '0';
                 }
-                else if (fd == -1)
+                else if (fd == -1) {
+                    fail("Cannot open icon %s for window 0x%lx", file, window);
                     break;
+                }
                 else {
                     char buf[128];
                     snprintf(buf, sizeof buf,
@@ -4454,10 +4499,19 @@ void IceSh::saveIcon(Window window, char* file)
                         delete[] data;
                     }
                     close(fd);
+                    if ( !quietude)
+                        printf("Wrote icon for 0x%lx to %s\n", window, file);
                     break;
                 }
             }
+            if (loop > 100 || nomore) {
+                warn("Failed to compute a filename for window 0x%lx", window);
+            }
+        } else {
+            warn("No suitable icon on window 0x%lx", window);
         }
+    } else {
+        warn("No icon property on window 0x%lx", window);
     }
 }
 
@@ -4840,7 +4894,7 @@ void IceSh::flags()
             else if (windowList)
                 parseAction();
             else if (selecting | filtering) {
-                if (!quietude)
+                if ( !quietude)
                     msg(_("No windows found."));
                 throw 1;
             }

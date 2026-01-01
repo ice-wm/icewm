@@ -1,4 +1,4 @@
-[icewm -- release notes.  2021-07-08]: #
+[icewm -- release notes.  2025-08-31]: #
 
 Release 3.9.0
 =============

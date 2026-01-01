@@ -18,44 +18,45 @@ public:
     static class IResourceLocator* iconResourceLocator;
     static ref<YIcon> getIcon(const char *name);
     static void freeIcons();
-    bool isCached() { return fCached; }
+    bool isCached() const { return fCached; }
     void setCached(bool cached) { fCached = cached; }
+    void setOther(Picture pict, unsigned size);
+    unsigned getOtherSize() const { return otherSize; }
 
-    static unsigned menuSize();
-    static unsigned smallSize();
-    static unsigned largeSize();
-    static unsigned hugeSize();
+    static unsigned menuSize() {
+        extern unsigned menuIconSize;
+        return menuIconSize; }
+    static unsigned smallSize() {
+        extern unsigned smallIconSize;
+        return smallIconSize; }
+    static unsigned largeSize() {
+        extern unsigned largeIconSize;
+        return largeIconSize; }
+    static unsigned hugeSize() {
+        extern unsigned hugeIconSize;
+        return hugeIconSize; }
+    static void fixIconSizes();
+    static unsigned fixIconSize(unsigned size);
 
-    bool draw(Graphics &g, int x, int y, int size);
+    bool draw(Graphics &g, int x, int y, unsigned size);
     upath findIcon(unsigned size);
     static bool supportSVG();
 
-#ifdef SUPPORT_XDG_ICON_TYPE_CATEGORIES
-    enum /* class... or better not, simplify! */ TypeFilter {
-        NONE = 0,
-        /** Suitable for programs */
-        FOR_APPS = 1,
-        /** Suitable for menu folders */
-        FOR_MENUCATS = 2,
-        FOR_PLACES = 4,
-        FOR_DEVICES = 8,
-
-        FOR_ANY_PURPOSE = FOR_APPS | FOR_DEVICES | FOR_MENUCATS | FOR_APPS,
-        ALL = FOR_ANY_PURPOSE // | FROM_ANY_SOURCE
-    };
-#endif
-
 private:
+    upath fPath;
     ref<YImage> fSmall;
     ref<YImage> fLarge;
     ref<YImage> fHuge;
+    Picture pSmall;
+    Picture pLarge;
+    Picture pHuge;
+    Picture pOther;
+    unsigned otherSize;
 
+    bool fCached;
     bool loadedS;
     bool loadedL;
     bool loadedH;
-    bool fCached;
-
-    upath fPath;
 
     void removeFromCache();
     static int cacheFind(upath name);

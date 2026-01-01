@@ -621,6 +621,13 @@ void TaskBar::updateLayout(unsigned &size_w, unsigned &size_h) {
         wlist[i].w->setGeometry(r);
         if (wlist[i].show)
             wlist[i].w->show();
+        int more = int(wlist[i].w->width()) - ww;
+        if (more > 0) {
+            if (wlist[i].left)
+                left[wlist[i].row] += more;
+            else
+                right[wlist[i].row] -= more;
+        }
     }
 
     wlist.clear();
@@ -921,9 +928,11 @@ void TaskBar::handleButton(const XButtonEvent &button) {
 }
 
 void TaskBar::contextMenu(int x_root, int y_root) {
-    taskBarMenu->popup(this, nullptr, nullptr, x_root, y_root,
-                       YPopupWindow::pfCanFlipVertical |
-                       YPopupWindow::pfCanFlipHorizontal);
+    if (taskBarMenu->popup(this, nullptr, this, x_root, y_root,
+                           YPopupWindow::pfCanFlipVertical |
+                           YPopupWindow::pfCanFlipHorizontal)) {
+        fMenuShown = true;
+    }
 }
 
 void TaskBar::handleClick(const XButtonEvent &up, int count) {
@@ -1061,7 +1070,11 @@ void TaskBar::handleCollapseButton() {
     xapp->sync();
 }
 
-void TaskBar::handlePopDown(YPopupWindow * /*popup*/) {
+void TaskBar::handlePopDown(YPopupWindow* popup) {
+    if (taskBarMenu._ptr() == popup) {
+        taskBarMenu = null;
+        fMenuShown = false;
+    }
 }
 
 void TaskBar::configure(const YRect2& r) {

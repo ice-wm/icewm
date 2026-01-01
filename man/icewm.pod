@@ -387,20 +387,29 @@ The selection can be changed by repeatedly pressing the Tab key, while
 keeping the Alt key down. If a Shift key is also down, the direction of
 traversal is reversed. Or use the scroll wheel of the mouse.  Or use
 one of the digit keys to select the corresponding window from the list.
-Arrow keys are also supported, as well as the Home and End key.
+By pressing the first letter of the application class name, the next
+such application is selected. All navigation keys are also supported.
 
 To make a selected window the active window, just release the Alt key,
 or hit the Return key, or click on it.  To cancel the QuickSwitch,
 press Escape or click outside of the QuickSwitch window.
 
 A selected window can be closed by Delete, C<Alt+F4>, or the middle
-mouse button.  While the QuickSwitch window is up, one can still change
-workspace with the usual workspace hotkeys.
+mouse button.  The right mouse button opens the system menu for the
+selected window.  While the QuickSwitch window is up, one can still
+change workspace with the usual workspace hotkeys.
 
-The QuickSwitch has two distinct modes: vertical and horizontal.
-The window list can include all windows or be limited to the current
-workspace. There is an option to raise the selected candidate.
-See the many preferences available for the QuickSwitch.
+The QuickSwitch has three distinct modes: vertical, horizontal and
+preview.  The window list can include all windows or be limited to
+the current workspace.  There is an option to raise the selected
+candidate.  See the many preferences available for the QuickSwitch.
+
+The preview mode shows a small preview window for every application
+window that has been shown earlier by icewm. When the preview quick
+switch is active, this preview is continuously updated. This mode works
+best with a desktop background manager that updates the C<_XROOTPMAP_ID>
+property on the root window, such as L<icewmbg(1)>, L<nitrogen(1)>,
+L<hsetroot(1)> or L<feh(1)>.
 
 =head2 WINDOW PLACEMENT
 
@@ -1645,7 +1654,7 @@ L<wmctrl(1)>.
 
 =head2 BUGS
 
-Please report bugs at L<https://github.com/bbidulock/icewm/issues>.
+Please report bugs at L<https://github.com/ice-wm/icewm/issues>.
 
 =head2 AUTHOR
 

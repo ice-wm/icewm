@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([icewm],[3.9.0],
-        [https://github.com/bbidulock/icewm/issues],
+        [https://github.com/ice-wm/icewm/issues],
         [icewm],[https://ice-wm.org])
 AC_REVISION([3.9.0])
 
@@ -432,6 +432,7 @@ then
            test -s src/nanosvgrast.h
         then
             AC_DEFINE([CONFIG_NANOSVG],[1],[Define to enable nanosvg rendering.])
+            image_library="$image_library nanosvg"
         else
             AC_MSG_WARN([Nanosvg includes are missing. SVG is not supported.])
         fi

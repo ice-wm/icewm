@@ -331,7 +331,7 @@ void YWMApp::initIconSize() {
                 delta = gap;
         }
         is->min_width = is->min_height = int(sizes[0]);
-        is->max_width = is->max_height = int(sizes[count - 1]);
+        is->max_width = is->max_height = int(max(sizes[count - 1], 128U));
         is->width_inc = is->height_inc = int(delta);
         XSetIconSizes(xapp->display(), desktop->handle(), is, 1);
         XFree(is);
@@ -699,7 +699,7 @@ YMenu* YWMApp::getWindowMenu() {
     if (strchr(winMenuItems, 't') && workspaceCount > 1) {
         windowMenu->addSeparator();
         windowMenu->addSubmenu(_("Move _To"), -2, moveMenu);
-        windowMenu->addItem(_("Occupy _All"), -2, gKeyWinOccupyAll.name, actionOccupyAllOrCurrent);
+        windowMenu->addItem(_("_Occupy All"), -2, gKeyWinOccupyAll.name, actionOccupyAllOrCurrent);
     }
 
     if (strchr(winMenuItems, 'i') && taskBarShowTray)
@@ -1405,6 +1405,7 @@ YWMApp::YWMApp(int *argc, char ***argv, const char *displayName,
     WMConfig::loadConfiguration("prefoverride");
     if (focusMode != FocusCustom)
         initFocusMode();
+    YIcon::fixIconSizes();
 
     if (post_preferences)
         WMConfig::printPrefs(focusMode, wmapp_preferences);

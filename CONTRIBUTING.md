@@ -46,7 +46,7 @@ translations.  If you have difficulties using the tools, just send me the update
 
 
 [1]: https://github.com/bbidulock/icewm/
-[2]: https://github.com/bbidulock/icewm/issues/
+[2]: https://github.com/ice-wm/icewm/issues/
 [3]: https://github.com/ice-wm/icewm/blob/master/INSTALL
 [4]: https://github.com/ice-wm/icewm/blob/master/ChangeLog
 [5]: https://github.com/ice-wm/icewm/blob/master/COMPLIANCE
