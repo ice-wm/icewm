@@ -150,7 +150,7 @@ NetStatus::NetStatus(
     fDevName(netdev),
     fDevice(getNetDevice(netdev))
 {
-    for (int i = 0; i < taskBarNetSamples; i++)
+    for (int i = 0; i < taskBarNetSamples; ++i)
         ppp_in[i] = ppp_out[i] = 0;
 
     setSize(taskBarNetSamples, taskBarGraphHeight);
@@ -187,7 +187,7 @@ void NetStatus::timedUpdate(const char* sharedData, bool forceDown) {
 
     if (up) {
         if (!wasUp) {
-            for (int i = 0; i < taskBarNetSamples; i++)
+            for (int i = 0; i < taskBarNetSamples; ++i)
                 ppp_in[i] = ppp_out[i] = 0;
 
             start_time = monotime();
@@ -241,7 +241,7 @@ void NetStatus::updateToolTip() {
         long long cai = 0;
         long long cao = 0;
 
-        for (int ii = 0; ii < taskBarNetSamples; ii++) {
+        for (int ii = 0; ii < taskBarNetSamples; ++ii) {
             cai += ppp_in[ii];
             cao += ppp_out[ii];
         }
@@ -340,7 +340,7 @@ void NetStatus::draw(Graphics &g) {
     long b_in_max = 0;
     long b_out_max = 0;
 
-    for (int i = 0; i < taskBarNetSamples; i++) {
+    for (int i = 0; i < taskBarNetSamples; ++i) {
         long in = ppp_in[i];
         long out = ppp_out[i];
         if (in > b_in_max)
@@ -359,7 +359,7 @@ void NetStatus::draw(Graphics &g) {
     statusUpdateCount = 0;
     oldMaxBytes = maxBytes;
 
-    for (int i = first; i < limit; i++) {
+    for (int i = first; i < limit; ++i) {
         if (true /* ppp_in[i] > 0 || ppp_out[i] > 0 */) {
             long round = maxBytes / h / 2;
             int inbar, outbar;
@@ -458,7 +458,7 @@ void NetFreeDevice::getFlags() {
                     &int_size, (void*)0, 0) == -1) {
         printf("%s@%d: %s\n", __FILE__, __LINE__, strerror(errno));
     } else {
-        for (int i = 1; i <= nr_network_devs; i++) {
+        for (int i = 1; i <= nr_network_devs; ++i) {
             name[4] = i; /* row of the ifmib table */
 
             if (sysctl(name, 6, &ifmd, &ifmd_size, (void *)0, 0) == -1) {
@@ -477,7 +477,7 @@ void NetFreeDevice::getFlags() {
 void NetStatus::updateStatus(const char* sharedData) {
     int last = taskBarNetSamples - 1;
 
-    for (int i = 0; i < last; i++) {
+    for (int i = 0; i < last; ++i) {
         ppp_in[i] = ppp_in[i + 1];
         ppp_out[i] = ppp_out[i + 1];
     }
@@ -528,7 +528,7 @@ void NetFreeDevice::getCurrent(netbytes *in, netbytes *out, const char* sharedDa
                     &int_size, (void*)0, 0) == -1) {
         printf("%s@%d: %s\n", __FILE__, __LINE__, strerror(errno));
     } else {
-        for (int i = 1; i <= nr_network_devs; i++) {
+        for (int i = 1; i <= nr_network_devs; ++i) {
             name[4] = i; /* row of the ifmib table */
 
             if (sysctl(name, 6, &ifmd, &ifmd_size, (void *)0, 0) == -1) {

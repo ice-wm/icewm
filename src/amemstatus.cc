@@ -72,7 +72,7 @@ MEMStatus::MEMStatus(IAppletContainer* taskBar, YWindow *aParent):
     color[MEM_FREE] = &clrMemFree;
 
     samples.clear();
-    for (int i = 0; i < taskBarMEMSamples; i++) {
+    for (int i = 0; i < taskBarMEMSamples; ++i) {
         samples[i][MEM_FREE] = 1;
     }
     setSize(taskBarMEMSamples, taskBarGraphHeight);
@@ -143,11 +143,11 @@ void MEMStatus::draw(Graphics& g) {
                     ? taskBarMEMSamples - statusUpdateCount : taskBarMEMSamples;
     statusUpdateCount = 0;
 
-    for (int i = first; i < limit; i++) {
+    for (int i = first; i < limit; ++i) {
         membytes total = samples.sum(i);
 
         int y = h;
-        for (int j = 0; j < MEM_STATES; j++) {
+        for (int j = 0; j < MEM_STATES; ++j) {
             int bar;
             if (j == MEM_STATES - 1) {
                 bar = y;
@@ -273,7 +273,7 @@ void MEMStatus::getStatus() {
         if (total < 1)
             total = 1;
         membytes user = total;
-        for (int j = 0; j < MEM_STATES; j++) {
+        for (int j = 0; j < MEM_STATES; ++j) {
             user -= cur[j];
         }
         cur[MEM_USER] = user;

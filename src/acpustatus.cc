@@ -162,7 +162,7 @@ CPUStatus::CPUStatus(YWindow* parent, CPUStatusHandler* handler,
     fTempColor(&clrCpuTemp)
 {
     cpu.clear();
-    for (int a = 0; a < taskBarCPUSamples; a++) {
+    for (int a = 0; a < taskBarCPUSamples; ++a) {
         cpu[a][IWM_IDLE] = 1;
     }
     memset(last_cpu, 0, sizeof(last_cpu));
@@ -259,7 +259,7 @@ void CPUStatus::draw(Graphics& g) {
                     ? taskBarCPUSamples - statusUpdateCount : taskBarCPUSamples;
     statusUpdateCount = 0;
 
-    for (int i = first; i < limit; i++) {
+    for (int i = first; i < limit; ++i) {
         cpubytes
             user    = cpu[i][IWM_USER],
             nice    = cpu[i][IWM_NICE],
@@ -751,7 +751,7 @@ void CPUStatus::getStatusLinux() {
                 cur[i] = (10 * cur[i]) + (*p++ - '0');
         }
     }
-    for (int i = 0; i < IWM_STATES; i++) {
+    for (int i = 0; i < IWM_STATES; ++i) {
         cpu[taskBarCPUSamples - 1][i] = cur[i] - last_cpu[i];
         last_cpu[i] = cur[i];
     }
@@ -802,7 +802,7 @@ void CPUStatus::getStatusPlatform() {
     cur[IWM_SOFTIRQ] = 0;
     cur[IWM_STEAL]   = 0;
 
-    for (int i = 0; i < IWM_STATES; i++) {
+    for (int i = 0; i < IWM_STATES; ++i) {
         cpu[taskBarCPUSamples - 1][i] = cur[i] - last_cpu[i];
         last_cpu[i] = cur[i];
     }
