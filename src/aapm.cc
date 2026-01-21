@@ -91,10 +91,13 @@ bool SysFS::read(const char* name, long* num) {
     const size_t bufsize = 256;
     char buf[bufsize];
     if (read(name, buf)) {
-        if (sscanf(buf, "%ld", num) <= 0)
-            *num = -1;
-        else
+        char* endptr;
+        *num = strtol(buf, &endptr, 10);
+        if (endptr != buf) {
             got = true;
+        } else {
+            *num = -1;
+        }
     }
     return got;
 }
