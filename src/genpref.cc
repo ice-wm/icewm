@@ -49,7 +49,7 @@ static void show(cfoption *options) {
     if (sorted)
         sort(options);
 
-    for (unsigned i = 0; options[i].type != cfoption::CF_NONE; i++) {
+    for (unsigned i = 0; options[i].type != cfoption::CF_NONE; ++i) {
         size_t deslen = strlen(Elvis(options[i].description, ""));
         if (deslen < 13) {
             die(13, "Invalid description for option \"%s\":\n"
@@ -117,7 +117,7 @@ static void ppod(cfoption *options) {
     if (sorted)
         sort(options);
 
-    for (unsigned int i = 0; options[i].type != cfoption::CF_NONE; i++) {
+    for (unsigned int i = 0; options[i].type != cfoption::CF_NONE; ++i) {
         if (pattern && !strstr(options[i].name, pattern))
             continue;
 

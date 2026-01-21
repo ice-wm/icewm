@@ -158,7 +158,7 @@ static void test_mstring()
     c.copyTo(buf, sizeof buf);
     expect(c, buf);
 
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 10000; ++i) {
         z = x.replace(x.length(), 0, y);
     }
     expect(z, "foofoo");

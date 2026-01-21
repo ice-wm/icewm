@@ -147,7 +147,7 @@ public:
         char *e = buf + bufLen;
 
         addLinePos(0, true);
-        for (p = buf; p < e; p++) {
+        for (p = buf; p < e; ++p) {
             if (*p == '\n')
                 addLinePos(p - buf + 1, true);
         }
@@ -178,7 +178,7 @@ public:
 
         wrapWidth = wrap;
 
-        for (int i = 0; i < lineCount; i++) {
+        for (int i = 0; i < lineCount; ++i) {
             if (expandTabs) {
                 int l = lineChars(i);
                 char *p = line(i);
@@ -218,7 +218,7 @@ public:
             lineWCount = nw;
 
             nw = 0;
-            for (int i = 0; i < lineCount; i++) {
+            for (int i = 0; i < lineCount; ++i) {
                 lineWPos[nw++] = linePos[2 * i];
                 if (expandTabs) {
 
@@ -279,7 +279,7 @@ public:
 
             *d++ = ' ';
             *d++ = ' ';
-            for (i = 0; i < 16; i++) {
+            for (i = 0; i < 16; ++i) {
                 if (p + i < e) {
                     unsigned char u = p[i];
                     *d++ = hex[(u >> 4) & 0x0F];
@@ -293,7 +293,7 @@ public:
             }
 #if 0
             *d++ = ' ';
-            for (i = 0; i < 16; i++) {
+            for (i = 0; i < 16; ++i) {
                 if (p + i < e) {
                     unsigned char u = p[i];
                     *d++ = u;
@@ -355,7 +355,7 @@ public:
         if ((ty + wy + wheight) % fontHeight)
             l2++;
         int y = l1 * fontHeight - ty;
-        for (int l = l1; l < l2; l++) {
+        for (int l = l1; l < l2; ++l) {
             if (hexView) {
                 if (l >= chunkCount)
                     break;
@@ -686,7 +686,7 @@ public:
     }
 
     static void closeAll() {
-        for (int i = views.getCount(); i-- > 0; ) {
+        for (int i = views.getCount(); --i >= 0; ) {
             views.remove(i);
         }
         if (window_group) {

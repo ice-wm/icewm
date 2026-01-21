@@ -80,8 +80,8 @@ globit_pfxlen(char **words, int nwords)
 	int i;
 
 	prefix_len = strlen(words[0]);
-	for (i = 1; i < nwords; i++)
-		for (j = 0, p = words[i]; j < prefix_len; j++)
+	for (i = 1; i < nwords; ++i)
+		for (j = 0, p = words[i]; j < prefix_len; ++j)
 			if (p[j] != words[0][j]) {
 				prefix_len = j;
 				break;

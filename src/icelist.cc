@@ -247,7 +247,7 @@ public:
     Panes(YWindow *aParent = 0);
 
     ~Panes() {
-        for (int i = 0; i < NPANES; i++)
+        for (int i = 0; i < NPANES; ++i)
             delete panes[i];
     }
 
@@ -259,7 +259,7 @@ public:
     virtual void configure(const YRect &r) {
         YWindow::configure(r);
 
-        for (int i = 0; i < NPANES; i++)
+        for (int i = 0; i < NPANES; ++i)
             panes[i]->setSize(r.width(), panes[i]->height());
         panes[NPANES - 1]->setSize(r.width(),
                                    r.height() - panes[NPANES - 1]->y());
@@ -309,7 +309,7 @@ Panes::Panes(YWindow *aParent): YWindow(aParent) {
 
     int w = 200, h = 0;
     int height = 600, h1 = height / (NPANES + 1);
-    for (int i = 0; i < NPANES; i++) {
+    for (int i = 0; i < NPANES; ++i) {
         panes[i]->setGeometry(YRect(0, h, w, h1));
         h += h1;
         panes[i]->show();
@@ -317,7 +317,7 @@ Panes::Panes(YWindow *aParent): YWindow(aParent) {
 }
 
 void Panes::movePane(Pane *pane, int delta) {
-    for (int i = 1; i < NPANES; i++) {
+    for (int i = 1; i < NPANES; ++i) {
         int oldY = pane->y();
         if (panes[i] == pane) {
             int min = TH * i;
@@ -348,7 +348,7 @@ void Panes::movePane(Pane *pane, int delta) {
                                       bottom - panes[n]->y());
                     break;
                 }
-                n--;
+                --n;
             } while (n > 0);
         } else if (pane->y() > oldY) {
             int top = pane->y() + pane->height();
@@ -369,7 +369,7 @@ void Panes::movePane(Pane *pane, int delta) {
                               panes[n]->y() + panes[n]->height() - top));
                     break;
                 }
-                n++;
+                ++n;
             }
         }
     }

@@ -238,7 +238,7 @@ public:
         if (2 <= i && i <= 3) {
             lang.assign(loc, i);
             if (loc[i] == '_') {
-                i++;
+                ++i;
                 int t = i;
                 while (isalpha(loc[i] & 0xff))
                     ++i;
@@ -247,7 +247,7 @@ public:
             while (loc[i] && loc[i] != '@')
                 ++i;
             if (loc[i] == '@') {
-                i++;
+                ++i;
                 int t = i;
                 while (isalpha(loc[i] & 0xff))
                     ++i;

@@ -115,8 +115,8 @@ public:
     void newGame() {
         saveField();
         setScore(0);
-        for (int x = 0; x < XCOUNT; x++)
-            for (int y = 0; y < YCOUNT; y++) {
+        for (int x = 0; x < XCOUNT; ++x)
+            for (int y = 0; y < YCOUNT; ++y) {
                 field[x][y] = randVal();
                 restartField[x][y] = field[x][y];
             }
@@ -126,15 +126,15 @@ public:
     void restartGame() {
         saveField();
         setScore(0);
-        for (int x = 0; x < XCOUNT; x++)
-            for (int y = 0; y < YCOUNT; y++)
+        for (int x = 0; x < XCOUNT; ++x)
+            for (int y = 0; y < YCOUNT; ++y)
                 field[x][y] = restartField[x][y];
         repaint();
     }
 
     void paint(Graphics &g, const YRect &/*r*/) {
-        for (int x = 0; x < XCOUNT; x++)
-            for (int y = 0; y < YCOUNT; y++) {
+        for (int x = 0; x < XCOUNT; ++x)
+            for (int y = 0; y < YCOUNT; ++y) {
                 int v = field[x][y];
 
                 if (v > FLAG)
@@ -148,8 +148,8 @@ public:
 
     void saveField() {
         undoScore = score;
-        for (int x = 0; x < XCOUNT; x++)
-            for (int y = 0; y < YCOUNT; y++)
+        for (int x = 0; x < XCOUNT; ++x)
+            for (int y = 0; y < YCOUNT; ++y)
                 undoField[x][y] = field[x][y];
         canUndo = true;
     }
@@ -158,8 +158,8 @@ public:
         if (!canUndo)
             return ;
         setScore(undoScore);
-        for (int x = 0; x < XCOUNT; x++)
-            for (int y = 0; y < YCOUNT; y++)
+        for (int x = 0; x < XCOUNT; ++x)
+            for (int y = 0; y < YCOUNT; ++y)
                 field[x][y] = undoField[x][y];
         repaint();
         canUndo = false;
@@ -169,13 +169,13 @@ public:
 
     void clean() {
         int total = 0;
-        for (int x = XCOUNT - 1; x >= 0; x--) {
+        for (int x = XCOUNT - 1; x >= 0; --x) {
             int vert = 0;
-            for (int y = 0; y < YCOUNT; y++) {
+            for (int y = 0; y < YCOUNT; ++y) {
                 if (field[x][y] > 0 && field[x][y] < FLAG)
                     vert++;
                 else {
-                    for (int j = y; j > 0; j--)
+                    for (int j = y; j > 0; --j)
                         field[x][j] = field[x][j - 1];
                     field[x][0] = 0;
                     //y--;
@@ -183,10 +183,10 @@ public:
             }
             total += vert;
             if (vert == 0) {
-                for (int i = x; i < XCOUNT - 1; i++)
-                    for (int j = 0; j < YCOUNT; j++)
+                for (int i = x; i < XCOUNT - 1; ++i)
+                    for (int j = 0; j < YCOUNT; ++j)
                         field[i][j] = field[i + 1][j];
-                for (int j = 0; j < YCOUNT; j++)
+                for (int j = 0; j < YCOUNT; ++j)
                     field[XCOUNT - 1][j] = 0;
             }
         }
@@ -218,8 +218,8 @@ public:
     }
 
     void release() {
-        for (int x = 0; x < XCOUNT; x++)
-            for (int y = 0; y < YCOUNT; y++)
+        for (int x = 0; x < XCOUNT; ++x)
+            for (int y = 0; y < YCOUNT; ++y)
                 field[x][y] &= ~FLAG;
     }
 

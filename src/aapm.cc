@@ -280,7 +280,7 @@ void YApm::AcpiStr(char *s, bool Tool) {
     energyFull = energyNow = 0;
 
     int n = 0;
-    for (int i = 0; i < batteryNum; i++) {
+    for (int i = 0; i < batteryNum; ++i) {
         //assign some default values, in case
         //the files in /proc/acpi will contain unexpected values
         BAT_Present BATpresent = BAT_ABSENT;
@@ -497,7 +497,7 @@ void YApm::SysStr(char *s, bool Tool) {
     energyFull = energyNow = 0;
 
     int n = 0;
-    for (int i = 0; i < batteryNum; i++) {
+    for (int i = 0; i < batteryNum; ++i) {
         const char* BATname = acpiBatteries[i]->name;
         BAT_Present BATpresent = BAT_ABSENT;
         BAT_Status BATstatus = BAT_UNKNOWN;
@@ -897,7 +897,7 @@ int YApm::calcInitialWidth() {
     int n = 0;
 
     //estimate applet's size
-    for (int i = 0; i < batteryNum; i++) {
+    for (int i = 0; i < batteryNum; ++i) {
         if ((mode == ACPI || mode == SYSFS) &&
             acpiBatteries[i]->present == BAT_ABSENT)
             continue;
@@ -991,7 +991,7 @@ void YApm::draw(Graphics &g) {
         ref<YPixmap> p;
         unsigned x = 0;
 
-        for (int i = 0; x < new_width; i++) {
+        for (int i = 0; x < new_width; ++i) {
             if (i < len) {
                 p = getPixmap(fCurrentState[i]);
             } else
