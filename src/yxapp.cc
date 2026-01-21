@@ -456,15 +456,15 @@ void YXApplication::initAtoms() {
     char* names[num_atoms];
     Atom xatoms[num_atoms];
 
-    for (int i = 0; i < num_atoms; i++)
+    for (int i = 0; i < num_atoms; ++i)
         names[i] = const_cast<char *>(atom_info[i].name);
 
     XInternAtoms(xapp->display(), names, num_atoms, False, xatoms);
 
-    for (int i = 0; i < num_atoms; i++)
+    for (int i = 0; i < num_atoms; ++i)
         *(atom_info[i].atom) = xatoms[i];
 #else
-    for (int i = 0; i < num_atoms; i++)
+    for (int i = 0; i < num_atoms; ++i)
         *(atom_info[i].atom) = xapp->atom(atom_info[i].name);
 #endif
 
@@ -502,8 +502,8 @@ void YXApplication::initModifiers() {
     if (xmk) {
         KeyCode *c = xmk->modifiermap;
 
-        for (int m = 0; m < 8; m++)
-            for (int k = 0; k < xmk->max_keypermod; k++, c++) {
+        for (int m = 0; m < 8; ++m)
+            for (int k = 0; k < xmk->max_keypermod; ++k, ++c) {
                 if (*c == NoSymbol)
                     continue;
                 KeySym kc = keyCodeToKeySym(*c);

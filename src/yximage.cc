@@ -296,8 +296,8 @@ ref<YImage> YXImage::loadxpm2(upath filename, int& status)
 
             ximage = createImage(w, h, 32U);
             if (ximage) {
-                for (unsigned j = 0; j < h; j++) {
-                    for (unsigned i = 0; i < w; i++) {
+                for (unsigned j = 0; j < h; ++j) {
+                    for (unsigned i = 0; i < w; ++i) {
                         if (XGetPixel(xmask, i, j))
                             XPutPixel(ximage, i, j, XGetPixel(xdraw, i, j) | 0xFF000000);
                         else
@@ -405,7 +405,7 @@ void YXImage::pngload(ref<YImage>& image, FILE* f,
                   calloc(row_bytes * height, sizeof(*png_pixels)));
         png_byte **row_pointers = static_cast<png_byte **>(
                    calloc(height, sizeof(*row_pointers)));
-        for (i = 0; i < height; i++)
+        for (i = 0; i < height; ++i)
             row_pointers[i] = png_pixels + i * row_bytes;
         png_read_image(png_ptr, row_pointers);
         png_read_end(png_ptr, info_ptr);
@@ -413,8 +413,8 @@ void YXImage::pngload(ref<YImage>& image, FILE* f,
         if (ximage) {
             unsigned long pixel, A = 0, R = 0, G = 0, B = 0;
             png_byte *p = png_pixels;
-            for (j = 0; j < height; j++) {
-                for (i = 0; i < width; i++, p += channels) {
+            for (j = 0; j < height; ++j) {
+                for (i = 0; i < width; ++i, p += channels) {
                     switch(color_type) {
                         case PNG_COLOR_TYPE_GRAY:
                             R = G = B = p[0];
@@ -704,16 +704,16 @@ ref<YImage> YXImage::upscale(unsigned nw, unsigned nh)
             double pppy = (double) h / (double) nh;
 
             double ty, by; unsigned l;
-            for (ty = 0.0, by = pppy, l = 0; l < nh; l++, ty += pppy, by += pppy) {
-                for (unsigned j = floor(ty); j < by; j++) {
+            for (ty = 0.0, by = pppy, l = 0; l < nh; ++l, ty += pppy, by += pppy) {
+                for (unsigned j = floor(ty); j < by; ++j) {
                     double yf = 1.0;
                     if (ty < (j + 1) && (j + 1) < by)
                         yf = (j + 1) - ty;
                     else if (ty < j && j < by)
                         yf = by - j;
                     double lx, rx; unsigned k;
-                    for (lx = 0.0, rx = pppx, k = 0; k < nw; k++, lx += pppx, rx += pppx) {
-                        for (unsigned i = floor(lx); i < rx; i++) {
+                    for (lx = 0.0, rx = pppx, k = 0; k < nw; ++k, lx += pppx, rx += pppx) {
+                        for (unsigned i = floor(lx); i < rx; ++i) {
                             double xf = 1.0;
                             if (lx < (i + 1) && (i + 1) < rx)
                                 xf = (i + 1) - lx;
@@ -740,8 +740,8 @@ ref<YImage> YXImage::upscale(unsigned nw, unsigned nh)
                 }
             }
             unsigned amax = 0;
-            for (unsigned l = 0; l < nh; l++) {
-                for (unsigned k = 0; k < nw; k++) {
+            for (unsigned l = 0; l < nh; ++l) {
+                for (unsigned k = 0; k < nw; ++k) {
                     unsigned m = l * nw + k;
                     unsigned n = m << 2;
                     unsigned long pixel = 0;
@@ -758,13 +758,13 @@ ref<YImage> YXImage::upscale(unsigned nw, unsigned nh)
             }
             if (!amax)
                 /* no opacity at all! */
-                for (unsigned l = 0; l < nh; l++)
-                    for (unsigned k = 0; k < nw; k++)
+                for (unsigned l = 0; l < nh; ++l)
+                    for (unsigned k = 0; k < nw; ++k)
                         XPutPixel(ximage, k, l, XGetPixel(ximage, k, l) | 0xFF000000);
             else if (amax < 255) {
                 double bump = (double) 255 / (double) amax;
-                for (unsigned l = 0; l < nh; l++)
-                    for (unsigned k = 0; k < nw; k++) {
+                for (unsigned l = 0; l < nh; ++l)
+                    for (unsigned k = 0; k < nw; ++k) {
                         unsigned long pixel = XGetPixel(ximage, k, l);
                         amax = (pixel >> 24) & 0xff;
                         amax = lround((double) amax * bump);
@@ -1038,8 +1038,8 @@ ref<YImage> YXImage::combine(XImage *xdraw, XImage *xmask)
     // tlog("created ximage for combine at %ux%ux%u with mask %ux%ux%u\n",
     //      ximage->width, ximage->height, ximage->depth,
     //      xmask->width, xmask->height, xmask->depth);
-    for (unsigned j = 0; j < h; j++)
-        for (unsigned i = 0; i < w; i++)
+    for (unsigned j = 0; j < h; ++j)
+        for (unsigned i = 0; i < w; ++i)
             if (XGetPixel(xmask, i, j))
                 XPutPixel(ximage, i, j, XGetPixel(xdraw, i, j) | 0xFF000000);
             else
@@ -1064,8 +1064,8 @@ ref<YImage> YImage::createFromIconProperty(long *prop_pixels, unsigned w, unsign
         goto error;
     }
     // tlog("created ximage for icon %ux%ux%u\n", ximage->width, ximage->height, ximage->depth);
-    for (unsigned j = 0; j < h; j++)
-        for (unsigned i = 0; i < w; i++, prop_pixels++)
+    for (unsigned j = 0; j < h; ++j)
+        for (unsigned i = 0; i < w; ++i, prop_pixels++)
             XPutPixel(ximage, i, j, *prop_pixels);
     image.init(new YXImage(ximage));
     return image;
@@ -1106,8 +1106,8 @@ ref <YPixmap> YXImage::renderToPixmap(unsigned depth, bool premult)
         unsigned w = fImage->width;
         unsigned h = fImage->height;
         if (hasAlpha())
-            for (unsigned j = 0; !has_mask && j < h; j++)
-                for (unsigned i = 0; !has_mask && i < w; i++)
+            for (unsigned j = 0; !has_mask && j < h; ++j)
+                for (unsigned i = 0; !has_mask && i < w; ++i)
                     if (((XGetPixel(fImage, i, j) >> 24) & 0xff) < 128)
                         has_mask = true;
         if (hasAlpha() || depth != this->depth()) {
@@ -1115,8 +1115,8 @@ ref <YPixmap> YXImage::renderToPixmap(unsigned depth, bool premult)
             if (xdraw == 0) {
                 goto error;
             }
-            for (unsigned j = 0; j < h; j++)
-                for (unsigned i = 0; i < w; i++)
+            for (unsigned j = 0; j < h; ++j)
+                for (unsigned i = 0; i < w; ++i)
                     XPutPixel(xdraw, i, j, XGetPixel(fImage, i, j));
         } else if (!(xdraw = XSubImage(fImage, 0, 0, w, h))) {
             tlog("ERROR: could not create subimage %ux%u\n", w, h);
@@ -1128,8 +1128,8 @@ ref <YPixmap> YXImage::renderToPixmap(unsigned depth, bool premult)
         if (xmask == 0) {
             goto error;
         }
-        for (unsigned j = 0; j < h; j++)
-            for (unsigned i = 0; i < w; i++)
+        for (unsigned j = 0; j < h; ++j)
+            for (unsigned i = 0; i < w; ++i)
                 XPutPixel(xmask, i, j,
                           !has_mask ||
                           ((XGetPixel(fImage, i, j) >> 24) & 0xff) >= ATH);
@@ -1303,12 +1303,12 @@ void YXImage::composite(Graphics& g, int x, int y,
 
     // tlog("compositing %ux%u+%d+%d of %ux%ux%u onto %ux%ux%u\n",
     //         w, h, x, y, fImage->width, fImage->height, fImage->depth, xback->width, xback->height, xback->depth);
-    for (unsigned j = 0; j < h; j++) {
+    for (unsigned j = 0; j < h; ++j) {
         if ((int)j + y < 0 || (int)j + y > (int)hi) {
             tlog("ERROR: point y = %u is out of bounds\n", j);
             continue;
         }
-        for (unsigned i = 0; i < w; i++) {
+        for (unsigned i = 0; i < w; ++i) {
             if ((int)i + x < 0 || (int)i + x > (int)wi) {
                 tlog("ERROR: point x = %u is out of bounds\n", i);
                 continue;
