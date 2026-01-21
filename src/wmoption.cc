@@ -208,7 +208,7 @@ void WindowOptions::setWinOption(mstring n_class_instance,
                 { "Minimized", WinTrayMinimized },
                 { "Exclusive", WinTrayExclusive },
             };
-            for (unsigned int i = 0; i < ACOUNT(tray_ops); i++)
+            for (unsigned int i = 0; i < ACOUNT(tray_ops); ++i)
                 if (strcmp(tray_ops[i].name, arg) == 0) {
                     op->tray = tray_ops[i].tray;
                     return;
@@ -349,7 +349,7 @@ static char *parseWinOptions(char *data, const char* filename) {
             }
             else if (*p == '.')
                 dot = p;
-            p++;
+            ++p;
         }
         end = p;
 
@@ -377,15 +377,15 @@ static char *parseWinOptions(char *data, const char* filename) {
 
         *end = 0;
         opt = 1 + dot;
-        end++;
+        ++end;
 
         p = end;
         while (ASCII::isSpaceOrTab(*p))
-            p++;
+            ++p;
 
         word = p;
         while (*p && false == ASCII::isWhiteSpace(*p))
-            p++;
+            ++p;
         if (*p == '\n')
             ++newlines;
 

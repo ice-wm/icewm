@@ -319,7 +319,7 @@ public:
     }
 
     void transfer(YFrameClient* client, YFrameWindow* frame) override {
-        for (int i = 0; i < zList.getCount(); i++) {
+        for (int i = 0; i < zList.getCount(); ++i) {
             if (zList[i].client == client) {
                 zList[i].frame = frame;
             }
@@ -552,7 +552,7 @@ void SwitchWindow::resize(int xiscreen, bool reposition) {
         const int limit = min(zCount, 99);
         const int space = int(switchFont->textWidth(" "));
         mstring a = zItems->getTitle(active), b, c;
-        for (int i = 0; i < limit; i++) {
+        for (int i = 0; i < limit; ++i) {
             if (i != active) {
                 mstring title = zItems->getTitle(i);
                 if (title.length() > a.length()) {
@@ -792,7 +792,7 @@ void SwitchWindow::paintHorizontal(Graphics &g) {
                 int first = (b + m_hintFirstBank) * bankSize;
                 int limit = min((b + 1) * bankSize, zCount);
                 x = xcopy;
-                for (int i = first; i < limit; i++) {
+                for (int i = first; i < limit; ++i) {
                     ref<YIcon> icon = zItems->getIcon(i);
                     if (icon != null) {
                         if (i == m_hlItemFromMotion &&

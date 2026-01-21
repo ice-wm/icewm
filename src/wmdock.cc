@@ -283,7 +283,7 @@ void DockApp::adapt() {
                  : (center == +1) ? (My - rows * 64)
                  : my + (My - my - rows * 64) / 2;
         setGeometry(YRect(xpos, ypos, cols * 64, rows * 64));
-        for (int k = 0; k < docks.getCount(); k++) {
+        for (int k = 0; k < docks.getCount(); ++k) {
             int i = (direction < 0) ? (docks.getCount() - 1 - k) : k;
             int x = 64 * (cols - 1 - i / rows);
             int y = 64 * (i % rows);
@@ -319,7 +319,7 @@ void DockApp::adapt() {
             XShapeCombineRectangles(xapp->display(), handle(),
                                     ShapeBounding, 0, 0, &full, 1,
                                     ShapeSet, Unsorted);
-            for (int i = 0; i < docks.getCount(); i++) {
+            for (int i = 0; i < docks.getCount(); ++i) {
                 XShapeCombineShape(xapp->display(), handle(), ShapeBounding,
                                    64 * (i / rows), 64 * (i % rows),
                                    docks[i].window, ShapeBounding,

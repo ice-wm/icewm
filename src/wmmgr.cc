@@ -1279,7 +1279,7 @@ void YWindowManager::manageClients() {
             fDockApp ? fDockApp->handle() : None,
             sheet.handle()
         };
-        for (unsigned i = 0; i < count; i++) {
+        for (unsigned i = 0; i < count; ++i) {
             const Window win = clients[i];
             int k = 0;
             while (k < igsize && ignore[k] != win)
@@ -1379,7 +1379,7 @@ void YWindowManager::unmanageClients() {
 
     grabServer();
 
-    for (int l = 0; l < WinLayerCount; l++) {
+    for (int l = 0; l < WinLayerCount; ++l) {
         while (bottom(l)) {
             YFrameWindow* frame = bottom(l);
             YFrameClient* client = frame->client();
@@ -1570,7 +1570,7 @@ void YWindowManager::smartPlace(YArrange arrange) {
     }
 
     int n = getScreenCount();
-    for (int s = 0; s < n; s++)
+    for (int s = 0; s < n; ++s)
     {
         k = 0;
         for (YFrameWindow* f : arrange) {
@@ -2201,7 +2201,7 @@ YFrameWindow *YWindowManager::getLastFocus(bool skipAllWorkspaces, int workspace
         int pass = 0;
         if (!skipAllWorkspaces)
             pass = 1;
-        for (; pass < 3; pass++) {
+        for (; pass < 3; ++pass) {
             YFrameIter w = focusedReverseIterator();
             while (++w) {
                 if (!w->client() || !w->client()->adopted())
@@ -2269,7 +2269,7 @@ void YWindowManager::focusLastWindow() {
 }
 
 YFrameWindow* YWindowManager::topLayer(int layer) {
-    for (int l = layer; l >= 0; l--)
+    for (int l = layer; l >= 0; --l)
         if (fLayers[l])
             return fLayers[l].front();
 
@@ -2277,7 +2277,7 @@ YFrameWindow* YWindowManager::topLayer(int layer) {
 }
 
 YFrameWindow* YWindowManager::bottomLayer(int layer) {
-    for (int l = layer; l < WinLayerCount; l++)
+    for (int l = layer; l < WinLayerCount; ++l)
         if (fLayers[l])
             return fLayers[l].back();
 
@@ -2478,8 +2478,8 @@ void YWindowManager::updateArea(int workspace, int screen_number,
 
 void YWindowManager::debugWorkArea(const char* prefix) {
 #ifdef DEBUG
-    for (int i = 0; i < fWorkAreaWorkspaceCount; i++) {
-        for (int j = 0; j < fWorkAreaScreenCount; j++) {
+    for (int i = 0; i < fWorkAreaWorkspaceCount; ++i) {
+        for (int j = 0; j < fWorkAreaScreenCount; ++j) {
             MSG(("%s: workarea w:%d s:%d %d %d %d %d",
                 prefix,
                 i, j,
@@ -2530,10 +2530,10 @@ bool YWindowManager::updateWorkAreaInner() {
         }
     }
 
-    for (int i = 0; i < fWorkAreaWorkspaceCount; i++) {
+    for (int i = 0; i < fWorkAreaWorkspaceCount; ++i) {
         if (i)
             fWorkArea[i] = fWorkArea[i - 1] + fWorkAreaScreenCount;
-        for (int j = 0; j < fWorkAreaScreenCount; j++)
+        for (int j = 0; j < fWorkAreaScreenCount; ++j)
             fWorkArea[i][j] = xiInfo[j];
     }
 
@@ -2613,8 +2613,8 @@ bool YWindowManager::updateWorkAreaInner() {
         oldWorkAreaScreenCount != fWorkAreaScreenCount) {
         changed = true;
     } else {
-        for (int ws = 0; ws < fWorkAreaWorkspaceCount; ws++) {
-            for (int s = 0; s < fWorkAreaScreenCount; s++) {
+        for (int ws = 0; ws < fWorkAreaWorkspaceCount; ++ws) {
+            for (int s = 0; s < fWorkAreaScreenCount; ++s) {
                 if (fWorkArea[ws][s] != oldWorkArea[ws][s]) {
                     changed = true;
                     break;
@@ -2664,8 +2664,8 @@ bool YWindowManager::updateWorkAreaInner() {
             resize = true;
         }
         else {
-            for (int ws = 0; ws < spaces; ws++) {
-                for (int s = 0; s < screens; s++) {
+            for (int ws = 0; ws < spaces; ++ws) {
+                for (int s = 0; s < screens; ++s) {
                     if (fWorkArea[ws][s].width() < oldWorkArea[ws][s].width())
                         resize = true;
                     if (fWorkArea[ws][s].height() < oldWorkArea[ws][s].height())
@@ -2703,7 +2703,7 @@ void YWindowManager::announceWorkArea() {
         return;
 
     if (getScreenCount() > 1 && netWorkAreaBehaviour != 1) {
-        for (int i = 0; i < getScreenCount(); i++) {
+        for (int i = 0; i < getScreenCount(); ++i) {
             if (xiInfo[i].x_org != 0 || xiInfo[i].y_org != 0) {
                 isCloned = false;
                 break;
@@ -2712,7 +2712,7 @@ void YWindowManager::announceWorkArea() {
     }
 
     const YRect desktopArea(desktop->geometry());
-    for (int ws = 0; ws < nw; ws++) {
+    for (int ws = 0; ws < nw; ++ws) {
         YRect r(desktopArea);
         if (netWorkAreaBehaviour != 1) {
             r = fWorkArea[ws][0];
@@ -2724,7 +2724,7 @@ void YWindowManager::announceWorkArea() {
                 // but there is no solution for this problem.
                 // So we imitate metacity's behaviour := merge,
                 // but limit height of each screen and hope for the best
-                for (int i = 1; i < getScreenCount(); i++) {
+                for (int i = 1; i < getScreenCount(); ++i) {
                     r.unionRect(fWorkArea[ws][i].fMinX, fWorkArea[ws][i].fMinY,
                                 fWorkArea[ws][i].width(),
                                 fWorkArea[ws][0].height());
@@ -3022,7 +3022,7 @@ bool YWindowManager::compareDesktopNames(const YStringList& list) {
     // old strings must persist until after the update
     asmart<csmart> oldWorkspaceNames(new csmart[list.count]);
 
-    for (int i = 0; i < list.count; i++) {
+    for (int i = 0; i < list.count; ++i) {
         if (i >= workspaces.count()) {
             workspaces.spare(i, list[i]);
         }
@@ -3071,7 +3071,7 @@ void YWindowManager::setNetDesktopNames(int count) {
     MSG(("setting: _NET_DESKTOP_NAMES"));
     static char terminator[] = { '\0' };
     asmart<char *> strings(new char *[count + 1]);
-    for (long i = 0; i < count; i++) {
+    for (long i = 0; i < count; ++i) {
         strings[i] = i < workspaces.count()
                    ? *workspaces[i]
                    : const_cast<char *>(workspaces.spare(i));
@@ -3327,7 +3327,7 @@ void YWindowManager::checkLogout() {
 
 void YWindowManager::removeClientFrame(YFrameWindow *frame) {
     if (fArrangeInfo) {
-        for (int i = 0; i < fArrangeCount; i++)
+        for (int i = 0; i < fArrangeCount; ++i)
             if (fArrangeInfo[i].frame == frame)
                 fArrangeInfo[i].frame = nullptr;
     }
@@ -3504,7 +3504,7 @@ void YWindowManager::tileWindows(YArrange arrange, bool vertical) {
     int normalWidth = areaW / cols;
     int windowX = areaX;
 
-    for (int col = 0; col < cols; col++) {
+    for (int col = 0; col < cols; ++col) {
         int rows = normalRows;
         int windowWidth = normalWidth;
         int windowY = areaY;
@@ -3516,7 +3516,7 @@ void YWindowManager::tileWindows(YArrange arrange, bool vertical) {
 
         int normalHeight = areaH / max(1, rows);
 
-        for (int row = 0; row < rows; row++) {
+        for (int row = 0; row < rows; ++row) {
             int windowHeight = normalHeight;
 
             if (row >= (rows * (1 + normalHeight) - areaH))
@@ -3604,7 +3604,7 @@ bool YWindowManager::saveArrange(YArrange arrange) {
 void YWindowManager::undoArrange() {
     if (fArrangeInfo && 0 < fArrangeCount) {
         lockFocus();
-        for (int i = 0; i < fArrangeCount; i++) {
+        for (int i = 0; i < fArrangeCount; ++i) {
             WindowPosState info(fArrangeInfo[i]);
             YFrameWindow* f = info.frame;
             if (f && (f->getState() & WIN_STATE_ALL) != info.state) {

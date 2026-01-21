@@ -549,9 +549,9 @@ void TaskBar::updateLayout(unsigned &size_w, unsigned &size_h) {
     int right[2] = { 0, 0 };
 
     if (!taskBarDoubleHeight)
-        for (int i = 0; i < wcount; i++)
+        for (int i = 0; i < wcount; ++i)
             wlist[i].row = false;
-    for (int i = 0; i < wcount; i++) {
+    for (int i = 0; i < wcount; ++i) {
         if (wlist[i].w) {
             if (h[wlist[i].row] < wlist[i].w->height())
                 h[wlist[i].row] = wlist[i].w->height();
@@ -582,7 +582,7 @@ void TaskBar::updateLayout(unsigned &size_w, unsigned &size_h) {
         h[0] = max(h[0], max(YIcon::smallSize() + 8, fTasks->maxHeight()));
     }
 
-    for (int i = 0; i < wcount; i++) {
+    for (int i = 0; i < wcount; ++i) {
         if (!wlist[i].w)
             continue;
         if (!wlist[i].show && !wlist[i].w->visible())

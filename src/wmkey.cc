@@ -122,7 +122,7 @@ void WMKey::grab(int handle) {
                           || ('z' < key && key <= 0xFF)
                           || IS_XF86KEY(key));
             int n = 0;
-            for (int i = map.min; i <= map.max; i++) {
+            for (int i = map.min; i <= map.max; ++i) {
                 if (map.map[(i - map.min) * map.per] == key) {
                     kc[n] = (unsigned char) (i & 0xFF);
                     if (++n >= 2)

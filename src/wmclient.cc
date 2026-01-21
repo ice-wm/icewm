@@ -136,7 +136,7 @@ void YFrameClient::getProtocols(bool force) {
 
     if (XGetWMProtocols(xapp->display(), handle(), &wmp, &count) && wmp) {
         prop.wm_protocols = true;
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < count; ++i) {
             fProtocols |=
                 (wmp[i] == _XA_WM_DELETE_WINDOW) ? wpDeleteWindow :
                 (wmp[i] == _XA_WM_TAKE_FOCUS) ? wpTakeFocus :
@@ -1549,7 +1549,7 @@ void YFrameClient::obtainIcon() {
             long w = e[0], h = e[1], *d = e + 2;
             if (w == h && d + w*h <= elem + count) {
                 // Maybe huge=large=small, so examine all sizes[].
-                for (int i = 0; i < 3; i++) {
+                for (int i = 0; i < 3; ++i) {
                     if (w == sizes[i] && icons[i] == null) {
                         if (i >= 1 && sizes[i - 1] == sizes[i]) {
                             icons[i] = icons[i - 1];
@@ -1577,7 +1577,7 @@ void YFrameClient::obtainIcon() {
         }
 
         // Create missing icons by scaling the largest icon.
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; ++i) {
             if (icons[i] == null) {
                 // create the largest icon
                 if (largestIcon == null && largestOffset && largestSize) {
@@ -2045,7 +2045,7 @@ void YFrameClient::getPropertiesList() {
 #define HAS(x)   ((x) = true)
 
     if (p) {
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < count; ++i) {
             Atom a = p[i];
 
             if      (a == XA_WM_HINTS) HAS(prop.wm_hints);

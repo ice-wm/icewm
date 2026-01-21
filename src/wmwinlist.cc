@@ -377,7 +377,7 @@ void WindowListBox::enableCommands(YMenu *popup) {
 
     moveMenu->enableCommand(actionNull);
     if (sameWorkspace && workspace != AllWorkspaces) {
-        for (int i = 0; i < moveMenu->itemCount(); i++) {
+        for (int i = 0; i < moveMenu->itemCount(); ++i) {
             YMenuItem *item = moveMenu->getItem(i);
             for (int w = 0; w < workspaceCount; w++)
                 if (item && item->getAction() == workspaceActionMoveTo[w])
