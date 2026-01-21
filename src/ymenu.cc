@@ -276,7 +276,7 @@ int YMenu::activateItem(int modifiers, bool byMouse) {
 int YMenu::findHotItem(char k) {
     int count = 0;
 
-    for (int i = 0; i < itemCount(); i++) {
+    for (int i = 0; i < itemCount(); ++i) {
         int hot = getItem(i)->getHotChar();
 
         const YMenuItem *mitem = getItem(i);
@@ -748,7 +748,7 @@ YMenuItem * YMenu::addSorted(YMenuItem *item, bool duplicates, bool ignoreCase) 
     if (item) {
         if (item->haveName()) {
             mstring& name = item->getName();
-            for (int i = 0; i < itemCount(); i++) {
+            for (int i = 0; i < itemCount(); ++i) {
                 if (fItems[i]->haveName()) {
                     int cmp = name.collate(fItems[i]->getName(), ignoreCase);
                     if (cmp > 0)
@@ -797,7 +797,7 @@ YMenuItem *YMenu::findName(const mstring &name, const int first) {
 int YMenu::findFirstLetRef(char firstLetter, int first, bool ignoreCase) {
     if (ignoreCase)
         firstLetter = toupper((unsigned char) firstLetter);
-    for (int i = first; i < itemCount(); i++) {
+    for (int i = first; i < itemCount(); ++i) {
         YMenuItem *item = getItem(i);
         if (item->haveName()) {
             int iLetter = item->getName().charAt(0);
@@ -868,7 +868,7 @@ int YMenu::findItemPos(int itemNo, int &x, int &y, unsigned &ih) {
     int top, bottom, pad;
 
     getArea(x, y, w, h);
-    for (int i = 0; i < itemNo; i++) {
+    for (int i = 0; i < itemNo; ++i) {
         y += getItem(i)->queryHeight(top, bottom, pad);
     }
     if (itemNo < itemCount())
@@ -882,7 +882,7 @@ int YMenu::findItem(int mx, int my) {
     unsigned w, h;
 
     getArea(x, y, w, h);
-    for (int i = 0; i < itemCount(); i++, y += int(h)) {
+    for (int i = 0; i < itemCount(); ++i, y += int(h)) {
         int top, bottom, pad;
 
         h = fItems[i]->queryHeight(top, bottom, pad);
@@ -1253,7 +1253,7 @@ void YMenu::paint(Graphics &g, const YRect &r1) {
     int iy = y;
     int top, bottom, pad;
 
-    for (int i = 0; i < itemCount(); i++) {
+    for (int i = 0; i < itemCount(); ++i) {
         int ih = getItem(i)->queryHeight(top, bottom, pad);
         if (iy < r1.y() + int(r1.height()) && iy + ih > r1.y()) {
             if (ih <= 8) {

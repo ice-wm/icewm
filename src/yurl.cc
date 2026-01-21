@@ -153,7 +153,7 @@ mstring YURL::unescape(mstring str) {
             return null;
         char *d = nstr;
 
-        for (unsigned i = 0; i < str.length(); i++) {
+        for (unsigned i = 0; i < str.length(); ++i) {
             int c = str.charAt(i);
 
             if (c == '%') {

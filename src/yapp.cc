@@ -381,7 +381,7 @@ void YApplication::closeFiles() {
 #ifdef __linux__   /* for now, some debugging code */
     int             i, max = dup(0);
 
-    for (i = 3; i < max; i++) {
+    for (i = 3; i < max; ++i) {
         int fl = 0;
         if (fcntl(i, F_GETFD, &fl) == 0) {
             if (!(fl & FD_CLOEXEC)) {

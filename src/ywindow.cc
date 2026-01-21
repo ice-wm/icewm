@@ -1886,7 +1886,7 @@ bool YDesktop::updateXineramaInfo(unsigned& horizontal, unsigned& vertical) {
 
         if (nonempty(xineramaPrimaryScreenName)) {
             const char* name = xineramaPrimaryScreenName;
-            for (int i = 0; xrrsr && i < xrrsr->noutput; i++) {
+            for (int i = 0; xrrsr && i < xrrsr->noutput; ++i) {
                 XRROutputInfo *oinfo = XRRGetOutputInfo(xapp->display(), xrrsr,
                                                         xrrsr->outputs[i]);
                 MSG(("output: %s -> %lu", oinfo->name, oinfo->crtc));
@@ -1898,7 +1898,7 @@ bool YDesktop::updateXineramaInfo(unsigned& horizontal, unsigned& vertical) {
             }
         }
 
-        for (int i = 0; xrrsr && i < xrrsr->ncrtc; i++) {
+        for (int i = 0; xrrsr && i < xrrsr->ncrtc; ++i) {
             XRRCrtcInfo *ci = XRRGetCrtcInfo(xapp->display(), xrrsr,
                                              xrrsr->crtcs[i]);
             MSG(("xrr %d (%lu): %d %d %u %u", i, xrrsr->crtcs[i],
@@ -1948,7 +1948,7 @@ bool YDesktop::updateXineramaInfo(unsigned& horizontal, unsigned& vertical) {
                XineramaQueryScreens(xapp->display(), &count));
         MSG(("xinerama: heads=%d", count));
         if (screens) {
-            for (int i = 0; i < count; i++) {
+            for (int i = 0; i < count; ++i) {
                 const XineramaScreenInfo& xine(screens[i]);
                 MSG(("xinerama: %d +%d+%d %dx%d", xine.screen_number,
                     xine.x_org, xine.y_org, xine.width, xine.height));
@@ -1970,7 +1970,7 @@ bool YDesktop::updateXineramaInfo(unsigned& horizontal, unsigned& vertical) {
 
     unsigned w = 0;
     unsigned h = 0;
-    for (int i = 0; i < xiInfo.getCount(); i++) {
+    for (int i = 0; i < xiInfo.getCount(); ++i) {
         const DesktopScreenInfo& info(xiInfo[i]);
         w = max(w, info.horizontal());
         h = max(h, info.vertical());
@@ -2013,7 +2013,7 @@ int YDesktop::getScreenForRect(int x, int y, unsigned width, unsigned height) {
     int screen = 0;
     if (1 < xiInfo.getCount()) {
         long best = xiInfo[0].coverage(x, y, width, height);
-        for (int s = 1; s < xiInfo.getCount(); s++) {
+        for (int s = 1; s < xiInfo.getCount(); ++s) {
             long cov = xiInfo[s].coverage(x, y, width, height);
             if (cov > best) {
                 best = cov;

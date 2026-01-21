@@ -656,7 +656,7 @@ void YIcon::freeIcons() {
 unsigned YIcon::fixIconSize(unsigned size) {
     const int n = 8;
     unsigned a[n] = { 16, 22, 24, 32, 48, 64, 128, 256 };
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; ++i) {
         if (a[i] == size)
             return size;
         if (a[i] > size) {

@@ -335,7 +335,7 @@ bool YListBox::handleKey(const XKeyEvent &key) {
         case XK_slash:
         case XK_backslash:
             if (m & ControlMask) {
-                for (int i = 0; i < getItemCount(); i++)
+                for (int i = 0; i < getItemCount(); ++i)
                     selectItem(i, (k != '\\'));
                 break;
             }
@@ -572,7 +572,7 @@ void YListBox::paint(Graphics &g, const YRect &r) {
     int const min((fOffsetY + ry) / lh);
     int const max((fOffsetY + ry + rheight) / lh);
 
-    for (int n(min); n <= max; n++) {
+    for (int n(min); n <= max; ++n) {
         paintItem(g, n);
     }
 
@@ -669,7 +669,7 @@ void YListBox::selectItem(int item, bool select) {
 }
 
 void YListBox::clearSelection() {
-    for (int i = 0; i < getItemCount(); i++)
+    for (int i = 0; i < getItemCount(); ++i)
         selectItem(i, false);
     fSelectStart = fSelectEnd = -1;
 }
@@ -682,7 +682,7 @@ void YListBox::applySelection() {
         int beg = min(fSelectStart, fSelectEnd);
         int end = max(fSelectStart, fSelectEnd);
 
-        for (int n = beg; n <= end ; n++) {
+        for (int n = beg; n <= end ; ++n) {
             YListItem *i = getItem(n);
             if (i)
                 i->setSelected(fSelect);
@@ -701,7 +701,7 @@ void YListBox::paintItems(int selStart, int selEnd) {
     int beg = min(selStart, selEnd);
     int end = max(selStart, selEnd);
 
-    for (int i = beg; i <= end; i++)
+    for (int i = beg; i <= end; ++i)
         paintItem(i);
 }
 
@@ -712,7 +712,7 @@ void YListBox::selectItems(int selStart, int selEnd, bool sel) {
     int beg = min(selStart, selEnd);
     int end = max(selStart, selEnd);
 
-    for (int i = beg; i <= end; i++)
+    for (int i = beg; i <= end; ++i)
         selectItem(i, sel);
 }
 

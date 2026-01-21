@@ -225,7 +225,7 @@ void Graphics::drawLine(int x1, int y1, int x2, int y2) {
 
 void Graphics::drawSegments(XSegment *segments, int n) {
     if (xOrigin | yOrigin) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; ++i) {
             segments[i].x1 -= xOrigin;
             segments[i].y1 -= yOrigin;
             segments[i].x2 -= xOrigin;
@@ -234,7 +234,7 @@ void Graphics::drawSegments(XSegment *segments, int n) {
     }
     XDrawSegments(display(), drawable(), gc, segments, n);
     if (xOrigin | yOrigin) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; ++i) {
             segments[i].x1 += xOrigin;
             segments[i].y1 += yOrigin;
             segments[i].x2 += xOrigin;
@@ -250,14 +250,14 @@ void Graphics::drawRect(int x, int y, unsigned width, unsigned height) {
 
 void Graphics::drawRects(XRectangle *rects, unsigned n) {
     if (xOrigin | yOrigin) {
-        for (unsigned i = 0; i < n; i++) {
+        for (unsigned i = 0; i < n; ++i) {
             rects[i].x -= xOrigin;
             rects[i].y -= yOrigin;
         }
     }
     XDrawRectangles(display(), drawable(), gc, rects, int(n));
     if (xOrigin | yOrigin) {
-        for (unsigned i = 0; i < n; i++) {
+        for (unsigned i = 0; i < n; ++i) {
             rects[i].x += xOrigin;
             rects[i].y += yOrigin;
         }
@@ -451,14 +451,14 @@ void Graphics::fillRect(int x, int y, unsigned width, unsigned height,
 
 void Graphics::fillRects(XRectangle *rects, int n) {
     if (xOrigin | yOrigin) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; ++i) {
             rects[i].x -= xOrigin;
             rects[i].y -= yOrigin;
         }
     }
     XFillRectangles(display(), drawable(), gc, rects, n);
     if (xOrigin | yOrigin) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; ++i) {
             rects[i].x += xOrigin;
             rects[i].y += yOrigin;
         }
@@ -471,14 +471,14 @@ void Graphics::fillPolygon(XPoint *points, int n, int shape,
     int n1 = (mode == CoordModeOrigin) ? n : 1;
 
     if (xOrigin | yOrigin) {
-        for (int i = 0; i < n1; i++) {
+        for (int i = 0; i < n1; ++i) {
             points[i].x -= xOrigin;
             points[i].y -= yOrigin;
         }
     }
     XFillPolygon(display(), drawable(), gc, points, n, shape, mode);
     if (xOrigin | yOrigin) {
-        for (int i = 0; i < n1; i++) {
+        for (int i = 0; i < n1; ++i) {
             points[i].x += xOrigin;
             points[i].y += yOrigin;
         }
@@ -806,14 +806,14 @@ void Graphics::drawBorderG(int x, int y, unsigned wid, unsigned hei, bool raised
 void Graphics::drawLines(XPoint *points, int n, int mode) {
     int n1 = (mode == CoordModeOrigin) ? n : 1;
     if (xOrigin | yOrigin) {
-        for (int i = 0; i < n1; i++) {
+        for (int i = 0; i < n1; ++i) {
             points[i].x -= xOrigin;
             points[i].y -= yOrigin;
         }
     }
     XDrawLines(display(), drawable(), gc, points, n, mode);
     if (xOrigin | yOrigin) {
-        for (int i = 0; i < n1; i++) {
+        for (int i = 0; i < n1; ++i) {
             points[i].x += xOrigin;
             points[i].y += yOrigin;
         }
