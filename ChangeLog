@@ -1,5 +1,387 @@
 # created with git log --stat=76 -M -C -500|fmt -sct -w80
 
+commit 342c9160ad7d8338ef9754db999b1bfe69bec97e
+Merge: 0f48121a 139b7f1a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Aug 6 20:17:02 2026 +0200
+
+    Merge branch 'icewm-1-4-BRANCH'
+
+commit 139b7f1ac7ee4ac8b4d5885bb540b6e3658f2a28
+Merge: 78429493 405dfc99
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Aug 6 20:16:01 2026 +0200
+
+    Merge remote-tracking branch 'upstream/icewm-1-4-BRANCH' into
+    icewm-1-4-BRANCH
+
+commit 405dfc994f61bdca7f978ac643a25fe8518270f3
+Author: Andrei Stepanov <adem4ik@gmail.com>
+Date:   Thu Aug 6 01:06:11 2026 +0000
+
+    Translated using Weblate (Russian)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/ru.po | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit ab36469618ab8ea7848ff56afefc586cb27147da
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Tue Aug 4 20:12:49 2026 +0200
+
+    Change default for Alpha to false.
+
+ src/default.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4274659492b51836d30befa84f6288d4a8361f5d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Aug 3 23:22:53 2026 +0200
+
+    Revert "Support QuickSwitchPreview when _XROOTPMAP_ID is undefined."
+
+ src/preview.cc | 28 +++++++++++++---------------
+ 1 file changed, 13 insertions(+), 15 deletions(-)
+
+commit 9548fe8304add9c8a97e0999c002c209a8ff5562
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Mon Aug 3 20:30:55 2026 +0200
+
+    Support QuickSwitchPreview when _XROOTPMAP_ID is undefined.
+
+ src/preview.cc | 28 +++++++++++++++-------------
+ 1 file changed, 15 insertions(+), 13 deletions(-)
+
+commit 3118abd5d8dfe098b6478651ddc027621d0440b8
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sat Aug 1 23:36:48 2026 +0200
+
+    Properly handle unterminated strings in configuration files.
+
+ man/icewm-keys.pod |  5 +++++
+ src/yconfig.cc     | 42 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 47 insertions(+)
+
+commit 0f48121a345fd75a2c39d39ccc63d77852526081
+Merge: 5ebafddb 6e36b945
+Author: gijsbers <gijsbers@users.noreply.github.com>
+Date:   Sat Aug 1 07:53:15 2026 +0000
+
+    Merge pull request #226 from
+    ice-wm/dependabot/github_actions/actions/checkout-7
+
+    Bump actions/checkout from 6 to 7
+
+commit d34c468d503064ec8033dba9660cdf5e141e901e
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Sat Aug 1 07:51:53 2026 +0000
+
+    Bump actions/checkout from 6 to 7 (#840)
+
+    Bumps [actions/checkout](https://github.com/actions/checkout) from 6 to 7.
+    - [Release notes](https://github.com/actions/checkout/releases)
+    - [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+    - [Commits](https://github.com/actions/checkout/compare/v6...v7)
+
+    ---
+    updated-dependencies:
+    - dependency-name: actions/checkout
+      dependency-version: '7'
+      dependency-type: direct:production
+      update-type: version-update:semver-major
+    ...
+
+    Signed-off-by: dependabot[bot] <support@github.com>
+    Co-authored-by: dependabot[bot]
+    <49699333+dependabot[bot]@users.noreply.github.com>
+
+ .github/workflows/cmake.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 651f046e5bbf5dd0b8e643841eaf51159ea48f02
+Author: Eugene Krater <lachend@gmail.com>
+Date:   Sat Jul 11 16:07:46 2026 +0000
+
+    Translated using Weblate (Ukrainian)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/uk.po | 62 ++++++++++++++++++++++++++++++++++++++++++++++--------------
+ 1 file changed, 48 insertions(+), 14 deletions(-)
+
+commit 41c3414d3e69f49fb3a6de2ab8de6db90c1f5ebc
+Author: Eugene Krater <lachend@gmail.com>
+Date:   Tue Jul 7 19:29:20 2026 +0000
+
+    Translated using Weblate (Ukrainian)
+
+    Currently translated at 98.2% (516 of 525 strings)
+
+ po/uk.po | 27 ++++++++++++---------------
+ 1 file changed, 12 insertions(+), 15 deletions(-)
+
+commit 6e36b945dbbeb0c02243494ef0304086398f5ca8
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Mon Jun 22 01:42:19 2026 +0000
+
+    Bump actions/checkout from 6 to 7
+
+    Bumps [actions/checkout](https://github.com/actions/checkout) from 6 to 7.
+    - [Release notes](https://github.com/actions/checkout/releases)
+    - [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+    - [Commits](https://github.com/actions/checkout/compare/v6...v7)
+
+    ---
+    updated-dependencies:
+    - dependency-name: actions/checkout
+      dependency-version: '7'
+      dependency-type: direct:production
+      update-type: version-update:semver-major
+    ...
+
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+ .github/workflows/cmake.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f5592a6dbfe88072e60cb8f9f58e2c378c580bac
+Author: yakup <mtopac2027@gmail.com>
+Date:   Wed Jun 3 23:54:48 2026 +0000
+
+    Translated using Weblate (Turkish)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/tr.po | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
+
+commit 3c858968658a2bdff1e5c0e6b70cf70beb806eaf
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 15 15:15:55 2026 +0100
+
+    Add icesh "mousemove" command for issue ice-wm/icewm#191.
+
+ man/icesh.pod |  4 ++++
+ src/icesh.cc  | 21 +++++++++++++++++++++
+ 2 files changed, 25 insertions(+)
+
+commit b451303040bb1687b1b38974967241b51bb94b3f
+Author: Temuri Doghonadze <temuri.doghonadze@gmail.com>
+Date:   Thu Mar 12 06:28:53 2026 +0000
+
+    Translated using Weblate (Georgian)
+
+    Currently translated at 59.0% (310 of 525 strings)
+
+ po/ka.po | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit dcd42ac16fb9026a8ab9d0d1936c24fe56302668
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Mar 11 22:11:18 2026 +0100
+
+    Add new winoption ignoreUserTime for issue #833.
+
+ man/icewm-winoptions.pod | 1 +
+ man/icewmhint.pod        | 1 +
+ src/wmclient.cc          | 6 +++++-
+ src/wmframe.h            | 1 +
+ src/wmoption.cc          | 1 +
+ 5 files changed, 9 insertions(+), 1 deletion(-)
+
+commit e91cc23da571ccb3a4d63f01ea0af34960c7548a
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Mar 11 21:57:48 2026 +0100
+
+    now is 2026
+
+ src/icewmbg_prefs.h | 4 ++--
+ src/wmabout.cc      | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 34a476d5479deaf0dd7945b54beb13aa057839c0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Sun Mar 8 18:09:06 2026 +0100
+
+    Use strtoul when parsing _NET_STARTUP_ID for issue #37.
+
+ src/wmclient.cc | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+commit ca6d7fac4a98873ae3e11bac34f9664c0bf550a0
+Author: Petteri Aimonen <jpa@git.mail.kapsi.fi>
+Date:   Thu Mar 5 17:02:24 2026 +0200
+
+    Handle string parsing error in _XA_NET_STARTUP_ID
+
+    Related to issue #37.
+
+    If the string value for NET_STARTUP_ID was unparseable,
+    atol() would return LONG_MAX. On 64-bit systems the & 0xFFFFFFFF
+    in turn made it into -1U. This value then compared larger
+    than any other timestamp, resulting in new windows not getting focus.
+
+ src/wmclient.cc | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit d8cd7077970eb16bec04c2f1ed9feec34f9f185d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Feb 25 20:23:25 2026 +0100
+
+    Free the picture before its pixmap to prevent an error message.
+
+ src/preview.cc | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit dd414f6d2c0a93d6b3b195fc79b5355d2992fd77
+Author: Efstathios Iosifidis <eiosifidis@yandex.com>
+Date:   Mon Feb 23 22:59:05 2026 +0000
+
+    Translated using Weblate (Greek)
+
+    Currently translated at 99.4% (522 of 525 strings)
+
+ po/el.po | 845 ++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 425 insertions(+), 420 deletions(-)
+
+commit 55f728f50b89872e00c63fae51ea8b6daf6335e5
+Author: Peter Andreasen <noesgaard@gmail.com>
+Date:   Wed Feb 18 14:34:11 2026 +0000
+
+    Translated using Weblate (Danish)
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/da.po | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+commit 2e6d91353e39b9eac655a3a281efdafa94679e6a
+Author: Peter Andreasen <noesgaard@gmail.com>
+Date:   Tue Feb 3 09:06:55 2026 +0000
+
+    Translated using Weblate (Danish)
+
+    Currently translated at 99.8% (524 of 525 strings)
+
+ po/da.po | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1c64cdbd647fb92cabb32accba86371fd0a323c9
+Author: Peter Andreasen <noesgaard@gmail.com>
+Date:   Mon Feb 2 12:17:29 2026 +0000
+
+    Translated using Weblate (Danish)
+
+    Currently translated at 99.8% (524 of 525 strings)
+
+ po/da.po | 75 +++++++++++++++++++++++++++++++++++++++++-------------------
+ 1 file changed, 52 insertions(+), 23 deletions(-)
+
+commit 13990ef497f698c51acb07c262c01944ac8a539c
+Author: Cyber Neko <CyberNeko.AI@gmail.com>
+Date:   Sat Jan 31 14:47:36 2026 +0000
+
+    Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/zh_TW.po | 14 +++++---------
+ 1 file changed, 5 insertions(+), 9 deletions(-)
+
+commit 54ce8f6bbc1fe287372300ed25d4616ea3567ff8
+Author: Cyber Neko <CyberNeko.AI@gmail.com>
+Date:   Sat Jan 31 14:51:23 2026 +0000
+
+    Translated using Weblate (Chinese (China) (zh_CN))
+
+    Currently translated at 100.0% (525 of 525 strings)
+
+ po/zh_CN.po | 14 +++++---------
+ 1 file changed, 5 insertions(+), 9 deletions(-)
+
+commit 37c36daba2ac10b913d9bfdf5ca17238837e4cd0
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Wed Jan 21 21:42:29 2026 +0100
+
+    Clarify comment for ShowAbout and closes #829.
+
+ src/default.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 48307654d426223ea6de53a1fe2182f5a2abdc8d
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 1 13:58:35 2026 +0100
+
+    4.0.0
+
+ VERSION      | 2 +-
+ configure.ac | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 5ebafddba37de22fc115d6cde43cb01cfc9ef263
+Author: Bert Gijsbers <gijsbers@science.uva.nl>
+Date:   Thu Jan 1 13:28:36 2026 +0100
+
+    Prepare 4.0.0 release
+
+ AUTHORS      |   32 +-
+ ChangeLog    | 8461 +++++++++++++++++++++++++++---------------------------
+ NEWS         |  156 +-
+ README.md    |    2 +-
+ RELEASE.md   |    2 +-
+ VERSION      |    2 +-
+ configure.ac |   10 +-
+ po/ar.po     |    2 +-
+ po/ast.po    |    2 +-
+ po/be.po     |    2 +-
+ po/bg.po     |    2 +-
+ po/ca.po     |    6 +-
+ po/cs.po     |    2 +-
+ po/da.po     |    2 +-
+ po/de.po     |    6 +-
+ po/el.po     |    2 +-
+ po/en.po     |    2 +-
+ po/eo.po     |    2 +-
+ po/es.po     |    2 +-
+ po/fa.po     |    2 +-
+ po/fi.po     |    2 +-
+ po/fr.po     |    2 +-
+ po/he.po     |    2 +-
+ po/hi.po     |    2 +-
+ po/hr.po     |    2 +-
+ po/hu.po     |    2 +-
+ po/icewm.pot |    4 +-
+ po/id.po     |    2 +-
+ po/ie.po     |    2 +-
+ po/it.po     |    2 +-
+ po/ja.po     |    2 +-
+ po/ka.po     |    2 +-
+ po/kk.po     |    2 +-
+ po/ko.po     |    2 +-
+ po/lt.po     |    2 +-
+ po/lv.po     |    2 +-
+ po/mk.po     |    2 +-
+ po/nb.po     |    2 +-
+ po/nl.po     |    2 +-
+ po/nn.po     |    2 +-
+ po/no.po     |    2 +-
+ po/pl.po     |    2 +-
+ po/pt.po     |    2 +-
+ po/pt_BR.po  |    2 +-
+ po/ro.po     |    2 +-
+ po/ru.po     |    2 +-
+ po/sk.po     |    2 +-
+ po/sl.po     |    2 +-
+ po/sr.po     |    2 +-
+ po/sv.po     |    2 +-
+ po/tr.po     |    2 +-
+ po/uk.po     |    2 +-
+ po/vi.po     |    2 +-
+ po/zh_CN.po  |    2 +-
+ po/zh_TW.po  |    2 +-
+ 55 files changed, 4439 insertions(+), 4332 deletions(-)
+
 commit 41dd86970cc6d75b69f0632c5b23a1181003dbad
 Merge: 71481b72 78429493
 Author: Bert Gijsbers <gijsbers@science.uva.nl>
@@ -5573,334 +5955,3 @@ Date:   Wed Sep 25 18:25:47 2024 +0200
 
  src/fdomenu.cc | 125 ++++++++++++++++++++++++-----------------------------
  1 file changed, 56 insertions(+), 69 deletions(-)
-
-commit ab6af3fa8f439345e1f730f51e76be565d367383
-Author: Eduard Bloch <blade@debian.org>
-Date:   Wed Sep 25 16:33:21 2024 +0200
-
-    First working printing code after rewrite
-
- .clang-format  | 274 +++++++++++++++++++
- src/fdomenu.cc | 777 +++++++++++++++++++++++++++--------------------------
- 2 files changed, 669 insertions(+), 382 deletions(-)
-
-commit 5f044870cfaf5c31641964c738b03fb54fe74725
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sun Jan 14 18:22:34 2024 +0100
-
-    WIP: redesigning menu handling
-
- INSTALL                           |    6 +-
- VERSION                           |    2 +-
- configure.ac                      |   12 +-
- contrib/Additional_Categories.csv |  129 ++++
- contrib/conv_cat.pl               |  171 +++--
- contrib/conv_cat.py               |  122 ++++
- src/CMakeLists.txt                |    2 +-
- src/fdomenu.cc                    | 1099 ++++++++++++++++++++++++++++-----
- src/fdospecgen.h                  |  551 +++++++----------
- 9 files changed, 1574 insertions(+), 520 deletions(-)
-
-commit 5b3c86c7c8b315140f69993ac5bcbc9cbddffb5b
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sun Jan 14 13:09:42 2024 +0100
-
-    Workaround for gettext not applied on submenu
-
- src/fdomenu.cc | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-commit efa4b66660254735fa8b152cb62c70bffa5ae0fd
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sun Jan 14 11:14:54 2024 +0100
-
-    WIP: switched more glib containers to stl
-
- src/fdomenu.cc | 161 +++++++++++++++++++++++++++++++----------------------
- 1 file changed, 93 insertions(+), 68 deletions(-)
-
-commit cc30c9afaeaa1ab82936309b4771d3dc90b23018
-Author: Eduard Bloch <blade@debian.org>
-Date:   Sat Jan 13 19:09:09 2024 +0100
-
-    Minor fixes and improvements on XDG menu
-
-    - check presence of all RTLs (Sindhi and Urdu were ignored)
-    - Simplify code, use standard algorithms / for-range loops
-    - extract/unify the language/chartype fishing code
-
- src/fdomenu.cc  | 105 ++++++++++++++++++++++------------------------------
- src/fontmacro.h |   2 +-
- src/yfontxft.cc |   8 ++--
- src/ylocale.cc  |  16 +++++---
- src/ylocale.h   |   2 +-
- 5 files changed, 61 insertions(+), 72 deletions(-)
-
-commit 55fc052fc6d4e308882f55aa8a1e5a44a8d4e003
-Author: Eduard Bloch <blade@debian.org>
-Date:   Tue Jan 2 14:42:52 2024 +0100
-
-    LC_CTYPE specific hints to Xft selection
-
-    This is not as smart as libpango and similar but should instruct Xft
-    sufficiently to select a Sans compatible font which actually brings the
-    required codeset.
-
-    Closes ice-wm/icewm#149
-
- src/fontmacro.h | 15 ++++++++++-----
- src/yfontxft.cc | 10 ++++++++++
- src/ylocale.cc  |  9 +++++++++
- src/ylocale.h   |  1 +
- 4 files changed, 30 insertions(+), 5 deletions(-)
-
-commit 2e9b00f8d459aa4d820f8ac399bdfc1691a58142
-Author: Virinas code <alexcode228@gmail.com>
-Date:   Tue Sep 3 09:34:34 2024 +0000
-
-    Translated using Weblate (French)
-
-    Currently translated at 100.0% (527 of 527 strings)
-
- po/fr.po | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
-
-commit 024422c1a80e8c1e7792e1bb5261698446f78a05
-Author: Alessio Adamo <alessio.adamo@gmail.com>
-Date:   Mon Aug 26 13:40:46 2024 +0000
-
-    Translated using Weblate (Italian)
-
-    Currently translated at 100.0% (527 of 527 strings)
-
- po/it.po | 48 ++++++++++++++++++++++++++----------------------
- 1 file changed, 26 insertions(+), 22 deletions(-)
-
-commit b8f5486badfbcc9bee37e41bee06ba50a39a5203
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Aug 4 22:17:15 2024 +0200
-
-    Move all keybinding initializations to its own C++ file.
-
- src/bindkey.cc | 105 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 105 insertions(+)
-
-commit 779367f0d101992e5f3493c097ab52ecedb08dce
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Aug 4 22:04:50 2024 +0200
-
-    Dissolve the WM_KEY macros.
-
- src/CMakeLists.txt |   3 +-
- src/Makefile.am    |   1 +
- src/bindkey.h      | 303 ++++++++++++++++---------------------------------
- src/genpref.cc     |   2 -
- src/movesize.cc    |  72 ++++++------
- src/wmapp.cc       |  58 +++++-----
- src/wmmgr.cc       | 110 +++++++++---------
- src/wmminiicon.cc  |   6 +-
- src/wmtaskbar.cc   |  16 +--
- src/wmwinlist.cc   |  50 ++++----
- src/wmwinmenu.cc   |   2 +-
- 11 files changed, 257 insertions(+), 366 deletions(-)
-
-commit 466e1641e522251dfe0e1a2efe611a2210231f5b
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Aug 4 22:04:40 2024 +0200
-
-    Consistently use keyCodeToKeySym.
-
- src/yxapp.cc | 8 ++++++--
- src/yxapp.h  | 1 +
- 2 files changed, 7 insertions(+), 2 deletions(-)
-
-commit 293bb5138584ee76f04f80a53314712ccf67de9f
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Aug 3 13:57:37 2024 +0200
-
-    Add constructors to WMKey.
-
- src/bindkey.h | 4 ++--
- src/wmkey.h   | 5 +++++
- src/wmmenu.cc | 6 +++++-
- src/wmprog.cc | 7 +------
- 4 files changed, 13 insertions(+), 9 deletions(-)
-
-commit 080c828a302c651267faea395e2eae8c782b6baa
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Aug 3 12:35:35 2024 +0200
-
-    Enforce a limit of 8 mouse pointer buttons, as more is impossible.
-
- src/yconfig.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-commit dce879b97b8c9317d16a42d3eaa076f6af7503e4
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Fri Aug 2 18:24:22 2024 +0200
-
-    Reuse WMKey in KProgram.
-
- src/wmapp.cc  |  2 +-
- src/wmapp.h   |  1 -
- src/wmkey.h   | 17 +++++++++++++++++
- src/wmmgr.cc  |  8 +++-----
- src/wmprog.cc | 23 +++++++++++++++--------
- src/wmprog.h  | 18 +++++++++---------
- src/yconfig.h | 14 +-------------
- 7 files changed, 46 insertions(+), 37 deletions(-)
-
-commit 5ea69e7ef054c3ee65cddc9a22bc979fffc8e77d
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Aug 1 22:25:23 2024 +0200
-
-    Move parsing key definitions to class WMKey.
-
- src/wmapp.cc   |  5 +----
- src/wmpref.cc  |  8 +-------
- src/yconfig.cc | 10 +---------
- src/yconfig.h  |  2 ++
- src/yxapp.cc   | 24 ++++++++++++++++++++++++
- 5 files changed, 29 insertions(+), 20 deletions(-)
-
-commit 7aedab7e19221acfd809061fd4116836614730b5
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 25 17:14:59 2024 +0200
-
-    Support keybindings to shifted XF86keysyms like XF86AudioPause for
-    issue #781.
-
- src/yxapp.cc | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-commit 8f291a18668f27213b17d614dc3f6c3be9c9e622
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 24 22:57:14 2024 +0200
-
-    Elaborate on symbols and expressions and document the minus operator.
-
- man/icesh.pod | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
-
-commit 92961dee3675fcb4953fcdd55da193fe72e7dcc3
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 24 22:56:09 2024 +0200
-
-    To drag a maximized window, keep the Shift key down for issue #780.
-
- man/icewm.pod | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-commit 3711e735ea9327243e54522bed4b035887344cfe
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 24 22:54:35 2024 +0200
-
-    Revert "When LimitPosition is false, you can drag maximized windows
-    off-screen."
-
- src/movesize.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 842aebe7eb1eb68855f41d175bad361208f4afa2
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Wed Jul 24 18:46:19 2024 +0200
-
-    When LimitPosition is false, you can drag maximized windows off-screen
-    and closes issue #780.
-
- src/movesize.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-commit 46e93f2d17e648ad0ce824bc8f289ace9d47bd0a
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 21 21:34:10 2024 +0200
-
-    When raising a frame, check if the focused frame needs to bind the mouse
-    buttons, if it is overlapped.
-    When minimizing or hiding transients, check against transients being
-    tabs in the same frame.
-
- src/wmframe.cc | 27 +++++++++++++++++++--------
- src/wmmgr.h    |  2 +-
- 2 files changed, 20 insertions(+), 9 deletions(-)
-
-commit 45b67d79eadbd539476e06514971d20d7018c366
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 21 21:32:50 2024 +0200
-
-    When focusing a frame under the mouse, prefer to focus its topmost
-    transient.
-
- src/wmmgr.cc | 25 ++++++++++++++++++++-----
- 1 file changed, 20 insertions(+), 5 deletions(-)
-
-commit 8b30a83e59d327079f6aeb9a8cc2dceeac733eda
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 14 12:19:36 2024 +0200
-
-    Support changing the Dock container layer while running.
-
- src/wmdock.cc | 18 +++++++++++++++++-
- src/wmdock.h  |  3 +++
- 2 files changed, 20 insertions(+), 1 deletion(-)
-
-commit 33c721c947257ea70515042ead5ee0a4820083dc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Thu Jul 11 23:20:03 2024 +0200
-
-    Simplify captureEvents/releaseEvents.
-
- src/ywindow.cc | 12 ++----------
- src/ywindow.h  |  3 ---
- 2 files changed, 2 insertions(+), 13 deletions(-)
-
-commit 5b2eee2bf6ad989964f9ba9177da00e2dd110e13
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 7 12:25:34 2024 +0200
-
-    Document the use of the LimitByDockLayer pref for DockApps.
-
- man/icewm.pod | 3 +++
- 1 file changed, 3 insertions(+)
-
-commit 7d463fc33200157326b7370c71fdd195ff159adc
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 7 12:22:40 2024 +0200
-
-    Document the layers and the support for dockapps.
-
- man/icewm.pod | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
-
-commit 519cc92557c9fb52f69094591fd6700ad5869059
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sun Jul 7 11:58:38 2024 +0200
-
-    Update DockApps preferences comment.
-
- man/icewm-preferences.pod | 4 ++--
- src/default.h             | 2 +-
- 2 files changed, 3 insertions(+), 3 deletions(-)
-
-commit ce6ba582f87ef040f8a366bcee3c92830a154272
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 6 22:30:21 2024 +0200
-
-    Also update DockApps container when downsizing.
-
- src/wmdock.cc | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
-
-commit 3e634220bf75aba842476cc2532f4b5e42afa8b7
-Author: Bert Gijsbers <gijsbers@science.uva.nl>
-Date:   Sat Jul 6 20:16:01 2024 +0200
-
-    When DockApps has "dock" and LimitByDockLayer=1 then update the desktop
-    work area so that maximized windows leave the DockApps container visible
-    for issue #779.
-
- man/icewm-preferences.pod |  5 +++--
- src/wmdock.cc             | 13 ++++++++++++-
- src/wmdock.h              |  3 +++
- src/wmmgr.cc              | 14 ++++++++++++++
- 4 files changed, 32 insertions(+), 3 deletions(-)

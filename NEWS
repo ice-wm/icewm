@@ -1,11 +1,11 @@
-icewm -- history of user-visible changes.  2026-01-01
+icewm -- history of user-visible changes.  2026-08-06
 
-Release icewm-4.0.0 released 2026-01-01
+Release icewm-4.1.0 released 2026-08-06
 ---------------------------------------
 
 git shortlog --no-merges -e -n -w80,6,8 3.9.0...HEAD
 
-Bert Gijsbers <gijsbers@science.uva.nl> (74):
+Bert Gijsbers <gijsbers@science.uva.nl> (86):
       3.9.0
       Drop XPM from rebuild.sh.
       Report failure on /proc/net/dev at most once.
@@ -97,21 +97,55 @@ Bert Gijsbers <gijsbers@science.uva.nl> (74):
       Add preview.h to distributable files.
       Update the preferred issues location to the ice-wm organisation.
       Update pot files.
+      Prepare 4.0.0 release
+      4.0.0
+      Clarify comment for ShowAbout and closes #829.
+      Free the picture before its pixmap to prevent an error message.
+      Use strtoul when parsing _NET_STARTUP_ID for issue #37.
+      now is 2026
+      Add new winoption ignoreUserTime for issue #833.
+      Add icesh "mousemove" command for issue ice-wm/icewm#191.
+      Properly handle unterminated strings in configuration files.
+      Support QuickSwitchPreview when _XROOTPMAP_ID is undefined.
+      Revert "Support QuickSwitchPreview when _XROOTPMAP_ID is undefined."
+      Change default for Alpha to false.
+
+dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (4):
+      Bump actions/checkout from 5 to 6
+      Bump actions/checkout from 5 to 6 (#819)
+      Bump actions/checkout from 6 to 7
+      Bump actions/checkout from 6 to 7 (#840)
 
 Eduard Bloch <blade@debian.org> (3):
       Avoid autoreconf failure on existence of nasty tags
       Eliminate dead code
       Make menu arrow size relative to icon size
 
-dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> (2):
-      Bump actions/checkout from 5 to 6
-      Bump actions/checkout from 5 to 6 (#819)
+Peter Andreasen <noesgaard@gmail.com> (3):
+      Translated using Weblate (Danish)
+      Translated using Weblate (Danish)
+      Translated using Weblate (Danish)
+
+Cyber Neko <CyberNeko.AI@gmail.com> (2):
+      Translated using Weblate (Chinese (China) (zh_CN))
+      Translated using Weblate (Chinese (Taiwan) (zh_TW))
+
+Eugene Krater <lachend@gmail.com> (2):
+      Translated using Weblate (Ukrainian)
+      Translated using Weblate (Ukrainian)
+
+Temuri Doghonadze <temuri.doghonadze@gmail.com> (2):
+      Translated using Weblate (Georgian)
+      Translated using Weblate (Georgian)
 
 openSUSE Weblate <weblate-noreply@opensuse.org> (2):
       Update translation files
       Update translation files
 
 Aleksey Fedorov <Aleksejfedorov963@gmail.com> (1):
+      Translated using Weblate (Russian)
+
+Andrei Stepanov <adem4ik@gmail.com> (1):
       Translated using Weblate (Russian)
 
 Arif Budiman <arifpedia@gmail.com> (1):
@@ -122,6 +156,9 @@ Balló György <ballogyor@gmail.com> (1):
 
 David Medina <medipas@gmail.com> (1):
       Translated using Weblate (Catalan)
+
+Efstathios Iosifidis <eiosifidis@yandex.com> (1):
+      Translated using Weblate (Greek)
 
 Ferdinand Galko <galko.ferdinand@gmail.com> (1):
       Translated using Weblate (Slovak)
@@ -141,14 +178,17 @@ Luiz Fernando Ranghetti <elchevive68@gmail.com> (1):
 Luna  Jernberg <bittin@opensuse.org> (1):
       Translated using Weblate (Swedish)
 
-Temuri Doghonadze <temuri.doghonadze@gmail.com> (1):
-      Translated using Weblate (Georgian)
+Petteri Aimonen <jpa@git.mail.kapsi.fi> (1):
+      Handle string parsing error in _XA_NET_STARTUP_ID
 
 Yasuhiko Kamata <belphegor@belbel.or.jp> (1):
       Translated using Weblate (Japanese)
 
 gijsbers <gijsbers@users.noreply.github.com> (1):
       enable sponsoring
+
+yakup <mtopac2027@gmail.com> (1):
+      Translated using Weblate (Turkish)
 
 
 Release icewm-3.9.0 released 2025-08-31
